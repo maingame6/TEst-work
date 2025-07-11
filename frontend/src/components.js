@@ -182,7 +182,7 @@ export const Hero = () => {
           <div className="relative">
             <img 
               src="https://images.pexels.com/photos/8146313/pexels-photo-8146313.jpeg" 
-              alt="Modern flooring showroom" 
+              alt="Modern flooring showroom in Bangor" 
               className="rounded-lg shadow-2xl w-full h-96 lg:h-[500px] object-cover"
             />
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
@@ -211,8 +211,8 @@ export const Hero = () => {
             <div className="text-gray-600">Tile Designs</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-green-600 mb-2">2</div>
-            <div className="text-gray-600">Showrooms</div>
+            <div className="text-4xl font-bold text-green-600 mb-2">1</div>
+            <div className="text-gray-600">Bangor Showroom</div>
           </div>
         </div>
       </div>
@@ -232,7 +232,7 @@ export const AboutSection = () => {
             </h2>
             <p className="text-lg text-gray-600 mb-8">
               With over 20 years of experience in the flooring industry, we've established ourselves 
-              as Northern Ireland's premier flooring destination. Our commitment to quality, 
+              as Northern Ireland's premier flooring destination based in Bangor. Our commitment to quality, 
               competitive pricing, and exceptional customer service sets us apart.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -285,7 +285,7 @@ export const AboutSection = () => {
           <div className="relative">
             <img 
               src="https://images.pexels.com/photos/4940756/pexels-photo-4940756.jpeg" 
-              alt="Professional flooring showroom" 
+              alt="Professional flooring showroom in Bangor" 
               className="rounded-lg shadow-xl w-full h-96 object-cover"
             />
             <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg font-semibold">
@@ -392,7 +392,7 @@ export const Categories = () => {
   );
 };
 
-// Featured Products Component with Complete Product Database
+// Featured Products Component with Northern Ireland Standard Products
 export const FeaturedProducts = () => {
   const [calculatorValues, setCalculatorValues] = useState({});
 
@@ -422,46 +422,42 @@ export const FeaturedProducts = () => {
   const products = [
     {
       id: 1,
-      name: "New Oak Herringbone 15mm",
-      description: "Beautiful natural oak herringbone parquet flooring in 15mm thickness. Perfect for traditional and contemporary spaces. Oiled finish with bevelled edges.",
-      price: 45.99,
-      originalPrice: 52.99,
-      priceDisplay: "£45.99",
+      name: "New Oak Herringbone",
+      description: "Beautiful natural oak herringbone parquet flooring available in 18mm thickness. Perfect for traditional and contemporary spaces.",
+      price: 45,
+      priceDisplay: "£45",
       image: "https://images.unsplash.com/photo-1560185008-b033106af5c3",
       category: "Real Wood",
       coverage: 2.5,
-      dimensions: "15mm x 70mm x 300mm",
+      dimensions: "18mm x 70mm x 300mm",
       grade: "Prime Grade",
       finish: "Natural Oil",
       installation: "Nail/Glue Down",
       warranty: "25 Years",
-      inStock: true,
-      sale: true
+      inStock: true
     },
     {
       id: 2,
       name: "Decora 8mm Lunar Grey",
-      description: "High-quality 8mm laminate with realistic wood finish and AC4 commercial wear rating. Perfect for high-traffic areas throughout the home.",
+      description: "High-quality 8mm laminate with realistic wood finish and AC3 wear rating. Perfect for the entire home.",
       price: 23.95,
       priceDisplay: "£23.95",
       image: "https://images.unsplash.com/photo-1626551039948-ddd7e595fe06",
       category: "Laminate",
       coverage: 2.162,
       dimensions: "8mm x 193mm x 1380mm",
-      grade: "AC4 Commercial",
+      grade: "AC3 Commercial",
       finish: "Matt Textured",
       installation: "Click System",
       warranty: "15 Years",
-      inStock: true,
-      sale: false
+      inStock: true
     },
     {
       id: 3,
-      name: "Balterio Supreme 4V 8mm Flint Grey Oak",
-      description: "Premium laminate flooring with authentic grey oak pattern. 4V micro-bevelled edges for realistic plank appearance. Scratch resistant surface.",
-      price: 26.67,
-      originalPrice: 29.99,
-      priceDisplay: "£26.67",
+      name: "Balterio Supreme 4V 8mm Flint Grey Oak (Barrel Oak)",
+      description: "Premium laminate flooring with authentic grey oak pattern. Available in 194mm x 1286mm tile format with beveled edges.",
+      price: 23.67,
+      priceDisplay: "£23.67",
       image: "https://images.unsplash.com/photo-1575204015311-0fe377370780",
       category: "Laminate",
       coverage: 2.162,
@@ -470,111 +466,55 @@ export const FeaturedProducts = () => {
       finish: "Embossed",
       installation: "Click System",
       warranty: "20 Years",
-      inStock: true,
-      sale: true
+      inStock: true
     },
     {
       id: 4,
-      name: "Belstone Cream Porcelain 60x60cm",
-      description: "Premium porcelain tile with superior durability and water resistance. Perfect for kitchens, bathrooms, and high-traffic commercial areas.",
-      price: 38.50,
-      priceDisplay: "£38.50",
+      name: "Belstone Cream",
+      description: "Premium ceramic tile with superior durability. Available in 600x600mm format. Perfect for kitchens and bathrooms.",
+      price: 40,
+      priceDisplay: "£40",
       image: "https://images.unsplash.com/photo-1580398562556-d33329a0f29b",
       category: "Tiles",
       coverage: 1.44,
-      dimensions: "600mm x 600mm x 10mm",
+      dimensions: "600mm x 600mm",
       grade: "First Quality",
       finish: "Matt",
       installation: "Adhesive",
       warranty: "Lifetime",
-      inStock: true,
-      sale: false
+      inStock: true
     },
     {
       id: 5,
-      name: "Karndean Korlok Baltic Painted Oak",
-      description: "Luxury vinyl tile with authentic wood texture and K-Core technology. Waterproof and perfect for kitchens and bathrooms.",
-      price: 42.99,
-      priceDisplay: "£42.99",
-      image: "https://images.pexels.com/photos/7195891/pexels-photo-7195891.jpeg",
-      category: "LVT",
-      coverage: 3.34,
-      dimensions: "5mm x 178mm x 1219mm",
-      grade: "Commercial 34",
-      finish: "Textured",
-      installation: "Click System",
-      warranty: "Lifetime Residential",
-      inStock: true,
-      sale: false
-    },
-    {
-      id: 6,
-      name: "Amtico Signature Worn Ash",
-      description: "Premium luxury vinyl tile with authentic ash wood appearance. Perfect for creating stunning herringbone and parquet patterns.",
-      price: 67.50,
-      priceDisplay: "£67.50",
-      image: "https://images.pexels.com/photos/326862/pexels-photo-326862.jpeg",
-      category: "LVT",
-      coverage: 3.34,
-      dimensions: "2.5mm x 152mm x 914mm",
-      grade: "Heavy Commercial",
-      finish: "Smooth",
-      installation: "Adhesive",
-      warranty: "20 Years Commercial",
-      inStock: true,
-      sale: false
-    },
-    {
-      id: 7,
-      name: "Marazzi Evolutionmarble Golden Cream",
-      description: "Stunning porcelain tile with marble effect pattern. Perfect for creating luxurious bathroom and kitchen installations.",
-      price: 55.99,
-      originalPrice: 62.99,
-      priceDisplay: "£55.99",
-      image: "https://images.unsplash.com/photo-1592240989300-8673561d04b8",
+      name: "Balterio Astra Ivory",
+      description: "Premium ceramic tile with superior durability. Available in 600x600mm format. Perfect for kitchens and bathrooms.",
+      price: 35,
+      priceDisplay: "£35",
+      image: "https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg",
       category: "Tiles",
       coverage: 1.44,
-      dimensions: "600mm x 600mm x 9mm",
+      dimensions: "600mm x 600mm",
       grade: "First Quality",
       finish: "Polished",
       installation: "Adhesive",
       warranty: "Lifetime",
-      inStock: true,
-      sale: true
+      inStock: true
     },
     {
-      id: 8,
-      name: "Cormar Primo Plus Wool Carpet",
-      description: "Premium 80% wool carpet with luxury feel and appearance. Stain resistant treatment and 5-year guarantee.",
-      price: 28.99,
-      priceDisplay: "£28.99",
-      image: "https://images.unsplash.com/photo-1666868216570-a8f70adcc805",
-      category: "Carpets",
-      coverage: 1.0,
-      dimensions: "4m & 5m Width",
-      grade: "Heavy Domestic",
-      finish: "Twist Pile",
-      installation: "Gripper/Adhesive",
-      warranty: "5 Years",
-      inStock: true,
-      sale: false
-    },
-    {
-      id: 9,
-      name: "Engineered European Oak 20mm",
-      description: "Premium engineered oak flooring with 6mm wear layer. Suitable for underfloor heating and high-traffic areas.",
-      price: 89.99,
-      priceDisplay: "£89.99",
-      image: "https://images.unsplash.com/photo-1560184897-1ee3713708ee",
-      category: "Real Wood",
-      coverage: 2.2,
-      dimensions: "20mm x 180mm x 1800mm",
-      grade: "Prime Grade",
-      finish: "UV Lacquered",
-      installation: "Nail/Float/Glue",
-      warranty: "30 Years",
-      inStock: true,
-      sale: false
+      id: 6,
+      name: "Majestica Natural",
+      description: "Premium ceramic tile with superior durability. Available in 600x600mm format. Perfect for kitchens and bathrooms.",
+      price: 39,
+      priceDisplay: "£39",
+      image: "https://images.unsplash.com/photo-1592240989300-8673561d04b8",
+      category: "Tiles",
+      coverage: 1.44,
+      dimensions: "600mm x 600mm",
+      grade: "First Quality",
+      finish: "Natural",
+      installation: "Adhesive",
+      warranty: "Lifetime",
+      inStock: true
     }
   ];
 
@@ -604,18 +544,11 @@ export const FeaturedProducts = () => {
                   <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded text-sm font-medium">
                     {product.category}
                   </div>
-                  <div className="absolute top-4 right-4 space-y-2">
-                    {product.sale && (
-                      <div className="bg-red-600 text-white px-3 py-1 rounded text-sm font-medium">
-                        SALE
-                      </div>
-                    )}
-                    {product.inStock && (
-                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded text-sm font-medium">
-                        In Stock
-                      </div>
-                    )}
-                  </div>
+                  {product.inStock && (
+                    <div className="absolute top-4 right-4 bg-green-100 text-green-800 px-3 py-1 rounded text-sm font-medium">
+                      In Stock
+                    </div>
+                  )}
                 </div>
                 
                 <div className="p-6">
@@ -624,22 +557,16 @@ export const FeaturedProducts = () => {
                   
                   <div className="mb-4">
                     <div className="flex justify-between items-center mb-2">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-2xl font-bold text-green-600">{product.priceDisplay}</span>
-                        {product.originalPrice && (
-                          <span className="text-lg text-gray-500 line-through">£{product.originalPrice}</span>
-                        )}
-                      </div>
+                      <span className="text-2xl font-bold text-green-600">{product.priceDisplay}</span>
                       <span className="text-sm text-gray-600">Per m²</span>
                     </div>
                     <div className="text-sm text-gray-500 space-y-1">
                       <div>Dimensions: {product.dimensions}</div>
                       <div>Grade: {product.grade}</div>
-                      <div>Warranty: {product.warranty}</div>
                     </div>
                   </div>
                   
-                  {/* Price Calculator */}
+                  {/* Price Calculator - Matching Original Design */}
                   <div className="bg-gray-50 p-4 rounded-lg mb-4">
                     <div className="text-sm font-semibold text-gray-700 mb-3">Price Calculator</div>
                     
@@ -663,7 +590,7 @@ export const FeaturedProducts = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-600 mb-1">Packs needed:</label>
+                        <label className="block text-gray-600 mb-1">Packs area to m²:</label>
                         <div className="font-semibold text-gray-800">
                           {calculated.areaNeeded > 0 ? `${calculated.packsNeeded} packs` : '0 packs'}
                         </div>
@@ -680,14 +607,9 @@ export const FeaturedProducts = () => {
                     )}
                   </div>
                   
-                  <div className="space-y-2">
-                    <button className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
-                      Add to Quote
-                    </button>
-                    <button className="w-full border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors">
-                      Request Sample
-                    </button>
-                  </div>
+                  <button className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                    Price Calculator
+                  </button>
                 </div>
               </div>
             );
@@ -770,7 +692,7 @@ export const ServicesSection = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             From initial consultation to final installation, we provide comprehensive flooring services 
-            to ensure your complete satisfaction.
+            from our Bangor showroom to ensure your complete satisfaction.
           </p>
         </div>
 
@@ -807,22 +729,22 @@ export const InstallationSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <img 
                 src="https://images.unsplash.com/photo-1624574470112-46944be68409" 
-                alt="Professional flooring installation" 
+                alt="Professional flooring installation in Bangor" 
                 className="rounded-lg shadow-md h-48 w-full object-cover"
               />
               <img 
                 src="https://images.unsplash.com/photo-1622936063167-e32e9f955438" 
-                alt="Flooring installation process" 
+                alt="Flooring installation process in Northern Ireland" 
                 className="rounded-lg shadow-md h-48 w-full object-cover"
               />
               <img 
                 src="https://images.pexels.com/photos/5974053/pexels-photo-5974053.jpeg" 
-                alt="Installation tools" 
+                alt="Installation tools and materials" 
                 className="rounded-lg shadow-md h-48 w-full object-cover"
               />
               <img 
                 src="https://images.pexels.com/photos/1249610/pexels-photo-1249610.jpeg" 
-                alt="Professional installation work" 
+                alt="Professional installation work by TWFS" 
                 className="rounded-lg shadow-md h-48 w-full object-cover"
               />
             </div>
@@ -839,7 +761,7 @@ export const InstallationSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-1">Skilled Craftsmen</h4>
-                  <p className="text-gray-600">Over 20 years of experience in all types of flooring installation.</p>
+                  <p className="text-gray-600">Over 20 years of experience in all types of flooring installation across Northern Ireland.</p>
                 </div>
               </div>
               
@@ -897,32 +819,32 @@ export const GallerySection = () => {
   const galleryImages = [
     {
       image: "https://images.unsplash.com/photo-1560184897-1ee3713708ee",
-      title: "Modern Living Room",
+      title: "Modern Living Room in Bangor",
       category: "Real Wood"
     },
     {
       image: "https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg",
-      title: "Luxury Bathroom",
+      title: "Luxury Bathroom in North Down",
       category: "Tiles"
     },
     {
       image: "https://images.pexels.com/photos/18156022/pexels-photo-18156022.jpeg",
-      title: "Contemporary Kitchen",
+      title: "Contemporary Kitchen in Belfast",
       category: "LVT"
     },
     {
       image: "https://images.pexels.com/photos/3995842/pexels-photo-3995842.jpeg",
-      title: "Cozy Study",
+      title: "Cozy Study in Holywood",
       category: "Laminate"
     },
     {
       image: "https://images.unsplash.com/photo-1592240989300-8673561d04b8",
-      title: "Master Bathroom",
+      title: "Master Bathroom in Newtownards",
       category: "Tiles"
     },
     {
       image: "https://images.pexels.com/photos/105934/pexels-photo-105934.jpeg",
-      title: "Guest Bedroom",
+      title: "Guest Bedroom in Donaghadee",
       category: "Carpets"
     }
   ];
@@ -933,7 +855,7 @@ export const GallerySection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Gallery</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See our flooring solutions in beautiful homes across Northern Ireland.
+            See our flooring solutions in beautiful homes across North Down and Greater Belfast.
           </p>
         </div>
 
@@ -978,14 +900,14 @@ export const TestimonialsSection = () => {
     },
     {
       name: "Michael O'Brien",
-      location: "Ballymena, Co. Antrim",
+      location: "Holywood, Co. Down",
       rating: 5,
       text: "Fantastic service from start to finish. The showroom staff were knowledgeable and helpful, and the installation team did an excellent job with our tiles.",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150"
     },
     {
       name: "Emma Thompson",
-      location: "Belfast, Co. Antrim",
+      location: "Newtownards, Co. Down",
       rating: 5,
       text: "Great value for money and superb customer service. The laminate flooring looks amazing and was fitted perfectly. Would definitely use again.",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150"
@@ -998,7 +920,7 @@ export const TestimonialsSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Read what our satisfied customers have to say about our products and services.
+            Read what our satisfied customers across North Down have to say about our products and services.
           </p>
         </div>
 
@@ -1062,7 +984,7 @@ export const ContactSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Get in touch for a free consultation and quotation. We're here to help with all your flooring needs.
+            Get in touch for a free consultation and quotation. Visit our Bangor showroom or contact us for all your flooring needs.
           </p>
         </div>
 
@@ -1078,15 +1000,13 @@ export const ContactSection = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">Showroom Locations</h4>
-                  <div className="text-gray-600 space-y-2">
-                    <div>
-                      <div className="font-medium">Bangor Showroom</div>
-                      <div>1 Balloo Avenue, Bangor, BT19 7WP</div>
-                    </div>
-                    <div>
-                      <div className="font-medium">Ballymena Showroom</div>
-                      <div>30 Queen Street, Ballymena, BT42 2BD</div>
+                  <h4 className="font-semibold text-gray-800 mb-2">Showroom Location</h4>
+                  <div className="text-gray-600">
+                    <div className="font-medium">Bangor Showroom</div>
+                    <div>1 Balloo Avenue, Bangor</div>
+                    <div>BT19 7WP, Northern Ireland</div>
+                    <div className="mt-2 text-sm">
+                      <span className="font-medium">Private parking available</span>
                     </div>
                   </div>
                 </div>
@@ -1101,9 +1021,11 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-2">Phone</h4>
                   <div className="text-gray-600">
-                    <div>028 9122 5400</div>
-                    <div className="text-sm">Monday - Saturday: 9:00 AM - 6:00 PM</div>
-                    <div className="text-sm">Sunday: 1:00 PM - 5:00 PM</div>
+                    <div className="font-medium">028 9122 5400</div>
+                    <div className="text-sm mt-1">
+                      <div>Monday - Saturday: 9:00 AM - 6:00 PM</div>
+                      <div>Sunday: 1:00 PM - 5:00 PM</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1198,16 +1120,16 @@ export const ProductGrid = () => {
     // Real Wood Products
     {
       id: 1,
-      name: "European Oak Engineered 20mm",
-      price: 89.99,
+      name: "New Oak Herringbone",
+      price: 45,
       image: "https://images.unsplash.com/photo-1560185008-b033106af5c3",
       category: "Real Wood",
       inStock: true
     },
     {
       id: 2,
-      name: "American Walnut Solid 18mm",
-      price: 125.99,
+      name: "European Oak Engineered 20mm",
+      price: 89.99,
       image: "https://images.unsplash.com/photo-1560184897-1ee3713708ee",
       category: "Real Wood",
       inStock: true
@@ -1215,16 +1137,16 @@ export const ProductGrid = () => {
     // Laminate Products
     {
       id: 3,
-      name: "Quick-Step Impressive Ultra Grey Oak",
-      price: 32.99,
+      name: "Decora 8mm Lunar Grey",
+      price: 23.95,
       image: "https://images.unsplash.com/photo-1626551039948-ddd7e595fe06",
       category: "Laminate",
       inStock: true
     },
     {
       id: 4,
-      name: "Pergo Classic Plank Premium Grey Oak",
-      price: 28.99,
+      name: "Balterio Supreme 4V 8mm Flint Grey Oak",
+      price: 23.67,
       image: "https://images.unsplash.com/photo-1575204015311-0fe377370780",
       category: "Laminate",
       inStock: true
@@ -1232,23 +1154,31 @@ export const ProductGrid = () => {
     // Tile Products
     {
       id: 5,
-      name: "Porcelanosa Belstone Cream 60x60cm",
-      price: 45.99,
+      name: "Belstone Cream",
+      price: 40,
       image: "https://images.unsplash.com/photo-1580398562556-d33329a0f29b",
       category: "Tiles",
       inStock: true
     },
     {
       id: 6,
-      name: "Marazzi Evolutionmarble Golden Cream",
-      price: 55.99,
+      name: "Balterio Astra Ivory",
+      price: 35,
+      image: "https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg",
+      category: "Tiles",
+      inStock: true
+    },
+    {
+      id: 7,
+      name: "Majestica Natural",
+      price: 39,
       image: "https://images.unsplash.com/photo-1592240989300-8673561d04b8",
       category: "Tiles",
       inStock: true
     },
     // LVT Products
     {
-      id: 7,
+      id: 8,
       name: "Karndean Korlok Baltic Painted Oak",
       price: 42.99,
       image: "https://images.pexels.com/photos/7195891/pexels-photo-7195891.jpeg",
@@ -1256,7 +1186,7 @@ export const ProductGrid = () => {
       inStock: true
     },
     {
-      id: 8,
+      id: 9,
       name: "Amtico Signature Worn Ash",
       price: 67.50,
       image: "https://images.pexels.com/photos/326862/pexels-photo-326862.jpeg",
@@ -1265,7 +1195,7 @@ export const ProductGrid = () => {
     },
     // Carpet Products
     {
-      id: 9,
+      id: 10,
       name: "Cormar Primo Plus Wool Carpet",
       price: 28.99,
       image: "https://images.unsplash.com/photo-1666868216570-a8f70adcc805",
@@ -1293,7 +1223,7 @@ export const ProductGrid = () => {
         <div className="text-center mb-12">
           <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">All Products</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Browse our complete collection of premium flooring solutions.
+            Browse our complete collection of premium flooring solutions available at our Bangor showroom.
           </p>
         </div>
 
@@ -1371,7 +1301,7 @@ export const ProductGrid = () => {
   );
 };
 
-// Footer Component
+// Footer Component - REMOVED ALL BALLYMENA REFERENCES
 export const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-12">
@@ -1389,7 +1319,7 @@ export const Footer = () => {
             </div>
             <p className="text-gray-400 mb-4">
               Northern Ireland's premier flooring destination with over 20 years of experience 
-              in providing quality flooring solutions.
+              in providing quality flooring solutions from our Bangor showroom.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -1437,7 +1367,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - ONLY BANGOR */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <div className="space-y-4">
@@ -1450,9 +1380,7 @@ export const Footer = () => {
                     <div className="font-medium">Bangor Showroom</div>
                     <div>1 Balloo Avenue, Bangor</div>
                     <div>BT19 7WP, Northern Ireland</div>
-                    <div className="mt-2 font-medium">Ballymena Showroom</div>
-                    <div>30 Queen Street, Ballymena</div>
-                    <div>BT42 2BD, Northern Ireland</div>
+                    <div className="mt-1 text-sm">Private parking available</div>
                   </div>
                 </div>
               </div>
