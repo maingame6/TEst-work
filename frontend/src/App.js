@@ -3,12 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Components
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Categories from './components/Categories';
-import FeaturedProducts from './components/FeaturedProducts';
-import Footer from './components/Footer';
-import AboutSection from './components/AboutSection';
+import { Header, Hero, Categories, FeaturedProducts, Footer, AboutSection } from './components';
 
 const Home = () => {
   return (
