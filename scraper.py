@@ -41,20 +41,25 @@ class TilesWoodFloorScraper:
         chrome_options.add_argument("--allow-running-insecure-content")
         chrome_options.add_argument("--disable-web-security")
         chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+        chrome_options.binary_location = "/usr/bin/chromium"
         
         try:
-            # Use chromium instead of chrome
-            driver = webdriver.Chrome(options=chrome_options, executable_path="/usr/bin/chromium")
+            # Use Service for newer selenium versions
+            from selenium.webdriver.chrome.service import Service
+            from selenium.webdriver.common.by import By
+            from webdriver_manager.chrome import ChromeDriverManager
+            
+            service = Service(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=chrome_options)
             return driver
         except Exception as e:
-            print(f"Error setting up Chrome driver: {e}")
-            # Try with default chromium
+            print(f"Error setting up Chrome driver with service: {e}")
             try:
-                chrome_options.binary_location = "/usr/bin/chromium"
+                # Try without service for older selenium versions
                 driver = webdriver.Chrome(options=chrome_options)
                 return driver
             except Exception as e2:
-                print(f"Error setting up Chromium driver: {e2}")
+                print(f"Error setting up Chrome driver without service: {e2}")
                 return None
     
     def get_page_content(self, url, wait_time=10):
