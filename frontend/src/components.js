@@ -9,7 +9,7 @@ export const Header = () => {
       {/* Top green banner */}
       <div className="bg-green-600 text-white py-2 px-4 text-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <span className="flex items-center">
               <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
@@ -24,7 +24,7 @@ export const Header = () => {
               info@tileswoodfloorni.com
             </span>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <span>0% Finance Available</span>
             <span>Quote Match Guarantee</span>
           </div>
@@ -125,20 +125,20 @@ export const Hero = () => {
 
             {/* Trust badges */}
             <div className="flex flex-wrap gap-4 mb-8">
-              <div className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <div className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center text-sm">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6z"/>
                 </svg>
                 0% Finance
               </div>
-              <div className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <div className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center text-sm">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
                 Quote Match
               </div>
-              <div className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <div className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center text-sm">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
                 Expert Installation
@@ -168,7 +168,7 @@ export const Hero = () => {
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600">4.9</div>
                   <div className="text-sm text-gray-600">Rating</div>
-                  <div className="flex text-yellow-400">
+                  <div className="flex text-yellow-400 text-sm">
                     ★★★★★
                   </div>
                 </div>
@@ -327,61 +327,104 @@ export const Categories = () => {
   );
 };
 
-// Featured Products Component
+// Featured Products Component with Accurate Price Calculator
 export const FeaturedProducts = () => {
+  const [calculatorValues, setCalculatorValues] = useState({});
+
+  const handleCalculatorChange = (productId, field, value) => {
+    setCalculatorValues(prev => ({
+      ...prev,
+      [productId]: {
+        ...prev[productId],
+        [field]: value
+      }
+    }));
+  };
+
+  const getCalculatedValues = (productId, basePrice, coverage) => {
+    const values = calculatorValues[productId] || {};
+    const areaNeeded = parseFloat(values.areaNeeded) || 0;
+    const packsNeeded = Math.ceil(areaNeeded / coverage);
+    const totalCost = packsNeeded * basePrice;
+    
+    return {
+      packsNeeded,
+      totalCost: totalCost.toFixed(2),
+      areaNeeded
+    };
+  };
+
   const products = [
     {
+      id: 1,
       name: "New Oak Herringbone",
-      description: "Beautiful natural oak herringbone parquet flooring available in 8mm thickness. Perfect for traditional and contemporary spaces.",
-      price: "£45",
+      description: "Beautiful natural oak herringbone parquet flooring available in 18mm thickness. Perfect for traditional and contemporary spaces.",
+      price: 45,
+      priceDisplay: "£45",
       image: "https://images.unsplash.com/photo-1642678751244-296d18c4cab3",
       category: "Real Wood",
-      coverage: "Per sq m",
+      coverage: 2.5,
+      dimensions: "15mm x 70mm x 300mm",
       inStock: true
     },
     {
+      id: 2,
       name: "Decora 8mm Lunar Grey",
-      description: "High-quality 8mm laminate with realistic wood finish and AC3 wear rating. Suitable for high-traffic areas.",
-      price: "£23.95",
+      description: "High-quality 8mm laminate with realistic wood finish and AC3 wear rating. Perfect for the entire home.",
+      price: 23.95,
+      priceDisplay: "£23.95",
       image: "https://images.pexels.com/photos/32926476/pexels-photo-32926476.jpeg",
       category: "Laminate",
-      coverage: "Per sq m",
+      coverage: 2.1,
+      dimensions: "8mm x 193mm x 1380mm",
       inStock: true
     },
     {
+      id: 3,
       name: "Balterio Supreme 4V 8mm Flint Grey Oak",
-      description: "Premium laminate flooring with authentic grey oak pattern. Available in 194mm x 1288mm tile format with beveled edges.",
-      price: "£23.67",
+      description: "Premium laminate flooring with authentic grey oak pattern. Available in 194mm x 1286mm tile format with beveled edges.",
+      price: 23.67,
+      priceDisplay: "£23.67",
       image: "https://images.pexels.com/photos/269063/pexels-photo-269063.jpeg",
       category: "Laminate",
-      coverage: "Per sq m",
+      coverage: 2.162,
+      dimensions: "8mm x 194mm x 1286mm",
       inStock: true
     },
     {
+      id: 4,
       name: "Belstone Cream",
       description: "Premium ceramic tile with superior durability. Available in 600x600mm format. Perfect for kitchens and bathrooms.",
-      price: "£40",
+      price: 40,
+      priceDisplay: "£40",
       image: "https://images.pexels.com/photos/32921094/pexels-photo-32921094.jpeg",
       category: "Tiles",
-      coverage: "Per sq m",
+      coverage: 1.44,
+      dimensions: "600mm x 600mm",
       inStock: true
     },
     {
+      id: 5,
       name: "Balterio Astra Ivory",
       description: "Premium ceramic tile with superior durability. Available in 600x600mm format. Perfect for kitchens and bathrooms.",
-      price: "£35",
+      price: 35,
+      priceDisplay: "£35",
       image: "https://images.pexels.com/photos/32907825/pexels-photo-32907825.jpeg",
       category: "Tiles",
-      coverage: "Per sq m",
+      coverage: 1.44,
+      dimensions: "600mm x 600mm",
       inStock: true
     },
     {
+      id: 6,
       name: "Majestica Natural",
       description: "Premium ceramic tile with superior durability. Available in 600x600mm format. Perfect for kitchens and bathrooms.",
-      price: "£39",
+      price: 39,
+      priceDisplay: "£39",
       image: "https://images.unsplash.com/photo-1669044737496-4d1146ddcf85",
       category: "Tiles",
-      coverage: "Per sq m",
+      coverage: 1.44,
+      dimensions: "600mm x 600mm",
       inStock: true
     }
   ];
@@ -398,67 +441,89 @@ export const FeaturedProducts = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-48 overflow-hidden rounded-t-lg">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4 bg-green-600 text-white px-2 py-1 rounded text-sm">
-                  {product.category}
-                </div>
-                {product.inStock && (
-                  <div className="absolute top-4 right-4 bg-green-100 text-green-800 px-2 py-1 rounded text-sm">
-                    In Stock
+          {products.map((product) => {
+            const calculated = getCalculatedValues(product.id, product.price, product.coverage);
+            
+            return (
+              <div key={product.id} className="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded text-sm font-medium">
+                    {product.category}
                   </div>
-                )}
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4 text-sm">{product.description}</p>
+                  {product.inStock && (
+                    <div className="absolute top-4 right-4 bg-green-100 text-green-800 px-3 py-1 rounded text-sm font-medium">
+                      In Stock
+                    </div>
+                  )}
+                </div>
                 
-                <div className="border-t pt-4">
-                  <div className="flex justify-between items-center mb-4">
-                    <div>
-                      <span className="text-2xl font-bold text-green-600">{product.price}</span>
-                      <span className="text-sm text-gray-600 ml-1">{product.coverage}</span>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">{product.description}</p>
+                  
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-2xl font-bold text-green-600">{product.priceDisplay}</span>
+                      <span className="text-sm text-gray-600">Per sq m</span>
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      Dimensions: {product.dimensions}
                     </div>
                   </div>
                   
-                  <div className="space-y-3">
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-sm font-semibold text-gray-700 mb-2">Price Calculator</div>
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div>
-                          <label className="text-gray-600">Price per m²:</label>
-                          <span className="ml-2 font-semibold">{product.price}</span>
-                        </div>
-                        <div>
-                          <label className="text-gray-600">Coverage per pack:</label>
-                          <span className="ml-2 font-semibold">2.5 m²</span>
-                        </div>
-                        <div>
-                          <label className="text-gray-600">Area needed (m²):</label>
-                          <input type="number" className="ml-2 w-16 px-1 py-1 border rounded text-xs" placeholder="10" />
-                        </div>
-                        <div>
-                          <label className="text-gray-600">Packs area to m²:</label>
-                          <span className="ml-2 font-semibold">25 m²</span>
+                  {/* Price Calculator - Matching Original Design */}
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <div className="text-sm font-semibold text-gray-700 mb-3">Price Calculator</div>
+                    
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      <div>
+                        <label className="block text-gray-600 mb-1">Price per m²:</label>
+                        <div className="font-semibold text-gray-800">{product.priceDisplay}</div>
+                      </div>
+                      <div>
+                        <label className="block text-gray-600 mb-1">Coverage per pack:</label>
+                        <div className="font-semibold text-gray-800">{product.coverage} m²</div>
+                      </div>
+                      <div>
+                        <label className="block text-gray-600 mb-1">Area needed (m²):</label>
+                        <input 
+                          type="number" 
+                          className="w-full px-2 py-1 border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-green-500" 
+                          placeholder="0"
+                          value={calculatorValues[product.id]?.areaNeeded || ''}
+                          onChange={(e) => handleCalculatorChange(product.id, 'areaNeeded', e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-600 mb-1">Packs area to m²:</label>
+                        <div className="font-semibold text-gray-800">
+                          {calculated.areaNeeded > 0 ? `${calculated.packsNeeded} packs` : '0 packs'}
                         </div>
                       </div>
                     </div>
                     
-                    <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
-                      Price Calculator
-                    </button>
+                    {calculated.areaNeeded > 0 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Total Cost:</span>
+                          <span className="text-lg font-bold text-green-600">£{calculated.totalCost}</span>
+                        </div>
+                      </div>
+                    )}
                   </div>
+                  
+                  <button className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors mt-4 font-semibold">
+                    Price Calculator
+                  </button>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">
