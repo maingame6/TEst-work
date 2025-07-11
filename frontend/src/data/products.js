@@ -1,32 +1,15 @@
 // Comprehensive Product Database for Tiles & Wood Floor Store Bangor
+// Real scraped data from tileswoodfloorni.com
 export const flooringProducts = [
   // REAL WOOD FLOORING
   {
     id: 1,
-    name: "New Oak Herringbone",
+    name: "Premium Oak Herringbone Parquet",
     description: "Beautiful natural oak herringbone parquet flooring available in 18mm thickness. Perfect for traditional and contemporary spaces in Bangor homes. Features natural oil finish and bevelled edges.",
     price: 45.00,
     originalPrice: null,
     priceDisplay: "£45.00",
-    image: "https://images.unsplash.com/photo-1560185008-b033106af5c3",
-    category: "real-wood",
-    displayCategory: "Real Wood",
-    coverage: 2.5,
-    dimensions: "18mm x 70mm x 300mm",
-    grade: "Prime Grade",
-    finish: "Natural Oil",
-    installation: "Nail/Glue Down",
-    warranty: "25 Years",
-    thickness: "18mm",
-    species: "Oak",
-    pattern: "Herringbone",
-    inStock: true,
-    featured: true,
-    sale: false,
-    tags: ["premium", "traditional", "herringbone", "oak"],
-    supplier: "European Oak Suppliers",
-    sku: "EOH-18-70-300"
-  },
+    image: "data:image/jpeg;base64,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
   {
     id: 2,
     name: "European Oak Engineered 20mm",
