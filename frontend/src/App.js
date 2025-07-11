@@ -20,15 +20,17 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <Hero />
-      <AboutSection />
-      <Categories />
-      <FeaturedProducts />
-      <ServicesSection />
-      <InstallationSection />
-      <GallerySection />
-      <TestimonialsSection />
-      <ContactSection />
+      <main>
+        <Hero />
+        <AboutSection />
+        <Categories />
+        <FeaturedProducts />
+        <ServicesSection />
+        <InstallationSection />
+        <GallerySection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   );
@@ -38,7 +40,9 @@ const ProductsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <ProductGrid />
+      <main>
+        <ProductGrid />
+      </main>
       <Footer />
     </div>
   );
@@ -48,9 +52,11 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <AboutSection />
-      <ServicesSection />
-      <TestimonialsSection />
+      <main>
+        <AboutSection />
+        <ServicesSection />
+        <TestimonialsSection />
+      </main>
       <Footer />
     </div>
   );
@@ -60,7 +66,9 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <ContactSection />
+      <main>
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   );
