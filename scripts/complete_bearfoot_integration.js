@@ -369,7 +369,7 @@ export const getProductById = (id) => {
 async function main() {
   try {
     console.log('Starting comprehensive Bearfoot product creation...');
-    console.log('This will process ALL products from your pricing data\\n');
+    console.log('This will process ALL products from your pricing data\n');
     
     const products = await createAllBearfootProducts();
     console.log(\`\\n🎉 Successfully processed \${products.length} Bearfoot products!\`);
