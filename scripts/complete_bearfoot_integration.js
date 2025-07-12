@@ -276,7 +276,7 @@ async function createAllBearfootProducts() {
           category: "laminate",
           displayCategory: "Laminate",
           coverage: coverage,
-          dimensions: dimensions || \`\${thickness} thickness\`,
+          dimensions: dimensions || `${thickness} thickness`,
           grade: thickness === "12mm" ? "AC4 Commercial" : "AC3 Commercial",
           finish: finish,
           installation: "Click System",
