@@ -1415,6 +1415,133 @@ export const ProductGrid = () => {
   );
 };
 
+// Box Size Calculator Component
+export const BoxCalculator = ({ product, className = "" }) => {
+  const [area, setArea] = useState('');
+  const [wastePercentage, setWastePercentage] = useState(10);
+  const [calculation, setCalculation] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCalculate = () => {
+    if (area && parseFloat(area) > 0) {
+      const areaM2 = parseFloat(area);
+      const result = calculateTotalCost(areaM2, product.price, product.coverage, wastePercentage);
+      setCalculation(result);
+    }
+  };
+
+  const reset = () => {
+    setArea('');
+    setCalculation(null);
+  };
+
+  return (
+    <div className={`border border-gray-200 rounded-lg bg-gray-50 ${className}`}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-4 py-3 flex items-center justify-between text-left font-medium text-gray-700 hover:text-green-600 transition-colors"
+      >
+        <span className="flex items-center">
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+          Box Calculator
+        </span>
+        <svg 
+          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      
+      {isOpen && (
+        <div className="px-4 pb-4 space-y-3">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Room Area (m²)
+            </label>
+            <input
+              type="number"
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+              placeholder="Enter area in square meters"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500"
+              step="0.1"
+              min="0"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Waste Allowance ({wastePercentage}%)
+            </label>
+            <input
+              type="range"
+              min="5"
+              max="20"
+              value={wastePercentage}
+              onChange={(e) => setWastePercentage(parseInt(e.target.value))}
+              className="w-full"
+            />
+            <div className="flex justify-between text-xs text-gray-500">
+              <span>5%</span>
+              <span>20%</span>
+            </div>
+          </div>
+          
+          <div className="flex space-x-2">
+            <button
+              onClick={handleCalculate}
+              className="flex-1 bg-green-600 text-white py-2 px-3 rounded-md hover:bg-green-700 transition-colors font-medium text-sm"
+            >
+              Calculate
+            </button>
+            <button
+              onClick={reset}
+              className="px-3 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors font-medium text-sm"
+            >
+              Reset
+            </button>
+          </div>
+          
+          {calculation && (
+            <div className="mt-4 p-3 bg-white border border-green-200 rounded-md">
+              <h4 className="font-medium text-gray-800 mb-2">Calculation Results:</h4>
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Boxes needed:</span>
+                  <span className="font-medium">{calculation.boxesNeeded}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Total cost:</span>
+                  <span className="font-medium text-green-600">£{calculation.totalCost.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Total coverage:</span>
+                  <span className="font-medium">{calculation.totalArea.toFixed(2)}m²</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Waste area:</span>
+                  <span className="font-medium">{calculation.wasteArea.toFixed(2)}m²</span>
+                </div>
+              </div>
+              <div className="mt-2 pt-2 border-t border-gray-200">
+                <div className="text-xs text-gray-500">
+                  <div>Box coverage: {product.coverage}m² @ £{product.price}</div>
+                  <div>Price per m²: £{(product.price / product.coverage).toFixed(2)}</div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Footer Component with Enhanced SEO
 export const Footer = () => {
   return (
