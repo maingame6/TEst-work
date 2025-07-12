@@ -1,151 +1,122 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
-                </p>
-            </div>
-        </a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#059669" />
+  
+  <!-- SEO Meta Tags for Tiles and Wood Floor Store Bangor -->
+  <title>Tiles & Wood Floor Store Bangor | Premium Flooring Solutions Northern Ireland</title>
+  <meta name="description" content="Tiles & Wood Floor Store Bangor - Northern Ireland's premier flooring destination. Over 300+ floors & 700+ tiles. Professional installation, 0% finance, price match guarantee. Visit our Bangor showroom." />
+  <meta name="keywords" content="tiles Bangor, wood flooring Bangor, laminate flooring Northern Ireland, LVT Bangor, carpet Bangor, flooring store Bangor, professional flooring installation, tiles and wood floor store" />
+  <meta name="author" content="Tiles & Wood Floor Store" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Local Business Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tiles & Wood Floor Store",
+    "image": "https://images.pexels.com/photos/8146313/pexels-photo-8146313.jpeg",
+    "description": "Northern Ireland's premier flooring destination with over 20 years of experience in providing quality flooring solutions from our Bangor showroom.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Balloo Avenue",
+      "addressLocality": "Bangor",
+      "addressRegion": "County Down",
+      "postalCode": "BT19 7WP",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "54.6604",
+      "longitude": "-5.6688"
+    },
+    "telephone": "028 9122 5400",
+    "email": "info@tileswoodfloorni.com",
+    "url": "https://tileswoodfloorni.com",
+    "openingHours": ["Mo-Sa 09:00-18:00", "Su 13:00-17:00"],
+    "priceRange": "££",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Flooring Products",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Tiles",
+            "description": "Ceramic, porcelain, and natural stone tiles"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Laminate Flooring",
+            "description": "Durable laminate flooring with authentic wood appearance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Real Wood Flooring",
+            "description": "Solid and engineered wood flooring"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "LVT",
+            "description": "Luxury vinyl tiles and planks"
+          }
+        }
+      ]
+    },
+    "paymentAccepted": "Cash, Credit Card, 0% Finance",
+    "currenciesAccepted": "GBP",
+    "areaServed": ["Bangor", "Belfast", "Newtownards", "Holywood", "Donaghadee", "Northern Ireland"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "250"
+    }
+  }
+  </script>
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Tiles & Wood Floor Store Bangor | Premium Flooring Solutions" />
+  <meta property="og:description" content="Northern Ireland's premier flooring destination. Visit our Bangor showroom for tiles, wood, laminate, LVT & carpets. 0% finance available." />
+  <meta property="og:image" content="https://images.pexels.com/photos/8146313/pexels-photo-8146313.jpeg" />
+  <meta property="og:url" content="https://tileswoodfloorni.com" />
+  <meta property="og:type" content="business.business" />
+  <meta property="og:locale" content="en_GB" />
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tiles & Wood Floor Store Bangor" />
+  <meta name="twitter:description" content="Premium flooring solutions in Bangor, Northern Ireland" />
+  <meta name="twitter:image" content="https://images.pexels.com/photos/8146313/pexels-photo-8146313.jpeg" />
+  
+  <!-- Local Business Additional Meta -->
+  <meta name="geo.region" content="GB-NIR" />
+  <meta name="geo.placename" content="Bangor, Northern Ireland" />
+  <meta name="geo.position" content="54.6604;-5.6688" />
+  <meta name="ICBM" content="54.6604, -5.6688" />
+  
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://images.pexels.com">
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
 </html>

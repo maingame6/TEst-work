@@ -25,22 +25,10 @@ module.exports = {
         webpackConfig.watchOptions = {
           ignored: /.*/, // Ignore all files
         };
-      } else {
-        // Add ignored patterns to reduce watched directories
-        webpackConfig.watchOptions = {
-          ...webpackConfig.watchOptions,
-          ignored: [
-            '**/node_modules/**',
-            '**/.git/**',
-            '**/build/**',
-            '**/dist/**',
-            '**/coverage/**',
-            '**/public/**',
-          ],
-        };
       }
       
       return webpackConfig;
     },
   },
 };
+  
