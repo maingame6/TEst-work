@@ -74,26 +74,38 @@ class BearfootScraper:
         """Get category links from the main laminate page"""
         print("Getting category links from main laminate page...")
         
+        # Known category links from the crawl data
+        known_categories = [
+            "https://www.bearfoot.ie/floors/laminates/12mm/krono-quatro/",
+            "https://www.bearfoot.ie/floors/laminates/12mm/krono-king-floor/", 
+            "https://www.bearfoot.ie/floors/laminates/12mm/krono-sound/",
+            "https://www.bearfoot.ie/floors/laminates/12mm/xtreme-long-plank/",
+            "https://www.bearfoot.ie/floors/laminates/10mm/krono-marine/",
+            "https://www.bearfoot.ie/floors/laminates/10mm/krono-aroma/",
+            "https://www.bearfoot.ie/floors/laminates/10mm/xtreme-wide-and-long/",
+            "https://www.bearfoot.ie/floors/laminates/8mm/krono-sigma/",
+            "https://www.bearfoot.ie/floors/laminates/8mm/krono-exclusive/",
+            "https://www.bearfoot.ie/floors/laminates/8mm/krono-testa/"
+        ]
+        
+        # Also try to scrape for additional links
         content = self.get_page_content(self.laminate_url)
-        if not content:
-            return []
-            
-        soup = BeautifulSoup(content, 'html.parser')
-        category_links = []
+        additional_links = []
         
-        # Look for links that go to specific laminate categories
-        links = soup.find_all('a', href=True)
-        for link in links:
-            href = link.get('href', '')
-            if '/floors/laminates/' in href and href != self.laminate_url:
-                full_url = urljoin(self.base_url, href)
-                category_links.append(full_url)
-                
-        # Remove duplicates
-        category_links = list(set(category_links))
-        print(f"Found {len(category_links)} category links")
+        if content:
+            soup = BeautifulSoup(content, 'html.parser')
+            links = soup.find_all('a', href=True)
+            for link in links:
+                href = link.get('href', '')
+                if '/floors/laminates/' in href and href not in known_categories:
+                    full_url = urljoin(self.base_url, href)
+                    additional_links.append(full_url)
+                    
+        all_links = known_categories + additional_links
+        all_links = list(set(all_links))  # Remove duplicates
+        print(f"Found {len(all_links)} category links")
         
-        return category_links
+        return all_links
         
     def scrape_category_page(self, category_url: str) -> List[Dict]:
         """Scrape products from a specific category page"""
