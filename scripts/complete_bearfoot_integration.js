@@ -212,7 +212,7 @@ async function createAllBearfootProducts() {
   let id = 1;
   
   for (const line of lines) {
-    const parts = line.split('\\t');
+    const parts = line.split('\t');
     if (parts.length >= 6) {
       const brand = parts[0];
       const name = parts[1];
