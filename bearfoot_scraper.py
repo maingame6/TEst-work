@@ -70,136 +70,130 @@ class BearfootScraper:
         name = re.sub(r'^Bearfoot\s+', '', name, flags=re.IGNORECASE)
         return name.strip()
         
-    def scrape_laminate_products(self) -> List[Dict]:
-        """Scrape laminate products from Bearfoot website"""
-        print("Starting Bearfoot laminate scraping...")
+    def get_category_links(self) -> List[str]:
+        """Get category links from the main laminate page"""
+        print("Getting category links from main laminate page...")
         
         content = self.get_page_content(self.laminate_url)
         if not content:
-            print("Failed to get laminate page content")
+            return []
+            
+        soup = BeautifulSoup(content, 'html.parser')
+        category_links = []
+        
+        # Look for links that go to specific laminate categories
+        links = soup.find_all('a', href=True)
+        for link in links:
+            href = link.get('href', '')
+            if '/floors/laminates/' in href and href != self.laminate_url:
+                full_url = urljoin(self.base_url, href)
+                category_links.append(full_url)
+                
+        # Remove duplicates
+        category_links = list(set(category_links))
+        print(f"Found {len(category_links)} category links")
+        
+        return category_links
+        
+    def scrape_category_page(self, category_url: str) -> List[Dict]:
+        """Scrape products from a specific category page"""
+        print(f"Scraping category: {category_url}")
+        
+        content = self.get_page_content(category_url)
+        if not content:
             return []
             
         soup = BeautifulSoup(content, 'html.parser')
         products = []
         
-        # Look for different possible product containers
-        product_selectors = [
-            '.product-item',
-            '.product',
-            '.product-card',
-            '.product-grid-item',
-            '.item',
-            '.product-container',
-            '[data-product]',
-            '.woocommerce-LoopProduct-link',
-            '.product-inner',
-            'article'
-        ]
+        # Look for product images and names on the category page
+        img_elements = soup.find_all('img', src=True)
         
-        product_elements = []
-        for selector in product_selectors:
-            elements = soup.select(selector)
-            if elements:
-                print(f"Found {len(elements)} products using selector: {selector}")
-                product_elements = elements
-                break
-                
-        if not product_elements:
-            # Fallback: look for any elements with product images
-            print("No standard product containers found, looking for images...")
-            img_elements = soup.find_all('img', src=True)
+        for img in img_elements:
+            src = img.get('src', '')
+            alt = img.get('alt', '')
             
-            for img in img_elements:
-                src = img.get('src', '')
-                alt = img.get('alt', '')
+            # Skip logos, icons, etc.
+            if any(skip in src.lower() for skip in ['logo', 'icon', 'button', 'arrow', 'banner']):
+                continue
                 
-                # Skip logos, icons, etc.
-                if any(skip in src.lower() for skip in ['logo', 'icon', 'button', 'arrow']):
-                    continue
-                    
-                if any(skip in alt.lower() for skip in ['logo', 'icon', 'button', 'arrow']):
-                    continue
-                    
-                # Look for product-like images
-                if any(prod in src.lower() for prod in ['product', 'floor', 'laminate']) or \
-                   any(prod in alt.lower() for prod in ['laminate', 'floor', 'oak', 'wood']):
-                    
-                    product_name = alt or 'Unknown Product'
-                    product_name = self.clean_product_name(product_name)
-                    
+            # Look for product-like images
+            if any(prod in src.lower() for prod in ['floor', 'laminate', 'wood', 'oak', 'plank']):
+                product_name = alt or 'Unknown Product'
+                
+                # Try to get a better product name from nearby elements
+                parent = img.parent
+                if parent:
+                    # Look for text in the same container
+                    text_elements = parent.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span'])
+                    for text_elem in text_elements:
+                        text = text_elem.get_text(strip=True)
+                        if text and len(text) > len(product_name) and any(wood in text.lower() for wood in ['oak', 'beige', 'brown', 'grey', 'wood', 'plank']):
+                            product_name = text
+                            break
+                
+                product_name = self.clean_product_name(product_name)
+                
+                if len(product_name) > 3:  # Skip very short names
                     image_base64 = self.download_image_as_base64(src)
                     if image_base64:
                         products.append({
                             'name': product_name,
                             'image_url': src,
                             'image_base64': image_base64,
-                            'source': 'bearfoot_laminate'
+                            'source': f'bearfoot_category_{category_url.split("/")[-2] if category_url.endswith("/") else category_url.split("/")[-1]}',
+                            'category_url': category_url
                         })
-                        print(f"Added product: {product_name}")
-                        time.sleep(0.5)  # Be respectful
+                        print(f"  Added product: {product_name}")
+                        time.sleep(0.3)  # Be respectful
                         
-        else:
-            # Process structured product elements
-            for element in product_elements:
-                try:
-                    # Extract product name
-                    name_selectors = [
-                        '.product-title',
-                        '.product-name',
-                        'h2', 'h3', 'h4',
-                        '.title',
-                        '.name',
-                        'a[title]'
-                    ]
-                    
-                    product_name = None
-                    for name_sel in name_selectors:
-                        name_elem = element.select_one(name_sel)
-                        if name_elem:
-                            product_name = name_elem.get_text(strip=True) or name_elem.get('title', '')
-                            break
-                            
-                    if not product_name:
-                        continue
-                        
-                    product_name = self.clean_product_name(product_name)
-                    
-                    # Extract product image
-                    img_selectors = [
-                        'img',
-                        '.product-image img',
-                        '.product-img img',
-                        '.image img'
-                    ]
-                    
-                    image_url = None
-                    for img_sel in img_selectors:
-                        img_elem = element.select_one(img_sel)
-                        if img_elem:
-                            image_url = img_elem.get('src') or img_elem.get('data-src')
-                            break
-                            
-                    if not image_url:
-                        continue
-                        
-                    # Download and convert image
-                    image_base64 = self.download_image_as_base64(image_url)
-                    if image_base64:
-                        products.append({
-                            'name': product_name,
-                            'image_url': image_url,
-                            'image_base64': image_base64,
-                            'source': 'bearfoot_laminate'
-                        })
-                        print(f"Added product: {product_name}")
-                        time.sleep(0.5)  # Be respectful
-                        
-                except Exception as e:
-                    print(f"Error processing product element: {e}")
-                    continue
-                    
-        print(f"Successfully scraped {len(products)} products")
         return products
+        
+    def scrape_laminate_products(self) -> List[Dict]:
+        """Scrape laminate products from Bearfoot website"""
+        print("Starting Bearfoot laminate scraping...")
+        
+        all_products = []
+        
+        # First get category links
+        category_links = self.get_category_links()
+        
+        if not category_links:
+            print("No category links found, trying direct scraping...")
+            # Fallback to direct scraping
+            content = self.get_page_content(self.laminate_url)
+            if content:
+                soup = BeautifulSoup(content, 'html.parser')
+                img_elements = soup.find_all('img', src=True)
+                
+                for img in img_elements:
+                    src = img.get('src', '')
+                    alt = img.get('alt', '')
+                    
+                    if any(prod in src.lower() for prod in ['floor', 'laminate', 'wood', 'oak']):
+                        product_name = alt or 'Unknown Product'
+                        product_name = self.clean_product_name(product_name)
+                        
+                        if len(product_name) > 3:
+                            image_base64 = self.download_image_as_base64(src)
+                            if image_base64:
+                                all_products.append({
+                                    'name': product_name,
+                                    'image_url': src,
+                                    'image_base64': image_base64,
+                                    'source': 'bearfoot_main'
+                                })
+                                print(f"Added product: {product_name}")
+                                time.sleep(0.3)
+        else:
+            # Scrape each category page
+            for category_url in category_links[:10]:  # Limit to first 10 categories
+                category_products = self.scrape_category_page(category_url)
+                all_products.extend(category_products)
+                time.sleep(1)  # Be respectful between category requests
+                
+        print(f"Successfully scraped {len(all_products)} products total")
+        return all_products
         
     def save_products(self, products: List[Dict], filename: str = "bearfoot_laminate_products.json"):
         """Save scraped products to JSON file"""
