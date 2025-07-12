@@ -1,4 +1,4 @@
-// Enhanced Bearfoot Product Integration - ALL Products
+// COMPLETE Bearfoot Laminate Integration - ALL Products (8mm, 10mm, 12mm)
 const fs = require('fs');
 const https = require('https');
 
