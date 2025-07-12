@@ -372,7 +372,7 @@ async function main() {
     console.log('This will process ALL products from your pricing data\n');
     
     const products = await createAllBearfootProducts();
-    console.log(\`\\n🎉 Successfully processed \${products.length} Bearfoot products!\`);
+    console.log(`\n🎉 Successfully processed ${products.length} Bearfoot products!`);
     
     // Show statistics
     const priceRanges = {
