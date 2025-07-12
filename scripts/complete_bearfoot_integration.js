@@ -169,7 +169,7 @@ async function downloadImageAsBase64(url) {
 
 // Enhanced matching function
 function matchProductWithImage(productName) {
-  const normalized = productName.toUpperCase().replace(/[^\\w\\s]/g, ' ').trim();
+  const normalized = productName.toUpperCase().replace(/[^\w\s]/g, ' ').trim();
   
   // Direct matches first
   for (const [key, url] of Object.entries(productImages)) {
