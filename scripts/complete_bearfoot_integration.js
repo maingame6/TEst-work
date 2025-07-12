@@ -271,7 +271,7 @@ async function createAllBearfootProducts() {
           description: description,
           price: price,
           originalPrice: null,
-          priceDisplay: \`£\${price.toFixed(2)}\`,
+          priceDisplay: `£${price.toFixed(2)}`,
           image: productImage,
           category: "laminate",
           displayCategory: "Laminate",
