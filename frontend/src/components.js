@@ -1394,6 +1394,9 @@ export const ProductGrid = () => {
                     Request Sample
                   </button>
                 </div>
+                
+                {/* Box Calculator */}
+                <BoxCalculator product={product} className="mt-4" />
               </div>
             </div>
           ))}
