@@ -308,21 +308,21 @@ function generateProductsFile(products) {
   const featuredProducts = products.filter(p => p.featured);
   const saleProducts = products.filter(p => p.sale);
   
-  const fileContent = \`// Complete Bearfoot Laminate Collection - All Products with Real Images
+  const fileContent = `// Complete Bearfoot Laminate Collection - All Products with Real Images
 // Comprehensive catalog featuring authentic Bearfoot laminate flooring with matched images from bearfoot.ie
-export const flooringProducts = \${JSON.stringify(products, null, 2)};
+export const flooringProducts = ${JSON.stringify(products, null, 2)};
 
 // Product categories for filtering
 export const productCategories = [
-  { id: 'all', name: 'All Products', count: \${products.length} },
-  { id: 'laminate', name: 'Laminate', count: \${products.length} }
+  { id: 'all', name: 'All Products', count: ${products.length} },
+  { id: 'laminate', name: 'Laminate', count: ${products.length} }
 ];
 
 // Featured products for homepage showcase
-export const featuredProducts = \${JSON.stringify(featuredProducts, null, 2)};
+export const featuredProducts = ${JSON.stringify(featuredProducts, null, 2)};
 
 // Sale products with special pricing
-export const saleProducts = \${JSON.stringify(saleProducts, null, 2)};
+export const saleProducts = ${JSON.stringify(saleProducts, null, 2)};
 
 // Enhanced search function with multiple criteria
 export const searchProducts = (query, category = 'all') => {
@@ -360,7 +360,7 @@ export const filterByFinish = (finish) => {
 // Get product by ID
 export const getProductById = (id) => {
   return flooringProducts.find(product => product.id === parseInt(id));
-};\`;
+};`;
 
   return fileContent;
 }
