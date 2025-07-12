@@ -399,10 +399,10 @@ async function main() {
     const fileContent = generateProductsFile(products);
     fs.writeFileSync('../frontend/src/data/products.js', fileContent);
     
-    console.log(\`\\n✅ Successfully generated products.js with ALL \${products.length} Bearfoot products!\`);
-    console.log(\`   Featured products: \${products.filter(p => p.featured).length}\`);
-    console.log(\`   Sale products: \${products.filter(p => p.sale).length}\`);
-    console.log(\`   Base64 images: \${products.filter(p => p.image.startsWith('data:')).length}\`);
+    console.log(`\n✅ Successfully generated products.js with ALL ${products.length} Bearfoot products!`);
+    console.log(`   Featured products: ${products.filter(p => p.featured).length}`);
+    console.log(`   Sale products: ${products.filter(p => p.sale).length}`);
+    console.log(`   Base64 images: ${products.filter(p => p.image.startsWith('data:')).length}`);
     
   } catch (error) {
     console.error('Error:', error.message);
