@@ -123,14 +123,6 @@ async def get_products(
     
     return filtered_products
 
-@api_router.get("/products/{product_id}", response_model=Product)
-async def get_product(product_id: str):
-    """Get a specific product by ID"""
-    product = next((p for p in products_data if p.id == product_id), None)
-    if not product:
-        raise HTTPException(status_code=404, detail="Product not found")
-    return product
-
 @api_router.get("/products/categories")
 async def get_categories():
     """Get all available product categories"""
@@ -170,6 +162,14 @@ async def search_products(q: str = Query(..., description="Search query")):
             results.append(product)
     
     return {"products": results, "total": len(results), "query": q}
+
+@api_router.get("/products/{product_id}", response_model=Product)
+async def get_product(product_id: str):
+    """Get a specific product by ID"""
+    product = next((p for p in products_data if p.id == product_id), None)
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return product
 
 # Include the router in the main app
 app.include_router(api_router)
