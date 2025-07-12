@@ -389,10 +389,10 @@ async function main() {
     });
     
     // Show sample products
-    console.log('\\nSample products with enhanced matching:');
+    console.log('\nSample products with enhanced matching:');
     products.slice(0, 8).forEach(product => {
       const imageType = product.image.startsWith('data:') ? 'Base64' : 'URL';
-      console.log(\`  - \${product.name}: \${product.priceDisplay} (\${imageType})\`);
+      console.log(`  - ${product.name}: ${product.priceDisplay} (${imageType})`);
     });
     
     // Generate products.js file
