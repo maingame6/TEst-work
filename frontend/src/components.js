@@ -1676,5 +1676,6 @@ export default {
   TestimonialsSection,
   ContactSection,
   ProductGrid,
-  InstallationSection
+  InstallationSection,
+  BoxCalculator
 };
