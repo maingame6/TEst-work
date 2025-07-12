@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { flooringProducts, featuredProducts, productCategories, searchProducts } from './data/products';
+import { flooringProducts, featuredProducts, productCategories, searchProducts, calculateBoxesNeeded, calculateTotalCost } from './data/products';
 
 // Header Component with 2025 Design Trends
 export const Header = () => {
