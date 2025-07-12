@@ -383,9 +383,9 @@ async function main() {
       '£70+': products.filter(p => p.price >= 70).length
     };
     
-    console.log('\\nPrice distribution:');
+    console.log('\nPrice distribution:');
     Object.entries(priceRanges).forEach(([range, count]) => {
-      if (count > 0) console.log(\`  \${range}: \${count} products\`);
+      if (count > 0) console.log(`  ${range}: ${count} products`);
     });
     
     // Show sample products
