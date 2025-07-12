@@ -207,7 +207,7 @@ function matchProductWithImage(productName) {
 async function createAllBearfootProducts() {
   console.log('Creating ALL Bearfoot products with enhanced image matching...');
   
-  const lines = pricingData.trim().split('\\n');
+  const lines = pricingData.trim().split('\n');
   const products = [];
   let id = 1;
   
