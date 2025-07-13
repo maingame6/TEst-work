@@ -103,6 +103,9 @@ class BearfootAPITester:
             'description', 'features', 'in_stock', 'created_at'
         ]
         
+        # New optional fields for enhanced catalog
+        optional_fields = ['section', 'subsection', 'thickness', 'series', 'area_m2', 'product_code', 'dimensions']
+        
         missing_fields = []
         for field in required_fields:
             if field not in product:
@@ -111,8 +114,10 @@ class BearfootAPITester:
         if not missing_fields:
             # Validate image_base64 format
             if product.get('image_base64', '').startswith('data:image/'):
+                # Check for new enhanced fields
+                enhanced_fields_present = sum(1 for field in optional_fields if product.get(field))
                 self.log_test("Product Structure Validation", True, 
-                            "Product has all required fields and valid image data")
+                            f"Product has all required fields, valid image data, and {enhanced_fields_present} enhanced fields")
             else:
                 self.log_test("Product Structure Validation", False, 
                             "Product image_base64 field is not in correct format")
