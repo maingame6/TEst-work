@@ -67,7 +67,7 @@ class BearfootAPITester:
             self.log_test("API Health Check", False, f"Request failed: {str(e)}")
 
     def test_get_all_products(self):
-        """Test GET /api/products - should return all 27 products"""
+        """Test GET /api/products - should return all 159 products"""
         try:
             response = self.session.get(f"{self.base_url}/products")
             
@@ -75,7 +75,7 @@ class BearfootAPITester:
                 products = response.json()
                 
                 if isinstance(products, list):
-                    if len(products) == 27:
+                    if len(products) == 159:  # Updated for new catalog
                         self.log_test("Get All Products", True, 
                                     f"Retrieved {len(products)} products as expected")
                         
@@ -84,7 +84,7 @@ class BearfootAPITester:
                             self.validate_product_structure(products[0])
                     else:
                         self.log_test("Get All Products", False, 
-                                    f"Expected 27 products, got {len(products)}")
+                                    f"Expected 159 products, got {len(products)}")
                 else:
                     self.log_test("Get All Products", False, 
                                 "Response is not a list", type(products))
