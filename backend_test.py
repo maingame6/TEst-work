@@ -217,7 +217,7 @@ class BearfootAPITester:
     def test_product_data_validation(self):
         """Test product data integrity and validation for 159-product catalog"""
         try:
-            response = self.session.get(f"{self.base_url}/products")
+            response = self.session.get(f"{self.base_url}/products", params={"limit": 200})
             if response.status_code == 200:
                 products = response.json()
                 
