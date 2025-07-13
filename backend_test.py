@@ -131,10 +131,10 @@ class BearfootAPITester:
         # Test category filter
         try:
             response = self.session.get(f"{self.base_url}/products", 
-                                      params={"category": "Laminate Flooring"})
+                                      params={"category": "Laminates"})
             if response.status_code == 200:
                 products = response.json()
-                if all(p.get('category') == 'Laminate Flooring' for p in products):
+                if all(p.get('category') == 'Laminates' for p in products):
                     self.log_test("Category Filter", True, 
                                 f"Category filter returned {len(products)} products")
                 else:
