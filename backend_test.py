@@ -37,7 +37,7 @@ class BearfootAPITester:
         print()
 
     def test_api_health_check(self):
-        """Test the root endpoint /api/"""
+        """Test the root endpoint /api/ - should return 159 products"""
         try:
             response = self.session.get(f"{self.base_url}/")
             
@@ -47,7 +47,7 @@ class BearfootAPITester:
                 # Check if response has expected structure
                 if "message" in data and "total_products" in data:
                     expected_message = "Bearfoot Flooring API"
-                    expected_count = 27
+                    expected_count = 159  # Updated for new catalog
                     
                     if data["message"] == expected_message and data["total_products"] == expected_count:
                         self.log_test("API Health Check", True, 
