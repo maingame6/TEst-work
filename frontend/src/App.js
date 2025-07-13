@@ -25,14 +25,24 @@ const ProductCard = ({ product }) => {
           </div>
         )}
         <div className="absolute bottom-2 left-2 bg-blue-500 text-white px-2 py-1 rounded text-xs">
-          {product.product_type}
+          {product.section || product.product_type}
         </div>
+        {product.thickness && (
+          <div className="absolute bottom-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs">
+            {product.thickness}
+          </div>
+        )}
       </div>
       
       <div className="p-4">
-        <h3 className="font-semibold text-lg text-gray-800 mb-2 line-clamp-2">
-          {product.display_name}
-        </h3>
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="font-semibold text-lg text-gray-800 line-clamp-2 flex-1">
+            {product.display_name}
+          </h3>
+          <span className="text-xs text-gray-500 ml-2">
+            {product.brand} {product.series && `${product.series}`}
+          </span>
+        </div>
         
         <div className="flex justify-between items-center mb-2">
           <span className="text-2xl font-bold text-blue-600">
@@ -45,7 +55,7 @@ const ProductCard = ({ product }) => {
           )}
         </div>
         
-        <div className="flex gap-2 mb-3">
+        <div className="flex gap-2 mb-3 flex-wrap">
           {product.product_code && (
             <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
               {product.product_code}
@@ -56,6 +66,9 @@ const ProductCard = ({ product }) => {
               {product.dimensions}
             </span>
           )}
+          <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs">
+            {product.product_type}
+          </span>
         </div>
         
         <p className="text-gray-600 text-sm mb-3 line-clamp-3">
