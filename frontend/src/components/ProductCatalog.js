@@ -105,7 +105,9 @@ const ProductCatalog = () => {
       {/* Hero Header */}
       <div className="relative bg-gradient-to-r from-slate-900 via-gray-900 to-zinc-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-600/10"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"%3E%3Cpolygon fill="%23ffffff" fill-opacity="0.03" points="0,1000 1000,0 1000,1000"/%3E%3C/svg%3E')]"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent"></div>
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
