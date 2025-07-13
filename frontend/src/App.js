@@ -337,6 +337,9 @@ const Home = () => {
           filters={filters}
           onFilterChange={handleFilterChange}
           productTypes={productTypes}
+          sections={sections}
+          brands={brands}
+          thicknesses={thicknesses}
         />
 
         {/* Loading State */}
