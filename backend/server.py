@@ -61,11 +61,26 @@ def load_product_data():
     """Load product data from JSON file"""
     global products_data
     try:
+        # Try to load the ultimate catalog first
+        ultimate_file = ROOT_DIR.parent / 'bearfoot_ultimate_catalog.json'
+        if ultimate_file.exists():
+            with open(ultimate_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                products_data = [Product(**product) for product in data['products']]
+                print(f"Loaded {len(products_data)} products from ultimate catalog")
+                return
+        
+        # Fallback to other files
         products_file = ROOT_DIR.parent / 'bearfoot_final_products.json'
-        with open(products_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            products_data = [Product(**product) for product in data['products']]
-            print(f"Loaded {len(products_data)} products")
+        if products_file.exists():
+            with open(products_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                products_data = [Product(**product) for product in data['products']]
+                print(f"Loaded {len(products_data)} products from final catalog")
+                return
+                
+        print("No product data files found")
+        products_data = []
     except Exception as e:
         print(f"Error loading product data: {e}")
         products_data = []
