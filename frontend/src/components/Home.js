@@ -136,13 +136,13 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-20 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Contact Us
             </h2>
-            <p className="text-xl text-blue-100">
+            <p className="text-xl text-green-100">
               Visit our showrooms or get in touch
             </p>
           </div>
@@ -150,7 +150,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
               <h3 className="text-2xl font-semibold mb-4">Bangor Store</h3>
-              <div className="space-y-2 text-blue-100">
+              <div className="space-y-2 text-green-100">
                 <p>📍 Bangor, Northern Ireland</p>
                 <p>📞 02891225400</p>
                 <p>✉️ sales@tileswoodfloorni.com</p>
@@ -159,7 +159,7 @@ const Home = () => {
             
             <div className="text-center">
               <h3 className="text-2xl font-semibold mb-4">Ballymena Store</h3>
-              <div className="space-y-2 text-blue-100">
+              <div className="space-y-2 text-green-100">
                 <p>📍 Ballymena, Northern Ireland</p>
                 <p>📞 02891225400</p>
                 <p>✉️ sales@tileswoodfloorni.com</p>
