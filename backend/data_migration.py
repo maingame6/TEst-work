@@ -6,6 +6,12 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from models import Product
 from datetime import datetime
 from parse_products import get_twfsfitting_products_from_curl
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Load environment variables
+ROOT_DIR = Path(__file__).parent
+load_dotenv(ROOT_DIR / '.env')
 
 # Database connection
 mongo_url = os.environ['MONGO_URL']
