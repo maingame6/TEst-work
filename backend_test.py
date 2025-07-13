@@ -182,6 +182,38 @@ class BearfootAPITester:
         except Exception as e:
             self.log_test("Price Range Filter", False, f"Request failed: {str(e)}")
 
+        # Test search filter with common terms
+        search_terms = ["oak", "laminate", "12mm"]
+        for term in search_terms:
+            try:
+                response = self.session.get(f"{self.base_url}/products", 
+                                          params={"search": term})
+                if response.status_code == 200:
+                    products = response.json()
+                    if products:
+                        # Check if search term appears in product data
+                        found_in_results = any(
+                            term.lower() in str(p.get('name', '')).lower() or
+                            term.lower() in str(p.get('display_name', '')).lower() or
+                            term.lower() in str(p.get('description', '')).lower() or
+                            term.lower() in str(p.get('thickness', '')).lower()
+                            for p in products
+                        )
+                        if found_in_results:
+                            self.log_test(f"Search Filter - {term}", True, 
+                                        f"Found {len(products)} products for '{term}'")
+                        else:
+                            self.log_test(f"Search Filter - {term}", False, 
+                                        f"Search term '{term}' not found in results")
+                    else:
+                        self.log_test(f"Search Filter - {term}", True, 
+                                    f"No products found for '{term}' (valid result)")
+                else:
+                    self.log_test(f"Search Filter - {term}", False, 
+                                f"HTTP {response.status_code}: {response.text}")
+            except Exception as e:
+                self.log_test(f"Search Filter - {term}", False, f"Request failed: {str(e)}")
+
     def test_product_data_validation(self):
         """Test product data integrity and validation for 159-product catalog"""
         try:
