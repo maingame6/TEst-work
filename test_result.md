@@ -318,7 +318,12 @@ metadata:
 
 test_plan:
   current_focus:
-    - "All backend API endpoints tested and working"
+    - "Hero Section Display"
+    - "Stats Section Display"
+    - "Product Display and Cards"
+    - "Filter Functionality"
+    - "UI/UX Design Elements"
+    - "Navigation and Smooth Scrolling"
   stuck_tasks: []
   test_all: true
   test_priority: "high_first"
