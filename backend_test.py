@@ -69,7 +69,7 @@ class BearfootAPITester:
     def test_get_all_products(self):
         """Test GET /api/products - should return all 159 products"""
         try:
-            response = self.session.get(f"{self.base_url}/products")
+            response = self.session.get(f"{self.base_url}/products", params={"limit": 200})
             
             if response.status_code == 200:
                 products = response.json()
