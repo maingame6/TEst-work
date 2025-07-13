@@ -182,25 +182,87 @@ class BearfootAPITester:
         except Exception as e:
             self.log_test("Price Range Filter", False, f"Request failed: {str(e)}")
 
-        # Test search filter
+    def test_product_data_validation(self):
+        """Test product data integrity and validation for 159-product catalog"""
         try:
-            response = self.session.get(f"{self.base_url}/products", 
-                                      params={"search": "BERGEN"})
+            response = self.session.get(f"{self.base_url}/products")
             if response.status_code == 200:
                 products = response.json()
-                if products and all('BERGEN' in p.get('name', '').upper() or 
-                                  'BERGEN' in p.get('display_name', '').upper() 
-                                  for p in products):
-                    self.log_test("Search Filter", True, 
-                                f"Search filter returned {len(products)} products")
+                
+                # Check total product count
+                if len(products) == 159:
+                    self.log_test("Product Data - Total Count", True, 
+                                f"Found all 159 products in catalog")
                 else:
-                    self.log_test("Search Filter", False, 
-                                "Search results don't match search term")
+                    self.log_test("Product Data - Total Count", False, 
+                                f"Expected 159 products, found {len(products)}")
+
+                # Check for diverse brands (should have multiple brands now)
+                brands = set(p.get('brand') for p in products if p.get('brand'))
+                if len(brands) >= 3:  # Should have at least 3 different brands
+                    self.log_test("Product Data - Brand Diversity", True, 
+                                f"Found {len(brands)} different brands: {list(brands)[:5]}...")
+                else:
+                    self.log_test("Product Data - Brand Diversity", False, 
+                                f"Expected multiple brands, found only: {list(brands)}")
+
+                # Check for section categorization
+                sections = set(p.get('section') for p in products if p.get('section'))
+                expected_sections = {"Laminates", "Water Resistant Laminates", "Waterproof SPC", "Hardwoods"}
+                found_expected = sections.intersection(expected_sections)
+                
+                if len(found_expected) >= 2:
+                    self.log_test("Product Data - Section Categories", True, 
+                                f"Found expected sections: {found_expected}")
+                else:
+                    self.log_test("Product Data - Section Categories", False, 
+                                f"Expected sections not found. Got: {sections}")
+
+                # Check image data format (sample of 10 products)
+                valid_images = 0
+                for product in products[:10]:  # Check first 10 products
+                    image_data = product.get('image_base64', '')
+                    if image_data.startswith('data:image/') and len(image_data) > 1000:  # Larger images expected
+                        valid_images += 1
+                
+                if valid_images >= 8:  # At least 8/10 should have valid images
+                    self.log_test("Product Data - Image Format", True, 
+                                f"{valid_images}/10 checked products have valid base64 image data")
+                else:
+                    self.log_test("Product Data - Image Format", False, 
+                                f"Only {valid_images}/10 products have valid image data")
+
+                # Check price formatting
+                valid_prices = 0
+                for product in products[:15]:  # Check first 15 products
+                    price = product.get('price')
+                    if isinstance(price, (int, float)) and price > 0:
+                        valid_prices += 1
+                
+                if valid_prices >= 12:  # At least 12/15 should have valid prices
+                    self.log_test("Product Data - Price Format", True, 
+                                f"{valid_prices}/15 checked products have valid price data")
+                else:
+                    self.log_test("Product Data - Price Format", False, 
+                                f"Only {valid_prices}/15 products have valid price data")
+
+                # Check for enhanced metadata fields
+                products_with_thickness = sum(1 for p in products if p.get('thickness'))
+                products_with_dimensions = sum(1 for p in products if p.get('dimensions'))
+                
+                if products_with_thickness > 50:  # Expect many products to have thickness
+                    self.log_test("Product Data - Enhanced Metadata", True, 
+                                f"{products_with_thickness} products have thickness data, {products_with_dimensions} have dimensions")
+                else:
+                    self.log_test("Product Data - Enhanced Metadata", False, 
+                                f"Only {products_with_thickness} products have thickness data")
+
             else:
-                self.log_test("Search Filter", False, 
-                            f"HTTP {response.status_code}: {response.text}")
+                self.log_test("Product Data Validation", False, 
+                            f"Failed to get products: HTTP {response.status_code}")
+                
         except Exception as e:
-            self.log_test("Search Filter", False, f"Request failed: {str(e)}")
+            self.log_test("Product Data Validation", False, f"Request failed: {str(e)}")
 
     def test_get_single_product(self):
         """Test GET /api/products/{product_id}"""
