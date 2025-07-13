@@ -678,9 +678,9 @@ class BearfootAPITester:
             self.log_test("Performance Test - Search", False, f"Request failed: {str(e)}")
 
     def run_all_tests(self):
-        """Run all test suites"""
-        print("🧪 Starting Bearfoot Flooring API Test Suite")
-        print("=" * 60)
+        """Run all test suites for the enhanced 159-product catalog"""
+        print("🧪 Starting Bearfoot Flooring API Test Suite - Enhanced 159-Product Catalog")
+        print("=" * 80)
         print()
         
         # Run all tests
@@ -694,10 +694,15 @@ class BearfootAPITester:
         self.test_error_handling()
         self.test_product_data_validation()
         
+        # New enhanced tests
+        self.test_new_metadata_endpoints()
+        self.test_enhanced_filtering_system()
+        self.test_performance_with_large_dataset()
+        
         # Summary
-        print("=" * 60)
+        print("=" * 80)
         print("📊 TEST SUMMARY")
-        print("=" * 60)
+        print("=" * 80)
         
         passed = sum(1 for result in self.test_results if result["passed"])
         total = len(self.test_results)
