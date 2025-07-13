@@ -24,7 +24,7 @@ const Home = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Luxury Tiles &amp;
+                Luxury Tiles &amp; Premium Flooring
               </span>
               <br />
               <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
