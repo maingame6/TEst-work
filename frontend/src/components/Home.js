@@ -13,7 +13,9 @@ const Home = () => {
         </div>
         
         {/* Geometric Pattern Overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"%3E%3Cpolygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/%3E%3C/svg%3E')]"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent"></div>
+        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
