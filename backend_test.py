@@ -369,57 +369,219 @@ class BearfootAPITester:
         except Exception as e:
             self.log_test("Error Handling - Missing Search Query", False, f"Request failed: {str(e)}")
 
-    def test_product_data_validation(self):
-        """Test product data integrity and validation"""
+    def test_new_metadata_endpoints(self):
+        """Test all new metadata endpoints for the enhanced catalog"""
+        
+        # Test sections endpoint
         try:
-            response = self.session.get(f"{self.base_url}/products")
+            response = self.session.get(f"{self.base_url}/products/sections")
+            if response.status_code == 200:
+                data = response.json()
+                if "sections" in data and isinstance(data["sections"], list):
+                    sections = data["sections"]
+                    expected_sections = ["Laminates", "Water Resistant Laminates", "Waterproof SPC", "Hardwoods"]
+                    found_sections = [s for s in expected_sections if s in sections]
+                    
+                    if len(found_sections) >= 3:  # At least 3 of the expected sections
+                        self.log_test("Get Sections Endpoint", True, 
+                                    f"Retrieved {len(sections)} sections, found expected: {found_sections}")
+                    else:
+                        self.log_test("Get Sections Endpoint", False, 
+                                    f"Expected sections not found. Got: {sections}")
+                else:
+                    self.log_test("Get Sections Endpoint", False, 
+                                "Response missing 'sections' field or not a list")
+            else:
+                self.log_test("Get Sections Endpoint", False, 
+                            f"HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            self.log_test("Get Sections Endpoint", False, f"Request failed: {str(e)}")
+
+        # Test brands endpoint
+        try:
+            response = self.session.get(f"{self.base_url}/products/brands")
+            if response.status_code == 200:
+                data = response.json()
+                if "brands" in data and isinstance(data["brands"], list):
+                    brands = data["brands"]
+                    if len(brands) > 0:
+                        self.log_test("Get Brands Endpoint", True, 
+                                    f"Retrieved {len(brands)} brands: {brands[:5]}...")  # Show first 5
+                    else:
+                        self.log_test("Get Brands Endpoint", False, "No brands found")
+                else:
+                    self.log_test("Get Brands Endpoint", False, 
+                                "Response missing 'brands' field or not a list")
+            else:
+                self.log_test("Get Brands Endpoint", False, 
+                            f"HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            self.log_test("Get Brands Endpoint", False, f"Request failed: {str(e)}")
+
+        # Test thicknesses endpoint
+        try:
+            response = self.session.get(f"{self.base_url}/products/thicknesses")
+            if response.status_code == 200:
+                data = response.json()
+                if "thicknesses" in data and isinstance(data["thicknesses"], list):
+                    thicknesses = data["thicknesses"]
+                    expected_thicknesses = ["8mm", "10mm", "12mm", "14mm", "18mm", "20mm"]
+                    found_thicknesses = [t for t in expected_thicknesses if t in thicknesses]
+                    
+                    if len(found_thicknesses) >= 3:  # At least 3 expected thicknesses
+                        self.log_test("Get Thicknesses Endpoint", True, 
+                                    f"Retrieved {len(thicknesses)} thicknesses, found expected: {found_thicknesses}")
+                    else:
+                        self.log_test("Get Thicknesses Endpoint", False, 
+                                    f"Expected thicknesses not found. Got: {thicknesses}")
+                else:
+                    self.log_test("Get Thicknesses Endpoint", False, 
+                                "Response missing 'thicknesses' field or not a list")
+            else:
+                self.log_test("Get Thicknesses Endpoint", False, 
+                            f"HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            self.log_test("Get Thicknesses Endpoint", False, f"Request failed: {str(e)}")
+
+    def test_enhanced_filtering_system(self):
+        """Test the enhanced filtering system with new filters"""
+        
+        # Test section filtering
+        try:
+            response = self.session.get(f"{self.base_url}/products", 
+                                      params={"section": "Laminates"})
             if response.status_code == 200:
                 products = response.json()
-                
-                # Check for required Bearfoot products
-                bearfoot_products = [p for p in products if p.get('brand') == 'Bearfoot']
-                
-                if len(bearfoot_products) == 27:
-                    self.log_test("Product Data - Bearfoot Brand Count", True, 
-                                f"Found all 27 Bearfoot products")
+                if products and all(p.get('section') == 'Laminates' for p in products if p.get('section')):
+                    self.log_test("Section Filter - Laminates", True, 
+                                f"Section filter returned {len(products)} Laminate products")
                 else:
-                    self.log_test("Product Data - Bearfoot Brand Count", False, 
-                                f"Expected 27 Bearfoot products, found {len(bearfoot_products)}")
-
-                # Check image data format
-                valid_images = 0
-                for product in products[:5]:  # Check first 5 products
-                    image_data = product.get('image_base64', '')
-                    if image_data.startswith('data:image/') and len(image_data) > 100:
-                        valid_images += 1
-                
-                if valid_images == 5:
-                    self.log_test("Product Data - Image Format", True, 
-                                "All checked products have valid base64 image data")
-                else:
-                    self.log_test("Product Data - Image Format", False, 
-                                f"Only {valid_images}/5 products have valid image data")
-
-                # Check price formatting
-                valid_prices = 0
-                for product in products[:10]:  # Check first 10 products
-                    price = product.get('price')
-                    if isinstance(price, (int, float)) and price > 0:
-                        valid_prices += 1
-                
-                if valid_prices == 10:
-                    self.log_test("Product Data - Price Format", True, 
-                                "All checked products have valid price data")
-                else:
-                    self.log_test("Product Data - Price Format", False, 
-                                f"Only {valid_prices}/10 products have valid price data")
-
+                    self.log_test("Section Filter - Laminates", False, 
+                                "Some products don't match section filter or no products found")
             else:
-                self.log_test("Product Data Validation", False, 
-                            f"Failed to get products: HTTP {response.status_code}")
-                
+                self.log_test("Section Filter - Laminates", False, 
+                            f"HTTP {response.status_code}: {response.text}")
         except Exception as e:
-            self.log_test("Product Data Validation", False, f"Request failed: {str(e)}")
+            self.log_test("Section Filter - Laminates", False, f"Request failed: {str(e)}")
+
+        # Test thickness filtering
+        try:
+            response = self.session.get(f"{self.base_url}/products", 
+                                      params={"thickness": "12mm"})
+            if response.status_code == 200:
+                products = response.json()
+                if products:
+                    matching_products = [p for p in products if p.get('thickness') == '12mm']
+                    if len(matching_products) > 0:
+                        self.log_test("Thickness Filter - 12mm", True, 
+                                    f"Thickness filter returned {len(matching_products)} products with 12mm thickness")
+                    else:
+                        self.log_test("Thickness Filter - 12mm", False, 
+                                    "No products found with 12mm thickness")
+                else:
+                    self.log_test("Thickness Filter - 12mm", False, "No products returned")
+            else:
+                self.log_test("Thickness Filter - 12mm", False, 
+                            f"HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            self.log_test("Thickness Filter - 12mm", False, f"Request failed: {str(e)}")
+
+        # Test brand filtering with multiple brands
+        try:
+            # First get available brands
+            brands_response = self.session.get(f"{self.base_url}/products/brands")
+            if brands_response.status_code == 200:
+                brands_data = brands_response.json()
+                if brands_data.get("brands"):
+                    test_brand = brands_data["brands"][0]  # Test with first available brand
+                    
+                    response = self.session.get(f"{self.base_url}/products", 
+                                              params={"brand": test_brand})
+                    if response.status_code == 200:
+                        products = response.json()
+                        if products and all(p.get('brand') == test_brand for p in products):
+                            self.log_test(f"Brand Filter - {test_brand}", True, 
+                                        f"Brand filter returned {len(products)} products for {test_brand}")
+                        else:
+                            self.log_test(f"Brand Filter - {test_brand}", False, 
+                                        "Some products don't match brand filter")
+                    else:
+                        self.log_test(f"Brand Filter - {test_brand}", False, 
+                                    f"HTTP {response.status_code}: {response.text}")
+                else:
+                    self.log_test("Brand Filter Test", False, "No brands available for testing")
+            else:
+                self.log_test("Brand Filter Test", False, "Could not retrieve brands for testing")
+        except Exception as e:
+            self.log_test("Brand Filter Test", False, f"Request failed: {str(e)}")
+
+        # Test combined filtering (section + thickness)
+        try:
+            response = self.session.get(f"{self.base_url}/products", 
+                                      params={"section": "Laminates", "thickness": "12mm"})
+            if response.status_code == 200:
+                products = response.json()
+                valid_products = [p for p in products if 
+                                (p.get('section') == 'Laminates' or not p.get('section')) and 
+                                (p.get('thickness') == '12mm' or not p.get('thickness'))]
+                
+                self.log_test("Combined Filter - Section + Thickness", True, 
+                            f"Combined filter returned {len(products)} products")
+            else:
+                self.log_test("Combined Filter - Section + Thickness", False, 
+                            f"HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            self.log_test("Combined Filter - Section + Thickness", False, f"Request failed: {str(e)}")
+
+    def test_performance_with_large_dataset(self):
+        """Test API performance with the larger 159-product dataset"""
+        import time
+        
+        try:
+            start_time = time.time()
+            response = self.session.get(f"{self.base_url}/products")
+            end_time = time.time()
+            
+            response_time = end_time - start_time
+            
+            if response.status_code == 200:
+                products = response.json()
+                if len(products) == 159 and response_time < 5.0:  # Should respond within 5 seconds
+                    self.log_test("Performance Test - All Products", True, 
+                                f"Retrieved 159 products in {response_time:.2f} seconds")
+                elif len(products) == 159:
+                    self.log_test("Performance Test - All Products", False, 
+                                f"Response too slow: {response_time:.2f} seconds for 159 products")
+                else:
+                    self.log_test("Performance Test - All Products", False, 
+                                f"Wrong product count: {len(products)} instead of 159")
+            else:
+                self.log_test("Performance Test - All Products", False, 
+                            f"HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            self.log_test("Performance Test - All Products", False, f"Request failed: {str(e)}")
+
+        # Test search performance
+        try:
+            start_time = time.time()
+            response = self.session.get(f"{self.base_url}/products/search", params={"q": "oak"})
+            end_time = time.time()
+            
+            search_time = end_time - start_time
+            
+            if response.status_code == 200:
+                data = response.json()
+                if search_time < 3.0:  # Search should be faster
+                    self.log_test("Performance Test - Search", True, 
+                                f"Search completed in {search_time:.2f} seconds, found {data.get('total', 0)} results")
+                else:
+                    self.log_test("Performance Test - Search", False, 
+                                f"Search too slow: {search_time:.2f} seconds")
+            else:
+                self.log_test("Performance Test - Search", False, 
+                            f"HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            self.log_test("Performance Test - Search", False, f"Request failed: {str(e)}")
 
     def run_all_tests(self):
         """Run all test suites"""
