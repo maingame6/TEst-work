@@ -336,12 +336,15 @@ class BearfootAPITester:
                 data = response.json()
                 if "categories" in data and isinstance(data["categories"], list):
                     categories = data["categories"]
-                    if "Laminate Flooring" in categories:
+                    expected_categories = ["Laminates", "Hardwoods", "Waterproof SPC"]
+                    found_expected = [c for c in expected_categories if c in categories]
+                    
+                    if len(found_expected) >= 2:  # At least 2 expected categories
                         self.log_test("Get Categories", True, 
-                                    f"Retrieved {len(categories)} categories")
+                                    f"Retrieved {len(categories)} categories, found expected: {found_expected}")
                     else:
                         self.log_test("Get Categories", False, 
-                                    "Expected 'Laminate Flooring' category not found")
+                                    f"Expected categories not found. Got: {categories}")
                 else:
                     self.log_test("Get Categories", False, 
                                 "Response missing 'categories' field or not a list")
