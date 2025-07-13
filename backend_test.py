@@ -633,7 +633,7 @@ class BearfootAPITester:
         
         try:
             start_time = time.time()
-            response = self.session.get(f"{self.base_url}/products")
+            response = self.session.get(f"{self.base_url}/products", params={"limit": 200})
             end_time = time.time()
             
             response_time = end_time - start_time
