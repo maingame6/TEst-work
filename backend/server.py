@@ -47,6 +47,10 @@ class Product(BaseModel):
     product_type: str
     brand: str
     category: str
+    section: Optional[str] = None  # Add section field
+    subsection: Optional[str] = None  # Add subsection field
+    thickness: Optional[str] = None  # Add thickness field
+    series: Optional[str] = None  # Add series field
     image_url: str
     image_base64: str
     description: str
