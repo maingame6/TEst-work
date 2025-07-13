@@ -217,6 +217,9 @@ const ProductFilters = ({ filters, onFilterChange, productTypes, sections, brand
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [productTypes, setProductTypes] = useState([]);
+  const [sections, setSections] = useState([]);
+  const [brands, setBrands] = useState([]);
+  const [thicknesses, setThicknesses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState({});
@@ -242,12 +245,21 @@ const Home = () => {
     }
   };
 
-  const fetchProductTypes = async () => {
+  const fetchFilterOptions = async () => {
     try {
-      const response = await axios.get(`${API}/products/types`);
-      setProductTypes(response.data.product_types || []);
+      const [typesRes, sectionsRes, brandsRes, thicknessesRes] = await Promise.all([
+        axios.get(`${API}/products/types`),
+        axios.get(`${API}/products/sections`),
+        axios.get(`${API}/products/brands`),
+        axios.get(`${API}/products/thicknesses`)
+      ]);
+      
+      setProductTypes(typesRes.data.product_types || []);
+      setSections(sectionsRes.data.sections || []);
+      setBrands(brandsRes.data.brands || []);
+      setThicknesses(thicknessesRes.data.thicknesses || []);
     } catch (err) {
-      console.error('Error fetching product types:', err);
+      console.error('Error fetching filter options:', err);
     }
   };
 
@@ -270,7 +282,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchProducts();
-    fetchProductTypes();
+    fetchFilterOptions();
   }, []);
 
   if (error) {
