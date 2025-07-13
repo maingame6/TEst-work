@@ -110,7 +110,10 @@ async def get_status_checks():
 @api_router.get("/products", response_model=List[Product])
 async def get_products(
     category: Optional[str] = Query(None, description="Filter by category"),
+    section: Optional[str] = Query(None, description="Filter by section"),
     product_type: Optional[str] = Query(None, description="Filter by product type"),
+    brand: Optional[str] = Query(None, description="Filter by brand"),
+    thickness: Optional[str] = Query(None, description="Filter by thickness"),
     min_price: Optional[float] = Query(None, description="Minimum price filter"),
     max_price: Optional[float] = Query(None, description="Maximum price filter"),
     search: Optional[str] = Query(None, description="Search in product names"),
@@ -121,10 +124,19 @@ async def get_products(
     
     # Apply filters
     if category:
-        filtered_products = [p for p in filtered_products if p.category.lower() == category.lower()]
+        filtered_products = [p for p in filtered_products if p.category and p.category.lower() == category.lower()]
+    
+    if section:
+        filtered_products = [p for p in filtered_products if p.section and p.section.lower() == section.lower()]
     
     if product_type:
         filtered_products = [p for p in filtered_products if p.product_type.lower() == product_type.lower()]
+    
+    if brand:
+        filtered_products = [p for p in filtered_products if p.brand.lower() == brand.lower()]
+        
+    if thickness:
+        filtered_products = [p for p in filtered_products if p.thickness and p.thickness.lower() == thickness.lower()]
     
     if min_price is not None:
         filtered_products = [p for p in filtered_products if p.price >= min_price]
