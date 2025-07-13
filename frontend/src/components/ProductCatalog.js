@@ -30,7 +30,7 @@ const ProductCatalog = () => {
         }
       });
       
-      const response = await axios.get(`${API}/products?${params}`);
+      const response = await axios.get(`${API}/products?${params}&limit=1000`);
       setProducts(response.data);
       setError(null);
     } catch (err) {
@@ -81,22 +81,22 @@ const ProductCatalog = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-600"></div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
         <div className="text-red-600 text-xl">{error}</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-100">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -117,7 +117,7 @@ const ProductCatalog = () => {
                 value={filters.search}
                 onChange={(e) => handleFilterChange('search', e.target.value)}
                 placeholder="Search products..."
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
             <div>
@@ -125,7 +125,7 @@ const ProductCatalog = () => {
               <select
                 value={filters.supplier}
                 onChange={(e) => handleFilterChange('supplier', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               >
                 <option value="">All Suppliers</option>
                 {suppliers.map(supplier => (
@@ -138,7 +138,7 @@ const ProductCatalog = () => {
               <select
                 value={filters.category}
                 onChange={(e) => handleFilterChange('category', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               >
                 <option value="">All Categories</option>
                 {categories.map(category => (
@@ -153,7 +153,7 @@ const ProductCatalog = () => {
                 value={filters.min_price}
                 onChange={(e) => handleFilterChange('min_price', e.target.value)}
                 placeholder="£0"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
             <div>
@@ -163,7 +163,7 @@ const ProductCatalog = () => {
                 value={filters.max_price}
                 onChange={(e) => handleFilterChange('max_price', e.target.value)}
                 placeholder="£1000"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
           </div>
@@ -180,54 +180,7 @@ const ProductCatalog = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map(product => (
-            <div key={product.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-200">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                {product.image_base64 ? (
-                  <img 
-                    src={`data:image/jpeg;base64,${product.image_base64}`} 
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="text-gray-400 text-center">
-                    <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span className="text-sm">No Image</span>
-                  </div>
-                )}
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-lg mb-2 line-clamp-2">{product.name}</h3>
-                <p className="text-gray-600 text-sm mb-2">{product.supplier}</p>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-2xl font-bold text-blue-600">£{product.price}</span>
-                  <span className={`px-2 py-1 rounded-full text-xs ${product.in_stock ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-                    {product.in_stock ? 'In Stock' : 'Out of Stock'}
-                  </span>
-                </div>
-                <div className="text-sm text-gray-500 mb-2">
-                  <span className="inline-block bg-gray-100 rounded-full px-2 py-1 mr-2">
-                    {product.category}
-                  </span>
-                  <span>SKU: {product.sku}</span>
-                </div>
-                {product.tile_size && (
-                  <div className="text-sm text-gray-500 mb-2">
-                    Size: {product.tile_size}
-                  </div>
-                )}
-                {product.box_size && (
-                  <div className="text-sm text-gray-500 mb-2">
-                    Box Size: {product.box_size}m²
-                  </div>
-                )}
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
-                <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200">
-                  View Details
-                </button>
-              </div>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
@@ -238,6 +191,119 @@ const ProductCatalog = () => {
             <p className="text-gray-500">Try adjusting your filters or search terms</p>
           </div>
         )}
+      </div>
+    </div>
+  );
+};
+
+// Product Card Component matching the reference design
+const ProductCard = ({ product }) => {
+  const [calculatorArea, setCalculatorArea] = useState('');
+  const [calculatedPrice, setCalculatedPrice] = useState(null);
+
+  const calculatePrice = () => {
+    if (calculatorArea && product.box_size) {
+      const area = parseFloat(calculatorArea);
+      const boxesNeeded = Math.ceil(area / product.box_size);
+      const totalPrice = boxesNeeded * product.price;
+      setCalculatedPrice(totalPrice.toFixed(2));
+    } else {
+      alert('Please enter a valid area');
+    }
+  };
+
+  // Generate placeholder images based on category
+  const getPlaceholderImage = (category) => {
+    const images = {
+      'Laminate': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop',
+      'LVT': 'https://images.unsplash.com/photo-1581618047521-b0dbaef3e272?w=400&h=300&fit=crop',
+      'Tiles': 'https://images.unsplash.com/photo-1615971677499-5467cbab01c2?w=400&h=300&fit=crop',
+      'Various': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop'
+    };
+    return images[category] || images['Various'];
+  };
+
+  return (
+    <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition duration-200">
+      <div className="h-48 bg-gray-200 overflow-hidden">
+        {product.image_base64 ? (
+          <img 
+            src={`data:image/jpeg;base64,${product.image_base64}`} 
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img 
+            src={getPlaceholderImage(product.category)} 
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
+        )}
+      </div>
+      
+      <div className="p-4">
+        {/* Product Title */}
+        <h3 className="font-semibold text-lg mb-2 line-clamp-2 text-gray-900">{product.name}</h3>
+        
+        {/* Product Details */}
+        <div className="text-sm text-gray-600 mb-3 space-y-1">
+          <div className="flex justify-between">
+            <span>{product.category}</span>
+            <span className={`px-2 py-1 rounded-full text-xs ${product.in_stock ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+              {product.in_stock ? 'In Stock' : 'Out of Stock'}
+            </span>
+          </div>
+          {product.tile_size && (
+            <div>Size: {product.tile_size}</div>
+          )}
+          {product.box_size && (
+            <div>Box Size: {product.box_size}m²</div>
+          )}
+          <div>Thickness: 8mm</div>
+          <div>Finish: Matt</div>
+        </div>
+        
+        {/* Price */}
+        <div className="text-2xl font-bold text-green-600 mb-4">
+          £{product.price.toFixed(2)}/m²
+        </div>
+        
+        {/* Price Calculator */}
+        <div className="border-t pt-4">
+          <div className="mb-3">
+            <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            <span className="text-sm font-medium">Calculate Price</span>
+          </div>
+          
+          <div className="flex gap-2">
+            <input
+              type="number"
+              value={calculatorArea}
+              onChange={(e) => setCalculatorArea(e.target.value)}
+              placeholder="Area (m²)"
+              className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+            <button
+              onClick={calculatePrice}
+              className="px-4 py-2 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition duration-200"
+            >
+              Calculate
+            </button>
+          </div>
+          
+          {calculatedPrice && (
+            <div className="mt-2 text-center">
+              <div className="text-lg font-bold text-green-600">
+                Total: £{calculatedPrice}
+              </div>
+              <div className="text-xs text-gray-500">
+                For {calculatorArea}m² area
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
