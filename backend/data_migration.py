@@ -5,13 +5,7 @@ import os
 from motor.motor_asyncio import AsyncIOMotorClient
 from models import Product
 from datetime import datetime
-from parse_products import get_twfsfitting_products_from_curl
-from dotenv import load_dotenv
-from pathlib import Path
-
-# Load environment variables
-ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / '.env')
+from parse_all_products import parse_all_twfsfitting_products
 
 # Database connection
 mongo_url = os.environ['MONGO_URL']
@@ -19,9 +13,9 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 def parse_twfsfitting_products():
-    """Parse products from the scraped twfsfitting.co.uk data"""
+    """Parse ALL products from the scraped twfsfitting.co.uk data"""
     try:
-        products_data = get_twfsfitting_products_from_curl()
+        products_data = parse_all_twfsfitting_products()
         products = []
         
         for product_data in products_data:
