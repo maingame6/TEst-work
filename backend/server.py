@@ -154,6 +154,24 @@ async def get_products(
     
     return filtered_products
 
+@api_router.get("/products/sections")
+async def get_sections():
+    """Get all available product sections"""
+    sections = list(set(p.section for p in products_data if p.section))
+    return {"sections": sections}
+
+@api_router.get("/products/brands")
+async def get_brands():
+    """Get all available brands"""
+    brands = list(set(p.brand for p in products_data))
+    return {"brands": brands}
+
+@api_router.get("/products/thicknesses")
+async def get_thicknesses():
+    """Get all available thicknesses"""
+    thicknesses = list(set(p.thickness for p in products_data if p.thickness))
+    return {"thicknesses": thicknesses}
+
 @api_router.get("/products/categories")
 async def get_categories():
     """Get all available product categories"""
