@@ -13,7 +13,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-6">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-blue-600">
+            <Link to="/" className="text-2xl font-bold text-green-600">
               Tiles & Wood Floor Store
             </Link>
           </div>
@@ -22,24 +22,24 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/"
-              className={`text-gray-700 hover:text-blue-600 transition duration-200 ${
-                isActive('/') ? 'text-blue-600 font-semibold' : ''
+              className={`text-gray-700 hover:text-green-600 transition duration-200 ${
+                isActive('/') ? 'text-green-600 font-semibold' : ''
               }`}
             >
               Home
             </Link>
             <Link
               to="/products"
-              className={`text-gray-700 hover:text-blue-600 transition duration-200 ${
-                isActive('/products') ? 'text-blue-600 font-semibold' : ''
+              className={`text-gray-700 hover:text-green-600 transition duration-200 ${
+                isActive('/products') ? 'text-green-600 font-semibold' : ''
               }`}
             >
               Products
             </Link>
             <Link
               to="/admin"
-              className={`text-gray-700 hover:text-blue-600 transition duration-200 ${
-                isActive('/admin') ? 'text-blue-600 font-semibold' : ''
+              className={`text-gray-700 hover:text-green-600 transition duration-200 ${
+                isActive('/admin') ? 'text-green-600 font-semibold' : ''
               }`}
             >
               Admin
@@ -50,7 +50,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+              className="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600"
             >
               <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -69,8 +69,8 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"
-                className={`text-gray-700 hover:text-blue-600 transition duration-200 ${
-                  isActive('/') ? 'text-blue-600 font-semibold' : ''
+                className={`text-gray-700 hover:text-green-600 transition duration-200 ${
+                  isActive('/') ? 'text-green-600 font-semibold' : ''
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -78,8 +78,8 @@ const Header = () => {
               </Link>
               <Link
                 to="/products"
-                className={`text-gray-700 hover:text-blue-600 transition duration-200 ${
-                  isActive('/products') ? 'text-blue-600 font-semibold' : ''
+                className={`text-gray-700 hover:text-green-600 transition duration-200 ${
+                  isActive('/products') ? 'text-green-600 font-semibold' : ''
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -87,8 +87,8 @@ const Header = () => {
               </Link>
               <Link
                 to="/admin"
-                className={`text-gray-700 hover:text-blue-600 transition duration-200 ${
-                  isActive('/admin') ? 'text-blue-600 font-semibold' : ''
+                className={`text-gray-700 hover:text-green-600 transition duration-200 ${
+                  isActive('/admin') ? 'text-green-600 font-semibold' : ''
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
