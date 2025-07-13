@@ -91,12 +91,28 @@ const ProductCard = ({ product }) => {
 };
 
 // Filter Component
-const ProductFilters = ({ filters, onFilterChange, productTypes }) => {
+const ProductFilters = ({ filters, onFilterChange, productTypes, sections, brands, thicknesses }) => {
   return (
     <div className="bg-white p-4 rounded-lg shadow-md mb-6">
       <h3 className="font-semibold text-lg mb-4">Filters</h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Section
+          </label>
+          <select
+            value={filters.section || ''}
+            onChange={(e) => onFilterChange('section', e.target.value)}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+          >
+            <option value="">All Sections</option>
+            {sections.map(section => (
+              <option key={section} value={section}>{section}</option>
+            ))}
+          </select>
+        </div>
+        
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Product Type
@@ -113,6 +129,53 @@ const ProductFilters = ({ filters, onFilterChange, productTypes }) => {
           </select>
         </div>
         
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Brand
+          </label>
+          <select
+            value={filters.brand || ''}
+            onChange={(e) => onFilterChange('brand', e.target.value)}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+          >
+            <option value="">All Brands</option>
+            {brands.map(brand => (
+              <option key={brand} value={brand}>{brand}</option>
+            ))}
+          </select>
+        </div>
+        
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Thickness
+          </label>
+          <select
+            value={filters.thickness || ''}
+            onChange={(e) => onFilterChange('thickness', e.target.value)}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+          >
+            <option value="">All Thicknesses</option>
+            {thicknesses.map(thickness => (
+              <option key={thickness} value={thickness}>{thickness}</option>
+            ))}
+          </select>
+        </div>
+        
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Search
+          </label>
+          <input
+            type="text"
+            value={filters.search || ''}
+            onChange={(e) => onFilterChange('search', e.target.value)}
+            placeholder="Search products..."
+            className="w-full border border-gray-300 rounded px-3 py-2"
+          />
+        </div>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Min Price (€)
@@ -135,19 +198,6 @@ const ProductFilters = ({ filters, onFilterChange, productTypes }) => {
             value={filters.max_price || ''}
             onChange={(e) => onFilterChange('max_price', e.target.value)}
             placeholder="1000"
-            className="w-full border border-gray-300 rounded px-3 py-2"
-          />
-        </div>
-        
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Search
-          </label>
-          <input
-            type="text"
-            value={filters.search || ''}
-            onChange={(e) => onFilterChange('search', e.target.value)}
-            placeholder="Search products..."
             className="w-full border border-gray-300 rounded px-3 py-2"
           />
         </div>
