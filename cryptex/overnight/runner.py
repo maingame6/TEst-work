@@ -325,6 +325,21 @@ def main():
     st["trade_profile"]="ACTIVE_PAPER_EXPLORATION_1.2_PERCENT_MAX"
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
+    # Wide, READ-ONLY market radar. No extra symbols become tradable.
+    # Availability failures never change trade fills or the accounting ledger.
+    try:
+        from market_radar import refresh as refresh_market_radar
+        radar_report=refresh_market_radar(DATA,st["last_run"])
+        st["wide_market_radar"]={"status":radar_report.get("status"),
+              "requested":radar_report.get("requested_market_count"),
+              "observed":radar_report.get("observed_market_count"),
+              "last_poll":radar_report.get("polled_at"),
+              "monitor_only":True}
+    except Exception as exc:
+        st["wide_market_radar"]={"status":"FAILED",
+              "error":type(exc).__name__+": "+str(exc)[:150],
+              "monitor_only":True}
+        event(st,"RADAR_ERROR",st["wide_market_radar"]["error"])
     # Money ledger is mandatory for the overnight experiment. If either
     # portfolio cannot be reconciled, fail the GitHub job rather than silently
     # reporting a fictitious or incomplete combined balance.
