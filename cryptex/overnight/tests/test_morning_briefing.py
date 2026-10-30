@@ -95,6 +95,34 @@ class BriefingTests(unittest.TestCase):
             self.assertEqual(report["money"]["equity"],210.)
             self.assertIn("Distillation", (folder/"morning_briefing.md").read_text().title())
 
+    def test_wide_market_radar_read_only_and_staleness_explicit(self):
+        main,shadow,money=self.baseline()
+        with tempfile.TemporaryDirectory() as folder:
+            path=pathlib.Path(folder)
+            item={"symbol":"BTC","sector":"Majors",
+                  "move_from_utc_open_pct":2.0,"bid_ask_spread_bps":2.5,
+                  "approx_turnover_24h_usd":1000000}
+            report={"status":"OK","polled_at":money["generated_at"],
+                "requested_market_count":70,"confirmed_usd_pairs":61,
+                "observed_market_count":1,"top_movers_up":[item],
+                "top_movers_down":[item],
+                "highest_approx_24h_usd_turnover":[item],
+                "sectors":{"Majors":{"available":1,"requested":14,"rising":1,
+                         "falling":0,"median_move_from_utc_open_pct":2.0}},
+                "crypto_breadth_positive_pct":100,
+                "up_since_utc_open":1,"down_since_utc_open":0,
+                "global_crypto_context":{"status":"UNAVAILABLE"}}
+            (path/"market_radar.json").write_text(json.dumps(report))
+            brief,_=B.make(main,shadow,money,{},path,{})
+            self.assertEqual(brief["wide_market_radar"]["status"],"FRESH")
+            self.assertEqual(brief["wide_market_radar"]["newly_tradable_pairs"],0)
+            self.assertIn("Biggest risers",B.render(brief))
+            report["polled_at"]="2026-10-29T21:35:00+00:00"
+            (path/"market_radar.json").write_text(json.dumps(report))
+            stale,_=B.make(main,shadow,money,{},path,{})
+            self.assertEqual(stale["wide_market_radar"]["status"],"UNAVAILABLE_OR_STALE")
+            self.assertEqual(stale["wide_market_radar"]["gainers"],[])
+
     def test_bad_account_rejected(self):
         main,shadow,money=self.baseline()
         money["real_money"]=True
