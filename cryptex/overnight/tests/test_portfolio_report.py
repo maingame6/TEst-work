@@ -83,6 +83,24 @@ class PaperMoneyTests(unittest.TestCase):
         b['mode']='PAPER_ONLY';b['bots']={}
         with self.assertRaises(ValueError):P.snapshot(a,b,'2026-10-30T21:35:00+00:00')
 
+    def test_buy_hold_benchmark_freezes_entry_and_never_adds_to_210(self):
+        main,shadow=states()
+        main['last_prices']={'BTC':100.,'ETH':200.,'SOL':50.}
+        with tempfile.TemporaryDirectory() as d:
+            start=P.store(main,shadow,d,'2026-10-30T21:35:00+00:00')
+            first=start['benchmarks']['references']['BTC']
+            self.assertEqual(start['balance'],210)
+            self.assertEqual(first['entry_mid'],100.)
+            self.assertLess(first['equity'],10.) # opening and closing costs
+            main['last_prices']['BTC']=110.
+            later=P.store(main,shadow,d,'2026-10-30T21:40:00+00:00')
+            b=later['benchmarks']['references']['BTC']
+            self.assertEqual(b['entry_mid'],100.)
+            self.assertEqual(b['started_at'],'2026-10-30T21:35:00+00:00')
+            self.assertGreater(b['equity'],10.)
+            self.assertEqual(later['balance'],210)
+            self.assertTrue((Path(d)/'benchmark_reference.json').exists())
+
     def test_report_saves_balances_and_auditable_csv(self):
         main,shadow=states()
         with tempfile.TemporaryDirectory() as d:
