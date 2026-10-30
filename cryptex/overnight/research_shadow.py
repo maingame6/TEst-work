@@ -84,6 +84,14 @@ def exit_reason(p,price,ts):
 
 def update(state,history,allowed,ts):
  state=state if state and state.get("version")==VERSION and state.get("mode")=="PAPER_ONLY" else initial()
+ # Non-destructive migration of live paper-state snapshots from before the
+ # research portfolio loss guard. Do NOT reset any cash, positions or trades.
+ state.setdefault("peak",sum(equity(b,state.get("last_prices",{})) for b in state["bots"].values()))
+ state.setdefault("daily_start",state["peak"])
+ state.setdefault("daily_date",None)
+ state.setdefault("halted",False)
+ state.setdefault("permanent_halt",False)
+ state.setdefault("risk_reason",None)
  if ts<=state.get("last_ts",0):return state,False
  valid={s:b for s,b in history.items() if s in allowed and len(b)>=80
         and b[-1]["ts"]==ts}
