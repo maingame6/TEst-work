@@ -2,15 +2,15 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-10-30T23:35:42.379406+00:00 (Europe/Dublin)
+Checked: 2026-10-30T23:42:21.616617+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; unattended GitHub schedule NOT YET VERIFIED
 Last genuine scheduled execution: none yet
 
-**Starting paper money $210.00 · Current estimated liquidation $209.3681 · P&L $-0.6319 (-0.30%)**
+**Starting paper money $210.00 · Current estimated liquidation $209.3838 · P&L $-0.6162 (-0.29%)**
 
-Realised $-0.3829; unrealised after estimated future sale costs $-0.2490.
-Open: 14; queued: 6; closed: 43; paper fills in current JSON: 100.
+Realised $-0.4019; unrealised after estimated future sale costs $-0.2143.
+Open: 16; queued: 4; closed: 45; paper fills in current JSON: 106.
 
 Overnight status: IN_PROGRESS
 
@@ -20,25 +20,25 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $209.6998 at 2026-10-30T21:39:59.239367+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.3317 as of 2026-10-30T23:35:42.379406+00:00.
-New paper fills since session started: 83.
+Overnight P&L $-0.3160 as of 2026-10-30T23:42:21.616617+00:00.
+New paper fills since session started: 89.
 
 ## Price prediction versus trading costs
 
 Estimated price move needed just to break even on a round trip: **0.803%** (0.15% fees and 0.25% slippage each side).
-Gross-versus-net attribution available on 29 of 43 cached closed trades; earlier records are honestly marked unavailable.
-Attributed gross market movement P&L: $+0.103017;
-Attributed fees + slippage drag: $0.372696;
-Attributed net profit/loss: $-0.269679.
-Gross winners: 23; after-cost winners: 5; gross winners turned into losses by execution friction: 18.
+Gross-versus-net attribution available on 31 of 45 cached closed trades; earlier records are honestly marked unavailable.
+Attributed gross market movement P&L: $+0.101507;
+Attributed fees + slippage drag: $0.390183;
+Attributed net profit/loss: $-0.288676.
+Gross winners: 24; after-cost winners: 5; gross winners turned into losses by execution friction: 19.
 Do not claim profitability until fresh after-cost trades demonstrate out-of-sample performance.
 
 ## Independent paper portfolios
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 99.5600 | -0.4400 | -0.2915 | 28 | 6 |
-| Eleven maths/OSS traders | 110.00 | 109.8082 | -0.1918 | -0.0914 | 15 | 8 |
+| Original ten traders | 100.00 | 99.5650 | -0.4350 | -0.2960 | 29 | 8 |
+| Eleven maths/OSS traders | 110.00 | 109.8188 | -0.1812 | -0.1059 | 16 | 8 |
 
 ## Buy-and-hold benchmarks (not part of $210)
 
@@ -46,9 +46,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.9934 | $-0.0066 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.9724 | $-0.0276 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.9984 | $-0.0016 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.9970 | $-0.0031 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.9770 | $-0.0230 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $10.0119 | $+0.0119 |
 
 ## 21-agent leaderboard
 
@@ -56,29 +56,29 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 |---:|---|---|---:|---:|---:|---:|---|
 | 1 | LATTICE_ANALOG | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
 | 2 | HUMMINGBOT_FRICTION | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
-| 3 | MEME HUNTER | main | 9.9902 | -0.0098 | -0.0012 | 3 | PEPE |
-| 4 | SHOCKWAVE | main | 9.9893 | -0.0107 | -0.0107 | 4 | cash |
-| 5 | FLUID_ADVECTION | research | 9.9858 | -0.0142 | -0.0142 | 2 | cash |
-| 6 | LEAN_EVENT | research | 9.9836 | -0.0164 | -0.0084 | 2 | ETH |
-| 7 | FLUID_VISCOSITY | research | 9.9827 | -0.0173 | +0.0000 | 0 | PEPE |
-| 8 | ERROR_CODE_CONSENSUS | research | 9.9823 | -0.0177 | -0.0116 | 2 | XRP |
-| 9 | FREQTRADE_STYLE | research | 9.9808 | -0.0192 | -0.0142 | 2 | BNB |
-| 10 | NAUTILUS_REGIME | research | 9.9757 | -0.0243 | -0.0126 | 2 | PEPE |
-| 11 | GEOMETRIC_DIVERSITY | research | 9.9753 | -0.0247 | -0.0068 | 1 | PEPE |
-| 12 | GRAPH_COHERENCE | research | 9.9709 | -0.0291 | -0.0118 | 2 | PEPE |
-| 13 | QLIB_STYLE | research | 9.9709 | -0.0291 | -0.0118 | 2 | PEPE |
-| 14 | SPY | main | 9.9697 | -0.0303 | -0.0303 | 4 | cash |
-| 15 | HOUSE | main | 9.9690 | -0.0310 | -0.0310 | 4 | cash |
-| 16 | ROTATOR | main | 9.9662 | -0.0338 | +0.0000 | 0 | ADA |
+| 3 | MEME HUNTER | main | 9.9943 | -0.0057 | -0.0057 | 4 | cash |
+| 4 | FLUID_VISCOSITY | research | 9.9861 | -0.0139 | +0.0000 | 0 | PEPE |
+| 5 | LEAN_EVENT | research | 9.9841 | -0.0159 | -0.0084 | 2 | ETH |
+| 6 | ERROR_CODE_CONSENSUS | research | 9.9834 | -0.0166 | -0.0116 | 2 | XRP |
+| 7 | FREQTRADE_STYLE | research | 9.9811 | -0.0189 | -0.0142 | 2 | BNB |
+| 8 | SHOCKWAVE | main | 9.9797 | -0.0203 | -0.0107 | 4 | PEPE |
+| 9 | NAUTILUS_REGIME | research | 9.9791 | -0.0209 | -0.0126 | 2 | PEPE |
+| 10 | GEOMETRIC_DIVERSITY | research | 9.9786 | -0.0214 | -0.0214 | 2 | cash |
+| 11 | ROTATOR | main | 9.9782 | -0.0218 | +0.0000 | 0 | ADA |
+| 12 | FLUID_ADVECTION | research | 9.9778 | -0.0222 | -0.0142 | 2 | BTC |
+| 13 | GRAPH_COHERENCE | research | 9.9743 | -0.0257 | -0.0118 | 2 | PEPE |
+| 14 | QLIB_STYLE | research | 9.9743 | -0.0257 | -0.0118 | 2 | PEPE |
+| 15 | SPY | main | 9.9601 | -0.0399 | -0.0303 | 4 | SOL |
+| 16 | HOUSE | main | 9.9595 | -0.0405 | -0.0310 | 4 | ETH |
 | 17 | CONTRARIAN | main | 9.9574 | -0.0426 | -0.0426 | 5 | cash |
-| 18 | VORTEX | main | 9.9509 | -0.0491 | +0.0000 | 0 | ETH |
-| 19 | FRACTAL | main | 9.9476 | -0.0524 | -0.0429 | 4 | SOL |
-| 20 | GAMBLER | main | 9.9459 | -0.0541 | -0.0162 | 2 | SOL |
-| 21 | BREAKOUT | main | 9.8739 | -0.1261 | -0.1166 | 2 | SOL |
+| 18 | GAMBLER | main | 9.9566 | -0.0434 | -0.0162 | 2 | SOL |
+| 19 | VORTEX | main | 9.9545 | -0.0455 | +0.0000 | 0 | ETH |
+| 20 | FRACTAL | main | 9.9492 | -0.0508 | -0.0429 | 4 | SOL |
+| 21 | BREAKOUT | main | 9.8755 | -0.1245 | -0.1166 | 2 | SOL |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793403000 / 1793403000
+Latest main/shadow candle timestamps: 1793403300 / 1793403300
 Warnings: none
 Balances include hypothetical estimated future sale fee 0.15% and slippage 0.25%; not executable quotes.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
