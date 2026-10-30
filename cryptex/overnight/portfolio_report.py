@@ -80,6 +80,29 @@ def snapshot(main, research, at):
     def stale(ts):
         return int(ts or 0) <= 0 or now.timestamp() - (int(ts) + 300) > 1800
     main_ts, research_ts = main.get('last_ts', 0), research.get('last_ts', 0)
+    # Price movement and execution drag are fundamentally different hypotheses.
+    # Only newer SELL fills have reliable gross mid-price attribution; never
+    # pretend older records have those fields.
+    sells=[t for source in (main, research) for t in source.get("trades",[])
+           if t.get("side")=="SELL"]
+    attributed=[t for t in sells if t.get("gross_mid_pnl") is not None
+                and t.get("execution_drag") is not None and t.get("pnl") is not None]
+    costs=sum(float(t["execution_drag"]) for t in attributed)
+    gross=sum(float(t["gross_mid_pnl"]) for t in attributed)
+    net=sum(float(t["pnl"]) for t in attributed)
+    gross_winners=sum(float(t["gross_mid_pnl"])>0 for t in attributed)
+    net_winners=sum(float(t["pnl"])>0 for t in attributed)
+    spoiled=sum(float(t["gross_mid_pnl"])>0 and float(t["pnl"])<=0 for t in attributed)
+    breakeven_pct=100*((1.+.0025)*(1.+.0015)/((1.-.0025)*(1.-.0015))-1.)
+    fee_study={"round_trip_break_even_pct_at_flat_markets":round(breakeven_pct,4),
+              "completed_orders_cached":len(sells),"attributed_newer_closes":len(attributed),
+              "older_closes_missing_attribution":len(sells)-len(attributed),
+              "gross_market_pnl_attributed":round(gross,8),
+              "execution_drag_attributed":round(costs,8),
+              "net_pnl_attributed":round(net,8),
+              "gross_winners":gross_winners,"after_cost_winners":net_winners,
+              "gross_up_but_net_down":spoiled,
+              "interpretation":"Gross movement is from candle mid-to-mid; execution_drag includes entry/exit fee and slippage assumptions. Numbers cover attributed cached closed trades only."}
     freshness = {'main_stale': stale(main_ts), 'research_stale': stale(research_ts),
                  'missing_quotes': any(a['missing_quote'] for a in agents),
                  'time_misaligned': main_ts != research_ts,
@@ -98,6 +121,7 @@ def snapshot(main, research, at):
             'total_completed': sum(v['closed'] for v in groups.values()),
             'saved_fills': len(main.get('trades', [])) + len(research.get('trades', [])),
             'specialist_reviews': 640, 'news_scouts': 8,
+            'execution_cost_study': fee_study,
             'actual_trigger_event': main.get('trigger_event','unknown'),
             'schedule_confirmed': bool(main.get('schedule_confirmed',False)),
             'last_schedule_run': main.get('last_schedule_run'),
@@ -188,7 +212,18 @@ def store(main, research, data_dir, at):
         lines += [f"First observed overnight starting balance ${night['start']['balance']:.4f} at {night['start']['at']} (NOT backdated to 21:00).",
                   f"Overnight P&L ${night['change']:+.4f} as of {night['comparison_at']}.",
                   f"New paper fills since session started: {night['fills_since_start']}."]
-    lines += ['', '## Independent paper portfolios', '',
+    d=snap["execution_cost_study"]
+    lines += ["", "## Price prediction versus trading costs",
+        "",
+        f"Estimated price move needed just to break even on a round trip: **{d['round_trip_break_even_pct_at_flat_markets']:.3f}%** (0.15% fees and 0.25% slippage each side).",
+        f"Gross-versus-net attribution available on {d['attributed_newer_closes']} of {d['completed_orders_cached']} cached closed trades; earlier records are honestly marked unavailable.",
+        f"Attributed gross market movement P&L: \${d['gross_market_pnl_attributed']:+.6f};",
+        f"Attributed fees + slippage drag: \${d['execution_drag_attributed']:.6f};",
+        f"Attributed net profit/loss: \${d['net_pnl_attributed']:+.6f}.",
+        f"Gross winners: {d['gross_winners']}; after-cost winners: {d['after_cost_winners']}; gross winners turned into losses by execution friction: {d['gross_up_but_net_down']}.",
+        "Do not claim profitability until fresh after-cost trades demonstrate out-of-sample performance.",
+        "",
+        "## Independent paper portfolios", "",
               '| Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |',
               '|---|---:|---:|---:|---:|---:|---:|']
     for name, group in (('Original ten traders','main'),('Eleven maths/OSS traders','research')):
