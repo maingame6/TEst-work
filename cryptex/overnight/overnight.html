@@ -43,6 +43,21 @@
 <div class="panel section"><h2>Queued Paper Orders — Next Closed Candle</h2><p class="muted">These are simulated intentions, not filled trades. They only fill when the next valid observation arrives.</p><div id="pending" class="feed">No orders queued</div></div>
 <div class="panel section"><h2>640 Specialist Votes · 10 Trading Teams</h2><p class="muted">64 parameterised reviewers per parent: 60 indicator perspectives and four hard checks. They share market data, so vote counts are not independent statistical evidence. A BUY vote is not necessarily a filled order. <a href="./data/subagent_decisions.csv" target="_blank" rel="noopener" style="color:#46dce4">Full specialist vote archive (CSV)</a></p><div id="committee" class="agents">Waiting for specialist reviews…</div></div>
 <div class="two section"><div class="panel"><h2>Latest 100 Executed Paper Trades</h2><p class="muted">Every completed order includes the actual simulated entry/exit reason, costs and after-cost result.</p><div id="trades" class="feed">No trades yet</div></div><div class="panel"><h2>Decision &amp; Safety Log</h2><div id="events" class="feed">No events yet</div></div></div>
+<div class="panel section" id="broaderMarkets" style="margin-top:16px">
+<h2>Wide Market Radar · Crypto, DeFi, AI, FX &amp; Gold Proxies</h2>
+<p class="muted">Hourly Kraken public quotes and exchange-verified pairs. <b>Watch-only</b>: the twelve paper trading symbols remain unchanged. Price moves are relative to Kraken's UTC opening price, not rolling 24h returns.</p>
+<div id="broadMarketsStatus" class="muted">Waiting for the first validated watchlist poll…</div>
+<div class="metrics" style="margin:12px 0">
+ <div class="metric"><div class="label">CONFIRMED USD MARKETS</div><div id="wideObserved" class="number">—</div></div>
+ <div class="metric"><div class="label">CRYPTO BREADTH</div><div id="wideBreadth" class="number">—</div></div>
+ <div class="metric"><div class="label">BTC MARKET-CAP SHARE</div><div id="wideDominance" class="number">—</div></div>
+ <div class="metric"><div class="label">GLOBAL CRYPTO 24H</div><div id="wideMarketMove" class="number">—</div></div>
+</div>
+<div id="wideSectorList" class="muted">Sector counts will appear after a verified market snapshot.</div>
+<h3 style="margin-top:12px">Strongest movers · Change since UTC open</h3>
+<div id="wideTopMovers" class="feed">No verified mover ranking yet.</div>
+<p class="muted"><a href="./data/market_radar.json" target="_blank" rel="noopener" style="color:#46dce4">Latest market radar</a> · <a href="./data/market_radar_snapshots.csv" target="_blank" rel="noopener" style="color:#46dce4">Historical snapshots</a> · <a href="./data/morning_briefing.md" target="_blank" rel="noopener" style="color:#46dce4">Complete morning market intelligence</a></p>
+</div>
 <div class="panel section" id="mathResearch"><h2>Experimental Mathematics &amp; Open-Source Research</h2><p class="muted">Eleven separate 10-USD shadow trading hypotheses. Their 110 fictional dollars are NOT part of the main 100-dollar trading portfolio. <a href="./data/shadow_review.md" target="_blank" rel="noopener" style="color:#46dce4">Full independent performance review</a></p><div id="mathStatus" class="muted">Loading experimental report…</div><div id="mathAccounts" class="agents" style="margin-top:12px"></div><div class="section"><h2>Shadow Paper Trade Journal</h2><div id="shadowFills" class="feed">No fills recorded yet.</div><p class="muted">Detailed audit: <a href="./data/shadow_decisions.csv" style="color:#46dce4">all BUY/SELL/HOLD decisions</a> · <a href="./data/shadow_trades.csv" style="color:#46dce4">all fills</a></p></div></div>
 <div class="panel section"><h2>Eight Public Research Scouts</h2><p class="muted">Public news, market commentary, official macro/regulatory announcements and public forums. Nothing private or illegally obtained. Current scores are simple untrained keyword labels, not an AI prediction model. Headlines are NOT yet used to trigger trading.</p><div id="newsStatus" class="muted">Loading source checks…</div><div class="two section"><div id="newsScouts" class="panel">Checking public sources…</div><div id="newsHeadlines" class="panel feed">Waiting for public headlines…</div></div><a href="./data/public_research.json" target="_blank" rel="noopener" style="color:#46dce4">Complete provenance-aware news archive</a></div>
 <div class="footer">This prototype runs fake trades using actual exchange market observations when its backend is online. Fees, slippage and close-to-next-close execution are estimates, not exchange fills. A paper profit does not establish a tradable edge. This dashboard cannot place real trades and must not store API keys. If data is missing/stale, the engine holds rather than manufacturing prices.</div></div>
@@ -159,6 +174,30 @@ try {
   $money('moneyAsOf').textContent='No confirmed combined money report: '+e.message+'. Check GitHub Actions before trusting any displayed balances.';
 }}
 load();setInterval(load,60000);
+})();
+</script>
+
+<script>
+(function(){
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+async function wide(){
+ try{
+  let a=await fetch('./data/market_radar.json',{cache:'no-store'});
+  if(!a.ok)throw Error('Watch-only radar not yet published');
+  let r=await a.json(),poll=Date.parse(r.polled_at||'');
+  let stale=r.status!=='OK'||!Number.isFinite(poll)||Date.now()-poll>120*60000;
+  document.getElementById('broadMarketsStatus').textContent=(stale?'STALE / NO NEW RESEARCH':'PUBLIC RESEARCH CURRENT')+' · '+r.observed_market_count+' confirmed snapshots / '+r.requested_market_count+' requested markets · UTC poll '+(r.polled_at||'not recorded')+' · not executable prices';
+  if(stale)return;
+  document.getElementById('wideObserved').textContent=String(r.observed_market_count)+' / '+String(r.requested_market_count);
+  document.getElementById('wideBreadth').textContent=r.crypto_breadth_positive_pct==null?'—':r.crypto_breadth_positive_pct.toFixed(1)+'% ↑';
+  let g=r.global_crypto_context||{};
+  document.getElementById('wideDominance').textContent=g.status==='OK'&&g.bitcoin_market_cap_dominance_pct!=null?Number(g.bitcoin_market_cap_dominance_pct).toFixed(1)+'%':'Unavailable';
+  document.getElementById('wideMarketMove').textContent=g.status==='OK'&&g.global_market_cap_change_24h_pct!=null?Number(g.global_market_cap_change_24h_pct).toFixed(2)+'%':'Unavailable';
+  document.getElementById('wideSectorList').innerHTML=Object.entries(r.sectors||{}).map(([sector,v])=>'<span style="display:inline-block;border:1px solid #2f4457;border-radius:6px;padding:5px;margin:2px">'+esc(sector)+': '+v.available+'/'+v.requested+'</span>').join('');
+  document.getElementById('wideTopMovers').innerHTML=(r.top_movers_up||[]).slice(0,7).map(m=>'<div class="line"><b>'+esc(m.symbol)+' · '+Number(m.move_from_utc_open_pct).toFixed(2)+'%</b><small>'+esc(m.sector)+' · approx +Number(m.approx_turnover_24h_usd).toLocaleString()+' 24h turnover · '+Number(m.bid_ask_spread_bps).toFixed(1)+' bp spread</small></div>').join('')||'No verified rising markets';
+ }catch(e){document.getElementById('broadMarketsStatus').textContent='Wider watchlist not published or unreachable. Existing paper trading remains independent.';}
+}
+wide();setInterval(wide,60000);
 })();
 </script>
 </body></html>
