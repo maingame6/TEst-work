@@ -165,6 +165,51 @@ def update_night(snap, history):
     return snap, history[-100:]
 
 
+def compare_to_buy_hold(snap, main, folder):
+    """Frozen, forward-only paper benchmarks OUTSIDE the $210 account balance.
+
+    At first healthy observation, buy $10 fake BTC, ETH and SOL once each
+    including assumed entry fees/slippage; mark hypothetical sale net of costs.
+    The baseline is never retroactively moved or trained on future prices.
+    """
+    file = folder / "benchmark_reference.json"
+    frozen=json.loads(file.read_text()) if file.exists() else {}
+    healthy=not any(snap["freshness"][k] for k in
+                    ("main_stale","research_stale","missing_quotes","time_misaligned"))
+    prices=main.get("last_prices",{})
+    if not frozen and healthy:
+        for sym in ("BTC","ETH","SOL"):
+            x=prices.get(sym)
+            if x is None or not math.isfinite(float(x)) or float(x)<=0:
+                continue
+            mid=numeric(x)
+            full_entry=mid*(1+.0025)*(1+.0015)
+            frozen[sym]={"started_at":snap["generated_at"],"entry_mid":mid,
+                         "initial_paper_cash":10.,"quantity":10./full_entry}
+        if frozen:
+            file.write_text(json.dumps(frozen,indent=2,allow_nan=False)+"\n")
+    output={}
+    for sym,entry in frozen.items():
+        x=prices.get(sym)
+        if x is None or not math.isfinite(float(x)) or float(x)<=0:
+            output[sym]={"status":"NO_CURRENT_PRICE",
+                         "started_at":entry["started_at"],"equity":None}
+            continue
+        equity=entry["quantity"]*numeric(x)*SELL_FACTOR
+        output[sym]={"status":"PAPER_ONLY","started_at":entry["started_at"],
+                     "entry_mid":entry["entry_mid"],"current_mid":numeric(x),
+                     "start":10.,"equity":round(equity,6),
+                     "pnl":round(equity-10.,6),
+                     "return_pct":round((equity/10.-1)*100,4),
+                     "holding":"buy-and-hold; hypothetical sale costs included"}
+    snap["benchmarks"]={"comparison_only":True,
+          "excluded_from_combined_210_balance":True,
+          "initial_snapshot_not_backfilled":True,
+          "references":output,
+          "note":"BTC/ETH/SOL $10 paper buy-and-hold benchmarks start from their first actual recorded prices; compare only subsequent observations."}
+    return snap
+
+
 def store(main, research, data_dir, at):
     folder = Path(data_dir)
     folder.mkdir(parents=True, exist_ok=True)
@@ -172,6 +217,7 @@ def store(main, research, data_dir, at):
     nights_file = folder / 'overnight_sessions.json'
     nights = json.loads(nights_file.read_text()) if nights_file.exists() else []
     snap, nights = update_night(snap, nights)
+    snap = compare_to_buy_hold(snap, main, folder)
     (folder / 'portfolio_report.json').write_text(json.dumps(snap, indent=2, allow_nan=False) + '\n')
     nights_file.write_text(json.dumps(nights, indent=2, allow_nan=False) + '\n')
     csv_file = folder / 'combined_equity.csv'
@@ -229,6 +275,15 @@ def store(main, research, data_dir, at):
     for name, group in (('Original ten traders','main'),('Eleven maths/OSS traders','research')):
         g = snap['groups'][group]
         lines.append(f"| {name} | {g['starting']:.2f} | {g['equity']:.4f} | {g['pnl']:+.4f} | {g['realised']:+.4f} | {g['closed']} | {g['open']} |")
+    lines += ["", "## Buy-and-hold benchmarks (not part of $210)", "",
+              "Three additional $10 paper references start at their FIRST verified mid-price and are never backfilled. Their hypothetical market entry and exit include the same cost assumptions.",
+              "", "| Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |",
+              "|---|---|---:|---:|"]
+    for sym,bm in snap.get("benchmarks",{}).get("references",{}).items():
+        if bm.get("status")=="PAPER_ONLY":
+            lines.append(f"| {sym} | {bm['started_at']} | ${bm['equity']:.4f} | ${bm['pnl']:+.4f} |")
+        else:
+            lines.append(f"| {sym} | {bm.get('started_at','—')} | — | unavailable: missing quote |")
     lines += ['', '## 21-agent leaderboard', '',
               '| Rank | Agent | Portfolio | Equity USD | Paper P&L | Realised | Closed | Holding |',
               '|---:|---|---|---:|---:|---:|---:|---|']
