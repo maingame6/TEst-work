@@ -55,6 +55,23 @@ jobs:
         with:
           python-version: '3.12'
 
+      # CCXT supplies exchange-wide instrument CATALOGUES, not executable prices.
+      # Install only if the last successful discovery is >=6h old; this does
+      # not burden each 5-minute paper-trading execution with a package install.
+      - name: Optional CCXT multi-exchange market discovery (read-only)
+        shell: bash
+        run: |
+          if python3 cryptex/overnight/ccxt_universe.py --due; then
+            echo "Refreshing the public multi-exchange spot catalogue"
+            if python3 -m pip install --quiet --disable-pip-version-check 'ccxt==4.5.81'; then
+              python3 cryptex/overnight/ccxt_universe.py --refresh || echo "::warning::CCXT public discovery unavailable; trading remains unaffected"
+            else
+              echo "::warning::CCXT installation unavailable; core paper trading continues"
+            fi
+          else
+            echo "Using last verified CCXT catalogue; less than 6h old"
+          fi
+
       - name: Run market safety compile and single research cycle
         env:
           PYTHONDONTWRITEBYTECODE: '1'
@@ -67,6 +84,7 @@ jobs:
           python3 -m py_compile cryptex/overnight/portfolio_report.py
           python3 -m py_compile cryptex/overnight/morning_briefing.py
           python3 -m py_compile cryptex/overnight/market_radar.py
+          python3 -m py_compile cryptex/overnight/ccxt_universe.py
           python3 -m unittest discover -s cryptex/overnight/tests -v
           python3 cryptex/overnight/runner.py
 
@@ -95,6 +113,11 @@ jobs:
             if test -f "$path"; then git add -f "$path"; else echo "::warning::Missing optional extended debrief: $path"; fi
           done
           git add -f cryptex/overnight/data/public_research.json
+          if test -f cryptex/overnight/data/ccxt_universe.json; then
+            git add -f cryptex/overnight/data/ccxt_universe.json
+          else
+            echo "::notice::Multi-exchange CCXT catalogue has not yet published"
+          fi
           for path in cryptex/overnight/data/market_radar.json cryptex/overnight/data/market_radar_catalog.json cryptex/overnight/data/market_radar_snapshots.csv; do
             if test -f "$path"; then git add -f "$path"; else echo "::warning::Missing optional market radar: $path"; fi
           done
