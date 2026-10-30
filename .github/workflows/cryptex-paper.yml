@@ -85,8 +85,12 @@ jobs:
           python3 -m py_compile cryptex/overnight/morning_briefing.py
           python3 -m py_compile cryptex/overnight/market_radar.py
           python3 -m py_compile cryptex/overnight/ccxt_universe.py
+          python3 -m py_compile cryptex/overnight/integrity_audit.py
           python3 -m unittest discover -s cryptex/overnight/tests -v
           python3 cryptex/overnight/runner.py
+          # Fail closed if simulated money does not reconcile. Missing market
+          # information produces an honest warning instead of fictitious prices.
+          python3 cryptex/overnight/integrity_audit.py cryptex/overnight/data
 
       - name: Save paper state, entries, exits and equity to GitHub
         if: success()
@@ -103,6 +107,7 @@ jobs:
           git add -f cryptex/overnight/data/shadow_review.json
           git add -f cryptex/overnight/data/shadow_review.md
           git add -f cryptex/overnight/data/portfolio_report.json
+          git add -f cryptex/overnight/data/integrity_report.json
           git add -f cryptex/overnight/data/benchmark_reference.json
           git add -f cryptex/overnight/data/combined_equity.csv
           git add -f cryptex/overnight/data/overnight_sessions.json
