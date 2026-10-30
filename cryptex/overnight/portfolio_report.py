@@ -88,7 +88,7 @@ def snapshot(main, research, at):
     attributed=[t for t in sells if t.get("gross_mid_pnl") is not None
                 and t.get("execution_drag") is not None and t.get("pnl") is not None]
     costs=sum(float(t["execution_drag"]) for t in attributed)
-    gross=sum(float(t["gross_mid_pnl"]) for t in attributed)
+    gross_mid_trade_pnl=sum(float(t["gross_mid_pnl"]) for t in attributed)
     net=sum(float(t["pnl"]) for t in attributed)
     gross_winners=sum(float(t["gross_mid_pnl"])>0 for t in attributed)
     net_winners=sum(float(t["pnl"])>0 for t in attributed)
@@ -97,7 +97,7 @@ def snapshot(main, research, at):
     fee_study={"round_trip_break_even_pct_at_flat_markets":round(breakeven_pct,4),
               "completed_orders_cached":len(sells),"attributed_newer_closes":len(attributed),
               "older_closes_missing_attribution":len(sells)-len(attributed),
-              "gross_market_pnl_attributed":round(gross,8),
+              "gross_market_pnl_attributed":round(gross_mid_trade_pnl,8),
               "execution_drag_attributed":round(costs,8),
               "net_pnl_attributed":round(net,8),
               "gross_winners":gross_winners,"after_cost_winners":net_winners,
