@@ -91,7 +91,28 @@ def signal(i,fs,h):
             score=(impulse-max(0,x["ret2"]))*max(0,corr)
             a=impulse>.007 and x["ret2"]<impulse*.35 and x["ret2"]>-.012 and corr>.12 and score>.0007;why="Lag correlation hypothesis"
         if a and math.isfinite(score) and (best is None or score>best["score"]):best={"symbol":s,"score":score,"reason":why}
-    return best
+    if best is not None:
+        best["exploratory"]=False
+        return best
+    # ACTIVE RESEARCH: low-notional, long-only probes fill on a LATER closed candle.
+    # These are hypotheses, not recommendations; fees/slippage and losses count.
+    # Do not bypass market freshness, cross-venue disagreement or risk kill switches.
+    picks=[]
+    for sym in UNIVERSES[i]:
+        if sym not in fs:continue
+        x=fs[sym]
+        if not all(math.isfinite(x.get(k,float("nan"))) for k in ("price","vol","ret3","z","vr","hour_volume")):continue
+        if x["price"]<=0 or x["hour_volume"]<60000 or x["vol"]>.07 or x["vr"]<.18:continue
+        if abs(x["ret3"])<.0002 and abs(x["z"])<.45:continue
+        contrarian=i in (1,5)
+        score=(-x["ret3"] if contrarian else x["ret3"])+min(x["vr"],6)*.00012-x["vol"]*.05
+        picks.append((score,sym,x))
+    if not picks:return None
+    _,sym,x=max(picks,key=lambda row:row[0])
+    thesis="reversion" if i in (1,5) else "directional momentum"
+    return {"symbol":sym,"score":float(max(picks,key=lambda row:row[0])[0]),
+            "reason":f"EXPLORATORY PAPER PROBE ({thesis}; 3-bar {x['ret3']*100:+.2f}%; RSI {x['rsi']:.0f}; volume {x['vr']:.2f}x)",
+            "exploratory":True}
 def init():
     return {"mode":"PAPER_ONLY","version":4,"created":utc(),"last_ts":0,"capital":100,"initial_capital":100,"daily_start":100,"daily_date":utc()[:10],"peak":100,"halted":False,"health":"NO DATA YET","last_prices":{},"last_checked":None,"feeds":{},"radar":[],"bots":[{"name":n,"cash":10.0,"position":None,"pending":None,"last_reason":"Waiting for market","wins":0,"closed":0,"net":0,"completed":[]} for n in NAMES],"trades":[],"events":[],"learning":{},"cycles":0}
 def event(st,level,message):
@@ -108,11 +129,12 @@ def journal(st,b,order,price,ts,port):
     s=order["symbol"];buy=order["side"]=="BUY";p=b["position"]
     if buy:
         if st["halted"] or p:return
-        budget=min(b["cash"]*.995,port*.08*learning(b))
+        allocation=.012 if order.get("exploratory",False) else MAX_ORDER
+        budget=min(b["cash"]*.995,port*allocation*learning(b))
         if budget<.5:return
         fill=price*(1+SLIP);qty=budget/(fill*(1+FEE))
         b["cash"]-=budget
-        b["position"]={"symbol":s,"entry_mid":price,"entry_price":fill,"entry_cost":budget,"entry_ts":ts,"qty":qty,"high_water":price,"trail_armed":False,"entry_reason":order["reason"]}
+        b["position"]={"symbol":s,"entry_mid":price,"entry_price":fill,"entry_cost":budget,"entry_ts":ts,"qty":qty,"high_water":price,"trail_armed":False,"entry_reason":order["reason"],"exploratory":bool(order.get("exploratory",False))}
         pnl=None;fees=qty*fill*FEE
     else:
         if not p or p["symbol"]!=s:return
@@ -120,7 +142,7 @@ def journal(st,b,order,price,ts,port):
         b["cash"]+=proceeds;b["wins"]+=int(pnl>0);b["closed"]+=1;b["net"]+=pnl
         b["completed"]=(b["completed"]+[pnl/max(p["entry_cost"],1e-12)])[-80:]
         b["position"]=None
-    rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"paper":True}
+    rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"exploratory":bool(order.get("exploratory",False) if buy else p.get("exploratory",False)),"paper":True}
     st["trades"].insert(0,rec);del st["trades"][1500:]
     if buy:event(st,"BUY",b["name"]+" BUY "+s+" simulated "+str(round(budget,2)))
     else:event(st,"SELL",b["name"]+" SELL "+s+" net "+str(round(pnl,4))+" because "+order["reason"])
@@ -132,6 +154,8 @@ def exit_signal(pos,i,fs,ts):
     pos["high_water"]=max(pos["high_water"],price)
     if gain>=.12:pos["trail_armed"]=True
     if gain<=-STOP:return "6% stop at bar close (next-bar simulated fill)"
+    if pos.get("exploratory",False) and ts-pos["entry_ts"]>=3*300:
+        return "Exploratory 15-minute observation complete (next-bar fill)"
     if pos["trail_armed"] and price<pos["high_water"]*.94:return "Trailing stop"
     if ts-pos["entry_ts"]>65*300:return "Time-based exit"
     reasons=[
@@ -182,7 +206,10 @@ def cycle(st,history,check,radar_results):
         if st["halted"]:b["last_reason"]="PAUSED: risk loss guard";continue
         if order and order["side"]=="SELL":continue
         sig=signal(i,fs,valid)
-        if sig:b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"]};b["last_reason"]="BUY QUEUED: "+sig["symbol"]+" — "+sig["reason"]
+        if sig:
+            b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"],"exploratory":sig.get("exploratory",False)}
+            b["last_reason"]="BUY QUEUED: "+sig["symbol"]+" — "+sig["reason"]
+            event(st,"SIGNAL",b["name"]+" queued PAPER BUY "+sig["symbol"]+"; "+sig["reason"])
         else:b["last_reason"]="HOLD: no qualified setup"
     st["last_prices"]=prices;st["radar"]=radar_results;st["health"]="HEALTHY: paper trading on completed Kraken candles";st["last_checked"]=utc();st["cycles"]+=1
     st["feeds"]={"primary":"Kraken 5m completed OHLCV","secondary":"CoinGecko independent spot check" if check else "CoinGecko unavailable","instruments":sorted(prices),"excluded":blocked,"candle_ts":ts,"never_live_money":True}
@@ -208,7 +235,7 @@ def main():
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
-    fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl","reason","entry_reason","paper"]
+    fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl","reason","entry_reason","exploratory","paper"]
     old=[]
     if TRADES.exists():
         with TRADES.open(newline="",encoding="utf8") as fp:
