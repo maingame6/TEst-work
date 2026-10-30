@@ -98,6 +98,10 @@ def snapshot(main, research, at):
             'total_completed': sum(v['closed'] for v in groups.values()),
             'saved_fills': len(main.get('trades', [])) + len(research.get('trades', [])),
             'specialist_reviews': 640, 'news_scouts': 8,
+            'actual_trigger_event': main.get('trigger_event','unknown'),
+            'schedule_confirmed': bool(main.get('schedule_confirmed',False)),
+            'last_schedule_run': main.get('last_schedule_run'),
+            'github_run_id': main.get('github_run_id',''),
             'valuation_note': 'Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.'}
 
 
@@ -170,6 +174,11 @@ def store(main, research, data_dir, at):
         '# CRYPTEX — morning paper-money report', '',
         '**Paper accounts only. No real balance, profit or exchange execution.**', '',
         'Checked: ' + snap['local_time'] + ' (Europe/Dublin)', '',
+        'GitHub trigger: ' + snap['actual_trigger_event'] +
+        ('; independently scheduled trading CONFIRMED' if snap['schedule_confirmed']
+         else '; unattended GitHub schedule NOT YET VERIFIED'),
+        'Last genuine scheduled execution: ' + str(snap.get('last_schedule_run') or 'none yet'), '',
+
         f"**Starting paper money ${snap['initial']:.2f} · Current estimated liquidation ${snap['balance']:.4f} · P&L ${snap['pnl']:+.4f} ({snap['pnl_pct']:+.2f}%)**", '',
         f"Realised ${snap['realised']:+.4f}; unrealised after estimated future sale costs ${snap['unrealised_estimate']:+.4f}.",
         f"Open: {snap['total_open']}; queued: {snap['total_queued']}; closed: {snap['total_completed']}; paper fills in current JSON: {snap['saved_fills']}.", '',
