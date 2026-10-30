@@ -48,6 +48,8 @@ jobs:
           git add -f cryptex/overnight/data/state.json
           git add -f cryptex/overnight/data/trades.csv
           git add -f cryptex/overnight/data/equity.csv
+          git add -f cryptex/overnight/data/review.json
+          git add -f cryptex/overnight/data/review.md
           if git diff --cached --quiet; then
             echo "No journal updates."
             exit 0
