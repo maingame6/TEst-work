@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T22:31:52.853716+00:00",
+  "generated_at": "2026-10-30T22:36:57.287151+00:00",
   "paper_only": true,
-  "candle_ts": 1793399100,
-  "cycles": 7,
+  "candle_ts": 1793399400,
+  "cycles": 8,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,13 +11,17 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.994364,
+      "equity": 9.9967,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": -0.005636,
-      "latest_decision": "HOLD ADA",
-      "queued": null,
+      "paper_return": -0.0033,
+      "latest_decision": "SELL_QUEUED ADA",
+      "queued": {
+        "side": "SELL",
+        "symbol": "ADA",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "ADA",
         "quantity": 5.133210413124728,
@@ -46,18 +50,18 @@
       "wins": 0,
       "realized": -0.00685,
       "paper_return": -0.00685,
-      "latest_decision": "HOLD SOL",
+      "latest_decision": "HOLD PEPE",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.989373,
+      "equity": 9.992291,
       "closed": 1,
       "wins": 0,
       "realized": -0.006642,
-      "paper_return": -0.010627,
-      "latest_decision": "FILLED_BUY SOL",
+      "paper_return": -0.007709,
+      "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
         "symbol": "SOL",
@@ -66,16 +70,16 @@
         "entry_market": 95.52,
         "entry_time": 1793399100,
         "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
-        "peak": 95.52
+        "peak": 95.8
       },
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.990208,
+      "equity": 9.993129,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.009792,
+      "paper_return": -0.006871,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -85,7 +89,7 @@
         "entry_market": 95.42,
         "entry_time": 1793398800,
         "reason": "Relative-strength shock in asset co-movement graph; score=+0.104, gate=0.09",
-        "peak": 95.52
+        "peak": 95.8
       },
       "sample_sufficient": false
     },
@@ -95,32 +99,36 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD PEPE",
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.99315,
+      "equity": 9.989165,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.00685,
-      "latest_decision": "BUY_QUEUED SOL",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.010835,
+      "latest_decision": "FILLED_BUY SOL",
+      "queued": null,
+      "position": {
         "symbol": "SOL",
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.164, gate=0.14"
+        "quantity": 0.010389665752349392,
+        "entry_cost": 0.9993150314787935,
+        "entry_market": 95.8,
+        "entry_time": 1793399400,
+        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.164, gate=0.14",
+        "peak": 95.8
       },
-      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.990208,
+      "equity": 9.993129,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.009792,
+      "paper_return": -0.006871,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -130,7 +138,7 @@
         "entry_market": 95.42,
         "entry_time": 1793398800,
         "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
-        "peak": 95.52
+        "peak": 95.8
       },
       "sample_sufficient": false
     },
@@ -151,18 +159,22 @@
       "wins": 0,
       "realized": -0.00685,
       "paper_return": -0.00685,
-      "latest_decision": "HOLD SOL",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED PEPE",
+      "queued": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.725, gate=0.14"
+      },
       "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.988405,
+      "equity": 9.989788,
       "closed": 1,
       "wins": 0,
       "realized": -0.007611,
-      "paper_return": -0.011595,
-      "latest_decision": "FILLED_BUY BNB",
+      "paper_return": -0.010212,
+      "latest_decision": "HOLD BNB",
       "queued": null,
       "position": {
         "symbol": "BNB",
@@ -171,7 +183,7 @@
         "entry_market": 697.9,
         "entry_time": 1793399100,
         "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.144, gate=0.14",
-        "peak": 697.9
+        "peak": 698.87
       },
       "sample_sufficient": false
     }

@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-10-30T22:31:52.909612+00:00
+Generated: 2026-10-30T22:36:59.870876+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 99.76; initial USD 100.00; change USD -0.24.
-Closed trades: 10; wins 0; losses/breakevens 10.
+Paper equity: USD 99.80; initial USD 100.00; change USD -0.20.
+Closed trades: 11; wins 0; losses/breakevens 11.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | SELL | BTC | 12 | 10 | 0 |
-| HOUSE | HOLD | ETH | 22 | 7 | 1 |
-| SPY | HOLD | SOL | 24 | 5 | 0 |
-| MEME HUNTER | HOLD | PEPE | 14 | 27 | 0 |
-| BREAKOUT | BUY | SOL | 24 | 5 | 0 |
-| CONTRARIAN | SELL | XRP | 6 | 13 | 0 |
-| ROTATOR | HOLD | ADA | 10 | 13 | 1 |
-| VORTEX | HOLD | ETH | 5 | 24 | 1 |
-| FRACTAL | SELL | BTC | 12 | 10 | 0 |
-| SHOCKWAVE | HOLD | PEPE | 14 | 27 | 0 |
+| GAMBLER | BUY | SOL | 35 | 5 | 0 |
+| HOUSE | SELL | ETH | 13 | 15 | 0 |
+| SPY | SELL | SOL | 35 | 5 | 0 |
+| MEME HUNTER | SELL | PEPE | 35 | 8 | 0 |
+| BREAKOUT | BUY | SOL | 35 | 5 | 0 |
+| CONTRARIAN | SELL | XRP | 4 | 21 | 0 |
+| ROTATOR | HOLD | ADA | 20 | 9 | 1 |
+| VORTEX | HOLD | ETH | 14 | 14 | 0 |
+| FRACTAL | BUY | PEPE | 35 | 8 | 0 |
+| SHOCKWAVE | SELL | PEPE | 35 | 8 | 0 |
 
 ## Bot performance
 
@@ -35,7 +35,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | SPY | 1 | 0 | 1 | 0.0% | -0.0173 | 1.00x |
 | MEME HUNTER | 1 | 0 | 1 | 0.0% | -0.0075 | 1.00x |
 | BREAKOUT | 1 | 0 | 1 | 0.0% | -0.0538 | 1.00x |
-| CONTRARIAN | 1 | 0 | 1 | 0.0% | -0.0071 | 1.00x |
+| CONTRARIAN | 2 | 0 | 2 | 0.0% | -0.0141 | 1.00x |
 | ROTATOR | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | VORTEX | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | FRACTAL | 2 | 0 | 2 | 0.0% | -0.0150 | 1.00x |
@@ -43,7 +43,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 ## Where paper trades lost money
 
-- **Exploratory 15-minute observation complete (next-bar fill)**: 6 exits; net USD -0.0577
+- **Exploratory 15-minute observation complete (next-bar fill)**: 7 exits; net USD -0.0646
 - **RSI normalized**: 1 exits; net USD -0.0071
 - **Breakout failed**: 1 exits; net USD -0.0538
 - **Trend failure**: 1 exits; net USD -0.0072
