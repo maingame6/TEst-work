@@ -1,0 +1,12 @@
+utc,model,action,symbol,reason,score,paper
+2026-10-30T21:25:00+00:00,FLUID_ADVECTION,HOLD,PEPE,"Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.088, gate=0.09",0.08825,True
+2026-10-30T21:25:00+00:00,FLUID_VISCOSITY,HOLD,WIF,"Momentum less empirical log-return diffusion/noise; score=+0.112, gate=0.14",0.11221,True
+2026-10-30T21:25:00+00:00,GEOMETRIC_DIVERSITY,BUY_QUEUED,WIF,"Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",0.68261,True
+2026-10-30T21:25:00+00:00,ERROR_CODE_CONSENSUS,BUY_QUEUED,XRP,"Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",1.0,True
+2026-10-30T21:25:00+00:00,GRAPH_COHERENCE,BUY_QUEUED,WIF,"Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",1.0,True
+2026-10-30T21:25:00+00:00,LATTICE_ANALOG,HOLD,PEPE,"Historical nearest-vector analog, 3/9 after-cost positives in old samples; score=-0.405, gate=0.14",-0.40482,True
+2026-10-30T21:25:00+00:00,FREQTRADE_STYLE,BUY_QUEUED,WIF,"Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",1.0,True
+2026-10-30T21:25:00+00:00,QLIB_STYLE,BUY_QUEUED,WIF,"Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",0.9,True
+2026-10-30T21:25:00+00:00,HUMMINGBOT_FRICTION,HOLD,,"No verified L2 order book, bid/ask or queue position: market maker disallowed",0.0,True
+2026-10-30T21:25:00+00:00,LEAN_EVENT,BUY_QUEUED,WIF,"Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",0.75543,True
+2026-10-30T21:25:00+00:00,NAUTILUS_REGIME,BUY_QUEUED,ADA,"Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",0.30036,True
