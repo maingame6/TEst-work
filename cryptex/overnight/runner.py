@@ -292,6 +292,20 @@ def main():
     check=crosscheck();rd=radar()
     changed=cycle(st,history,check,rd)
     if errors:event(st,"DATA","Excluded/unavailable Kraken pairs: "+", ".join(sorted(errors)))
+    # Separate mathematics and open-source hypotheses from original wallets.
+    # Research failure is visible but must NEVER interrupt the core paper lab.
+    try:
+        from research_shadow import store as research_store
+        report=research_store(DATA,history,st.get("feeds",{}).get("instruments",[]),
+                              st["last_ts"],utc())
+        st["research_lab"]={"status":"OK","models":report["shadow_models"],
+                            "news_scouts_up":report["news_scouts"],
+                            "news_sources_total":report["news_sources_total"],
+                            "shadow_cycle":report["cycles"],"paper_only":True}
+    except Exception as exc:
+        st["research_lab"]={"status":"FAILED","error":type(exc).__name__+": "+str(exc)[:180],
+                            "paper_only":True}
+        event(st,"RESEARCH_ERROR","Math/news shadow research: "+st["research_lab"]["error"])
     st["last_run"]=utc()
     st["errors"]=errors
     st["run_kind"]="SCHEDULED_PAPER_RESEARCH"
