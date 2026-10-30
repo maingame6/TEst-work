@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T22:06:19.448762+00:00",
+  "generated_at": "2026-10-30T22:11:24.781109+00:00",
   "paper_only": true,
-  "candle_ts": 1793397600,
-  "cycles": 3,
+  "candle_ts": 1793397900,
+  "cycles": 4,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,12 +11,12 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.996012,
+      "equity": 9.997219,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": -0.003988,
-      "latest_decision": "FILLED_BUY ADA",
+      "paper_return": -0.002781,
+      "latest_decision": "HOLD ADA",
       "queued": null,
       "position": {
         "symbol": "ADA",
@@ -25,7 +25,7 @@
         "entry_market": 0.194033,
         "entry_time": 1793397600,
         "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.216, gate=0.09",
-        "peak": 0.194033
+        "peak": 0.194268
       },
       "sample_sufficient": false
     },
@@ -41,72 +41,36 @@
       "sample_sufficient": false
     },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 9.999381,
-      "closed": 0,
+      "equity": 9.99315,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.000619,
-      "latest_decision": "SELL_QUEUED WIF",
-      "queued": {
-        "side": "SELL",
-        "symbol": "WIF",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "WIF",
-        "quantity": 5.614499527000171,
-        "entry_cost": 1.0,
-        "entry_market": 0.1774,
-        "entry_time": 1793395800,
-        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",
-        "peak": 0.178
-      },
+      "realized": -0.00685,
+      "paper_return": -0.00685,
+      "latest_decision": "FILLED_SELL WIF",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.998596,
-      "closed": 0,
+      "equity": 9.993358,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.001404,
-      "latest_decision": "SELL_QUEUED XRP",
-      "queued": {
-        "side": "SELL",
-        "symbol": "XRP",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "XRP",
-        "quantity": 0.7974924263888531,
-        "entry_cost": 1.0,
-        "entry_market": 1.24893,
-        "entry_time": 1793395800,
-        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
-        "peak": 1.25217
-      },
+      "realized": -0.006642,
+      "paper_return": -0.006642,
+      "latest_decision": "FILLED_SELL XRP",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.999381,
-      "closed": 0,
+      "equity": 9.99315,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.000619,
-      "latest_decision": "SELL_QUEUED WIF",
-      "queued": {
-        "side": "SELL",
-        "symbol": "WIF",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "WIF",
-        "quantity": 5.614499527000171,
-        "entry_cost": 1.0,
-        "entry_market": 0.1774,
-        "entry_time": 1793395800,
-        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",
-        "peak": 0.178
-      },
+      "realized": -0.00685,
+      "paper_return": -0.00685,
+      "latest_decision": "FILLED_SELL WIF",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "LATTICE_ANALOG": {
@@ -121,49 +85,25 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.999381,
-      "closed": 0,
+      "equity": 9.99315,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.000619,
-      "latest_decision": "SELL_QUEUED WIF",
-      "queued": {
-        "side": "SELL",
-        "symbol": "WIF",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "WIF",
-        "quantity": 5.614499527000171,
-        "entry_cost": 1.0,
-        "entry_market": 0.1774,
-        "entry_time": 1793395800,
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",
-        "peak": 0.178
-      },
+      "realized": -0.00685,
+      "paper_return": -0.00685,
+      "latest_decision": "FILLED_SELL WIF",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.999381,
-      "closed": 0,
+      "equity": 9.99315,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.000619,
-      "latest_decision": "SELL_QUEUED WIF",
-      "queued": {
-        "side": "SELL",
-        "symbol": "WIF",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "WIF",
-        "quantity": 5.614499527000171,
-        "entry_cost": 1.0,
-        "entry_market": 0.1774,
-        "entry_time": 1793395800,
-        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
-        "peak": 0.178
-      },
+      "realized": -0.00685,
+      "paper_return": -0.00685,
+      "latest_decision": "FILLED_SELL WIF",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "HUMMINGBOT_FRICTION": {
@@ -178,49 +118,25 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.999381,
-      "closed": 0,
+      "equity": 9.99315,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.000619,
-      "latest_decision": "SELL_QUEUED WIF",
-      "queued": {
-        "side": "SELL",
-        "symbol": "WIF",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "WIF",
-        "quantity": 5.614499527000171,
-        "entry_cost": 1.0,
-        "entry_market": 0.1774,
-        "entry_time": 1793395800,
-        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",
-        "peak": 0.178
-      },
+      "realized": -0.00685,
+      "paper_return": -0.00685,
+      "latest_decision": "FILLED_SELL WIF",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.995166,
-      "closed": 0,
+      "equity": 9.992389,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.004834,
-      "latest_decision": "SELL_QUEUED ADA",
-      "queued": {
-        "side": "SELL",
-        "symbol": "ADA",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "ADA",
-        "quantity": 5.128848989638565,
-        "entry_cost": 1.0,
-        "entry_market": 0.194198,
-        "entry_time": 1793395800,
-        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",
-        "peak": 0.194198
-      },
+      "realized": -0.007611,
+      "paper_return": -0.007611,
+      "latest_decision": "FILLED_SELL ADA",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     }
   }

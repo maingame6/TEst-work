@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-10-30T22:06:19.480986+00:00
-Data status: HEALTHY: waiting for a newly closed Kraken candle
-Paper equity: USD 99.88; initial USD 100.00; change USD -0.12.
-Closed trades: 1; wins 0; losses/breakevens 1.
+Generated: 2026-10-30T22:11:24.823782+00:00
+Data status: HEALTHY: paper trading on completed Kraken candles
+Paper equity: USD 99.86; initial USD 100.00; change USD -0.14.
+Closed trades: 7; wins 0; losses/breakevens 7.
 
 ## Specialist research teams
 
@@ -15,34 +15,35 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | SELL | ETH | 16 | 10 | 0 |
+| GAMBLER | SELL | ETH | 15 | 10 | 0 |
 | HOUSE | SELL | BTC | 14 | 11 | 0 |
-| SPY | SELL | PEPE | 6 | 28 | 0 |
-| MEME HUNTER | SELL | WIF | 40 | 6 | 2 |
+| SPY | SELL | PEPE | 6 | 33 | 0 |
+| MEME HUNTER | SELL | WIF | 32 | 9 | 1 |
 | BREAKOUT | HOLD | SOL | 21 | 5 | 0 |
-| CONTRARIAN | SELL | XRP | 8 | 22 | 0 |
-| ROTATOR | HOLD | ADA | 28 | 5 | 0 |
-| VORTEX | HOLD | ETH | 16 | 10 | 0 |
-| FRACTAL | SELL | ADA | 28 | 5 | 0 |
-| SHOCKWAVE | SELL | WIF | 40 | 6 | 2 |
+| CONTRARIAN | BUY | XRP | 6 | 16 | 0 |
+| ROTATOR | HOLD | ADA | 28 | 6 | 0 |
+| VORTEX | HOLD | ETH | 15 | 10 | 0 |
+| FRACTAL | SELL | ADA | 28 | 6 | 0 |
+| SHOCKWAVE | SELL | WIF | 32 | 9 | 1 |
 
 ## Bot performance
 
 | Bot | Closed | Wins | Losses | Win rate | Realized net USD | Next allocation |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| GAMBLER | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| HOUSE | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| SPY | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| MEME HUNTER | 0 | 0 | 0 | — | +0.0000 | 1.00x |
+| GAMBLER | 1 | 0 | 1 | 0.0% | -0.0089 | 1.00x |
+| HOUSE | 1 | 0 | 1 | 0.0% | -0.0085 | 1.00x |
+| SPY | 1 | 0 | 1 | 0.0% | -0.0173 | 1.00x |
+| MEME HUNTER | 1 | 0 | 1 | 0.0% | -0.0075 | 1.00x |
 | BREAKOUT | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | CONTRARIAN | 1 | 0 | 1 | 0.0% | -0.0071 | 1.00x |
 | ROTATOR | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | VORTEX | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| FRACTAL | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| SHOCKWAVE | 0 | 0 | 0 | — | +0.0000 | 1.00x |
+| FRACTAL | 1 | 0 | 1 | 0.0% | -0.0078 | 1.00x |
+| SHOCKWAVE | 1 | 0 | 1 | 0.0% | -0.0075 | 1.00x |
 
 ## Where paper trades lost money
 
+- **Exploratory 15-minute observation complete (next-bar fill)**: 6 exits; net USD -0.0577
 - **RSI normalized**: 1 exits; net USD -0.0071
 
 ## Where paper trades made money
