@@ -2,10 +2,29 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-10-30T21:02:20.056103+00:00
+Generated: 2026-10-30T21:26:57.579360+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 100.00; initial USD 100.00; change USD +0.00.
+Paper equity: USD 99.97; initial USD 100.00; change USD -0.03.
 Closed trades: 0; wins 0; losses/breakevens 0.
+
+## Specialist research teams
+
+10 parent traders; 64 deterministic, correlated indicator-voters per parent = 640 transparent subagent evaluations per valid candle.
+The specialist parameter sweeps do **not** mean 640 independent AI models or additional market feeds.
+Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Parent fill results still come from `data/trades.csv`.
+
+| Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
+| --- | --- | --- | ---: | ---: | ---: |
+| GAMBLER | BUY | ETH | 29 | 2 | 0 |
+| HOUSE | BUY | BTC | 15 | 15 | 0 |
+| SPY | BUY | PEPE | 21 | 29 | 0 |
+| MEME HUNTER | BUY | WIF | 47 | 5 | 0 |
+| BREAKOUT | BUY | SOL | 33 | 0 | 0 |
+| CONTRARIAN | BUY | XRP | 10 | 25 | 0 |
+| ROTATOR | BUY | ADA | 40 | 0 | 0 |
+| VORTEX | BUY | ETH | 29 | 2 | 0 |
+| FRACTAL | BUY | ADA | 40 | 0 | 0 |
+| SHOCKWAVE | BUY | WIF | 47 | 5 | 0 |
 
 ## Bot performance
 
