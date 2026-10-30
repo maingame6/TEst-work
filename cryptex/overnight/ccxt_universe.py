@@ -28,6 +28,9 @@ def due(folder,now):
  try:
   a=json.loads(p.read_text())
   last=a.get("refreshed_at")
+  if a.get("status")=="UNAVAILABLE" and a.get("last_failure_at"):
+   cooldown=(when(now)-when(a["last_failure_at"])).total_seconds()
+   if 0<=cooldown<3600:return False
   if not last:return True
   gap=(when(now)-when(last)).total_seconds()
   return gap>=INTERVAL_SECONDS or gap<0
