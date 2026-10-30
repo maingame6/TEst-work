@@ -1,0 +1,61 @@
+name: CRYPTEX — independent paper-money integrity audit
+
+# Audits saved portfolio data without placing orders or acquiring new quotes.
+# Independent of the 5-minute trading workflow's concurrency / backlog.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-audit.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cryptex-independent-accounting-audit
+  cancel-in-progress: false
+
+jobs:
+  verify-paper-accounts:
+    name: Verify 21 paper wallets and latest saved market research
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Read isolated paper research branch
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-paper-trading-preview
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run offline regression tests
+        run: |
+          python3 -m py_compile cryptex/overnight/portfolio_report.py
+          python3 -m py_compile cryptex/overnight/integrity_audit.py
+          python3 -m unittest discover -s cryptex/overnight/tests -v
+
+      - name: Independently verify real saved paper-state accounting
+        run: |
+          python3 cryptex/overnight/integrity_audit.py cryptex/overnight/data
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path("cryptex/overnight/data")
+          r=json.loads((d/"integrity_report.json").read_text())
+          p=json.loads((d/"portfolio_report.json").read_text())
+          assert r["audited_accounts"]==21 and r["mode"]=="PAPER_ONLY"
+          assert all(x["passed"] for x in r["checks"])
+          assert p["balance"]<=p["gross_mark_to_market"]+0.00006
+          print("AUDIT VERIFIED: "+str(len(r["checks"]))+
+                " independent assertions, $210 original paper capital, "+
+                str(r["audited_accounts"])+" wallets")
+          print("Paper NAV: "+str(p["balance"])+", gross NAV "+
+                str(p["gross_mark_to_market"])+", estimated unwind cost "+
+                str(p["estimated_future_exit_costs"]))
+          PY
