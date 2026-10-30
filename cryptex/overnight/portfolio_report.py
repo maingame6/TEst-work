@@ -253,6 +253,12 @@ def store(main, research, data_dir, at):
         f"Realised ${snap['realised']:+.4f}; unrealised after estimated future sale costs ${snap['unrealised_estimate']:+.4f}.",
         f"Open: {snap['total_open']}; queued: {snap['total_queued']}; closed: {snap['total_completed']}; paper fills in current JSON: {snap['saved_fills']}.", '',
         'Overnight status: ' + night['status'],
+        '',
+        '## Full overnight intelligence briefing',
+        '',
+        'Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders, highest/lowest completed trades, exit reasons, overnight price action, execution-cost attribution, public news, specialist-vote health and research distillation gates.',
+        'The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.',
+        '',
     ]
     if 'start' in night:
         lines += [f"First observed overnight starting balance ${night['start']['balance']:.4f} at {night['start']['at']} (NOT backdated to 21:00).",
