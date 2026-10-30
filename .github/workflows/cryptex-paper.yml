@@ -44,6 +44,9 @@ jobs:
         run: |
           python3 -m py_compile cryptex/overnight/runner.py
           python3 -m py_compile cryptex/overnight/subagents.py
+          python3 -m py_compile cryptex/overnight/research_math.py
+          python3 -m py_compile cryptex/overnight/research_flock.py
+          python3 -m py_compile cryptex/overnight/research_shadow.py
           python3 -m unittest discover -s cryptex/overnight/tests -v
           python3 cryptex/overnight/runner.py
 
@@ -56,6 +59,12 @@ jobs:
           git add -f cryptex/overnight/data/trades.csv
           git add -f cryptex/overnight/data/decisions.csv
           git add -f cryptex/overnight/data/subagent_decisions.csv
+          git add -f cryptex/overnight/data/shadow_state.json
+          git add -f cryptex/overnight/data/shadow_trades.csv
+          git add -f cryptex/overnight/data/shadow_decisions.csv
+          git add -f cryptex/overnight/data/shadow_review.json
+          git add -f cryptex/overnight/data/shadow_review.md
+          git add -f cryptex/overnight/data/public_research.json
           git add -f cryptex/overnight/data/equity.csv
           git add -f cryptex/overnight/data/review.json
           git add -f cryptex/overnight/data/review.md
