@@ -96,6 +96,53 @@ class PaperOnlySafetyTests(unittest.TestCase):
         self.assertIn('st["halted"]=False',src)
         self.assertIn('if st.get("peak_halt",False)',src)
 
+    def test_640_distinct_specialist_reviews_without_new_wallets(self):
+        from subagents import ROLES, subagent_team
+        self.assertEqual(len(ROLES),64)
+        self.assertEqual(len(set(ROLES)),64)
+        x={"price":100.,"ret3":.001,"ret8":.001,"ret10":.001,"ret21":.001,
+           "ret2":.0004,"one":.0002,"fast":99.5,"slow":100.1,
+           "z":.25,"rsi":52,"vol":.006,"vr":1.1,
+           "priorhigh":102.,"entropy":.9,"hour_volume":2_000_000.}
+        fs={"BTC":x}
+        teams=[subagent_team(i,fs,proposed={"symbol":"BTC","reason":"Paper test"}) for i in range(10)]
+        self.assertEqual(sum(len(t["votes"]) for t in teams),640)
+        for t in teams:
+            self.assertEqual(t["result"],"BUY")
+            self.assertEqual(t["veto_count"],0)
+            self.assertEqual(t["support"]+t["opposition"]+t["neutral"],60)
+            self.assertEqual([v["role"] for v in t["votes"]],list(ROLES))
+        st=R.init()
+        self.assertEqual(len(st["bots"]),10)
+        self.assertEqual(sum(bot["cash"] for bot in st["bots"]),100)
+
+    def test_specialists_veto_illiquid_and_missing_data(self):
+        from subagents import subagent_team
+        x={"price":100.,"ret3":.001,"ret8":.001,"ret10":.001,"ret21":.001,
+           "ret2":.0004,"one":.0002,"fast":99.5,"slow":100.1,
+           "z":.25,"rsi":52,"vol":.006,"vr":1.1,
+           "priorhigh":102.,"entropy":.9,"hour_volume":2.}
+        r=subagent_team(0,{"BTC":x},proposed={"symbol":"BTC","reason":"test"})
+        self.assertEqual(r["result"],"VETO")
+        self.assertEqual(r["veto_count"],1)
+        missing=subagent_team(0,{},proposed={"symbol":"BTC","reason":"test"})
+        self.assertEqual(missing["result"],"VETO")
+        self.assertEqual(len(missing["votes"]),64)
+
+    def test_specialists_log_advice_but_cannot_override_stop(self):
+        from subagents import subagent_team
+        x={"price":100.,"ret3":-.004,"ret8":-.008,"ret10":-.008,"ret21":-.01,
+           "ret2":-.003,"one":-.001,"fast":99.5,"slow":100.1,
+           "z":-1.2,"rsi":42,"vol":.006,"vr":1.1,
+           "priorhigh":102.,"entropy":.9,"hour_volume":2_000_000.}
+        pos={"symbol":"BTC","entry_mid":110.,"entry_price":110.,
+             "entry_cost":1.,"entry_ts":100000,"qty":.01,
+             "high_water":111.,"trail_armed":False,"exploratory":False}
+        t=subagent_team(0,{"BTC":x},position=pos)
+        self.assertEqual(t["result"],"POSITION_REVIEW")
+        self.assertIn("stop",R.exit_signal(pos,0,{"BTC":x},101000))
+        self.assertEqual(len(t["votes"]),64)
+
     def test_stale_data_never_trades(self):
         st=R.init()
         candles={k:[{"ts":int(time.time())-99999-300*i,"close":100.,"high":101.,"low":99.,"volume":50.,"count":3,"vwap":100.} for i in range(70)] for k in ["BTC","ETH","SOL","XRP","ADA","DOGE"]}
