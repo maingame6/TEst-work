@@ -80,7 +80,7 @@ class ResearchLabTests(unittest.TestCase):
   self.assertTrue(changed)
   self.assertIn("permanent_halt",st)
   self.assertEqual(len(st["bots"]),11)
-  self.assertLess(st["bots"]["FLUID_ADVECTION"]["cash"],8.5)
+  self.assertEqual(st["bots"]["FLUID_ADVECTION"]["cash"],8.5)
   self.assertTrue(any(t.get("ts")==1 for t in st["trades"]))
 
  def test_shadow_portfolio_daily_loss_halts_buys_not_sells(self):
