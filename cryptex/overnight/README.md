@@ -1,58 +1,61 @@
-# CRYPTEX Overnight — persistent autonomous PAPER-trading research desk
+# CRYPTEX Overnight — automatic crypto PAPER trading research
 
-**No real funds. No exchange API key. No live execution code. No guaranteed returns.**
+**This project trades SIMULATED dollars. It does not send exchange orders, connect exchange accounts, or earn actual funds.**
 
-This is a safe, independent upgrade of the 27 October 2026 CRYPTEX 10-agent lab. It leaves the original `cryptex/index.html` browser simulator unchanged. It runs autonomous **paper** decisions continuously on a computer/server with the engine process running; being saved to GitHub does **not** mean it is running.
+## What is running, and what GitHub can do
 
-## Start it (24/7 on an always-on computer or VPS)
+The independent CRYPTEX engine is on branch \`cryptex-paper-trading-preview\`:
+- \`cryptex/overnight/runner.py\` is the Python stdlib research runner.
+- \`cryptex/overnight/overnight.html\` is the read-only dashboard.
+- \`cryptex/overnight/tests/test_runner.py\` tests safety before each paper cycle.
+- \`cryptex/overnight/data/\` gets committed journal/results files after successful runs.
+- \`.github/workflows/cryptex-paper.yml\` exists on the repository's **default/main branch** because GitHub only schedules workflows that are on the default branch.
 
-Requires Python 3.10+ (stdlib only); computer with outbound HTTPS. The dashboard is **local-only** by default:
+The workflow is configured for minute **17 and 47 of every UTC hour**. Each run starts a fresh GitHub-hosted machine, fetches public market observations, evaluates up to 10 simulated strategies, commits its results to this branch and stops. It is NOT a continuously running live server, and scheduled events can be delayed or skipped.
 
-```sh
-python3 engine.py serve
-# Open http://127.0.0.1:8765 on the same computer.
-```
+**Important:** Having workflow code on GitHub does not prove that any particular scheduled run has executed successfully. Verify the first run and its logs in **Actions > CRYPTEX — scheduled paper-market research**, and verify the timestamp in \`data/state.json\`. This depends on Actions being enabled and usage limits. In a private repository, GitHub-hosted Actions minutes may be billed after the included allowance; running twice hourly is roughly 1,440 billed minutes per 30-day month if every run rounds to one minute, before other workflows.
 
-To run a single data/paper cycle:
+## Review the actual decisions
 
-```sh
-python3 engine.py once
-```
+- **Paper-trading dashboard:** \`overnight.html\`, which loads \`data/state.json\` directly from the same directory when hosted via a static site.
+- **Simple performance review:** \`data/review.md\`
+- **Machine-readable review:** \`data/review.json\`
+- **Complete append-only order journal:** \`data/trades.csv\` with simulated fills, entry/exit reason, fees and net P&L.
+- **Portfolio trajectory:** \`data/equity.csv\`
+- **Health and latest market-data exclusions:** \`data/state.json\`
 
-To run via Docker (recommended for unattended 24/7 with automatic restarts), from this directory:
+No result exists until the first *successful* scheduled run. Missing data is never replaced with invented live quotes.
 
-```sh
-docker compose up -d --build
-docker compose logs -f --tail=100
-# dashboard: http://127.0.0.1:8765 on hosting machine
-```
+## Market data
 
-For a remote private VPS dashboard, SSH tunnel `ssh -L 8765:127.0.0.1:8765 user@your-vps`, then open localhost:8765. Never open the raw API to the public Internet without separate authentication/TLS; there is no login in this prototype.
+- Kraken public 5-minute OHLCV, volume, trade counts and VWAP. **Current unfinished candle excluded.** New signals use only committed candles; pending simulated orders fill on a later observed candle.
+- CoinGecko public spot prices for independent cross-checks; >5% mismatch excludes that instrument for the current cycle. The engine records when secondary data are missing.
+- DexScreener Solana boosted-token discovery is **research-only**. Paid boosts do not prove a safe token; without verified mint authority, LP lock, holder concentration and developer history, no DEX trading is authorized.
+- Not every symbol is available on Kraken. Unavailable, misaligned or stale pairs are excluded. If there are too few valid instruments, the runner does not place any simulated orders.
 
-The SQLite database is persisted to `/data` in Docker, or `data/cryptex.sqlite3` locally; restarts do not reset the $100 accounts. Back up that database while the server is stopped, or use SQLite online backup semantics.
+## 10 hypothesis strategies
 
-## Actual source policy (not just 'lots of data')
+Gambler (trend); House (range rebound); Spy (volume-jump proxy, NOT actual wallet following); Meme Hunter (listed-asset momentum); Breakout (Donchian); Contrarian (RSI); Rotator (relative strength); Vortex (flow proxy); Fractal (multi-scale entropy); Shockwave (lag-correlation hypothesis).
 
-- **Kraken public 5-minute OHLCV** (open, high, low, close, real volume, trade counts, VWAP) for up to 12 tickers, where the requested USD pairs exist. The current/uncommitted candle is ignored. 45+ historical committed candles needed before a signal. Last close must be fresh. All fills are simulated at the NEXT committed candle after a decision — no look-ahead same-bar fills. Kraken retains at most 720 recent OHLC intervals; this is a short-term signal, not a comprehensive backtest.
-- **CoinGecko public spot reference**, queried on a separate 15-min cadence, crosschecks prices; >5% mismatch vetoes individual coins. If this independent feed fails, the primary Kraken feed is still marked as the only available source. No fake fallback prices.
-- **DexScreener Solana boosted-token radar**, 15-minute research view; paid promotion is NOT quality. Missing verifiable mint-authority, LP lock, top-10-holder <=20%, >=$50k hourly volume, no prior developer rug and score >=0.60 => token NOT eligible for execution. This prototype has no trustworthy automated source for every gate, so it deliberately DOES NOT TRADE discovered DEX tokens. The trading universe is listed Kraken-quoted pairs only.
-- Metadata from external sources can be late, stale, missing, unavailable, out of sync, or inaccurate. All failures must appear in the log. No self-generated missing values are represented as authentic.
+Every agent begins with **$10 fictitious cash**. 8% of total portfolio equity maximum per new order, 6% stop trigger at observed candle close, 12% gain to arm trailing stop, daily loss trigger of 5%, peak drawdown trigger of 15%, no averaging down, no leverage, only one position per bot. **Stopped positions may execute materially below the stop threshold** when sampled later. Transaction cost model: 0.15% fee + 0.25% slippage each side, estimates only.
 
-## Strategy lab — ten paper wallets
+## How it adapts
 
-Ten $10 paper budgets (aggregate $100): GAMBLER (trend), HOUSE (range/grid proxy), SPY (volume only, not actual wallet following), MEME HUNTER (listed-asset momentum), BREAKOUT (Donchian), CONTRARIAN (RSI), ROTATOR (relative strength), VORTEX (flow analogy only), FRACTAL (time scales/entropy), SHOCKWAVE (untested lead/lag correlations). **All trades require valid measured quotes**, are fully journaled, and are simulated, not real trades.
+Once an agent has **at least 20 completed paper trades**, the engine examines its recent after-cost results. It **reduces** the future position size factor to 0.50 or 0.65 if negative or statistically weak; it does not increase above the original risk cap. This is bounded risk adaptation, *not* a neural network learning to predict markets or evidence that any trading strategy is profitable.
 
-Original strict-risk policy carried forward: **maximum 8% of aggregate paper equity per order**, no averaging down, no leverage, one position per trader, 6% stop *trigger*, trailing starts only after 12% gain; daily equity loss 5% or peak drawdown 15% disables new orders until manually reviewed. Stops are checked only at bar closes, and filled on the following bar — this can be worse than the nominal 6% in a crash. Simulated cost is 0.15% fee per side and 0.25% conservative slippage/spread per side; these are adjustable in source, are not venue guarantees, and may grossly underestimate illiquid meme execution.
+The new \`data/review.md\` automatically groups winning/losing trades by strategy and exit reason. Use win rate, average win/loss, net after-cost P&L, drawdown, data gaps and out-of-sample validation together, not cherry-picked winners.
 
-## 'Gets smarter' — constrained adaptation, not AI magic
+## Run it yourself (safe local dry run)
 
-After at least 20 closed **real-quote paper** trades, each bot re-evaluates the last 40 realized net returns and shrinks future allocations when its sample expectancy or confidence is weak. This is cautious, bounded online adaptation. It does not widen stops, disable checks, turn on real-money trades or 'learn' from synthetic market price histories. There is no claim of positive risk-adjusted edge, neural network retraining, or genuine machine intelligence in this version. For more sophisticated ML, use a rigorously timestamped dataset and walk-forward out-of-sample tests with purging/embargo before any promotion to a live executor.
+Python 3.10+ and internet access, no keys:
 
-## Diagnostics
+\`\`\`sh
+python3 -m unittest discover -s cryptex/overnight/tests -v
+python3 cryptex/overnight/runner.py
+\`\`\`
 
-```sh
-python3 -m unittest discover -s tests -v
-python3 engine.py state
-```
+This writes only to \`cryptex/overnight/data\`, never to an exchange account.
 
-On feed outage, new trades are blocked. If running unattended, also configure an external uptime alarm and alert on `DEGRADED` for more than 10 minutes. The current prototype cannot prevent losses while offline or guarantee fast exit after a gap. Funding with real money or adding exchange keys requires a different, separately reviewed executor with least-privilege API scopes, no withdrawal permissions, vault storage, idempotent orders, exchange reconciliation, kill switch, audit and regulatory checks. Do **not** paste keys into the public repo, browser local storage, this chat, or a GitHub Pages page.
+## Limitations
+
+GitHub cron is not guaranteed punctual and cannot provide an always-connected stop-loss executor. The research engine observes at most twice hourly in GitHub Actions, though it uses 5-minute source candles. No real trading execution, regulatory approval, fraud-detection guarantees, predictive AI training, or realized investment earnings are claimed. Never upload API keys or wallet secrets to this repository.
