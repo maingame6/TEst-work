@@ -10,6 +10,7 @@ DATA.mkdir(parents=True,exist_ok=True)
 STATE=DATA/"state.json"
 TRADES=DATA/"trades.csv"
 CURVE=DATA/"equity.csv"
+DECISIONS=DATA/"decisions.csv"
 SYMBOLS={"BTC":"XBTUSD","ETH":"ETHUSD","SOL":"SOLUSD","BNB":"BNBUSD","XRP":"XRPUSD","ADA":"ADAUSD","DOGE":"DOGEUSD","SHIB":"SHIBUSD","PEPE":"PEPEUSD","BONK":"BONKUSD","WIF":"WIFUSD","FLOKI":"FLOKIUSD"}
 CG={"BTC":"bitcoin","ETH":"ethereum","SOL":"solana","BNB":"binancecoin","XRP":"ripple","ADA":"cardano","DOGE":"dogecoin","SHIB":"shiba-inu","PEPE":"pepe","BONK":"bonk","WIF":"dogwifhat","FLOKI":"floki"}
 NAMES=["GAMBLER","HOUSE","SPY","MEME HUNTER","BREAKOUT","CONTRARIAN","ROTATOR","VORTEX","FRACTAL","SHOCKWAVE"]
@@ -191,8 +192,15 @@ def cycle(st,history,check,radar_results):
     fs={s:feature(h) for s,h in valid.items()};prices={s:x["price"] for s,x in fs.items()}
     before=equity(st,prices)
     st["last_ts"]=ts;st["peak"]=max(st["peak"],before)
-    if st["daily_date"]!=utc()[:10]:st["daily_date"]=utc()[:10];st["daily_start"]=before
-    if before < st["peak"]*.85 or before < st["daily_start"]*.95:
+    if st["daily_date"]!=utc()[:10]:
+        st["daily_date"]=utc()[:10]
+        st["daily_start"]=before
+        if not st.get("peak_halt",False):
+            st["halted"]=False
+            event(st,"RISK","New UTC day: daily paper-loss pause reset; 15% peak limit still applies")
+    if before < st["peak"]*.85:
+        st["peak_halt"]=True
+    if st.get("peak_halt",False) or before < st["daily_start"]*.95:
         if not st["halted"]:event(st,"HALT","15% peak drawdown / 5% daily paper loss, no new buys")
         st["halted"]=True
     for i,b in enumerate(st["bots"]):
@@ -210,7 +218,9 @@ def cycle(st,history,check,radar_results):
             b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"],"exploratory":sig.get("exploratory",False)}
             b["last_reason"]="BUY QUEUED: "+sig["symbol"]+" — "+sig["reason"]
             event(st,"SIGNAL",b["name"]+" queued PAPER BUY "+sig["symbol"]+"; "+sig["reason"])
-        else:b["last_reason"]="HOLD: no qualified setup"
+        else:
+            b["last_reason"]="HOLD: no qualified setup"
+            event(st,"HOLD",b["name"]+" no safe liquid entry this candle")
     st["last_prices"]=prices;st["radar"]=radar_results;st["health"]="HEALTHY: paper trading on completed Kraken candles";st["last_checked"]=utc();st["cycles"]+=1
     st["feeds"]={"primary":"Kraken 5m completed OHLCV","secondary":"CoinGecko independent spot check" if check else "CoinGecko unavailable","instruments":sorted(prices),"excluded":blocked,"candle_ts":ts,"never_live_money":True}
     st["learning"]={b["name"]:{"completed":b["closed"],"wins":b["wins"],"net_pnl":b["net"],"next_allocation_factor":learning(b),"net_expectancy":avg(b["completed"][-40:]),"recent_sample_count":len(b["completed"][-40:])} for b in st["bots"]}
@@ -232,6 +242,7 @@ def main():
     st["last_run"]=utc()
     st["errors"]=errors
     st["run_kind"]="SCHEDULED_PAPER_RESEARCH"
+    st["trade_profile"]="ACTIVE_PAPER_EXPLORATION_1.2_PERCENT_MAX"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
@@ -248,6 +259,20 @@ def main():
             newer.append({"timestamp_utc":dt.datetime.fromtimestamp(t["ts"],dt.timezone.utc).isoformat(),**t})
             seen.add(key(t))
     if newer or not TRADES.exists():write_csv(TRADES,fields,old+newer)
+    # Keep an append-only decision tape so pending signals and rejected setups
+    # are visible even when an order waits for a later closed candle.
+    decision_fields=["utc","type","message"]
+    prior_decisions=[]
+    if DECISIONS.exists():
+        with DECISIONS.open(newline="",encoding="utf8") as fp:
+            prior_decisions=list(csv.DictReader(fp))
+    seen_decisions={(d["utc"],d["type"],d["message"]) for d in prior_decisions}
+    for e in reversed(st.get("events",[])):
+        ident=(e["time"],e["type"],e["msg"])
+        if ident not in seen_decisions:
+            prior_decisions.append({"utc":e["time"],"type":e["type"],"message":e["msg"]})
+            seen_decisions.add(ident)
+    write_csv(DECISIONS,decision_fields,prior_decisions)
     total=equity(st,st["last_prices"])
     review_report(st,old+newer,total)
     with CURVE.open("a",newline="") as f:
