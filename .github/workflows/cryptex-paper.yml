@@ -4,6 +4,10 @@ name: CRYPTEX — scheduled paper-market research
 # This workflow checks out a separate CRYPTEX research branch; it does not
 # modify or deploy the site's production code. NO REAL ORDERS OR KEYS.
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-paper.yml'
   schedule:
     - cron: '17,47 * * * *'
   workflow_dispatch:
