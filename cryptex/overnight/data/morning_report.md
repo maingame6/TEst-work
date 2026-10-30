@@ -2,26 +2,36 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-10-30T22:11:24.793305+00:00 (Europe/Dublin)
+Checked: 2026-10-30T22:16:35.668077+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; unattended GitHub schedule NOT YET VERIFIED
 Last genuine scheduled execution: none yet
 
-**Starting paper money $210.00 · Current estimated liquidation $209.7096 · P&L $-0.2904 (-0.14%)**
+**Starting paper money $210.00 · Current estimated liquidation $209.6892 · P&L $-0.3108 (-0.15%)**
 
-Realised $-0.1132; unrealised after estimated future sale costs $-0.1771.
-Open: 4; queued: 1; closed: 14; paper fills in current JSON: 32.
+Realised $-0.1132; unrealised after estimated future sale costs $-0.1976.
+Open: 5; queued: 6; closed: 14; paper fills in current JSON: 33.
 
 Overnight status: IN_PROGRESS
 First observed overnight starting balance $209.6998 at 2026-10-30T21:39:59.239367+00:00 (NOT backdated to 21:00).
-Overnight P&L $+0.0098 as of 2026-10-30T22:11:24.793305+00:00.
-New paper fills since session started: 15.
+Overnight P&L $-0.0106 as of 2026-10-30T22:16:35.668077+00:00.
+New paper fills since session started: 16.
+
+## Price prediction versus trading costs
+
+Estimated price move needed just to break even on a round trip: **0.803%** (0.15% fees and 0.25% slippage each side).
+Gross-versus-net attribution available on 0 of 14 cached closed trades; earlier records are honestly marked unavailable.
+Attributed gross market movement P&L: $+0.000000;
+Attributed fees + slippage drag: $0.000000;
+Attributed net profit/loss: $+0.000000.
+Gross winners: 0; after-cost winners: 0; gross winners turned into losses by execution friction: 0.
+Do not claim profitability until fresh after-cost trades demonstrate out-of-sample performance.
 
 ## Independent paper portfolios
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 99.7649 | -0.2351 | -0.0647 | 7 | 3 |
+| Original ten traders | 100.00 | 99.7445 | -0.2555 | -0.0647 | 7 | 4 |
 | Eleven maths/OSS traders | 110.00 | 109.9447 | -0.0553 | -0.0485 | 7 | 1 |
 
 ## 21-agent leaderboard
@@ -38,21 +48,21 @@ New paper fills since session started: 15.
 | 8 | FREQTRADE_STYLE | research | 9.9932 | -0.0068 | -0.0068 | 1 | cash |
 | 9 | QLIB_STYLE | research | 9.9932 | -0.0068 | -0.0068 | 1 | cash |
 | 10 | LEAN_EVENT | research | 9.9932 | -0.0068 | -0.0068 | 1 | cash |
-| 11 | CONTRARIAN | main | 9.9929 | -0.0071 | -0.0071 | 1 | cash |
-| 12 | SHOCKWAVE | main | 9.9925 | -0.0075 | -0.0075 | 1 | cash |
-| 13 | MEME HUNTER | main | 9.9925 | -0.0075 | -0.0075 | 1 | cash |
-| 14 | NAUTILUS_REGIME | research | 9.9924 | -0.0076 | -0.0076 | 1 | cash |
-| 15 | FRACTAL | main | 9.9922 | -0.0078 | -0.0078 | 1 | cash |
-| 16 | HOUSE | main | 9.9915 | -0.0085 | -0.0085 | 1 | cash |
-| 17 | GAMBLER | main | 9.9911 | -0.0089 | -0.0089 | 1 | cash |
+| 11 | SHOCKWAVE | main | 9.9925 | -0.0075 | -0.0075 | 1 | cash |
+| 12 | MEME HUNTER | main | 9.9925 | -0.0075 | -0.0075 | 1 | cash |
+| 13 | NAUTILUS_REGIME | research | 9.9924 | -0.0076 | -0.0076 | 1 | cash |
+| 14 | FRACTAL | main | 9.9922 | -0.0078 | -0.0078 | 1 | cash |
+| 15 | HOUSE | main | 9.9915 | -0.0085 | -0.0085 | 1 | cash |
+| 16 | GAMBLER | main | 9.9911 | -0.0089 | -0.0089 | 1 | cash |
+| 17 | CONTRARIAN | main | 9.9834 | -0.0166 | -0.0071 | 1 | XRP |
 | 18 | SPY | main | 9.9827 | -0.0173 | -0.0173 | 1 | cash |
-| 19 | ROTATOR | main | 9.9479 | -0.0521 | +0.0000 | 0 | ADA |
-| 20 | BREAKOUT | main | 9.9413 | -0.0587 | +0.0000 | 0 | SOL |
-| 21 | VORTEX | main | 9.9405 | -0.0595 | +0.0000 | 0 | ETH |
+| 19 | ROTATOR | main | 9.9435 | -0.0565 | +0.0000 | 0 | ADA |
+| 20 | BREAKOUT | main | 9.9429 | -0.0571 | +0.0000 | 0 | SOL |
+| 21 | VORTEX | main | 9.9324 | -0.0676 | +0.0000 | 0 | ETH |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793397900 / 1793397900
-Warnings: none
+Latest main/shadow candle timestamps: 1793398200 / 1793397900
+Warnings: time_misaligned
 Balances include hypothetical estimated future sale fee 0.15% and slippage 0.25%; not executable quotes.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.

@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-10-30T22:11:24.793305+00:00",
-  "local_time": "2026-10-30T22:11:24.793305+00:00",
+  "generated_at": "2026-10-30T22:16:35.668077+00:00",
+  "local_time": "2026-10-30T22:16:35.668077+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
-  "balance": 209.709639,
-  "gross_mark_to_market": 209.809185,
-  "estimated_future_exit_costs": 0.099546,
-  "pnl": -0.290361,
-  "pnl_pct": -0.13827,
+  "balance": 209.689224,
+  "gross_mark_to_market": 0,
+  "estimated_future_exit_costs": -209.689224,
+  "pnl": -0.310776,
+  "pnl_pct": -0.14799,
   "realised": -0.113213,
-  "unrealised_estimate": -0.177148,
+  "unrealised_estimate": -0.197563,
   "groups": {
     "main": {
       "starting": 100.0,
-      "equity": 99.764906,
-      "gross_equity": 99.860467,
-      "pnl": -0.235094,
+      "equity": 99.744491,
+      "gross_equity": 99.844777,
+      "pnl": -0.255509,
       "realised": -0.064712,
       "closed": 7,
       "wins": 0,
-      "open": 3,
-      "queued": 1
+      "open": 4,
+      "queued": 6
     },
     "research": {
       "starting": 110.0,
@@ -50,8 +50,13 @@
       "closed": 1,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): ETH \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "pending": {
+        "side": "BUY",
+        "symbol": "BTC",
+        "reason": "EXPLORATORY PAPER PROBE (directional momentum; 3-bar +0.22%; RSI 48; volume 0.89x)",
+        "exploratory": true
+      },
+      "last_decision": "BUY QUEUED: BTC \u2014 EXPLORATORY PAPER PROBE (directional momentum; 3-bar +0.22%; RSI 48; volume 0.89x)",
       "missing_quote": false
     },
     {
@@ -68,8 +73,13 @@
       "closed": 1,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): BTC \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "pending": {
+        "side": "BUY",
+        "symbol": "ETH",
+        "reason": "EXPLORATORY PAPER PROBE (reversion; 3-bar +0.11%; RSI 48; volume 0.27x)",
+        "exploratory": true
+      },
+      "last_decision": "BUY QUEUED: ETH \u2014 EXPLORATORY PAPER PROBE (reversion; 3-bar +0.11%; RSI 48; volume 0.27x)",
       "missing_quote": false
     },
     {
@@ -86,8 +96,13 @@
       "closed": 1,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): PEPE \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "pending": {
+        "side": "BUY",
+        "symbol": "SOL",
+        "reason": "EXPLORATORY PAPER PROBE (directional momentum; 3-bar +0.15%; RSI 60; volume 0.38x)",
+        "exploratory": true
+      },
+      "last_decision": "BUY QUEUED: SOL \u2014 EXPLORATORY PAPER PROBE (directional momentum; 3-bar +0.15%; RSI 60; volume 0.38x)",
       "missing_quote": false
     },
     {
@@ -104,8 +119,13 @@
       "closed": 1,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): WIF \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "pending": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "EXPLORATORY PAPER PROBE (directional momentum; 3-bar -0.45%; RSI 41; volume 1.39x)",
+        "exploratory": true
+      },
+      "last_decision": "BUY QUEUED: PEPE \u2014 EXPLORATORY PAPER PROBE (directional momentum; 3-bar -0.45%; RSI 41; volume 1.39x)",
       "missing_quote": false
     },
     {
@@ -113,12 +133,12 @@
       "name": "BREAKOUT",
       "initial": 10.0,
       "cash": 2.0,
-      "equity": 9.94125181,
-      "gross_equity": 9.97311437,
-      "pnl": -0.05874819,
-      "pnl_pct": -0.58748,
+      "equity": 9.94291734,
+      "gross_equity": 9.97478658,
+      "pnl": -0.05708266,
+      "pnl_pct": -0.57083,
       "realised": 0.0,
-      "unrealised_estimate": -0.05874819,
+      "unrealised_estimate": -0.05708266,
       "closed": 0,
       "wins": 0,
       "position": "SOL",
@@ -130,23 +150,18 @@
       "group": "main",
       "name": "CONTRARIAN",
       "initial": 10.0,
-      "cash": 9.99293842,
-      "equity": 9.99293842,
-      "gross_equity": 9.99293842,
-      "pnl": -0.00706158,
-      "pnl_pct": -0.07062,
+      "cash": 8.79474376,
+      "equity": 9.98339109,
+      "gross_equity": 9.98816028,
+      "pnl": -0.01660891,
+      "pnl_pct": -0.16609,
       "realised": -0.00706158,
-      "unrealised_estimate": 0.0,
+      "unrealised_estimate": -0.00954733,
       "closed": 1,
       "wins": 0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
-        "symbol": "XRP",
-        "reason": "EXPLORATORY PAPER PROBE (reversion; 3-bar +0.06%; RSI 56; volume 0.76x)",
-        "exploratory": true
-      },
-      "last_decision": "BUY QUEUED: XRP \u2014 EXPLORATORY PAPER PROBE (reversion; 3-bar +0.06%; RSI 56; volume 0.76x)",
+      "position": "XRP",
+      "pending": null,
+      "last_decision": "BUY EXECUTED (PAPER): XRP \u2014 EXPLORATORY PAPER PROBE (reversion; 3-bar +0.06%; RSI 56; volume 0.76x)",
       "missing_quote": false
     },
     {
@@ -154,12 +169,12 @@
       "name": "ROTATOR",
       "initial": 10.0,
       "cash": 2.0050005,
-      "equity": 9.94790678,
-      "gross_equity": 9.97977598,
-      "pnl": -0.05209322,
-      "pnl_pct": -0.52093,
+      "equity": 9.94345017,
+      "gross_equity": 9.97530149,
+      "pnl": -0.05654983,
+      "pnl_pct": -0.5655,
       "realised": 0.0,
-      "unrealised_estimate": -0.05209322,
+      "unrealised_estimate": -0.05654983,
       "closed": 0,
       "wins": 0,
       "position": "ADA",
@@ -172,12 +187,12 @@
       "name": "VORTEX",
       "initial": 10.0,
       "cash": 2.00755109,
-      "equity": 9.94046036,
-      "gross_equity": 9.97228944,
-      "pnl": -0.05953964,
-      "pnl_pct": -0.5954,
+      "equity": 9.93238298,
+      "gross_equity": 9.96417965,
+      "pnl": -0.06761702,
+      "pnl_pct": -0.67617,
       "realised": 0.0,
-      "unrealised_estimate": -0.05953964,
+      "unrealised_estimate": -0.06761702,
       "closed": 0,
       "wins": 0,
       "position": "ETH",
@@ -199,8 +214,13 @@
       "closed": 1,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): ADA \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "pending": {
+        "side": "BUY",
+        "symbol": "BTC",
+        "reason": "EXPLORATORY PAPER PROBE (directional momentum; 3-bar +0.22%; RSI 48; volume 0.89x)",
+        "exploratory": true
+      },
+      "last_decision": "BUY QUEUED: BTC \u2014 EXPLORATORY PAPER PROBE (directional momentum; 3-bar +0.22%; RSI 48; volume 0.89x)",
       "missing_quote": false
     },
     {
@@ -217,8 +237,13 @@
       "closed": 1,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): WIF \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "pending": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "EXPLORATORY PAPER PROBE (directional momentum; 3-bar -0.45%; RSI 41; volume 1.39x)",
+        "exploratory": true
+      },
+      "last_decision": "BUY QUEUED: PEPE \u2014 EXPLORATORY PAPER PROBE (directional momentum; 3-bar -0.45%; RSI 41; volume 1.39x)",
       "missing_quote": false
     },
     {
@@ -424,22 +449,35 @@
     "main_stale": false,
     "research_stale": false,
     "missing_quotes": false,
-    "time_misaligned": false,
+    "time_misaligned": true,
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
-    "research_status": "OK"
+    "research_status": "FAILED"
   },
-  "last_candle_main": 1793397900,
+  "last_candle_main": 1793398200,
   "last_candle_research": 1793397900,
-  "total_open": 4,
-  "total_queued": 1,
+  "total_open": 5,
+  "total_queued": 6,
   "total_completed": 14,
-  "saved_fills": 32,
+  "saved_fills": 33,
   "specialist_reviews": 640,
   "news_scouts": 8,
+  "execution_cost_study": {
+    "round_trip_break_even_pct_at_flat_markets": 0.8032,
+    "completed_orders_cached": 14,
+    "attributed_newer_closes": 0,
+    "older_closes_missing_attribution": 14,
+    "gross_market_pnl_attributed": 0,
+    "execution_drag_attributed": 0,
+    "net_pnl_attributed": 0,
+    "gross_winners": 0,
+    "after_cost_winners": 0,
+    "gross_up_but_net_down": 0,
+    "interpretation": "Gross movement is from candle mid-to-mid; execution_drag includes entry/exit fee and slippage assumptions. Numbers cover attributed cached closed trades only."
+  },
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": false,
   "last_schedule_run": null,
-  "github_run_id": "41136395577",
+  "github_run_id": "41136987540",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-10-30",
@@ -450,8 +488,8 @@
       "fills": 17
     },
     "morning": null,
-    "comparison_at": "2026-10-30T22:11:24.793305+00:00",
-    "change": 0.009821,
-    "fills_since_start": 15
+    "comparison_at": "2026-10-30T22:16:35.668077+00:00",
+    "change": -0.010594,
+    "fills_since_start": 16
   }
 }
