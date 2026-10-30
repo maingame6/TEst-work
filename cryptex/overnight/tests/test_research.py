@@ -66,6 +66,45 @@ class ResearchLabTests(unittest.TestCase):
   self.assertLess(sell["pnl"],0)
   self.assertEqual(b["closed"],1)
 
+ def test_shadow_portfolio_daily_loss_halts_buys_not_sells(self):
+  base=S.initial();base["daily_date"]="2026-10-30"
+  base["daily_start"]=120.
+  base["peak"]=120.
+  history={"BTC":candles("BTC"),"ETH":candles("ETH",offset=15),
+           "SOL":candles("SOL",offset=-8)}
+  # All eleven have 10 dollars cash: below 95% of artificial 120 peak.
+  ts=history["BTC"][-1]["ts"]
+  state,changed=S.update(base,history,set(history),ts)
+  self.assertTrue(changed)
+  self.assertTrue(state["halted"])
+  self.assertTrue(state["permanent_halt"])
+  self.assertTrue(all(x["pending"] is None for x in state["bots"].values()))
+  self.assertTrue(all(x["last_decision"].startswith("RISK_HOLD") or
+                      x["last_decision"].startswith("HOLD")
+                      for x in state["bots"].values()))
+
+ def test_shadow_day_pause_resets_if_peak_guard_not_hit(self):
+  base=S.initial()
+  base["halted"]=True
+  base["daily_date"]="2026-10-29"
+  base["risk_reason"]="5% daily paper loss"
+  history={"BTC":candles("BTC"),"ETH":candles("ETH",offset=15),
+           "SOL":candles("SOL",offset=-8)}
+  ts=history["BTC"][-1]["ts"]
+  state,changed=S.update(base,history,set(history),ts)
+  self.assertTrue(changed)
+  self.assertFalse(state["halted"])
+  self.assertFalse(state["permanent_halt"])
+
+ def test_shadow_gross_pnl_separated_from_execution_drag(self):
+  b=S.initial()["bots"][M.MODEL_NAMES[0]]
+  S.fill_order(b,{"side":"BUY","symbol":"BTC","reason":"test"},100,1200,"TEST")
+  sell=S.fill_order(b,{"side":"SELL","symbol":"BTC","reason":"test"},100,1500,"TEST")
+  self.assertAlmostEqual(sell["gross_mid_pnl"],0.)
+  self.assertGreater(sell["execution_drag"],0.)
+  self.assertAlmostEqual(sell["execution_drag"],-sell["pnl"])
+  self.assertLess(sell["net_return_pct"],0.)
+
  def test_public_rss_provenance_and_weak_sentiment(self):
   rss=b'<rss><channel><item><title>Bitcoin ETF approval sparks rally</title><link>https://example.org/story</link><pubDate>Fri, 30 Oct 2026 18:00:00 GMT</pubDate></item></channel></rss>'
   result=F.parse_rss(rss,"TEST","2026-10-30T18:01:00+00:00")
