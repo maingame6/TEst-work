@@ -44,6 +44,19 @@ The workflow is configured for **every five minutes** (the minimum GitHub Action
 
 No result exists until the first *successful* scheduled run. Missing data is never replaced with invented live quotes.
 
+## Wide-market monitoring (hourly, read-only)
+
+The **Market Radar** adds a separate public-data observation layer for **69 or more candidate USD markets** across nine research groups: major crypto assets, Layer-1 infrastructure, DeFi, AI/data, L2/gaming, memes, stablecoins, tokenised-gold proxies, and USD-based forex reference pairs. The exact requested list and confirmed available count are automatically recorded, not invented. An hourly Kraken public AssetPairs/Ticker batch verifies each pair; unsupported, crossed or invalid quotes are excluded with visible warnings. It records bid/ask spread, approximately USD-denominated 24h turnover, daily opening-price change, sector breadth, leading movers and top turnover. No extra coin becomes an orderable asset in the original trading engine.
+
+The CoinGecko global context (when available) adds aggregate crypto market cap, 24h global volume, BTC market-cap dominance, and 24h total market-cap change. It is a **secondary independent source** and failures are marked unavailable. Public stock exchange indexes, actual fiat spot FX venues, futures, oil and physical gold are NOT claimed as monitored; Kraken fiat USD pairs and tokenised-gold pairs are only observable exchange proxies.
+
+- [Market radar latest snapshot](data/market_radar.json)
+- [Historical watchlist snapshots](data/market_radar_snapshots.csv)
+- [Kraken-verified USD pair catalogue](data/market_radar_catalog.json)
+- [Full overnight intelligence briefing](data/morning_briefing.md) — sector breadth and ranked movers are included when the source snapshot is fresh.
+
+**Data-quality nuance:** Kraken ticker change is measured from the *current UTC-day opening price*, not the preceding rolling 24 hours; 24h base volume is a different measure. The quote endpoint does not supply a last-trade timestamp, so the poll timestamp is not proof of a freshly executed market trade. Market radar is not allowed to change the $210 bankroll, trade directly or bypass the 12-asset execution safety gates.
+
 ## Market data
 
 - Kraken public 5-minute OHLCV, volume, trade counts and VWAP. **Current unfinished candle excluded.** New signals use only committed candles; pending simulated orders fill on a later observed candle.
