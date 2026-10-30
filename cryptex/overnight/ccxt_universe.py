@@ -54,10 +54,45 @@ def sanitize_markets(raw,exchange_id):
                   "base":base,"quote":quote,"type":"spot"})
  return sorted(results,key=lambda a:(a["quote"],a["base"],a["symbol"]))
 
+def normalize_kraken_quotes(tickers,market_index,now):
+ """One bounded public all-tickers call at most every six hours, Kraken only.
+
+ quoteVolume is in quote currency. USD figures are only quoted as USD for
+ direct USD pairs, never fabricated USDT/EUR conversion rates.
+ """
+ outputs=[]
+ for sym,t in tickers.items():
+  m=market_index.get(sym)
+  if not m or m.get("quote")!="USD" or not m.get("spot") or m.get("active") is False:
+   continue
+  if not isinstance(t,dict):continue
+  last=t.get("last");bid=t.get("bid");ask=t.get("ask")
+  try:
+   last=float(last);bid=float(bid);ask=float(ask)
+   if not all(math.isfinite(x) and x>0 for x in (last,bid,ask)):continue
+   if bid>ask:continue
+   volume=t.get("quoteVolume")
+   if volume is None and t.get("baseVolume") is not None:
+    volume=float(t["baseVolume"])*last
+   if volume is None:continue
+   volume=float(volume)
+   if not math.isfinite(volume) or volume<0:continue
+   spread=10000*(ask-bid)/((ask+bid)/2)
+  except (TypeError,ValueError,ZeroDivisionError):continue
+  outputs.append({"venue":"kraken","symbol":sym,"last":last,
+     "bid":bid,"ask":ask,"spread_bps":round(spread,2),
+     "approx_24h_usd_turnover":round(volume,2),
+     "polled_at":now,"quote_currency":"USD",
+     "last_trade_exchange_timestamp":t.get("timestamp"),
+     "research_only":True})
+ return sorted(outputs,key=lambda x:x["approx_24h_usd_turnover"],reverse=True)
+
 def snapshot(ccxt_lib,now,exchange_ids=DEFAULT_EXCHANGES):
  """Load public market dictionaries only. Each venue failure stays visible."""
  available=set(getattr(ccxt_lib,"exchanges",[]))
  statuses=[];all_pairs=[];total_returned=0
+ kraken_quotes=[];kraken_quote_status="NOT_ATTEMPTED"
+ kraken_quote_count=0
  for venue in exchange_ids:
   if venue not in available:
    statuses.append({"exchange":venue,"status":"NOT_SUPPORTED","reported_markets":0,
@@ -74,6 +109,16 @@ def snapshot(ccxt_lib,now,exchange_ids=DEFAULT_EXCHANGES):
    cleaned=sanitize_markets(markets,venue)
    total_returned+=len(markets)
    all_pairs.extend(cleaned)
+   # Avoid broad all-ticker calls on other venues: they can be extremely
+   # rate-limited or require lists. Kraken supports one public batch.
+   if venue=="kraken" and getattr(ex,"has",{}).get("fetchTickers") is True:
+    try:
+     ticker_raw=ex.fetch_tickers()
+     kraken_quotes=normalize_kraken_quotes(ticker_raw,markets,now)
+     kraken_quote_count=len(kraken_quotes)
+     kraken_quote_status="OK" if kraken_quote_count else "NO_VALID_QUOTES"
+    except Exception as err:
+     kraken_quote_status="UNAVAILABLE: "+type(err).__name__+":"+str(err)[:90]
    statuses.append({"exchange":venue,"status":"OK",
        "reported_markets":len(markets),"research_pairs":len(cleaned)})
   except Exception as exc:
@@ -101,6 +146,11 @@ def snapshot(ccxt_lib,now,exchange_ids=DEFAULT_EXCHANGES):
    "unique_normalized_spot_pair_symbols":len(unique),
    "unique_base_tickers":len(unique_base),
    "quote_currencies":sorted(QUOTE_WHITELIST),
+   "kraken_public_usd_quote_status":kraken_quote_status,
+   "kraken_usd_quote_count_validated":kraken_quote_count,
+   "kraken_top_usd_quotes":kraken_quotes[:400],
+   "kraken_quote_sample_max_rows":400,
+   "kraken_quote_note":"One public CCXT Kraken fetch_tickers batch per six-hour discovery; top 400 by approx USD turnover, never claims these are fresh trades.",
    "pairs":all_pairs,
    "most_widely_listed_bases":_breadth(all_pairs),
    "watch_only":True,"paper_trade_universe_unchanged":True,
