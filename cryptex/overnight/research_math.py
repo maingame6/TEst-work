@@ -17,9 +17,9 @@ MATH_MODELS=(
  "FLUID_ADVECTION","FLUID_VISCOSITY","GEOMETRIC_DIVERSITY",
  "ERROR_CODE_CONSENSUS","GRAPH_COHERENCE","LATTICE_ANALOG",
 )
-OPEN_MODELS=("FREQTRADE_STYLE","QLIB_STYLE","HUMMINGBOT_FRICTION")
+OPEN_MODELS=("FREQTRADE_STYLE","QLIB_STYLE","HUMMINGBOT_FRICTION","LEAN_EVENT","NAUTILUS_REGIME")
 MODEL_NAMES=MATH_MODELS+OPEN_MODELS
-assert len(MODEL_NAMES)==9
+assert len(MODEL_NAMES)==11
 ROUND_TRIP_COST=2*(.0015+.0025)
 
 def mean(x):return sum(x)/len(x) if x else 0.
@@ -127,6 +127,15 @@ def evaluate(histories, held_positions=None):
     raw=x["r8"]-x["vol"]*.65
     score=clamp((sum(y<=raw for y in rank)/len(rank)-.5)*1.8)
     description="Cross-sectional factor rank concept inspired by Microsoft Qlib"
+   elif model=="LEAN_EVENT":
+    # Deterministic, event-driven trend continuation with completed-bar
+    # confirmation. Architecture-inspired, NO QuantConnect code imported.
+    score=clamp((min(x["r3"],x["r8"])/.012) if x["r3"]>0 and x["r8"]>0 else -.3)
+    description="Event-driven completed-candle confirmation (LEAN-inspired)"
+   elif model=="NAUTILUS_REGIME":
+    # Regime-aware direction with strong shock suppression.
+    score=clamp((x["r8"]/.015) if x["vol"]<.024 and x["volume"]>.5 else -.4)
+    description="Deterministic volatility regime guard (NautilusTrader-inspired)"
    else:
     # Hummingbot's real market making needs order book and execution; no quotes
     # available => HOLD, but log lack of L2 explicitly.
