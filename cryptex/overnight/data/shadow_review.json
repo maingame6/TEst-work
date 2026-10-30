@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T22:36:57.287151+00:00",
+  "generated_at": "2026-10-30T22:42:01.924623+00:00",
   "paper_only": true,
-  "candle_ts": 1793399400,
-  "cycles": 8,
+  "candle_ts": 1793399700,
+  "cycles": 9,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,26 +11,14 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.9967,
-      "closed": 0,
+      "equity": 9.99397,
+      "closed": 1,
       "wins": 0,
-      "realized": 0.0,
-      "paper_return": -0.0033,
-      "latest_decision": "SELL_QUEUED ADA",
-      "queued": {
-        "side": "SELL",
-        "symbol": "ADA",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "ADA",
-        "quantity": 5.133210413124728,
-        "entry_cost": 1.0,
-        "entry_market": 0.194033,
-        "entry_time": 1793397600,
-        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.216, gate=0.09",
-        "peak": 0.194268
-      },
+      "realized": -0.00603,
+      "paper_return": -0.00603,
+      "latest_decision": "FILLED_SELL ADA",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
@@ -56,11 +44,11 @@
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.992291,
+      "equity": 9.991666,
       "closed": 1,
       "wins": 0,
       "realized": -0.006642,
-      "paper_return": -0.007709,
+      "paper_return": -0.008334,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -75,11 +63,11 @@
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.993129,
+      "equity": 9.992503,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.006871,
+      "paper_return": -0.007497,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -105,12 +93,12 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.989165,
+      "equity": 9.988542,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.010835,
-      "latest_decision": "FILLED_BUY SOL",
+      "paper_return": -0.011458,
+      "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
         "symbol": "SOL",
@@ -124,11 +112,11 @@
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.993129,
+      "equity": 9.992503,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.006871,
+      "paper_return": -0.007497,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -154,26 +142,30 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.99315,
+      "equity": 9.989165,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.00685,
-      "latest_decision": "BUY_QUEUED PEPE",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.010835,
+      "latest_decision": "FILLED_BUY PEPE",
+      "queued": null,
+      "position": {
         "symbol": "PEPE",
-        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.725, gate=0.14"
+        "quantity": 201443.02349222256,
+        "entry_cost": 0.9993150314787935,
+        "entry_market": 4.941e-06,
+        "entry_time": 1793399700,
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.725, gate=0.14",
+        "peak": 4.941e-06
       },
-      "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.989788,
+      "equity": 9.98926,
       "closed": 1,
       "wins": 0,
       "realized": -0.007611,
-      "paper_return": -0.010212,
+      "paper_return": -0.01074,
       "latest_decision": "HOLD BNB",
       "queued": null,
       "position": {

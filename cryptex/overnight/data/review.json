@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-30T22:36:59.870876+00:00",
+  "generated_utc": "2026-10-30T22:42:01.969046+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -9,91 +9,91 @@
     "GAMBLER": {
       "decision": "BUY",
       "symbol": "SOL",
-      "support": 35,
+      "support": 26,
       "opposition": 5,
       "veto": 0,
-      "factor_score": 0.3103
+      "factor_score": 0.2636
     },
     "HOUSE": {
       "decision": "SELL",
       "symbol": "ETH",
-      "support": 13,
-      "opposition": 15,
-      "veto": 0,
-      "factor_score": 0.0354
+      "support": 15,
+      "opposition": 9,
+      "veto": 1,
+      "factor_score": 0.0797
     },
     "SPY": {
       "decision": "SELL",
       "symbol": "SOL",
-      "support": 35,
+      "support": 26,
       "opposition": 5,
       "veto": 0,
-      "factor_score": 0.3103
+      "factor_score": 0.2636
     },
     "MEME HUNTER": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 35,
-      "opposition": 8,
+      "support": 24,
+      "opposition": 15,
       "veto": 0,
-      "factor_score": 0.446
+      "factor_score": 0.1539
     },
     "BREAKOUT": {
-      "decision": "BUY",
+      "decision": "HOLD",
       "symbol": "SOL",
-      "support": 35,
+      "support": 26,
       "opposition": 5,
       "veto": 0,
-      "factor_score": 0.3103
+      "factor_score": 0.2636
     },
     "CONTRARIAN": {
-      "decision": "SELL",
-      "symbol": "XRP",
+      "decision": "BUY",
+      "symbol": "BTC",
       "support": 4,
-      "opposition": 21,
+      "opposition": 20,
       "veto": 0,
-      "factor_score": -0.1107
+      "factor_score": -0.0909
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "ADA",
-      "support": 20,
-      "opposition": 9,
+      "support": 26,
+      "opposition": 6,
       "veto": 1,
-      "factor_score": 0.1371
+      "factor_score": 0.2095
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "ETH",
-      "support": 14,
-      "opposition": 14,
-      "veto": 0,
-      "factor_score": 0.0207
+      "support": 7,
+      "opposition": 17,
+      "veto": 1,
+      "factor_score": -0.0384
     },
     "FRACTAL": {
       "decision": "BUY",
       "symbol": "PEPE",
-      "support": 35,
-      "opposition": 8,
+      "support": 24,
+      "opposition": 15,
       "veto": 0,
-      "factor_score": 0.446
+      "factor_score": 0.1539
     },
     "SHOCKWAVE": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 35,
-      "opposition": 8,
+      "support": 24,
+      "opposition": 15,
       "veto": 0,
-      "factor_score": 0.446
+      "factor_score": 0.1539
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 99.802374,
-  "portfolio_paper_change_usd": -0.197626,
-  "all_time_closed_paper_trades": 11,
-  "all_time_closed_wins": 0,
-  "all_time_closed_losses": 11,
-  "aggregate_realized_pnl_usd": -0.139941,
+  "current_paper_equity_usd": 99.731937,
+  "portfolio_paper_change_usd": -0.268063,
+  "all_time_closed_paper_trades": 15,
+  "all_time_closed_wins": 2,
+  "all_time_closed_losses": 13,
+  "aggregate_realized_pnl_usd": -0.13926,
   "agents": {
     "GAMBLER": {
       "closed": 2,
@@ -109,41 +109,41 @@
       "position_size_multiplier": 1.0
     },
     "HOUSE": {
-      "closed": 1,
+      "closed": 2,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "win_rate": 0.0,
-      "realized_net_usd": -0.008545,
-      "average_profit_usd": -0.008545,
+      "realized_net_usd": -0.015407,
+      "average_profit_usd": -0.007704,
       "average_win_usd": null,
-      "average_loss_usd": -0.008545,
-      "last_20_net_usd": -0.008545,
+      "average_loss_usd": -0.007704,
+      "last_20_net_usd": -0.015407,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "SPY": {
-      "closed": 1,
+      "closed": 2,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "win_rate": 0.0,
-      "realized_net_usd": -0.01728,
-      "average_profit_usd": -0.01728,
+      "realized_net_usd": -0.021337,
+      "average_profit_usd": -0.010669,
       "average_win_usd": null,
-      "average_loss_usd": -0.01728,
-      "last_20_net_usd": -0.01728,
+      "average_loss_usd": -0.010669,
+      "last_20_net_usd": -0.021337,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "MEME HUNTER": {
-      "closed": 1,
-      "wins": 0,
+      "closed": 2,
+      "wins": 1,
       "losses": 1,
-      "win_rate": 0.0,
-      "realized_net_usd": -0.007543,
-      "average_profit_usd": -0.007543,
-      "average_win_usd": null,
+      "win_rate": 0.5,
+      "realized_net_usd": -0.001743,
+      "average_profit_usd": -0.000872,
+      "average_win_usd": 0.0058,
       "average_loss_usd": -0.007543,
-      "last_20_net_usd": -0.007543,
+      "last_20_net_usd": -0.001743,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -213,28 +213,33 @@
       "position_size_multiplier": 1.0
     },
     "SHOCKWAVE": {
-      "closed": 1,
-      "wins": 0,
+      "closed": 2,
+      "wins": 1,
       "losses": 1,
-      "win_rate": 0.0,
-      "realized_net_usd": -0.007538,
-      "average_profit_usd": -0.007538,
-      "average_win_usd": null,
+      "win_rate": 0.5,
+      "realized_net_usd": -0.001738,
+      "average_profit_usd": -0.000869,
+      "average_win_usd": 0.0058,
       "average_loss_usd": -0.007538,
-      "last_20_net_usd": -0.007538,
+      "last_20_net_usd": -0.001738,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     }
   },
-  "profitable_exit_reasons": {},
+  "profitable_exit_reasons": {
+    "Exploratory 15-minute observation complete (next-bar fill)": {
+      "count": 2,
+      "net_pnl_usd": 0.0116
+    }
+  },
   "losing_exit_reasons": {
     "RSI normalized": {
       "count": 1,
       "net_pnl_usd": -0.007062
     },
     "Exploratory 15-minute observation complete (next-bar fill)": {
-      "count": 7,
-      "net_pnl_usd": -0.064649
+      "count": 9,
+      "net_pnl_usd": -0.075568
     },
     "Breakout failed": {
       "count": 1,
