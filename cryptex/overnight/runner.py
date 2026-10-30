@@ -161,13 +161,20 @@ def journal(st,b,order,price,ts,port):
         b["cash"]-=budget
         b["position"]={"symbol":s,"entry_mid":price,"entry_price":fill,"entry_cost":budget,"entry_ts":ts,"qty":qty,"high_water":price,"trail_armed":False,"entry_reason":order["reason"],"exploratory":bool(order.get("exploratory",False))}
         pnl=None;fees=qty*fill*FEE
+        mid_entry=price;mid_exit=None;gross_mid_pnl=None;execution_drag=None;net_return_pct=None
     else:
         if not p or p["symbol"]!=s:return
         fill=price*(1-SLIP);qty=p["qty"];proceeds=qty*fill*(1-FEE);pnl=proceeds-p["entry_cost"];fees=qty*fill*FEE
+        mid_entry=p["entry_mid"];mid_exit=price
+        gross_mid_pnl=qty*(mid_exit-mid_entry)
+        execution_drag=gross_mid_pnl-pnl
+        net_return_pct=100*pnl/max(p["entry_cost"],1e-12)
         b["cash"]+=proceeds;b["wins"]+=int(pnl>0);b["closed"]+=1;b["net"]+=pnl
         b["completed"]=(b["completed"]+[pnl/max(p["entry_cost"],1e-12)])[-80:]
         b["position"]=None
-    rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"exploratory":bool(order.get("exploratory",False) if buy else p.get("exploratory",False)),"paper":True}
+    rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"exploratory":bool(order.get("exploratory",False) if buy else p.get("exploratory",False)),
+         "entry_mid":mid_entry,"exit_mid":mid_exit,"gross_mid_pnl":gross_mid_pnl,
+         "execution_drag":execution_drag,"net_return_pct":net_return_pct,"paper":True}
     st["trades"].insert(0,rec);del st["trades"][1500:]
     if buy:event(st,"BUY",b["name"]+" BUY "+s+" simulated "+str(round(budget,2)))
     else:event(st,"SELL",b["name"]+" SELL "+s+" net "+str(round(pnl,4))+" because "+order["reason"])
@@ -335,7 +342,9 @@ def main():
                          "paper_only":True}
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
-    fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl","reason","entry_reason","exploratory","paper"]
+    fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl",
+            "reason","entry_reason","exploratory","entry_mid","exit_mid",
+            "gross_mid_pnl","execution_drag","net_return_pct","paper"]
     old=[]
     if TRADES.exists():
         with TRADES.open(newline="",encoding="utf8") as fp:
