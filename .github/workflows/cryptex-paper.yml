@@ -65,6 +65,7 @@ jobs:
           python3 -m py_compile cryptex/overnight/research_flock.py
           python3 -m py_compile cryptex/overnight/research_shadow.py
           python3 -m py_compile cryptex/overnight/portfolio_report.py
+          python3 -m py_compile cryptex/overnight/morning_briefing.py
           python3 -m unittest discover -s cryptex/overnight/tests -v
           python3 cryptex/overnight/runner.py
 
@@ -87,6 +88,11 @@ jobs:
           git add -f cryptex/overnight/data/combined_equity.csv
           git add -f cryptex/overnight/data/overnight_sessions.json
           git add -f cryptex/overnight/data/morning_report.md
+          # The briefing is an observational report: a failure is explicitly
+          # flagged in state.json, never allowed to stop core paper trading.
+          for path in cryptex/overnight/data/morning_briefing.md cryptex/overnight/data/morning_briefing.json cryptex/overnight/data/morning_market_baselines.json; do
+            if test -f "$path"; then git add -f "$path"; else echo "::warning::Missing optional extended debrief: $path"; fi
+          done
           git add -f cryptex/overnight/data/public_research.json
           git add -f cryptex/overnight/data/equity.csv
           git add -f cryptex/overnight/data/review.json
