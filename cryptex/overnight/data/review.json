@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-30T23:07:28.737966+00:00",
+  "generated_utc": "2026-10-30T23:12:31.758155+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -9,91 +9,91 @@
     "GAMBLER": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 24,
-      "opposition": 5,
+      "support": 29,
+      "opposition": 2,
       "veto": 0,
-      "factor_score": 0.2477
+      "factor_score": 0.3408
     },
     "HOUSE": {
       "decision": "SELL",
       "symbol": "ETH",
-      "support": 15,
-      "opposition": 7,
+      "support": 9,
+      "opposition": 16,
       "veto": 0,
-      "factor_score": 0.0951
+      "factor_score": 0.0105
     },
     "SPY": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 49,
+      "support": 43,
       "opposition": 3,
       "veto": 0,
-      "factor_score": 0.5056
+      "factor_score": 0.4448
     },
     "MEME HUNTER": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 49,
+      "support": 43,
       "opposition": 3,
       "veto": 0,
-      "factor_score": 0.5056
+      "factor_score": 0.4448
     },
     "BREAKOUT": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 24,
-      "opposition": 5,
+      "support": 29,
+      "opposition": 2,
       "veto": 0,
-      "factor_score": 0.2477
+      "factor_score": 0.3408
     },
     "CONTRARIAN": {
-      "decision": "BUY",
+      "decision": "SELL",
       "symbol": "XRP",
-      "support": 5,
+      "support": 4,
       "opposition": 21,
       "veto": 0,
-      "factor_score": -0.0912
+      "factor_score": -0.1048
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "ADA",
-      "support": 25,
+      "support": 23,
       "opposition": 6,
-      "veto": 0,
-      "factor_score": 0.2015
+      "veto": 2,
+      "factor_score": 0.2241
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "ETH",
-      "support": 6,
-      "opposition": 16,
+      "support": 14,
+      "opposition": 11,
       "veto": 0,
-      "factor_score": -0.041
+      "factor_score": 0.0357
     },
     "FRACTAL": {
-      "decision": "BUY",
+      "decision": "HOLD",
       "symbol": "PEPE",
-      "support": 49,
+      "support": 43,
       "opposition": 3,
       "veto": 0,
-      "factor_score": 0.5056
+      "factor_score": 0.4448
     },
     "SHOCKWAVE": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 49,
+      "support": 43,
       "opposition": 3,
       "veto": 0,
-      "factor_score": 0.5056
+      "factor_score": 0.4448
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 99.735511,
-  "portfolio_paper_change_usd": -0.264489,
-  "all_time_closed_paper_trades": 17,
-  "all_time_closed_wins": 2,
-  "all_time_closed_losses": 15,
-  "aggregate_realized_pnl_usd": -0.156964,
+  "current_paper_equity_usd": 99.735668,
+  "portfolio_paper_change_usd": -0.264332,
+  "all_time_closed_paper_trades": 21,
+  "all_time_closed_wins": 5,
+  "all_time_closed_losses": 16,
+  "aggregate_realized_pnl_usd": -0.163405,
   "agents": {
     "GAMBLER": {
       "closed": 2,
@@ -109,41 +109,41 @@
       "position_size_multiplier": 1.0
     },
     "HOUSE": {
-      "closed": 2,
+      "closed": 3,
       "wins": 0,
-      "losses": 2,
+      "losses": 3,
       "win_rate": 0.0,
-      "realized_net_usd": -0.015407,
-      "average_profit_usd": -0.007704,
+      "realized_net_usd": -0.023405,
+      "average_profit_usd": -0.007802,
       "average_win_usd": null,
-      "average_loss_usd": -0.007704,
-      "last_20_net_usd": -0.015407,
+      "average_loss_usd": -0.007802,
+      "last_20_net_usd": -0.023405,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "SPY": {
-      "closed": 2,
-      "wins": 0,
+      "closed": 3,
+      "wins": 1,
       "losses": 2,
-      "win_rate": 0.0,
-      "realized_net_usd": -0.021337,
-      "average_profit_usd": -0.010669,
-      "average_win_usd": null,
+      "win_rate": 0.3333,
+      "realized_net_usd": -0.020818,
+      "average_profit_usd": -0.006939,
+      "average_win_usd": 0.000519,
       "average_loss_usd": -0.010669,
-      "last_20_net_usd": -0.021337,
+      "last_20_net_usd": -0.020818,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "MEME HUNTER": {
-      "closed": 2,
-      "wins": 1,
+      "closed": 3,
+      "wins": 2,
       "losses": 1,
-      "win_rate": 0.5,
-      "realized_net_usd": -0.001743,
-      "average_profit_usd": -0.000872,
-      "average_win_usd": 0.0058,
+      "win_rate": 0.6667,
+      "realized_net_usd": -0.001224,
+      "average_profit_usd": -0.000408,
+      "average_win_usd": 0.00316,
       "average_loss_usd": -0.007543,
-      "last_20_net_usd": -0.001743,
+      "last_20_net_usd": -0.001224,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -213,23 +213,23 @@
       "position_size_multiplier": 1.0
     },
     "SHOCKWAVE": {
-      "closed": 2,
-      "wins": 1,
+      "closed": 3,
+      "wins": 2,
       "losses": 1,
-      "win_rate": 0.5,
-      "realized_net_usd": -0.001738,
-      "average_profit_usd": -0.000869,
-      "average_win_usd": 0.0058,
+      "win_rate": 0.6667,
+      "realized_net_usd": -0.001219,
+      "average_profit_usd": -0.000406,
+      "average_win_usd": 0.003159,
       "average_loss_usd": -0.007538,
-      "last_20_net_usd": -0.001738,
+      "last_20_net_usd": -0.001219,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     }
   },
   "profitable_exit_reasons": {
     "Exploratory 15-minute observation complete (next-bar fill)": {
-      "count": 2,
-      "net_pnl_usd": 0.0116
+      "count": 5,
+      "net_pnl_usd": 0.013157
     }
   },
   "losing_exit_reasons": {
@@ -238,8 +238,8 @@
       "net_pnl_usd": -0.017392
     },
     "Exploratory 15-minute observation complete (next-bar fill)": {
-      "count": 9,
-      "net_pnl_usd": -0.075568
+      "count": 10,
+      "net_pnl_usd": -0.083566
     },
     "Breakout failed": {
       "count": 1,
