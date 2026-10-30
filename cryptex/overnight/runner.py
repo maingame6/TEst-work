@@ -120,7 +120,7 @@ def journal(st,b,order,price,ts,port):
         b["cash"]+=proceeds;b["wins"]+=int(pnl>0);b["closed"]+=1;b["net"]+=pnl
         b["completed"]=(b["completed"]+[pnl/max(p["entry_cost"],1e-12)])[-80:]
         b["position"]=None
-    rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"paper":True}
+    rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"paper":True}
     st["trades"].insert(0,rec);del st["trades"][1500:]
     if buy:event(st,"BUY",b["name"]+" BUY "+s+" simulated "+str(round(budget,2)))
     else:event(st,"SELL",b["name"]+" SELL "+s+" net "+str(round(pnl,4))+" because "+order["reason"])
@@ -207,12 +207,100 @@ def main():
     st["run_kind"]="SCHEDULED_PAPER_RESEARCH"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
-    rows=[{"timestamp_utc":dt.datetime.fromtimestamp(t["ts"],dt.timezone.utc).isoformat(),**t} for t in reversed(st["trades"])]
-    write_csv(TRADES,["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl","reason","paper"],rows)
+    # Append-only journal: restarting never deletes older fills.
+    fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl","reason","entry_reason","paper"]
+    old=[]
+    if TRADES.exists():
+        with TRADES.open(newline="",encoding="utf8") as fp:
+            old=list(csv.DictReader(fp))
+    def key(t):return (str(t["ts"]),t["bot"],t["side"],t["symbol"])
+    seen={(str(int(dt.datetime.fromisoformat(t["timestamp_utc"]).timestamp())),t["bot"],t["side"],t["symbol"]) for t in old if t.get("timestamp_utc")}
+    newer=[]
+    for t in reversed(st["trades"]):
+        if key(t) not in seen:
+            newer.append({"timestamp_utc":dt.datetime.fromtimestamp(t["ts"],dt.timezone.utc).isoformat(),**t})
+            seen.add(key(t))
+    if newer or not TRADES.exists():write_csv(TRADES,fields,old+newer)
     total=equity(st,st["last_prices"])
+    review_report(st,old+newer,total)
     with CURVE.open("a",newline="") as f:
         w=csv.writer(f)
         if f.tell()==0:w.writerow(["utc","portfolio_paper_usd","realized_pnl_usd","closed_trades","health"])
         w.writerow([utc(),round(total,6),round(sum(b["net"] for b in st["bots"]),6),sum(b["closed"] for b in st["bots"]),st["health"]])
     print(json.dumps({"health":st["health"],"paper_equity":round(total,4),"closed":sum(b["closed"] for b in st["bots"]),"new_candle":changed,"last_run":st["last_run"]}))
+
+def review_report(st,rows,total):
+    """Evidence-first review of all simulated completed trades; no profit claim."""
+    sellers=[x for x in rows if x.get("side")=="SELL" and x.get("pnl") not in ("",None,"None")]
+    by_agent={};why_lost={};why_won={}
+    for name in NAMES:
+        group=[x for x in sellers if x["bot"]==name]
+        pnls=[float(x["pnl"]) for x in group]
+        wins=[p for p in pnls if p>0];losses=[p for p in pnls if p<=0]
+        by_agent[name]={
+            "closed":len(group),"wins":len(wins),"losses":len(losses),
+            "win_rate":round(len(wins)/len(group),4) if group else None,
+            "realized_net_usd":round(sum(pnls),6),
+            "average_profit_usd":round(avg(pnls),6) if pnls else None,
+            "average_win_usd":round(avg(wins),6) if wins else None,
+            "average_loss_usd":round(avg(losses),6) if losses else None,
+            "last_20_net_usd":round(sum(pnls[-20:]),6),
+            "sample_sufficient_for_adaptation":len(group)>=20,
+            "position_size_multiplier":round(learning(st["bots"][NAMES.index(name)]),3)
+        }
+    for t in sellers:
+        cat=why_won if float(t["pnl"])>0 else why_lost
+        reason=t.get("reason") or "Unspecified exit"
+        record=cat.setdefault(reason,{"count":0,"net_pnl_usd":0})
+        record["count"]+=1;record["net_pnl_usd"]+=float(t["pnl"])
+    for data in (why_lost,why_won):
+        for rec in data.values():rec["net_pnl_usd"]=round(rec["net_pnl_usd"],6)
+    result={
+        "generated_utc":utc(),"status":st["health"],"paper_only":True,
+        "initial_paper_capital_usd":100,"current_paper_equity_usd":round(total,6),
+        "portfolio_paper_change_usd":round(total-100,6),
+        "all_time_closed_paper_trades":len(sellers),
+        "all_time_closed_wins":sum(float(x["pnl"])>0 for x in sellers),
+        "all_time_closed_losses":sum(float(x["pnl"])<=0 for x in sellers),
+        "aggregate_realized_pnl_usd":round(sum(float(x["pnl"]) for x in sellers),6),
+        "agents":by_agent,"profitable_exit_reasons":why_won,"losing_exit_reasons":why_lost,
+        "data_errors_latest":st.get("errors",{}),
+        "missing_or_stale_data_causes_no_order":True,
+        "risk_paused":st.get("halted",False),
+        "methodology":"Mark-to-market equity includes open positions. Realized P&L uses 0.15% simulated fee and 0.25% slippage each side. Not actual exchange fills.",
+        "limitations":"Paper research only. No demonstrated positive edge or real earnings. GitHub Actions cron can be delayed or skipped."
+    }
+    (DATA/"review.json").write_text(json.dumps(result,indent=2,ensure_ascii=False,allow_nan=False)+"\n")
+    lines=[
+        "# CRYPTEX paper-trading results — automated review",
+        "",
+        "**SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**",
+        "",
+        "Generated: "+result["generated_utc"],
+        "Data status: "+result["status"],
+        f"Paper equity: USD {total:.2f}; initial USD 100.00; change USD {total-100:+.2f}.",
+        f"Closed trades: {len(sellers)}; wins {result['all_time_closed_wins']}; losses/breakevens {result['all_time_closed_losses']}.",
+        "",
+        "## Bot performance",
+        "",
+        "| Bot | Closed | Wins | Losses | Win rate | Realized net USD | Next allocation |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: |"
+    ]
+    for n,v in by_agent.items():
+        wr=f"{v['win_rate']*100:.1f}%" if v["win_rate"] is not None else "—"
+        lines.append(f"| {n} | {v['closed']} | {v['wins']} | {v['losses']} | {wr} | {v['realized_net_usd']:+.4f} | {v['position_size_multiplier']:.2f}x |")
+    for heading,data in (("Where paper trades lost money",why_lost),("Where paper trades made money",why_won)):
+        lines.extend(["","## "+heading,""])
+        if not data:lines.append("No completed evidence yet.")
+        else:
+            for reason,v in sorted(data.items(),key=lambda kv:-kv[1]["count"]):
+                lines.append(f"- **{reason}**: {v['count']} exits; net USD {v['net_pnl_usd']:+.4f}")
+    lines.extend(["","## How to interpret the results","",
+        "A win rate alone is not a trading edge. We must examine risk-adjusted out-of-sample returns, sample size, market regime, costs, feed freshness and rejected decisions.",
+        "Position size decreases after at least 20 closed paper trades if expectancy is weak; this is bounded adaptive sizing, not a trained self-improving prediction model.",
+        "Scheduled sampling can miss interim price moves and delays stop triggers. Backtesting and paper trading are not proof of real profitability.",
+        "Latest unavailable Kraken pairs: "+(", ".join(st.get("errors",{})) or "none reported"),""
+    ])
+    (DATA/"review.md").write_text("\n".join(lines),encoding="utf8")
+
 if __name__=="__main__":main()
