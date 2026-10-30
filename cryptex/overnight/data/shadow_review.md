@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-10-30T22:47:05.632715+00:00
+Generated: 2026-10-30T22:52:10.229623+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9940 | 1 | 0 | -0.0060 | BUY_QUEUED PEPE |
+| FLUID_ADVECTION | 9.9900 | 1 | 0 | -0.0060 | FILLED_BUY PEPE |
 | FLUID_VISCOSITY | 10.0000 | 0 | 0 | +0.0000 | HOLD SOL |
 | GEOMETRIC_DIVERSITY | 9.9932 | 1 | 0 | -0.0068 | HOLD PEPE |
 | ERROR_CODE_CONSENSUS | 9.9908 | 1 | 0 | -0.0066 | HOLD SOL |
 | GRAPH_COHERENCE | 9.9917 | 1 | 0 | -0.0068 | HOLD SOL |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD BNB |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
 | FREQTRADE_STYLE | 9.9877 | 1 | 0 | -0.0068 | HOLD SOL |
 | QLIB_STYLE | 9.9917 | 1 | 0 | -0.0068 | HOLD SOL |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9910 | 1 | 0 | -0.0068 | HOLD PEPE |
-| NAUTILUS_REGIME | 9.9900 | 1 | 0 | -0.0076 | HOLD BNB |
+| LEAN_EVENT | 9.9928 | 1 | 0 | -0.0068 | HOLD PEPE |
+| NAUTILUS_REGIME | 9.9899 | 1 | 0 | -0.0076 | HOLD BNB |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.

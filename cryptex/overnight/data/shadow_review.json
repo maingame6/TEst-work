@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T22:47:05.632715+00:00",
+  "generated_at": "2026-10-30T22:52:10.229623+00:00",
   "paper_only": true,
-  "candle_ts": 1793400000,
-  "cycles": 10,
+  "candle_ts": 1793400300,
+  "cycles": 11,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,18 +11,22 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.99397,
+      "equity": 9.989984,
       "closed": 1,
       "wins": 0,
       "realized": -0.00603,
-      "paper_return": -0.00603,
-      "latest_decision": "BUY_QUEUED PEPE",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.010016,
+      "latest_decision": "FILLED_BUY PEPE",
+      "queued": null,
+      "position": {
         "symbol": "PEPE",
-        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.671, gate=0.09"
+        "quantity": 200728.28842789977,
+        "entry_cost": 0.9993969614366446,
+        "entry_market": 4.959e-06,
+        "entry_time": 1793400300,
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.671, gate=0.09",
+        "peak": 4.959e-06
       },
-      "position": null,
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
@@ -91,7 +95,7 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD BNB",
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -146,11 +150,11 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.990978,
+      "equity": 9.992791,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.009022,
+      "paper_return": -0.007209,
       "latest_decision": "HOLD PEPE",
       "queued": null,
       "position": {
@@ -160,16 +164,16 @@
         "entry_market": 4.941e-06,
         "entry_time": 1793399700,
         "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.725, gate=0.14",
-        "peak": 4.95e-06
+        "peak": 4.959e-06
       },
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.989959,
+      "equity": 9.989945,
       "closed": 1,
       "wins": 0,
       "realized": -0.007611,
-      "paper_return": -0.010041,
+      "paper_return": -0.010055,
       "latest_decision": "HOLD BNB",
       "queued": null,
       "position": {
