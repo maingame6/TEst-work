@@ -309,6 +309,12 @@ def main():
     st["last_run"]=utc()
     st["errors"]=errors
     st["run_kind"]="SCHEDULED_PAPER_RESEARCH"
+    st["trigger_event"]=os.environ.get("CRYPTEX_TRIGGER_EVENT","unknown")
+    st["github_run_id"]=os.environ.get("GITHUB_RUN_ID","")
+    st["github_run_attempt"]=os.environ.get("GITHUB_RUN_ATTEMPT","")
+    st["schedule_confirmed"]=st["trigger_event"]=="schedule" or st.get("schedule_confirmed",False)
+    if st["trigger_event"]=="schedule":
+        st["last_schedule_run"]=utc()
     st["trade_profile"]="ACTIVE_PAPER_EXPLORATION_1.2_PERCENT_MAX"
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
