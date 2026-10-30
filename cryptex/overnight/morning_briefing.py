@@ -129,6 +129,25 @@ def make(main,shadow,money,news,folder,prior_market):
     sentiment=collections.Counter(x.get("sentiment","UNKNOWN") for x in headlines)
     now=money["generated_at"]
     refs=money.get("benchmarks",{}).get("references",{})
+    radar=load(folder/"market_radar.json",{})
+    last_poll=radar.get("polled_at")
+    try:age_minutes=round((parse(now)-parse(last_poll)).total_seconds()/60,2)
+    except (TypeError,ValueError):age_minutes=None
+    live_radar=radar.get("status")=="OK" and age_minutes is not None and 0<=age_minutes<=120
+    cross_markets={"status":"FRESH" if live_radar else "UNAVAILABLE_OR_STALE",
+      "requested":radar.get("requested_market_count",0),
+      "observed":radar.get("observed_market_count",0),
+      "confirmed":radar.get("confirmed_usd_pairs",0),
+      "polled_at":last_poll,"age_minutes":age_minutes,
+      "sectors":radar.get("sectors",{}) if live_radar else {},
+      "breadth_pct":radar.get("crypto_breadth_positive_pct") if live_radar else None,
+      "up":radar.get("up_since_utc_open") if live_radar else None,
+      "down":radar.get("down_since_utc_open") if live_radar else None,
+      "gainers":radar.get("top_movers_up",[]) if live_radar else [],
+      "losers":radar.get("top_movers_down",[]) if live_radar else [],
+      "turnover":radar.get("highest_approx_24h_usd_turnover",[]) if live_radar else [],
+      "global_market":radar.get("global_crypto_context",{}) if live_radar else {},
+      "monitor_only":True,"newly_tradable_pairs":0}
     return {"generated_at":now,"session":night.get("date"),"session_start":started,
        "status":night.get("status","AWAITING_START"),"session_change":night.get("change"),
        "paper_only":True,"money":{"starting":210,"equity":money["balance"],
@@ -158,6 +177,7 @@ def make(main,shadow,money,news,folder,prior_market):
            "break_even_pct":money.get("execution_cost_study",{}).get("round_trip_break_even_pct_at_flat_markets")},
        "observed_market_moves":moves,"equity_curve":curve_stats(folder,stamp),
        "reference_benchmarks":refs,
+       "wide_market_radar":cross_markets,
        "news":{"last_polled":(news or {}).get("checked_at"),
            "sources_up":(news or {}).get("sources_up",0),
            "total_sources":(news or {}).get("sources_total",8),
@@ -228,7 +248,49 @@ def render(r):
         "Benchmarks are comparison-only and excluded from the $210 bankroll."]
     for sym,b in r["reference_benchmarks"].items():
         if b.get("equity") is not None:L.append("- "+sym+": $10 fake reference now $"+format(b["equity"],".4f")+"; since "+b["started_at"]+", including estimated buy and sale costs.")
-    L+=["","## 5. Public news and research findings","",
+    w=r["wide_market_radar"]
+    L+=["","## 5. Broad market radar — monitoring only, NOT new trades","",
+        "Kraken USD spot market discovery covers majors, L1, DeFi, AI/data, L2/gaming, memes, stablecoin pairs, tokenised-gold proxies and FX references.",
+        "Status "+w["status"]+"; requested "+str(w["requested"])+
+        ", confirmed "+str(w["confirmed"])+", observed "+str(w["observed"])+
+        "; source polled "+str(w["polled_at"])+
+        "; age "+str(w["age_minutes"])+" minutes.",
+        "**This does not expand the original 12-asset simulated execution universe.**",
+        "Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.",
+        ""]
+    if w["status"]=="FRESH":
+        L.append("Crypto breadth: "+str(w["up"])+" rising, "+str(w["down"])+" falling; "+
+                 str(w["breadth_pct"])+"% positive vs UTC open.")
+        L+=["","### Sector coverage and breadth","",
+          "| Sector | Available/requested | Up | Down | Median vs UTC open |",
+          "|---|---:|---:|---:|---:|"]
+        for g,z in w["sectors"].items():
+            median=z.get("median_move_from_utc_open_pct")
+            L.append("| "+g+" | "+str(z["available"])+"/"+str(z["requested"])+" | "+
+               str(z["rising"])+" | "+str(z["falling"])+" | "+
+               (format(median,"+.2f")+"%" if median is not None else "unavailable")+" |")
+        for heading,key in (("Biggest risers","gainers"),("Biggest decliners","losers"),
+                            ("Highest estimated 24h turnover","turnover")):
+            L+=["","### "+heading,"",
+                "| Symbol | Sector | Change since UTC open | Bid/ask spread (bps) | Approx 24h turnover USD |",
+                "|---|---|---:|---:|---:|"]
+            for x in w[key][:8]:
+                L.append("| "+x["symbol"]+" | "+x["sector"]+" | "+
+                    format(x["move_from_utc_open_pct"],"+.2f")+"% | "+
+                    format(x["bid_ask_spread_bps"],".2f")+" | $"+
+                    format(x["approx_turnover_24h_usd"],",.0f")+" |")
+        globalmarket=w["global_market"]
+        if globalmarket.get("status")=="OK":
+            L+=["","### Independent global market backdrop (CoinGecko)","",
+              "Crypto market cap $"+format(globalmarket.get("total_crypto_market_cap_usd") or 0,",.0f")+
+              "; aggregate 24h volume $"+format(globalmarket.get("total_crypto_24h_volume_usd") or 0,",.0f")+
+              "; BTC market-cap dominance "+str(globalmarket.get("bitcoin_market_cap_dominance_pct"))+
+              "%; global crypto cap 24h move "+str(globalmarket.get("global_market_cap_change_24h_pct"))+"%."]
+        else:L.append("Global market backdrop unavailable; no fallback numbers invented.")
+    else:L.append("Broad-market source missing or too old; no current movers reported.")
+    L+=["","Quote last-trade age is not provided by the Kraken ticker endpoint: timestamps record when we retrieved the quote, not when the underlying trade happened.",
+         "Public market-data archive: market_radar.json and market_radar_snapshots.csv.",""]
+    L+=["","## 6. Public news and research findings","",
         "Last public-source poll: "+str(n["last_polled"])+". Available "+str(n["sources_up"])+"/"+str(n["total_sources"])+" research scouts.",
         str(n["new_items"])+" headline(s) first observed within the session. Weak **keyword-only**, uncalibrated sentiment: "+str(n["weak_sentiment"])+".",
         "These are unverified third-party headlines, NOT insider information or automatic trade triggers.",""]
@@ -239,7 +301,7 @@ def render(r):
         else:L.append("- "+title)
     if not n["top_items"]:L.append("No new source headlines for this session.")
     if n["feed_errors"]:L.append("Unavailable feeds: "+", ".join(n["feed_errors"]))
-    L+=["","## 6. Specialist consensus and risk","",
+    L+=["","## 7. Specialist consensus and risk","",
         "The 640 specialists are correlated, transparent rule reviews across the ten parent traders, not separately trained language models.",
         "| Parent | Action | Support | Opposition | Vetoes |",
         "|---|---|---:|---:|---:|"]
@@ -249,7 +311,7 @@ def render(r):
     L+=["","Main paper risk limit: "+("HALTED" if risk["main_halted"] else "not triggered")+". Shadow risk limit: "+("HALTED" if risk["research_halted"] else "not triggered")+".",
         "Last trigger "+str(h["trigger"])+"; run "+str(h["run_id"])+". Native 5-minute cron independently verified: "+("YES" if h["cron_verified"] else "NO")+".",
         "Market-data flags: "+str(h["data"])+". Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.","",
-        "## 7. Research distillation gate — do not deploy a winner yet","",
+        "## 8. Research distillation gate — do not deploy a winner yet","",
         "**"+r["distillation"]["status"]+"**. "+r["distillation"]["reason"],
         "The least-tested agent currently has "+str(r["distillation"]["smallest_bot_closed"])+" completed trades; first preliminary checkpoint is 30 each, followed by strict out-of-sample, multiple-testing-adjusted testing.",
         "Questions to test next: Which strategy beats the same-period buy-and-hold? Which exits lose through fees rather than price? Are correlated specialists adding independent evidence? Does verified public news add anything after costs?",
