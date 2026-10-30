@@ -72,6 +72,8 @@ class IntegrityTests(unittest.TestCase):
             p["balance"]=210;path.write_text(json.dumps(p))
             main["trades"]=[{"side":"BUY","paper":False}]
             pathlib.Path(folder,"state.json").write_text(json.dumps(main))
+            p["saved_fills"]=1
+            path.write_text(json.dumps(p))
             with self.assertRaisesRegex(AssertionError,"simulated"):
                 A.check(folder,NOW)
 
