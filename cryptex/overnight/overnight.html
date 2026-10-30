@@ -20,6 +20,12 @@
     <div class="metric"><div class="label">OPEN / QUEUED</div><div class="number" id="moneyOpen">—</div><div class="muted">Orders use only paper funds</div></div>
     <div class="metric"><div class="label">COMPLETED ROUND TRIPS</div><div class="number" id="moneyClosed">—</div><div class="muted" id="moneyFills">BUY / SELL tape saved in GitHub</div></div>
   </div>
+  <div class="metrics" style="margin:0 0 13px">
+    <div class="metric"><div class="label">COST TO BREAK EVEN</div><div class="number" id="moneyBreakeven">—</div><div class="muted">Required market move per round trip</div></div>
+    <div class="metric"><div class="label">GROSS VS AFTER-COST</div><div class="number" id="moneyCostWinners">—</div><div class="muted" id="moneyCostSample">Only newer trades have cost attribution</div></div>
+    <div class="metric"><div class="label">ESTIMATED EXECUTION DRAG</div><div class="number" id="moneyFeeDrag">—</div><div class="muted">Fees + slippage on audited recent closes</div></div>
+    <div class="metric"><div class="label">BTC BUY & HOLD BENCHMARK</div><div class="number" id="moneyBTCBenchmark">—</div><div class="muted">Separate $10 paper reference; not counted in bankroll</div></div>
+  </div>
   <h2 style="margin:4px 0 8px">Balance history</h2>
   <div style="width:100%;overflow:hidden"><svg id="moneyChart" viewBox="0 0 900 135" style="width:100%;min-height:110px;display:block;border:1px solid #294151;border-radius:12px;background:#091726" role="img" aria-label="Historical combined paper equity chart"><text x="28" y="70" fill="#90a6b9" font-size="17">Balance chart appears after the first recorded cycles.</text></svg></div>
   <p class="muted" id="moneyAsOf" style="font-size:11px;margin-top:6px">No confirmed bankroll update yet. GitHub schedules are best-effort; check the as-of timestamp.</p>
@@ -108,6 +114,16 @@ try {
   $money('moneyOpen').textContent=p.total_open+' / '+p.total_queued;
   $money('moneyClosed').textContent=String(p.total_completed);
   $money('moneyFills').textContent=p.saved_fills+' logged simulated order fills';
+  const study=p.execution_cost_study||{};
+  $money('moneyBreakeven').textContent=typeof study.round_trip_break_even_pct_at_flat_markets==='number'?study.round_trip_break_even_pct_at_flat_markets.toFixed(3)+'%':'—';
+  $money('moneyCostWinners').textContent=(study.gross_winners||0)+' / '+(study.after_cost_winners||0);
+  $money('moneyCostSample').textContent='Gross winners / after-cost winners · '+(study.attributed_newer_closes||0)+' audited closes, '+(study.older_closes_missing_attribution||0)+' historical unknown';
+  $money('moneyFeeDrag').textContent=typeof study.execution_drag_attributed==='number'?fmt(study.execution_drag_attributed):'—';
+  const benchmark=p.benchmarks?.references?.BTC;
+  if(benchmark&&benchmark.status==='PAPER_ONLY'){
+    $money('moneyBTCBenchmark').textContent=fmt(benchmark.equity);
+    $money('moneyBTCBenchmark').style.color=benchmark.pnl>=0?'#5ce6b1':'#ff8092';
+  }
   const n=p.overnight||{};
   if(typeof n.change==='number'){
     pnlSet('moneyNight',n.change);
