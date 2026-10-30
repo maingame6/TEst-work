@@ -52,6 +52,9 @@ def _get(url):
   raw=r.read(9_000_001)
  if len(raw)>9_000_000:raise ValueError("Kraken response exceeds safe size")
  obj=json.loads(raw)
+ if "api.coingecko.com" in url:
+  if not isinstance(obj.get("data"),dict):raise ValueError("Missing CoinGecko global data")
+  return obj
  if obj.get("error"):raise ValueError("Kraken public API error: "+str(obj["error"])[:140])
  return obj["result"]
 
