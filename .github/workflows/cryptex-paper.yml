@@ -82,6 +82,7 @@ jobs:
           git add -f cryptex/overnight/data/shadow_review.json
           git add -f cryptex/overnight/data/shadow_review.md
           git add -f cryptex/overnight/data/portfolio_report.json
+          git add -f cryptex/overnight/data/benchmark_reference.json
           git add -f cryptex/overnight/data/combined_equity.csv
           git add -f cryptex/overnight/data/overnight_sessions.json
           git add -f cryptex/overnight/data/morning_report.md
@@ -94,7 +95,15 @@ jobs:
             exit 0
           fi
           git commit -m "research: append CRYPTEX market observation and simulated results [skip ci]"
-          git push origin HEAD:cryptex-paper-trading-preview
+          # If a human updates documentation or experiments while a run is
+          # executing, retry by replaying the commit without force-pushing.
+          # A DATA conflict fails safely; no journal is silently overwritten.
+          if ! git push origin HEAD:cryptex-paper-trading-preview; then
+            echo "Research branch moved while this job ran; attempting safe non-force rebase"
+            git fetch origin cryptex-paper-trading-preview
+            git -c rebase.autoStash=false rebase origin/cryptex-paper-trading-preview
+            git push origin HEAD:cryptex-paper-trading-preview
+          fi
 
       # Github cron is best-effort; bounded overnight self-dispatch fallback.
       # Stop only AFTER the first verified morning paper-balance snapshot (up to 08:15 Dublin),
