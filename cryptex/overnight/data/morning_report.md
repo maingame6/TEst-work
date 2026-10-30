@@ -2,9 +2,9 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-10-30T22:05:15.369709+00:00 (Europe/Dublin)
+Checked: 2026-10-30T22:06:19.450480+00:00 (Europe/Dublin)
 
-GitHub trigger: push; unattended GitHub schedule NOT YET VERIFIED
+GitHub trigger: workflow_dispatch; unattended GitHub schedule NOT YET VERIFIED
 Last genuine scheduled execution: none yet
 
 **Starting paper money $210.00 · Current estimated liquidation $209.7148 · P&L $-0.2852 (-0.14%)**
@@ -14,7 +14,7 @@ Open: 17; queued: 13; closed: 1; paper fills in current JSON: 19.
 
 Overnight status: IN_PROGRESS
 First observed overnight starting balance $209.6998 at 2026-10-30T21:39:59.239367+00:00 (NOT backdated to 21:00).
-Overnight P&L $+0.0149 as of 2026-10-30T22:05:15.369709+00:00.
+Overnight P&L $+0.0149 as of 2026-10-30T22:06:19.450480+00:00.
 New paper fills since session started: 2.
 
 ## Independent paper portfolios

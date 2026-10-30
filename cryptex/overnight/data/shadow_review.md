@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-10-30T22:05:15.359891+00:00
+Generated: 2026-10-30T22:06:19.448762+00:00
 
 Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guesses).
 
