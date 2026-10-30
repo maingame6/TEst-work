@@ -69,7 +69,7 @@ class ResearchLabTests(unittest.TestCase):
  def test_shadow_portfolio_daily_loss_halts_buys_not_sells(self):
   base=S.initial();base["daily_date"]="2026-10-30"
   base["daily_start"]=120.
-  base["peak"]=120.
+  base["peak"]=140.
   history={"BTC":candles("BTC"),"ETH":candles("ETH",offset=15),
            "SOL":candles("SOL",offset=-8)}
   # All eleven have 10 dollars cash: below 95% of artificial 120 peak.
