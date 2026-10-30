@@ -8,6 +8,8 @@
 <div class="panel section"><h2>Queued Paper Orders — Next Closed Candle</h2><p class="muted">These are simulated intentions, not filled trades. They only fill when the next valid observation arrives.</p><div id="pending" class="feed">No orders queued</div></div>
 <div class="panel section"><h2>640 Specialist Votes · 10 Trading Teams</h2><p class="muted">64 parameterised reviewers per parent: 60 indicator perspectives and four hard checks. They share market data, so vote counts are not independent statistical evidence. A BUY vote is not necessarily a filled order. <a href="./data/subagent_decisions.csv" target="_blank" rel="noopener" style="color:#46dce4">Full specialist vote archive (CSV)</a></p><div id="committee" class="agents">Waiting for specialist reviews…</div></div>
 <div class="two section"><div class="panel"><h2>Latest 100 Executed Paper Trades</h2><p class="muted">Every completed order includes the actual simulated entry/exit reason, costs and after-cost result.</p><div id="trades" class="feed">No trades yet</div></div><div class="panel"><h2>Decision &amp; Safety Log</h2><div id="events" class="feed">No events yet</div></div></div>
+<div class="panel section" id="mathResearch"><h2>Experimental Mathematics &amp; Open-Source Research</h2><p class="muted">Eleven separate 10-USD shadow trading hypotheses. Their 110 fictional dollars are NOT part of the main 100-dollar trading portfolio. <a href="./data/shadow_review.md" target="_blank" rel="noopener" style="color:#46dce4">Full independent performance review</a></p><div id="mathStatus" class="muted">Loading experimental report…</div><div id="mathAccounts" class="agents" style="margin-top:12px"></div><div class="section"><h2>Shadow Paper Trade Journal</h2><div id="shadowFills" class="feed">No fills recorded yet.</div><p class="muted">Detailed audit: <a href="./data/shadow_decisions.csv" style="color:#46dce4">all BUY/SELL/HOLD decisions</a> · <a href="./data/shadow_trades.csv" style="color:#46dce4">all fills</a></p></div></div>
+<div class="panel section"><h2>Eight Public Research Scouts</h2><p class="muted">Public news, market commentary, official macro/regulatory announcements and public forums. Nothing private or illegally obtained. Current scores are simple untrained keyword labels, not an AI prediction model. Headlines are NOT yet used to trigger trading.</p><div id="newsStatus" class="muted">Loading source checks…</div><div class="two section"><div id="newsScouts" class="panel">Checking public sources…</div><div id="newsHeadlines" class="panel feed">Waiting for public headlines…</div></div><a href="./data/public_research.json" target="_blank" rel="noopener" style="color:#46dce4">Complete provenance-aware news archive</a></div>
 <div class="footer">This prototype runs fake trades using actual exchange market observations when its backend is online. Fees, slippage and close-to-next-close execution are estimates, not exchange fills. A paper profit does not establish a tradable edge. This dashboard cannot place real trades and must not store API keys. If data is missing/stale, the engine holds rather than manufacturing prices.</div></div>
 <script>
 const $=id=>document.getElementById(id),usd=n=>Number(n).toLocaleString('en-US',{style:'currency',currency:'USD'}),html=s=>String(s??'').replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\"':'&quot;'}[x]));
@@ -20,4 +22,39 @@ $('trades').innerHTML=(s.trades||[]).slice(0,100).map(t=>`<div class="line"><b c
 $('events').innerHTML=(s.events||[]).slice(0,24).map(e=>`<div class="line"><b>${html(e.type)}</b><small>${html(e.msg)}</small></div>`).join('')||'<div class="muted">No decisions recorded.</div>';}
 catch(e){$('failure').style.display='block';$('health').textContent='SERVER OFFLINE';$('updated').textContent='The dashboard is static; scheduled GitHub Actions perform the paper trading.'}}
 refresh();setInterval(refresh,20000);
+</script>
+<script>
+(function(){
+  function safe(v){return String(v==null?'':v).replace(/[&<>"']/g,function(x){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x];});}
+  function money(v){return '+Number(v||0).toFixed(4);}
+  async function jsonFile(path){var r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}
+  async function loadResearch(){
+    try{
+      var a=await Promise.all([jsonFile('./data/shadow_review.json'),jsonFile('./data/shadow_state.json'),jsonFile('./data/public_research.json')]);
+      var report=a[0],state=a[1],news=a[2];
+      document.getElementById('mathStatus').textContent='Research cycle '+report.cycles+' · original $100 paper portfolio unchanged · '+report.shadow_models+' competing hypotheses';
+      var models=report.models||{};
+      document.getElementById('mathAccounts').innerHTML=Object.keys(models).map(function(key){
+        var z=models[key];
+        return '<div class="agent"><header><b>'+safe(key.replace(/_/g,' '))+'</b><span class="'+(z.paper_return>=0?'green':'red')+'">'+money(z.paper_return)+'</span></header><div class="value">'+money(z.equity)+'</div><div class="note">'+safe(z.latest_decision)+'</div><div class="muted" style="font-size:11px">'+z.closed+' completed · '+z.wins+' wins · '+(z.sample_sufficient?'preliminary review ready':'insufficient sample')+'</div></div>';
+      }).join('');
+      document.getElementById('shadowFills').innerHTML=(state.trades||[]).slice(0,40).map(function(t){
+        return '<div class="line"><b class="'+(t.side==='BUY'?'green':'red')+'">'+safe(t.side)+' '+safe(t.symbol)+' · '+safe(t.model)+'</b><small>'+new Date(t.ts*1000).toLocaleString()+' · price '+money(t.price)+' · fees '+money(t.fees)+' · '+safe(t.reason)+(t.pnl==null?'':' · after-cost '+money(t.pnl))+'</small></div>';
+      }).join('')||'<div class="muted">No completed shadow fills yet. Queued decisions above will fill only at a subsequent reliable market observation.</div>';
+      document.getElementById('newsStatus').textContent=news.sources_up+' of '+news.sources_total+' public feeds reached · '+(news.articles||[]).length+' public headlines archived · last fetch '+safe(news.checked_at);
+      document.getElementById('newsScouts').innerHTML=(news.scouts||[]).map(function(z){
+        return '<div class="line"><b>'+safe(z.source)+' · '+safe(z.status)+'</b><small>'+Number(z.items||0)+' matched headlines · '+safe(z.purpose)+(z.error?' · '+safe(z.error):'')+'</small></div>';
+      }).join('');
+      document.getElementById('newsHeadlines').innerHTML=(news.articles||[]).slice(0,14).map(function(z){
+        var href=String(z.url||'').startsWith('https://')?safe(z.url):'#';
+        return '<div class="line"><b><a href="'+href+'" target="_blank" rel="noopener noreferrer" style="color:#d9f2ff">'+safe(z.title)+'</a></b><small>'+safe(z.source)+' · '+safe(z.sentiment)+' (weak lexical label) · '+safe(z.published_at||z.first_observed_at||'no date')+'</small></div>';
+      }).join('')||'<div class="muted">No verified public feed headlines.</div>';
+    }catch(e){
+      document.getElementById('mathStatus').textContent='Research data unavailable or GitHub research job has not completed.';
+      document.getElementById('newsStatus').textContent='Public source status unavailable; no invented news.';
+    }
+  }
+  loadResearch();
+  setInterval(loadResearch,60000);
+})();
 </script></body></html>
