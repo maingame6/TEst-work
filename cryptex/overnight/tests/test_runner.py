@@ -33,6 +33,18 @@ class PaperOnlySafetyTests(unittest.TestCase):
         self.assertEqual(b["wins"],0)
         self.assertEqual(st["trades"][0]["entry_reason"],"Test entry")
 
+    def test_gross_prediction_and_execution_costs_are_separately_logged(self):
+        st=R.init();b=st["bots"][0]
+        R.journal(st,b,{"side":"BUY","symbol":"BTC","reason":"TEST"},100.,100000,100.)
+        R.journal(st,b,{"side":"SELL","symbol":"BTC","reason":"TEST"},100.,100300,100.)
+        sell=st["trades"][0]
+        self.assertAlmostEqual(sell["gross_mid_pnl"],0.,places=10)
+        self.assertLess(sell["pnl"],0.)
+        self.assertAlmostEqual(sell["execution_drag"],-sell["pnl"],places=10)
+        self.assertLess(sell["net_return_pct"],0.)
+        self.assertEqual(sell["entry_mid"],100.)
+        self.assertEqual(sell["exit_mid"],100.)
+
     def test_negative_history_only_reduces_future_risk(self):
         st=R.init();b=st["bots"][0]
         self.assertEqual(R.learning(b),1.)
