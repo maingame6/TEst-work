@@ -66,6 +66,7 @@ jobs:
           python3 -m py_compile cryptex/overnight/research_shadow.py
           python3 -m py_compile cryptex/overnight/portfolio_report.py
           python3 -m py_compile cryptex/overnight/morning_briefing.py
+          python3 -m py_compile cryptex/overnight/market_radar.py
           python3 -m unittest discover -s cryptex/overnight/tests -v
           python3 cryptex/overnight/runner.py
 
@@ -94,6 +95,9 @@ jobs:
             if test -f "$path"; then git add -f "$path"; else echo "::warning::Missing optional extended debrief: $path"; fi
           done
           git add -f cryptex/overnight/data/public_research.json
+          for path in cryptex/overnight/data/market_radar.json cryptex/overnight/data/market_radar_catalog.json cryptex/overnight/data/market_radar_snapshots.csv; do
+            if test -f "$path"; then git add -f "$path"; else echo "::warning::Missing optional market radar: $path"; fi
+          done
           git add -f cryptex/overnight/data/equity.csv
           git add -f cryptex/overnight/data/review.json
           git add -f cryptex/overnight/data/review.md
