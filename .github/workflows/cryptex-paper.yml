@@ -97,10 +97,11 @@ jobs:
           git push origin HEAD:cryptex-paper-trading-preview
 
       # Github cron is best-effort; bounded overnight self-dispatch fallback.
-      # Stops at 08:00 Europe/Dublin, after 132 hops, or if cron resumes.
+      # Stop only AFTER the first verified morning paper-balance snapshot (up to 08:15 Dublin),
+      # after 132 hops, or if genuine GitHub cron has resumed.
       # Public standard Github-hosted runners are free, subject to fair use.
       - name: Overnight backup — self-dispatch next paper cycle
-        if: success() && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        if: success() && github.event_name == 'workflow_dispatch'  # Never seed another chain on code push
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -140,16 +141,24 @@ jobs:
               except ValueError:
                   pass
           local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
-          if not (local.hour>=21 or local.hour<8):
-              print("Outside overnight 21:00-08:00 Dublin; stopping backup")
+          def morning_done():
+              try:
+                  sessions=json.loads(pathlib.Path("cryptex/overnight/data/overnight_sessions.json").read_text())
+                  return bool(sessions and sessions[-1].get("morning") is not None)
+              except (ValueError,OSError,KeyError,TypeError):
+                  return False
+          def overnight_window(t):
+              return t.hour>=21 or t.hour<8 or (t.hour==8 and t.minute<15 and not morning_done())
+          if not overnight_window(local):
+              print("Outside overnight research window or first morning report already captured")
               raise SystemExit(0)
 
           delay=45 if event=="push" else 285
           print(f"Paper-only overnight backup hop {hop}; next dispatch in {delay}s",flush=True)
           time.sleep(delay)
           local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
-          if not (local.hour>=21 or local.hour<8):
-              print("08:00 local reached; stopping")
+          if not overnight_window(local):
+              print("Morning snapshot captured / 08:15 cutoff reached; no further backup")
               raise SystemExit(0)
           subprocess.run([
               "gh","api","-X","POST",
