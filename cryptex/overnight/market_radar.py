@@ -161,6 +161,26 @@ def refresh(folder,now,fetcher=_get,force=False):
   result["status"]="OK"
   result["rows"]=rows
   result["api_calls_this_poll"]=2 if catalogue_due else 1
+  # A market-wide (not trading) second source. A 429 cannot invalidate Kraken.
+  try:
+   global_data=fetcher("https://api.coingecko.com/api/v3/global")["data"]
+   volume=global_data.get("total_volume",{}).get("usd")
+   cap=global_data.get("total_market_cap",{}).get("usd")
+   dominance=global_data.get("market_cap_percentage",{}).get("btc")
+   pct=global_data.get("market_cap_change_percentage_24h_usd")
+   result["global_crypto_context"]={
+    "status":"OK","source":"CoinGecko /api/v3/global",
+    "observed_at":now,
+    "total_crypto_market_cap_usd":_number(cap),
+    "total_crypto_24h_volume_usd":_number(volume),
+    "bitcoin_market_cap_dominance_pct":_number(dominance),
+    "global_market_cap_change_24h_pct":_number(pct)}
+   result["api_calls_this_poll"]+=1
+  except Exception as exc:
+   result["global_crypto_context"]={
+    "status":"UNAVAILABLE","source":"CoinGecko /api/v3/global",
+    "observed_at":now,
+    "error":type(exc).__name__+": "+str(exc)[:100]}
   latest.write_text(json.dumps(result,indent=2,allow_nan=False)+"\n")
   snapshot=folder/"market_radar_snapshots.csv"
   with snapshot.open("a",newline="",encoding="utf8") as fp:
