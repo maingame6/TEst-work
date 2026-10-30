@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-10-30T22:52:10.283229+00:00
+Generated: 2026-10-30T22:57:15.133543+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 99.69; initial USD 100.00; change USD -0.31.
-Closed trades: 15; wins 2; losses/breakevens 13.
+Paper equity: USD 99.66; initial USD 100.00; change USD -0.34.
+Closed trades: 17; wins 2; losses/breakevens 15.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | SOL | 20 | 9 | 1 |
-| HOUSE | BUY | ETH | 22 | 6 | 1 |
-| SPY | BUY | PEPE | 18 | 15 | 0 |
-| MEME HUNTER | BUY | PEPE | 18 | 15 | 0 |
-| BREAKOUT | HOLD | SOL | 20 | 9 | 1 |
-| CONTRARIAN | SELL | BTC | 4 | 17 | 0 |
-| ROTATOR | HOLD | ADA | 17 | 6 | 0 |
-| VORTEX | HOLD | ETH | 4 | 24 | 1 |
-| FRACTAL | SELL | PEPE | 18 | 15 | 0 |
-| SHOCKWAVE | BUY | PEPE | 18 | 15 | 0 |
+| GAMBLER | HOLD | SOL | 20 | 7 | 0 |
+| HOUSE | HOLD | ETH | 23 | 5 | 0 |
+| SPY | HOLD | PEPE | 20 | 11 | 0 |
+| MEME HUNTER | HOLD | PEPE | 20 | 11 | 0 |
+| BREAKOUT | HOLD | SOL | 20 | 7 | 0 |
+| CONTRARIAN | SELL | BTC | 6 | 17 | 0 |
+| ROTATOR | HOLD | ADA | 16 | 7 | 1 |
+| VORTEX | HOLD | ETH | 4 | 24 | 0 |
+| FRACTAL | SELL | PEPE | 20 | 11 | 0 |
+| SHOCKWAVE | HOLD | PEPE | 20 | 11 | 0 |
 
 ## Bot performance
 
@@ -35,19 +35,19 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | SPY | 2 | 0 | 2 | 0.0% | -0.0213 | 1.00x |
 | MEME HUNTER | 2 | 1 | 1 | 50.0% | -0.0017 | 1.00x |
 | BREAKOUT | 1 | 0 | 1 | 0.0% | -0.0538 | 1.00x |
-| CONTRARIAN | 2 | 0 | 2 | 0.0% | -0.0141 | 1.00x |
+| CONTRARIAN | 3 | 0 | 3 | 0.0% | -0.0244 | 1.00x |
 | ROTATOR | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | VORTEX | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| FRACTAL | 2 | 0 | 2 | 0.0% | -0.0150 | 1.00x |
+| FRACTAL | 3 | 0 | 3 | 0.0% | -0.0224 | 1.00x |
 | SHOCKWAVE | 2 | 1 | 1 | 50.0% | -0.0017 | 1.00x |
 
 ## Where paper trades lost money
 
 - **Exploratory 15-minute observation complete (next-bar fill)**: 9 exits; net USD -0.0756
-- **RSI normalized**: 1 exits; net USD -0.0071
+- **RSI normalized**: 2 exits; net USD -0.0174
+- **Timescales disagree**: 2 exits; net USD -0.0146
 - **Breakout failed**: 1 exits; net USD -0.0538
 - **Trend failure**: 1 exits; net USD -0.0072
-- **Timescales disagree**: 1 exits; net USD -0.0072
 
 ## Where paper trades made money
 
