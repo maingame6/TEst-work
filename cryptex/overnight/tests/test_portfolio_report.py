@@ -45,6 +45,31 @@ class PaperMoneyTests(unittest.TestCase):
         self.assertAlmostEqual(info['net_pnl_attributed'],-.009)
         self.assertGreater(info['round_trip_break_even_pct_at_flat_markets'],.8)
 
+    def test_gross_equity_cannot_be_overwritten_by_trade_attribution(self):
+        main,shadow=states()
+        main['trades']=[{'side':'SELL','pnl':-.009,'gross_mid_pnl':.001,
+                         'execution_drag':.010}]
+        # Account NAV is $210, regardless of a closed trade in the attribution tape.
+        report=P.snapshot(main,shadow,'2026-10-30T21:35:00+00:00')
+        self.assertAlmostEqual(report['balance'],210.)
+        self.assertAlmostEqual(report['gross_mark_to_market'],210.)
+        self.assertAlmostEqual(report['estimated_future_exit_costs'],0.)
+        self.assertAlmostEqual(report['execution_cost_study']['gross_market_pnl_attributed'],.001)
+
+    def test_gross_nav_and_unwind_cost_reconcile_with_open_positions(self):
+        main,shadow=states()
+        main['bots'][0]['cash']=9.
+        main['bots'][0]['position']={'symbol':'BTC','qty':.01,
+                                     'entry_mid':100.,'entry_cost':1.}
+        main['trades']=[{'side':'SELL','pnl':-.011,'gross_mid_pnl':.002,
+                         'execution_drag':.013}]
+        r=P.snapshot(main,shadow,'2026-10-30T21:35:00+00:00')
+        self.assertAlmostEqual(r['gross_mark_to_market'],210.)
+        self.assertGreater(r['estimated_future_exit_costs'],0)
+        self.assertAlmostEqual(r['estimated_future_exit_costs'],
+                               r['gross_mark_to_market']-r['balance'],places=5)
+        self.assertGreaterEqual(r['gross_mark_to_market'],r['balance'])
+
     def test_open_position_has_costs_before_selling(self):
         main,shadow=states()
         main['bots'][0]['cash']=9
