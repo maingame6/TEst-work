@@ -22,3 +22,16 @@ utc,model,action,symbol,reason,score,paper
 2026-10-30T21:30:00+00:00,HUMMINGBOT_FRICTION,HOLD,,"No verified L2 order book, bid/ask or queue position: market maker disallowed",0.0,True
 2026-10-30T21:30:00+00:00,LEAN_EVENT,FILLED_BUY,WIF,"Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",0.21002,True
 2026-10-30T21:30:00+00:00,NAUTILUS_REGIME,FILLED_BUY,ADA,"Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",0.24522,True
+2026-10-30T21:25:00+00:00,HUMMINGBOT_FRICTION,HOLD,,"No verified L2 order book, bid/ask or queue position: market maker disallowed",0.0,True
+2026-10-30T21:30:00+00:00,HUMMINGBOT_FRICTION,HOLD,,"No verified L2 order book, bid/ask or queue position: market maker disallowed",0.0,True
+2026-10-30T22:00:00+00:00,FLUID_ADVECTION,FILLED_BUY,ADA,"Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.216, gate=0.09",0.38345,True
+2026-10-30T22:00:00+00:00,FLUID_VISCOSITY,HOLD,XRP,"Momentum less empirical log-return diffusion/noise; score=-0.076, gate=0.14",-0.07572,True
+2026-10-30T22:00:00+00:00,GEOMETRIC_DIVERSITY,SELL_QUEUED,WIF,Shadow thirty minute hold completed,-0.42368,True
+2026-10-30T22:00:00+00:00,ERROR_CODE_CONSENSUS,SELL_QUEUED,XRP,Shadow thirty minute hold completed,0.28571,True
+2026-10-30T22:00:00+00:00,GRAPH_COHERENCE,SELL_QUEUED,WIF,Shadow thirty minute hold completed,-0.00682,True
+2026-10-30T22:00:00+00:00,LATTICE_ANALOG,HOLD,PEPE,"Historical nearest-vector analog, 2/9 after-cost positives in old samples; score=-0.349, gate=0.14",-0.34917,True
+2026-10-30T22:00:00+00:00,FREQTRADE_STYLE,SELL_QUEUED,WIF,Shadow thirty minute hold completed,0.06994,True
+2026-10-30T22:00:00+00:00,QLIB_STYLE,SELL_QUEUED,WIF,Shadow thirty minute hold completed,0.9,True
+2026-10-30T22:00:00+00:00,HUMMINGBOT_FRICTION,HOLD,,"No verified L2 order book, bid/ask or queue position: market maker disallowed",0.0,True
+2026-10-30T22:00:00+00:00,LEAN_EVENT,SELL_QUEUED,WIF,Shadow thirty minute hold completed,0.06192,True
+2026-10-30T22:00:00+00:00,NAUTILUS_REGIME,SELL_QUEUED,ADA,Shadow thirty minute hold completed,0.04953,True

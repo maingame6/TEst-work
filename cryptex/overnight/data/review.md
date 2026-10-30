@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-10-30T21:39:59.257133+00:00
+Generated: 2026-10-30T22:05:15.393952+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
 Paper equity: USD 99.88; initial USD 100.00; change USD -0.12.
-Closed trades: 0; wins 0; losses/breakevens 0.
+Closed trades: 1; wins 0; losses/breakevens 1.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | ETH | 16 | 6 | 0 |
-| HOUSE | HOLD | BTC | 15 | 8 | 1 |
-| SPY | HOLD | PEPE | 12 | 26 | 1 |
-| MEME HUNTER | HOLD | WIF | 31 | 13 | 1 |
-| BREAKOUT | HOLD | SOL | 30 | 0 | 0 |
-| CONTRARIAN | SELL | XRP | 10 | 12 | 0 |
-| ROTATOR | HOLD | ADA | 29 | 2 | 0 |
-| VORTEX | HOLD | ETH | 16 | 6 | 0 |
-| FRACTAL | HOLD | ADA | 29 | 2 | 0 |
-| SHOCKWAVE | HOLD | WIF | 31 | 13 | 1 |
+| GAMBLER | SELL | ETH | 16 | 10 | 0 |
+| HOUSE | SELL | BTC | 14 | 11 | 0 |
+| SPY | SELL | PEPE | 6 | 28 | 0 |
+| MEME HUNTER | SELL | WIF | 40 | 6 | 2 |
+| BREAKOUT | HOLD | SOL | 21 | 5 | 0 |
+| CONTRARIAN | SELL | XRP | 8 | 22 | 0 |
+| ROTATOR | HOLD | ADA | 28 | 5 | 0 |
+| VORTEX | HOLD | ETH | 16 | 10 | 0 |
+| FRACTAL | SELL | ADA | 28 | 5 | 0 |
+| SHOCKWAVE | SELL | WIF | 40 | 6 | 2 |
 
 ## Bot performance
 
@@ -35,7 +35,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | SPY | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | MEME HUNTER | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | BREAKOUT | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| CONTRARIAN | 0 | 0 | 0 | — | +0.0000 | 1.00x |
+| CONTRARIAN | 1 | 0 | 1 | 0.0% | -0.0071 | 1.00x |
 | ROTATOR | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | VORTEX | 0 | 0 | 0 | — | +0.0000 | 1.00x |
 | FRACTAL | 0 | 0 | 0 | — | +0.0000 | 1.00x |
@@ -43,7 +43,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 ## Where paper trades lost money
 
-No completed evidence yet.
+- **RSI normalized**: 1 exits; net USD -0.0071
 
 ## Where paper trades made money
 

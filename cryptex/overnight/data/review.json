@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-30T21:39:59.257133+00:00",
+  "generated_utc": "2026-10-30T22:05:15.393952+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -7,93 +7,93 @@
   "total_subagent_review_capacity": 640,
   "latest_subagent_reviews": {
     "GAMBLER": {
-      "decision": "HOLD",
+      "decision": "SELL",
       "symbol": "ETH",
       "support": 16,
-      "opposition": 6,
+      "opposition": 10,
       "veto": 0,
-      "factor_score": 0.1486
+      "factor_score": 0.0553
     },
     "HOUSE": {
-      "decision": "HOLD",
+      "decision": "SELL",
       "symbol": "BTC",
-      "support": 15,
-      "opposition": 8,
-      "veto": 1,
-      "factor_score": 0.0834
+      "support": 14,
+      "opposition": 11,
+      "veto": 0,
+      "factor_score": 0.0769
     },
     "SPY": {
-      "decision": "HOLD",
+      "decision": "SELL",
       "symbol": "PEPE",
-      "support": 12,
-      "opposition": 26,
-      "veto": 1,
-      "factor_score": -0.1296
+      "support": 6,
+      "opposition": 28,
+      "veto": 0,
+      "factor_score": -0.1324
     },
     "MEME HUNTER": {
-      "decision": "HOLD",
+      "decision": "SELL",
       "symbol": "WIF",
-      "support": 31,
-      "opposition": 13,
-      "veto": 1,
-      "factor_score": 0.2564
+      "support": 40,
+      "opposition": 6,
+      "veto": 2,
+      "factor_score": 0.3495
     },
     "BREAKOUT": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 30,
-      "opposition": 0,
+      "support": 21,
+      "opposition": 5,
       "veto": 0,
-      "factor_score": 0.3311
+      "factor_score": 0.1946
     },
     "CONTRARIAN": {
       "decision": "SELL",
       "symbol": "XRP",
-      "support": 10,
-      "opposition": 12,
+      "support": 8,
+      "opposition": 22,
       "veto": 0,
-      "factor_score": 0.0166
+      "factor_score": -0.0824
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "ADA",
-      "support": 29,
-      "opposition": 2,
+      "support": 28,
+      "opposition": 5,
       "veto": 0,
-      "factor_score": 0.3193
+      "factor_score": 0.2549
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "ETH",
       "support": 16,
-      "opposition": 6,
+      "opposition": 10,
       "veto": 0,
-      "factor_score": 0.1486
+      "factor_score": 0.0553
     },
     "FRACTAL": {
-      "decision": "HOLD",
+      "decision": "SELL",
       "symbol": "ADA",
-      "support": 29,
-      "opposition": 2,
+      "support": 28,
+      "opposition": 5,
       "veto": 0,
-      "factor_score": 0.3193
+      "factor_score": 0.2549
     },
     "SHOCKWAVE": {
-      "decision": "HOLD",
+      "decision": "SELL",
       "symbol": "WIF",
-      "support": 31,
-      "opposition": 13,
-      "veto": 1,
-      "factor_score": 0.2564
+      "support": 40,
+      "opposition": 6,
+      "veto": 2,
+      "factor_score": 0.3495
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 99.884538,
-  "portfolio_paper_change_usd": -0.115462,
-  "all_time_closed_paper_trades": 0,
+  "current_paper_equity_usd": 99.884177,
+  "portfolio_paper_change_usd": -0.115823,
+  "all_time_closed_paper_trades": 1,
   "all_time_closed_wins": 0,
-  "all_time_closed_losses": 0,
-  "aggregate_realized_pnl_usd": 0,
+  "all_time_closed_losses": 1,
+  "aggregate_realized_pnl_usd": -0.007062,
   "agents": {
     "GAMBLER": {
       "closed": 0,
@@ -161,15 +161,15 @@
       "position_size_multiplier": 1.0
     },
     "CONTRARIAN": {
-      "closed": 0,
+      "closed": 1,
       "wins": 0,
-      "losses": 0,
-      "win_rate": null,
-      "realized_net_usd": 0,
-      "average_profit_usd": null,
+      "losses": 1,
+      "win_rate": 0.0,
+      "realized_net_usd": -0.007062,
+      "average_profit_usd": -0.007062,
       "average_win_usd": null,
-      "average_loss_usd": null,
-      "last_20_net_usd": 0,
+      "average_loss_usd": -0.007062,
+      "last_20_net_usd": -0.007062,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -227,7 +227,12 @@
     }
   },
   "profitable_exit_reasons": {},
-  "losing_exit_reasons": {},
+  "losing_exit_reasons": {
+    "RSI normalized": {
+      "count": 1,
+      "net_pnl_usd": -0.007062
+    }
+  },
   "data_errors_latest": {},
   "missing_or_stale_data_causes_no_order": true,
   "risk_paused": false,
