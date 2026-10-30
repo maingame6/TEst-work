@@ -340,6 +340,18 @@ def main():
                          "experimental_eleven":money["groups"]["research"]["equity"],
                          "session_status":money["overnight"]["status"],
                          "paper_only":True}
+    # Extended overnight debrief is read-only and never changes trade actions.
+    # Failing to make a report must not silently stop paper BUY/SELL cycles.
+    try:
+        from morning_briefing import store as store_morning_briefing
+        brief=store_morning_briefing(st,shadow,money,DATA)
+        st["morning_briefing"]={"status":"OK","generated_at":brief["generated_at"],
+                               "session_closed":brief["activity"]["closed_with_outcomes"],
+                               "distillation":brief["distillation"]["status"],"paper_only":True}
+    except Exception as exc:
+        st["morning_briefing"]={"status":"FAILED","error":type(exc).__name__+": "+str(exc)[:200],
+                               "paper_only":True}
+        event(st,"BRIEFING_ERROR",st["morning_briefing"]["error"])
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
     fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl",
