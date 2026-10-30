@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-30T23:25:35.897508+00:00",
+  "generated_utc": "2026-10-30T23:30:38.630841+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -9,91 +9,91 @@
     "GAMBLER": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 19,
-      "opposition": 3,
+      "support": 26,
+      "opposition": 2,
       "veto": 0,
-      "factor_score": 0.2073
+      "factor_score": 0.3179
     },
     "HOUSE": {
       "decision": "SELL",
       "symbol": "SOL",
-      "support": 5,
-      "opposition": 17,
+      "support": 8,
+      "opposition": 20,
       "veto": 0,
-      "factor_score": -0.1017
+      "factor_score": -0.0783
     },
     "SPY": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 20,
-      "opposition": 16,
+      "support": 19,
+      "opposition": 14,
       "veto": 0,
-      "factor_score": 0.0336
+      "factor_score": 0.0627
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "PEPE",
-      "support": 20,
-      "opposition": 16,
-      "veto": 0,
-      "factor_score": 0.0336
-    },
-    "BREAKOUT": {
-      "decision": "SELL",
-      "symbol": "SOL",
       "support": 19,
-      "opposition": 3,
-      "veto": 0,
-      "factor_score": 0.2073
-    },
-    "CONTRARIAN": {
-      "decision": "BUY",
-      "symbol": "XRP",
-      "support": 7,
       "opposition": 14,
       "veto": 0,
-      "factor_score": -0.0152
+      "factor_score": 0.0627
+    },
+    "BREAKOUT": {
+      "decision": "BUY",
+      "symbol": "SOL",
+      "support": 26,
+      "opposition": 2,
+      "veto": 0,
+      "factor_score": 0.3179
+    },
+    "CONTRARIAN": {
+      "decision": "SELL",
+      "symbol": "XRP",
+      "support": 8,
+      "opposition": 19,
+      "veto": 0,
+      "factor_score": -0.0509
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "ADA",
-      "support": 16,
-      "opposition": 9,
+      "support": 23,
+      "opposition": 6,
       "veto": 1,
-      "factor_score": 0.116
+      "factor_score": 0.2057
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "ETH",
-      "support": 16,
+      "support": 20,
       "opposition": 6,
-      "veto": 0,
-      "factor_score": 0.1347
+      "veto": 1,
+      "factor_score": 0.2012
     },
     "FRACTAL": {
-      "decision": "SELL",
-      "symbol": "PEPE",
-      "support": 20,
-      "opposition": 16,
+      "decision": "BUY",
+      "symbol": "SOL",
+      "support": 26,
+      "opposition": 2,
       "veto": 0,
-      "factor_score": 0.0336
+      "factor_score": 0.3179
     },
     "SHOCKWAVE": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 20,
-      "opposition": 16,
+      "support": 19,
+      "opposition": 14,
       "veto": 0,
-      "factor_score": 0.0336
+      "factor_score": 0.0627
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 99.660541,
-  "portfolio_paper_change_usd": -0.339459,
-  "all_time_closed_paper_trades": 24,
+  "current_paper_equity_usd": 99.655112,
+  "portfolio_paper_change_usd": -0.344888,
+  "all_time_closed_paper_trades": 27,
   "all_time_closed_wins": 5,
-  "all_time_closed_losses": 19,
-  "aggregate_realized_pnl_usd": -0.257386,
+  "all_time_closed_losses": 22,
+  "aggregate_realized_pnl_usd": -0.283992,
   "agents": {
     "GAMBLER": {
       "closed": 2,
@@ -109,28 +109,28 @@
       "position_size_multiplier": 1.0
     },
     "HOUSE": {
-      "closed": 3,
+      "closed": 4,
       "wins": 0,
-      "losses": 3,
+      "losses": 4,
       "win_rate": 0.0,
-      "realized_net_usd": -0.023405,
-      "average_profit_usd": -0.007802,
+      "realized_net_usd": -0.030952,
+      "average_profit_usd": -0.007738,
       "average_win_usd": null,
-      "average_loss_usd": -0.007802,
-      "last_20_net_usd": -0.023405,
+      "average_loss_usd": -0.007738,
+      "last_20_net_usd": -0.030952,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "SPY": {
-      "closed": 3,
+      "closed": 4,
       "wins": 1,
-      "losses": 2,
-      "win_rate": 0.3333,
-      "realized_net_usd": -0.020818,
-      "average_profit_usd": -0.006939,
+      "losses": 3,
+      "win_rate": 0.25,
+      "realized_net_usd": -0.030348,
+      "average_profit_usd": -0.007587,
       "average_win_usd": 0.000519,
-      "average_loss_usd": -0.010669,
-      "last_20_net_usd": -0.020818,
+      "average_loss_usd": -0.010289,
+      "last_20_net_usd": -0.030348,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -213,15 +213,15 @@
       "position_size_multiplier": 1.0
     },
     "SHOCKWAVE": {
-      "closed": 3,
+      "closed": 4,
       "wins": 2,
-      "losses": 1,
-      "win_rate": 0.6667,
-      "realized_net_usd": -0.001219,
-      "average_profit_usd": -0.000406,
+      "losses": 2,
+      "win_rate": 0.5,
+      "realized_net_usd": -0.010748,
+      "average_profit_usd": -0.002687,
       "average_win_usd": 0.003159,
-      "average_loss_usd": -0.007538,
-      "last_20_net_usd": -0.001219,
+      "average_loss_usd": -0.008533,
+      "last_20_net_usd": -0.010748,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     }
@@ -252,6 +252,18 @@
     "Timescales disagree": {
       "count": 2,
       "net_pnl_usd": -0.014613
+    },
+    "Range normalized": {
+      "count": 1,
+      "net_pnl_usd": -0.007547
+    },
+    "Volume faded": {
+      "count": 1,
+      "net_pnl_usd": -0.00953
+    },
+    "Shockwave ended": {
+      "count": 1,
+      "net_pnl_usd": -0.009529
     }
   },
   "data_errors_latest": {},
