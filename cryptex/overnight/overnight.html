@@ -8,6 +8,7 @@
   <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px">
     <div><div class="label">CRYPTEX · OVERNIGHT PAPER-MONEY DESK</div><h2 style="font-size:20px;margin:4px 0">Live competition bankroll</h2></div>
     <span id="moneyFresh" class="pill warn">Waiting for the first money report</span>
+  <span id="moneyIntegrity" class="pill warn">Balance integrity: awaiting independently audited report</span>
   </div>
   <div class="metrics" style="margin:12px 0 10px">
     <div class="metric"><div class="label">COMBINED PAPER BALANCE</div><div class="number" id="moneyTotal">$210.00</div><div class="muted">Starts with $210 fictitious</div></div>
@@ -216,6 +217,33 @@ try{
  const safe=n=>Number(n||0).toLocaleString();
  el.innerHTML='<b>CCXT exchange-wide discovery:</b> '+safe(q.spot_quote_matched_listings)+' active spot listings · '+safe(q.unique_normalized_spot_pair_symbols)+' distinct pairs · '+safe(q.unique_base_tickers)+' asset tickers · '+q.successful_exchange_catalogues+'/'+q.configured_exchanges.length+' selected exchanges reached. '+safe(q.exchange_provider_count)+' exchange adapters supported by the installed library. <a style="color:#46dce4" href="./data/ccxt_universe.json" target="_blank" rel="noopener">Full verified venue catalogue</a><div style="font-size:11px;margin-top:6px">Discovery metadata only, not executable quotes, independently priced markets, or new tradable instruments. Last scan '+new Date(ts).toLocaleString()+'.</div>';
 }catch(_){el.textContent='CCXT catalogue unavailable. Paper trading remains on its existing 12 validated assets.';}
+})();
+</script>
+
+<script>
+(function(){
+const el=document.getElementById('moneyIntegrity');
+if(!el)return;
+async function audit(){
+ try{
+  const resp=await fetch('./data/integrity_report.json',{cache:'no-store'});
+  if(!resp.ok)throw new Error('unpublished');
+  const a=await resp.json();
+  const checks=a.checks||[];
+  const passed=checks.every(x=>x.passed===true);
+  const asof=Date.parse(a.generated_at||'');
+  const recent=Number.isFinite(asof)&&Date.now()-asof<45*60000;
+  const verified=a.mode==='PAPER_ONLY'&&a.no_real_orders===true&&a.audited_accounts===21&&passed;
+  if(!verified||!recent){
+   el.textContent='Paper balance audit NOT current — verify GitHub Actions';
+   el.className='pill warn';return;
+  }
+  const warns=(a.warnings||[]);
+  el.textContent='21/21 paper accounts reconciled · '+checks.length+' checks passed'+(warns.length?' · '+warns.length+' data/schedule caution(s)':'');
+  el.className='pill';
+ }catch(e){el.textContent='Accounting verification report unavailable';el.className='pill warn';}
+}
+audit();setInterval(audit,60000);
 })();
 </script>
 </body></html>
