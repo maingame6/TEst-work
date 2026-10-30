@@ -129,6 +129,22 @@ def make(main,shadow,money,news,folder,prior_market):
     sentiment=collections.Counter(x.get("sentiment","UNKNOWN") for x in headlines)
     now=money["generated_at"]
     refs=money.get("benchmarks",{}).get("references",{})
+    ccxt=load(folder/"ccxt_universe.json",{})
+    try:ccxt_age=(parse(now)-parse(ccxt.get("refreshed_at"))).total_seconds()/3600
+    except (TypeError,ValueError):ccxt_age=None
+    ccxt_fresh=(ccxt.get("status") in ("OK","PARTIAL") and
+                ccxt_age is not None and 0<=ccxt_age<=12)
+    catalog_summary={"status":ccxt.get("status") if ccxt_fresh else "UNAVAILABLE_OR_STALE",
+      "refreshed_at":ccxt.get("refreshed_at"),
+      "venues_checked":ccxt.get("exchange_status",[]) if ccxt_fresh else [],
+      "available_provider_adapters":ccxt.get("exchange_provider_count") if ccxt_fresh else None,
+      "selected_venue_all_market_records":ccxt.get("all_markets_returned_in_selected_venues") if ccxt_fresh else None,
+      "spot_market_listings":ccxt.get("spot_quote_matched_listings") if ccxt_fresh else None,
+      "unique_pair_symbols":ccxt.get("unique_normalized_spot_pair_symbols") if ccxt_fresh else None,
+      "unique_base_tickers":ccxt.get("unique_base_tickers") if ccxt_fresh else None,
+      "most_cross_listed":ccxt.get("most_widely_listed_bases",[])[:12] if ccxt_fresh else [],
+      "source":"CCXT MIT public market catalogue; selected five exchanges only",
+      "prices_included":False,"trading_unchanged":True}
     radar=load(folder/"market_radar.json",{})
     last_poll=radar.get("polled_at")
     try:age_minutes=round((parse(now)-parse(last_poll)).total_seconds()/60,2)
@@ -177,6 +193,7 @@ def make(main,shadow,money,news,folder,prior_market):
            "break_even_pct":money.get("execution_cost_study",{}).get("round_trip_break_even_pct_at_flat_markets")},
        "observed_market_moves":moves,"equity_curve":curve_stats(folder,stamp),
        "reference_benchmarks":refs,
+       "ccxt_market_catalogue":catalog_summary,
        "wide_market_radar":cross_markets,
        "news":{"last_polled":(news or {}).get("checked_at"),
            "sources_up":(news or {}).get("sources_up",0),
@@ -290,6 +307,29 @@ def render(r):
     else:L.append("Broad-market source missing or too old; no current movers reported.")
     L+=["","Quote last-trade age is not provided by the Kraken ticker endpoint: timestamps record when we retrieved the quote, not when the underlying trade happened.",
          "Public market-data archive: market_radar.json and market_radar_snapshots.csv.",""]
+    cm=r["ccxt_market_catalogue"]
+    L+=["","### CCXT unified market catalogue — public market discovery","",
+      "CCXT is an open-source unified market API with more than 100 supported exchange integrations; this run intentionally surveys five public spot venues, not every exchange worldwide.",
+      "Catalogue status: "+str(cm["status"])+
+      "; first-party checked venues: "+str(len(cm["venues_checked"]))+
+      "; last scan: "+str(cm["refreshed_at"])+".",
+      "Discovered exchange market records: "+str(cm["selected_venue_all_market_records"])+
+      "; qualifying spot USD/USDT/USDC/EUR listings "+str(cm["spot_market_listings"])+
+      "; unique spot symbols "+str(cm["unique_pair_symbols"])+
+      "; unique base tickers "+str(cm["unique_base_tickers"])+".",
+      "**Important: CCXT catalogues are symbol metadata, not current quoted prices.** A discovered market cannot enter simulated trading unless independently verified in the original 12-asset engine.",
+      ""]
+    if cm["venues_checked"]:
+        L+=["| Exchange | Discovery status | All returned markets | Spot watch candidates |",
+            "|---|---|---:|---:|"]
+        for v in cm["venues_checked"]:
+            L.append("| "+v["exchange"]+" | "+v["status"]+" | "+
+                     str(v["reported_markets"])+" | "+str(v["research_pairs"])+" |")
+        L+=["","Most widely listed asset tickers across the checked venues:"]
+        for v in cm["most_cross_listed"]:
+            L.append("- "+v["base"]+": "+str(v["exchange_count"])+" exchange(s)")
+    else:L.append("No verified fresh multi-exchange catalogue; symbols not invented.")
+    L+=["","[Full public multi-exchange market list](ccxt_universe.json).",""]
     L+=["","## 6. Public news and research findings","",
         "Last public-source poll: "+str(n["last_polled"])+". Available "+str(n["sources_up"])+"/"+str(n["total_sources"])+" research scouts.",
         str(n["new_items"])+" headline(s) first observed within the session. Weak **keyword-only**, uncalibrated sentiment: "+str(n["weak_sentiment"])+".",
