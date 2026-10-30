@@ -38,6 +38,7 @@ jobs:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
           python3 -m py_compile cryptex/overnight/runner.py
+          python3 -m unittest discover -s cryptex/overnight/tests -v
           python3 cryptex/overnight/runner.py
 
       - name: Save paper state, entries, exits and equity to GitHub
