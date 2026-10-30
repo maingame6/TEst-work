@@ -143,6 +143,9 @@ def make(main,shadow,money,news,folder,prior_market):
       "unique_pair_symbols":ccxt.get("unique_normalized_spot_pair_symbols") if ccxt_fresh else None,
       "unique_base_tickers":ccxt.get("unique_base_tickers") if ccxt_fresh else None,
       "most_cross_listed":ccxt.get("most_widely_listed_bases",[])[:12] if ccxt_fresh else [],
+      "kraken_usd_quote_count":ccxt.get("kraken_usd_quote_count_validated") if ccxt_fresh else None,
+      "kraken_quote_status":ccxt.get("kraken_public_usd_quote_status") if ccxt_fresh else None,
+      "top_liquid_kraken_usd_quotes":ccxt.get("kraken_top_usd_quotes",[])[:12] if ccxt_fresh else [],
       "source":"CCXT MIT public market catalogue; selected five exchanges only",
       "prices_included":False,"trading_unchanged":True}
     radar=load(folder/"market_radar.json",{})
@@ -329,6 +332,18 @@ def render(r):
         for v in cm["most_cross_listed"]:
             L.append("- "+v["base"]+": "+str(v["exchange_count"])+" exchange(s)")
     else:L.append("No verified fresh multi-exchange catalogue; symbols not invented.")
+    L+=["", "### Extra real public Kraken USD quotes from CCXT",
+        "Validated direct USD market quotes: "+str(cm["kraken_usd_quote_count"])+
+        "; source status "+str(cm["kraken_quote_status"])+
+        ". One Kraken public fetch-tickers batch only every six hours.",
+        "| Pair | Bid | Ask | Approx 24h USD turnover |",
+        "|---|---:|---:|---:|"]
+    if cm["top_liquid_kraken_usd_quotes"]:
+        for x in cm["top_liquid_kraken_usd_quotes"]:
+            L.append("| "+x["symbol"]+" | "+format(x["bid"],".8g")+
+                " | "+format(x["ask"],".8g")+" | $"+
+                format(x["approx_24h_usd_turnover"],",.0f")+" |")
+    else:L.append("| Not measured or source failed | — | — | — |")
     L+=["","[Full public multi-exchange market list](ccxt_universe.json).",""]
     L+=["","## 6. Public news and research findings","",
         "Last public-source poll: "+str(n["last_polled"])+". Available "+str(n["sources_up"])+"/"+str(n["total_sources"])+" research scouts.",
