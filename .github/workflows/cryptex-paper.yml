@@ -146,7 +146,7 @@ jobs:
 
       # Github cron is best-effort; bounded overnight self-dispatch fallback.
       # Stop only AFTER the first verified morning paper-balance snapshot (up to 08:15 Dublin),
-      # after 132 hops, or if genuine GitHub cron has resumed.
+      # after 132 hops; do not stop on a single unreliable cron event.
       # Public standard Github-hosted runners are free, subject to fair use.
       - name: Overnight backup — self-dispatch next paper cycle
         if: success() && (github.event_name == 'workflow_dispatch' || github.event_name == 'push')  # One repair push can seed an overnight fallback
@@ -179,15 +179,12 @@ jobs:
           state=json.loads(pathlib.Path("cryptex/overnight/data/state.json").read_text())
           if state.get("mode")!="PAPER_ONLY":
               raise SystemExit("Refusing non-paper-money research dispatch")
-          last_cron=state.get("last_schedule_run")
-          if last_cron:
-              try:
-                  latest=dt.datetime.fromisoformat(last_cron)
-                  if (dt.datetime.now(dt.timezone.utc)-latest).total_seconds()<2100:
-                      print("Scheduled trading is genuinely running; fallback not needed")
-                      raise SystemExit(0)
-              except ValueError:
-                  pass
+          # A SINGLE native cron event does not prove dependable future
+          # scheduling. The bounded backup keeps going to the morning
+          # checkpoint. The runner is idempotent on closed-candle timestamp,
+          # and GitHub concurrency serializes any overlapping triggers.
+          if state.get("schedule_confirmed"):
+              print("Native cron seen; retaining backup until the morning checkpoint")
           local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
           def morning_done():
               try:
