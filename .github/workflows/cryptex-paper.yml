@@ -14,9 +14,21 @@ on:
   schedule:
     - cron: '1,6,11,16,21,26,31,36,41,46,51,56 * * * *'
   workflow_dispatch:
+    inputs:
+      autopilot:
+        description: 'Bounded overnight paper-research fallback (no live money)'
+        type: boolean
+        required: false
+        default: false
+      hop:
+        description: 'Internal bounded fallback counter, max 132'
+        type: number
+        required: false
+        default: 0
 
 permissions:
   contents: write
+  actions: write  # Supported explicit workflow_dispatch permission
 
 concurrency:
   group: cryptex-scheduled-paper-research
@@ -27,7 +39,7 @@ jobs:
     name: Observe markets and journal paper trades
     if: github.repository == 'maingame6/TEst-work'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     env:
       CRYPTEX_TRIGGER_EVENT: ${{ github.event_name }}
     steps:
@@ -83,3 +95,68 @@ jobs:
           fi
           git commit -m "research: append CRYPTEX market observation and simulated results [skip ci]"
           git push origin HEAD:cryptex-paper-trading-preview
+
+      # Github cron is best-effort; bounded overnight self-dispatch fallback.
+      # Stops at 08:00 Europe/Dublin, after 132 hops, or if cron resumes.
+      # Public standard Github-hosted runners are free, subject to fair use.
+      - name: Overnight backup — self-dispatch next paper cycle
+        if: success() && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          CRYPTEX_EVENT: ${{ github.event_name }}
+          CRYPTEX_AUTOPILOT: ${{ inputs.autopilot }}
+          CRYPTEX_HOP: ${{ inputs.hop }}
+        run: |
+          python3 - <<'PY'
+          import datetime as dt
+          import json
+          import os
+          import pathlib
+          import subprocess
+          import time
+          from zoneinfo import ZoneInfo
+
+          event=os.environ.get("CRYPTEX_EVENT","")
+          hop=int(os.environ.get("CRYPTEX_HOP") or "0")
+          requested=os.environ.get("CRYPTEX_AUTOPILOT","false").lower()=="true"
+          if event=="workflow_dispatch" and not requested:
+              print("Manual research run, autonomous fallback not requested")
+              raise SystemExit(0)
+          if event not in ("push","workflow_dispatch") or hop>=132:
+              print("Backup stopped: invalid source or 132-cycle limit")
+              raise SystemExit(0)
+
+          state=json.loads(pathlib.Path("cryptex/overnight/data/state.json").read_text())
+          if state.get("mode")!="PAPER_ONLY":
+              raise SystemExit("Refusing non-paper-money research dispatch")
+          last_cron=state.get("last_schedule_run")
+          if last_cron:
+              try:
+                  latest=dt.datetime.fromisoformat(last_cron)
+                  if (dt.datetime.now(dt.timezone.utc)-latest).total_seconds()<2100:
+                      print("Scheduled trading is genuinely running; fallback not needed")
+                      raise SystemExit(0)
+              except ValueError:
+                  pass
+          local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
+          if not (local.hour>=21 or local.hour<8):
+              print("Outside overnight 21:00-08:00 Dublin; stopping backup")
+              raise SystemExit(0)
+
+          delay=45 if event=="push" else 285
+          print(f"Paper-only overnight backup hop {hop}; next dispatch in {delay}s",flush=True)
+          time.sleep(delay)
+          local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
+          if not (local.hour>=21 or local.hour<8):
+              print("08:00 local reached; stopping")
+              raise SystemExit(0)
+          subprocess.run([
+              "gh","api","-X","POST",
+              f"repos/{os.environ['GH_REPO']}/actions/workflows/cryptex-paper.yml/dispatches",
+              "-f","ref=main",
+              "-f","inputs[autopilot]=true",
+              "-f",f"inputs[hop]={hop+1}"
+          ],check=True,timeout=30)
+          print(f"Next paper cycle dispatched, hop {hop+1}/132.")
+          PY
