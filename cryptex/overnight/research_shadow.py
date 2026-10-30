@@ -15,6 +15,8 @@ from research_flock import research_cycle
 FEE=.0015
 SLIP=.0025
 VERSION=1
+MAX_DAILY_LOSS=.05
+MAX_PEAK_DRAWDOWN=.15
 
 def initial():
  return {"version":VERSION,"mode":"PAPER_ONLY","last_ts":0,"cycles":0,
@@ -23,7 +25,9 @@ def initial():
                   "closed":0,"wins":0,"realized":0.,
                   "recent_outcomes":[],"last_decision":"WAITING"}
                  for name in MODEL_NAMES},
-         "trades":[],"decisions":[],"last_prices":{},"last_review":{}}
+         "trades":[],"decisions":[],"last_prices":{},"last_review":{},
+         "peak":110.,"daily_start":110.,"daily_date":None,"halted":False,
+         "permanent_halt":False,"risk_reason":None}
 
 def equity(bot,prices):
  p=bot["position"]
@@ -44,12 +48,17 @@ def fill_order(bot,order,price,ts,name):
                    "entry_cost":budget,"entry_market":price,
                    "entry_time":ts,"reason":order["reason"],"peak":price}
   pnl=None;fees=qty*fill*FEE
+  entry_mid=price;exit_mid=None;gross_mid_pnl=None;execution_drag=None;net_return_pct=None
  else:
   p=bot["position"]
   if not p or p["symbol"]!=order["symbol"]:return None
   fill=price*(1-SLIP);qty=p["quantity"]
   proceeds=qty*fill*(1-FEE)
   pnl=proceeds-p["entry_cost"]
+  entry_mid=p["entry_market"];exit_mid=price
+  gross_mid_pnl=qty*(exit_mid-entry_mid)
+  execution_drag=gross_mid_pnl-pnl
+  net_return_pct=100*pnl/max(p["entry_cost"],1e-12)
   bot["cash"]+=proceeds;bot["closed"]+=1
   bot["wins"]+=int(pnl>0);bot["realized"]+=pnl
   bot["recent_outcomes"]=(bot["recent_outcomes"]+[pnl])[-50:]
@@ -57,7 +66,10 @@ def fill_order(bot,order,price,ts,name):
   fees=qty*fill*FEE
  return {"ts":ts,"model":name,"side":order["side"],"symbol":order["symbol"],
          "price":round(fill,12),"quantity":qty,"fees":fees,
-         "pnl":pnl,"reason":order["reason"],"paper":True}
+         "pnl":pnl,"entry_mid":entry_mid,"exit_mid":exit_mid,
+         "gross_mid_pnl":gross_mid_pnl,"execution_drag":execution_drag,
+         "net_return_pct":net_return_pct,
+         "reason":order["reason"],"paper":True}
 
 def exit_reason(p,price,ts):
  gain=price/p["entry_market"]-1.
@@ -77,6 +89,25 @@ def update(state,history,allowed,ts):
         and b[-1]["ts"]==ts}
  if len(valid)<3:return state,False
  prices={s:float(b[-1]["close"]) for s,b in valid.items()}
+ # Portfolio-wide research safety: every additional fake wallet is included.
+ # This protects the 11-model portfolio regardless of how often hypotheses BUY.
+ before=sum(equity(bot,prices) for bot in state["bots"].values())
+ state["peak"]=max(float(state.get("peak",110.)),before)
+ today=dt.datetime.fromtimestamp(ts,dt.timezone.utc).date().isoformat()
+ if state.get("daily_date")!=today:
+  state["daily_date"]=today
+  state["daily_start"]=before
+  if not state.get("permanent_halt",False):state["halted"]=False
+ if before < state["peak"]*(1.-MAX_PEAK_DRAWDOWN):
+  state["permanent_halt"]=True
+ if state["permanent_halt"]:
+  state["halted"]=True
+  state["risk_reason"]="15% peak-to-trough shadow portfolio loss; no new buys"
+ elif before < state["daily_start"]*(1.-MAX_DAILY_LOSS):
+  state["halted"]=True
+  state["risk_reason"]="5% daily shadow portfolio loss; no new buys until next UTC day"
+ elif not state["halted"]:
+  state["risk_reason"]=None
  positions={b["position"]["symbol"]:True for b in state["bots"].values()
             if b["position"]}
  ideas=evaluate(valid,positions)
@@ -85,7 +116,11 @@ def update(state,history,allowed,ts):
   order=b["pending"];b["pending"]=None
   executed=None
   if order and order["symbol"] in prices:
-   executed=fill_order(b,order,prices[order["symbol"]],ts,name)
+   if order["side"]=="BUY" and state["halted"]:
+    b["last_decision"]="VETO: research portfolio loss limit; paper buy cancelled"
+    order=None
+   else:
+    executed=fill_order(b,order,prices[order["symbol"]],ts,name)
   elif order:b["last_decision"]="HOLD: unreliable next-candle market price"
   if executed:
    state["trades"].insert(0,executed)
@@ -102,9 +137,11 @@ def update(state,history,allowed,ts):
    else:action="HOLD"
   else:
    idea=ideas[name];symbol=idea["symbol"]
-   if idea["action"]=="BUY":
+   if idea["action"]=="BUY" and not state["halted"]:
     b["pending"]={"side":"BUY","symbol":symbol,"reason":idea["reason"]}
     action="BUY_QUEUED"
+   elif state["halted"]:
+    action="RISK_HOLD";reason=state["risk_reason"] or "Portfolio drawdown limit"
    else:action="HOLD"
    reason=idea["reason"]
   b["last_decision"]=action+(" "+symbol if symbol else "")
@@ -140,7 +177,8 @@ def store(base,history,allowed,ts,now):
  if changed:
   p.write_text(json.dumps(state,indent=2,allow_nan=False)+"\n")
   append_csv(data/"shadow_trades.csv",("utc","model","side","symbol","price",
-     "quantity","fees","pnl","reason","paper"),state["trades"],"trade")
+     "quantity","fees","pnl","reason","entry_mid","exit_mid","gross_mid_pnl",
+     "execution_drag","net_return_pct","paper"),state["trades"],"trade")
   append_csv(data/"shadow_decisions.csv",("utc","model","action","symbol",
      "reason","score","paper"),state["decisions"],"decision")
  news_file=data/"public_research.json"
@@ -153,10 +191,14 @@ def store(base,history,allowed,ts,now):
          "primary_100_dollar_portfolio_is_separate":True,
          "news_scouts":news.get("sources_up",0),
          "news_sources_total":news.get("sources_total",8),
-         "news_not_used_for_trading":True,"models":{}}
+         "news_not_used_for_trading":True,"models":{},
+         "shadow_risk_halted":bool(state.get("halted",False)),
+         "shadow_risk_reason":state.get("risk_reason"),
+         "shadow_peak":state.get("peak"),"shadow_daily_start":state.get("daily_start")}
  lines=["# CRYPTEX math and open-source experimental agents","",
    "**PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**","",
    "Generated: "+now,"",
+   "Portfolio risk: "+("HALTED — "+str(state.get("risk_reason")) if state.get("halted") else "ACTIVE; 5% daily / 15% peak shadow loss guard"),"",
    f"Public research feeds reachable: {news.get('sources_up',0)} / 8 (failed feeds are not replaced with guesses).","",
    "| Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |",
    "| --- | ---: | ---: | ---: | ---: | --- |"]
