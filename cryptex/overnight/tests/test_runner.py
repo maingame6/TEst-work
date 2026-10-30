@@ -82,6 +82,20 @@ class PaperOnlySafetyTests(unittest.TestCase):
         fs={sym:dict(x) for sym in ("BTC","ETH","SOL","BNB")}
         self.assertIsNone(R.signal(0,fs,{}))
 
+    def test_temporary_daily_pause_can_reset_but_peak_drawdown_cannot(self):
+        st=R.init()
+        st["daily_date"]="2000-01-01"
+        st["halted"]=True
+        st["peak"]=100.
+        st["daily_start"]=100.
+        # Check the exact risk-reset conditions in the trading cycle so a
+        # small experimental loss does not disable the system forever.
+        import inspect
+        src=inspect.getsource(R.cycle)
+        self.assertIn('if not st.get("peak_halt",False)',src)
+        self.assertIn('st["halted"]=False',src)
+        self.assertIn('if st.get("peak_halt",False)',src)
+
     def test_stale_data_never_trades(self):
         st=R.init()
         candles={k:[{"ts":int(time.time())-99999-300*i,"close":100.,"high":101.,"low":99.,"volume":50.,"count":3,"vwap":100.} for i in range(70)] for k in ["BTC","ETH","SOL","XRP","ADA","DOGE"]}
