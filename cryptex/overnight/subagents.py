@@ -20,7 +20,7 @@ def _vote(role, decision, score, explanation):
             "reason": explanation}
 
 
-def subagent_team(parent_id, features, proposed=None, position=None):
+def subagent_team(parent_id, features, proposed=None, position=None, watch_symbol=None):
     """Return 3 independently justified votes and a no-bypass parent outcome.
 
     The market-data pipeline must already have rejected stale/contradictory data.
@@ -31,7 +31,7 @@ def subagent_team(parent_id, features, proposed=None, position=None):
         symbol = position.get("symbol")
         stage = "POSITION"
     else:
-        symbol = proposed.get("symbol") if proposed else None
+        symbol = proposed.get("symbol") if proposed else watch_symbol
         stage = "ENTRY"
     x = features.get(symbol) if symbol else None
     if x is None:
