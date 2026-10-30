@@ -134,10 +134,13 @@ def record_team_decision(st, parent, candle_ts, action, team, baseline=None):
          "exploratory":bool(baseline and baseline.get("exploratory",False)),
          "outcome":team["result"],"review_note":team["note"],
          "votes":team["votes"],"vote_details":format_votes(team),
+         "support":team["support"],"opposition":team["opposition"],
+         "neutral":team["neutral"],"veto_count":team["veto_count"],
+         "factor_score":team["factor_score"],"subagents":len(team["votes"]),
          "paper_only":True}
     st["committees"][NAMES[parent]]=row
     st["committee_audit"].insert(0,row)
-    del st["committee_audit"][250:]
+    del st["committee_audit"][40:] # Full historical votes are in append-only CSV
     return row
 
 def equity(st,prices):
@@ -293,7 +296,7 @@ def main():
     st["errors"]=errors
     st["run_kind"]="SCHEDULED_PAPER_RESEARCH"
     st["trade_profile"]="ACTIVE_PAPER_EXPLORATION_1.2_PERCENT_MAX"
-    st["subagent_model"]="30_DETERMINISTIC_SPECIALIST_REVIEWS_PAPER_ONLY"
+    st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
@@ -324,10 +327,11 @@ def main():
             prior_decisions.append({"utc":e["time"],"type":e["type"],"message":e["msg"]})
             seen_decisions.add(ident)
     write_csv(DECISIONS,decision_fields,prior_decisions)
-    # Every 5-minute candle yields up to ten three-vote team decisions. Keep
+    # Every 5-minute candle yields ten 64-vote team reviews. Keep
     # complete append-only history even as JSON's dashboard cache is capped.
     council_fields=["utc","candle_ts","parent","decision","symbol","baseline_signal",
                     "baseline_symbol","exploratory","outcome","review_note","vote_details",
+                    "support","opposition","neutral","veto_count","factor_score","subagents",
                     "paper_only"]
     council_old=[]
     if SUBAGENT_DECISIONS.exists():
@@ -374,8 +378,16 @@ def review_report(st,rows,total):
         record["count"]+=1;record["net_pnl_usd"]+=float(t["pnl"])
     for data in (why_lost,why_won):
         for rec in data.values():rec["net_pnl_usd"]=round(rec["net_pnl_usd"],6)
+    committee=st.get("committees",{})
     result={
         "generated_utc":utc(),"status":st["health"],"paper_only":True,
+        "research_team_count":len(NAMES),"subagents_per_team":len(ROLES),
+        "total_subagent_review_capacity":len(NAMES)*len(ROLES),
+        "latest_subagent_reviews":{name:{"decision":row["decision"],
+           "symbol":row["symbol"],"support":row.get("support",0),
+           "opposition":row.get("opposition",0),"veto":row.get("veto_count",0),
+           "factor_score":row.get("factor_score",0)}
+           for name,row in committee.items()},
         "initial_paper_capital_usd":100,"current_paper_equity_usd":round(total,6),
         "portfolio_paper_change_usd":round(total-100,6),
         "all_time_closed_paper_trades":len(sellers),
@@ -399,6 +411,16 @@ def review_report(st,rows,total):
         "Data status: "+result["status"],
         f"Paper equity: USD {total:.2f}; initial USD 100.00; change USD {total-100:+.2f}.",
         f"Closed trades: {len(sellers)}; wins {result['all_time_closed_wins']}; losses/breakevens {result['all_time_closed_losses']}.",
+        "",
+        "## Specialist research teams",
+        "",
+        f"{len(NAMES)} parent traders; {len(ROLES)} deterministic, correlated indicator-voters per parent = {len(NAMES)*len(ROLES)} transparent subagent evaluations per valid candle.",
+        "The specialist parameter sweeps do **not** mean 640 independent AI models or additional market feeds.",
+        "Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Parent fill results still come from `data/trades.csv`.",
+        "",
+        "| Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |",
+        "| --- | --- | --- | ---: | ---: | ---: |",
+        *[f"| {name} | {row['decision']} | {row.get('symbol') or '—'} | {row.get('support',0)} | {row.get('opposition',0)} | {row.get('veto_count',0)} |" for name,row in committee.items()],
         "",
         "## Bot performance",
         "",
