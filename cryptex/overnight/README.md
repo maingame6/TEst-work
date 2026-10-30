@@ -44,6 +44,20 @@ The workflow is configured for **every five minutes** (the minimum GitHub Action
 
 No result exists until the first *successful* scheduled run. Missing data is never replaced with invented live quotes.
 
+## CCXT GitHub market-discovery integration
+
+**Upstream:** [ccxt/ccxt](https://github.com/ccxt/ccxt), MIT licence, >100 supported crypto-exchange/prediction-market adapters. CRYPTEX uses the actual **CCXT Python unified API** (`ccxt==4.5.81`, pinned) to discover all public spot listings returned by Kraken, Coinbase, Bitstamp, OKX and KuCoin every six hours, automatically, where accessible. This is not a claim to poll every exchange worldwide.
+
+The optional GitHub Actions discovery step installs the third-party Python package **only when the prior catalogue is at least six hours old**. Each selected exchange uses public `load_markets`, filters actually active spot instruments with USD, USDT, USDC or EUR quotes, and records all matching listings, their venue, and failures. Kraken additionally receives **at most one public bulk ticker request per six-hour scan**; when supported, its direct USD pairs produce real observed bid/ask prices and 24-hour USD turnover, ranked by volume (top 400 snapshots retained). Source snapshots are not executable order prices and may describe old last trades.
+
+We did not copy upstream CCXT code, register accounts, provide API keys, enable private endpoints or make trade requests. Failure of any library installation or public exchange API is reported without stopping the 21 existing paper-trading accounts. The 12 original orderable crypto symbols remain unchanged.
+
+- [Entire multi-venue spot catalogue and venue health](data/ccxt_universe.json) (only after a successful discovery run)
+- [Full morning briefing and cross-listed markets](data/morning_briefing.md)
+- [Multi-venue research scanner source](ccxt_universe.py) and [offline regression tests](tests/test_ccxt_universe.py)
+
+**Scope:** CCXT handles crypto venues; stocks, true FX feeds, bonds, oil and physical commodities require separate reliable providers and market-hours/price licensing checks. [OpenBB](https://github.com/openbq-org/OpenBB) is an option for combining such non-crypto sources later, but it has NOT been installed or claimed to supply prices here.
+
 ## Wide-market monitoring (hourly, read-only)
 
 The **Market Radar** adds a separate public-data observation layer for **72 candidate USD markets** across nine research groups: major crypto assets, Layer-1 infrastructure, DeFi, AI/data, L2/gaming, memes, stablecoins, tokenised-gold proxies, and USD-based forex reference pairs. The exact requested list and confirmed available count are automatically recorded, not invented. An hourly Kraken public AssetPairs/Ticker batch verifies each pair; unsupported, crossed or invalid quotes are excluded with visible warnings. It records bid/ask spread, approximately USD-denominated 24h turnover, daily opening-price change, sector breadth, leading movers and top turnover. No extra coin becomes an orderable asset in the original trading engine.
