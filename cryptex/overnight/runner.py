@@ -208,8 +208,15 @@ def cycle(st,history,check,radar_results):
         if order and order["symbol"] in prices:journal(st,b,order,prices[order["symbol"]],ts,equity(st,prices))
         elif order:event(st,"VETO",b["name"]+" pending order cancelled: missing reliable quote")
         if b["position"]:
+            symbol=b["position"]["symbol"]
             reason=exit_signal(b["position"],i,fs,ts)
-            if reason:b["pending"]={"side":"SELL","symbol":b["position"]["symbol"],"reason":reason};b["last_reason"]="EXIT QUEUED: "+reason
+            if reason:
+                b["pending"]={"side":"SELL","symbol":symbol,"reason":reason}
+                b["last_reason"]="SELL QUEUED: "+symbol+" — "+reason
+                event(st,"SIGNAL",b["name"]+" queued PAPER SELL "+symbol+"; "+reason)
+            else:
+                b["last_reason"]="HOLD: "+symbol+" position still within strategy rules"
+                event(st,"HOLD",b["name"]+" HOLD "+symbol+"; current setup does not meet exit rules")
             continue
         if st["halted"]:b["last_reason"]="PAUSED: risk loss guard";continue
         if order and order["side"]=="SELL":continue
