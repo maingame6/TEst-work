@@ -17,7 +17,7 @@ def ticker(price,opening=None,bid=None,ask=None):
 
 def fake_get(url):
  if url.endswith("/AssetPairs"):
-  return {s+"USD":{"wsname":("XBT" if s=="BTC" else s)+"/USD",
+  return {(("XBT" if s=="BTC" else s)+"USD"):{"wsname":("XBT" if s=="BTC" else s)+"/USD",
                     "altname":("XBT" if s=="BTC" else s)+"USD",
                     "status":"online"} for s in M.SYMBOL_GROUP if s!="DOGE"}
  if "CoinGecko" in url or "coingecko" in url:
