@@ -4,6 +4,7 @@ Public market data only. NEVER sends exchange orders, accepts exchange API keys,
 or represents paper returns as actual profits.
 """
 import csv, datetime as dt, json, math, os, pathlib, statistics, time, urllib.parse, urllib.request
+from subagents import ROLES, subagent_team, format_votes
 BASE=pathlib.Path(__file__).resolve().parent
 DATA=BASE/"data"
 DATA.mkdir(parents=True,exist_ok=True)
@@ -11,6 +12,7 @@ STATE=DATA/"state.json"
 TRADES=DATA/"trades.csv"
 CURVE=DATA/"equity.csv"
 DECISIONS=DATA/"decisions.csv"
+SUBAGENT_DECISIONS=DATA/"subagent_decisions.csv"
 SYMBOLS={"BTC":"XBTUSD","ETH":"ETHUSD","SOL":"SOLUSD","BNB":"BNBUSD","XRP":"XRPUSD","ADA":"ADAUSD","DOGE":"DOGEUSD","SHIB":"SHIBUSD","PEPE":"PEPEUSD","BONK":"BONKUSD","WIF":"WIFUSD","FLOKI":"FLOKIUSD"}
 CG={"BTC":"bitcoin","ETH":"ethereum","SOL":"solana","BNB":"binancecoin","XRP":"ripple","ADA":"cardano","DOGE":"dogecoin","SHIB":"shiba-inu","PEPE":"pepe","BONK":"bonk","WIF":"dogwifhat","FLOKI":"floki"}
 NAMES=["GAMBLER","HOUSE","SPY","MEME HUNTER","BREAKOUT","CONTRARIAN","ROTATOR","VORTEX","FRACTAL","SHOCKWAVE"]
@@ -119,6 +121,25 @@ def init():
 def event(st,level,message):
     st["events"].insert(0,{"time":utc(),"type":level,"msg":message})
     del st["events"][120:]
+def record_team_decision(st, parent, candle_ts, action, team, baseline=None):
+    """Exactly one independently auditable 3-vote review per parent per new candle."""
+    st.setdefault("committees",{})
+    st.setdefault("committee_audit",[])
+    row={"candle_ts":int(candle_ts),
+         "utc":dt.datetime.fromtimestamp(candle_ts,dt.timezone.utc).isoformat(),
+         "parent":NAMES[parent],"decision":action,
+         "symbol":team.get("symbol"),
+         "baseline_signal":baseline["reason"] if baseline else "",
+         "baseline_symbol":baseline["symbol"] if baseline else "",
+         "exploratory":bool(baseline and baseline.get("exploratory",False)),
+         "outcome":team["result"],"review_note":team["note"],
+         "votes":team["votes"],"vote_details":format_votes(team),
+         "paper_only":True}
+    st["committees"][NAMES[parent]]=row
+    st["committee_audit"].insert(0,row)
+    del st["committee_audit"][250:]
+    return row
+
 def equity(st,prices):
     return sum(b["cash"]+(b["position"]["qty"]*prices.get(b["position"]["symbol"],b["position"]["entry_mid"]) if b["position"] else 0) for b in st["bots"])
 def learning(b):
@@ -205,29 +226,51 @@ def cycle(st,history,check,radar_results):
         st["halted"]=True
     for i,b in enumerate(st["bots"]):
         order=b["pending"];b["pending"]=None
-        if order and order["symbol"] in prices:journal(st,b,order,prices[order["symbol"]],ts,equity(st,prices))
+        previous_position=b.get("position")
+        filled=None
+        if order and order["symbol"] in prices:
+            filled=journal(st,b,order,prices[order["symbol"]],ts,equity(st,prices))
         elif order:event(st,"VETO",b["name"]+" pending order cancelled: missing reliable quote")
+        # A filled order counts as this candle's BUY/SELL. Do not immediately
+        # reuse the same candle for a second action or its exit decision.
+        if filled:
+            position_for_review=b["position"] if order["side"]=="BUY" else previous_position
+            team=subagent_team(i,fs,position=position_for_review)
+            record_team_decision(st,i,ts,order["side"],team)
+            b["last_reason"]=order["side"]+" EXECUTED (PAPER): "+order["symbol"]+" — "+order["reason"]
+            continue
         if b["position"]:
             symbol=b["position"]["symbol"]
+            team=subagent_team(i,fs,position=b["position"])
             reason=exit_signal(b["position"],i,fs,ts)
             if reason:
                 b["pending"]={"side":"SELL","symbol":symbol,"reason":reason}
                 b["last_reason"]="SELL QUEUED: "+symbol+" — "+reason
                 event(st,"SIGNAL",b["name"]+" queued PAPER SELL "+symbol+"; "+reason)
+                record_team_decision(st,i,ts,"SELL",team)
             else:
                 b["last_reason"]="HOLD: "+symbol+" position still within strategy rules"
                 event(st,"HOLD",b["name"]+" HOLD "+symbol+"; current setup does not meet exit rules")
+                record_team_decision(st,i,ts,"HOLD",team)
             continue
-        if st["halted"]:b["last_reason"]="PAUSED: risk loss guard";continue
-        if order and order["side"]=="SELL":continue
+        if st["halted"]:
+            b["last_reason"]="PAUSED: risk loss guard"
+            team=subagent_team(i,fs,watch_symbol=next((sym for sym in UNIVERSES[i] if sym in fs),None))
+            record_team_decision(st,i,ts,"HOLD",team)
+            continue
         sig=signal(i,fs,valid)
-        if sig:
+        team=subagent_team(i,fs,proposed=sig,watch_symbol=next((sym for sym in UNIVERSES[i] if sym in fs),None))
+        if sig and team["result"]=="BUY":
             b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"],"exploratory":sig.get("exploratory",False)}
             b["last_reason"]="BUY QUEUED: "+sig["symbol"]+" — "+sig["reason"]
             event(st,"SIGNAL",b["name"]+" queued PAPER BUY "+sig["symbol"]+"; "+sig["reason"])
+            record_team_decision(st,i,ts,"BUY",team,sig)
         else:
-            b["last_reason"]="HOLD: no qualified setup"
-            event(st,"HOLD",b["name"]+" no safe liquid entry this candle")
+            if sig and team["result"]=="VETO":
+                event(st,"VETO",b["name"]+" BUY "+sig["symbol"]+" blocked by "+team["note"])
+            b["last_reason"]="HOLD: "+(team["note"] if sig else "no qualified setup")
+            event(st,"HOLD",b["name"]+" no paper buy: "+b["last_reason"])
+            record_team_decision(st,i,ts,"HOLD",team,sig)
     st["last_prices"]=prices;st["radar"]=radar_results;st["health"]="HEALTHY: paper trading on completed Kraken candles";st["last_checked"]=utc();st["cycles"]+=1
     st["feeds"]={"primary":"Kraken 5m completed OHLCV","secondary":"CoinGecko independent spot check" if check else "CoinGecko unavailable","instruments":sorted(prices),"excluded":blocked,"candle_ts":ts,"never_live_money":True}
     st["learning"]={b["name"]:{"completed":b["closed"],"wins":b["wins"],"net_pnl":b["net"],"next_allocation_factor":learning(b),"net_expectancy":avg(b["completed"][-40:]),"recent_sample_count":len(b["completed"][-40:])} for b in st["bots"]}
@@ -250,6 +293,7 @@ def main():
     st["errors"]=errors
     st["run_kind"]="SCHEDULED_PAPER_RESEARCH"
     st["trade_profile"]="ACTIVE_PAPER_EXPLORATION_1.2_PERCENT_MAX"
+    st["subagent_model"]="30_DETERMINISTIC_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
@@ -280,6 +324,22 @@ def main():
             prior_decisions.append({"utc":e["time"],"type":e["type"],"message":e["msg"]})
             seen_decisions.add(ident)
     write_csv(DECISIONS,decision_fields,prior_decisions)
+    # Every 5-minute candle yields up to ten three-vote team decisions. Keep
+    # complete append-only history even as JSON's dashboard cache is capped.
+    council_fields=["utc","candle_ts","parent","decision","symbol","baseline_signal",
+                    "baseline_symbol","exploratory","outcome","review_note","vote_details",
+                    "paper_only"]
+    council_old=[]
+    if SUBAGENT_DECISIONS.exists():
+        with SUBAGENT_DECISIONS.open(newline="",encoding="utf8") as fp:
+            council_old=list(csv.DictReader(fp))
+    seen_council={(str(d["candle_ts"]),d["parent"]) for d in council_old}
+    for row in reversed(st.get("committee_audit",[])):
+        key=(str(row["candle_ts"]),row["parent"])
+        if key not in seen_council:
+            council_old.append(row)
+            seen_council.add(key)
+    write_csv(SUBAGENT_DECISIONS,council_fields,council_old)
     total=equity(st,st["last_prices"])
     review_report(st,old+newer,total)
     with CURVE.open("a",newline="") as f:
