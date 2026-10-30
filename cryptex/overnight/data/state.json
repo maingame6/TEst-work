@@ -1,0 +1,352 @@
+{
+  "mode": "PAPER_ONLY",
+  "version": 4,
+  "created": "2026-10-30T21:02:16.040515+00:00",
+  "last_ts": 1793393700,
+  "capital": 100,
+  "initial_capital": 100,
+  "daily_start": 100,
+  "daily_date": "2026-10-30",
+  "peak": 100,
+  "halted": false,
+  "health": "HEALTHY: paper trading on completed Kraken candles",
+  "last_prices": {
+    "BTC": 76777.5,
+    "ETH": 2235.74,
+    "SOL": 95.07,
+    "BNB": 697.82,
+    "XRP": 1.24883,
+    "ADA": 0.193477,
+    "DOGE": 0.0753556,
+    "SHIB": 4.737e-06,
+    "PEPE": 4.931e-06,
+    "BONK": 2.956e-06,
+    "WIF": 0.1749,
+    "FLOKI": 2.363e-05
+  },
+  "last_checked": "2026-10-30T21:02:20.055368+00:00",
+  "feeds": {
+    "primary": "Kraken 5m completed OHLCV",
+    "secondary": "CoinGecko independent spot check",
+    "instruments": [
+      "ADA",
+      "BNB",
+      "BONK",
+      "BTC",
+      "DOGE",
+      "ETH",
+      "FLOKI",
+      "PEPE",
+      "SHIB",
+      "SOL",
+      "WIF",
+      "XRP"
+    ],
+    "excluded": [],
+    "candle_ts": 1793393700,
+    "never_live_money": true
+  },
+  "radar": [
+    {
+      "chain": "solana",
+      "token": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "8ss86wcen7UCMuCm17yN38xgLsrY5PiyQVeCSyfgpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "UNbT74tbUhtPM8YWmBTbWk9JxbAeNQCQP89jjWnpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "DWYMGCuBvciLMFXZDf9SCnrGFiikUaoukUE22iQcpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "3qjBR3LfzEAKVS6QXuR2QZ1RFUsXzATWvmjbGB5Dpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "3zRn4CSCv5yVxwGxub1qTZFA2PQJNrEX9SJKKSH8pump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "8THZ69JP2ErZuHVj4G5rcwkFfsQafp5mQsaoQReApump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "4NnxP22yqiQp8HiEHxabPECXY1YipPgCTQLGQ3iMkMpK",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "EnPkecBXCGJAHLcHKg9Tb3C4HV2CLcrGXXW6CJYEpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "Dn9ucMvQp4ut2yz46GKfC5cPH3cv3uJTnpAUjN6Zpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "Grjr7Jwci7bQsr73d4kGxTW8Y28qL6zLM6FiPLASpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    },
+    {
+      "chain": "solana",
+      "token": "HD2qqwAeLkyXnboo5cSGSdGw4oHCbvNEvWsgDSgWpump",
+      "eligible": false,
+      "reason": "No verified mint, LP-lock, holder and dev history"
+    }
+  ],
+  "bots": [
+    {
+      "name": "GAMBLER",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "HOUSE",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "SPY",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "MEME HUNTER",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "BREAKOUT",
+      "cash": 10.0,
+      "position": null,
+      "pending": {
+        "side": "BUY",
+        "symbol": "SOL",
+        "reason": "Donchian breakout"
+      },
+      "last_reason": "BUY QUEUED: SOL — Donchian breakout",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "CONTRARIAN",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "ROTATOR",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "VORTEX",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "FRACTAL",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    },
+    {
+      "name": "SHOCKWAVE",
+      "cash": 10.0,
+      "position": null,
+      "pending": null,
+      "last_reason": "HOLD: no qualified setup",
+      "wins": 0,
+      "closed": 0,
+      "net": 0,
+      "completed": []
+    }
+  ],
+  "trades": [],
+  "events": [],
+  "learning": {
+    "GAMBLER": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "HOUSE": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "SPY": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "MEME HUNTER": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "BREAKOUT": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "CONTRARIAN": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "ROTATOR": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "VORTEX": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "FRACTAL": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    },
+    "SHOCKWAVE": {
+      "completed": 0,
+      "wins": 0,
+      "net_pnl": 0,
+      "next_allocation_factor": 1.0,
+      "net_expectancy": 0,
+      "recent_sample_count": 0
+    }
+  },
+  "cycles": 1,
+  "last_run": "2026-10-30T21:02:20.055397+00:00",
+  "errors": {},
+  "run_kind": "SCHEDULED_PAPER_RESEARCH",
+  "guardrails": {
+    "live_orders_enabled": false,
+    "max_portfolio_per_order": 0.08,
+    "stop_trigger": 0.06,
+    "fees_per_side": 0.0015,
+    "slippage_per_side": 0.0025
+  }
+}
