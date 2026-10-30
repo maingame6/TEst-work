@@ -1,0 +1,20 @@
+services:
+  cryptex-paper:
+    build: .
+    restart: unless-stopped
+    read_only: true
+    environment:
+      - CRYPTEX_BIND=0.0.0.0
+      - CRYPTEX_DB=/data/cryptex.sqlite3
+    ports:
+      - "127.0.0.1:8765:8765" # no public exposure; SSH tunnel for remote access
+    volumes:
+      - cryptex_data:/data
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 80
+    mem_limit: 256m
+volumes:
+  cryptex_data:
