@@ -69,7 +69,8 @@ class PaperOnlySafetyTests(unittest.TestCase):
         R.journal(st,b,{"side":"BUY","symbol":"BTC",
                        "reason":"EXPLORATORY PAPER PROBE","exploratory":True},
                   100.,100000,100.)
-        x={"price":100.,"fast":100.,"slow":99.,"rsi":57}
+        x={"price":100.,"fast":100.,"slow":99.,"rsi":57,"z":-.20,
+           "ret3":0.,"ret8":0.,"vol":.005}
         self.assertIsNone(R.exit_signal(b["position"],0,{"BTC":x},100300))
         reason=R.exit_signal(b["position"],0,{"BTC":x},100900)
         self.assertIn("15-minute",reason)
