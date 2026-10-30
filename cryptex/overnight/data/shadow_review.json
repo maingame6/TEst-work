@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T22:42:01.924623+00:00",
+  "generated_at": "2026-10-30T22:47:05.632715+00:00",
   "paper_only": true,
-  "candle_ts": 1793399700,
-  "cycles": 9,
+  "candle_ts": 1793400000,
+  "cycles": 10,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,8 +16,12 @@
       "wins": 0,
       "realized": -0.00603,
       "paper_return": -0.00603,
-      "latest_decision": "FILLED_SELL ADA",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED PEPE",
+      "queued": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.671, gate=0.09"
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -44,11 +48,11 @@
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.991666,
+      "equity": 9.990832,
       "closed": 1,
       "wins": 0,
       "realized": -0.006642,
-      "paper_return": -0.008334,
+      "paper_return": -0.009168,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -63,11 +67,11 @@
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.992503,
+      "equity": 9.991669,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.007497,
+      "paper_return": -0.008331,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -87,17 +91,17 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD XRP",
+      "latest_decision": "HOLD BNB",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.988542,
+      "equity": 9.987711,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.011458,
+      "paper_return": -0.012289,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -112,11 +116,11 @@
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.992503,
+      "equity": 9.991669,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.007497,
+      "paper_return": -0.008331,
       "latest_decision": "HOLD SOL",
       "queued": null,
       "position": {
@@ -142,12 +146,12 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.989165,
+      "equity": 9.990978,
       "closed": 1,
       "wins": 0,
       "realized": -0.00685,
-      "paper_return": -0.010835,
-      "latest_decision": "FILLED_BUY PEPE",
+      "paper_return": -0.009022,
+      "latest_decision": "HOLD PEPE",
       "queued": null,
       "position": {
         "symbol": "PEPE",
@@ -156,16 +160,16 @@
         "entry_market": 4.941e-06,
         "entry_time": 1793399700,
         "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.725, gate=0.14",
-        "peak": 4.941e-06
+        "peak": 4.95e-06
       },
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.98926,
+      "equity": 9.989959,
       "closed": 1,
       "wins": 0,
       "realized": -0.007611,
-      "paper_return": -0.01074,
+      "paper_return": -0.010041,
       "latest_decision": "HOLD BNB",
       "queued": null,
       "position": {
@@ -175,7 +179,7 @@
         "entry_market": 697.9,
         "entry_time": 1793399100,
         "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.144, gate=0.14",
-        "peak": 698.87
+        "peak": 698.99
       },
       "sample_sufficient": false
     }
