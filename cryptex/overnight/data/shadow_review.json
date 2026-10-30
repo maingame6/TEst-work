@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T21:32:20.573195+00:00",
+  "generated_at": "2026-10-30T21:39:59.232844+00:00",
   "paper_only": true,
-  "candle_ts": 1793395500,
-  "cycles": 1,
+  "candle_ts": 1793395800,
+  "cycles": 2,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,8 +16,12 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD PEPE",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED ADA",
+      "queued": {
+        "side": "BUY",
+        "symbol": "ADA",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.216, gate=0.09"
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -27,54 +31,66 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD WIF",
+      "latest_decision": "HOLD SOL",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 10.0,
+      "equity": 9.996012,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": 0.0,
-      "latest_decision": "BUY_QUEUED WIF",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.003988,
+      "latest_decision": "FILLED_BUY WIF",
+      "queued": null,
+      "position": {
         "symbol": "WIF",
-        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",
+        "peak": 0.1774
       },
-      "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 10.0,
+      "equity": 9.996012,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": 0.0,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.003988,
+      "latest_decision": "FILLED_BUY XRP",
+      "queued": null,
+      "position": {
         "symbol": "XRP",
-        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14"
+        "quantity": 0.7974924263888531,
+        "entry_cost": 1.0,
+        "entry_market": 1.24893,
+        "entry_time": 1793395800,
+        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
+        "peak": 1.24893
       },
-      "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 10.0,
+      "equity": 9.996012,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": 0.0,
-      "latest_decision": "BUY_QUEUED WIF",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.003988,
+      "latest_decision": "FILLED_BUY WIF",
+      "queued": null,
+      "position": {
         "symbol": "WIF",
-        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",
+        "peak": 0.1774
       },
-      "position": null,
       "sample_sufficient": false
     },
     "LATTICE_ANALOG": {
@@ -83,39 +99,47 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD PEPE",
+      "latest_decision": "HOLD ADA",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 10.0,
+      "equity": 9.996012,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": 0.0,
-      "latest_decision": "BUY_QUEUED WIF",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.003988,
+      "latest_decision": "FILLED_BUY WIF",
+      "queued": null,
+      "position": {
         "symbol": "WIF",
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",
+        "peak": 0.1774
       },
-      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 10.0,
+      "equity": 9.996012,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": 0.0,
-      "latest_decision": "BUY_QUEUED WIF",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.003988,
+      "latest_decision": "FILLED_BUY WIF",
+      "queued": null,
+      "position": {
         "symbol": "WIF",
-        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
+        "peak": 0.1774
       },
-      "position": null,
       "sample_sufficient": false
     },
     "HUMMINGBOT_FRICTION": {
@@ -130,33 +154,41 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 10.0,
+      "equity": 9.996012,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": 0.0,
-      "latest_decision": "BUY_QUEUED WIF",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.003988,
+      "latest_decision": "FILLED_BUY WIF",
+      "queued": null,
+      "position": {
         "symbol": "WIF",
-        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",
+        "peak": 0.1774
       },
-      "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 10.0,
+      "equity": 9.996012,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
-      "paper_return": 0.0,
-      "latest_decision": "BUY_QUEUED ADA",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.003988,
+      "latest_decision": "FILLED_BUY ADA",
+      "queued": null,
+      "position": {
         "symbol": "ADA",
-        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14"
+        "quantity": 5.128848989638565,
+        "entry_cost": 1.0,
+        "entry_market": 0.194198,
+        "entry_time": 1793395800,
+        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",
+        "peak": 0.194198
       },
-      "position": null,
       "sample_sufficient": false
     }
   }

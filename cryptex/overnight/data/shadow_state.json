@@ -1,19 +1,23 @@
 {
   "version": 1,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793395500,
-  "cycles": 1,
+  "last_ts": 1793395800,
+  "cycles": 2,
   "initial_capital": 110,
   "bots": {
     "FLUID_ADVECTION": {
       "cash": 10.0,
       "position": null,
-      "pending": null,
+      "pending": {
+        "side": "BUY",
+        "symbol": "ADA",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.216, gate=0.09"
+      },
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "HOLD PEPE"
+      "last_decision": "BUY_QUEUED ADA"
     },
     "FLUID_VISCOSITY": {
       "cash": 10.0,
@@ -23,49 +27,61 @@
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "HOLD WIF"
+      "last_decision": "HOLD SOL"
     },
     "GEOMETRIC_DIVERSITY": {
-      "cash": 10.0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
+      "cash": 9.0,
+      "position": {
         "symbol": "WIF",
-        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",
+        "peak": 0.1774
       },
+      "pending": null,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "BUY_QUEUED WIF"
+      "last_decision": "FILLED_BUY WIF"
     },
     "ERROR_CODE_CONSENSUS": {
-      "cash": 10.0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
+      "cash": 9.0,
+      "position": {
         "symbol": "XRP",
-        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14"
+        "quantity": 0.7974924263888531,
+        "entry_cost": 1.0,
+        "entry_market": 1.24893,
+        "entry_time": 1793395800,
+        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
+        "peak": 1.24893
       },
+      "pending": null,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "BUY_QUEUED XRP"
+      "last_decision": "FILLED_BUY XRP"
     },
     "GRAPH_COHERENCE": {
-      "cash": 10.0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
+      "cash": 9.0,
+      "position": {
         "symbol": "WIF",
-        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",
+        "peak": 0.1774
       },
+      "pending": null,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "BUY_QUEUED WIF"
+      "last_decision": "FILLED_BUY WIF"
     },
     "LATTICE_ANALOG": {
       "cash": 10.0,
@@ -75,35 +91,43 @@
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "HOLD PEPE"
+      "last_decision": "HOLD ADA"
     },
     "FREQTRADE_STYLE": {
-      "cash": 10.0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
+      "cash": 9.0,
+      "position": {
         "symbol": "WIF",
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",
+        "peak": 0.1774
       },
+      "pending": null,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "BUY_QUEUED WIF"
+      "last_decision": "FILLED_BUY WIF"
     },
     "QLIB_STYLE": {
-      "cash": 10.0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
+      "cash": 9.0,
+      "position": {
         "symbol": "WIF",
-        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
+        "peak": 0.1774
       },
+      "pending": null,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "BUY_QUEUED WIF"
+      "last_decision": "FILLED_BUY WIF"
     },
     "HUMMINGBOT_FRICTION": {
       "cash": 10.0,
@@ -116,36 +140,228 @@
       "last_decision": "HOLD"
     },
     "LEAN_EVENT": {
-      "cash": 10.0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
+      "cash": 9.0,
+      "position": {
         "symbol": "WIF",
-        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14"
+        "quantity": 5.614499527000171,
+        "entry_cost": 1.0,
+        "entry_market": 0.1774,
+        "entry_time": 1793395800,
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",
+        "peak": 0.1774
       },
+      "pending": null,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "BUY_QUEUED WIF"
+      "last_decision": "FILLED_BUY WIF"
     },
     "NAUTILUS_REGIME": {
-      "cash": 10.0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
+      "cash": 9.0,
+      "position": {
         "symbol": "ADA",
-        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14"
+        "quantity": 5.128848989638565,
+        "entry_cost": 1.0,
+        "entry_market": 0.194198,
+        "entry_time": 1793395800,
+        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",
+        "peak": 0.194198
       },
+      "pending": null,
       "closed": 0,
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "BUY_QUEUED ADA"
+      "last_decision": "FILLED_BUY ADA"
     }
   },
-  "trades": [],
+  "trades": [
+    {
+      "ts": 1793395800,
+      "model": "NAUTILUS_REGIME",
+      "side": "BUY",
+      "symbol": "ADA",
+      "price": 0.194683495,
+      "quantity": 5.128848989638565,
+      "fees": 0.001497753369945082,
+      "pnl": null,
+      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "LEAN_EVENT",
+      "side": "BUY",
+      "symbol": "WIF",
+      "price": 0.1778435,
+      "quantity": 5.614499527000171,
+      "fees": 0.0014977533699450823,
+      "pnl": null,
+      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "QLIB_STYLE",
+      "side": "BUY",
+      "symbol": "WIF",
+      "price": 0.1778435,
+      "quantity": 5.614499527000171,
+      "fees": 0.0014977533699450823,
+      "pnl": null,
+      "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "FREQTRADE_STYLE",
+      "side": "BUY",
+      "symbol": "WIF",
+      "price": 0.1778435,
+      "quantity": 5.614499527000171,
+      "fees": 0.0014977533699450823,
+      "pnl": null,
+      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "GRAPH_COHERENCE",
+      "side": "BUY",
+      "symbol": "WIF",
+      "price": 0.1778435,
+      "quantity": 5.614499527000171,
+      "fees": 0.0014977533699450823,
+      "pnl": null,
+      "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "ERROR_CODE_CONSENSUS",
+      "side": "BUY",
+      "symbol": "XRP",
+      "price": 1.252052325,
+      "quantity": 0.7974924263888531,
+      "fees": 0.0014977533699450823,
+      "pnl": null,
+      "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "GEOMETRIC_DIVERSITY",
+      "side": "BUY",
+      "symbol": "WIF",
+      "price": 0.1778435,
+      "quantity": 5.614499527000171,
+      "fees": 0.0014977533699450823,
+      "pnl": null,
+      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",
+      "paper": true
+    }
+  ],
   "decisions": [
+    {
+      "ts": 1793395800,
+      "model": "NAUTILUS_REGIME",
+      "action": "FILLED_BUY",
+      "symbol": "ADA",
+      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",
+      "score": 0.24522,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "LEAN_EVENT",
+      "action": "FILLED_BUY",
+      "symbol": "WIF",
+      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",
+      "score": 0.21002,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "HUMMINGBOT_FRICTION",
+      "action": "HOLD",
+      "symbol": null,
+      "reason": "No verified L2 order book, bid/ask or queue position: market maker disallowed",
+      "score": 0.0,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "QLIB_STYLE",
+      "action": "FILLED_BUY",
+      "symbol": "WIF",
+      "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
+      "score": 0.9,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "FREQTRADE_STYLE",
+      "action": "FILLED_BUY",
+      "symbol": "WIF",
+      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",
+      "score": 0.26447,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "LATTICE_ANALOG",
+      "action": "HOLD",
+      "symbol": "ADA",
+      "reason": "Historical nearest-vector analog, 1/9 after-cost positives in old samples; score=-0.497, gate=0.14",
+      "score": -0.49679,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "GRAPH_COHERENCE",
+      "action": "FILLED_BUY",
+      "symbol": "WIF",
+      "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",
+      "score": 0.05133,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "ERROR_CODE_CONSENSUS",
+      "action": "FILLED_BUY",
+      "symbol": "XRP",
+      "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
+      "score": 1.0,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "GEOMETRIC_DIVERSITY",
+      "action": "FILLED_BUY",
+      "symbol": "WIF",
+      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",
+      "score": 0.14713,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "FLUID_VISCOSITY",
+      "action": "HOLD",
+      "symbol": "SOL",
+      "reason": "Momentum less empirical log-return diffusion/noise; score=-0.058, gate=0.14",
+      "score": -0.0578,
+      "paper": true
+    },
+    {
+      "ts": 1793395800,
+      "model": "FLUID_ADVECTION",
+      "action": "BUY_QUEUED",
+      "symbol": "ADA",
+      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.216, gate=0.09",
+      "score": 0.21585,
+      "paper": true
+    },
     {
       "ts": 1793395500,
       "model": "NAUTILUS_REGIME",
@@ -247,72 +463,72 @@
     }
   ],
   "last_prices": {
-    "BTC": 76706.5,
-    "ETH": 2238.05,
-    "SOL": 95.22,
-    "BNB": 698.95,
-    "XRP": 1.24955,
-    "ADA": 0.193984,
-    "DOGE": 0.0753386,
-    "SHIB": 4.741e-06,
-    "PEPE": 4.93e-06,
+    "BTC": 76714.2,
+    "ETH": 2237.39,
+    "SOL": 95.35,
+    "BNB": 698.86,
+    "XRP": 1.24893,
+    "ADA": 0.194198,
+    "DOGE": 0.0753972,
+    "SHIB": 4.745e-06,
+    "PEPE": 4.935e-06,
     "BONK": 2.961e-06,
-    "WIF": 0.1773,
-    "FLOKI": 2.361e-05
+    "WIF": 0.1774,
+    "FLOKI": 2.368e-05
   },
   "last_review": {
     "FLUID_ADVECTION": {
-      "action": "HOLD",
-      "symbol": "PEPE",
-      "score": 0.08825,
-      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.088, gate=0.09",
+      "action": "BUY",
+      "symbol": "ADA",
+      "score": 0.21585,
+      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.216, gate=0.09",
       "sample_ok": true
     },
     "FLUID_VISCOSITY": {
       "action": "HOLD",
-      "symbol": "WIF",
-      "score": 0.11221,
-      "reason": "Momentum less empirical log-return diffusion/noise; score=+0.112, gate=0.14",
+      "symbol": "SOL",
+      "score": -0.0578,
+      "reason": "Momentum less empirical log-return diffusion/noise; score=-0.058, gate=0.14",
       "sample_ok": true
     },
     "GEOMETRIC_DIVERSITY": {
       "action": "BUY",
-      "symbol": "WIF",
-      "score": 0.68261,
-      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",
+      "symbol": "ADA",
+      "score": 0.14713,
+      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.147, gate=0.14",
       "sample_ok": true
     },
     "ERROR_CODE_CONSENSUS": {
       "action": "BUY",
-      "symbol": "XRP",
+      "symbol": "SOL",
       "score": 1.0,
       "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
       "sample_ok": true
     },
     "GRAPH_COHERENCE": {
-      "action": "BUY",
-      "symbol": "WIF",
-      "score": 1.0,
-      "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",
+      "action": "HOLD",
+      "symbol": "ADA",
+      "score": 0.05133,
+      "reason": "Relative-strength shock in asset co-movement graph; score=+0.051, gate=0.09",
       "sample_ok": true
     },
     "LATTICE_ANALOG": {
       "action": "HOLD",
-      "symbol": "PEPE",
-      "score": -0.40482,
-      "reason": "Historical nearest-vector analog, 3/9 after-cost positives in old samples; score=-0.405, gate=0.14",
+      "symbol": "ADA",
+      "score": -0.49679,
+      "reason": "Historical nearest-vector analog, 1/9 after-cost positives in old samples; score=-0.497, gate=0.14",
       "sample_ok": true
     },
     "FREQTRADE_STYLE": {
       "action": "BUY",
-      "symbol": "WIF",
-      "score": 1.0,
-      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",
+      "symbol": "ADA",
+      "score": 0.26447,
+      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.264, gate=0.14",
       "sample_ok": true
     },
     "QLIB_STYLE": {
       "action": "BUY",
-      "symbol": "WIF",
+      "symbol": "ADA",
       "score": 0.9,
       "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
       "sample_ok": true
@@ -326,16 +542,16 @@
     },
     "LEAN_EVENT": {
       "action": "BUY",
-      "symbol": "WIF",
-      "score": 0.75543,
-      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",
+      "symbol": "SOL",
+      "score": 0.21002,
+      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.210, gate=0.14",
       "sample_ok": true
     },
     "NAUTILUS_REGIME": {
       "action": "BUY",
       "symbol": "ADA",
-      "score": 0.30036,
-      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",
+      "score": 0.24522,
+      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.245, gate=0.14",
       "sample_ok": true
     }
   }

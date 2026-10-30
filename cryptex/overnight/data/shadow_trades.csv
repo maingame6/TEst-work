@@ -1,1 +1,8 @@
 utc,model,side,symbol,price,quantity,fees,pnl,reason,paper
+2026-10-30T21:30:00+00:00,GEOMETRIC_DIVERSITY,BUY,WIF,0.1778435,5.614499527000171,0.0014977533699450823,,"Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.683, gate=0.14",True
+2026-10-30T21:30:00+00:00,ERROR_CODE_CONSENSUS,BUY,XRP,1.252052325,0.7974924263888531,0.0014977533699450823,,"Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",True
+2026-10-30T21:30:00+00:00,GRAPH_COHERENCE,BUY,WIF,0.1778435,5.614499527000171,0.0014977533699450823,,"Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09",True
+2026-10-30T21:30:00+00:00,FREQTRADE_STYLE,BUY,WIF,0.1778435,5.614499527000171,0.0014977533699450823,,"Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14",True
+2026-10-30T21:30:00+00:00,QLIB_STYLE,BUY,WIF,0.1778435,5.614499527000171,0.0014977533699450823,,"Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",True
+2026-10-30T21:30:00+00:00,LEAN_EVENT,BUY,WIF,0.1778435,5.614499527000171,0.0014977533699450823,,"Event-driven completed-candle confirmation (LEAN-inspired); score=+0.755, gate=0.14",True
+2026-10-30T21:30:00+00:00,NAUTILUS_REGIME,BUY,ADA,0.194683495,5.128848989638565,0.001497753369945082,,"Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.300, gate=0.14",True
