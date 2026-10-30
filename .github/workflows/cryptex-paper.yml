@@ -1,0 +1,56 @@
+name: CRYPTEX — scheduled paper-market research
+
+# Scheduled event files must live on the repository's default branch.
+# This workflow checks out a separate CRYPTEX research branch; it does not
+# modify or deploy the site's production code. NO REAL ORDERS OR KEYS.
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cryptex-scheduled-paper-research
+  cancel-in-progress: false
+
+jobs:
+  observe-and-paper-trade:
+    name: Observe markets and journal paper trades
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out isolated CRYPTEX branch
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-paper-trading-preview
+          fetch-depth: 0
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run market safety compile and single research cycle
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m py_compile cryptex/overnight/runner.py
+          python3 cryptex/overnight/runner.py
+
+      - name: Save paper state, entries, exits and equity to GitHub
+        if: success()
+        run: |
+          git config user.name "cryptex-paper-research[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f cryptex/overnight/data/state.json
+          git add -f cryptex/overnight/data/trades.csv
+          git add -f cryptex/overnight/data/equity.csv
+          if git diff --cached --quiet; then
+            echo "No journal updates."
+            exit 0
+          fi
+          git commit -m "research: append CRYPTEX market observation and simulated results [skip ci]"
+          git push origin HEAD:cryptex-paper-trading-preview
