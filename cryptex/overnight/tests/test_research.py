@@ -66,6 +66,23 @@ class ResearchLabTests(unittest.TestCase):
   self.assertLess(sell["pnl"],0)
   self.assertEqual(b["closed"],1)
 
+ def test_legacy_shadow_state_migrates_without_losing_wallets_or_trades(self):
+  old=S.initial()
+  for field in ("peak","daily_start","daily_date","halted",
+                "permanent_halt","risk_reason"):
+   old.pop(field,None)
+  old["bots"]["FLUID_ADVECTION"]["cash"]=8.5
+  old["trades"]=[{"ts":1,"model":"FLUID_ADVECTION","side":"BUY",
+                  "symbol":"BTC","paper":True}]
+  h={"BTC":candles("BTC"),"ETH":candles("ETH",offset=15),
+     "SOL":candles("SOL",offset=-8)}
+  st,changed=S.update(old,h,set(h),h["BTC"][-1]["ts"])
+  self.assertTrue(changed)
+  self.assertIn("permanent_halt",st)
+  self.assertEqual(len(st["bots"]),11)
+  self.assertLess(st["bots"]["FLUID_ADVECTION"]["cash"],8.5)
+  self.assertTrue(any(t.get("ts")==1 for t in st["trades"]))
+
  def test_shadow_portfolio_daily_loss_halts_buys_not_sells(self):
   base=S.initial();base["daily_date"]="2026-10-30"
   base["daily_start"]=120.
