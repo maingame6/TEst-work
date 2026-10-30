@@ -28,6 +28,23 @@ class PaperMoneyTests(unittest.TestCase):
         self.assertEqual(a['groups']['main']['starting'],100)
         self.assertEqual(a['groups']['research']['starting'],110)
 
+    def test_cost_attribution_is_honest_about_older_fills(self):
+        main,shadow=states()
+        main['trades']=[
+           {'side':'SELL','pnl':-.009,'gross_mid_pnl':.001,
+            'execution_drag':.01},
+           {'side':'SELL','pnl':-.008}]
+        snap=P.snapshot(main,shadow,'2026-10-30T21:35:00+00:00')
+        info=snap['execution_cost_study']
+        self.assertEqual(info['completed_orders_cached'],2)
+        self.assertEqual(info['attributed_newer_closes'],1)
+        self.assertEqual(info['older_closes_missing_attribution'],1)
+        self.assertEqual(info['gross_up_but_net_down'],1)
+        self.assertAlmostEqual(info['gross_market_pnl_attributed'],.001)
+        self.assertAlmostEqual(info['execution_drag_attributed'],.01)
+        self.assertAlmostEqual(info['net_pnl_attributed'],-.009)
+        self.assertGreater(info['round_trip_break_even_pct_at_flat_markets'],.8)
+
     def test_open_position_has_costs_before_selling(self):
         main,shadow=states()
         main['bots'][0]['cash']=9
