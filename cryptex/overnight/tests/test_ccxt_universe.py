@@ -55,6 +55,20 @@ class CCXTMarketTests(unittest.TestCase):
   self.assertNotIn("last_price",str(r))
   self.assertTrue(any(x["status"]=="UNAVAILABLE" for x in r["exchange_status"]))
 
+ def test_kraken_quote_batch_requires_real_bid_ask_and_usd_quote(self):
+  markets={"BTC/USD":mk("BTC/USD"),"ETH/USDT":mk("ETH/USDT"),
+           "XRP/USD":mk("XRP/USD")}
+  quote={"BTC/USD":{"last":100,"bid":99,"ask":101,
+                    "quoteVolume":1000000,"timestamp":None},
+         "ETH/USDT":{"last":25,"bid":24,"ask":26,"quoteVolume":800000},
+         "XRP/USD":{"last":2,"bid":3,"ask":1,"quoteVolume":700}}
+  rows=U.normalize_kraken_quotes(quote,markets,"2026-10-30T23:30:00+00:00")
+  self.assertEqual(len(rows),1)
+  self.assertEqual(rows[0]["symbol"],"BTC/USD")
+  self.assertEqual(rows[0]["approx_24h_usd_turnover"],1000000)
+  self.assertEqual(rows[0]["quote_currency"],"USD")
+  self.assertTrue(rows[0]["research_only"])
+
  def test_no_new_real_account_credentials_or_trading(self):
   import inspect
   code=inspect.getsource(U)
