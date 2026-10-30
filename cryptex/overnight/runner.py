@@ -312,6 +312,21 @@ def main():
     st["trade_profile"]="ACTIVE_PAPER_EXPLORATION_1.2_PERCENT_MAX"
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP}
+    # Money ledger is mandatory for the overnight experiment. If either
+    # portfolio cannot be reconciled, fail the GitHub job rather than silently
+    # reporting a fictitious or incomplete combined balance.
+    from portfolio_report import store as store_paper_money
+    shadow_file=DATA/"shadow_state.json"
+    if not shadow_file.exists():
+        raise RuntimeError("Missing research paper accounts; cannot publish combined P&L")
+    shadow=json.loads(shadow_file.read_text())
+    money=store_paper_money(st,shadow,DATA,st["last_run"])
+    st["money_report"]={"status":"OK","total_paper_balance":money["balance"],
+                         "total_paper_pnl":money["pnl"],
+                         "original_ten":money["groups"]["main"]["equity"],
+                         "experimental_eleven":money["groups"]["research"]["equity"],
+                         "session_status":money["overnight"]["status"],
+                         "paper_only":True}
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
     fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl","reason","entry_reason","exploratory","paper"]
