@@ -9,6 +9,11 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 import runner as R
 
 class PaperOnlySafetyTests(unittest.TestCase):
+    def test_replaying_a_cron_job_does_not_count_as_unattended_schedule(self):
+        self.assertTrue(R.genuine_cron_execution("schedule","1"))
+        self.assertFalse(R.genuine_cron_execution("schedule","2"))
+        self.assertFalse(R.genuine_cron_execution("workflow_dispatch","1"))
+
     def test_ten_independent_wallets_and_100_dollars(self):
         st=R.init()
         self.assertEqual(len(st["bots"]),10)
