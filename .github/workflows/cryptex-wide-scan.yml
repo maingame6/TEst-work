@@ -1,0 +1,87 @@
+name: CRYPTEX - five-exchange market tests (paper history)
+
+# This is a SEPARATE historical scanner, not the $210 paper wallet runner.
+# Actual 5m OHLCV is fetched from each named exchange via public CCXT only.
+# GitHub cron is best-effort; missing runs MUST NOT be marked as completed.
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/cryptex-wide-scan.yml']
+  schedule:
+    - cron: '3,13,23,33,43,53 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cryptex-five-venue-historical-research
+  cancel-in-progress: false
+
+jobs:
+  evaluate-real-public-candles:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - name: Check out tested strategy source
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-paper-trading-preview
+          fetch-depth: 1
+      - name: Check out SEPARATE wide-market results branch
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-wide-market-research
+          fetch-depth: 1
+          path: wide-output
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CCXT public exchange adapter
+        run: python3 -m pip install --disable-pip-version-check --quiet 'ccxt==4.5.81'
+      - name: Test no-lookahead, per-venue fees and market coverage
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m py_compile cryptex/overnight/wide_scan.py
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_wide_scan.py -v
+      - name: Read genuine 5-minute OHLCV across five venues, then test
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 cryptex/overnight/wide_scan.py \
+            --catalog cryptex/overnight/data/ccxt_universe.json \
+            --out wide-output/cryptex/overnight/data \
+            --per-venue 45
+      - name: Check paper-only output and export visible coverage
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          p=pathlib.Path("wide-output/cryptex/overnight/data/wide_scan_report.json")
+          a=json.loads(p.read_text())
+          assert a["mode"]=="PAPER_ONLY" and a["not_real_orders"] is True
+          assert len(a["venues"])==5
+          assert a["unique_tested_venue_pairs"] >= a["unique_ohlcv_validated_pairs"]
+          assert a["last_batch"]["attempted"]>0
+          print("CCXT listing count (not tested):",a["discovered_listing_total"])
+          print("Actual OHLCV attempted:",a["unique_tested_venue_pairs"])
+          print("Validated historical 5m OHLCV:",a["unique_ohlcv_validated_pairs"])
+          print("Latest API calls:",a["last_batch"])
+          print("No orders, no wallets, no inferred data.")
+          PY
+      - name: Commit only wide research results, never the money accounts
+        run: |
+          cd wide-output
+          git config user.name "cryptex-wide-research[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f cryptex/overnight/data/wide_scan_state.json
+          git add -f cryptex/overnight/data/wide_scan_report.json
+          git add -f cryptex/overnight/data/wide_scan_report.md
+          if git diff --cached --quiet; then
+            echo "No market research changes."
+            exit 0
+          fi
+          git commit -m "research: record CCXT real-candle tested venue-pairs [skip ci]"
+          git push origin HEAD:cryptex-wide-market-research
