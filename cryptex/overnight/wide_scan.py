@@ -22,6 +22,7 @@ BAR_MS=300_000
 MIN_BARS=84
 MAX_STALE_MS=1_800_000
 MAX_MARKETS_PER_VENUE=45
+MAX_SECONDS_PER_VENUE=300  # do not lose the whole GitHub job to slow APIs
 HOLD_BARS=6
 SLIPPAGE=.0025
 STRESS_SLIPPAGE=.005
@@ -144,7 +145,12 @@ def scan_venue(venue,selection,now_ms,ccxt_lib):
   if not getattr(exchange,"has",{}).get("fetchOHLCV"):
    raise ValueError("VENUE_NO_OHLCV_SUPPORT")
   markets=exchange.load_markets()
+  venue_deadline=time.monotonic()+MAX_SECONDS_PER_VENUE
   for row in selection:
+   if time.monotonic()>=venue_deadline:
+    # Unvisited pairs are NOT written as attempted or validated.
+    # Cursor rotation revisits them when the catalogue wraps.
+    break
    sym=row["symbol"]
    result={"venue":venue,"symbol":sym,"quote":row["quote"],
            "status":"UNAVAILABLE","metadata_checked":True,"ohlcv_requested":False}
