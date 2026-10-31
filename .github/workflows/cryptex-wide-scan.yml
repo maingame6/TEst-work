@@ -21,6 +21,11 @@ on:
         required: false
         default: 0
         description: 'Recovery scan counter; no live trading'
+      force_rescan:
+        type: boolean
+        required: false
+        default: false
+        description: 'Explicitly repeat after complete first-pass coverage'
 
 permissions:
   contents: write
@@ -47,19 +52,42 @@ jobs:
           ref: cryptex-wide-market-research
           fetch-depth: 1
           path: wide-output
+      - name: Stop expensive scans when initial catalogue coverage is complete
+        id: coverage_gate
+        env:
+          FORCE_RESCAN: ${{ inputs.force_rescan }}
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib
+          report=pathlib.Path("wide-output/cryptex/overnight/data/wide_scan_report.json")
+          done=False
+          if report.exists():
+              a=json.loads(report.read_text())
+              assert a.get("mode")=="PAPER_ONLY" and a.get("not_real_orders") is True
+              done=int(a["unique_tested_venue_pairs"])>=int(a["discovered_listing_total"])
+          manual=os.environ.get("FORCE_RESCAN","false").lower()=="true"
+          enabled=not done or manual
+          with open(os.environ["GITHUB_OUTPUT"],"a") as fp:
+              fp.write("run_scan="+str(enabled).lower()+"\n")
+          print("Full initial catalogue coverage:",done,"; run more:",enabled)
+          PY
       - name: Set up Python 3.12
+        if: steps.coverage_gate.outputs.run_scan == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install pinned CCXT public exchange adapter
+        if: steps.coverage_gate.outputs.run_scan == 'true'
         run: python3 -m pip install --disable-pip-version-check --quiet 'ccxt==4.5.81'
       - name: Test no-lookahead, per-venue fees and market coverage
+        if: steps.coverage_gate.outputs.run_scan == 'true'
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
           python3 -m py_compile cryptex/overnight/wide_scan.py
           python3 -m unittest discover -s cryptex/overnight/tests -p test_wide_scan.py -v
       - name: Read genuine 5-minute OHLCV across five venues, then test
+        if: steps.coverage_gate.outputs.run_scan == 'true'
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
@@ -68,6 +96,7 @@ jobs:
             --out wide-output/cryptex/overnight/data \
             --per-venue 85
       - name: Check paper-only output and export visible coverage
+        if: steps.coverage_gate.outputs.run_scan == 'true'
         run: |
           python3 - <<'PY'
           import json,pathlib
@@ -84,6 +113,7 @@ jobs:
           print("No orders, no wallets, no inferred data.")
           PY
       - name: Commit only wide research results, never the money accounts
+        if: steps.coverage_gate.outputs.run_scan == 'true'
         run: |
           cd wide-output
           git config user.name "cryptex-wide-research[bot]"
@@ -99,7 +129,7 @@ jobs:
           git commit -m "research: record CCXT real-candle tested venue-pairs [skip ci]"
           git push origin HEAD:cryptex-wide-market-research
       - name: Bounded follow-on scan until every listed venue/pair was ATTEMPTED
-        if: success()
+        if: success() && steps.coverage_gate.outputs.run_scan == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
