@@ -52,8 +52,8 @@ class EntryStudyTests(unittest.TestCase):
 
     def test_no_lookahead_at_signal(self):
         s=S.blank();ts=1800000000
-        S.update(s,{"BTC":candles(ts,move=.003)},ts)
-        self.assertNotIn("V3_STRICT",[x["gate"] for x in s["signals"]])
+        S.update(s,{"BTC":candles(ts,move=.007)},ts)
+        self.assertNotIn("V4_TAKER_STRICT",[x["gate"] for x in s["signals"]])
         self.assertIn("LOW_HURDLE_CONTROL",[x["gate"] for x in s["signals"]])
 
     def test_invalid_and_low_liquidity_dont_trade(self):
