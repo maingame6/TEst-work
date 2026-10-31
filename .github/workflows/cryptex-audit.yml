@@ -38,6 +38,8 @@ jobs:
         run: |
           python3 -m py_compile cryptex/overnight/portfolio_report.py
           python3 -m py_compile cryptex/overnight/integrity_audit.py
+          python3 -m py_compile cryptex/overnight/execution_gate.py cryptex/overnight/continuity.py
+          python3 -m py_compile cryptex/overnight/runner.py cryptex/overnight/research_math.py cryptex/overnight/research_shadow.py
           python3 -m unittest discover -s cryptex/overnight/tests -v
 
       - name: Independently verify real saved paper-state accounting
@@ -52,6 +54,9 @@ jobs:
           assert r["audited_accounts"]==21 and r["mode"]=="PAPER_ONLY"
           assert all(x["passed"] for x in r["checks"])
           assert p["balance"]<=p["gross_mark_to_market"]+0.00006
+          c=json.loads((d/"continuity_report.json").read_text())
+          assert c["mode"]=="PAPER_ONLY" and c["policy"]=="COST_GATE_V3"
+          assert c["observed_candles"]+c["missing_intervals"]==c["expected_candles"]
           print("AUDIT VERIFIED: "+str(len(r["checks"]))+
                 " independent assertions, $210 original paper capital, "+
                 str(r["audited_accounts"])+" wallets")
