@@ -11,10 +11,9 @@ import json
 import pathlib
 from research_math import MODEL_NAMES,evaluate
 from execution_gate import next_candle_only, VERSION as COST_VERSION
+from cost_model import FEE, SLIP
 from research_flock import research_cycle
 
-FEE=.0015
-SLIP=.0025
 VERSION=1
 MAX_DAILY_LOSS=.05
 MAX_PEAK_DRAWDOWN=.15
