@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-10-31T23:32:33.646676+00:00",
+  "mode": "PAPER_ONLY",
+  "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
+  "not_real_orders": true,
+  "discovered_listing_total": 4221,
+  "catalogue_source_listings": 4221,
+  "unique_tested_venue_pairs": 225,
+  "unique_ohlcv_validated_pairs": 188,
+  "markets_with_any_historical_signal": 10,
+  "batches": 1,
+  "venues": {
+    "kraken": {
+      "discovered": 1201,
+      "attempted_distinct": 45,
+      "validated_ohlcv_distinct": 45,
+      "last_attempt_valid": 45,
+      "latest_failed": 0,
+      "next_cursor": 45
+    },
+    "coinbase": {
+      "discovered": 867,
+      "attempted_distinct": 45,
+      "validated_ohlcv_distinct": 18,
+      "last_attempt_valid": 18,
+      "latest_failed": 27,
+      "next_cursor": 45
+    },
+    "bitstamp": {
+      "discovered": 234,
+      "attempted_distinct": 45,
+      "validated_ohlcv_distinct": 45,
+      "last_attempt_valid": 45,
+      "latest_failed": 0,
+      "next_cursor": 45
+    },
+    "okx": {
+      "discovered": 1040,
+      "attempted_distinct": 45,
+      "validated_ohlcv_distinct": 45,
+      "last_attempt_valid": 45,
+      "latest_failed": 0,
+      "next_cursor": 45
+    },
+    "kucoin": {
+      "discovered": 879,
+      "attempted_distinct": 45,
+      "validated_ohlcv_distinct": 35,
+      "last_attempt_valid": 35,
+      "latest_failed": 10,
+      "next_cursor": 45
+    }
+  },
+  "strategies": {
+    "momentum_05": {
+      "historical_samples": 16,
+      "net_winners": 0,
+      "gross_up_net_down": 9,
+      "weighted_mean_net_pct": -2.374185,
+      "markets_with_samples": 9
+    },
+    "cost_aware_momentum": {
+      "historical_samples": 2,
+      "net_winners": 0,
+      "gross_up_net_down": 1,
+      "weighted_mean_net_pct": -1.535996,
+      "markets_with_samples": 2
+    },
+    "breakout": {
+      "historical_samples": 23,
+      "net_winners": 0,
+      "gross_up_net_down": 8,
+      "weighted_mean_net_pct": -2.486319,
+      "markets_with_samples": 9
+    },
+    "dip_recovery": {
+      "historical_samples": 2,
+      "net_winners": 1,
+      "gross_up_net_down": 1,
+      "weighted_mean_net_pct": 1.227826,
+      "markets_with_samples": 2
+    }
+  },
+  "fees": {
+    "kraken": {
+      "taker": 0.008,
+      "status": "PUBLISHED_BASE_TIER",
+      "url": "https://www.kraken.com/pro/fees"
+    },
+    "coinbase": {
+      "taker": 0.015,
+      "status": "UNVERIFIED_CONSERVATIVE_ASSUMPTION",
+      "url": "https://help.coinbase.com/en/coinbase/trading-and-funding/advanced-trade/advanced-trade-fees"
+    },
+    "bitstamp": {
+      "taker": 0.008,
+      "status": "UNVERIFIED_CONSERVATIVE_ASSUMPTION",
+      "url": ""
+    },
+    "okx": {
+      "taker": 0.002,
+      "status": "PUBLISHED_EEA_SPOT_ONLY_REGULAR",
+      "url": "https://www.okx.com/en-eu/help/important-notice-upcoming-spot-fee-adjustment-eea"
+    },
+    "kucoin": {
+      "taker": 0.003,
+      "status": "PUBLISHED_VIP0_CLASS_C_MAX",
+      "url": "https://www.kucoin.com/support/48142946141635"
+    }
+  },
+  "slippage_per_side": 0.0025,
+  "stress_slippage_per_side": 0.005,
+  "fee_limitations": "Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
+  "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
+  "last_batch": {
+    "attempted": 225,
+    "validated": 188,
+    "unavailable": 37
+  }
+}
