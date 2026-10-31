@@ -2,28 +2,28 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-10-31T23:50:14.839809+00:00; scanning cycles: 10.
+Last batch: 2026-10-31T23:52:24.363226+00:00; scanning cycles: 11.
 Discovered: 4221 distinct venue/pair listings.
-Selected in scan batches: **3314**.
-Checked against exchange metadata: **3314**.
-Real 5m OHLCV requests attempted: **3314**.
-Validated recent closed-candle histories: **2682**.
-Venue/pairs producing historical strategy samples: **173**.
+Selected in scan batches: **3654**.
+Checked against exchange metadata: **3654**.
+Real 5m OHLCV requests attempted: **3654**.
+Validated recent closed-candle histories: **2965**.
+Venue/pairs producing historical strategy samples: **187**.
 
 | Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |
 |---|---:|---:|---:|---:|
-| kraken | 1201 | 770 | 763 | 7 |
-| coinbase | 867 | 770 | 303 | 467 |
+| kraken | 1201 | 855 | 847 | 8 |
+| coinbase | 867 | 855 | 349 | 506 |
 | bitstamp | 234 | 234 | 234 | 0 |
-| okx | 1040 | 770 | 770 | 0 |
-| kucoin | 879 | 770 | 612 | 158 |
+| okx | 1040 | 855 | 855 | 0 |
+| kucoin | 879 | 855 | 680 | 175 |
 
 | Hypothesis | Historical examples | Net winners | Gross winners turned into losses | Weighted average net % |
 |---|---:|---:|---:|---:|
-| momentum_05 | 259 | 18 | 87 | -2.32041% |
+| momentum_05 | 290 | 18 | 100 | -2.36862% |
 | cost_aware_momentum | 62 | 10 | 11 | -2.38974% |
-| breakout | 312 | 17 | 106 | -2.20217% |
-| dip_recovery | 60 | 8 | 29 | -1.65491% |
+| breakout | 340 | 19 | 116 | -2.23697% |
+| dip_recovery | 69 | 8 | 35 | -1.81373% |
 
 **Fees:** each venue's rate and source/status is machine-readable in wide_scan_report.json. All entries and exits subtract fees AND slippage each way.
 **Caveat:** Coinbase and Bitstamp currently use high-cost unverified assumptions. OKX and KuCoin have varying jurisdictions/fee classes. No venue-specific profitability claim until tier/depth confirmed.
