@@ -90,11 +90,14 @@ jobs:
         if: steps.coverage_gate.outputs.run_scan == 'true'
         env:
           PYTHONDONTWRITEBYTECODE: '1'
+          CRYPTEX_FORCE_RESCAN: ${{ inputs.force_rescan }}
         run: |
+          extra=()
+          if [ "$CRYPTEX_FORCE_RESCAN" = "true" ]; then extra+=(--rescan); fi
           python3 cryptex/overnight/wide_scan.py \
             --catalog cryptex/overnight/data/ccxt_universe.json \
             --out wide-output/cryptex/overnight/data \
-            --per-venue 85
+            --per-venue 85 "${extra[@]}"
       - name: Check paper-only output and export visible coverage
         if: steps.coverage_gate.outputs.run_scan == 'true'
         run: |
