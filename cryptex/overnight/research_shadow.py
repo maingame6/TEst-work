@@ -1,7 +1,7 @@
 """Isolated eleven-model mathematics/open-source paper research lab.
 
-Only closed-candle observations; deferred paper fills; 0.15% fees and
-0.25% slippage each side. Original $100 main portfolio untouched.
+Only closed-candle observations; deferred paper fills; V4 assumptions
+are 0.80% Kraken taker fee plus estimated 0.25% slippage per side. Original $100 main portfolio untouched.
 Separate experimental starting balance: 11 x 10 simulated USD.
 """
 from __future__ import annotations
@@ -231,7 +231,7 @@ def store(base,history,allowed,ts,now):
   "Public RSS headline archive with timestamps: public_research.json.",
   "No mathematical proof implies a market edge, and all price predictions are experimental.",
   "No news/social data changes trades yet. Only lawful public information is used.",
-  "Fees and slippage: 0.15% and 0.25% per side; orders fill on a later closed candle.",
+  "Current V4 estimates: 0.80% taker fee and 0.25% slippage EACH WAY. Older V3 fills used lower fees; orders fill on a later closed candle.",
   "The Hummingbot-inspired market-maker remains HOLD until real L2 bid/ask data are available.",
   "At least 30 closed paper trades per model for preliminary review; stronger validation needs far more.",""]
  (data/"shadow_review.json").write_text(json.dumps(report,indent=2,allow_nan=False)+"\n")
