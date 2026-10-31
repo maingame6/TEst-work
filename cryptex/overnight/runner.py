@@ -356,6 +356,11 @@ def main():
     st["trigger_event"]=os.environ.get("CRYPTEX_TRIGGER_EVENT","unknown")
     st["github_run_id"]=os.environ.get("GITHUB_RUN_ID","")
     st["github_run_attempt"]=os.environ.get("GITHUB_RUN_ATTEMPT","")
+    # Persist that a real bounded fallback ran, so an occasional native cron
+    # cannot launch a costly second 5-minute backup chain in parallel.
+    if (st["trigger_event"]=="workflow_dispatch" and
+            os.environ.get("CRYPTEX_AUTOPILOT","false").lower()=="true"):
+        st["last_autopilot_dispatch"]=utc()
     # Recovered scheduled-job reruns must not misrepresent cron reliability.
     # Retain only executions witnessed with first-attempt scheduled jobs.
     if genuine_cron_execution(st["trigger_event"],st["github_run_attempt"]):
