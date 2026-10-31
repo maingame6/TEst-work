@@ -17,12 +17,12 @@ on:
   workflow_dispatch:
     inputs:
       autopilot:
-        description: 'Bounded overnight paper-research fallback (no live money)'
+        description: 'Bounded nine-day paper-only 24-hour fallback'
         type: boolean
         required: false
         default: false
       hop:
-        description: 'Internal bounded fallback counter, max 132'
+        description: 'Internal bounded fallback counter, max 2650'
         type: number
         required: false
         default: 0
@@ -43,6 +43,7 @@ jobs:
     timeout-minutes: 8
     env:
       CRYPTEX_TRIGGER_EVENT: ${{ github.event_name }}
+      CRYPTEX_AUTOPILOT: ${{ inputs.autopilot }}
     steps:
       - name: Check out isolated CRYPTEX branch
         uses: actions/checkout@v4
@@ -81,7 +82,7 @@ jobs:
         run: |
           python3 -m py_compile cryptex/overnight/runner.py cryptex/overnight/subagents.py cryptex/overnight/execution_gate.py cryptex/overnight/continuity.py
           python3 -m py_compile cryptex/overnight/research_math.py cryptex/overnight/research_flock.py
-          python3 -m py_compile cryptex/overnight/research_shadow.py
+          python3 -m py_compile cryptex/overnight/research_shadow.py cryptex/overnight/entry_study.py cryptex/overnight/cost_model.py
           python3 -m py_compile cryptex/overnight/portfolio_report.py cryptex/overnight/integrity_audit.py
           python3 -m unittest discover -s cryptex/overnight/tests -p test_runner.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_execution_gate.py -v
@@ -89,6 +90,8 @@ jobs:
           python3 -m unittest discover -s cryptex/overnight/tests -p test_research.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_portfolio_report.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_integrity_audit.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_cost_model.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_entry_study.py -v
 
       - name: Optional cross-market and morning presentation tests
         continue-on-error: true
@@ -127,6 +130,9 @@ jobs:
           git add -f cryptex/overnight/data/portfolio_report.json
           git add -f cryptex/overnight/data/continuity_report.json
           git add -f cryptex/overnight/data/continuity_report.md
+          git add -f cryptex/overnight/data/entry_study_state.json
+          git add -f cryptex/overnight/data/entry_study_report.json
+          git add -f cryptex/overnight/data/entry_study_report.md
           git add -f cryptex/overnight/data/integrity_report.json
           git add -f cryptex/overnight/data/benchmark_reference.json
           git add -f cryptex/overnight/data/combined_equity.csv
@@ -164,14 +170,10 @@ jobs:
             git push origin HEAD:cryptex-paper-trading-preview
           fi
 
-      # Github cron is best-effort; bounded overnight self-dispatch fallback.
-      # Stop only AFTER the first verified morning paper-balance snapshot (up to 08:15 Dublin),
-      # after 132 hops; do not stop on a single unreliable cron event.
-      # Public standard Github-hosted runners are free, subject to fair use.
-      - name: Overnight backup — self-dispatch next paper cycle
-        # Only arm backup on a real cron outage, explicit autopilot or workflow repair.
-        # A healthy native cron never spawns a redundant overnight chain.
-        if: success() && (github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event_name == 'schedule')
+      # GitHub cron is best effort. A bounded fallback runs all day through
+      # the 7+ day research window; never trades real money, never runs forever.
+      - name: Nine-day evidence pilot - continuous paper-only fallback
+        if: success() && (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule')
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -181,90 +183,59 @@ jobs:
         run: |
           python3 - <<'PY'
           import datetime as dt
-          import json
-          import os
-          import pathlib
-          import subprocess
-          import time
-          from zoneinfo import ZoneInfo
-
+          import json,os,pathlib,subprocess,time
           event=os.environ.get("CRYPTEX_EVENT","")
-          hop=int(os.environ.get("CRYPTEX_HOP") or "0")
           requested=os.environ.get("CRYPTEX_AUTOPILOT","false").lower()=="true"
+          hop=int(os.environ.get("CRYPTEX_HOP") or "0")
           state=json.loads(pathlib.Path("cryptex/overnight/data/state.json").read_text())
           if state.get("mode")!="PAPER_ONLY":
-              raise SystemExit("Refusing non-paper-money research dispatch")
+              raise SystemExit("No real-money fallback permitted")
+          MAX_HOPS=2650
+          DEADLINE=dt.datetime(2026,11,10,0,0,tzinfo=dt.timezone.utc)
+          now=dt.datetime.now(dt.timezone.utc)
+          if now>=DEADLINE or hop>=MAX_HOPS:
+              print("Bounded evidence run ended; no self-dispatch")
+              raise SystemExit(0)
+          def age_seconds(timestamp):
+              try:
+                  return (now-dt.datetime.fromisoformat(timestamp.replace("Z","+00:00"))).total_seconds()
+              except (AttributeError,ValueError,TypeError):
+                  return float("inf")
           if event=="workflow_dispatch" and not requested:
-              print("Manual research run, autonomous fallback not requested")
+              print("One-time dispatch only, no autopilot requested")
               raise SystemExit(0)
           if event=="schedule":
-              # The runner kept the PREVIOUS genuine first-attempt cron time.
-              # Recovery starts only when it proves a >10-minute outage.
-              previous=state.get("previous_native_cron_run")
-              now=dt.datetime.now(dt.timezone.utc)
-              try:
-                  previous_time=dt.datetime.fromisoformat(previous.replace("Z","+00:00"))
-                  missing_for=(now-previous_time).total_seconds()
-              except (AttributeError,TypeError,ValueError):
-                  missing_for=float("inf")
-              if missing_for<=600:
-                  print(f"Native schedule healthy ({missing_for:.0f}s since preceding run); no backup")
+              # A recent auto-run means the recovery chain is already active.
+              if age_seconds(state.get("last_autopilot_dispatch"))<600:
+                  print("Autopilot heartbeat present: skip duplicate chain")
                   raise SystemExit(0)
-              print(f"Native schedule outage ({missing_for:.0f}s): arming bounded backup")
-          if event not in ("push","workflow_dispatch","schedule") or hop>=132:
-              print("Backup stopped: invalid source or 132-cycle limit")
+              if age_seconds(state.get("previous_native_cron_run"))<=600:
+                  print("Multiple recent genuine cron runs: backup not needed")
+                  raise SystemExit(0)
+              print("Genuine cron gap: start bounded recovery chain")
+          if event not in ("schedule","workflow_dispatch"):
+              raise SystemExit("Invalid event for recovery chain")
+          # A single native cron run does not end the bounded recovery chain.
+          # Concurrent jobs share a repo-level lock; candle processing is idempotent.
+          delay=275
+          if now+dt.timedelta(seconds=delay+60)>=DEADLINE:
+              print("Near deadline; not dispatching another run")
               raise SystemExit(0)
-
-          # A SINGLE native cron event does not prove dependable future
-          # scheduling. The bounded backup keeps going to the morning
-          # checkpoint. The runner is idempotent on closed-candle timestamp,
-          # and GitHub concurrency serializes any overlapping triggers.
-          if state.get("schedule_confirmed"):
-              print("Native cron seen; retaining backup until the morning checkpoint")
-          local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
-          def morning_done():
-              try:
-                  sessions=json.loads(pathlib.Path("cryptex/overnight/data/overnight_sessions.json").read_text())
-                  return bool(sessions and sessions[-1].get("morning") is not None)
-              except (ValueError,OSError,KeyError,TypeError):
-                  return False
-          def overnight_window(t):
-              return t.hour>=21 or t.hour<8 or (t.hour==8 and t.minute<15 and not morning_done())
-          if not overnight_window(local):
-              print("Outside overnight research window or first morning report already captured")
-              raise SystemExit(0)
-
-          # Existing recovery is confined to the overnight evidence window.
-          # GitHub Actions is best effort; this is not a guaranteed 5m clock.
-          delay=45 if event=="push" else 285
-          started=dt.datetime.now(dt.timezone.utc)
-          print(f"Paper-only overnight backup hop {hop}; next dispatch in {delay}s",flush=True)
+          print(f"24h paper research hop {hop}/{MAX_HOPS}; next in {delay}s",flush=True)
           time.sleep(delay)
-          local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
-          if not overnight_window(local):
-              print("Morning snapshot captured / 08:15 cutoff reached; no further backup")
-              raise SystemExit(0)
-          # Check the latest COMMITTED state, not this run's stale checkout:
-          # a genuine native cron since backup began makes this dispatch redundant.
-          try:
-              subprocess.run(["git","fetch","-q","origin","cryptex-paper-trading-preview"],
-                             check=True,timeout=30)
-              latest=json.loads(subprocess.check_output([
-                  "git","show","origin/cryptex-paper-trading-preview:cryptex/overnight/data/state.json"
-              ],timeout=15,text=True))
-              recent=latest.get("last_native_cron_run")
-              recent_time=dt.datetime.fromisoformat(recent.replace("Z","+00:00")) if recent else None
-              if recent_time and recent_time>started+dt.timedelta(seconds=20):
-                  print("Fresh native cron observed since fallback started; stopping redundant dispatch")
-                  raise SystemExit(0)
-          except (subprocess.CalledProcessError,subprocess.TimeoutExpired,ValueError,TypeError) as exc:
-              print(f"::warning::Could not verify recent cron ({exc}); continue bounded fallback")
-          subprocess.run([
-              "gh","api","-X","POST",
+          if dt.datetime.now(dt.timezone.utc)>=DEADLINE:
+              raise SystemExit("Evidence deadline reached during wait")
+          cmd=["gh","api","-X","POST",
               f"repos/{os.environ['GH_REPO']}/actions/workflows/cryptex-paper.yml/dispatches",
-              "-f","ref=main",
-              "-f","inputs[autopilot]=true",
-              "-f",f"inputs[hop]={hop+1}"
-          ],check=True,timeout=30)
-          print(f"Next paper cycle dispatched, hop {hop+1}/132.")
+              "-f","ref=main","-f","inputs[autopilot]=true",
+              "-f",f"inputs[hop]={hop+1}"]
+          for attempt in range(3):
+              try:
+                  subprocess.run(cmd,check=True,timeout=30)
+                  print(f"Next PAPER_ONLY run dispatched, hop {hop+1}/{MAX_HOPS}")
+                  break
+              except (subprocess.CalledProcessError,subprocess.TimeoutExpired) as exc:
+                  if attempt==2:
+                      raise RuntimeError("Three dispatch failures; future cron must recover") from exc
+                  time.sleep(5*(attempt+1))
           PY
