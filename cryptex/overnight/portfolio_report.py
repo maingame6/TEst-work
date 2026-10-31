@@ -82,6 +82,8 @@ def snapshot(main, research, at):
         return int(ts or 0) <= 0 or now.timestamp() - (int(ts) + 300) > 1800
     main_ts, research_ts = main.get('last_ts', 0), research.get('last_ts', 0)
     # Price movement and execution drag are fundamentally different hypotheses.
+    # Historical trades include legacy fees prior to 31 October 2026 V4. Never
+    # silently restate old fills: aggregate P&L spans mixed assumptions.
     # Only newer SELL fills have reliable gross mid-price attribution; never
     # pretend older records have those fields.
     sells=[t for source in (main, research) for t in source.get("trades",[])
@@ -97,6 +99,7 @@ def snapshot(main, research, at):
     breakeven_pct=100*break_even()
     fee_study={"round_trip_break_even_pct_at_flat_markets":round(breakeven_pct,4),
                "assumed_execution_costs":cost_assumptions(),
+               "historical_fee_warning":"Old fills used V3 0.15% per side; new fills use verified Kraken Tier 1 taker 0.80% per side. Aggregate historical equity cannot be represented as a clean V4 experiment.",
               "completed_orders_cached":len(sells),"attributed_newer_closes":len(attributed),
               "older_closes_missing_attribution":len(sells)-len(attributed),
               "gross_market_pnl_attributed":round(gross_mid_trade_pnl,8),
@@ -276,12 +279,15 @@ def store(main, research, data_dir, at):
     d=snap["execution_cost_study"]
     lines += ["", "## Price prediction versus trading costs",
         "",
-        f"Estimated price move needed just to break even on a round trip: **{d['round_trip_break_even_pct_at_flat_markets']:.3f}%** (0.15% fees and 0.25% slippage each side).",
+        f"Estimated price move needed just to break even on a round trip: **{d['round_trip_break_even_pct_at_flat_markets']:.3f}%** (0.80% Kraken Tier 1 taker fee + 0.25% estimated slippage **on each side**).",
         f"Gross-versus-net attribution available on {d['attributed_newer_closes']} of {d['completed_orders_cached']} cached closed trades; earlier records are honestly marked unavailable.",
         f"Attributed gross market movement P&L: ${d['gross_market_pnl_attributed']:+.6f};",
         f"Attributed fees + slippage drag: ${d['execution_drag_attributed']:.6f};",
         f"Attributed net profit/loss: ${d['net_pnl_attributed']:+.6f}.",
         f"Gross winners: {d['gross_winners']}; after-cost winners: {d['after_cost_winners']}; gross winners turned into losses by execution friction: {d['gross_up_but_net_down']}.",
+        "Historical older fills were at lower assumed fees; aggregate lifetime return is mixed-policy. V4-only prospective sample is the primary evidence.",
+        f"Stress scenario: 0.80% taker fee + 0.50% slippage EACH WAY; break even {cost_assumptions()['stress']['round_trip_break_even_pct']:.3f}%.",
+        "The independent [cost-aware entry experiments](entry_study_report.md) compare four thresholds and NEVER execute real money.",
         "Do not claim profitability until fresh after-cost trades demonstrate out-of-sample performance.",
         "",
         "## Independent paper portfolios", "",
@@ -307,7 +313,7 @@ def store(main, research, data_dir, at):
     lines += ['', '## Reliability', '',
               'Latest main/shadow candle timestamps: ' + str(snap['last_candle_main']) + ' / ' + str(snap['last_candle_research']),
               'Warnings: ' + (', '.join(k for k, v in snap['freshness'].items() if k not in ('main_status','research_status') and v) or 'none'),
-              'Balances include hypothetical estimated future sale fee 0.15% and slippage 0.25%; not executable quotes.',
+              'CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.',
               'Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.','']
     (folder / 'morning_report.md').write_text('\n'.join(lines), encoding='utf8')
     return snap
