@@ -61,7 +61,7 @@ class PaperOnlySafetyTests(unittest.TestCase):
     def test_active_probe_generates_signal_from_realistic_valid_features(self):
         # Hypothetical high movement and liquid market pass the screening gate.
         # This is NOT a forecast or evidence of profitability.
-        x={"price":100.,"ret3":.012,"ret8":.002,"ret10":.002,"ret21":.002,
+        x={"price":100.,"ret3":.032,"ret8":.002,"ret10":.002,"ret21":.002,
            "ret2":.0004,"one":.0002,"fast":99.5,"slow":100.1,
            "z":.25,"rsi":52,"vol":.006,"vr":1.6,
            "priorhigh":102.,"entropy":.9,"hour_volume":2_000_000.}
@@ -69,8 +69,8 @@ class PaperOnlySafetyTests(unittest.TestCase):
         sig=R.signal(0,fs,{})
         self.assertIsNotNone(sig)
         self.assertTrue(sig["exploratory"])
-        self.assertIn("COST_SCREEN_V3",sig["reason"])
-        self.assertEqual(sig["cost_gate_version"],3)
+        self.assertIn("COST_SCREEN_V4",sig["reason"])
+        self.assertEqual(sig["cost_gate_version"],4)
 
     def test_low_movement_probes_are_not_automatically_traded(self):
         # 0.3% observed movement cannot itself cover 0.8% assumed round-trip costs.
@@ -202,17 +202,17 @@ class PaperOnlySafetyTests(unittest.TestCase):
 
     def test_fee_policy_sample_requires_versioned_entry(self):
         st=R.init();b=st["bots"][0]
-        R.journal(st,b,{"side":"BUY","symbol":"BTC","reason":"V3 qualifying test",
-                        "cost_gate_version":3},100.,100000,100.)
+        R.journal(st,b,{"side":"BUY","symbol":"BTC","reason":"V4 qualifying test",
+                        "cost_gate_version":4},100.,100000,100.)
         R.journal(st,b,{"side":"SELL","symbol":"BTC","reason":"Test exit"},
                   102.,100300,100.)
-        self.assertEqual(b["qualified_v3_closed"],1)
-        self.assertEqual(st["trades"][0]["entry_cost_gate_version"],3)
+        self.assertEqual(b["qualified_v4_closed"],1)
+        self.assertEqual(st["trades"][0]["entry_cost_gate_version"],4)
         R.journal(st,b,{"side":"BUY","symbol":"BTC","reason":"Legacy test"},
                   100.,100600,100.)
         R.journal(st,b,{"side":"SELL","symbol":"BTC","reason":"Legacy exit"},
                   102.,100900,100.)
-        self.assertEqual(b["qualified_v3_closed"],1)
+        self.assertEqual(b["qualified_v4_closed"],1)
 
 
 if __name__=="__main__":
