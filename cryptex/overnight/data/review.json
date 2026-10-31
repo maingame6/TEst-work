@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-10-31T10:53:42.876535+00:00",
-  "status": "HEALTHY: waiting for a newly closed Kraken candle",
+  "generated_utc": "2026-10-31T10:55:42.759520+00:00",
+  "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
   "subagents_per_team": 64,
@@ -10,127 +10,127 @@
       "decision": "SELL",
       "symbol": "SOL",
       "support": 16,
-      "opposition": 10,
+      "opposition": 6,
       "veto": 0,
-      "factor_score": 0.0831
+      "factor_score": 0.1184
     },
     "HOUSE": {
       "decision": "SELL",
       "symbol": "ETH",
       "support": 7,
-      "opposition": 10,
+      "opposition": 9,
       "veto": 0,
-      "factor_score": 0.006
+      "factor_score": 0.0104
     },
     "SPY": {
       "decision": "SELL",
       "symbol": "SOL",
       "support": 16,
-      "opposition": 10,
+      "opposition": 6,
       "veto": 0,
-      "factor_score": 0.0831
+      "factor_score": 0.1184
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 15,
-      "opposition": 8,
+      "support": 16,
+      "opposition": 6,
       "veto": 1,
-      "factor_score": 0.1093
+      "factor_score": 0.1277
     },
     "BREAKOUT": {
       "decision": "SELL",
       "symbol": "SOL",
       "support": 16,
-      "opposition": 10,
+      "opposition": 6,
       "veto": 0,
-      "factor_score": 0.0831
+      "factor_score": 0.1184
     },
     "CONTRARIAN": {
-      "decision": "BUY",
+      "decision": "HOLD",
       "symbol": "ETH",
       "support": 7,
-      "opposition": 10,
+      "opposition": 9,
       "veto": 0,
-      "factor_score": 0.006
+      "factor_score": 0.0104
     },
     "ROTATOR": {
       "decision": "SELL",
       "symbol": "ADA",
-      "support": 6,
-      "opposition": 25,
+      "support": 8,
+      "opposition": 19,
       "veto": 1,
-      "factor_score": -0.1571
+      "factor_score": -0.065
     },
     "VORTEX": {
       "decision": "SELL",
       "symbol": "ETH",
-      "support": 9,
+      "support": 8,
       "opposition": 8,
       "veto": 0,
-      "factor_score": 0.0518
+      "factor_score": 0.0474
     },
     "FRACTAL": {
       "decision": "SELL",
       "symbol": "SOL",
       "support": 16,
-      "opposition": 10,
+      "opposition": 6,
       "veto": 0,
-      "factor_score": 0.0831
+      "factor_score": 0.1184
     },
     "SHOCKWAVE": {
       "decision": "SELL",
       "symbol": "PEPE",
-      "support": 17,
+      "support": 14,
       "opposition": 21,
       "veto": 1,
-      "factor_score": -0.0525
+      "factor_score": -0.0684
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 99.469436,
-  "portfolio_paper_change_usd": -0.530564,
-  "all_time_closed_paper_trades": 29,
+  "current_paper_equity_usd": 99.35227,
+  "portfolio_paper_change_usd": -0.64773,
+  "all_time_closed_paper_trades": 37,
   "all_time_closed_wins": 5,
-  "all_time_closed_losses": 24,
-  "aggregate_realized_pnl_usd": -0.295979,
+  "all_time_closed_losses": 32,
+  "aggregate_realized_pnl_usd": -0.642858,
   "agents": {
     "GAMBLER": {
-      "closed": 2,
+      "closed": 3,
       "wins": 0,
-      "losses": 2,
+      "losses": 3,
       "win_rate": 0.0,
-      "realized_net_usd": -0.016176,
-      "average_profit_usd": -0.008088,
+      "realized_net_usd": -0.102119,
+      "average_profit_usd": -0.03404,
       "average_win_usd": null,
-      "average_loss_usd": -0.008088,
-      "last_20_net_usd": -0.016176,
+      "average_loss_usd": -0.03404,
+      "last_20_net_usd": -0.102119,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "HOUSE": {
-      "closed": 4,
+      "closed": 5,
       "wins": 0,
-      "losses": 4,
+      "losses": 5,
       "win_rate": 0.0,
-      "realized_net_usd": -0.030952,
-      "average_profit_usd": -0.007738,
+      "realized_net_usd": -0.041147,
+      "average_profit_usd": -0.008229,
       "average_win_usd": null,
-      "average_loss_usd": -0.007738,
-      "last_20_net_usd": -0.030952,
+      "average_loss_usd": -0.008229,
+      "last_20_net_usd": -0.041147,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "SPY": {
-      "closed": 4,
+      "closed": 5,
       "wins": 1,
-      "losses": 3,
-      "win_rate": 0.25,
-      "realized_net_usd": -0.030348,
-      "average_profit_usd": -0.007587,
+      "losses": 4,
+      "win_rate": 0.2,
+      "realized_net_usd": -0.048642,
+      "average_profit_usd": -0.009728,
       "average_win_usd": 0.000519,
-      "average_loss_usd": -0.010289,
-      "last_20_net_usd": -0.030348,
+      "average_loss_usd": -0.01229,
+      "last_20_net_usd": -0.048642,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -148,15 +148,15 @@
       "position_size_multiplier": 1.0
     },
     "BREAKOUT": {
-      "closed": 2,
+      "closed": 3,
       "wins": 0,
-      "losses": 2,
+      "losses": 3,
       "win_rate": 0.0,
-      "realized_net_usd": -0.116567,
-      "average_profit_usd": -0.058283,
+      "realized_net_usd": -0.133264,
+      "average_profit_usd": -0.044421,
       "average_win_usd": null,
-      "average_loss_usd": -0.058283,
-      "last_20_net_usd": -0.116567,
+      "average_loss_usd": -0.044421,
+      "last_20_net_usd": -0.133264,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -174,54 +174,54 @@
       "position_size_multiplier": 1.0
     },
     "ROTATOR": {
-      "closed": 0,
+      "closed": 1,
       "wins": 0,
-      "losses": 0,
-      "win_rate": null,
-      "realized_net_usd": 0,
-      "average_profit_usd": null,
+      "losses": 1,
+      "win_rate": 0.0,
+      "realized_net_usd": -0.146745,
+      "average_profit_usd": -0.146745,
       "average_win_usd": null,
-      "average_loss_usd": null,
-      "last_20_net_usd": 0,
+      "average_loss_usd": -0.146745,
+      "last_20_net_usd": -0.146745,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "VORTEX": {
-      "closed": 0,
+      "closed": 1,
       "wins": 0,
-      "losses": 0,
-      "win_rate": null,
-      "realized_net_usd": 0,
-      "average_profit_usd": null,
+      "losses": 1,
+      "win_rate": 0.0,
+      "realized_net_usd": -0.049939,
+      "average_profit_usd": -0.049939,
       "average_win_usd": null,
-      "average_loss_usd": null,
-      "last_20_net_usd": 0,
+      "average_loss_usd": -0.049939,
+      "last_20_net_usd": -0.049939,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "FRACTAL": {
-      "closed": 4,
+      "closed": 5,
       "wins": 0,
-      "losses": 4,
+      "losses": 5,
       "win_rate": 0.0,
-      "realized_net_usd": -0.042874,
-      "average_profit_usd": -0.010718,
+      "realized_net_usd": -0.059569,
+      "average_profit_usd": -0.011914,
       "average_win_usd": null,
-      "average_loss_usd": -0.010718,
-      "last_20_net_usd": -0.042874,
+      "average_loss_usd": -0.011914,
+      "last_20_net_usd": -0.059569,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
     "SHOCKWAVE": {
-      "closed": 4,
+      "closed": 5,
       "wins": 2,
-      "losses": 2,
-      "win_rate": 0.5,
-      "realized_net_usd": -0.010748,
-      "average_profit_usd": -0.002687,
+      "losses": 3,
+      "win_rate": 0.4,
+      "realized_net_usd": -0.013118,
+      "average_profit_usd": -0.002624,
       "average_win_usd": 0.003159,
-      "average_loss_usd": -0.008533,
-      "last_20_net_usd": -0.010748,
+      "average_loss_usd": -0.006479,
+      "last_20_net_usd": -0.013118,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     }
@@ -238,8 +238,8 @@
       "net_pnl_usd": -0.035596
     },
     "Exploratory 15-minute observation complete (next-bar fill)": {
-      "count": 12,
-      "net_pnl_usd": -0.108514
+      "count": 17,
+      "net_pnl_usd": -0.172766
     },
     "Breakout failed": {
       "count": 2,
@@ -264,6 +264,10 @@
     "Shockwave ended": {
       "count": 1,
       "net_pnl_usd": -0.009529
+    },
+    "Time-based exit": {
+      "count": 3,
+      "net_pnl_usd": -0.282627
     }
   },
   "data_errors_latest": {},

@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-10-31T10:53:42.876535+00:00
-Data status: HEALTHY: waiting for a newly closed Kraken candle
-Paper equity: USD 99.47; initial USD 100.00; change USD -0.53.
-Closed trades: 29; wins 5; losses/breakevens 24.
+Generated: 2026-10-31T10:55:42.759520+00:00
+Data status: HEALTHY: paper trading on completed Kraken candles
+Paper equity: USD 99.35; initial USD 100.00; change USD -0.65.
+Closed trades: 37; wins 5; losses/breakevens 32.
 
 ## Specialist research teams
 
@@ -15,36 +15,37 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | SELL | SOL | 16 | 10 | 0 |
-| HOUSE | SELL | ETH | 7 | 10 | 0 |
-| SPY | SELL | SOL | 16 | 10 | 0 |
-| MEME HUNTER | HOLD | DOGE | 15 | 8 | 1 |
-| BREAKOUT | SELL | SOL | 16 | 10 | 0 |
-| CONTRARIAN | BUY | ETH | 7 | 10 | 0 |
-| ROTATOR | SELL | ADA | 6 | 25 | 1 |
-| VORTEX | SELL | ETH | 9 | 8 | 0 |
-| FRACTAL | SELL | SOL | 16 | 10 | 0 |
-| SHOCKWAVE | SELL | PEPE | 17 | 21 | 1 |
+| GAMBLER | SELL | SOL | 16 | 6 | 0 |
+| HOUSE | SELL | ETH | 7 | 9 | 0 |
+| SPY | SELL | SOL | 16 | 6 | 0 |
+| MEME HUNTER | HOLD | DOGE | 16 | 6 | 1 |
+| BREAKOUT | SELL | SOL | 16 | 6 | 0 |
+| CONTRARIAN | HOLD | ETH | 7 | 9 | 0 |
+| ROTATOR | SELL | ADA | 8 | 19 | 1 |
+| VORTEX | SELL | ETH | 8 | 8 | 0 |
+| FRACTAL | SELL | SOL | 16 | 6 | 0 |
+| SHOCKWAVE | SELL | PEPE | 14 | 21 | 1 |
 
 ## Bot performance
 
 | Bot | Closed | Wins | Losses | Win rate | Realized net USD | Next allocation |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| GAMBLER | 2 | 0 | 2 | 0.0% | -0.0162 | 1.00x |
-| HOUSE | 4 | 0 | 4 | 0.0% | -0.0310 | 1.00x |
-| SPY | 4 | 1 | 3 | 25.0% | -0.0303 | 1.00x |
+| GAMBLER | 3 | 0 | 3 | 0.0% | -0.1021 | 1.00x |
+| HOUSE | 5 | 0 | 5 | 0.0% | -0.0411 | 1.00x |
+| SPY | 5 | 1 | 4 | 20.0% | -0.0486 | 1.00x |
 | MEME HUNTER | 4 | 2 | 2 | 50.0% | -0.0057 | 1.00x |
-| BREAKOUT | 2 | 0 | 2 | 0.0% | -0.1166 | 1.00x |
+| BREAKOUT | 3 | 0 | 3 | 0.0% | -0.1333 | 1.00x |
 | CONTRARIAN | 5 | 0 | 5 | 0.0% | -0.0426 | 1.00x |
-| ROTATOR | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| VORTEX | 0 | 0 | 0 | — | +0.0000 | 1.00x |
-| FRACTAL | 4 | 0 | 4 | 0.0% | -0.0429 | 1.00x |
-| SHOCKWAVE | 4 | 2 | 2 | 50.0% | -0.0107 | 1.00x |
+| ROTATOR | 1 | 0 | 1 | 0.0% | -0.1467 | 1.00x |
+| VORTEX | 1 | 0 | 1 | 0.0% | -0.0499 | 1.00x |
+| FRACTAL | 5 | 0 | 5 | 0.0% | -0.0596 | 1.00x |
+| SHOCKWAVE | 5 | 2 | 3 | 40.0% | -0.0131 | 1.00x |
 
 ## Where paper trades lost money
 
-- **Exploratory 15-minute observation complete (next-bar fill)**: 12 exits; net USD -0.1085
+- **Exploratory 15-minute observation complete (next-bar fill)**: 17 exits; net USD -0.1728
 - **RSI normalized**: 4 exits; net USD -0.0356
+- **Time-based exit**: 3 exits; net USD -0.2826
 - **Breakout failed**: 2 exits; net USD -0.1166
 - **Timescales disagree**: 2 exits; net USD -0.0146
 - **Trend failure**: 1 exits; net USD -0.0072
