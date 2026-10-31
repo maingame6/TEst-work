@@ -72,6 +72,9 @@ class WideScanTests(unittest.TestCase):
             self.assertEqual(result["unique_ohlcv_validated_pairs"],10)
             self.assertTrue((d/"wide_scan_report.md").exists())
             self.assertTrue((d/"wide_scan_state.json").exists())
+            csv_path=d/"wide_scan_market_results.csv"
+            self.assertTrue(csv_path.exists())
+            self.assertEqual(len(csv_path.read_text().splitlines()),16)
             self.assertEqual(result["fees"]["kraken"]["taker"],.008)
             self.assertEqual(result["fees"]["coinbase"]["status"],"UNVERIFIED_CONSERVATIVE_ASSUMPTION")
             self.assertEqual(result["last_batch"]["attempted"],15)
