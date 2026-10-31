@@ -46,6 +46,9 @@ class EntryStudyTests(unittest.TestCase):
         self.assertAlmostEqual(t["gross_return"],0)
         self.assertLess(t["net_return"],-.007)
         self.assertTrue(t["paper"])
+        self.assertGreater(t["fee_drag"],0)
+        self.assertGreater(t["slippage_drag"],0)
+        self.assertLess(t["stress_net_return"],t["net_return"])
 
     def test_no_lookahead_at_signal(self):
         s=S.blank();ts=1800000000
