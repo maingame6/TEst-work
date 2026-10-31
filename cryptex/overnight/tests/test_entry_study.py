@@ -7,8 +7,8 @@ def candles(ts,move=.02,vr=3,close=100):
     out=[]
     for i in range(65):
         price=close/(1+move) if i<62 else close
-        vol=20 if i==64 else 10
-        if i==64:vol=10*vr
+        vol=2000 if i==64 else 1000
+        if i==64:vol=1000*vr
         out.append({"ts":ts-(64-i)*300,"close":price,"volume":vol})
     return out
 
