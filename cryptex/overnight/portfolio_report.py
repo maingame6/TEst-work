@@ -156,8 +156,15 @@ def update_night(snap, history):
     else:
         latest = session['morning'] or {'at': snap['generated_at'],
                         'balance': snap['balance'], 'fills': snap['saved_fills']}
+        morning_local = (dt.datetime.fromisoformat(session['morning']['at']).astimezone(LOCAL)
+                         if session['morning'] else None)
+        # After 08:15 Dublin, clearly disclose a late recovery; never label
+        # a 10:50 reconstruction as the verified 08:00 money checkpoint.
+        late = bool(morning_local and (morning_local.hour > 8 or
+                        (morning_local.hour == 8 and morning_local.minute >= 15)))
+        status = ('LATE_MORNING_RECOVERY' if late else 'MORNING_RECORDED') if morning_local else 'IN_PROGRESS'
         snap['overnight'] = {'date': key,
-            'status': 'MORNING_RECORDED' if session['morning'] else 'IN_PROGRESS',
+            'status': status,
             'start': session['start'], 'morning': session['morning'],
             'comparison_at': latest['at'],
             'change': round(latest['balance'] - session['start']['balance'], 6),
