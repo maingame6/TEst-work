@@ -5,6 +5,8 @@ or represents paper returns as actual profits.
 """
 import csv, datetime as dt, json, math, os, pathlib, statistics, time, urllib.parse, urllib.request
 from subagents import ROLES, subagent_team, format_votes
+from execution_gate import (main_eligible, next_candle_only, MIN_THREE_BAR_MOVE, VERSION as COST_VERSION)
+from continuity import mark as mark_prospective_candle, report as store_continuity
 BASE=pathlib.Path(__file__).resolve().parent
 DATA=BASE/"data"
 DATA.mkdir(parents=True,exist_ok=True)
@@ -27,7 +29,7 @@ FEE=.0015; SLIP=.0025; MAX_ORDER=.08; STOP=.06
 # The observed after-cost break-even is ~0.803%. A historical price move is
 # NOT a forecast; the extra 0.2% is a conservative screening buffer only.
 PROBE_COST_BUFFER=.002
-PROBE_MIN_THREE_BAR_MOVE=2*(FEE+SLIP)+PROBE_COST_BUFFER
+PROBE_MIN_THREE_BAR_MOVE=MIN_THREE_BAR_MOVE
 def utc():return dt.datetime.now(dt.timezone.utc).isoformat()
 def epoch():return time.time()
 def avg(v):return sum(v)/len(v) if v else 0
@@ -97,9 +99,10 @@ def signal(i,fs,h):
             impulse=fs.get(leader,{}).get("ret2",0);corr=lagcorr(h[leader],h[s]) if leader in h else 0
             score=(impulse-max(0,x["ret2"]))*max(0,corr)
             a=impulse>.007 and x["ret2"]<impulse*.35 and x["ret2"]>-.012 and corr>.12 and score>.0007;why="Lag correlation hypothesis"
-        if a and math.isfinite(score) and (best is None or score>best["score"]):best={"symbol":s,"score":score,"reason":why}
+        if a and main_eligible(x,contrarian=i in (1,5)) and math.isfinite(score) and (best is None or score>best["score"]):best={"symbol":s,"score":score,"reason":why}
     if best is not None:
         best["exploratory"]=False
+        best["cost_gate_version"]=COST_VERSION
         return best
     # COST SCREEN V2: yesterday's 15-minute, low-movement probes lost money
     # mainly to assumed fees and slippage. Keep weak setups observation-only.
@@ -111,7 +114,7 @@ def signal(i,fs,h):
         if sym not in fs:continue
         x=fs[sym]
         if not all(math.isfinite(x.get(k,float("nan"))) for k in ("price","vol","ret3","z","vr","hour_volume","rsi")):continue
-        if x["price"]<=0 or x["hour_volume"]<100000 or x["vol"]>.04 or x["vr"]<1.25:continue
+        if not main_eligible(x,contrarian=i in (1,5)):continue
         contrarian=i in (1,5)
         if contrarian:
             if x["ret3"]>-PROBE_MIN_THREE_BAR_MOVE or x["z"]> -1.25 or x["rsi"]>=40:continue
@@ -123,8 +126,8 @@ def signal(i,fs,h):
     score,sym,x=max(picks,key=lambda row:row[0])
     thesis="reversion" if i in (1,5) else "directional momentum"
     return {"symbol":sym,"score":float(score),
-            "reason":f"EXPLORATORY PAPER PROBE [COST_SCREEN_V2] ({thesis}; 3-bar {x['ret3']*100:+.2f}%; RSI {x['rsi']:.0f}; volume {x['vr']:.2f}x)",
-            "exploratory":True,"cost_gate_version":2}
+            "reason":f"EXPLORATORY PAPER PROBE [COST_SCREEN_V3] ({thesis}; 3-bar {x['ret3']*100:+.2f}%; RSI {x['rsi']:.0f}; volume {x['vr']:.2f}x)",
+            "exploratory":True,"cost_gate_version":COST_VERSION}
 def init():
     return {"mode":"PAPER_ONLY","version":4,"created":utc(),"last_ts":0,"capital":100,"initial_capital":100,"daily_start":100,"daily_date":utc()[:10],"peak":100,"halted":False,"health":"NO DATA YET","last_prices":{},"last_checked":None,"feeds":{},"radar":[],"bots":[{"name":n,"cash":10.0,"position":None,"pending":None,"last_reason":"Waiting for market","wins":0,"closed":0,"net":0,"completed":[]} for n in NAMES],"trades":[],"events":[],"learning":{},"cycles":0}
 def event(st,level,message):
@@ -231,6 +234,7 @@ def cycle(st,history,check,radar_results):
         st["health"]="DEGRADED: feed disagreement";event(st,"DATA",st["health"]);return False
     fs={s:feature(h) for s,h in valid.items()};prices={s:x["price"] for s,x in fs.items()}
     before=equity(st,prices)
+    mark_prospective_candle(st,ts)
     st["last_ts"]=ts;st["peak"]=max(st["peak"],before)
     if st["daily_date"]!=utc()[:10]:
         st["daily_date"]=utc()[:10]
@@ -245,11 +249,16 @@ def cycle(st,history,check,radar_results):
         st["halted"]=True
     for i,b in enumerate(st["bots"]):
         order=b["pending"];b["pending"]=None
-        # Invalidate pre-fix exploratory BUY signals so weak old entries are
-        # never filled after this research policy update. Never block exits.
-        if order and order["side"]=="BUY" and order.get("exploratory",False) and order.get("cost_gate_version")!=2:
-            event(st,"VETO",b["name"]+" stale pre-cost-screen exploratory BUY cancelled")
-            order=None
+        # Only NEXT completed candle may fill a new cost-approved BUY. Old
+        # queued orders after missed cycles, and all pre-V3 buys, are vetoed.
+        # Existing holdings and SELL/stop actions are never blocked.
+        if order and order["side"]=="BUY":
+            quote=fs.get(order.get("symbol",""))
+            if (not next_candle_only(order,ts)
+                    or not quote
+                    or not main_eligible(quote,contrarian=i in (1,5))):
+                event(st,"VETO",b["name"]+" queued BUY cancelled: stale candle or V3 cost/liquidity filter")
+                order=None
         previous_position=b.get("position")
         filled=None
         if order and order["symbol"] in prices:
@@ -285,7 +294,7 @@ def cycle(st,history,check,radar_results):
         sig=signal(i,fs,valid)
         team=subagent_team(i,fs,proposed=sig,watch_symbol=next((sym for sym in UNIVERSES[i] if sym in fs),None))
         if sig and team["result"]=="BUY":
-            b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"],"exploratory":sig.get("exploratory",False),"cost_gate_version":sig.get("cost_gate_version")}
+            b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"],"exploratory":sig.get("exploratory",False),"cost_gate_version":COST_VERSION,"signal_ts":ts}
             b["last_reason"]="BUY QUEUED: "+sig["symbol"]+" — "+sig["reason"]
             event(st,"SIGNAL",b["name"]+" queued PAPER BUY "+sig["symbol"]+"; "+sig["reason"])
             record_team_decision(st,i,ts,"BUY",team,sig)
@@ -344,9 +353,9 @@ def main():
         st["last_native_cron_run"]=utc()
     st["schedule_confirmed"]=bool(st.get("last_native_cron_run"))
     st["last_schedule_run"]=st.get("last_native_cron_run")
-    st["trade_profile"]="COST_SCREEN_V2_PAPER_EXPLORATION_1.2_PERCENT_MAX"
+    st["trade_profile"]="COST_SCREEN_V3_ALL_ENTRIES_FEE_AWARE_PAPER_ONLY"
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
-    st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP,"minimum_exploratory_three_bar_move":PROBE_MIN_THREE_BAR_MOVE,"exploratory_cost_screen_version":2}
+    st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP,"minimum_exploratory_three_bar_move":PROBE_MIN_THREE_BAR_MOVE,"cost_screen_version":COST_VERSION}
     # Wide, READ-ONLY market radar. No extra symbols become tradable.
     # Availability failures never change trade fills or the accounting ledger.
     try:
@@ -377,6 +386,10 @@ def main():
                          "experimental_eleven":money["groups"]["research"]["equity"],
                          "session_status":money["overnight"]["status"],
                          "paper_only":True}
+    # Prospective observations do not backfill skipped five-minute decisions.
+    evidence=store_continuity(st,shadow,money,DATA)
+    st["continuity"]={"status":evidence["status"],"coverage_pct":evidence["coverage_pct"],
+                      "missing_intervals":evidence["missing_intervals"],"paper_only":True} if evidence else {"status":"NO_NEW_BASELINE"}
     # Extended overnight debrief is read-only and never changes trade actions.
     # Failing to make a report must not silently stop paper BUY/SELL cycles.
     try:
