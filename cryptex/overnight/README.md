@@ -2,6 +2,14 @@
 
 **This project trades SIMULATED dollars. It does not send exchange orders, connect exchange accounts, or earn actual funds.**
 
+## 31 October 2026: V3 after-cost entry controls and evidence
+- **Every main and shadow paper BUY** now requires a strong *observed* three-candle move relative to the exact round-trip assumption (approximately 0.803% plus a 0.2 percentage-point buffer), corroborating relative volume and at least $100k approximate one-hour turnover. A move already seen does **not** predict the next move or establish a positive expectancy.
+- The queued BUY must be requalified and filled on **exactly the next closed five-minute candle**, otherwise it is vetoed. Existing positions and protective SELLs are unaffected. Legacy pre-V3 queued BUYs are cancelled, never retroactively filled.
+- **[Prospective continuity and sample-readiness report](data/continuity_report.md)** and [machine-readable state](data/continuity_report.json) begin at the first actual post-V3 candle. Missed decisions remain missing; market-data requests, duplicate runs and backfilled prices never count as executed observations.
+- First-pass sample readiness demands seven days, at least 99% actually observed five-minute intervals and at least 30 post-V3 completed trades **for that specific agent**. It only permits review; profitable performance requires a pre-registered out-of-sample and after-fee evaluation against relevant benchmarks and market regimes.
+- GitHub's five-minute cron is *best-effort*, not a guaranteed service. Genuine previous-cron gaps over ten minutes can seed a **bounded overnight recovery dispatch** (21:00–08:15 Dublin time); it stops when native cron resumes. This does not ensure daytime uptime and does not fabricate missing observations. Actions minutes on a private repository may be billed; check the GitHub usage cap before prolonged runs.
+- All work remains **PAPER_ONLY** and cannot access real exchange execution credentials.
+
 ## Check the MONEY first (morning routine)
 
 The **21 simulated traders** have **$210 starting paper capital**: original 10 agents = $100 and 11 independent mathematics/open-source research agents = $110. They only place fake orders.
