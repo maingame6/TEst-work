@@ -5,9 +5,9 @@
 **GitHub Actions:** [five-exchange test workflow](https://github.com/maingame6/TEst-work/actions/workflows/cryptex-wide-scan.yml) on `main`.
 **Persistent results:** [current five-exchange report](https://github.com/maingame6/TEst-work/blob/cryptex-wide-market-research/cryptex/overnight/data/wide_scan_report.md) on **separate** `cryptex-wide-market-research` branch.
 
-The original `data/ccxt_universe.json` discovered 4,221 venue/pair listings from Kraken, Coinbase, Bitstamp, OKX and KuCoin. **Discovery is NOT testing.** The workflow now rotates through 45 actual venue-pairs per exchange on each successful run (up to 225), downloads that venue's public five-minute OHLCV, rejects stale/incomplete candles, and evaluates four hypotheses for each validated pair with chronological next-bar fills and six-bar exits.
+The original `data/ccxt_universe.json` discovered 4,221 venue/pair listings from Kraken, Coinbase, Bitstamp, OKX and KuCoin. **Discovery is NOT testing.** The workflow now rotates through 85 actual venue-pairs per exchange on each successful run (up to 425), downloads that venue's public five-minute OHLCV, rejects stale/incomplete candles, and evaluates four hypotheses for each validated pair with chronological next-bar fills and six-bar exits.
 
-**Report definitions**
+**Full per-market audit:** [CSV of attempted pairs and outcomes](https://github.com/maingame6/TEst-work/blob/cryptex-wide-market-research/cryptex/overnight/data/wide_scan_market_results.csv). Entries with zero signals are retained.\n\n**Report definitions**
 - **Discovered:** unique venue + symbol within the CCXT spot catalogue; not priced.
 - **Attempted:** the tool actually made an active-market check for the pair and attempted its five-minute OHLCV request. Includes unavailable/unsupported/illiquid pairs and errors.
 - **Validated:** a genuine, fresh history containing at least 84 complete candle records was parsed and used for actual historical analysis. A zero-signal history is validated, not a successful trade.
