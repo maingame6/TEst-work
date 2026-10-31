@@ -47,7 +47,8 @@ def fill_order(bot,order,price,ts,name):
   bot["cash"]-=budget
   bot["position"]={"symbol":order["symbol"],"quantity":qty,
                    "entry_cost":budget,"entry_market":price,
-                   "entry_time":ts,"reason":order["reason"],"peak":price}
+                   "entry_time":ts,"reason":order["reason"],"peak":price,
+                   "cost_gate_version":order.get("cost_gate_version")}
   pnl=None;fees=qty*fill*FEE
   entry_mid=price;exit_mid=None;gross_mid_pnl=None;execution_drag=None;net_return_pct=None
  else:
@@ -62,6 +63,8 @@ def fill_order(bot,order,price,ts,name):
   net_return_pct=100*pnl/max(p["entry_cost"],1e-12)
   bot["cash"]+=proceeds;bot["closed"]+=1
   bot["wins"]+=int(pnl>0);bot["realized"]+=pnl
+  if p.get("cost_gate_version")==COST_VERSION:
+   bot["qualified_v3_closed"]=bot.get("qualified_v3_closed",0)+1
   bot["recent_outcomes"]=(bot["recent_outcomes"]+[pnl])[-50:]
   bot["position"]=None
   fees=qty*fill*FEE
@@ -70,7 +73,8 @@ def fill_order(bot,order,price,ts,name):
          "pnl":pnl,"entry_mid":entry_mid,"exit_mid":exit_mid,
          "gross_mid_pnl":gross_mid_pnl,"execution_drag":execution_drag,
          "net_return_pct":net_return_pct,
-         "reason":order["reason"],"paper":True}
+         "reason":order["reason"],"paper":True,
+         "entry_cost_gate_version":(order.get("cost_gate_version") if buy else p.get("cost_gate_version"))}
 
 def exit_reason(p,price,ts):
  gain=price/p["entry_market"]-1.
