@@ -145,7 +145,7 @@ def store(folder,history,ts,now):
         # Retain it separately, exactly as it was received.
         previous=directory/"entry_study_legacy_v1.json"
         if not previous.exists():
-            previous.write_text(json.dumps(state,indent=2,allow_nan=False)+"\\n")
+            previous.write_text(json.dumps(state,indent=2,allow_nan=False)+"\n")
         state=blank()
     if update(state,history,ts):
         path.write_text(json.dumps(state,indent=2,allow_nan=False)+"\n")
