@@ -531,7 +531,7 @@ def review_report(st,rows,total):
         "data_errors_latest":st.get("errors",{}),
         "missing_or_stale_data_causes_no_order":True,
         "risk_paused":st.get("halted",False),
-        "methodology":"Mark-to-market equity includes open positions. Realized P&L uses 0.15% simulated fee and 0.25% slippage each side. Not actual exchange fills.",
+        "methodology":"Mark-to-market equity includes open positions. Current V4 realization applies 0.80% Kraken published Tier 1 taker fee plus 0.25% estimated slippage on BOTH sides. Historical V3 fills retain cheaper assumptions. These are not real fills.",
         "limitations":"Paper research only. No demonstrated positive edge or real earnings. GitHub Actions cron can be delayed or skipped."
     }
     (DATA/"review.json").write_text(json.dumps(result,indent=2,ensure_ascii=False,allow_nan=False)+"\n")
