@@ -12,7 +12,7 @@ import json
 import math
 from pathlib import Path
 from zoneinfo import ZoneInfo
-from cost_model import FEE, SLIP, sell_factor, break_even, cost_assumptions
+from cost_model import FEE, SLIP, buy_factor, sell_factor, break_even, cost_assumptions
 
 LOCAL = ZoneInfo('Europe/Dublin')
 SELL_FACTOR = sell_factor()
@@ -195,7 +195,7 @@ def compare_to_buy_hold(snap, main, folder):
             if x is None or not math.isfinite(float(x)) or float(x)<=0:
                 continue
             mid=numeric(x)
-            full_entry=mid*(1+.0025)*(1+.0015)
+            full_entry=mid*buy_factor()
             frozen[sym]={"started_at":snap["generated_at"],"entry_mid":mid,
                          "initial_paper_cash":10.,"quantity":10./full_entry}
         if frozen:
