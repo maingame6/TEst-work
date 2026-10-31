@@ -12,7 +12,7 @@ import json
 import math
 from pathlib import Path
 
-SYMBOLS=("BTC","ETH","SOL","BNB","XRP","ADA","DOGE","SHIB","PEPE","BONK","WIF","FLOKI")
+SYMBOLS=("BTC","ETH","SOL","BNB","XRP","ADA","DOGE","SHIB","PEPE","BONK","WIF","FLOKI","LTC","BCH","LINK","DOT","AVAX","XLM","TRX","NEAR","AAVE","UNI","TON","SUI")
 
 def parse(s):
     return dt.datetime.fromisoformat(str(s).replace("Z","+00:00")).astimezone(dt.timezone.utc)
@@ -275,7 +275,7 @@ def render(r):
         ", confirmed "+str(w["confirmed"])+", observed "+str(w["observed"])+
         "; source polled "+str(w["polled_at"])+
         "; age "+str(w["age_minutes"])+" minutes.",
-        "**This does not expand the original 12-asset simulated execution universe.**",
+        "**This does not expand the bounded 24-asset simulated execution universe.**",
         "Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.",
         ""]
     if w["status"]=="FRESH":
@@ -320,7 +320,7 @@ def render(r):
       "; qualifying spot USD/USDT/USDC/EUR listings "+str(cm["spot_market_listings"])+
       "; unique spot symbols "+str(cm["unique_pair_symbols"])+
       "; unique base tickers "+str(cm["unique_base_tickers"])+".",
-      "**Important: CCXT catalogues are symbol metadata, not current quoted prices.** A discovered market cannot enter simulated trading unless independently verified in the original 12-asset engine.",
+      "**Important: CCXT catalogues are symbol metadata, not current quoted prices.** A discovered market cannot enter simulated trading unless independently verified in the 24-asset, quality-gated completed-candle engine.",
       ""]
     if cm["venues_checked"]:
         L+=["| Exchange | Discovery status | All returned markets | Spot watch candidates |",
