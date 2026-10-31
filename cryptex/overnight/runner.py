@@ -171,7 +171,7 @@ def journal(st,b,order,price,ts,port):
         if budget<.5:return
         fill=price*(1+SLIP);qty=budget/(fill*(1+FEE))
         b["cash"]-=budget
-        b["position"]={"symbol":s,"entry_mid":price,"entry_price":fill,"entry_cost":budget,"entry_ts":ts,"qty":qty,"high_water":price,"trail_armed":False,"entry_reason":order["reason"],"exploratory":bool(order.get("exploratory",False))}
+        b["position"]={"symbol":s,"entry_mid":price,"entry_price":fill,"entry_cost":budget,"entry_ts":ts,"qty":qty,"high_water":price,"trail_armed":False,"entry_reason":order["reason"],"exploratory":bool(order.get("exploratory",False)),"cost_gate_version":order.get("cost_gate_version")}
         pnl=None;fees=qty*fill*FEE
         mid_entry=price;mid_exit=None;gross_mid_pnl=None;execution_drag=None;net_return_pct=None
     else:
@@ -182,11 +182,14 @@ def journal(st,b,order,price,ts,port):
         execution_drag=gross_mid_pnl-pnl
         net_return_pct=100*pnl/max(p["entry_cost"],1e-12)
         b["cash"]+=proceeds;b["wins"]+=int(pnl>0);b["closed"]+=1;b["net"]+=pnl
+        if p.get("cost_gate_version")==COST_VERSION:
+            b["qualified_v3_closed"]=b.get("qualified_v3_closed",0)+1
         b["completed"]=(b["completed"]+[pnl/max(p["entry_cost"],1e-12)])[-80:]
         b["position"]=None
     rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"exploratory":bool(order.get("exploratory",False) if buy else p.get("exploratory",False)),
          "entry_mid":mid_entry,"exit_mid":mid_exit,"gross_mid_pnl":gross_mid_pnl,
-         "execution_drag":execution_drag,"net_return_pct":net_return_pct,"paper":True}
+         "execution_drag":execution_drag,"net_return_pct":net_return_pct,"paper":True,
+         "entry_cost_gate_version":(order.get("cost_gate_version") if buy else p.get("cost_gate_version"))}
     st["trades"].insert(0,rec);del st["trades"][1500:]
     if buy:event(st,"BUY",b["name"]+" BUY "+s+" simulated "+str(round(budget,2)))
     else:event(st,"SELL",b["name"]+" SELL "+s+" net "+str(round(pnl,4))+" because "+order["reason"])
