@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-10-31T21:16:36.008152+00:00",
-  "status": "HEALTHY: waiting for a newly closed Kraken candle",
+  "generated_utc": "2026-10-31T21:21:39.120661+00:00",
+  "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
   "subagents_per_team": 64,
@@ -10,90 +10,90 @@
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 8,
-      "opposition": 19,
+      "opposition": 17,
       "veto": 0,
-      "factor_score": -0.1142
+      "factor_score": -0.0945
     },
     "HOUSE": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 24,
+      "support": 22,
       "opposition": 3,
       "veto": 0,
-      "factor_score": 0.2815
+      "factor_score": 0.2626
     },
     "SPY": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 4,
-      "opposition": 21,
+      "support": 8,
+      "opposition": 19,
       "veto": 0,
-      "factor_score": -0.1052
+      "factor_score": -0.0642
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 5,
-      "opposition": 21,
+      "support": 7,
+      "opposition": 18,
       "veto": 2,
-      "factor_score": -0.0784
+      "factor_score": -0.0482
     },
     "BREAKOUT": {
       "decision": "SELL",
       "symbol": "ETH",
-      "support": 4,
-      "opposition": 17,
+      "support": 8,
+      "opposition": 14,
       "veto": 0,
-      "factor_score": -0.0875
+      "factor_score": 0.0198
     },
     "CONTRARIAN": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 24,
+      "support": 22,
       "opposition": 3,
       "veto": 0,
-      "factor_score": 0.2815
+      "factor_score": 0.2626
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 8,
-      "opposition": 19,
+      "opposition": 17,
       "veto": 0,
-      "factor_score": -0.1142
+      "factor_score": -0.0945
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 8,
-      "opposition": 19,
+      "opposition": 17,
       "veto": 0,
-      "factor_score": -0.1142
+      "factor_score": -0.0945
     },
     "FRACTAL": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 8,
-      "opposition": 19,
+      "opposition": 17,
       "veto": 0,
-      "factor_score": -0.1142
+      "factor_score": -0.0945
     },
     "SHOCKWAVE": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 5,
-      "opposition": 21,
+      "support": 7,
+      "opposition": 18,
       "veto": 2,
-      "factor_score": -0.0784
+      "factor_score": -0.0482
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 99.210302,
-  "portfolio_paper_change_usd": -0.789698,
-  "all_time_closed_paper_trades": 38,
+  "current_paper_equity_usd": 99.187345,
+  "portfolio_paper_change_usd": -0.812655,
+  "all_time_closed_paper_trades": 39,
   "all_time_closed_wins": 5,
-  "all_time_closed_losses": 33,
-  "aggregate_realized_pnl_usd": -0.646581,
+  "all_time_closed_losses": 34,
+  "aggregate_realized_pnl_usd": -0.712754,
   "agents": {
     "GAMBLER": {
       "closed": 3,
@@ -148,15 +148,15 @@
       "position_size_multiplier": 1.0
     },
     "BREAKOUT": {
-      "closed": 3,
+      "closed": 4,
       "wins": 0,
-      "losses": 3,
+      "losses": 4,
       "win_rate": 0.0,
-      "realized_net_usd": -0.133264,
-      "average_profit_usd": -0.044421,
+      "realized_net_usd": -0.199437,
+      "average_profit_usd": -0.049859,
       "average_win_usd": null,
-      "average_loss_usd": -0.044421,
-      "last_20_net_usd": -0.133264,
+      "average_loss_usd": -0.049859,
+      "last_20_net_usd": -0.199437,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -242,8 +242,8 @@
       "net_pnl_usd": -0.176489
     },
     "Breakout failed": {
-      "count": 2,
-      "net_pnl_usd": -0.116567
+      "count": 3,
+      "net_pnl_usd": -0.18274
     },
     "Trend failure": {
       "count": 1,
