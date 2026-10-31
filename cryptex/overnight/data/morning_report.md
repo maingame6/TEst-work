@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-10-31T22:38:11.887241+00:00 (Europe/Dublin)
+Checked: 2026-10-31T22:43:14.971305+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $208.9014 at 2026-10-31T21:15:32.467800+00:00 (NOT backdated to 21:00).
-Overnight P&L $+0.0414 as of 2026-10-31T22:38:11.887241+00:00.
+Overnight P&L $+0.0414 as of 2026-10-31T22:43:14.971305+00:00.
 New paper fills since session started: 5.
 
 ## Price prediction versus trading costs
@@ -47,8 +47,8 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
 | BTC | 2026-10-30T22:21:37.361980+00:00 | $10.0401 | $+0.0401 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.0323 | $+0.0323 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.9609 | $-0.0391 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.0336 | $+0.0336 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.9568 | $-0.0432 |
 
 ## 21-agent leaderboard
 
@@ -78,7 +78,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793485800 / 1793485800
+Latest main/shadow candle timestamps: 1793486100 / 1793486100
 Warnings: none
 Balances include hypothetical estimated future sale fee 0.15% and slippage 0.25%; not executable quotes.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
