@@ -96,6 +96,9 @@ class WideScanTests(unittest.TestCase):
             self.assertEqual(r2["unique_tested_venue_pairs"],10)
             self.assertEqual(r3["unique_tested_venue_pairs"],15)
             self.assertEqual(r3["batches"],3)
+            r4=W.run(p,d,WHEN,FakeCCXT,per_venue=1)
+            self.assertEqual(r4["last_batch"]["attempted"],0)  # Never waste calls on already-checked pairs
+            self.assertEqual(r4["unique_tested_venue_pairs"],15)
             self.assertFalse((d/"trades.csv").exists())
 
     def test_no_live_accounts_or_execution_method(self):
