@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-31T21:21:39.040768+00:00",
+  "generated_at": "2026-10-31T21:26:45.112959+00:00",
   "paper_only": true,
-  "candle_ts": 1793481300,
-  "cycles": 28,
+  "candle_ts": 1793481600,
+  "cycles": 29,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,7 +16,7 @@
       "wins": 0,
       "realized": -0.030568,
       "paper_return": -0.030568,
-      "latest_decision": "HOLD XRP",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -38,32 +38,20 @@
       "wins": 0,
       "realized": -0.02135,
       "paper_return": -0.02135,
-      "latest_decision": "HOLD BTC",
+      "latest_decision": "HOLD PEPE",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.973068,
-      "closed": 3,
+      "equity": 9.969787,
+      "closed": 4,
       "wins": 0,
-      "realized": -0.022762,
-      "paper_return": -0.026932,
-      "latest_decision": "SELL_QUEUED XRP",
-      "queued": {
-        "side": "SELL",
-        "symbol": "XRP",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "XRP",
-        "quantity": 0.7955752342277166,
-        "entry_cost": 0.9977237761427944,
-        "entry_market": 1.24909,
-        "entry_time": 1793479500,
-        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
-        "peak": 1.24909
-      },
+      "realized": -0.030213,
+      "paper_return": -0.030213,
+      "latest_decision": "FILLED_SELL XRP",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
@@ -72,7 +60,7 @@
       "wins": 0,
       "realized": -0.02553,
       "paper_return": -0.02553,
-      "latest_decision": "HOLD SOL",
+      "latest_decision": "HOLD PEPE",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -83,32 +71,20 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD XRP",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.973032,
-      "closed": 3,
+      "equity": 9.972046,
+      "closed": 4,
       "wins": 0,
-      "realized": -0.018615,
-      "paper_return": -0.026968,
-      "latest_decision": "SELL_QUEUED PEPE",
-      "queued": {
-        "side": "SELL",
-        "symbol": "PEPE",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "PEPE",
-        "quantity": 198752.1184403413,
-        "entry_cost": 0.9981384569172032,
-        "entry_market": 5.002e-06,
-        "entry_time": 1793479500,
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.160, gate=0.14",
-        "peak": 5.002e-06
-      },
+      "realized": -0.027954,
+      "paper_return": -0.027954,
+      "latest_decision": "FILLED_SELL PEPE",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
@@ -145,26 +121,14 @@
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.980687,
-      "closed": 3,
+      "equity": 9.97729,
+      "closed": 4,
       "wins": 0,
-      "realized": -0.014969,
-      "paper_return": -0.019313,
-      "latest_decision": "SELL_QUEUED ETH",
-      "queued": {
-        "side": "SELL",
-        "symbol": "ETH",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "ETH",
-        "quantity": 0.00044180130828203024,
-        "entry_cost": 0.9985030674881312,
-        "entry_market": 2251.06,
-        "entry_time": 1793479500,
-        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.176, gate=0.14",
-        "peak": 2251.06
-      },
+      "realized": -0.02271,
+      "paper_return": -0.02271,
+      "latest_decision": "FILLED_SELL ETH",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     }
   },
