@@ -32,7 +32,7 @@ UNIVERSES=[
  ["DOGE","SHIB","PEPE","BONK","WIF","FLOKI","SUI","TON"]
 ]
 MAX_ORDER=.08; STOP=.06
-# The observed after-cost break-even is ~0.803%. A historical price move is
+# The observed after-cost break-even is ~2.122%. A historical price move is
 # NOT a forecast; the extra 0.2% is a conservative screening buffer only.
 PROBE_COST_BUFFER=.002
 PROBE_MIN_THREE_BAR_MOVE=MIN_THREE_BAR_MOVE
@@ -110,7 +110,7 @@ def signal(i,fs,h):
         best["exploratory"]=False
         best["cost_gate_version"]=COST_VERSION
         return best
-    # COST SCREEN V2: yesterday's 15-minute, low-movement probes lost money
+    # COST SCREEN V4: earlier 15-minute, low-movement probes lost money
     # mainly to assumed fees and slippage. Keep weak setups observation-only.
     # This is a falsifiable paper experiment, not evidence of a predictive edge.
     # Higher liquidity/volume and a price move larger than assumed round-trip
@@ -132,7 +132,7 @@ def signal(i,fs,h):
     score,sym,x=max(picks,key=lambda row:row[0])
     thesis="reversion" if i in (1,5) else "directional momentum"
     return {"symbol":sym,"score":float(score),
-            "reason":f"EXPLORATORY PAPER PROBE [COST_SCREEN_V3] ({thesis}; 3-bar {x['ret3']*100:+.2f}%; RSI {x['rsi']:.0f}; volume {x['vr']:.2f}x)",
+            "reason":f"EXPLORATORY PAPER PROBE [COST_SCREEN_V4] ({thesis}; 3-bar {x['ret3']*100:+.2f}%; RSI {x['rsi']:.0f}; volume {x['vr']:.2f}x)",
             "exploratory":True,"cost_gate_version":COST_VERSION}
 def init():
     return {"mode":"PAPER_ONLY","version":4,"created":utc(),"last_ts":0,"capital":100,"initial_capital":100,"daily_start":100,"daily_date":utc()[:10],"peak":100,"halted":False,"health":"NO DATA YET","last_prices":{},"last_checked":None,"feeds":{},"radar":[],"bots":[{"name":n,"cash":10.0,"position":None,"pending":None,"last_reason":"Waiting for market","wins":0,"closed":0,"net":0,"completed":[]} for n in NAMES],"trades":[],"events":[],"learning":{},"cycles":0}
@@ -189,7 +189,7 @@ def journal(st,b,order,price,ts,port):
         net_return_pct=100*pnl/max(p["entry_cost"],1e-12)
         b["cash"]+=proceeds;b["wins"]+=int(pnl>0);b["closed"]+=1;b["net"]+=pnl
         if p.get("cost_gate_version")==COST_VERSION:
-            b["qualified_v3_closed"]=b.get("qualified_v3_closed",0)+1
+            b["qualified_v4_closed"]=b.get("qualified_v4_closed",0)+1
         b["completed"]=(b["completed"]+[pnl/max(p["entry_cost"],1e-12)])[-80:]
         b["position"]=None
     rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"exploratory":bool(order.get("exploratory",False) if buy else p.get("exploratory",False)),
@@ -259,14 +259,14 @@ def cycle(st,history,check,radar_results):
     for i,b in enumerate(st["bots"]):
         order=b["pending"];b["pending"]=None
         # Only NEXT completed candle may fill a new cost-approved BUY. Old
-        # queued orders after missed cycles, and all pre-V3 buys, are vetoed.
+        # queued orders after missed cycles, and all pre-V4 buys, are vetoed.
         # Existing holdings and SELL/stop actions are never blocked.
         if order and order["side"]=="BUY":
             quote=fs.get(order.get("symbol",""))
             if (not next_candle_only(order,ts)
                     or not quote
                     or not main_eligible(quote,contrarian=i in (1,5))):
-                event(st,"VETO",b["name"]+" queued BUY cancelled: stale candle or V3 cost/liquidity filter")
+                event(st,"VETO",b["name"]+" queued BUY cancelled: stale candle or V4 cost/liquidity filter")
                 order=None
         previous_position=b.get("position")
         filled=None
@@ -368,7 +368,7 @@ def main():
         st["last_native_cron_run"]=utc()
     st["schedule_confirmed"]=bool(st.get("last_native_cron_run"))
     st["last_schedule_run"]=st.get("last_native_cron_run")
-    st["trade_profile"]="COST_SCREEN_V3_ALL_ENTRIES_FEE_AWARE_PAPER_ONLY"
+    st["trade_profile"]="COST_SCREEN_V4_ALL_ENTRIES_FEE_AWARE_PAPER_ONLY"
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP,"minimum_exploratory_three_bar_move":PROBE_MIN_THREE_BAR_MOVE,"cost_screen_version":COST_VERSION}
     # Wide read-only ticker radar remains distinct from the 24-candle vetted paper universe.
