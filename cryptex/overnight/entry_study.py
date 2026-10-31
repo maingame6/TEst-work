@@ -13,7 +13,7 @@ import pathlib
 from cost_model import (FEE, SLIP, STRESS_FEE, STRESS_SLIP, break_even, returns, cost_assumptions)
 ROUND_TRIP_BREAK_EVEN=break_even()
 
-VERSION=1
+VERSION=2
 INTERVAL=300
 HOLD_BARS=6
 MAX_OPEN_PER_GATE=5
@@ -140,6 +140,13 @@ def store(folder,history,ts,now):
     directory=pathlib.Path(folder)
     path=directory/"entry_study_state.json"
     state=json.loads(path.read_text()) if path.exists() else blank()
+    if state.get("schema")!=VERSION:
+        # A previous cheaper-fee observation must NEVER be reported under V4.
+        # Retain it separately, exactly as it was received.
+        previous=directory/"entry_study_legacy_v1.json"
+        if not previous.exists():
+            previous.write_text(json.dumps(state,indent=2,allow_nan=False)+"\\n")
+        state=blank()
     if update(state,history,ts):
         path.write_text(json.dumps(state,indent=2,allow_nan=False)+"\n")
     report=summarize(state,now)
