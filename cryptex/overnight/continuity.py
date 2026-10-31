@@ -46,13 +46,12 @@ def report(state, shadow, money, directory):
     expected = c["observed_candles"] + c["missing_intervals"]
     coverage = c["observed_candles"] / expected if expected else 0.
     duration_seconds = c["last_candle_ts"] - c["first_candle_ts"]
-    main = {b["name"]: max(0, b["closed"] - c["main_closed_baseline"].get(
-        b["name"], b["closed"])) for b in state["bots"]}
+    main = {b["name"]: int(b.get("qualified_v3_closed", 0)) for b in state["bots"]}
     # Research baseline is frozen at first report, never retroactively backfilled.
     base = c.setdefault("shadow_closed_baseline", {
         name: b["closed"] for name, b in shadow["bots"].items()
     })
-    research = {name: max(0, b["closed"] - base.get(name, b["closed"]))
+    research = {name: int(b.get("qualified_v3_closed", 0))
                 for name, b in shadow["bots"].items()}
     seven_days = duration_seconds >= MIN_DAYS * 86400
     result = {
