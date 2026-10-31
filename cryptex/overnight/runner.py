@@ -350,6 +350,7 @@ def main():
     # Recovered scheduled-job reruns must not misrepresent cron reliability.
     # Retain only executions witnessed with first-attempt scheduled jobs.
     if genuine_cron_execution(st["trigger_event"],st["github_run_attempt"]):
+        st["previous_native_cron_run"]=st.get("last_native_cron_run")
         st["last_native_cron_run"]=utc()
     st["schedule_confirmed"]=bool(st.get("last_native_cron_run"))
     st["last_schedule_run"]=st.get("last_native_cron_run")
