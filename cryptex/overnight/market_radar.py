@@ -1,6 +1,6 @@
 """Read-only broad-market radar: large Kraken spot watchlist in two public calls.
 
-Never expands 12-asset PAPER execution universe, never returns trading orders.
+Research-only ticker radar; separate vetted 24-asset PAPER execution universe.
 AssetPairs discovers *actual* supported USD pairs (no fake prices). A
 single batched Ticker call measures bid/ask, 24-hour volume and change since
 the *UTC opening price*, not '24-hour price change'. Missing feeds stay missing.
