@@ -6,6 +6,7 @@ or represents paper returns as actual profits.
 import csv, datetime as dt, json, math, os, pathlib, statistics, time, urllib.parse, urllib.request
 from subagents import ROLES, subagent_team, format_votes
 from execution_gate import (main_eligible, next_candle_only, MIN_THREE_BAR_MOVE, VERSION as COST_VERSION)
+from cost_model import FEE, SLIP
 from continuity import mark as mark_prospective_candle, report as store_continuity
 BASE=pathlib.Path(__file__).resolve().parent
 DATA=BASE/"data"
@@ -30,7 +31,7 @@ UNIVERSES=[
  ["BTC","ETH","SOL","ADA","DOGE","PEPE","AAVE","UNI","NEAR"],
  ["DOGE","SHIB","PEPE","BONK","WIF","FLOKI","SUI","TON"]
 ]
-FEE=.0015; SLIP=.0025; MAX_ORDER=.08; STOP=.06
+MAX_ORDER=.08; STOP=.06
 # The observed after-cost break-even is ~0.803%. A historical price move is
 # NOT a forecast; the extra 0.2% is a conservative screening buffer only.
 PROBE_COST_BUFFER=.002
