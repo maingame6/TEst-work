@@ -43,6 +43,10 @@ def report(state, shadow, money, directory):
     c = state.get("prospective_evidence")
     if not c:
         return None
+    # Record the FIRST actual policy-window balance, never reconstruct an
+    # earlier entry price. The V4 equity delta can include legacy holdings and
+    # therefore is not proof of pure V4 strategy performance.
+    c.setdefault("first_policy_equity", float(money["balance"]))
     expected = c["observed_candles"] + c["missing_intervals"]
     coverage = c["observed_candles"] / expected if expected else 0.
     duration_seconds = c["last_candle_ts"] - c["first_candle_ts"]
@@ -76,6 +80,9 @@ def report(state, shadow, money, directory):
             and count >= MIN_CLOSED_PER_STRATEGY
             for name, count in {**main, **research}.items()},
         "net_paper_pnl_total": money["pnl"],
+        "first_policy_equity":round(c["first_policy_equity"],6),
+        "change_since_first_policy_observation":round(float(money["balance"])-c["first_policy_equity"],6),
+        "historical_data_note":"V3 closed trades retain older lower cost assumption; this V4 prospective sample counts only V4-qualified closes. Balance deltas may reflect V3-era holdings.",
         "status": "REVIEW_SAMPLES_AVAILABLE" if seven_days and coverage >= MIN_COVERAGE
             and any(n >= MIN_CLOSED_PER_STRATEGY for n in [*main.values(), *research.values()])
             else "INSUFFICIENT_TRADE_SAMPLE" if seven_days and coverage >= MIN_COVERAGE
@@ -94,6 +101,7 @@ def report(state, shadow, money, directory):
         f"**Missing five-minute decisions:** {c['missing_intervals']}",
         f"**Largest observed interval:** {c['max_gap_minutes']:.1f} minutes",
         f"**Evidence duration:** {result['days_observed']:.3f} days (require {MIN_DAYS})",
+        f"**V4 policy-window paper balance delta:** ${result['change_since_first_policy_observation']:+.6f} (legacy holdings may affect it)",
         f"**Review prerequisites:** >=99% coverage and >=30 post-policy exits PER strategy; held-out after-cost superiority still unproven.",
         "",
         "## New completed trades since this policy started",
