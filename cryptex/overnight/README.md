@@ -4,7 +4,7 @@
 
 ## 31 October: new 24-asset execution watchlist and prospective entry-threshold study
 - Expanded actual Kraken completed five-minute OHLCV paper watchlist from 12 to **24** *listed* tokens using existing candle freshness, volume, independent quote-cross-check, portfolio limits, and next-candle fills; 71+ wider Kraken radar markets and CCXT catalogues remain **discovery-only**, not executable.
-- Four **independent forward-only threshold comparisons** run against the incoming candles: V3 strict, near-break-even cost-aware, a balanced 0.5% test, and a 0.25% low-hurdle control. Research-only entry signal is at bar N; hypothetical entry is at N+1 and after-cost exit N+7. Skipped bars are censored, never backfilled.
+- Four **independent forward-only threshold comparisons** run against the incoming candles: V4 2.32% strict, 2.17% near-break-even, a 1.2% balanced study, and a 0.5% low-hurdle control. Research-only entry signal is at bar N; hypothetical entry is at N+1 and after-cost exit N+7. Skipped bars are censored, never backfilled.
 - [Entry experiment report](data/entry_study_report.md) and [machine-readable results](data/entry_study_report.json). The test makes no claims of profitability and **cannot** alter the original $210 paper accounts. No parameter changes are auto-promoted.
 - Automatic GitHub fallback is best-effort, runs all day during a **bounded nine-day evidence collection**, then stops self-dispatch. Native cron remains active independently. The nine-day pilot has a firm stop to avoid indefinite Actions consumption; there is no guaranteed 99% uptime SLA on GitHub Actions.
 
@@ -37,7 +37,7 @@ The **21 simulated traders** have **$210 starting paper capital**: original 10 a
 - **[GitHub Actions job history](https://github.com/maingame6/TEst-work/actions/workflows/cryptex-paper.yml)** — essential for checking whether the best-effort five-minute schedule actually ran.
 - **[Experimental visual trading dashboard](overnight.html)**, which needs a proper static HTTP host. Opening the HTML source via GitHub does not execute it; if a third-party preview asks for consent, use the reliable Markdown report above.
 
-**Accounting:** paper equity is marked to the latest *closed* valid market candle, less the estimated costs of liquidating any remaining holdings (0.15% fee and 0.25% slippage per side). Starting cash is $210, not a bank balance. Realised profit is only recorded when a position sells. Never call paper profits earned money. If data is stale or missing, the reports say so. No simulated trades are invented to fill a chart.
+**Accounting:** paper equity is marked to the latest *closed* valid market candle, less the estimated costs of liquidating any remaining holdings (V4 0.80% Kraken Tier-1 taker fee and 0.25% estimated slippage per side). Starting cash is $210, not a bank balance. Realised profit is only recorded when a position sells. Never call paper profits earned money. If data is stale or missing, the reports say so. No simulated trades are invented to fill a chart.
 
 ## What is running, and what GitHub can do
 
@@ -108,7 +108,7 @@ The four hard checks cover valid candle features, USD turnover, volatility, and 
 
 Gambler (trend); House (range rebound); Spy (volume-jump proxy, NOT actual wallet following); Meme Hunter (listed-asset momentum); Breakout (Donchian); Contrarian (RSI); Rotator (relative strength); Vortex (flow proxy); Fractal (multi-scale entropy); Shockwave (lag-correlation hypothesis).
 
-Every agent begins with **$10 fictitious cash**. 8% of total portfolio equity maximum per new order, 6% stop trigger at observed candle close, 12% gain to arm trailing stop, daily loss trigger of 5%, peak drawdown trigger of 15%, no averaging down, no leverage, only one position per bot. **Stopped positions may execute materially below the stop threshold** when sampled later. Transaction cost model: 0.15% fee + 0.25% slippage each side, estimates only.
+Every agent begins with **$10 fictitious cash**. 8% of total portfolio equity maximum per new order, 6% stop trigger at observed candle close, 12% gain to arm trailing stop, daily loss trigger of 5%, peak drawdown trigger of 15%, no averaging down, no leverage, only one position per bot. **Stopped positions may execute materially below the stop threshold** when sampled later. V4 cost model: 0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage each side, plus 0.50% slippage stress scenario; historical V3 fills stay at their original lower rates.
 
 ## How it adapts
 
