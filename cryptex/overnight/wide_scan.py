@@ -147,13 +147,14 @@ def scan_venue(venue,selection,now_ms,ccxt_lib):
   for row in selection:
    sym=row["symbol"]
    result={"venue":venue,"symbol":sym,"quote":row["quote"],
-           "status":"UNAVAILABLE"}
+           "status":"UNAVAILABLE","metadata_checked":True,"ohlcv_requested":False}
    try:
     m=markets.get(sym)
     if not m or m.get("spot") is not True or m.get("active") is False:
      raise ValueError("PAIR_NOT_ACTIVE_SPOT")
     if not m.get("linear") and m.get("contract") is True:
      raise ValueError("CONTRACT_NOT_SPOT")
+    result["ohlcv_requested"]=True
     bars=exchange.fetch_ohlcv(sym,timeframe="5m",limit=180)
     result.update(analyze(bars,now_ms,venue,row["quote"]))
    except Exception as exc:
@@ -162,7 +163,8 @@ def scan_venue(venue,selection,now_ms,ccxt_lib):
  except Exception as exc:
   for row in selection:
    results.append({"venue":venue,"symbol":row["symbol"],"quote":row["quote"],
-                   "status":"UNAVAILABLE",
+                   "status":"UNAVAILABLE","metadata_checked":False,
+                   "ohlcv_requested":False,
                    "reason":("VENUE_FAILURE:"+type(exc).__name__+":"+str(exc))[:160]})
  finally:
   if exchange is not None:
@@ -175,7 +177,13 @@ def report(state,market_index,discovery,now):
  for venue,available in market_index.items():
   keys=[venue+"|"+x["symbol"] for x in available]
   rows=[state["seen"][k] for k in keys if k in state["seen"]]
+  def ever_checked(r):
+   return r.get("ever_checked", r.get("metadata_checked", not str(r.get("reason","")).startswith("VENUE_FAILURE:")))
+  def ever_requested(r):
+   return r.get("ever_ohlcv_requested",r.get("ohlcv_requested",r.get("status")=="VALIDATED_OHLCV" or any(v in r.get("reason","") for v in ("INSUFFICIENT_CLOSED_BARS","STALE_OHLCV"))))
   totals[venue]={"discovered":len(available),"attempted_distinct":len(rows),
+     "metadata_checked_distinct":sum(bool(ever_checked(r)) for r in rows),
+     "ohlcv_requested_distinct":sum(bool(ever_requested(r)) for r in rows),
      "validated_ohlcv_distinct":sum(r.get("ever_valid",False) for r in rows),
      "last_attempt_valid":sum(r["status"]=="VALIDATED_OHLCV" for r in rows),
      "latest_failed":sum(r["status"]!="VALIDATED_OHLCV" for r in rows),
@@ -197,6 +205,8 @@ def report(state,market_index,discovery,now):
     "not_real_orders":True,"discovered_listing_total":sum(len(v) for v in market_index.values()),
     "catalogue_source_listings":discovery.get("spot_quote_matched_listings"),
     "unique_tested_venue_pairs":sum(v["attempted_distinct"] for v in totals.values()),
+    "unique_exchange_market_metadata_checked":sum(v["metadata_checked_distinct"] for v in totals.values()),
+    "unique_ohlcv_requested":sum(v["ohlcv_requested_distinct"] for v in totals.values()),
     "unique_ohlcv_validated_pairs":sum(v["validated_ohlcv_distinct"] for v in totals.values()),
     "markets_with_any_historical_signal":sum(any(z["samples"]>0 for z in r.get("strategy_results",{}).values())
                                           for r in validated),
@@ -212,7 +222,9 @@ def markdown(r):
   "**These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**","",
   f"Last batch: {r['generated_at']}; scanning cycles: {r['batches']}.",
   f"Discovered: {r['discovered_listing_total']} distinct venue/pair listings.",
-  f"Attempted with exchange API: **{r['unique_tested_venue_pairs']}**.",
+  f"Selected in scan batches: **{r['unique_tested_venue_pairs']}**.",
+  f"Checked against exchange metadata: **{r['unique_exchange_market_metadata_checked']}**.",
+  f"Real 5m OHLCV requests attempted: **{r['unique_ohlcv_requested']}**.",
   f"Validated recent closed-candle histories: **{r['unique_ohlcv_validated_pairs']}**.",
   f"Venue/pairs producing historical strategy samples: **{r['markets_with_any_historical_signal']}**.","",
   "| Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |",
@@ -234,6 +246,7 @@ def markdown(r):
 def market_csv(state,path):
  """One auditable record PER attempted venue/pair, including zero-signal pairs."""
  fields=["venue","symbol","quote","checked_at","status","ever_valid",
+         "ever_checked","ever_ohlcv_requested",
          "history_bars","last_complete_ms","reason","fee_per_side",
          "fee_status","momentum_samples","momentum_net_pct",
          "cost_aware_samples","cost_aware_net_pct","breakout_samples",
@@ -249,6 +262,8 @@ def market_csv(state,path):
     "venue":r["venue"],"symbol":r["symbol"],"quote":r["quote"],
     "checked_at":r.get("checked_at"),"status":r["status"],
     "ever_valid":r.get("ever_valid",False),
+    "ever_checked":r.get("ever_checked",r.get("metadata_checked",True)),
+    "ever_ohlcv_requested":r.get("ever_ohlcv_requested",r.get("ohlcv_requested",False)),
     "history_bars":r.get("bars"),"last_complete_ms":r.get("last_completed_ms"),
     "reason":r.get("reason",""),"fee_per_side":r.get("fee_per_side"),
     "fee_status":r.get("fee_status"),
@@ -291,6 +306,8 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE):
   row["checked_at"]=now
   row["attempts"]=int(old.get("attempts",0))+1
   row["ever_valid"]=row["status"]=="VALIDATED_OHLCV" or old.get("ever_valid",False)
+  row["ever_checked"]=bool(row.get("metadata_checked")) or old.get("ever_checked",False)
+  row["ever_ohlcv_requested"]=bool(row.get("ohlcv_requested")) or old.get("ever_ohlcv_requested",False)
   # Preserve prior successful metrics through transient API failures.
   if row["status"]!="VALIDATED_OHLCV" and old.get("strategy_results"):
    row["strategy_results"]=old["strategy_results"]
