@@ -65,7 +65,7 @@ jobs:
           python3 cryptex/overnight/wide_scan.py \
             --catalog cryptex/overnight/data/ccxt_universe.json \
             --out wide-output/cryptex/overnight/data \
-            --per-venue 45
+            --per-venue 85
       - name: Check paper-only output and export visible coverage
         run: |
           python3 - <<'PY'
@@ -90,6 +90,7 @@ jobs:
           git add -f cryptex/overnight/data/wide_scan_state.json
           git add -f cryptex/overnight/data/wide_scan_report.json
           git add -f cryptex/overnight/data/wide_scan_report.md
+          git add -f cryptex/overnight/data/wide_scan_market_results.csv
           if git diff --cached --quiet; then
             echo "No market research changes."
             exit 0
