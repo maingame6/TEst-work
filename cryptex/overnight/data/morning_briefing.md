@@ -2,15 +2,15 @@
 
 **PAPER ONLY. All balances, profits and orders are simulated; no exchange execution.**
 
-Recorded: 2026-10-31T23:54:39.800990+00:00 | Dublin overnight session: 2026-10-31
+Recorded: 2026-10-31T23:59:54.317135+00:00 | Dublin overnight session: 2026-10-31
 Morning checkpoint: **IN_PROGRESS**. Not the final morning balance yet.
 
 ## 1. The money
 
-Initial fake competition capital **$210.00**; current estimated liquidation **$208.8793**, total after-cost P&L **$-1.1207**.
-Realised $-1.0001; unrealised after estimated selling costs $-0.1206.
-From the first REAL recorded overnight balance at 2026-10-31T21:15:32.467800+00:00: **$-0.0221**.
-Main ten: $99.0872 ($-0.9128); eleven maths/OSS agents: $109.7921 ($-0.2079).
+Initial fake competition capital **$210.00**; current estimated liquidation **$208.8823**, total after-cost P&L **$-1.1177**.
+Realised $-1.0001; unrealised after estimated selling costs $-0.1176.
+From the first REAL recorded overnight balance at 2026-10-31T21:15:32.467800+00:00: **$-0.0191**.
+Main ten: $99.0902 ($-0.9098); eleven maths/OSS agents: $109.7921 ($-0.2079).
 
 ## 2. What the 21 traders actually did
 
@@ -41,7 +41,7 @@ An order fill is not a completed round trip. Pending BUY/SELL is not an executed
 | GAMBLER | main | $9.8979 | $-0.1021 | 0 | $+0.0000 | Cash |
 | HOUSE | main | $9.8794 | $-0.1206 | 1 | $-0.0795 | Cash |
 | ROTATOR | main | $9.8533 | $-0.1467 | 0 | $+0.0000 | Cash |
-| VORTEX | main | $9.8295 | $-0.1705 | 0 | $+0.0000 | BTC |
+| VORTEX | main | $9.8325 | $-0.1675 | 0 | $+0.0000 | BTC |
 | BREAKOUT | main | $9.8006 | $-0.1994 | 0 | $+0.0000 | Cash |
 
 ### Biggest gains and biggest losses
@@ -74,29 +74,29 @@ Positive gross trades 2 versus after-cost winners 0. Trading frequently is NOT p
 | Asset | Actual baseline time | First price | Latest price | Observed change |
 |---|---|---:|---:|---:|
 | WIF | 2026-10-31T21:15:32.467800+00:00 | 0.1756 | 0.176 | +0.23% |
-| ADA | 2026-10-31T21:15:32.467800+00:00 | 0.192376 | 0.192672 | +0.15% |
 | BONK | 2026-10-31T21:15:32.467800+00:00 | 2.912e-06 | 2.916e-06 | +0.14% |
-| XRP | 2026-10-31T21:15:32.467800+00:00 | 1.24826 | 1.24979 | +0.12% |
-| ETH | 2026-10-31T21:15:32.467800+00:00 | 2249.66 | 2252.23 | +0.11% |
-| BTC | 2026-10-31T21:15:32.467800+00:00 | 77317.6 | 77390.8 | +0.09% |
-| BNB | 2026-10-31T21:15:32.467800+00:00 | 701.74 | 702.13 | +0.06% |
-| SHIB | 2026-10-31T21:15:32.467800+00:00 | 4.672e-06 | 4.671e-06 | -0.02% |
-| DOGE | 2026-10-31T21:15:32.467800+00:00 | 0.0756507 | 0.0755442 | -0.14% |
-| SOL | 2026-10-31T21:15:32.467800+00:00 | 95.48 | 95.24 | -0.25% |
-| PEPE | 2026-10-31T21:15:32.467800+00:00 | 4.973e-06 | 4.957e-06 | -0.32% |
+| BTC | 2026-10-31T21:15:32.467800+00:00 | 77317.6 | 77420 | +0.13% |
+| ADA | 2026-10-31T21:15:32.467800+00:00 | 0.192376 | 0.192608 | +0.12% |
+| ETH | 2026-10-31T21:15:32.467800+00:00 | 2249.66 | 2252.07 | +0.11% |
+| XRP | 2026-10-31T21:15:32.467800+00:00 | 1.24826 | 1.24943 | +0.09% |
+| BNB | 2026-10-31T21:15:32.467800+00:00 | 701.74 | 702.35 | +0.09% |
+| SHIB | 2026-10-31T21:15:32.467800+00:00 | 4.672e-06 | 4.673e-06 | +0.02% |
+| DOGE | 2026-10-31T21:15:32.467800+00:00 | 0.0756507 | 0.0755308 | -0.16% |
+| SOL | 2026-10-31T21:15:32.467800+00:00 | 95.48 | 95.29 | -0.20% |
+| PEPE | 2026-10-31T21:15:32.467800+00:00 | 4.973e-06 | 4.955e-06 | -0.36% |
 | FLOKI | 2026-10-31T21:15:32.467800+00:00 | 2.337e-05 | 2.314e-05 | -0.98% |
 
-Observed paper equity samples: 33. Observed range $208.879119–$208.951261, sampled maximum drawdown -0.0345%, largest recorded gap 5.7 minutes.
+Observed paper equity samples: 34. Observed range $208.879119–$208.951261, sampled maximum drawdown -0.0345%, largest recorded gap 5.7 minutes.
 
 Benchmarks are comparison-only and excluded from the $210 bankroll.
-- BTC: $10 fake reference now $9.9593; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- ETH: $10 fake reference now $9.9520; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- SOL: $10 fake reference now $9.8495; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- BTC: $10 fake reference now $9.9631; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- ETH: $10 fake reference now $9.9513; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- SOL: $10 fake reference now $9.8547; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
 
 ## 5. Broad market radar — monitoring only, NOT new trades
 
 Kraken USD spot market discovery covers majors, L1, DeFi, AI/data, L2/gaming, memes, stablecoin pairs, tokenised-gold proxies and FX references.
-Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-10-31T23:54:39.800990+00:00; age 0.0 minutes.
+Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-10-31T23:54:39.800990+00:00; age 5.24 minutes.
 **This does not expand the bounded 24-asset simulated execution universe.**
 Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.
 
@@ -166,8 +166,8 @@ Public market-data archive: market_radar.json and market_radar_snapshots.csv.
 ### CCXT unified market catalogue — public market discovery
 
 CCXT is an open-source unified market API with more than 100 supported exchange integrations; this run intentionally surveys five public spot venues, not every exchange worldwide.
-Catalogue status: OK; first-party checked venues: 5; last scan: 2026-10-31T17:56:50.865249+00:00.
-Discovered exchange market records: 8988; qualifying spot USD/USDT/USDC/EUR listings 4221; unique spot symbols 2898; unique base tickers 1251.
+Catalogue status: OK; first-party checked venues: 5; last scan: 2026-10-31T23:59:37.364195+00:00.
+Discovered exchange market records: 8998; qualifying spot USD/USDT/USDC/EUR listings 4221; unique spot symbols 2898; unique base tickers 1251.
 **Important: CCXT catalogues are symbol metadata, not current quoted prices.** A discovered market cannot enter simulated trading unless independently verified in the 24-asset, quality-gated completed-candle engine.
 
 | Exchange | Discovery status | All returned markets | Spot watch candidates |
@@ -175,7 +175,7 @@ Discovered exchange market records: 8988; qualifying spot USD/USDT/USDC/EUR list
 | kraken | OK | 1464 | 1201 |
 | coinbase | OK | 1029 | 867 |
 | bitstamp | OK | 270 | 234 |
-| okx | OK | 4536 | 1040 |
+| okx | OK | 4546 | 1040 |
 | kucoin | OK | 1689 | 879 |
 
 Most widely listed asset tickers across the checked venues:
@@ -196,18 +196,18 @@ Most widely listed asset tickers across the checked venues:
 Validated direct USD market quotes: 622; source status OK. One Kraken public fetch-tickers batch only every six hours.
 | Pair | Bid | Ask | Approx 24h USD turnover |
 |---|---:|---:|---:|
-| BTC/USD | 77613.2 | 77613.3 | $120,725,721 |
-| USDC/USD | 0.9998 | 0.9999 | $102,881,880 |
-| USDT/USD | 0.99885 | 0.99886 | $50,016,978 |
-| ETH/USD | 2253.46 | 2253.47 | $20,896,626 |
-| SOL/USD | 95.99 | 96 | $19,464,013 |
-| ZEC/USD | 1283.88 | 1284.44 | $16,497,482 |
-| EUR/USD | 1.1153 | 1.11536 | $14,887,095 |
-| HYPE/USD | 87.8 | 87.81 | $14,284,776 |
-| XRP/USD | 1.25322 | 1.25323 | $13,882,536 |
-| NEAR/USD | 4.5178 | 4.5192 | $9,058,960 |
-| GBP/USD | 1.33761 | 1.33772 | $7,437,915 |
-| UNI/USD | 7.0847 | 7.0881 | $4,938,219 |
+| USDC/USD | 0.9997 | 0.9998 | $115,977,837 |
+| BTC/USD | 77443.3 | 77443.4 | $66,703,180 |
+| USDT/USD | 0.9988 | 0.99881 | $31,649,858 |
+| ETH/USD | 2252.49 | 2252.5 | $15,175,535 |
+| ZEC/USD | 1251.04 | 1251.56 | $14,054,857 |
+| SOL/USD | 95.32 | 95.33 | $13,721,283 |
+| HYPE/USD | 87.86 | 87.87 | $12,854,040 |
+| EUR/USD | 1.11541 | 1.11543 | $11,475,214 |
+| NEAR/USD | 4.4252 | 4.426 | $8,767,674 |
+| XRP/USD | 1.24947 | 1.24948 | $7,887,221 |
+| GBP/USD | 1.33751 | 1.33761 | $6,018,943 |
+| QNT/USD | 200.43 | 200.53 | $5,867,410 |
 
 [Full public multi-exchange market list](ccxt_universe.json).
 
@@ -234,19 +234,19 @@ These are unverified third-party headlines, NOT insider information or automatic
 The 640 specialists are correlated, transparent rule reviews across the ten parent traders, not separately trained language models.
 | Parent | Action | Support | Opposition | Vetoes |
 |---|---|---:|---:|---:|
-| GAMBLER | HOLD | 4 | 20 | 1 |
-| HOUSE | HOLD | 18 | 6 | 1 |
-| SPY | HOLD | 6 | 23 | 0 |
-| MEME HUNTER | HOLD | 4 | 24 | 2 |
-| BREAKOUT | HOLD | 4 | 20 | 1 |
-| CONTRARIAN | HOLD | 18 | 6 | 1 |
-| ROTATOR | HOLD | 4 | 20 | 1 |
-| VORTEX | HOLD | 4 | 20 | 1 |
-| FRACTAL | HOLD | 4 | 20 | 1 |
-| SHOCKWAVE | HOLD | 4 | 24 | 2 |
+| GAMBLER | HOLD | 4 | 18 | 1 |
+| HOUSE | HOLD | 16 | 6 | 1 |
+| SPY | HOLD | 6 | 22 | 0 |
+| MEME HUNTER | HOLD | 4 | 23 | 2 |
+| BREAKOUT | HOLD | 4 | 18 | 1 |
+| CONTRARIAN | HOLD | 16 | 6 | 1 |
+| ROTATOR | HOLD | 4 | 18 | 1 |
+| VORTEX | HOLD | 4 | 18 | 1 |
+| FRACTAL | HOLD | 4 | 18 | 1 |
+| SHOCKWAVE | HOLD | 4 | 23 | 2 |
 
 Main paper risk limit: not triggered. Shadow risk limit: not triggered.
-Last trigger workflow_dispatch; run 41254435458. Native 5-minute cron independently verified: YES.
+Last trigger workflow_dispatch; run 41254750494. Native 5-minute cron independently verified: YES.
 Market-data flags: {'main_stale': False, 'research_stale': False, 'missing_quotes': False, 'time_misaligned': False, 'main_status': 'HEALTHY: paper trading on completed Kraken candles', 'research_status': 'OK'}. Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.
 
 ## 8. Research distillation gate — do not deploy a winner yet
