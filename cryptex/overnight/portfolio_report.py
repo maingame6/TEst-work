@@ -12,9 +12,10 @@ import json
 import math
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from cost_model import FEE, SLIP, sell_factor, break_even, cost_assumptions
 
 LOCAL = ZoneInfo('Europe/Dublin')
-SELL_FACTOR = (1 - .0025) * (1 - .0015)
+SELL_FACTOR = sell_factor()
 
 
 def numeric(x):
@@ -93,8 +94,9 @@ def snapshot(main, research, at):
     gross_winners=sum(float(t["gross_mid_pnl"])>0 for t in attributed)
     net_winners=sum(float(t["pnl"])>0 for t in attributed)
     spoiled=sum(float(t["gross_mid_pnl"])>0 and float(t["pnl"])<=0 for t in attributed)
-    breakeven_pct=100*((1.+.0025)*(1.+.0015)/((1.-.0025)*(1.-.0015))-1.)
+    breakeven_pct=100*break_even()
     fee_study={"round_trip_break_even_pct_at_flat_markets":round(breakeven_pct,4),
+               "assumed_execution_costs":cost_assumptions(),
               "completed_orders_cached":len(sells),"attributed_newer_closes":len(attributed),
               "older_closes_missing_attribution":len(sells)-len(attributed),
               "gross_market_pnl_attributed":round(gross_mid_trade_pnl,8),
