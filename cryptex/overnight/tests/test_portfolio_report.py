@@ -95,6 +95,18 @@ class PaperMoneyTests(unittest.TestCase):
         self.assertEqual(b['overnight']['change'],0)
         self.assertEqual(history[0]['morning']['at'],'2026-10-31T08:04:00+00:00')
 
+    def test_after_cutoff_checkpoint_is_labeled_late_recovery(self):
+        main,shadow=states()
+        a=P.snapshot(main,shadow,'2026-10-30T21:35:00+00:00')
+        a,history=P.update_night(a,[])
+        new_ts=int(dt.datetime.fromisoformat('2026-10-31T10:48:00+00:00').timestamp())
+        main['last_ts']=new_ts
+        shadow['last_ts']=new_ts
+        b=P.snapshot(main,shadow,'2026-10-31T10:50:00+00:00')
+        b,history=P.update_night(b,history)
+        self.assertEqual(b['overnight']['status'],'LATE_MORNING_RECOVERY')
+        self.assertEqual(history[0]['morning']['at'],'2026-10-31T10:50:00+00:00')
+
     def test_stale_data_disables_night_baseline(self):
         main,shadow=states()
         a=P.snapshot(main,shadow,'2026-10-31T01:05:00+00:00')
