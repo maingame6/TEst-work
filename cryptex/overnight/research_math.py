@@ -12,6 +12,7 @@ one-step-later fills). No third-party source code copied.
 from __future__ import annotations
 import math
 import statistics
+from execution_gate import research_eligible
 
 MATH_MODELS=(
  "FLUID_ADVECTION","FLUID_VISCOSITY","GEOMETRIC_DIVERSITY",
@@ -151,8 +152,8 @@ def evaluate(histories, held_positions=None):
   score,sym,description=max(ranking)
   # Distinct thresholds; investigate failures as well as wins.
   threshold=.09 if model in ("FLUID_ADVECTION","QLIB_STYLE","GRAPH_COHERENCE") else .14
-  results[model]={"action":"BUY" if score>threshold else "HOLD",
+  results[model]={"action":"BUY" if score>threshold and research_eligible(x) else "HOLD",
       "symbol":sym,"score":round(score,5),
-      "reason":description+f"; score={score:+.3f}, gate={threshold:.2f}",
+      "reason":description+f"; score={score:+.3f}, gate={threshold:.2f}; after-cost candidate screen (not a forecast)",
       "sample_ok":True}
  return results
