@@ -69,6 +69,8 @@ class WideScanTests(unittest.TestCase):
             result=W.run(catalogue,d,WHEN,FakeCCXT,per_venue=3)
             self.assertEqual(result["discovered_listing_total"],15)
             self.assertEqual(result["unique_tested_venue_pairs"],15)
+            self.assertEqual(result["unique_exchange_market_metadata_checked"],15)
+            self.assertEqual(result["unique_ohlcv_requested"],10)
             self.assertEqual(result["unique_ohlcv_validated_pairs"],10)
             self.assertTrue((d/"wide_scan_report.md").exists())
             self.assertTrue((d/"wide_scan_state.json").exists())
