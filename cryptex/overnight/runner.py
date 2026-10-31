@@ -302,6 +302,11 @@ def cycle(st,history,check,radar_results):
 def write_csv(path,headers,rows):
     with path.open("w",newline="",encoding="utf8") as f:
         w=csv.DictWriter(f,fieldnames=headers,extrasaction="ignore");w.writeheader();w.writerows(rows)
+def genuine_cron_execution(event,attempt):
+    # A manual re-run of a scheduled GitHub Actions job keeps event=schedule,
+    # but GITHUB_RUN_ATTEMPT increments. Do not call that fresh cron success.
+    return event=="schedule" and str(attempt)=="1"
+
 def main():
     st=json.loads(STATE.read_text()) if STATE.exists() else init()
     if st.get("mode")!="PAPER_ONLY" or len(st.get("bots",[]))!=10:raise RuntimeError("Not the safe CRYPTEX state")
@@ -333,9 +338,12 @@ def main():
     st["trigger_event"]=os.environ.get("CRYPTEX_TRIGGER_EVENT","unknown")
     st["github_run_id"]=os.environ.get("GITHUB_RUN_ID","")
     st["github_run_attempt"]=os.environ.get("GITHUB_RUN_ATTEMPT","")
-    st["schedule_confirmed"]=st["trigger_event"]=="schedule" or st.get("schedule_confirmed",False)
-    if st["trigger_event"]=="schedule":
-        st["last_schedule_run"]=utc()
+    # Recovered scheduled-job reruns must not misrepresent cron reliability.
+    # Retain only executions witnessed with first-attempt scheduled jobs.
+    if genuine_cron_execution(st["trigger_event"],st["github_run_attempt"]):
+        st["last_native_cron_run"]=utc()
+    st["schedule_confirmed"]=bool(st.get("last_native_cron_run"))
+    st["last_schedule_run"]=st.get("last_native_cron_run")
     st["trade_profile"]="COST_SCREEN_V2_PAPER_EXPLORATION_1.2_PERCENT_MAX"
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP,"minimum_exploratory_three_bar_move":PROBE_MIN_THREE_BAR_MOVE,"exploratory_cost_screen_version":2}
