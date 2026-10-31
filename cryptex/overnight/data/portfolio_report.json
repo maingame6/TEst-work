@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-31T23:18:57.540760+00:00",
-  "local_time": "2026-10-31T23:18:57.540760+00:00",
+  "generated_at": "2026-10-31T23:24:36.682583+00:00",
+  "local_time": "2026-10-31T23:24:36.682583+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
-  "balance": 208.931709,
-  "gross_mark_to_market": 208.963301,
-  "estimated_future_exit_costs": 0.031592,
-  "pnl": -1.068291,
-  "pnl_pct": -0.50871,
+  "balance": 208.880584,
+  "gross_mark_to_market": 208.963434,
+  "estimated_future_exit_costs": 0.08285,
+  "pnl": -1.119416,
+  "pnl_pct": -0.53306,
   "realised": -1.000116,
-  "unrealised_estimate": -0.068175,
+  "unrealised_estimate": -0.1193,
   "groups": {
     "main": {
       "starting": 100.0,
-      "equity": 99.13959,
-      "gross_equity": 99.171182,
-      "pnl": -0.86041,
+      "equity": 99.088465,
+      "gross_equity": 99.171315,
+      "pnl": -0.911535,
       "realised": -0.792235,
       "closed": 40,
       "wins": 5,
@@ -167,12 +167,12 @@
       "name": "VORTEX",
       "initial": 10.0,
       "cash": 2.0081473,
-      "equity": 9.88188617,
-      "gross_equity": 9.91347784,
-      "pnl": -0.11811383,
-      "pnl_pct": -1.18114,
+      "equity": 9.83076136,
+      "gross_equity": 9.91361062,
+      "pnl": -0.16923864,
+      "pnl_pct": -1.69239,
       "realised": -0.0499389,
-      "unrealised_estimate": -0.06817494,
+      "unrealised_estimate": -0.11929974,
       "closed": 1,
       "wins": 0,
       "position": "BTC",
@@ -231,7 +231,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD AAVE",
       "missing_quote": false
     },
     {
@@ -285,7 +285,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD BTC",
+      "last_decision": "HOLD ETH",
       "missing_quote": false
     },
     {
@@ -339,7 +339,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD BNB",
+      "last_decision": "HOLD ADA",
       "missing_quote": false
     },
     {
@@ -357,7 +357,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD AVAX",
+      "last_decision": "HOLD ADA",
       "missing_quote": false
     },
     {
@@ -393,7 +393,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD XRP",
+      "last_decision": "HOLD ADA",
       "missing_quote": false
     },
     {
@@ -423,8 +423,8 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1793488200,
-  "last_candle_research": 1793488200,
+  "last_candle_main": 1793488500,
+  "last_candle_research": 1793488500,
   "total_open": 1,
   "total_queued": 0,
   "total_completed": 70,
@@ -432,20 +432,24 @@
   "specialist_reviews": 640,
   "news_scouts": 8,
   "execution_cost_study": {
-    "round_trip_break_even_pct_at_flat_markets": 0.8032,
+    "round_trip_break_even_pct_at_flat_markets": 2.1222,
     "assumed_execution_costs": {
       "base": {
-        "fee_per_side": 0.0015,
+        "fee_per_side": 0.008,
         "slippage_per_side": 0.0025,
-        "round_trip_break_even_pct": 0.80321
+        "round_trip_break_even_pct": 2.12224
       },
       "stress": {
-        "fee_per_side": 0.0025,
+        "fee_per_side": 0.008,
         "slippage_per_side": 0.005,
-        "round_trip_break_even_pct": 1.51132
+        "round_trip_break_even_pct": 2.63414
       },
-      "caveat": "Assumptions, not exchange fill receipts. All exits include hypothetical costs; exchange tiers, market impact, spreads and outages can make results worse."
+      "published_fee_source": "https://www.kraken.com/pro/fees",
+      "fee_tier": "Kraken Pro spot Tier 1 taker: 0.80% per side",
+      "maker_alternative_per_side": 0.004,
+      "caveat": "0.80% published taker fee, estimated 0.25% slippage each side; not account-specific fill receipts. Wider spread, market impact and outages can make results worse. Historical V3 charges were lower and are not silently restated."
     },
+    "historical_fee_warning": "Old fills used V3 0.15% per side; new fills use verified Kraken Tier 1 taker 0.80% per side. Aggregate historical equity cannot be represented as a clean V4 experiment.",
     "completed_orders_cached": 70,
     "attributed_newer_closes": 56,
     "older_closes_missing_attribution": 14,
@@ -460,7 +464,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-10-31T20:50:39.562635+00:00",
-  "github_run_id": "41251980760",
+  "github_run_id": "41252353661",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-10-31",
@@ -471,8 +475,8 @@
       "fills": 136
     },
     "morning": null,
-    "comparison_at": "2026-10-31T23:18:57.540760+00:00",
-    "change": 0.030311,
+    "comparison_at": "2026-10-31T23:24:36.682583+00:00",
+    "change": -0.020814,
     "fills_since_start": 5
   },
   "benchmarks": {
@@ -484,33 +488,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 77401.9,
+        "current_mid": 77403.2,
         "start": 10.0,
-        "equity": 10.026004,
-        "pnl": 0.026004,
-        "return_pct": 0.26,
+        "equity": 9.960904,
+        "pnl": -0.039096,
+        "return_pct": -0.391,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 2251.26,
+        "current_mid": 2251.07,
         "start": 10.0,
-        "equity": 10.01292,
-        "pnl": 0.01292,
-        "return_pct": 0.1292,
+        "equity": 9.946899,
+        "pnl": -0.053101,
+        "return_pct": -0.531,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 95.41,
+        "current_mid": 95.34,
         "start": 10.0,
-        "equity": 9.93177,
-        "pnl": -0.06823,
-        "return_pct": -0.6823,
+        "equity": 9.859877,
+        "pnl": -0.140123,
+        "return_pct": -1.4012,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },

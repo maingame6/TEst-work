@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-10-31T23:24:36.682583+00:00",
+  "paper_only": true,
+  "sample_status": "INSUFFICIENT",
+  "execution": "next observed completed candle only; six-bar exits",
+  "first_candle_ts": 1793488500,
+  "last_candle_ts": 1793488500,
+  "observed_candles": 1,
+  "missed_fills": 0,
+  "censored_exits": 0,
+  "fees_slippage_per_side_pct": 1.05,
+  "cost_assumptions": {
+    "base": {
+      "fee_per_side": 0.008,
+      "slippage_per_side": 0.0025,
+      "round_trip_break_even_pct": 2.12224
+    },
+    "stress": {
+      "fee_per_side": 0.008,
+      "slippage_per_side": 0.005,
+      "round_trip_break_even_pct": 2.63414
+    },
+    "published_fee_source": "https://www.kraken.com/pro/fees",
+    "fee_tier": "Kraken Pro spot Tier 1 taker: 0.80% per side",
+    "maker_alternative_per_side": 0.004,
+    "caveat": "0.80% published taker fee, estimated 0.25% slippage each side; not account-specific fill receipts. Wider spread, market impact and outages can make results worse. Historical V3 charges were lower and are not silently restated."
+  },
+  "disclaimer": "No real orders; simulations use close prices with estimated fees/slippage, do not model orderbook depth. Cross-market overlap makes samples correlated. No promotion without held-out test.",
+  "gates": {
+    "V4_TAKER_STRICT": {
+      "completed": 0,
+      "wins_after_cost": 0,
+      "wins_under_stress": 0,
+      "mean_stress_net_pct": null,
+      "gross_up_but_net_down": 0,
+      "mean_fee_drag_pct": null,
+      "mean_slippage_drag_pct": null,
+      "mean_net_pct": null,
+      "mean_gross_pct": null,
+      "net_sum_unit_stakes_pct": 0,
+      "open": 0,
+      "queued": 0,
+      "threshold_move_pct": 2.322
+    },
+    "COST_AWARE": {
+      "completed": 0,
+      "wins_after_cost": 0,
+      "wins_under_stress": 0,
+      "mean_stress_net_pct": null,
+      "gross_up_but_net_down": 0,
+      "mean_fee_drag_pct": null,
+      "mean_slippage_drag_pct": null,
+      "mean_net_pct": null,
+      "mean_gross_pct": null,
+      "net_sum_unit_stakes_pct": 0,
+      "open": 0,
+      "queued": 0,
+      "threshold_move_pct": 2.172
+    },
+    "BALANCED_TEST": {
+      "completed": 0,
+      "wins_after_cost": 0,
+      "wins_under_stress": 0,
+      "mean_stress_net_pct": null,
+      "gross_up_but_net_down": 0,
+      "mean_fee_drag_pct": null,
+      "mean_slippage_drag_pct": null,
+      "mean_net_pct": null,
+      "mean_gross_pct": null,
+      "net_sum_unit_stakes_pct": 0,
+      "open": 0,
+      "queued": 0,
+      "threshold_move_pct": 1.2
+    },
+    "LOW_HURDLE_CONTROL": {
+      "completed": 0,
+      "wins_after_cost": 0,
+      "wins_under_stress": 0,
+      "mean_stress_net_pct": null,
+      "gross_up_but_net_down": 0,
+      "mean_fee_drag_pct": null,
+      "mean_slippage_drag_pct": null,
+      "mean_net_pct": null,
+      "mean_gross_pct": null,
+      "net_sum_unit_stakes_pct": 0,
+      "open": 0,
+      "queued": 0,
+      "threshold_move_pct": 0.5
+    }
+  }
+}

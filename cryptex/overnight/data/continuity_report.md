@@ -1,12 +1,13 @@
 # CRYPTEX prospective paper-trading continuity
 
 **Status:** COLLECTING (not an earnings claim)
-**Policy:** COST_GATE_V3 / paper only
-**Start:** 2026-10-31T21:15:32.424549+00:00
-**Coverage:** 25 / 25 actual closed-candle decisions = 100.000%
+**Policy:** COST_GATE_V4_KRAKEN_TAKER / paper only
+**Start:** 2026-10-31T23:24:36.636109+00:00
+**Coverage:** 1 / 1 actual closed-candle decisions = 100.000%
 **Missing five-minute decisions:** 0
-**Largest observed interval:** 5.0 minutes
-**Evidence duration:** 0.083 days (require 7)
+**Largest observed interval:** 0.0 minutes
+**Evidence duration:** 0.000 days (require 7)
+**V4 policy-window paper balance delta:** $+0.000000 (legacy holdings may affect it)
 **Review prerequisites:** >=99% coverage and >=30 post-policy exits PER strategy; held-out after-cost superiority still unproven.
 
 ## New completed trades since this policy started
