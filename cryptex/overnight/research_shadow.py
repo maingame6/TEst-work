@@ -63,7 +63,7 @@ def fill_order(bot,order,price,ts,name):
   bot["cash"]+=proceeds;bot["closed"]+=1
   bot["wins"]+=int(pnl>0);bot["realized"]+=pnl
   if p.get("cost_gate_version")==COST_VERSION:
-   bot["qualified_v3_closed"]=bot.get("qualified_v3_closed",0)+1
+   bot["qualified_v4_closed"]=bot.get("qualified_v4_closed",0)+1
   bot["recent_outcomes"]=(bot["recent_outcomes"]+[pnl])[-50:]
   bot["position"]=None
   fees=qty*fill*FEE
