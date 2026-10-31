@@ -2,6 +2,12 @@
 
 **This project trades SIMULATED dollars. It does not send exchange orders, connect exchange accounts, or earn actual funds.**
 
+## 31 October: new 24-asset execution watchlist and prospective entry-threshold study
+- Expanded actual Kraken completed five-minute OHLCV paper watchlist from 12 to **24** *listed* tokens using existing candle freshness, volume, independent quote-cross-check, portfolio limits, and next-candle fills; 71+ wider Kraken radar markets and CCXT catalogues remain **discovery-only**, not executable.
+- Four **independent forward-only threshold comparisons** run against the incoming candles: V3 strict, near-break-even cost-aware, a balanced 0.5% test, and a 0.25% low-hurdle control. Research-only entry signal is at bar N; hypothetical entry is at N+1 and after-cost exit N+7. Skipped bars are censored, never backfilled.
+- [Entry experiment report](data/entry_study_report.md) and [machine-readable results](data/entry_study_report.json). The test makes no claims of profitability and **cannot** alter the original $210 paper accounts. No parameter changes are auto-promoted.
+- Automatic GitHub fallback is best-effort, runs all day during a **bounded nine-day evidence collection**, then stops self-dispatch. Native cron remains active independently. The nine-day pilot has a firm stop to avoid indefinite Actions consumption; there is no guaranteed 99% uptime SLA on GitHub Actions.
+
 ## 31 October 2026: V3 after-cost entry controls and evidence
 - **Every main and shadow paper BUY** now requires a strong *observed* three-candle move relative to the exact round-trip assumption (approximately 0.803% plus a 0.2 percentage-point buffer), corroborating relative volume and at least $100k approximate one-hour turnover. A move already seen does **not** predict the next move or establish a positive expectancy.
 - The queued BUY must be requalified and filled on **exactly the next closed five-minute candle**, otherwise it is vetoed. Existing positions and protective SELLs are unaffected. Legacy pre-V3 queued BUYs are cancelled, never retroactively filled.
