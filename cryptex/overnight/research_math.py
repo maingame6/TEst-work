@@ -13,6 +13,7 @@ from __future__ import annotations
 import math
 import statistics
 from execution_gate import research_eligible
+from cost_model import break_even
 
 MATH_MODELS=(
  "FLUID_ADVECTION","FLUID_VISCOSITY","GEOMETRIC_DIVERSITY",
@@ -21,7 +22,7 @@ MATH_MODELS=(
 OPEN_MODELS=("FREQTRADE_STYLE","QLIB_STYLE","HUMMINGBOT_FRICTION","LEAN_EVENT","NAUTILUS_REGIME")
 MODEL_NAMES=MATH_MODELS+OPEN_MODELS
 assert len(MODEL_NAMES)==11
-ROUND_TRIP_COST=2*(.0015+.0025)
+ROUND_TRIP_COST=math.log1p(break_even())
 
 def mean(x):return sum(x)/len(x) if x else 0.
 def clamp(x,a=-1.,b=1.):return max(a,min(b,x))
