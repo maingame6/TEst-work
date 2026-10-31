@@ -77,6 +77,8 @@ def report(state, shadow, money, directory):
             for name, count in {**main, **research}.items()},
         "net_paper_pnl_total": money["pnl"],
         "status": "REVIEW_SAMPLES_AVAILABLE" if seven_days and coverage >= MIN_COVERAGE
+            and any(n >= MIN_CLOSED_PER_STRATEGY for n in [*main.values(), *research.values()])
+            else "INSUFFICIENT_TRADE_SAMPLE" if seven_days and coverage >= MIN_COVERAGE
             else "COLLECTING_WITH_GAPS" if c["missing_intervals"] else "COLLECTING",
         "caveat": "A ready sample is not a demonstrated edge. Held-out after-cost comparison, uncertainty and regimes still required. Never backfill missing five-minute decisions."
     }
