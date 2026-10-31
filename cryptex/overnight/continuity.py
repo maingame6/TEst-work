@@ -3,7 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 
-VERSION = 1
+VERSION = 2
 MIN_DAYS = 7
 MIN_COVERAGE = .99
 MIN_CLOSED_PER_STRATEGY = 30
@@ -15,7 +15,7 @@ def mark(state, candle_ts):
     c = state.get("prospective_evidence")
     if not isinstance(c, dict) or c.get("version") != VERSION:
         state["prospective_evidence"] = {
-            "version": VERSION, "policy": "COST_GATE_V3",
+            "version": VERSION, "policy": "COST_GATE_V4_KRAKEN_TAKER",
             "first_observed_at": now, "first_candle_ts": candle_ts,
             "last_candle_ts": candle_ts, "observed_candles": 1,
             "missing_intervals": 0, "max_gap_minutes": 0,
@@ -46,12 +46,12 @@ def report(state, shadow, money, directory):
     expected = c["observed_candles"] + c["missing_intervals"]
     coverage = c["observed_candles"] / expected if expected else 0.
     duration_seconds = c["last_candle_ts"] - c["first_candle_ts"]
-    main = {b["name"]: int(b.get("qualified_v3_closed", 0)) for b in state["bots"]}
+    main = {b["name"]: int(b.get("qualified_v4_closed", 0)) for b in state["bots"]}
     # Research baseline is frozen at first report, never retroactively backfilled.
     base = c.setdefault("shadow_closed_baseline", {
         name: b["closed"] for name, b in shadow["bots"].items()
     })
-    research = {name: int(b.get("qualified_v3_closed", 0))
+    research = {name: int(b.get("qualified_v4_closed", 0))
                 for name, b in shadow["bots"].items()}
     seven_days = duration_seconds >= MIN_DAYS * 86400
     result = {
