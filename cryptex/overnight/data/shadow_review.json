@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-31T17:57:05.428346+00:00",
+  "generated_at": "2026-10-31T20:50:37.776451+00:00",
   "paper_only": true,
-  "candle_ts": 1793469000,
-  "cycles": 25,
+  "candle_ts": 1793479500,
+  "cycles": 26,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,13 +11,17 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.975391,
+      "equity": 9.979181,
       "closed": 3,
       "wins": 0,
       "realized": -0.020629,
-      "paper_return": -0.024609,
-      "latest_decision": "FILLED_BUY PEPE",
-      "queued": null,
+      "paper_return": -0.020819,
+      "latest_decision": "SELL_QUEUED PEPE",
+      "queued": {
+        "side": "SELL",
+        "symbol": "PEPE",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "PEPE",
         "quantity": 199469.69811560016,
@@ -25,7 +29,7 @@
         "entry_market": 4.983e-06,
         "entry_time": 1793469000,
         "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.239, gate=0.09",
-        "peak": 4.983e-06
+        "peak": 5.002e-06
       },
       "sample_sufficient": false
     },
@@ -35,7 +39,7 @@
       "wins": 0,
       "realized": -0.007571,
       "paper_return": -0.007571,
-      "latest_decision": "HOLD ETH",
+      "latest_decision": "HOLD BTC",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -46,47 +50,43 @@
       "wins": 0,
       "realized": -0.02135,
       "paper_return": -0.02135,
-      "latest_decision": "HOLD PEPE",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED PEPE",
+      "queued": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.184, gate=0.14"
+      },
       "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.977238,
+      "equity": 9.973259,
       "closed": 3,
       "wins": 0,
       "realized": -0.022762,
-      "paper_return": -0.022762,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.026741,
+      "latest_decision": "FILLED_BUY XRP",
+      "queued": null,
+      "position": {
         "symbol": "XRP",
-        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14"
+        "quantity": 0.7955752342277166,
+        "entry_cost": 0.9977237761427944,
+        "entry_market": 1.24909,
+        "entry_time": 1793479500,
+        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14",
+        "peak": 1.24909
       },
-      "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.974667,
-      "closed": 3,
+      "equity": 9.97447,
+      "closed": 4,
       "wins": 0,
-      "realized": -0.019362,
-      "paper_return": -0.025333,
-      "latest_decision": "SELL_QUEUED PEPE",
-      "queued": {
-        "side": "SELL",
-        "symbol": "PEPE",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "PEPE",
-        "quantity": 199095.48426826607,
-        "entry_cost": 0.9980638157773319,
-        "entry_market": 4.993e-06,
-        "entry_time": 1793453700,
-        "reason": "Relative-strength shock in asset co-movement graph; score=+0.251, gate=0.09",
-        "peak": 4.993e-06
-      },
+      "realized": -0.02553,
+      "paper_return": -0.02553,
+      "latest_decision": "FILLED_SELL PEPE",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "LATTICE_ANALOG": {
@@ -95,47 +95,39 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD PEPE",
+      "latest_decision": "HOLD BTC",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.981385,
+      "equity": 9.977404,
       "closed": 3,
       "wins": 0,
       "realized": -0.018615,
-      "paper_return": -0.018615,
-      "latest_decision": "BUY_QUEUED PEPE",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.022596,
+      "latest_decision": "FILLED_BUY PEPE",
+      "queued": null,
+      "position": {
         "symbol": "PEPE",
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.160, gate=0.14"
+        "quantity": 198752.1184403413,
+        "entry_cost": 0.9981384569172032,
+        "entry_market": 5.002e-06,
+        "entry_time": 1793479500,
+        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.160, gate=0.14",
+        "peak": 5.002e-06
       },
-      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.974667,
-      "closed": 3,
+      "equity": 9.97447,
+      "closed": 4,
       "wins": 0,
-      "realized": -0.019362,
-      "paper_return": -0.025333,
-      "latest_decision": "SELL_QUEUED PEPE",
-      "queued": {
-        "side": "SELL",
-        "symbol": "PEPE",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "PEPE",
-        "quantity": 199095.48426826607,
-        "entry_cost": 0.9980638157773319,
-        "entry_market": 4.993e-06,
-        "entry_time": 1793453700,
-        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
-        "peak": 4.993e-06
-      },
+      "realized": -0.02553,
+      "paper_return": -0.02553,
+      "latest_decision": "FILLED_SELL PEPE",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "HUMMINGBOT_FRICTION": {
@@ -155,24 +147,32 @@
       "wins": 0,
       "realized": -0.016455,
       "paper_return": -0.016455,
-      "latest_decision": "HOLD BNB",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED PEPE",
+      "queued": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.250, gate=0.14"
+      },
       "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.985031,
+      "equity": 9.981049,
       "closed": 3,
       "wins": 0,
       "realized": -0.014969,
-      "paper_return": -0.014969,
-      "latest_decision": "BUY_QUEUED ETH",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.018951,
+      "latest_decision": "FILLED_BUY ETH",
+      "queued": null,
+      "position": {
         "symbol": "ETH",
-        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.176, gate=0.14"
+        "quantity": 0.00044180130828203024,
+        "entry_cost": 0.9985030674881312,
+        "entry_market": 2251.06,
+        "entry_time": 1793479500,
+        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.176, gate=0.14",
+        "peak": 2251.06
       },
-      "position": null,
       "sample_sufficient": false
     }
   },
