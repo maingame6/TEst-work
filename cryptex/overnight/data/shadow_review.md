@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-10-31T22:33:08.203567+00:00
+Generated: 2026-10-31T22:38:11.860851+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -13,13 +13,13 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 | FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD BTC |
 | FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD BNB |
 | GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD ETH |
-| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD XRP |
+| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD ETH |
 | GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD ETH |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD ETH |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
 | FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD ETH |
 | QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD ETH |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD XRP |
+| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD BTC |
 | NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD BNB |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
