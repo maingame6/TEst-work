@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-31T20:50:37.776451+00:00",
+  "generated_at": "2026-10-31T21:15:32.447268+00:00",
   "paper_only": true,
-  "candle_ts": 1793479500,
-  "cycles": 26,
+  "candle_ts": 1793481000,
+  "cycles": 27,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,26 +11,14 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.979181,
-      "closed": 3,
+      "equity": 9.969432,
+      "closed": 4,
       "wins": 0,
-      "realized": -0.020629,
-      "paper_return": -0.020819,
-      "latest_decision": "SELL_QUEUED PEPE",
-      "queued": {
-        "side": "SELL",
-        "symbol": "PEPE",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "PEPE",
-        "quantity": 199469.69811560016,
-        "entry_cost": 0.9979370630735223,
-        "entry_market": 4.983e-06,
-        "entry_time": 1793469000,
-        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.239, gate=0.09",
-        "peak": 5.002e-06
-      },
+      "realized": -0.030568,
+      "paper_return": -0.030568,
+      "latest_decision": "FILLED_SELL PEPE",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
@@ -39,7 +27,7 @@
       "wins": 0,
       "realized": -0.007571,
       "paper_return": -0.007571,
-      "latest_decision": "HOLD BTC",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -50,22 +38,18 @@
       "wins": 0,
       "realized": -0.02135,
       "paper_return": -0.02135,
-      "latest_decision": "BUY_QUEUED PEPE",
-      "queued": {
-        "side": "BUY",
-        "symbol": "PEPE",
-        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.184, gate=0.14"
-      },
+      "latest_decision": "HOLD PEPE",
+      "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.973259,
+      "equity": 9.972599,
       "closed": 3,
       "wins": 0,
       "realized": -0.022762,
-      "paper_return": -0.026741,
-      "latest_decision": "FILLED_BUY XRP",
+      "paper_return": -0.027401,
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": {
         "symbol": "XRP",
@@ -84,7 +68,7 @@
       "wins": 0,
       "realized": -0.02553,
       "paper_return": -0.02553,
-      "latest_decision": "FILLED_SELL PEPE",
+      "latest_decision": "HOLD SOL",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -101,12 +85,12 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.977404,
+      "equity": 9.97164,
       "closed": 3,
       "wins": 0,
       "realized": -0.018615,
-      "paper_return": -0.022596,
-      "latest_decision": "FILLED_BUY PEPE",
+      "paper_return": -0.02836,
+      "latest_decision": "HOLD PEPE",
       "queued": null,
       "position": {
         "symbol": "PEPE",
@@ -125,7 +109,7 @@
       "wins": 0,
       "realized": -0.02553,
       "paper_return": -0.02553,
-      "latest_decision": "FILLED_SELL PEPE",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -147,22 +131,18 @@
       "wins": 0,
       "realized": -0.016455,
       "paper_return": -0.016455,
-      "latest_decision": "BUY_QUEUED PEPE",
-      "queued": {
-        "side": "BUY",
-        "symbol": "PEPE",
-        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.250, gate=0.14"
-      },
+      "latest_decision": "HOLD XRP",
+      "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.981049,
+      "equity": 9.98043,
       "closed": 3,
       "wins": 0,
       "realized": -0.014969,
-      "paper_return": -0.018951,
-      "latest_decision": "FILLED_BUY ETH",
+      "paper_return": -0.01957,
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": {
         "symbol": "ETH",
