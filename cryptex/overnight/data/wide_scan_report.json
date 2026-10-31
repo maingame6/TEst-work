@@ -1,84 +1,84 @@
 {
-  "generated_at": "2026-10-31T23:32:33.646676+00:00",
+  "generated_at": "2026-10-31T23:33:51.993185+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
   "discovered_listing_total": 4221,
   "catalogue_source_listings": 4221,
-  "unique_tested_venue_pairs": 225,
-  "unique_ohlcv_validated_pairs": 188,
-  "markets_with_any_historical_signal": 10,
-  "batches": 1,
+  "unique_tested_venue_pairs": 450,
+  "unique_ohlcv_validated_pairs": 375,
+  "markets_with_any_historical_signal": 21,
+  "batches": 2,
   "venues": {
     "kraken": {
       "discovered": 1201,
-      "attempted_distinct": 45,
-      "validated_ohlcv_distinct": 45,
-      "last_attempt_valid": 45,
-      "latest_failed": 0,
-      "next_cursor": 45
+      "attempted_distinct": 90,
+      "validated_ohlcv_distinct": 89,
+      "last_attempt_valid": 89,
+      "latest_failed": 1,
+      "next_cursor": 90
     },
     "coinbase": {
       "discovered": 867,
-      "attempted_distinct": 45,
-      "validated_ohlcv_distinct": 18,
-      "last_attempt_valid": 18,
-      "latest_failed": 27,
-      "next_cursor": 45
+      "attempted_distinct": 90,
+      "validated_ohlcv_distinct": 32,
+      "last_attempt_valid": 32,
+      "latest_failed": 58,
+      "next_cursor": 90
     },
     "bitstamp": {
       "discovered": 234,
-      "attempted_distinct": 45,
-      "validated_ohlcv_distinct": 45,
-      "last_attempt_valid": 45,
+      "attempted_distinct": 90,
+      "validated_ohlcv_distinct": 90,
+      "last_attempt_valid": 90,
       "latest_failed": 0,
-      "next_cursor": 45
+      "next_cursor": 90
     },
     "okx": {
       "discovered": 1040,
-      "attempted_distinct": 45,
-      "validated_ohlcv_distinct": 45,
-      "last_attempt_valid": 45,
+      "attempted_distinct": 90,
+      "validated_ohlcv_distinct": 90,
+      "last_attempt_valid": 90,
       "latest_failed": 0,
-      "next_cursor": 45
+      "next_cursor": 90
     },
     "kucoin": {
       "discovered": 879,
-      "attempted_distinct": 45,
-      "validated_ohlcv_distinct": 35,
-      "last_attempt_valid": 35,
-      "latest_failed": 10,
-      "next_cursor": 45
+      "attempted_distinct": 90,
+      "validated_ohlcv_distinct": 74,
+      "last_attempt_valid": 74,
+      "latest_failed": 16,
+      "next_cursor": 90
     }
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 16,
+      "historical_samples": 25,
       "net_winners": 0,
-      "gross_up_net_down": 9,
-      "weighted_mean_net_pct": -2.374185,
-      "markets_with_samples": 9
+      "gross_up_net_down": 10,
+      "weighted_mean_net_pct": -2.248728,
+      "markets_with_samples": 15
     },
     "cost_aware_momentum": {
-      "historical_samples": 2,
+      "historical_samples": 3,
       "net_winners": 0,
       "gross_up_net_down": 1,
-      "weighted_mean_net_pct": -1.535996,
-      "markets_with_samples": 2
+      "weighted_mean_net_pct": -1.790136,
+      "markets_with_samples": 3
     },
     "breakout": {
-      "historical_samples": 23,
-      "net_winners": 0,
-      "gross_up_net_down": 8,
-      "weighted_mean_net_pct": -2.486319,
-      "markets_with_samples": 9
+      "historical_samples": 36,
+      "net_winners": 1,
+      "gross_up_net_down": 9,
+      "weighted_mean_net_pct": -2.057044,
+      "markets_with_samples": 16
     },
     "dip_recovery": {
-      "historical_samples": 2,
+      "historical_samples": 6,
       "net_winners": 1,
-      "gross_up_net_down": 1,
-      "weighted_mean_net_pct": 1.227826,
-      "markets_with_samples": 2
+      "gross_up_net_down": 3,
+      "weighted_mean_net_pct": -0.605988,
+      "markets_with_samples": 5
     }
   },
   "fees": {
@@ -114,7 +114,7 @@
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
     "attempted": 225,
-    "validated": 188,
-    "unavailable": 37
+    "validated": 187,
+    "unavailable": 38
   }
 }
