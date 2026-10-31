@@ -54,17 +54,41 @@ class PaperOnlySafetyTests(unittest.TestCase):
         self.assertLessEqual(R.learning(b),1.)
 
     def test_active_probe_generates_signal_from_realistic_valid_features(self):
-        # Regular thresholds intentionally do not fire, but the hypothesis has
-        # measurable momentum, volume, liquidity and reasonable volatility.
-        x={"price":100.,"ret3":.001,"ret8":.001,"ret10":.001,"ret21":.001,
+        # Hypothetical high movement and liquid market pass the screening gate.
+        # This is NOT a forecast or evidence of profitability.
+        x={"price":100.,"ret3":.012,"ret8":.002,"ret10":.002,"ret21":.002,
            "ret2":.0004,"one":.0002,"fast":99.5,"slow":100.1,
-           "z":.25,"rsi":52,"vol":.006,"vr":1.1,
+           "z":.25,"rsi":52,"vol":.006,"vr":1.6,
            "priorhigh":102.,"entropy":.9,"hour_volume":2_000_000.}
         fs={sym:dict(x) for sym in ("BTC","ETH","SOL","BNB","DOGE","PEPE")}
         sig=R.signal(0,fs,{})
         self.assertIsNotNone(sig)
         self.assertTrue(sig["exploratory"])
-        self.assertIn("EXPLORATORY PAPER PROBE",sig["reason"])
+        self.assertIn("COST_SCREEN_V2",sig["reason"])
+        self.assertEqual(sig["cost_gate_version"],2)
+
+    def test_low_movement_probes_are_not_automatically_traded(self):
+        # 0.3% observed movement cannot itself cover 0.8% assumed round-trip costs.
+        x={"price":100.,"ret3":.003,"ret8":.001,"ret10":.001,"ret21":.001,
+           "ret2":.0004,"one":.0002,"fast":99.5,"slow":100.1,
+           "z":.25,"rsi":52,"vol":.006,"vr":2.,
+           "priorhigh":102.,"entropy":.9,"hour_volume":2_000_000.}
+        fs={sym:dict(x) for sym in ("BTC","ETH","SOL","BNB","DOGE","PEPE")}
+        self.assertIsNone(R.signal(0,fs,{}))
+
+    def test_momentum_probe_requires_confirmed_volume(self):
+        x={"price":100.,"ret3":.014,"ret8":.001,"ret10":.001,"ret21":.001,
+           "ret2":.0004,"one":.0002,"fast":99.5,"slow":100.1,
+           "z":.25,"rsi":52,"vol":.006,"vr":.5,
+           "priorhigh":102.,"entropy":.9,"hour_volume":2_000_000.}
+        self.assertIsNone(R.signal(0,{"BTC":x},{}))
+
+    def test_contrarian_probe_requires_oversold_reversal(self):
+        x={"price":100.,"ret3":-.013,"ret8":-.002,"ret10":-.002,"ret21":-.002,
+           "ret2":-.001,"one":-.001,"fast":100.,"slow":100.1,
+           "z":-.4,"rsi":56,"vol":.006,"vr":2.,
+           "priorhigh":103.,"entropy":.9,"hour_volume":2_000_000.}
+        self.assertIsNone(R.signal(5,{"BTC":x,"ETH":x},{}))
 
     def test_exploratory_order_stays_small_and_paper_only(self):
         st=R.init();b=st["bots"][0]
