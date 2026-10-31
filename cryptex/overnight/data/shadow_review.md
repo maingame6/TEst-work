@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-10-31T13:43:59.982291+00:00
+Generated: 2026-10-31T17:57:05.428346+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9794 | 3 | 0 | -0.0206 | BUY_QUEUED PEPE |
-| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD BTC |
-| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD SOL |
-| ERROR_CODE_CONSENSUS | 9.9772 | 3 | 0 | -0.0228 | HOLD SOL |
-| GRAPH_COHERENCE | 9.9767 | 3 | 0 | -0.0194 | FILLED_BUY PEPE |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD ETH |
-| FREQTRADE_STYLE | 9.9814 | 3 | 0 | -0.0186 | HOLD ETH |
-| QLIB_STYLE | 9.9767 | 3 | 0 | -0.0194 | FILLED_BUY PEPE |
+| FLUID_ADVECTION | 9.9754 | 3 | 0 | -0.0206 | FILLED_BUY PEPE |
+| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD ETH |
+| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD PEPE |
+| ERROR_CODE_CONSENSUS | 9.9772 | 3 | 0 | -0.0228 | BUY_QUEUED XRP |
+| GRAPH_COHERENCE | 9.9747 | 3 | 0 | -0.0194 | SELL_QUEUED PEPE |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD PEPE |
+| FREQTRADE_STYLE | 9.9814 | 3 | 0 | -0.0186 | BUY_QUEUED PEPE |
+| QLIB_STYLE | 9.9747 | 3 | 0 | -0.0194 | SELL_QUEUED PEPE |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD XRP |
-| NAUTILUS_REGIME | 9.9850 | 3 | 0 | -0.0150 | HOLD SOL |
+| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD BNB |
+| NAUTILUS_REGIME | 9.9850 | 3 | 0 | -0.0150 | BUY_QUEUED ETH |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.

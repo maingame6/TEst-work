@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-31T13:44:02.452396+00:00",
+  "generated_utc": "2026-10-31T17:57:08.718700+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -9,91 +9,91 @@
     "GAMBLER": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 4,
-      "opposition": 18,
+      "support": 26,
+      "opposition": 0,
       "veto": 0,
-      "factor_score": -0.1191
+      "factor_score": 0.3368
     },
     "HOUSE": {
       "decision": "BUY",
       "symbol": "BTC",
-      "support": 18,
-      "opposition": 4,
+      "support": 10,
+      "opposition": 16,
       "veto": 0,
-      "factor_score": 0.2089
+      "factor_score": -0.0452
     },
     "SPY": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 14,
-      "opposition": 8,
+      "support": 19,
+      "opposition": 6,
       "veto": 0,
-      "factor_score": 0.0618
+      "factor_score": 0.1739
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 13,
-      "opposition": 12,
-      "veto": 2,
-      "factor_score": 0.0421
+      "support": 11,
+      "opposition": 8,
+      "veto": 1,
+      "factor_score": 0.0582
     },
     "BREAKOUT": {
-      "decision": "HOLD",
-      "symbol": "BTC",
-      "support": 4,
-      "opposition": 18,
+      "decision": "BUY",
+      "symbol": "ETH",
+      "support": 24,
+      "opposition": 0,
       "veto": 0,
-      "factor_score": -0.1191
+      "factor_score": 0.273
     },
     "CONTRARIAN": {
       "decision": "SELL",
       "symbol": "ETH",
-      "support": 10,
-      "opposition": 7,
+      "support": 8,
+      "opposition": 16,
       "veto": 0,
-      "factor_score": 0.0752
+      "factor_score": -0.0508
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 4,
-      "opposition": 18,
+      "support": 26,
+      "opposition": 0,
       "veto": 0,
-      "factor_score": -0.1191
+      "factor_score": 0.3368
     },
     "VORTEX": {
-      "decision": "HOLD",
+      "decision": "BUY",
       "symbol": "BTC",
-      "support": 4,
-      "opposition": 18,
+      "support": 26,
+      "opposition": 0,
       "veto": 0,
-      "factor_score": -0.1191
+      "factor_score": 0.3368
     },
     "FRACTAL": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 4,
-      "opposition": 18,
+      "support": 26,
+      "opposition": 0,
       "veto": 0,
-      "factor_score": -0.1191
+      "factor_score": 0.3368
     },
     "SHOCKWAVE": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 13,
-      "opposition": 12,
-      "veto": 2,
-      "factor_score": 0.0421
+      "support": 11,
+      "opposition": 8,
+      "veto": 1,
+      "factor_score": 0.0582
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 99.3548,
-  "portfolio_paper_change_usd": -0.6452,
-  "all_time_closed_paper_trades": 37,
+  "current_paper_equity_usd": 99.321721,
+  "portfolio_paper_change_usd": -0.678279,
+  "all_time_closed_paper_trades": 38,
   "all_time_closed_wins": 5,
-  "all_time_closed_losses": 32,
-  "aggregate_realized_pnl_usd": -0.642858,
+  "all_time_closed_losses": 33,
+  "aggregate_realized_pnl_usd": -0.646581,
   "agents": {
     "GAMBLER": {
       "closed": 3,
@@ -161,15 +161,15 @@
       "position_size_multiplier": 1.0
     },
     "CONTRARIAN": {
-      "closed": 5,
+      "closed": 6,
       "wins": 0,
-      "losses": 5,
+      "losses": 6,
       "win_rate": 0.0,
-      "realized_net_usd": -0.042594,
-      "average_profit_usd": -0.008519,
+      "realized_net_usd": -0.046317,
+      "average_profit_usd": -0.007719,
       "average_win_usd": null,
-      "average_loss_usd": -0.008519,
-      "last_20_net_usd": -0.042594,
+      "average_loss_usd": -0.007719,
+      "last_20_net_usd": -0.046317,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -238,8 +238,8 @@
       "net_pnl_usd": -0.035596
     },
     "Exploratory 15-minute observation complete (next-bar fill)": {
-      "count": 17,
-      "net_pnl_usd": -0.172766
+      "count": 18,
+      "net_pnl_usd": -0.176489
     },
     "Breakout failed": {
       "count": 2,
