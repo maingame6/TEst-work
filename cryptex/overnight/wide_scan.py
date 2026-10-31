@@ -283,7 +283,7 @@ def market_csv(state,path):
     "rebound_net_pct":stat("dip_recovery","mean_net_pct")
    })
 
-def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE):
+def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,rescan=False):
  if per_venue<1 or per_venue>100:raise ValueError("Unsafe per-venue batch size")
  discovery=json.loads(pathlib.Path(catalogue_path).read_text())
  if discovery.get("status") not in ("OK","PARTIAL"):raise RuntimeError("CCXT catalogue not healthy")
@@ -296,10 +296,12 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE):
  selections={}
  for venue,rows in index.items():
   if not rows:selections[venue]=[];continue
-  cursor=int(state["cursor"].get(venue,0))%len(rows)
-  selected=[rows[(cursor+i)%len(rows)] for i in range(min(per_venue,len(rows)))]
+  # First pass checks every distinct venue/pair ONCE before revisiting any.
+  # Incomplete/time-budget pairs remain unseen and are retried next batch.
+  unseen=rows if rescan else [r for r in rows if venue+"|"+r["symbol"] not in state["seen"]]
+  selected=unseen[:min(per_venue,len(unseen))]
   selections[venue]=selected
-  state["cursor"][venue]=(cursor+len(selected))%len(rows)
+  state["cursor"][venue]=(int(state["cursor"].get(venue,0))+len(selected))%len(rows)
  now_ms=int(dt.datetime.fromisoformat(now.replace("Z","+00:00")).timestamp()*1000)
  batch=[]
  with concurrent.futures.ThreadPoolExecutor(max_workers=len(VENUES)) as executor:
@@ -338,9 +340,10 @@ def main():
  parser.add_argument("--catalog",default="cryptex/overnight/data/ccxt_universe.json")
  parser.add_argument("--out",default="cryptex/overnight/data")
  parser.add_argument("--per-venue",type=int,default=MAX_MARKETS_PER_VENUE)
+ parser.add_argument("--rescan",action="store_true",help="Explicitly repeat already-checked pairs")
  args=parser.parse_args()
  import ccxt
- result=run(args.catalog,args.out,dt.datetime.now(dt.timezone.utc).isoformat(),ccxt,args.per_venue)
+ result=run(args.catalog,args.out,dt.datetime.now(dt.timezone.utc).isoformat(),ccxt,args.per_venue,args.rescan)
  print(json.dumps({"attempted":result["unique_tested_venue_pairs"],
     "validated":result["unique_ohlcv_validated_pairs"],
     "batch":result["last_batch"],"scans":result["batches"]}))
