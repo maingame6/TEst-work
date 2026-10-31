@@ -1,12 +1,11 @@
 """Conservative, prospective PAPER entry screen. Price momentum is not a forecast."""
 from __future__ import annotations
 import math
+from cost_model import FEE, SLIP, break_even
 
-FEE = .0015
-SLIP = .0025
 BUFFER = .002
 VERSION = 3
-ROUND_TRIP_BREAK_EVEN = ((1 + SLIP) * (1 + FEE)) / ((1 - SLIP) * (1 - FEE)) - 1
+ROUND_TRIP_BREAK_EVEN = break_even()
 MIN_THREE_BAR_MOVE = ROUND_TRIP_BREAK_EVEN + BUFFER
 MIN_HOURLY_TURNOVER = 100_000
 
