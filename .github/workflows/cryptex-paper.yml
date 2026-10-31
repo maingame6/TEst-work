@@ -79,11 +79,13 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
-          python3 -m py_compile cryptex/overnight/runner.py cryptex/overnight/subagents.py
+          python3 -m py_compile cryptex/overnight/runner.py cryptex/overnight/subagents.py cryptex/overnight/execution_gate.py cryptex/overnight/continuity.py
           python3 -m py_compile cryptex/overnight/research_math.py cryptex/overnight/research_flock.py
           python3 -m py_compile cryptex/overnight/research_shadow.py
           python3 -m py_compile cryptex/overnight/portfolio_report.py cryptex/overnight/integrity_audit.py
           python3 -m unittest discover -s cryptex/overnight/tests -p test_runner.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_execution_gate.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_continuity.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_research.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_portfolio_report.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_integrity_audit.py -v
@@ -123,6 +125,8 @@ jobs:
           git add -f cryptex/overnight/data/shadow_review.json
           git add -f cryptex/overnight/data/shadow_review.md
           git add -f cryptex/overnight/data/portfolio_report.json
+          git add -f cryptex/overnight/data/continuity_report.json
+          git add -f cryptex/overnight/data/continuity_report.md
           git add -f cryptex/overnight/data/integrity_report.json
           git add -f cryptex/overnight/data/benchmark_reference.json
           git add -f cryptex/overnight/data/combined_equity.csv
@@ -165,7 +169,9 @@ jobs:
       # after 132 hops; do not stop on a single unreliable cron event.
       # Public standard Github-hosted runners are free, subject to fair use.
       - name: Overnight backup — self-dispatch next paper cycle
-        if: success() && (github.event_name == 'workflow_dispatch' || github.event_name == 'push')  # One repair push can seed an overnight fallback
+        # Only arm backup on a real cron outage, explicit autopilot or workflow repair.
+        # A healthy native cron never spawns a redundant overnight chain.
+        if: success() && (github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event_name == 'schedule')
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -188,6 +194,20 @@ jobs:
           if event=="workflow_dispatch" and not requested:
               print("Manual research run, autonomous fallback not requested")
               raise SystemExit(0)
+          if event=="schedule":
+              # The runner kept the PREVIOUS genuine first-attempt cron time.
+              # Recovery starts only when it proves a >10-minute outage.
+              previous=state.get("previous_native_cron_run")
+              now=dt.datetime.now(dt.timezone.utc)
+              try:
+                  previous_time=dt.datetime.fromisoformat(previous.replace("Z","+00:00"))
+                  missing_for=(now-previous_time).total_seconds()
+              except (AttributeError,TypeError,ValueError):
+                  missing_for=float("inf")
+              if missing_for<=600:
+                  print(f"Native schedule healthy ({missing_for:.0f}s since preceding run); no backup")
+                  raise SystemExit(0)
+              print(f"Native schedule outage ({missing_for:.0f}s): arming bounded backup")
           if event not in ("push","workflow_dispatch") or hop>=132:
               print("Backup stopped: invalid source or 132-cycle limit")
               raise SystemExit(0)
@@ -214,13 +234,31 @@ jobs:
               print("Outside overnight research window or first morning report already captured")
               raise SystemExit(0)
 
+          # Existing recovery is confined to the overnight evidence window.
+          # GitHub Actions is best effort; this is not a guaranteed 5m clock.
           delay=45 if event=="push" else 285
+          started=dt.datetime.now(dt.timezone.utc)
           print(f"Paper-only overnight backup hop {hop}; next dispatch in {delay}s",flush=True)
           time.sleep(delay)
           local=dt.datetime.now(ZoneInfo("Europe/Dublin"))
           if not overnight_window(local):
               print("Morning snapshot captured / 08:15 cutoff reached; no further backup")
               raise SystemExit(0)
+          # Check the latest COMMITTED state, not this run's stale checkout:
+          # a genuine native cron since backup began makes this dispatch redundant.
+          try:
+              subprocess.run(["git","fetch","-q","origin","cryptex-paper-trading-preview"],
+                             check=True,timeout=30)
+              latest=json.loads(subprocess.check_output([
+                  "git","show","origin/cryptex-paper-trading-preview:cryptex/overnight/data/state.json"
+              ],timeout=15,text=True))
+              recent=latest.get("last_native_cron_run")
+              recent_time=dt.datetime.fromisoformat(recent.replace("Z","+00:00")) if recent else None
+              if recent_time and recent_time>started+dt.timedelta(seconds=20):
+                  print("Fresh native cron observed since fallback started; stopping redundant dispatch")
+                  raise SystemExit(0)
+          except (subprocess.CalledProcessError,subprocess.TimeoutExpired,ValueError,TypeError) as exc:
+              print(f"::warning::Could not verify recent cron ({exc}); continue bounded fallback")
           subprocess.run([
               "gh","api","-X","POST",
               f"repos/{os.environ['GH_REPO']}/actions/workflows/cryptex-paper.yml/dispatches",
