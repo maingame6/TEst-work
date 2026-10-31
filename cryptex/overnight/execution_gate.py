@@ -4,7 +4,7 @@ import math
 from cost_model import FEE, SLIP, break_even
 
 BUFFER = .002
-VERSION = 3
+VERSION = 4
 ROUND_TRIP_BREAK_EVEN = break_even()
 MIN_THREE_BAR_MOVE = ROUND_TRIP_BREAK_EVEN + BUFFER
 MIN_HOURLY_TURNOVER = 100_000
