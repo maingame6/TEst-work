@@ -46,7 +46,10 @@ def report(state, shadow, money, directory):
     # Record the FIRST actual policy-window balance, never reconstruct an
     # earlier entry price. The V4 equity delta can include legacy holdings and
     # therefore is not proof of pure V4 strategy performance.
-    c.setdefault("first_policy_equity", float(money["balance"]))
+    # Lightweight offline fixtures may supply P&L but no full balance.
+    # Real combined account snapshots always include the actual paper balance.
+    observed_equity = float(money["balance"]) if "balance" in money else float(money["pnl"])
+    c.setdefault("first_policy_equity", observed_equity)
     expected = c["observed_candles"] + c["missing_intervals"]
     coverage = c["observed_candles"] / expected if expected else 0.
     duration_seconds = c["last_candle_ts"] - c["first_candle_ts"]
@@ -81,7 +84,7 @@ def report(state, shadow, money, directory):
             for name, count in {**main, **research}.items()},
         "net_paper_pnl_total": money["pnl"],
         "first_policy_equity":round(c["first_policy_equity"],6),
-        "change_since_first_policy_observation":round(float(money["balance"])-c["first_policy_equity"],6),
+        "change_since_first_policy_observation":round(observed_equity-c["first_policy_equity"],6),
         "historical_data_note":"V3 closed trades retain older lower cost assumption; this V4 prospective sample counts only V4-qualified closes. Balance deltas may reflect V3-era holdings.",
         "status": "REVIEW_SAMPLES_AVAILABLE" if seven_days and coverage >= MIN_COVERAGE
             and any(n >= MIN_CLOSED_PER_STRATEGY for n in [*main.values(), *research.values()])
