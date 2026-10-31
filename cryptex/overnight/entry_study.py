@@ -10,7 +10,8 @@ import datetime as dt
 import json
 import math
 import pathlib
-from execution_gate import FEE, SLIP, ROUND_TRIP_BREAK_EVEN
+from cost_model import (FEE, SLIP, STRESS_FEE, STRESS_SLIP, break_even, returns, cost_assumptions)
+ROUND_TRIP_BREAK_EVEN=break_even()
 
 VERSION=1
 INTERVAL=300
@@ -62,12 +63,17 @@ def update(state,history,ts):
             state["censored_exits"]+=1
         elif p["exit_ts"]==ts:
             entry=p["entry_mid"];exit_=prices[p["symbol"]]
-            gross=exit_/entry-1
-            net=exit_*(1-SLIP)*(1-FEE)/(entry*(1+SLIP)*(1+FEE))-1
+            costs=returns(entry,exit_)
+            stress=returns(entry,exit_,STRESS_FEE,STRESS_SLIP)
+            gross=costs['gross']
+            net=costs['net']
             state["trades"].append({"gate":p["gate"],"symbol":p["symbol"],
                 "signal_ts":p["signal_ts"],"entry_ts":p["entry_ts"],
                 "exit_ts":ts,"gross_return":round(gross,10),
-                "net_return":round(net,10),"paper":True})
+                "net_return":round(net,10),
+                "fee_drag":round(costs["fee_drag"],10),
+                "slippage_drag":round(costs["slippage_drag"],10),
+                "stress_net_return":round(stress["net"],10),"paper":True})
         else:remaining.append(p)
     state["open"]=remaining
     # Fill previous signals only on exactly the next completed candle.
@@ -105,9 +111,15 @@ def summarize(state,now):
     for gate in GATES:
         done=[t for t in state["trades"] if t["gate"]==gate]
         nets=[t["net_return"] for t in done]
+        stress=[t["stress_net_return"] for t in done]
         gross=[t["gross_return"] for t in done]
         results[gate]={"completed":len(done),
             "wins_after_cost":sum(n>0 for n in nets),
+            "wins_under_stress":sum(n>0 for n in stress),
+            "mean_stress_net_pct":round(100*sum(stress)/len(stress),5) if stress else None,
+            "gross_up_but_net_down":sum(g>0 and n<=0 for g,n in zip(gross,nets)),
+            "mean_fee_drag_pct":round(100*sum(t["fee_drag"] for t in done)/len(done),5) if done else None,
+            "mean_slippage_drag_pct":round(100*sum(t["slippage_drag"] for t in done)/len(done),5) if done else None,
             "mean_net_pct":round(100*sum(nets)/len(nets),5) if nets else None,
             "mean_gross_pct":round(100*sum(gross)/len(gross),5) if gross else None,
             "net_sum_unit_stakes_pct":round(100*sum(nets),5),
@@ -120,6 +132,7 @@ def summarize(state,now):
         "observed_candles":state["observed_candles"],
         "missed_fills":state["missed_fills"],"censored_exits":state["censored_exits"],
         "fees_slippage_per_side_pct":round((FEE+SLIP)*100,3),
+        "cost_assumptions":cost_assumptions(),
         "disclaimer":"No real orders; simulations use close prices with estimated fees/slippage, do not model orderbook depth. Cross-market overlap makes samples correlated. No promotion without held-out test.",
         "gates":results}
 
@@ -135,11 +148,14 @@ def store(folder,history,ts,now):
        "**PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**","",
        f"Last observed closed candle: {ts}; captured candles: {report['observed_candles']}.",
        f"Missed fills: {report['missed_fills']}; censored exits: {report['censored_exits']}.","",
-       "| Gate | 3-candle move threshold | Closed | Wins after cost | Mean after-cost return | Active |",
-       "|---|---:|---:|---:|---:|---:|"]
+       "Base cost: 0.15% fee + 0.25% slippage **per side**; stress: 0.25% fee + 0.50% slippage **per side**.",
+       "",
+       "| Gate | Signal threshold | Closed | Net wins | Mean net | Stress mean net | Gross winners that became net losers | Active |",
+       "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for gate,r in report["gates"].items():
         m="not measured" if r["mean_net_pct"] is None else f"{r['mean_net_pct']:+.4f}%"
-        lines.append(f"| {gate} | {r['threshold_move_pct']:.3f}% | {r['completed']} | {r['wins_after_cost']} | {m} | {r['open']} |")
+        stress="n/a" if r["mean_stress_net_pct"] is None else f"{r['mean_stress_net_pct']:+.4f}%"
+        lines.append(f"| {gate} | {r['threshold_move_pct']:.3f}% | {r['completed']} | {r['wins_after_cost']} | {m} | {stress} | {r['gross_up_but_net_down']} | {r['open']} |")
     lines+=["","A gate only places a *research candidate*, entered on a later observed candle.",
              "No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.",
              "Six-candle exits are evaluation windows, not validated exit strategies.",""]
