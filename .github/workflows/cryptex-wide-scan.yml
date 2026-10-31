@@ -10,6 +10,17 @@ on:
   schedule:
     - cron: '3,13,23,33,43,53 * * * *'
   workflow_dispatch:
+    inputs:
+      autopilot:
+        type: boolean
+        required: false
+        default: false
+        description: 'Continue bounded five-venue paper test coverage'
+      hop:
+        type: number
+        required: false
+        default: 0
+        description: 'Recovery scan counter; no live trading'
 
 permissions:
   contents: write
@@ -85,3 +96,42 @@ jobs:
           fi
           git commit -m "research: record CCXT real-candle tested venue-pairs [skip ci]"
           git push origin HEAD:cryptex-wide-market-research
+      - name: Bounded follow-on scan until every listed venue/pair was ATTEMPTED
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          CRYPTEX_EVENT: ${{ github.event_name }}
+          CRYPTEX_AUTOPILOT: ${{ inputs.autopilot }}
+          CRYPTEX_HOP: ${{ inputs.hop }}
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib,subprocess
+          event=os.environ.get("CRYPTEX_EVENT","")
+          auto=os.environ.get("CRYPTEX_AUTOPILOT","false").lower()=="true"
+          hop=int(os.environ.get("CRYPTEX_HOP") or 0)
+          # Never launch a limitless chain; GitHub Actions can consume billed minutes.
+          MAX_HOPS=34
+          source=pathlib.Path("wide-output/cryptex/overnight/data/wide_scan_report.json")
+          r=json.loads(source.read_text())
+          assert r["mode"]=="PAPER_ONLY" and r["not_real_orders"]
+          attempted=int(r["unique_tested_venue_pairs"])
+          total=int(r["discovered_listing_total"])
+          if attempted>=total:
+              print(f"Completed first-pass attempt of all {total} discovered venue pairs. No further scan dispatch.")
+              raise SystemExit(0)
+          if hop>=MAX_HOPS:
+              print(f"Stopped after {MAX_HOPS} continuation hops; native cron can finish remaining {total-attempted}.")
+              raise SystemExit(0)
+          if event=="schedule":
+              print("Routine scheduled batch finished; do not create a competing autopilot chain.")
+              raise SystemExit(0)
+          if event not in ("push","workflow_dispatch") or (event=="workflow_dispatch" and not auto):
+              print("One-shot dispatch. No autopilot requested.")
+              raise SystemExit(0)
+          cmd=["gh","api","-X","POST",f"repos/{os.environ['GH_REPO']}/actions/workflows/cryptex-wide-scan.yml/dispatches",
+               "-f","ref=main","-f","inputs[autopilot]=true",
+               "-f",f"inputs[hop]={hop+1}"]
+          subprocess.run(cmd,check=True,timeout=30)
+          print(f"Scheduled next bounded paper scan {hop+1}/{MAX_HOPS}, attempted {attempted}/{total}")
+          PY
