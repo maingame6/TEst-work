@@ -1,5 +1,18 @@
 # CRYPTEX — verified implementation status (31 October 2026, 23:28 UTC)
 
+## Update: 23:35 UTC — actual multi-exchange historical scanner now running
+- This section **supersedes the older statement below** that multi-exchange historical evaluation is not implemented. It was true at 23:28 but code was subsequently added.
+- New source `cryptex/overnight/wide_scan.py`; independent [GitHub Actions workflow](https://github.com/maingame6/TEst-work/actions/workflows/cryptex-wide-scan.yml); results isolated to [wide market research branch](https://github.com/maingame6/TEst-work/tree/cryptex-wide-market-research).
+- First two persisted batches: **450 venue/pairs selected**, **375 OHLCV histories validated**, **75 unavailable/insufficient**, as of 23:33:52 UTC. These are historical backtests, NOT live paper simulated account orders. The rest of 4,221 discovery catalogue is NOT yet tested.
+- The first workflow passed; the second saved results but ended with HTTP 403 on its attempt to dispatch the next scan. Main-branch workflow was corrected to add `actions: write` and trigger a new run. **Until a follow-on dispatch succeeds, do not claim bounded automatic chaining is fixed.** Independent scheduled batches remain best effort.
+- The [per-market CSV audit](https://github.com/maingame6/TEst-work/blob/cryptex-wide-market-research/cryptex/overnight/data/wide_scan_market_results.csv) is being added in the subsequent batch so individual pair outcomes can be inspected.
+- Costs are venue-specific **published reference or explicitly unverified assumed** taker fees, with estimated two-sided slippage and higher-cost stress. This does not verify the user's personal exchange tiers or orderbook execution.
+- Original $210 simulation is untouched by this separate testing branch.
+
+---
+
+
+
 **This is an evidence snapshot, NOT a claim that future runs will succeed.**
 Repository: https://github.com/maingame6/TEst-work
 Research branch: `cryptex-paper-trading-preview`
