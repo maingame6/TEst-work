@@ -2,15 +2,15 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-10-31T21:52:23.689420+00:00 (Europe/Dublin)
+Checked: 2026-10-31T21:57:28.858735+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $208.9343 · P&L $-1.0657 (-0.51%)**
+**Starting paper money $210.00 · Current estimated liquidation $208.9365 · P&L $-1.0635 (-0.51%)**
 
-Realised $-0.9206; unrealised after estimated future sale costs $-0.1451.
-Open: 2; queued: 1; closed: 69; paper fills in current JSON: 140.
+Realised $-1.0001; unrealised after estimated future sale costs $-0.0634.
+Open: 1; queued: 0; closed: 70; paper fills in current JSON: 141.
 
 Overnight status: IN_PROGRESS
 
@@ -20,16 +20,16 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $208.9014 at 2026-10-31T21:15:32.467800+00:00 (NOT backdated to 21:00).
-Overnight P&L $+0.0329 as of 2026-10-31T21:52:23.689420+00:00.
-New paper fills since session started: 4.
+Overnight P&L $+0.0351 as of 2026-10-31T21:57:28.858735+00:00.
+New paper fills since session started: 5.
 
 ## Price prediction versus trading costs
 
 Estimated price move needed just to break even on a round trip: **0.803%** (0.15% fees and 0.25% slippage each side).
-Gross-versus-net attribution available on 55 of 69 cached closed trades; earlier records are honestly marked unavailable.
-Attributed gross market movement P&L: $+0.005242;
-Attributed fees + slippage drag: $0.812665;
-Attributed net profit/loss: $-0.807422.
+Gross-versus-net attribution available on 56 of 70 cached closed trades; earlier records are honestly marked unavailable.
+Attributed gross market movement P&L: $-0.010967;
+Attributed fees + slippage drag: $0.875936;
+Attributed net profit/loss: $-0.886903.
 Gross winners: 37; after-cost winners: 5; gross winners turned into losses by execution friction: 32.
 Do not claim profitability until fresh after-cost trades demonstrate out-of-sample performance.
 
@@ -37,7 +37,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 99.1422 | -0.8578 | -0.7128 | 39 | 2 |
+| Original ten traders | 100.00 | 99.1444 | -0.8556 | -0.7922 | 40 | 1 |
 | Eleven maths/OSS traders | 110.00 | 109.7921 | -0.2079 | -0.2079 | 30 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -46,9 +46,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.0307 | $+0.0307 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.0110 | $+0.0110 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.9588 | $-0.0412 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.0321 | $+0.0321 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.0092 | $+0.0092 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.9568 | $-0.0432 |
 
 ## 21-agent leaderboard
 
@@ -71,14 +71,14 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 15 | SPY | main | 9.9514 | -0.0486 | -0.0486 | 5 | cash |
 | 16 | FRACTAL | main | 9.9404 | -0.0596 | -0.0596 | 5 | cash |
 | 17 | GAMBLER | main | 9.8979 | -0.1021 | -0.1021 | 3 | cash |
-| 18 | VORTEX | main | 9.8856 | -0.1144 | -0.0499 | 1 | BTC |
-| 19 | HOUSE | main | 9.8783 | -0.1217 | -0.0411 | 5 | BTC |
+| 18 | VORTEX | main | 9.8867 | -0.1133 | -0.0499 | 1 | BTC |
+| 19 | HOUSE | main | 9.8794 | -0.1206 | -0.1206 | 6 | cash |
 | 20 | ROTATOR | main | 9.8533 | -0.1467 | -0.1467 | 1 | cash |
 | 21 | BREAKOUT | main | 9.8006 | -0.1994 | -0.1994 | 4 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793483100 / 1793483100
+Latest main/shadow candle timestamps: 1793483400 / 1793483400
 Warnings: none
 Balances include hypothetical estimated future sale fee 0.15% and slippage 0.25%; not executable quotes.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
