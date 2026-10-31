@@ -2,15 +2,15 @@
 
 **PAPER ONLY. All balances, profits and orders are simulated; no exchange execution.**
 
-Recorded: 2026-10-31T23:13:50.529478+00:00 | Dublin overnight session: 2026-10-31
+Recorded: 2026-10-31T23:18:57.540760+00:00 | Dublin overnight session: 2026-10-31
 Morning checkpoint: **IN_PROGRESS**. Not the final morning balance yet.
 
 ## 1. The money
 
-Initial fake competition capital **$210.00**; current estimated liquidation **$208.9373**, total after-cost P&L **$-1.0627**.
-Realised $-1.0001; unrealised after estimated selling costs $-0.0625.
-From the first REAL recorded overnight balance at 2026-10-31T21:15:32.467800+00:00: **$+0.0359**.
-Main ten: $99.1452 ($-0.8548); eleven maths/OSS agents: $109.7921 ($-0.2079).
+Initial fake competition capital **$210.00**; current estimated liquidation **$208.9317**, total after-cost P&L **$-1.0683**.
+Realised $-1.0001; unrealised after estimated selling costs $-0.0682.
+From the first REAL recorded overnight balance at 2026-10-31T21:15:32.467800+00:00: **$+0.0303**.
+Main ten: $99.1396 ($-0.8604); eleven maths/OSS agents: $109.7921 ($-0.2079).
 
 ## 2. What the 21 traders actually did
 
@@ -39,7 +39,7 @@ An order fill is not a completed round trip. Pending BUY/SELL is not an executed
 | SPY | main | $9.9514 | $-0.0486 | 0 | $+0.0000 | Cash |
 | FRACTAL | main | $9.9404 | $-0.0596 | 0 | $+0.0000 | Cash |
 | GAMBLER | main | $9.8979 | $-0.1021 | 0 | $+0.0000 | Cash |
-| VORTEX | main | $9.8875 | $-0.1125 | 0 | $+0.0000 | BTC |
+| VORTEX | main | $9.8819 | $-0.1181 | 0 | $+0.0000 | BTC |
 | HOUSE | main | $9.8794 | $-0.1206 | 1 | $-0.0795 | Cash |
 | ROTATOR | main | $9.8533 | $-0.1467 | 0 | $+0.0000 | Cash |
 | BREAKOUT | main | $9.8006 | $-0.1994 | 0 | $+0.0000 | Cash |
@@ -73,31 +73,31 @@ Positive gross trades 2 versus after-cost winners 0. Trading frequently is NOT p
 
 | Asset | Actual baseline time | First price | Latest price | Observed change |
 |---|---|---:|---:|---:|
-| ADA | 2026-10-31T21:15:32.467800+00:00 | 0.192376 | 0.193158 | +0.41% |
-| BTC | 2026-10-31T21:15:32.467800+00:00 | 77317.6 | 77457.3 | +0.18% |
+| ADA | 2026-10-31T21:15:32.467800+00:00 | 0.192376 | 0.193069 | +0.36% |
+| WIF | 2026-10-31T21:15:32.467800+00:00 | 0.1756 | 0.1759 | +0.17% |
+| XRP | 2026-10-31T21:15:32.467800+00:00 | 1.24826 | 1.25001 | +0.14% |
 | BONK | 2026-10-31T21:15:32.467800+00:00 | 2.912e-06 | 2.916e-06 | +0.14% |
-| XRP | 2026-10-31T21:15:32.467800+00:00 | 1.24826 | 1.24981 | +0.12% |
-| BNB | 2026-10-31T21:15:32.467800+00:00 | 701.74 | 702.59 | +0.12% |
-| ETH | 2026-10-31T21:15:32.467800+00:00 | 2249.66 | 2251.13 | +0.07% |
-| SHIB | 2026-10-31T21:15:32.467800+00:00 | 4.672e-06 | 4.672e-06 | +0.00% |
-| WIF | 2026-10-31T21:15:32.467800+00:00 | 0.1756 | 0.1756 | +0.00% |
-| SOL | 2026-10-31T21:15:32.467800+00:00 | 95.48 | 95.42 | -0.06% |
-| DOGE | 2026-10-31T21:15:32.467800+00:00 | 0.0756507 | 0.0755697 | -0.11% |
+| BTC | 2026-10-31T21:15:32.467800+00:00 | 77317.6 | 77401.9 | +0.11% |
+| ETH | 2026-10-31T21:15:32.467800+00:00 | 2249.66 | 2251.26 | +0.07% |
+| BNB | 2026-10-31T21:15:32.467800+00:00 | 701.74 | 702 | +0.04% |
+| SHIB | 2026-10-31T21:15:32.467800+00:00 | 4.672e-06 | 4.67e-06 | -0.04% |
+| SOL | 2026-10-31T21:15:32.467800+00:00 | 95.48 | 95.41 | -0.07% |
+| DOGE | 2026-10-31T21:15:32.467800+00:00 | 0.0756507 | 0.0755271 | -0.16% |
 | FLOKI | 2026-10-31T21:15:32.467800+00:00 | 2.337e-05 | 2.332e-05 | -0.21% |
-| PEPE | 2026-10-31T21:15:32.467800+00:00 | 4.973e-06 | 4.945e-06 | -0.56% |
+| PEPE | 2026-10-31T21:15:32.467800+00:00 | 4.973e-06 | 4.948e-06 | -0.50% |
 
-Observed paper equity samples: 25. Observed range $208.901398–$208.951261, sampled maximum drawdown -0.0094%, largest recorded gap 5.2 minutes.
+Observed paper equity samples: 26. Observed range $208.901398–$208.951261, sampled maximum drawdown -0.0094%, largest recorded gap 5.2 minutes.
 
 Benchmarks are comparison-only and excluded from the $210 bankroll.
-- BTC: $10 fake reference now $10.0332; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- ETH: $10 fake reference now $10.0123; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- SOL: $10 fake reference now $9.9328; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- BTC: $10 fake reference now $10.0260; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- ETH: $10 fake reference now $10.0129; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- SOL: $10 fake reference now $9.9318; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
 
 ## 5. Broad market radar — monitoring only, NOT new trades
 
 Kraken USD spot market discovery covers majors, L1, DeFi, AI/data, L2/gaming, memes, stablecoin pairs, tokenised-gold proxies and FX references.
-Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-10-31T22:53:29.471725+00:00; age 20.35 minutes.
-**This does not expand the original 12-asset simulated execution universe.**
+Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-10-31T22:53:29.471725+00:00; age 25.47 minutes.
+**This does not expand the bounded 24-asset simulated execution universe.**
 Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.
 
 Crypto breadth: 17 rising, 46 falling; 26.98% positive vs UTC open.
@@ -168,7 +168,7 @@ Public market-data archive: market_radar.json and market_radar_snapshots.csv.
 CCXT is an open-source unified market API with more than 100 supported exchange integrations; this run intentionally surveys five public spot venues, not every exchange worldwide.
 Catalogue status: OK; first-party checked venues: 5; last scan: 2026-10-31T17:56:50.865249+00:00.
 Discovered exchange market records: 8988; qualifying spot USD/USDT/USDC/EUR listings 4221; unique spot symbols 2898; unique base tickers 1251.
-**Important: CCXT catalogues are symbol metadata, not current quoted prices.** A discovered market cannot enter simulated trading unless independently verified in the original 12-asset engine.
+**Important: CCXT catalogues are symbol metadata, not current quoted prices.** A discovered market cannot enter simulated trading unless independently verified in the 24-asset, quality-gated completed-candle engine.
 
 | Exchange | Discovery status | All returned markets | Spot watch candidates |
 |---|---|---:|---:|
@@ -231,19 +231,19 @@ These are unverified third-party headlines, NOT insider information or automatic
 The 640 specialists are correlated, transparent rule reviews across the ten parent traders, not separately trained language models.
 | Parent | Action | Support | Opposition | Vetoes |
 |---|---|---:|---:|---:|
-| GAMBLER | HOLD | 8 | 14 | 0 |
-| HOUSE | HOLD | 13 | 9 | 0 |
-| SPY | HOLD | 13 | 19 | 0 |
-| MEME HUNTER | HOLD | 8 | 23 | 2 |
-| BREAKOUT | HOLD | 8 | 14 | 0 |
-| CONTRARIAN | HOLD | 13 | 9 | 0 |
-| ROTATOR | HOLD | 8 | 14 | 0 |
-| VORTEX | HOLD | 8 | 14 | 0 |
-| FRACTAL | HOLD | 8 | 14 | 0 |
-| SHOCKWAVE | HOLD | 8 | 23 | 2 |
+| GAMBLER | HOLD | 5 | 17 | 0 |
+| HOUSE | HOLD | 20 | 2 | 0 |
+| SPY | HOLD | 12 | 22 | 0 |
+| MEME HUNTER | HOLD | 8 | 24 | 1 |
+| BREAKOUT | HOLD | 5 | 17 | 0 |
+| CONTRARIAN | HOLD | 20 | 2 | 0 |
+| ROTATOR | HOLD | 5 | 17 | 0 |
+| VORTEX | HOLD | 5 | 17 | 0 |
+| FRACTAL | HOLD | 5 | 17 | 0 |
+| SHOCKWAVE | HOLD | 8 | 24 | 1 |
 
 Main paper risk limit: not triggered. Shadow risk limit: not triggered.
-Last trigger workflow_dispatch; run 41251617414. Native 5-minute cron independently verified: YES.
+Last trigger workflow_dispatch; run 41251980760. Native 5-minute cron independently verified: YES.
 Market-data flags: {'main_stale': False, 'research_stale': False, 'missing_quotes': False, 'time_misaligned': False, 'main_status': 'HEALTHY: paper trading on completed Kraken candles', 'research_status': 'OK'}. Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.
 
 ## 8. Research distillation gate — do not deploy a winner yet
