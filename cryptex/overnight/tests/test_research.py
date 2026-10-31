@@ -146,12 +146,12 @@ class ResearchLabTests(unittest.TestCase):
   b=S.initial()["bots"][M.MODEL_NAMES[0]]
   S.fill_order(b,{"side":"BUY","symbol":"BTC","reason":"old"},100,1200,"TEST")
   S.fill_order(b,{"side":"SELL","symbol":"BTC","reason":"old"},102,1500,"TEST")
-  self.assertEqual(b.get("qualified_v3_closed",0),0)
-  S.fill_order(b,{"side":"BUY","symbol":"BTC","reason":"new","cost_gate_version":3},
+  self.assertEqual(b.get("qualified_v4_closed",0),0)
+  S.fill_order(b,{"side":"BUY","symbol":"BTC","reason":"new","cost_gate_version":4},
                100,1800,"TEST")
   r=S.fill_order(b,{"side":"SELL","symbol":"BTC","reason":"exit"},102,2100,"TEST")
-  self.assertEqual(b["qualified_v3_closed"],1)
-  self.assertEqual(r["entry_cost_gate_version"],3)
+  self.assertEqual(b["qualified_v4_closed"],1)
+  self.assertEqual(r["entry_cost_gate_version"],4)
 
 
 if __name__=="__main__":unittest.main()
