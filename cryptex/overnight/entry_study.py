@@ -19,10 +19,10 @@ HOLD_BARS=6
 MAX_OPEN_PER_GATE=5
 MAX_RECORDS=1600
 GATES={
-    "V3_STRICT": {"move": ROUND_TRIP_BREAK_EVEN+.002, "volume_ratio":1.25},
+    "V4_TAKER_STRICT": {"move": ROUND_TRIP_BREAK_EVEN+.002, "volume_ratio":1.25},
     "COST_AWARE": {"move": ROUND_TRIP_BREAK_EVEN+.0005, "volume_ratio":1.20},
-    "BALANCED_TEST": {"move":.005, "volume_ratio":1.20},
-    "LOW_HURDLE_CONTROL": {"move":.0025, "volume_ratio":1.15},
+    "BALANCED_TEST": {"move":.012, "volume_ratio":1.20},
+    "LOW_HURDLE_CONTROL": {"move":.005, "volume_ratio":1.15},
 }
 
 def blank():
@@ -148,7 +148,7 @@ def store(folder,history,ts,now):
        "**PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**","",
        f"Last observed closed candle: {ts}; captured candles: {report['observed_candles']}.",
        f"Missed fills: {report['missed_fills']}; censored exits: {report['censored_exits']}.","",
-       "Base cost: 0.15% fee + 0.25% slippage **per side**; stress: 0.25% fee + 0.50% slippage **per side**.",
+       "Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.",
        "",
        "| Gate | Signal threshold | Closed | Net wins | Mean net | Stress mean net | Gross winners that became net losers | Active |",
        "|---|---:|---:|---:|---:|---:|---:|---:|"]
