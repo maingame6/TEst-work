@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-31T10:55:42.699448+00:00",
+  "generated_at": "2026-10-31T13:44:02.070372+00:00",
   "mode": "PAPER_ONLY",
-  "status": "WARNING",
+  "status": "PASS",
   "audited_accounts": 21,
   "starting_paper_usd": 210,
-  "estimated_paper_equity": 209.186443,
-  "gross_paper_equity": 209.191194,
-  "estimated_exit_cost": 0.004751,
+  "estimated_paper_equity": 209.173057,
+  "gross_paper_equity": 209.185763,
+  "estimated_exit_cost": 0.012706,
   "checks": [
     {
       "check": "All systems remain PAPER_ONLY; real-money execution disabled",
@@ -61,9 +61,7 @@
       "passed": true
     }
   ],
-  "warnings": [
-    "Native GitHub cron has not been independently verified; fallback dispatch is not cron"
-  ],
+  "warnings": [],
   "no_real_orders": true,
   "note": "Only accounting failures block publishing. Source staleness is explicit; neither profit nor future market performance can be guaranteed."
 }

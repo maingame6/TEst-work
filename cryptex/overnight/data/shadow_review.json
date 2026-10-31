@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-31T10:55:42.679829+00:00",
+  "generated_at": "2026-10-31T13:43:59.982291+00:00",
   "paper_only": true,
-  "candle_ts": 1793443800,
-  "cycles": 23,
+  "candle_ts": 1793453700,
+  "cycles": 24,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,8 +16,12 @@
       "wins": 0,
       "realized": -0.020629,
       "paper_return": -0.020629,
-      "latest_decision": "FILLED_SELL BTC",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED PEPE",
+      "queued": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.239, gate=0.09"
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -27,7 +31,7 @@
       "wins": 0,
       "realized": -0.007571,
       "paper_return": -0.007571,
-      "latest_decision": "HOLD XRP",
+      "latest_decision": "HOLD BTC",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -38,7 +42,7 @@
       "wins": 0,
       "realized": -0.02135,
       "paper_return": -0.02135,
-      "latest_decision": "HOLD PEPE",
+      "latest_decision": "HOLD SOL",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -49,24 +53,28 @@
       "wins": 0,
       "realized": -0.022762,
       "paper_return": -0.022762,
-      "latest_decision": "FILLED_SELL XRP",
+      "latest_decision": "HOLD SOL",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.980638,
+      "equity": 9.976658,
       "closed": 3,
       "wins": 0,
       "realized": -0.019362,
-      "paper_return": -0.019362,
-      "latest_decision": "BUY_QUEUED PEPE",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.023342,
+      "latest_decision": "FILLED_BUY PEPE",
+      "queued": null,
+      "position": {
         "symbol": "PEPE",
-        "reason": "Relative-strength shock in asset co-movement graph; score=+0.251, gate=0.09"
+        "quantity": 199095.48426826607,
+        "entry_cost": 0.9980638157773319,
+        "entry_market": 4.993e-06,
+        "entry_time": 1793453700,
+        "reason": "Relative-strength shock in asset co-movement graph; score=+0.251, gate=0.09",
+        "peak": 4.993e-06
       },
-      "position": null,
       "sample_sufficient": false
     },
     "LATTICE_ANALOG": {
@@ -75,7 +83,7 @@
       "wins": 0,
       "realized": 0.0,
       "paper_return": 0.0,
-      "latest_decision": "HOLD SOL",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -86,24 +94,28 @@
       "wins": 0,
       "realized": -0.018615,
       "paper_return": -0.018615,
-      "latest_decision": "FILLED_SELL BNB",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.980638,
+      "equity": 9.976658,
       "closed": 3,
       "wins": 0,
       "realized": -0.019362,
-      "paper_return": -0.019362,
-      "latest_decision": "BUY_QUEUED PEPE",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.023342,
+      "latest_decision": "FILLED_BUY PEPE",
+      "queued": null,
+      "position": {
         "symbol": "PEPE",
-        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09"
+        "quantity": 199095.48426826607,
+        "entry_cost": 0.9980638157773319,
+        "entry_market": 4.993e-06,
+        "entry_time": 1793453700,
+        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09",
+        "peak": 4.993e-06
       },
-      "position": null,
       "sample_sufficient": false
     },
     "HUMMINGBOT_FRICTION": {
@@ -123,7 +135,7 @@
       "wins": 0,
       "realized": -0.016455,
       "paper_return": -0.016455,
-      "latest_decision": "FILLED_SELL ETH",
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -134,7 +146,7 @@
       "wins": 0,
       "realized": -0.014969,
       "paper_return": -0.014969,
-      "latest_decision": "FILLED_SELL PEPE",
+      "latest_decision": "HOLD SOL",
       "queued": null,
       "position": null,
       "sample_sufficient": false

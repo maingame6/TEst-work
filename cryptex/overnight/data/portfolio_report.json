@@ -1,38 +1,38 @@
 {
-  "generated_at": "2026-10-31T10:55:42.699448+00:00",
-  "local_time": "2026-10-31T10:55:42.699448+00:00",
+  "generated_at": "2026-10-31T13:44:02.070372+00:00",
+  "local_time": "2026-10-31T13:44:02.070372+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
-  "balance": 209.186443,
-  "gross_mark_to_market": 209.191194,
-  "estimated_future_exit_costs": 0.004751,
-  "pnl": -0.813557,
-  "pnl_pct": -0.38741,
+  "balance": 209.173057,
+  "gross_mark_to_market": 209.185763,
+  "estimated_future_exit_costs": 0.012706,
+  "pnl": -0.826943,
+  "pnl_pct": -0.39378,
   "realised": -0.803934,
-  "unrealised_estimate": -0.009623,
+  "unrealised_estimate": -0.023009,
   "groups": {
     "main": {
       "starting": 100.0,
-      "equity": 99.347519,
-      "gross_equity": 99.35227,
-      "pnl": -0.652481,
+      "equity": 99.350039,
+      "gross_equity": 99.3548,
+      "pnl": -0.649961,
       "realised": -0.642858,
       "closed": 37,
       "wins": 5,
       "open": 1,
-      "queued": 0
+      "queued": 2
     },
     "research": {
       "starting": 110.0,
-      "equity": 109.838924,
-      "gross_equity": 109.838924,
-      "pnl": -0.161076,
+      "equity": 109.823018,
+      "gross_equity": 109.830963,
+      "pnl": -0.176982,
       "realised": -0.161076,
       "closed": 24,
       "wins": 0,
-      "open": 0,
-      "queued": 2
+      "open": 2,
+      "queued": 1
     }
   },
   "agents": [
@@ -51,7 +51,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): SOL \u2014 Time-based exit",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -68,8 +68,14 @@
       "closed": 5,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): ETH \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "pending": {
+        "side": "BUY",
+        "symbol": "BTC",
+        "reason": "Range rebound",
+        "exploratory": false,
+        "cost_gate_version": null
+      },
+      "last_decision": "BUY QUEUED: BTC \u2014 Range rebound",
       "missing_quote": false
     },
     {
@@ -87,7 +93,7 @@
       "wins": 1,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): SOL \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -123,7 +129,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): SOL \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -131,17 +137,21 @@
       "name": "CONTRARIAN",
       "initial": 10.0,
       "cash": 8.76371601,
-      "equity": 9.94778402,
-      "gross_equity": 9.95253484,
-      "pnl": -0.05221598,
-      "pnl_pct": -0.52216,
+      "equity": 9.95030328,
+      "gross_equity": 9.95506421,
+      "pnl": -0.04969672,
+      "pnl_pct": -0.49697,
       "realised": -0.04259363,
-      "unrealised_estimate": -0.00962235,
+      "unrealised_estimate": -0.00710309,
       "closed": 5,
       "wins": 0,
       "position": "ETH",
-      "pending": null,
-      "last_decision": "HOLD: ETH position still within strategy rules",
+      "pending": {
+        "side": "SELL",
+        "symbol": "ETH",
+        "reason": "Exploratory 15-minute observation complete (next-bar fill)"
+      },
+      "last_decision": "SELL QUEUED: ETH \u2014 Exploratory 15-minute observation complete (next-bar fill)",
       "missing_quote": false
     },
     {
@@ -159,7 +169,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): ADA \u2014 Time-based exit",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -177,7 +187,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): ETH \u2014 Time-based exit",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -195,7 +205,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): SOL \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -213,7 +223,7 @@
       "wins": 2,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): PEPE \u2014 Exploratory 15-minute observation complete (next-bar fill)",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -230,8 +240,12 @@
       "closed": 3,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "FILLED_SELL BTC",
+      "pending": {
+        "side": "BUY",
+        "symbol": "PEPE",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.239, gate=0.09"
+      },
+      "last_decision": "BUY_QUEUED PEPE",
       "missing_quote": false
     },
     {
@@ -249,7 +263,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD XRP",
+      "last_decision": "HOLD BTC",
       "missing_quote": false
     },
     {
@@ -267,7 +281,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD SOL",
       "missing_quote": false
     },
     {
@@ -285,29 +299,25 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "FILLED_SELL XRP",
+      "last_decision": "HOLD SOL",
       "missing_quote": false
     },
     {
       "group": "research",
       "name": "GRAPH_COHERENCE",
       "initial": 10.0,
-      "cash": 9.98063816,
-      "equity": 9.98063816,
-      "gross_equity": 9.98063816,
-      "pnl": -0.01936184,
-      "pnl_pct": -0.19362,
+      "cash": 8.98257434,
+      "equity": 9.97268549,
+      "gross_equity": 9.97665809,
+      "pnl": -0.02731451,
+      "pnl_pct": -0.27315,
       "realised": -0.01936184,
-      "unrealised_estimate": -0.0,
+      "unrealised_estimate": -0.00795267,
       "closed": 3,
       "wins": 0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
-        "symbol": "PEPE",
-        "reason": "Relative-strength shock in asset co-movement graph; score=+0.251, gate=0.09"
-      },
-      "last_decision": "BUY_QUEUED PEPE",
+      "position": "PEPE",
+      "pending": null,
+      "last_decision": "FILLED_BUY PEPE",
       "missing_quote": false
     },
     {
@@ -325,7 +335,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD SOL",
+      "last_decision": "HOLD ETH",
       "missing_quote": false
     },
     {
@@ -343,29 +353,25 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "FILLED_SELL BNB",
+      "last_decision": "HOLD ETH",
       "missing_quote": false
     },
     {
       "group": "research",
       "name": "QLIB_STYLE",
       "initial": 10.0,
-      "cash": 9.98063816,
-      "equity": 9.98063816,
-      "gross_equity": 9.98063816,
-      "pnl": -0.01936184,
-      "pnl_pct": -0.19362,
+      "cash": 8.98257434,
+      "equity": 9.97268549,
+      "gross_equity": 9.97665809,
+      "pnl": -0.02731451,
+      "pnl_pct": -0.27315,
       "realised": -0.01936184,
-      "unrealised_estimate": -0.0,
+      "unrealised_estimate": -0.00795267,
       "closed": 3,
       "wins": 0,
-      "position": null,
-      "pending": {
-        "side": "BUY",
-        "symbol": "PEPE",
-        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09"
-      },
-      "last_decision": "BUY_QUEUED PEPE",
+      "position": "PEPE",
+      "pending": null,
+      "last_decision": "FILLED_BUY PEPE",
       "missing_quote": false
     },
     {
@@ -401,7 +407,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "FILLED_SELL ETH",
+      "last_decision": "HOLD XRP",
       "missing_quote": false
     },
     {
@@ -419,7 +425,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "FILLED_SELL PEPE",
+      "last_decision": "HOLD SOL",
       "missing_quote": false
     }
   ],
@@ -431,12 +437,12 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1793443800,
-  "last_candle_research": 1793443800,
-  "total_open": 1,
-  "total_queued": 2,
+  "last_candle_main": 1793453700,
+  "last_candle_research": 1793453700,
+  "total_open": 3,
+  "total_queued": 3,
   "total_completed": 61,
-  "saved_fills": 123,
+  "saved_fills": 125,
   "specialist_reviews": 640,
   "news_scouts": 8,
   "execution_cost_study": {
@@ -453,9 +459,9 @@
     "interpretation": "Gross movement is from candle mid-to-mid; execution_drag includes entry/exit fee and slippage assumptions. Numbers cover attributed cached closed trades only."
   },
   "actual_trigger_event": "schedule",
-  "schedule_confirmed": false,
-  "last_schedule_run": null,
-  "github_run_id": "41180343188",
+  "schedule_confirmed": true,
+  "last_schedule_run": "2026-10-31T13:44:02.070397+00:00",
+  "github_run_id": "41206873393",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-10-30",
@@ -483,33 +489,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 77296.1,
+        "current_mid": 77328.1,
         "start": 10.0,
-        "equity": 10.0123,
-        "pnl": 0.0123,
-        "return_pct": 0.123,
+        "equity": 10.016445,
+        "pnl": 0.016445,
+        "return_pct": 0.1644,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 2241.93,
+        "current_mid": 2246.7,
         "start": 10.0,
-        "equity": 9.971423,
-        "pnl": -0.028577,
-        "return_pct": -0.2858,
+        "equity": 9.992639,
+        "pnl": -0.007361,
+        "return_pct": -0.0736,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 95.47,
+        "current_mid": 95.83,
         "start": 10.0,
-        "equity": 9.938015,
-        "pnl": -0.061985,
-        "return_pct": -0.6198,
+        "equity": 9.97549,
+        "pnl": -0.02451,
+        "return_pct": -0.2451,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
