@@ -10,6 +10,7 @@ import datetime as dt
 import json
 import pathlib
 from research_math import MODEL_NAMES,evaluate
+from execution_gate import next_candle_only, VERSION as COST_VERSION
 from research_flock import research_cycle
 
 FEE=.0015
@@ -123,6 +124,10 @@ def update(state,history,allowed,ts):
   b=state["bots"][name]
   order=b["pending"];b["pending"]=None
   executed=None
+  if order and order["side"]=="BUY" and (not next_candle_only(order,ts)
+       or ideas[name]["action"]!="BUY" or ideas[name]["symbol"]!=order["symbol"]):
+   b["last_decision"]="VETO: old/missed candle or weak after-cost setup; BUY cancelled"
+   order=None
   if order and order["symbol"] in prices:
    if order["side"]=="BUY" and state["halted"]:
     b["last_decision"]="VETO: research portfolio loss limit; paper buy cancelled"
@@ -146,7 +151,8 @@ def update(state,history,allowed,ts):
   else:
    idea=ideas[name];symbol=idea["symbol"]
    if idea["action"]=="BUY" and not state["halted"]:
-    b["pending"]={"side":"BUY","symbol":symbol,"reason":idea["reason"]}
+    b["pending"]={"side":"BUY","symbol":symbol,"reason":idea["reason"],
+                  "cost_gate_version":COST_VERSION,"signal_ts":ts}
     action="BUY_QUEUED"
    elif state["halted"]:
     action="RISK_HOLD";reason=state["risk_reason"] or "Portfolio drawdown limit"
