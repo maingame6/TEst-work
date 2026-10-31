@@ -200,5 +200,20 @@ class PaperOnlySafetyTests(unittest.TestCase):
     def test_no_lookahead_source_discards_open_candle(self):
         self.assertIn("for row in items[0][:-1]", __import__("inspect").getsource(R.bars))
 
+    def test_fee_policy_sample_requires_versioned_entry(self):
+        st=R.init();b=st["bots"][0]
+        R.journal(st,b,{"side":"BUY","symbol":"BTC","reason":"V3 qualifying test",
+                        "cost_gate_version":3},100.,100000,100.)
+        R.journal(st,b,{"side":"SELL","symbol":"BTC","reason":"Test exit"},
+                  102.,100300,100.)
+        self.assertEqual(b["qualified_v3_closed"],1)
+        self.assertEqual(st["trades"][0]["entry_cost_gate_version"],3)
+        R.journal(st,b,{"side":"BUY","symbol":"BTC","reason":"Legacy test"},
+                  100.,100600,100.)
+        R.journal(st,b,{"side":"SELL","symbol":"BTC","reason":"Legacy exit"},
+                  102.,100900,100.)
+        self.assertEqual(b["qualified_v3_closed"],1)
+
+
 if __name__=="__main__":
     unittest.main()
