@@ -15,15 +15,20 @@ TRADES=DATA/"trades.csv"
 CURVE=DATA/"equity.csv"
 DECISIONS=DATA/"decisions.csv"
 SUBAGENT_DECISIONS=DATA/"subagent_decisions.csv"
-SYMBOLS={"BTC":"XBTUSD","ETH":"ETHUSD","SOL":"SOLUSD","BNB":"BNBUSD","XRP":"XRPUSD","ADA":"ADAUSD","DOGE":"DOGEUSD","SHIB":"SHIBUSD","PEPE":"PEPEUSD","BONK":"BONKUSD","WIF":"WIFUSD","FLOKI":"FLOKIUSD"}
-CG={"BTC":"bitcoin","ETH":"ethereum","SOL":"solana","BNB":"binancecoin","XRP":"ripple","ADA":"cardano","DOGE":"dogecoin","SHIB":"shiba-inu","PEPE":"pepe","BONK":"bonk","WIF":"dogwifhat","FLOKI":"floki"}
+SYMBOLS={"BTC":"XBTUSD","ETH":"ETHUSD","SOL":"SOLUSD","BNB":"BNBUSD","XRP":"XRPUSD","ADA":"ADAUSD","DOGE":"DOGEUSD","SHIB":"SHIBUSD","PEPE":"PEPEUSD","BONK":"BONKUSD","WIF":"WIFUSD","FLOKI":"FLOKIUSD","LTC":"LTCUSD","BCH":"BCHUSD","LINK":"LINKUSD","DOT":"DOTUSD","AVAX":"AVAXUSD","XLM":"XLMUSD","TRX":"TRXUSD","NEAR":"NEARUSD","AAVE":"AAVEUSD","UNI":"UNIUSD","TON":"TONUSD","SUI":"SUIUSD"}
+CG={"BTC":"bitcoin","ETH":"ethereum","SOL":"solana","BNB":"binancecoin","XRP":"ripple","ADA":"cardano","DOGE":"dogecoin","SHIB":"shiba-inu","PEPE":"pepe","BONK":"bonk","WIF":"dogwifhat","FLOKI":"floki","LTC":"litecoin","BCH":"bitcoin-cash","LINK":"chainlink","DOT":"polkadot","AVAX":"avalanche-2","XLM":"stellar","TRX":"tron","NEAR":"near","AAVE":"aave","UNI":"uniswap","TON":"the-open-network","SUI":"sui"}
 NAMES=["GAMBLER","HOUSE","SPY","MEME HUNTER","BREAKOUT","CONTRARIAN","ROTATOR","VORTEX","FRACTAL","SHOCKWAVE"]
 UNIVERSES=[
- ["BTC","ETH","SOL","BNB"],["BTC","ETH","SOL"],
- ["SOL","ETH","DOGE","PEPE","BONK"],["DOGE","SHIB","PEPE","BONK","WIF","FLOKI"],
- ["BTC","ETH","SOL","ADA","DOGE"],["BTC","ETH","SOL","XRP","ADA"],
- ["BTC","ETH","SOL","BNB","XRP","ADA","DOGE"],["BTC","ETH","SOL","DOGE"],
- ["BTC","ETH","SOL","ADA","DOGE","PEPE"],["DOGE","SHIB","PEPE","BONK","WIF","FLOKI"]
+ ["BTC","ETH","SOL","BNB","LTC","LINK","AVAX","NEAR"],
+ ["BTC","ETH","SOL","BCH","XLM","TRX","LINK","DOT"],
+ ["SOL","ETH","DOGE","PEPE","BONK","NEAR","SUI","AVAX"],
+ ["DOGE","SHIB","PEPE","BONK","WIF","FLOKI","SUI"],
+ ["BTC","ETH","SOL","ADA","DOGE","LINK","AVAX","NEAR"],
+ ["BTC","ETH","SOL","XRP","ADA","BCH","AAVE","UNI"],
+ ["BTC","ETH","SOL","BNB","XRP","ADA","DOGE","DOT","LINK","NEAR","SUI"],
+ ["BTC","ETH","SOL","DOGE","LTC","AVAX","TON"],
+ ["BTC","ETH","SOL","ADA","DOGE","PEPE","AAVE","UNI","NEAR"],
+ ["DOGE","SHIB","PEPE","BONK","WIF","FLOKI","SUI","TON"]
 ]
 FEE=.0015; SLIP=.0025; MAX_ORDER=.08; STOP=.06
 # The observed after-cost break-even is ~0.803%. A historical price move is
@@ -360,7 +365,7 @@ def main():
     st["trade_profile"]="COST_SCREEN_V3_ALL_ENTRIES_FEE_AWARE_PAPER_ONLY"
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP,"minimum_exploratory_three_bar_move":PROBE_MIN_THREE_BAR_MOVE,"cost_screen_version":COST_VERSION}
-    # Wide, READ-ONLY market radar. No extra symbols become tradable.
+    # Wide read-only ticker radar remains distinct from the 24-candle vetted paper universe.
     # Availability failures never change trade fills or the accounting ledger.
     try:
         from market_radar import refresh as refresh_market_radar
@@ -394,6 +399,18 @@ def main():
     evidence=store_continuity(st,shadow,money,DATA)
     st["continuity"]={"status":evidence["status"],"coverage_pct":evidence["coverage_pct"],
                       "missing_intervals":evidence["missing_intervals"],"paper_only":True} if evidence else {"status":"NO_NEW_BASELINE"}
+    # Separate prospective A/B entry-threshold observations, not part of $210.
+    # A broken study must not prevent genuine paper trading or publishing balances.
+    try:
+        from entry_study import store as store_entry_study
+        study=store_entry_study(DATA,history,st["last_ts"],st["last_run"])
+        st["entry_study"]={"status":"OK","gates":len(study["gates"]),
+             "captured":study["observed_candles"],"paper_only":True,
+             "no_automatic_strategy_promotion":True}
+    except Exception as exc:
+        st["entry_study"]={"status":"FAILED","error":type(exc).__name__+": "+str(exc)[:180],
+             "paper_only":True}
+        event(st,"ENTRY_STUDY_ERROR",st["entry_study"]["error"])
     # Extended overnight debrief is read-only and never changes trade actions.
     # Failing to make a report must not silently stop paper BUY/SELL cycles.
     try:
