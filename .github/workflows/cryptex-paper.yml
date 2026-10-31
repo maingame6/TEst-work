@@ -40,7 +40,7 @@ jobs:
     name: Observe markets and journal paper trades
     if: github.repository == 'maingame6/TEst-work'
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     env:
       CRYPTEX_TRIGGER_EVENT: ${{ github.event_name }}
       CRYPTEX_AUTOPILOT: ${{ inputs.autopilot }}
@@ -130,9 +130,9 @@ jobs:
           git add -f cryptex/overnight/data/portfolio_report.json
           git add -f cryptex/overnight/data/continuity_report.json
           git add -f cryptex/overnight/data/continuity_report.md
-          git add -f cryptex/overnight/data/entry_study_state.json
-          git add -f cryptex/overnight/data/entry_study_report.json
-          git add -f cryptex/overnight/data/entry_study_report.md
+          for path in cryptex/overnight/data/entry_study_state.json cryptex/overnight/data/entry_study_report.json cryptex/overnight/data/entry_study_report.md; do
+            if test -f "$path"; then git add -f "$path"; else echo "::warning::Optional entry study missing: $path"; fi
+          done
           git add -f cryptex/overnight/data/integrity_report.json
           git add -f cryptex/overnight/data/benchmark_reference.json
           git add -f cryptex/overnight/data/combined_equity.csv
