@@ -9,7 +9,7 @@
   "daily_date": "2026-10-31",
   "peak": 100,
   "halted": false,
-  "health": "HEALTHY: paper trading on completed Kraken candles",
+  "health": "HEALTHY: waiting for a newly closed Kraken candle",
   "last_prices": {
     "BTC": 77295.2,
     "ETH": 2242.14,
@@ -2360,7 +2360,7 @@
     }
   },
   "cycles": 25,
-  "last_run": "2026-10-31T10:50:45.185368+00:00",
+  "last_run": "2026-10-31T10:53:42.816960+00:00",
   "errors": {},
   "run_kind": "SCHEDULED_PAPER_RESEARCH",
   "guardrails": {
@@ -2368,7 +2368,9 @@
     "max_portfolio_per_order": 0.08,
     "stop_trigger": 0.06,
     "fees_per_side": 0.0015,
-    "slippage_per_side": 0.0025
+    "slippage_per_side": 0.0025,
+    "minimum_exploratory_three_bar_move": 0.01,
+    "exploratory_cost_screen_version": 2
   },
   "committees": {
     "GAMBLER": {
@@ -22674,7 +22676,7 @@
       "paper_only": true
     }
   ],
-  "trade_profile": "ACTIVE_PAPER_EXPLORATION_1.2_PERCENT_MAX",
+  "trade_profile": "COST_SCREEN_V2_PAPER_EXPLORATION_1.2_PERCENT_MAX",
   "subagent_model": "640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY",
   "research_lab": {
     "status": "OK",
@@ -22695,11 +22697,11 @@
   },
   "trigger_event": "schedule",
   "github_run_id": "41180343188",
-  "github_run_attempt": "2",
+  "github_run_attempt": "3",
   "schedule_confirmed": true,
   "morning_briefing": {
     "status": "OK",
-    "generated_at": "2026-10-31T10:50:45.185368+00:00",
+    "generated_at": "2026-10-31T10:53:42.816960+00:00",
     "session_closed": 48,
     "distillation": "NOT_READY_FOR_AUTOPROMOTION",
     "paper_only": true
@@ -22711,5 +22713,5 @@
     "last_poll": "2026-10-31T10:50:45.185368+00:00",
     "monitor_only": true
   },
-  "last_schedule_run": "2026-10-31T10:50:45.185389+00:00"
+  "last_schedule_run": "2026-10-31T10:53:42.816977+00:00"
 }
