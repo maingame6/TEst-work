@@ -69,8 +69,8 @@ class PaperOnlySafetyTests(unittest.TestCase):
         sig=R.signal(0,fs,{})
         self.assertIsNotNone(sig)
         self.assertTrue(sig["exploratory"])
-        self.assertIn("COST_SCREEN_V2",sig["reason"])
-        self.assertEqual(sig["cost_gate_version"],2)
+        self.assertIn("COST_SCREEN_V3",sig["reason"])
+        self.assertEqual(sig["cost_gate_version"],3)
 
     def test_low_movement_probes_are_not_automatically_traded(self):
         # 0.3% observed movement cannot itself cover 0.8% assumed round-trip costs.
