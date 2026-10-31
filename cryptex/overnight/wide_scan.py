@@ -8,6 +8,7 @@ No credentials, private exchange methods, real orders, or account balances.
 from __future__ import annotations
 import argparse
 import concurrent.futures
+import csv
 import datetime as dt
 import json
 import math
@@ -199,6 +200,7 @@ def report(state,market_index,discovery,now):
     "unique_ohlcv_validated_pairs":sum(v["validated_ohlcv_distinct"] for v in totals.values()),
     "markets_with_any_historical_signal":sum(any(z["samples"]>0 for z in r.get("strategy_results",{}).values())
                                           for r in validated),
+    "coverage_pct":round(100*sum(v["attempted_distinct"] for v in totals.values())/max(1,sum(len(v) for v in market_index.values())),3),
     "batches":state["scan_count"],"venues":totals,"strategies":strategies,
     "fees":FEES,"slippage_per_side":SLIPPAGE,"stress_slippage_per_side":STRESS_SLIPPAGE,
     "fee_limitations":"Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
@@ -228,6 +230,37 @@ def markdown(r):
          "**No lookahead:** signal closed bar N, hypothetical entry N+1, exit N+7; contiguous candles only. Historical testing is NOT prospective live paper trading.",
          ""]
  return "\n".join(lines)
+
+def market_csv(state,path):
+ """One auditable record PER attempted venue/pair, including zero-signal pairs."""
+ fields=["venue","symbol","quote","checked_at","status","ever_valid",
+         "history_bars","last_complete_ms","reason","fee_per_side",
+         "fee_status","momentum_samples","momentum_net_pct",
+         "cost_aware_samples","cost_aware_net_pct","breakout_samples",
+         "breakout_net_pct","rebound_samples","rebound_net_pct"]
+ with pathlib.Path(path).open("w",newline="",encoding="utf-8") as fp:
+  writer=csv.DictWriter(fp,fieldnames=fields)
+  writer.writeheader()
+  for key,r in sorted(state["seen"].items()):
+   scores=r.get("strategy_results",{})
+   def stat(name,key):
+    return scores.get(name,{}).get(key)
+   writer.writerow({
+    "venue":r["venue"],"symbol":r["symbol"],"quote":r["quote"],
+    "checked_at":r.get("checked_at"),"status":r["status"],
+    "ever_valid":r.get("ever_valid",False),
+    "history_bars":r.get("bars"),"last_complete_ms":r.get("last_completed_ms"),
+    "reason":r.get("reason",""),"fee_per_side":r.get("fee_per_side"),
+    "fee_status":r.get("fee_status"),
+    "momentum_samples":stat("momentum_05","samples"),
+    "momentum_net_pct":stat("momentum_05","mean_net_pct"),
+    "cost_aware_samples":stat("cost_aware_momentum","samples"),
+    "cost_aware_net_pct":stat("cost_aware_momentum","mean_net_pct"),
+    "breakout_samples":stat("breakout","samples"),
+    "breakout_net_pct":stat("breakout","mean_net_pct"),
+    "rebound_samples":stat("dip_recovery","samples"),
+    "rebound_net_pct":stat("dip_recovery","mean_net_pct")
+   })
 
 def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE):
  if per_venue<1 or per_venue>100:raise ValueError("Unsafe per-venue batch size")
@@ -274,6 +307,7 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE):
  result=report(state,index,discovery,now)
  (out/"wide_scan_report.json").write_text(json.dumps(result,indent=2,allow_nan=False)+"\n")
  (out/"wide_scan_report.md").write_text(markdown(result))
+ market_csv(state,out/"wide_scan_market_results.csv")
  return result
 
 def main():
