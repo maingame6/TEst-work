@@ -191,6 +191,9 @@ jobs:
           event=os.environ.get("CRYPTEX_EVENT","")
           hop=int(os.environ.get("CRYPTEX_HOP") or "0")
           requested=os.environ.get("CRYPTEX_AUTOPILOT","false").lower()=="true"
+          state=json.loads(pathlib.Path("cryptex/overnight/data/state.json").read_text())
+          if state.get("mode")!="PAPER_ONLY":
+              raise SystemExit("Refusing non-paper-money research dispatch")
           if event=="workflow_dispatch" and not requested:
               print("Manual research run, autonomous fallback not requested")
               raise SystemExit(0)
@@ -208,13 +211,10 @@ jobs:
                   print(f"Native schedule healthy ({missing_for:.0f}s since preceding run); no backup")
                   raise SystemExit(0)
               print(f"Native schedule outage ({missing_for:.0f}s): arming bounded backup")
-          if event not in ("push","workflow_dispatch") or hop>=132:
+          if event not in ("push","workflow_dispatch","schedule") or hop>=132:
               print("Backup stopped: invalid source or 132-cycle limit")
               raise SystemExit(0)
 
-          state=json.loads(pathlib.Path("cryptex/overnight/data/state.json").read_text())
-          if state.get("mode")!="PAPER_ONLY":
-              raise SystemExit("Refusing non-paper-money research dispatch")
           # A SINGLE native cron event does not prove dependable future
           # scheduling. The bounded backup keeps going to the morning
           # checkpoint. The runner is idempotent on closed-candle timestamp,
