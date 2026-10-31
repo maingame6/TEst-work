@@ -2,28 +2,28 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-10-31T23:39:30.244465+00:00; scanning cycles: 5.
+Last batch: 2026-10-31T23:41:36.480260+00:00; scanning cycles: 6.
 Discovered: 4221 distinct venue/pair listings.
-Selected in scan batches: **1614**.
-Checked against exchange metadata: **1614**.
-Real 5m OHLCV requests attempted: **1614**.
-Validated recent closed-candle histories: **1328**.
-Venue/pairs producing historical strategy samples: **66**.
+Selected in scan batches: **1954**.
+Checked against exchange metadata: **1954**.
+Real 5m OHLCV requests attempted: **1954**.
+Validated recent closed-candle histories: **1599**.
+Venue/pairs producing historical strategy samples: **86**.
 
 | Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |
 |---|---:|---:|---:|---:|
-| kraken | 1201 | 345 | 340 | 5 |
-| coinbase | 867 | 345 | 127 | 218 |
+| kraken | 1201 | 430 | 423 | 7 |
+| coinbase | 867 | 430 | 165 | 265 |
 | bitstamp | 234 | 234 | 234 | 0 |
-| okx | 1040 | 345 | 345 | 0 |
-| kucoin | 879 | 345 | 282 | 63 |
+| okx | 1040 | 430 | 430 | 0 |
+| kucoin | 879 | 430 | 347 | 83 |
 
 | Hypothesis | Historical examples | Net winners | Gross winners turned into losses | Weighted average net % |
 |---|---:|---:|---:|---:|
-| momentum_05 | 64 | 1 | 23 | -2.34949% |
-| cost_aware_momentum | 13 | 0 | 4 | -3.52325% |
-| breakout | 92 | 2 | 32 | -1.98677% |
-| dip_recovery | 21 | 5 | 11 | -0.68720% |
+| momentum_05 | 94 | 6 | 31 | -2.07211% |
+| cost_aware_momentum | 22 | 3 | 6 | -2.50030% |
+| breakout | 129 | 6 | 41 | -1.93923% |
+| dip_recovery | 23 | 5 | 12 | -0.70444% |
 
 **Fees:** each venue's rate and source/status is machine-readable in wide_scan_report.json. All entries and exits subtract fees AND slippage each way.
 **Caveat:** Coinbase and Bitstamp currently use high-cost unverified assumptions. OKX and KuCoin have varying jurisdictions/fee classes. No venue-specific profitability claim until tier/depth confirmed.
