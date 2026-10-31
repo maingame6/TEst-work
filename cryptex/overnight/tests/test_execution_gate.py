@@ -7,14 +7,14 @@ import execution_gate as G
 
 class ExecutionGateTests(unittest.TestCase):
     def features(self, **changes):
-        x = dict(price=100., vol=.006, ret3=.012, z=.4,
+        x = dict(price=100., vol=.006, ret3=.032, z=.4,
                  vr=1.6, hour_volume=2_000_000., rsi=60.)
         x.update(changes)
         return x
 
     def test_exact_break_even_includes_both_sides(self):
         self.assertGreater(G.ROUND_TRIP_BREAK_EVEN, .008)
-        self.assertGreater(G.MIN_THREE_BAR_MOVE, .010)
+        self.assertGreater(G.MIN_THREE_BAR_MOVE, .023)
 
     def test_normal_main_strategies_require_after_cost_move(self):
         self.assertTrue(G.main_eligible(self.features()))
@@ -24,9 +24,9 @@ class ExecutionGateTests(unittest.TestCase):
 
     def test_oversold_contrarian_is_direction_aware(self):
         self.assertTrue(G.main_eligible(self.features(
-            ret3=-.015, z=-1.5, rsi=30), contrarian=True))
+            ret3=-.035, z=-1.5, rsi=30), contrarian=True))
         self.assertFalse(G.main_eligible(self.features(
-            ret3=.015, z=-1.5, rsi=30), contrarian=True))
+            ret3=.035, z=-1.5, rsi=30), contrarian=True))
 
     def test_nonfinite_and_missing_input_always_veto(self):
         self.assertFalse(G.main_eligible(self.features(vol=float("nan"))))
