@@ -40,7 +40,7 @@ def n(val):
  except (ValueError,TypeError,OverflowError):return None
 def state_new():
  return {"version":VERSION,"paper_only":True,"freeze":FROZEN_AT,
-         "last_by_market":{},"signals":[],"positions":[],"completed":[],
+         "last_by_market":{},"signals":[],"positions":[],"completed":[],"censored_cohorts":[],
          "counters":{"snapshots":0,"stale_or_bad":0,"entry_censored":0,
                      "exit_censored":0,"signal_candidates":0,"gaps":0}}
 def good(row):
@@ -90,7 +90,11 @@ def run(state,rows,now):
    if position["key"]!=key:
     positions.append(position);continue
    if not good_now or not continuous:
-    state["counters"]["exit_censored"]+=1;continue
+    state["counters"]["exit_censored"]+=1
+    state.setdefault("censored_cohorts",[]).append({
+      "key":key,"gate":position["gate"],"signal_time":position["signal_time"],
+      "reason":"MISSING_EXIT_BOOK"})
+    continue
    position["remaining"]-=1
    if position["remaining"]>0:
     positions.append(position);continue
@@ -112,7 +116,11 @@ def run(state,rows,now):
    if signal["key"]!=key:
     signals.append(signal);continue
    if not good_now or not continuous:
-    state["counters"]["entry_censored"]+=1;continue
+    state["counters"]["entry_censored"]+=1
+    state.setdefault("censored_cohorts",[]).append({
+      "key":key,"gate":signal["gate"],"signal_time":signal["signal_time"],
+      "reason":"MISSING_NEXT_BOOK"})
+    continue
    state["positions"].append({"key":key,"gate":signal["gate"],
       "signal_time":signal["signal_time"],"entry_time":t.isoformat(),
       "entry_mid":(n(row["bid"])+n(row["ask"]))/2,
@@ -130,6 +138,8 @@ def run(state,rows,now):
          "signal_time":t.isoformat(),"move":round(move,9)})
   state["last_by_market"][key]={"time":when,"mid":(n(row["bid"])+n(row["ask"]))/2 if good_now else None,
     "good":good_now,"at":t.isoformat()}
+ # Retain bounded reasons for dropped prospective hypotheses, not invented fills.
+ state["censored_cohorts"]=state.get("censored_cohorts",[])[-5000:]
  # No promotion gate from this sample, ever; explicit review is required.
  return state
 def paired_holdout(st,now):
@@ -157,6 +167,10 @@ def paired_holdout(st,now):
        and other.get("signal_time")==control["signal_time"]):
     ambiguous=True
   if ambiguous:continue
+  if any(x.get("key")==control["venue"]+"|"+control["symbol"]
+         and x.get("signal_time")==control["signal_time"]
+         for x in st.get("censored_cohorts",[])):
+   continue
   pairs+=1
   for name in GATES:
    candidate=indexed.get((*ident,name))
@@ -214,6 +228,7 @@ def report(st,now):
   "promotion_policy":"NEVER_AUTO_PROMOTE: independent review with matched benchmarks, cluster uncertainty, enough days and verified costs required",
   "state":{k:v for k,v in st.items() if k in ("counters","freeze")},
   "pending_entries":len(st["signals"]),"open_hypotheses":len(st["positions"]),
+  "recorded_censored_cohorts":len(st.get("censored_cohorts",[])),
   "completed_research_hypotheses":len(st["completed"]),"gates":gates,
   "paired_holdout_comparison":paired_holdout(st,now),
   "limitations":["Book VWAP snapshots are not guaranteed executable fills.",
