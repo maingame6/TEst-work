@@ -1,0 +1,61 @@
+name: CRYPTEX - independent paper heartbeat watchdog
+
+# Independent workflow/schedule, NOT independent infrastructure.
+# Does not backfill market observations and never touches real money.
+on:
+  schedule:
+    - cron: '4,9,14,19,24,29,34,39,44,49,54,59 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-watchdog.yml'
+      - 'cryptex/ops/monitor.py'
+      - 'cryptex/ops/tests/test_monitor.py'
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: cryptex-heartbeat-watchdog
+  cancel-in-progress: false
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Checkout watchdog source from default branch
+        uses: actions/checkout@v4
+      - name: Checkout persisted paper state without modifying it
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-paper-trading-preview
+          path: paper-snapshot
+          sparse-checkout: |
+            cryptex/overnight/data/state.json
+            cryptex/overnight/data/continuity_report.json
+      - name: Test alert and safety rules
+        run: python3 -m unittest discover -s cryptex/ops/tests -p 'test_*.py' -v
+      - name: Examine independent heartbeat; recover if stale
+        id: monitor
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 cryptex/ops/monitor.py \
+            --state paper-snapshot/cryptex/overnight/data/state.json \
+            --continuity paper-snapshot/cryptex/overnight/data/continuity_report.json \
+            --output heartbeat.json --recover
+      - name: Publish heartbeat evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-watchdog-heartbeat
+          path: heartbeat.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Expose watchdog failure to GitHub
+        if: steps.monitor.outcome == 'failure'
+        run: exit 1
