@@ -1,21 +1,26 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793498400,
+  "last_ts": 1793498700,
   "first_ts": 1793488500,
-  "observed_candles": 32,
+  "observed_candles": 33,
   "signals": [],
-  "open": [
+  "open": [],
+  "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1793496600,
       "entry_ts": 1793496900,
-      "entry_mid": 4.4675,
-      "exit_ts": 1793498700
+      "exit_ts": 1793498700,
+      "gross_return": -0.0027756016,
+      "net_return": -0.0234993006,
+      "fee_drag": 0.0157500113,
+      "slippage_drag": 0.0049736878,
+      "stress_net_return": -0.028369689,
+      "paper": true
     }
   ],
-  "trades": [],
   "missed_fills": 0,
   "censored_exits": 1
 }
