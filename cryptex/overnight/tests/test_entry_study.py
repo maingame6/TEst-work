@@ -63,6 +63,29 @@ class EntryStudyTests(unittest.TestCase):
         S.update(s,{"BTC":x},ts)
         self.assertEqual(s["signals"],[])
 
+    def test_v4_is_observed_not_weakened_by_diagnostics(self):
+        st=S.blank();ts=1800000000
+        S.update(st,{"BTC":candles(ts,move=.007)},ts)
+        summary=S.summarize(st,"TEST")
+        strict=summary["gates"]["V4_TAKER_STRICT"]
+        control=summary["gates"]["LOW_HURDLE_CONTROL"]
+        self.assertEqual(strict["diagnostics_since_instrumentation"]["qualified"],0)
+        self.assertGreater(strict["diagnostics_since_instrumentation"]["move_below_gate"],0)
+        self.assertGreater(control["diagnostics_since_instrumentation"]["queued"],0)
+        self.assertEqual(strict["heldout_completed"],0)
+        self.assertIsNone(strict["heldout_mean_net_pct"])
+        self.assertAlmostEqual(S.GATES["V4_TAKER_STRICT"]["move"],
+                               S.ROUND_TRIP_BREAK_EVEN+.002)
+
+    def test_holdout_cutoff_frozen_from_first_observed_candle(self):
+        st=S.blank();ts=1800000000
+        S.update(st,{"BTC":candles(ts)},ts)
+        first=S.summarize(st,"TEST")["gates"]["LOW_HURDLE_CONTROL"]["heldout_boundary_ts"]
+        self.assertEqual(first,ts+72*3600)
+        S.update(st,{"BTC":candles(ts+300)},ts+300)
+        later=S.summarize(st,"TEST")["gates"]["LOW_HURDLE_CONTROL"]["heldout_boundary_ts"]
+        self.assertEqual(first,later)
+
     def test_state_roundtrip_and_reports(self):
         with tempfile.TemporaryDirectory() as tmp:
             ts=1800000000
