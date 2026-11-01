@@ -101,6 +101,39 @@ class WideScanTests(unittest.TestCase):
             self.assertEqual(r4["unique_tested_venue_pairs"],15)
             self.assertFalse((d/"trades.csv").exists())
 
+    def test_failed_pairs_are_retried_without_changing_total_coverage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d=pathlib.Path(tmp)
+            p=d/"catalog.json"
+            p.write_text(json.dumps({"status":"OK",
+                "pairs":[{"exchange":v,"symbol":symbol,"quote":"USD","base":symbol.split("/")[0]}
+                         for v in W.VENUES for symbol in ("AAA/USD","BBB/USD")]}))
+            a=W.run(p,d,WHEN,FakeCCXT,per_venue=2)
+            self.assertEqual(a["unique_tested_venue_pairs"],10)
+            self.assertEqual(a["unique_ohlcv_validated_pairs"],5)
+            b=W.run(p,d,WHEN,FakeCCXT,per_venue=2,retry_unavailable=True)
+            self.assertEqual(b["last_batch"]["attempted"],5)
+            self.assertEqual(b["latest_unavailable_pairs"],5)
+            self.assertEqual(b["unique_tested_venue_pairs"],10)
+            state=json.loads((d/"wide_scan_state.json").read_text())
+            self.assertEqual(state["seen"]["kraken|BBB/USD"]["attempts"],2)
+
+    def test_rotating_rescan_revisits_different_markets(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d=pathlib.Path(tmp)
+            p=d/"catalog.json"
+            p.write_text(json.dumps({"status":"OK",
+                 "pairs":[{"exchange":v,"symbol":symbol,"quote":"USD","base":symbol.split("/")[0]}
+                          for v in W.VENUES for symbol in ("AAA/USD","BBB/USD","CCC/USD")]}))
+            for _ in range(3):
+                W.run(p,d,WHEN,FakeCCXT,per_venue=1)
+            W.run(p,d,WHEN,FakeCCXT,per_venue=1,rescan=True)
+            W.run(p,d,WHEN,FakeCCXT,per_venue=1,rescan=True)
+            state=json.loads((d/"wide_scan_state.json").read_text())
+            self.assertEqual(state["seen"]["kraken|AAA/USD"]["attempts"],2)
+            self.assertEqual(state["seen"]["kraken|BBB/USD"]["attempts"],2)
+            self.assertEqual(state["seen"]["kraken|CCC/USD"]["attempts"],1)
+
     def test_no_live_accounts_or_execution_method(self):
         import inspect
         text=inspect.getsource(W)
