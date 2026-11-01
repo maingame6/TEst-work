@@ -15,6 +15,10 @@ WARNING_SECONDS = 8 * 60
 RECOVERY_SECONDS = 11 * 60
 CRITICAL_SECONDS = 22 * 60
 MAX_CANDLE_SECONDS = 16 * 60
+WIDE_RECOVERY_SECONDS = 120 * 60
+WIDE_DISPATCH_COOLDOWN_SECONDS = 75 * 60
+PILOT_END = dt.datetime(2026, 11, 10, tzinfo=UTC)
+
 
 
 def parse_utc(value):
@@ -63,6 +67,29 @@ def examine(state, continuity, now):
     }
 
 
+
+def wide_recovery_due(wide, now, runs):
+    """Never dispatch concurrent/rapidly repeated five-exchange scans."""
+    if wide.get("mode") != "PAPER_ONLY" or wide.get("not_real_orders") is not True:
+        raise ValueError("Unsafe wide-market research report")
+    age = (now-parse_utc(wide.get("generated_at"))).total_seconds()
+    if age < WIDE_RECOVERY_SECONDS or now >= PILOT_END:
+        return False
+    for run in runs:
+        try:
+            recent=(now-parse_utc(run.get("created_at"))).total_seconds()
+        except (ValueError, TypeError):
+            # Unknown age means no safe guarantee against duplicate scans.
+            return False
+        if recent < -60:
+            return False
+        if recent <= WIDE_DISPATCH_COOLDOWN_SECONDS:
+            return False
+        if run.get("status") in ("queued", "in_progress", "waiting", "requested"):
+            return False
+    return True
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--state", required=True)
@@ -70,6 +97,8 @@ def main():
     p.add_argument("--output", required=True)
     p.add_argument("--repo", default="maingame6/TEst-work")
     p.add_argument("--recover", action="store_true")
+    p.add_argument("--wide")
+    p.add_argument("--recover-wide", action="store_true")
     args = p.parse_args()
     now = dt.datetime.now(UTC)
     data = {"heartbeat_at": now.isoformat(), "mode": "PAPER_ONLY"}
@@ -99,6 +128,29 @@ def main():
             else:
                 data["dispatch_attempted"] = False
                 data["dispatch_skip_reason"] = "active paper workflow"
+        if args.wide:
+            wide = json.loads(pathlib.Path(args.wide).read_text())
+            if wide.get("mode") != "PAPER_ONLY" or wide.get("not_real_orders") is not True:
+                raise ValueError("Wide-market research must be PAPER_ONLY")
+            wide_age=(now-parse_utc(wide.get("generated_at"))).total_seconds()
+            data["wide_report_age_minutes"] = round(max(wide_age,0)/60, 1)
+            data["wide_research_stale"] = wide_age >= WIDE_RECOVERY_SECONDS
+            data["wide_recovery_attempted"] = False
+            if args.recover_wide and data["wide_research_stale"] and now < PILOT_END:
+                recent = subprocess.run(
+                    ["gh","api",f"repos/{args.repo}/actions/workflows/cryptex-wide-scan.yml/runs",
+                     "-f","per_page=5","-X","GET"],
+                    text=True,capture_output=True,timeout=25,check=True)
+                runs=json.loads(recent.stdout).get("workflow_runs",[])
+                if wide_recovery_due(wide,now,runs):
+                    subprocess.run(
+                        ["gh","api","-X","POST",
+                         f"repos/{args.repo}/actions/workflows/cryptex-wide-scan.yml/dispatches",
+                         "-f","ref=main"],
+                        check=True,capture_output=True,text=True,timeout=25)
+                    data["wide_recovery_attempted"]=True
+                else:
+                    data["wide_recovery_skip"]="Recent/active scan, or deadline reached"
     except Exception as exc:
         data["severity"] = "ERROR"
         data["error"] = type(exc).__name__ + ": " + str(exc)[:250]
