@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793496600,
+  "last_ts": 1793496900,
   "first_ts": 1793488500,
-  "observed_candles": 26,
-  "signals": [
+  "observed_candles": 27,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1793496600,
-      "observed_move": 0.00878025
+      "entry_ts": 1793496900,
+      "entry_mid": 4.4675,
+      "exit_ts": 1793498700
     }
   ],
-  "open": [],
   "trades": [],
   "missed_fills": 0,
   "censored_exits": 1
