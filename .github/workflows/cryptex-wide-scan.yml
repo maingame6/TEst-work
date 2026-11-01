@@ -92,8 +92,9 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
-          python3 -m py_compile cryptex/overnight/wide_scan.py
+          python3 -m py_compile cryptex/overnight/wide_scan.py cryptex/overnight/forward_venue.py
           python3 -m unittest discover -s cryptex/overnight/tests -p test_wide_scan.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_forward_venue.py -v
       - name: Read genuine 5-minute OHLCV across five venues, then test
         if: steps.coverage_gate.outputs.run_scan == 'true'
         env:
