@@ -51,6 +51,24 @@ jobs:
           ref: cryptex-paper-trading-preview
           fetch-depth: 0
 
+
+      - name: Checkout paper-writer authority from default branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: authority-snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            cryptex/ops/writer_authority.json
+            cryptex/ops/writer_control.py
+
+      - name: Verify GitHub is current owner before processing any market
+        id: writer_preflight
+        run: |
+          python3 authority-snapshot/cryptex/ops/writer_control.py decision \
+            --file authority-snapshot/cryptex/ops/writer_authority.json \
+            --actor github --output "$GITHUB_OUTPUT"
+
       - name: Install Python
         uses: actions/setup-python@v5
         with:
@@ -60,6 +78,7 @@ jobs:
       # Install only if the last successful discovery is >=6h old; this does
       # not burden each 5-minute paper-trading execution with a package install.
       - name: Optional CCXT multi-exchange market discovery (read-only)
+        if: steps.writer_preflight.outputs.authorized == 'true'
         shell: bash
         run: |
           if python3 cryptex/overnight/ccxt_universe.py --due; then
@@ -77,6 +96,7 @@ jobs:
       # block the automated trading experiment. Optional UI/market-research
       # fixtures are separately visible and cannot kill the overnight chain.
       - name: Critical paper strategy and accounting safety tests
+        if: steps.writer_preflight.outputs.authorized == 'true'
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
@@ -94,6 +114,7 @@ jobs:
           python3 -m unittest discover -s cryptex/overnight/tests -p test_entry_study.py -v
 
       - name: Optional cross-market and morning presentation tests
+        if: steps.writer_preflight.outputs.authorized == 'true'
         continue-on-error: true
         env:
           PYTHONDONTWRITEBYTECODE: '1'
@@ -105,6 +126,7 @@ jobs:
           python3 -m unittest discover -s cryptex/overnight/tests -p test_ccxt_universe.py -v
 
       - name: Trade on completed paper candles and verify 21 account balances
+        if: steps.writer_preflight.outputs.authorized == 'true'
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
@@ -113,8 +135,23 @@ jobs:
           # research feeds are reported as warnings, not invented prices.
           python3 cryptex/overnight/integrity_audit.py cryptex/overnight/data
 
+
+      - name: Refresh authority and fence any takeover before publishing
+        id: writer_commit
+        if: steps.writer_preflight.outputs.authorized == 'true'
+        env:
+          WRITER_EPOCH: ${{ steps.writer_preflight.outputs.epoch }}
+        run: |
+          git fetch --quiet --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          git show origin/main:cryptex/ops/writer_authority.json > "$RUNNER_TEMP/cryptex_authority_latest.json"
+          python3 authority-snapshot/cryptex/ops/writer_control.py decision \
+            --file "$RUNNER_TEMP/cryptex_authority_latest.json" \
+            --actor github --epoch "$WRITER_EPOCH" --output "$GITHUB_OUTPUT"
+
       - name: Save paper state, entries, exits and equity to GitHub
-        if: success()
+        if: success() && steps.writer_commit.outputs.authorized == 'true'
+        env:
+          WRITER_EPOCH: ${{ steps.writer_preflight.outputs.epoch }}
         run: |
           git config user.name "cryptex-paper-research[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -163,17 +200,24 @@ jobs:
           # If a human updates documentation or experiments while a run is
           # executing, retry by replaying the commit without force-pushing.
           # A DATA conflict fails safely; no journal is silently overwritten.
+          # Revalidate against freshly fetched MAIN. A drain or server takeover
+          # must never allow a queued GitHub run to publish simulated trades.
+          git fetch --quiet --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          git show origin/main:cryptex/ops/writer_authority.json > "$RUNNER_TEMP/cryptex_authority_latest.json"
+          python3 authority-snapshot/cryptex/ops/writer_control.py assert-owner \
+            --file "$RUNNER_TEMP/cryptex_authority_latest.json" \
+            --actor github --epoch "$WRITER_EPOCH"
+          # Refuse a non-fast-forward. Rebase of independent paper decisions
+          # could silently introduce an invalid or duplicated money history.
           if ! git push origin HEAD:cryptex-paper-trading-preview; then
-            echo "Research branch moved while this job ran; attempting safe non-force rebase"
-            git fetch origin cryptex-paper-trading-preview
-            git -c rebase.autoStash=false rebase origin/cryptex-paper-trading-preview
-            git push origin HEAD:cryptex-paper-trading-preview
+            echo "::error::Paper ledger advanced concurrently; refuse rebase, do not overwrite."
+            exit 1
           fi
 
       # GitHub cron is best effort. A bounded fallback runs all day through
       # the 7+ day research window; never trades real money, never runs forever.
       - name: Nine-day evidence pilot - continuous paper-only fallback
-        if: success() && (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule')
+        if: success() && steps.writer_commit.outputs.authorized == 'true' && (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule')
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -225,6 +269,16 @@ jobs:
           time.sleep(delay)
           if dt.datetime.now(dt.timezone.utc)>=DEADLINE:
               raise SystemExit("Evidence deadline reached during wait")
+          # Authority may change during the 275-second delay: do not schedule
+          # a new GitHub writer when the host handover has entered DRAIN.
+          subprocess.run(["git","fetch","--quiet","--no-tags","origin",
+              "+refs/heads/main:refs/remotes/origin/main"],check=True)
+          ownership=json.loads(subprocess.check_output(["git","show",
+              "origin/main:cryptex/ops/writer_authority.json"],text=True))
+          if (ownership.get("mode")!="PAPER_ONLY"
+                  or ownership.get("writer")!="github"):
+              print("Writer is no longer Github: stop chained dispatch")
+              raise SystemExit(0)
           cmd=["gh","api","-X","POST",
               f"repos/{os.environ['GH_REPO']}/actions/workflows/cryptex-paper.yml/dispatches",
               "-f","ref=main","-f","inputs[autopilot]=true",
