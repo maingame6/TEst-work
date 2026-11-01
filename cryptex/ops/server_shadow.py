@@ -80,8 +80,10 @@ def save_local_health(state,result):
         evidence={"new_candles":0,"missing_intervals":0,"last_ts":None,"audits_passed":0}
     if result["status"] in ("NEW_CANDLE","NO_NEW_CANDLE"):
         evidence["audits_passed"]+=1
+        # Only count a genuinely NEW candle processed by this host. A fresher
+        # GitHub snapshot is not evidence that the server independently ran.
         old=evidence["last_ts"];ts=result["observed_ts"]
-        if old is None or ts>old:
+        if result["status"]=="NEW_CANDLE" and (old is None or ts>old):
             if old is not None: evidence["missing_intervals"]+=max(0,(ts-old)//300-1)
             evidence["new_candles"]+=1
             evidence["last_ts"]=ts
