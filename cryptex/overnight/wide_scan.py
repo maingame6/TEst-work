@@ -394,14 +394,14 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,resc
  forward_path=out/"forward_venue_state.json"
  forward_state=json.loads(forward_path.read_text()) if forward_path.exists() else forward_empty()
  forward_apply(forward_state,batch,now)
- forward_path.write_text(json.dumps(forward_state,indent=2,allow_nan=False)+"\\n")
+ forward_path.write_text(json.dumps(forward_state,indent=2,allow_nan=False)+"\n")
  prospective=forward_report(forward_state)
  result["forward_observation_lab"]={
    "markets_observed":prospective["markets_observed"],
    "forward_observations":prospective["forward_observations"],
    "completed":prospective["completed"],
    "sample_frequency_note":prospective["sample_frequency_note"]}
- (out/"forward_venue_report.json").write_text(json.dumps(prospective,indent=2,allow_nan=False)+"\\n")
+ (out/"forward_venue_report.json").write_text(json.dumps(prospective,indent=2,allow_nan=False)+"\n")
  (out/"forward_venue_report.md").write_text(forward_markdown(prospective))
  (out/"wide_scan_report.json").write_text(json.dumps(result,indent=2,allow_nan=False)+"\n")
  (out/"wide_scan_report.md").write_text(markdown(result))
