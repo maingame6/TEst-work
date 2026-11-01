@@ -1,36 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793515200,
+  "last_ts": 1793515500,
   "first_ts": 1793488500,
-  "observed_candles": 88,
+  "observed_candles": 89,
   "signals": [],
-  "open": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "UNI",
-      "signal_ts": 1793513400,
-      "entry_ts": 1793513700,
-      "entry_mid": 7.2267,
-      "exit_ts": 1793515500
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "UNI",
-      "signal_ts": 1793513400,
-      "entry_ts": 1793513700,
-      "entry_mid": 7.2267,
-      "exit_ts": 1793515500
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1793513400,
-      "entry_ts": 1793513700,
-      "entry_mid": 8.971,
-      "exit_ts": 1793515500
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -160,6 +135,45 @@
       "fee_drag": 0.0157014642,
       "slippage_drag": 0.0049583571,
       "stress_net_return": -0.031364594,
+      "paper": true
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793513400,
+      "entry_ts": 1793513700,
+      "exit_ts": 1793515500,
+      "gross_return": 0.0044003487,
+      "net_return": -0.0164724765,
+      "fee_drag": 0.0158633472,
+      "slippage_drag": 0.005009478,
+      "stress_net_return": -0.0213779118,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793513400,
+      "entry_ts": 1793513700,
+      "exit_ts": 1793515500,
+      "gross_return": 0.0044003487,
+      "net_return": -0.0164724765,
+      "fee_drag": 0.0158633472,
+      "slippage_drag": 0.005009478,
+      "stress_net_return": -0.0213779118,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1793513400,
+      "entry_ts": 1793513700,
+      "exit_ts": 1793515500,
+      "gross_return": -0.0067996879,
+      "net_return": -0.0274397609,
+      "fee_drag": 0.0156864555,
+      "slippage_drag": 0.0049536175,
+      "stress_net_return": -0.0322904959,
       "paper": true
     }
   ],
