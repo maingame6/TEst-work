@@ -71,7 +71,11 @@ jobs:
               last=dt.datetime.fromisoformat(a["generated_at"].replace("Z","+00:00"))
               due=(dt.datetime.now(dt.timezone.utc)-last).total_seconds()>=45*60
           manual=os.environ.get("FORCE_RESCAN","false").lower()=="true"
-          retry=done and failed>0 and (due or os.environ.get("GITHUB_EVENT_NAME")=="push") and not manual
+          # After the first pass, keep a bounded prospective 5-venue major-pair
+          # observation pilot, even if formerly unavailable markets recover.
+          # This does not claim five-minute live fills (hourly snapshots only).
+          pilot=dt.datetime.now(dt.timezone.utc)<dt.datetime(2026,11,10,tzinfo=dt.timezone.utc)
+          retry=done and pilot and (due or os.environ.get("GITHUB_EVENT_NAME")=="push") and not manual
           enabled=not done or manual or retry
           with open(os.environ["GITHUB_OUTPUT"],"a") as fp:
               fp.write("run_scan="+str(enabled).lower()+"\n")
