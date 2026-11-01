@@ -244,6 +244,37 @@ def report(rows,candles,now):
         "zero_real_orders":True,"no_paper_portfolio_mutation":True,
         "rows":rows}
 
+def historical_failure_diagnostics(path):
+    """Read-only summary of prior ~4,221 actual OHLCV attempts.
+
+    The CSV is a separate historical scan, NOT live/executable trades.
+    No new exchange requests and no magic reconstruction of missing bars.
+    """
+    if not path.is_file():
+        return {"status":"UNAVAILABLE","reason":"No independently saved historical market results"}
+    kinds={};venues={v:{"validated":0,"insufficient":0,"stale":0,"other":0} for v in VENUES}
+    seen=set()
+    with path.open(newline="",encoding="utf-8") as fp:
+        for row in csv.DictReader(fp):
+            venue=row.get("venue");symbol=row.get("symbol")
+            if venue not in venues or not symbol:continue
+            key=(venue,symbol)
+            if key in seen:continue
+            seen.add(key)
+            if row.get("status")=="VALIDATED_OHLCV":
+                venues[venue]["validated"]+=1
+                continue
+            reason=row.get("reason") or ""
+            if "INSUFFICIENT_CLOSED_BARS" in reason:k="insufficient"
+            elif "STALE_OHLCV" in reason:k="stale"
+            else:k="other"
+            venues[venue][k]+=1
+            kinds[k]=kinds.get(k,0)+1
+    return {"status":"AVAILABLE","markets_with_saved_result":len(seen),
+        "failure_buckets":kinds,"venues":venues,
+        "explanation":"Short histories cannot pass chronological 84+ closed-5m-bar tests. Repeated API retries alone do not cure insufficient market history. Stale listings are not live opportunities.",
+        "not_live_execution":True}
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--out",required=True)
@@ -265,6 +296,8 @@ def main():
     histories=merge_rows(out/"microstructure_candles.csv",candles,
                          CANDLE_HEADERS,("venue","symbol","candle_start_ms"))
     result=report(rows,candles,now)
+    result["historical_quality_diagnostics"]=historical_failure_diagnostics(
+        out/"wide_scan_market_results.csv")
     result.update({"stored_snapshots":snapshots,"stored_historical_candles":histories})
     (out/"microstructure_report.json").write_text(
         json.dumps(result,indent=2,allow_nan=False)+"\n")
