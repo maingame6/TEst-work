@@ -10,7 +10,7 @@ def owner(writer="github",epoch=1,pending=None,time=None):
             "approved_server_droplet_id":"610231290",
             "protected_csgorisky_droplet_id":"612199466"}
 def proof():
-    return {"droplet_id":"610231290","mode":"PAPER_ONLY","real_orders":False,
+    return {"generated_at":NOW.isoformat(),"droplet_id":"610231290","mode":"PAPER_ONLY","real_orders":False,
             "remote_branch_writes":False,"csgo_risky_shared_processes":False,
             "capacity_check_passed":True,"integrity_checks":13,"paper_accounts":21,
             "missed_intervals":0,"distinct_server_processed_candles":6,
@@ -68,6 +68,15 @@ class WriterAuthorityTests(unittest.TestCase):
         self.assertTrue(check_transition(owner("server",3),owner("drain",4,"github"),NOW,False,None))
         old=owner("drain",4,"github",NOW-dt.timedelta(minutes=14))
         self.assertTrue(check_transition(old,owner("github",5),NOW,False,None))
+    def test_old_and_future_server_proofs_are_rejected(self):
+        old=owner("drain",2,"server",NOW-dt.timedelta(minutes=14))
+        evidence=proof()
+        evidence["generated_at"]=(NOW-dt.timedelta(hours=4)).isoformat()
+        with self.assertRaises(SafetyError):
+            check_transition(old,owner("server",3),NOW,False,evidence)
+        evidence["generated_at"]=(NOW+dt.timedelta(hours=1)).isoformat()
+        with self.assertRaises(SafetyError):
+            check_transition(old,owner("server",3),NOW,False,evidence)
     def test_invalid_epoch_or_skipped_epoch_rejected(self):
         with self.assertRaises(SafetyError):
             check_transition(owner(),owner("drain",4,"server"),NOW,False,None)
