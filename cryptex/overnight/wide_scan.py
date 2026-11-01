@@ -334,7 +334,16 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,resc
          and state["seen"][venue+"|"+r["symbol"]]["status"]!="VALIDATED_OHLCV"]
    pool.sort(key=lambda r:(state["seen"][venue+"|"+r["symbol"]].get("attempts",0),
                            state["seen"][venue+"|"+r["symbol"]].get("checked_at",""),r["symbol"]))
-   selected=pool[:min(per_venue,len(pool))]
+   # Reserve a handful of requests for high-liquidity canonical majors.
+   # This yields contemporary bid/ask snapshots; never treat them as
+   # historical spread or confirmed account fee tiers.
+   canonical=("BTC/USD","XBT/USD","ETH/USD","SOL/USD","BTC/USDT",
+              "ETH/USDT","SOL/USDT")
+   liquid=[r for r in rows if r["symbol"] in canonical
+           and state["seen"].get(venue+"|"+r["symbol"],{}).get("status")=="VALIDATED_OHLCV"]
+   liquid.sort(key=lambda r:canonical.index(r["symbol"]))
+   slots=min(6,max(1,per_venue//8)) if pool else 0
+   selected=liquid[:slots]+pool[:max(0,per_venue-min(slots,len(liquid)))]
   elif rescan:
    # Rotate instead of repeatedly selecting the alphabetical first page.
    cursor=int(state["cursor"].get(venue,0))%len(rows)
