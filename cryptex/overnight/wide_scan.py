@@ -172,7 +172,7 @@ def scan_venue(venue,selection,now_ms,ccxt_lib):
     # Contemporary order book snapshot; NEVER apply today's spread to past bars.
     # Unavailable order book is explicit, not invented.
     result["spread_status"]="NOT_AVAILABLE"
-    if getattr(exchange,"has",{}).get("fetchOrderBook"):
+    if len(results)<10 and getattr(exchange,"has",{}).get("fetchOrderBook"):
      try:
       book=exchange.fetch_order_book(sym,limit=5)
       bids=book.get("bids") or [];asks=book.get("asks") or []
