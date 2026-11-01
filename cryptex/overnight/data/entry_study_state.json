@@ -1,28 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793512800,
+  "last_ts": 1793513100,
   "first_ts": 1793488500,
-  "observed_candles": 80,
+  "observed_candles": 81,
   "signals": [],
-  "open": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "TRX",
-      "signal_ts": 1793511000,
-      "entry_ts": 1793511300,
-      "entry_mid": 0.311998,
-      "exit_ts": 1793513100
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "TRX",
-      "signal_ts": 1793511000,
-      "entry_ts": 1793511300,
-      "entry_mid": 0.311998,
-      "exit_ts": 1793513100
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -126,6 +109,32 @@
       "fee_drag": 0.0159152163,
       "slippage_drag": 0.0050258578,
       "stress_net_return": -0.0181780648,
+      "paper": true
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "TRX",
+      "signal_ts": 1793511000,
+      "entry_ts": 1793511300,
+      "exit_ts": 1793513100,
+      "gross_return": -0.0058493965,
+      "net_return": -0.0265092178,
+      "fee_drag": 0.0157014642,
+      "slippage_drag": 0.0049583571,
+      "stress_net_return": -0.031364594,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "TRX",
+      "signal_ts": 1793511000,
+      "entry_ts": 1793511300,
+      "exit_ts": 1793513100,
+      "gross_return": -0.0058493965,
+      "net_return": -0.0265092178,
+      "fee_drag": 0.0157014642,
+      "slippage_drag": 0.0049583571,
+      "stress_net_return": -0.031364594,
       "paper": true
     }
   ],
