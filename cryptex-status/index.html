@@ -68,6 +68,15 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="card"><div class="label">Still unresolved</div><div id="unresolved" class="big">—</div><div class="caption">Missing or unusable histories</div></div>
 <div class="card"><div class="label">Forward test trades closed</div><div id="forward" class="big">—</div><div id="forwardCaption" class="caption">These are NOT five-minute cross-exchange fills</div></div>
 </div>
+<h2>New: actual order-book depth data</h2>
+<p class="sub" style="margin-bottom:16px">Separate from the fake trading bankroll. These are present-tense public market snapshots, not completed trades. It checks 15 BTC, ETH and SOL spot markets across five exchanges.</p>
+<div class="grid">
+<div class="card"><div class="label">Usable bid/ask books</div><div id="depthValid" class="big">—</div><div class="caption">Out of 15 targeted markets</div></div>
+<div class="card"><div class="label">Historical five-minute candles saved</div><div id="depthCandles" class="big">—</div><div class="caption">Downloaded after candle closure; NOT live fills</div></div>
+<div class="card"><div class="label">Depth-qualified books</div><div id="depthLiquid" class="big">—</div><div class="caption">At least 1,000 quote units of depth on each side</div></div>
+<div class="card"><div class="label">Last snapshot</div><div id="depthTime" class="big" style="font-size:17px">—</div><div id="depthFreshness" class="caption">A missed collection must be visible</div></div>
+</div>
+<p id="depthCaution" class="hint">Depth, estimated round-trip costs and spreads are diagnostic only. The research does not include real orders and does not change the paper accounts.</p>
 <h2>Recent engine runs</h2>
 <div class="card"><div class="scroll"><table class="dataTable"><thead><tr><th>Run (UTC)</th><th>Result</th><th>Evidence</th></tr></thead><tbody id="runs"><tr><td colspan="3">Checking GitHub Actions…</td></tr></tbody></table></div><div class="hint" id="runHint">A successful workflow confirms code execution, not profitable trading. The main run must also publish fresh state.</div></div>
 <h2>See all 21 virtual trading agents</h2><div class="card"><details id="agents"><summary>Open the full 21-agent breakdown</summary><div class="bot-list" id="botlist">Loading…</div></details></div>
@@ -95,7 +104,7 @@ async function getData(){
  ["state",BASE+PAPER+"state.json"],["continuity",BASE+PAPER+"continuity_report.json"],
  ["integrity",BASE+PAPER+"integrity_report.json"],["portfolio",BASE+PAPER+"portfolio_report.json"],
  ["entry",BASE+PAPER+"entry_study_report.json"],["wide",BASE+WIDE+"wide_scan_report.json"],
- ["forward",BASE+WIDE+"forward_venue_report.json"],["authority",BASE+"main/cryptex/ops/writer_authority.json"],
+ ["forward",BASE+WIDE+"forward_venue_report.json"],["depth",BASE+WIDE+"microstructure_report.json"],["authority",BASE+"main/cryptex/ops/writer_authority.json"],
  ["history",BASE+PAPER+"combined_equity.csv",true]
  ];let result={};const outcomes=await Promise.allSettled(reqs.map(x=>get(x[1],x[2]||false)));outcomes.forEach((v,i)=>{if(v.status==="fulfilled")result[reqs[i][0]]=v.value;else result[reqs[i][0]+"Error"]=String(v.reason).slice(0,160)});
  // GitHub API gets a separate, lower-frequency request to avoid rate limits.
@@ -134,7 +143,7 @@ function drawGraph(text){
  set("chartInfo",fmtNum(samples.length)+" recorded balance snapshots · "+time(samples[0].t)+" to "+time(last.t)+" · dashed line = $210 start");
 }
 function update(data){
- const s=data.state,c=data.continuity,i=data.integrity,p=data.portfolio,e=data.entry,w=data.wide,f=data.forward,a=data.authority;
+ const s=data.state,c=data.continuity,i=data.integrity,p=data.portfolio,e=data.entry,w=data.wide,f=data.forward,d=data.depth,a=data.authority;
  const hasCore=!!(s&&c&&i&&p&&a);
  const coreAge=s&&s.last_run?(Date.now()-Date.parse(s.last_run))/60000:Infinity;
  const validLedger=hasCore && s.mode==="PAPER_ONLY"&&c.mode==="PAPER_ONLY"&&i.mode==="PAPER_ONLY"&&p.mode==="PAPER_ONLY"&&i.no_real_orders===true&&p.real_money===false&&i.audited_accounts===21&&i.starting_paper_usd===210&&i.status==="PASS"&&Array.isArray(i.checks)&&i.checks.length>=12&&i.checks.every(x=>x.passed===true)&&s.last_run===c.generated_at&&s.last_run===i.generated_at&&s.last_run===p.generated_at;
@@ -170,6 +179,17 @@ function update(data){
  if(e&&e.cost_assumptions&&e.cost_assumptions.base){const m=e.cost_assumptions.base;set("feeInfo","Assumptions: "+pct(m.fee_per_side*100,2)+" taker fee + "+pct(m.slippage_per_side*100,2)+" slippage per side. Not verified account-specific fills.")}
  if(w){set("attempted",fmtNum(w.unique_tested_venue_pairs));set("validated",fmtNum(w.unique_ohlcv_validated_pairs));set("unresolved",fmtNum(w.latest_unavailable_pairs))}
  if(f){set("forward",fmtNum(f.completed));set("forwardCaption",fmtNum(f.forward_observations)+" forward snapshots · not executable fills")}
+ if(d){
+   set("depthValid",fmtNum(d.valid_orderbook_roundtrip_diagnostics)+"/"+fmtNum(d.markets_targeted));
+   set("depthCandles",fmtNum(d.stored_historical_candles));
+   set("depthLiquid",fmtNum(d.hypothetical_1000_quote_depth_eligible));
+   set("depthTime",time(d.generated_at));
+   set("depthFreshness",stale(d.generated_at,45)?"WARNING: data is over 45 minutes old":"Recent collection verified · 15-minute schedule is best-effort");
+   set("depthCaution",fmtNum(d.invalid_or_insufficient_book_markets)+" failed or unusable books last cycle. USD and USDT are separate quote currencies. Order books and later-retrieved candle history do not prove executable trades or profits.");
+ }else{
+   set("depthValid","UNAVAILABLE");
+   set("depthFreshness","Data collector has not published valid measurements yet");
+ }
  const checks=el("checks");checks.replaceChildren();
  addCheck(checks,"Five-minute engine",technicallyCurrent?"Real paper data processed "+Math.round(Math.max(0,coreAge))+"m ago.":"Current real paper ledger cannot be verified.",techStatus,techStatus==="good"?"RUNNING":techStatus==="warn"?"RECENT":"CHECK");
  addCheck(checks,"21 account records",accountOK?"All account totals and audits reconcile.":"Missing or failed independent accounting evidence.",accountOK?"good":"bad",accountOK?"PASS":"CHECK");
@@ -178,6 +198,7 @@ function update(data){
  const serverProven=actualOwner==="server"&&s&&s.trigger_event==="server";
  addCheck(checks,"Independent Codex server",serverProven?"Server-origin publication reported; on-host process proof still requires manual verification.":"Independent host has NOT been verified as running the paper engine.","warn",serverProven?"REPORTED":"NOT PROVEN");
  addCheck(checks,"Five-exchange research",w?(fmtNum(w.unique_ohlcv_validated_pairs)+" validated histories; report "+(stale(w.generated_at,120)?"is stale.":"is recent.")):"Research report unavailable.",w&&!stale(w.generated_at,120)?"good":"warn",w&&!stale(w.generated_at,120)?"UPDATING":"STALE");
+ addCheck(checks,"Live order books (research)",d?(fmtNum(d.valid_orderbook_roundtrip_diagnostics)+"/15 recorded; "+(stale(d.generated_at,45)?"latest report is stale.":"freshly observed.")):"No order-book evidence was loaded.",d&&!stale(d.generated_at,45)?"good":"warn",d&&!stale(d.generated_at,45)?"COLLECTING":"STALE");
  addCheck(checks,"One ledger writer",actualOwner==="github"?"GitHub remains the sole designated writer.":actualOwner==="drain"?"Handover drain: nobody may publish.":actualOwner==="server"?"Server is designated; Github must be fenced.":"Authority cannot be read.",a&&["github","server","drain"].includes(actualOwner)?"good":"bad",actualOwner==="github"?"GITHUB":actualOwner==="server"?"SERVER":actualOwner==="drain"?"DRAIN":"CHECK");
  if(data.history)drawGraph(data.history);else set("chartInfo","Could not load the recorded balance history; graph not shown.");
  const body=el("runs");body.replaceChildren();
