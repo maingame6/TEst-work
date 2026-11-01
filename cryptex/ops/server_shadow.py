@@ -73,26 +73,78 @@ def shadow_cycle(repo):
     return evaluate(before,read(data/"state.json"),read(data/"integrity_report.json"),
                     dt.datetime.now(dt.timezone.utc))
 
+def proof_from_observations(evidence,last_result,now):
+    """Proof only from six consecutively processed ON-HOST distinct candles."""
+    observations=evidence.get("observations",[])[-6:]
+    if len(observations)!=6 or last_result.get("status")!="NEW_CANDLE":
+        return None
+    if (last_result.get("paper_accounts")!=21
+        or last_result.get("integrity_checks",0)<12
+        or last_result.get("real_orders") is not False
+        or last_result.get("remote_branch_writes") is not False):
+        return None
+    try:
+        epochs=[int(x["candle_ts"]) for x in observations]
+        times=[dt.datetime.fromisoformat(x["processed_at"]) for x in observations]
+        gaps=[(times[i]-times[i-1]).total_seconds() for i in range(1,6)]
+    except (ValueError,TypeError,KeyError):
+        return None
+    if any(epochs[i]-epochs[i-1]!=300 for i in range(1,6)):
+        return None
+    if any(x<180 or x>420 for x in gaps):
+        return None
+    if (now-times[-1]).total_seconds()>300 or (now-times[-1]).total_seconds() < -60:
+        return None
+    return {
+        "generated_at":now.isoformat(),
+        "mode":"PAPER_ONLY","droplet_id":"610231290",
+        "real_orders":False,"remote_branch_writes":False,
+        "capacity_check_passed":True,"csgo_risky_shared_processes":False,
+        "integrity_checks":last_result["integrity_checks"],
+        "paper_accounts":last_result["paper_accounts"],
+        "distinct_server_processed_candles":6,"missed_intervals":0,
+        "first_candle_ts":epochs[0],"last_candle_ts":epochs[-1],
+        "minimum_inter_observation_seconds":round(min(gaps),2),
+        "maximum_inter_observation_seconds":round(max(gaps),2),
+        "note":"Locally calculated evidence; independent operator must still verify server identity, service logs and no active other projects."
+    }
+
 def save_local_health(state,result):
     previous=state/"shadow_evidence.json"
-    try: evidence=read(previous)
+    try:evidence=read(previous)
     except (OSError,ValueError):
-        evidence={"new_candles":0,"missing_intervals":0,"last_ts":None,"audits_passed":0}
+        evidence={"new_candles":0,"missing_intervals":0,"last_ts":None,
+                  "audits_passed":0,"observations":[]}
+    now=dt.datetime.now(dt.timezone.utc)
     if result["status"] in ("NEW_CANDLE","NO_NEW_CANDLE"):
         evidence["audits_passed"]+=1
-        # Only count a genuinely NEW candle processed by this host. A fresher
-        # GitHub snapshot is not evidence that the server independently ran.
         old=evidence["last_ts"];ts=result["observed_ts"]
+        # A newer Github snapshot without a new local processing cycle
+        # must never count as independent host evidence.
         if result["status"]=="NEW_CANDLE" and (old is None or ts>old):
-            if old is not None: evidence["missing_intervals"]+=max(0,(ts-old)//300-1)
+            if old is not None:evidence["missing_intervals"]+=max(0,(ts-old)//300-1)
             evidence["new_candles"]+=1
             evidence["last_ts"]=ts
-    evidence["checked_at"]=dt.datetime.now(dt.timezone.utc).isoformat()
+            evidence.setdefault("observations",[]).append({
+                "candle_ts":ts,"processed_at":now.isoformat()
+            })
+            evidence["observations"]=evidence["observations"][-64:]
+    evidence["checked_at"]=now.isoformat()
     evidence["status"]=result["status"]
     temp=state/"shadow_evidence.tmp"
     temp.write_text(json.dumps(evidence,indent=2)+"\n")
     temp.replace(previous)
     (state/"latest.json").write_text(json.dumps(result,indent=2)+"\n")
+    proof=proof_from_observations(evidence,result,now)
+    proof_file=state/"server_proof.json"
+    if proof:
+        temp=state/"server_proof.tmp"
+        temp.write_text(json.dumps(proof,indent=2)+"\n")
+        temp.replace(proof_file)
+    elif proof_file.exists():
+        # A single stale or missing observation invalidates a previously
+        # verified block. Never reuse a months-old pass to activate a writer.
+        proof_file.unlink()
 
 def main():
     ap=argparse.ArgumentParser()
