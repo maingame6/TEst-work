@@ -132,6 +132,58 @@ def run(state,rows,now):
     "good":good_now,"at":t.isoformat()}
  # No promotion gate from this sample, ever; explicit review is required.
  return state
+def paired_holdout(st,now):
+ """Frozen 72h burn-in then matched prospective CONTROL-qualified cohorts.
+
+ On each identical venue/symbol/signal time: alternatives either completed
+ their own later entry and exit, or remained in cash (zero). If a selected
+ trade is censored/missing, exclude that entire cohort from comparison.
+ Correlated times/markets can make naive confidence intervals misleading.
+ """
+ cutoff=parse_time(FROZEN_AT)+dt.timedelta(hours=72)
+ all_done=st["completed"]
+ eligible=[x for x in all_done if x["gate"]=="CONTROL_50BPS" and
+           parse_time(x["signal_time"])>=cutoff]
+ indexed={(x["venue"],x["symbol"],x["signal_time"],x["gate"]):x for x in all_done}
+ differences={name:[] for name in GATES}
+ pairs=0
+ for control in eligible:
+  ident=(control["venue"],control["symbol"],control["signal_time"])
+  # If the alternate was still in a position or missed a book, it cannot
+  # be labeled cash; exclude ambiguous comparator cohorts.
+  ambiguous=False
+  for other in list(st["signals"])+list(st["positions"]):
+   if (other.get("key")==control["venue"]+"|"+control["symbol"]
+       and other.get("signal_time")==control["signal_time"]):
+    ambiguous=True
+  if ambiguous:continue
+  pairs+=1
+  for name in GATES:
+   candidate=indexed.get((*ident,name))
+   candidate_pnl=candidate["net_base_pct"] if candidate else 0.0
+   differences[name].append({
+      "hour":control["signal_time"][:13],
+      "delta_pct":round(candidate_pnl-control["net_base_pct"],7)})
+ comparison={}
+ for name,observations in differences.items():
+  values=[x["delta_pct"] for x in observations]
+  hours={}
+  for obs in observations:
+   hours.setdefault(obs["hour"],[]).append(obs["delta_pct"])
+  clustered=[statistics.mean(values) for values in hours.values()]
+  # Descriptive only. Hours may remain autocorrelated. No confidence
+  # guarantee or selection bias correction can be inferred from these.
+  comparison[name]={"complete_matched_control_cohorts":len(values),
+   "distinct_hour_clusters":len(hours),
+   "mean_paired_delta_vs_control_pct":round(statistics.mean(values),6) if values else None,
+   "mean_hour_cluster_delta_pct":round(statistics.mean(clustered),6) if clustered else None,
+   "cluster_delta_stdev_pct":round(statistics.stdev(clustered),6) if len(clustered)>1 else None,
+   "safe_to_promote":False}
+ return {"holdout_starts":cutoff.isoformat(),"heldout_days_since_start":round(max(0,(now-cutoff).total_seconds()/86400),4),
+         "control_eligible_cohorts":len(eligible),"comparable_completed_cohorts":pairs,
+         "groups":comparison,
+         "note":"Descriptive paired cohort comparisons only; cash means no entry at this 15m signal. Full matched buy-and-hold, serial-correlation-aware uncertainty and region/account fee verification are not yet proven."}
+
 def report(st,now):
  start=parse_time(FROZEN_AT)
  gates={}
@@ -163,6 +215,7 @@ def report(st,now):
   "state":{k:v for k,v in st.items() if k in ("counters","freeze")},
   "pending_entries":len(st["signals"]),"open_hypotheses":len(st["positions"]),
   "completed_research_hypotheses":len(st["completed"]),"gates":gates,
+  "paired_holdout_comparison":paired_holdout(st,now),
   "limitations":["Book VWAP snapshots are not guaranteed executable fills.",
   "Sparse books and irregular sampling censor trades instead of fabricating a fill.",
   "Coinbase/Bitstamp/KuCoin fee assumptions remain unverified; no account-specific tier verified.",
