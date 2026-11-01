@@ -44,7 +44,7 @@ jobs:
       - name: Test isolation gates with offline fixtures
         run: python3 -m unittest discover -s cryptex/ops/tests -p test_relay_canary.py -v
       - name: Execute one real market-data PAPER cycle in disposable sandbox
-        run: python3 cryptex/ops/relay_canary.py
+        run: python3 ../cryptex/ops/relay_canary.py
         working-directory: paper-sandbox
       - name: Verify no outbound deployment secrets or git write credentials
         if: always()
