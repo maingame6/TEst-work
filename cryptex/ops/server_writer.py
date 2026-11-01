@@ -5,9 +5,9 @@ This proposed Codex Droplet publisher is NOT installed. It cannot operate on
 the CSGORisky droplet. It uses a private repo, on-host guard, an epoch fence,
 and a fast-forward-only remote paper ledger push. No real exchange orders.
 """
-import json,os,pathlib,subprocess,sys
+import datetime as dt,json,os,pathlib,subprocess,sys
 from host_guard import main as verify_host
-from writer_control import validate,authorized,CODEX
+from writer_control import validate,authorized,independent_proof_valid,CODEX
 REPO="https://github.com/maingame6/TEst-work.git"
 BRANCH="cryptex-paper-trading-preview"
 STATE_DIR=pathlib.Path("/var/lib/cryptex-paper-writer")
@@ -63,6 +63,35 @@ def stage_known_files(repo):
         "cryptex/overnight/data/integrity_report.json" not in paths):
         raise RuntimeError("Missing critical PAPER state")
     cmd(["git","add","-f","--",*paths],cwd=repo,timeout=30)
+def accept_host_activation(authority_record,state_dir,now,proof_path):
+    """First activation requires fresh six-cycle evidence from the right host.
+
+    The local approval is bound to a particular owner epoch, never reusable
+    after a drain and restoration of GitHub ownership.
+    """
+    marker=state_dir/"activated_writer_epoch.json"
+    if marker.is_file():
+        try:
+            record=json.loads(marker.read_text())
+            if record.get("epoch")==authority_record["epoch"] and record.get("droplet_id")==CODEX:
+                return False
+        except (ValueError,OSError):
+            pass
+    try:
+        proof=json.loads(proof_path.read_text())
+    except (OSError,ValueError) as exc:
+        raise RuntimeError("Missing independent Codex host proof") from exc
+    if not independent_proof_valid(proof):
+        raise RuntimeError("Unverified six-cycle Codex paper proof")
+    try:
+        issued=dt.datetime.fromisoformat(proof["generated_at"].replace("Z","+00:00"))
+        age=(now-issued).total_seconds()
+    except (ValueError,TypeError,KeyError) as exc:
+        raise RuntimeError("Invalid host proof timestamp") from exc
+    if not 0<=age<=600:
+        raise RuntimeError("Codex proof is stale/future; writer stays disabled")
+    return True
+
 def run_server():
     if verify_host()!=0:raise RuntimeError("Unverified Codex identity/headroom")
     STATE_DIR.mkdir(parents=True,exist_ok=True,mode=0o700)
@@ -74,6 +103,9 @@ def run_server():
                           "writer":current["writer"],"epoch":current["epoch"],
                           "remote_ledger_changes":False}))
         return
+    first_activation=accept_host_activation(
+        current,STATE_DIR,dt.datetime.now(dt.timezone.utc),
+        pathlib.Path("/etc/cryptex/server-proof.json"))
     env=credential_env()
     state=repo/"cryptex/overnight/data/state.json"
     before=json.loads(state.read_text())
@@ -110,6 +142,9 @@ def run_server():
         raise RuntimeError("Writer authority changed before push")
     # No force/rebase. A competing branch update makes publication fail.
     cmd(["git","push","origin","HEAD:"+BRANCH],cwd=repo,env=env,timeout=45)
+    if first_activation:
+        marker=STATE_DIR/"activated_writer_epoch.json"
+        marker.write_text(json.dumps({"epoch":current["epoch"],"droplet_id":CODEX})+"\\n")
     print(json.dumps({"status":"PUBLISHED_FENCED_PAPER_ONLY","epoch":current["epoch"],
                       "droplet_id":CODEX,"paper_accounts":21,
                       "new_candle_ts":after["last_ts"],
