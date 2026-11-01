@@ -17,6 +17,9 @@ CRITICAL_SECONDS = 22 * 60
 MAX_CANDLE_SECONDS = 16 * 60
 WIDE_RECOVERY_SECONDS = 120 * 60
 WIDE_DISPATCH_COOLDOWN_SECONDS = 75 * 60
+DEPTH_RECOVERY_SECONDS = 45 * 60
+DEPTH_DISPATCH_COOLDOWN_SECONDS = 20 * 60
+DEPTH_PILOT_END = dt.datetime(2026, 11, 16, tzinfo=UTC)
 PILOT_END = dt.datetime(2026, 11, 10, tzinfo=UTC)
 
 
@@ -90,6 +93,29 @@ def wide_recovery_due(wide, now, runs):
     return True
 
 
+
+def depth_recovery_due(depth, now, runs):
+    """Restart only missing/stale PUBLIC snapshots, never the PAPER ledger."""
+    if (depth.get("mode")!="PAPER_ONLY"
+            or depth.get("real_orders") is not False
+            or depth.get("no_paper_portfolio_mutation") is not True
+            or depth.get("markets_targeted")!=15):
+        raise ValueError("Unsafe or incomplete depth collector report")
+    if now>=DEPTH_PILOT_END:
+        return False
+    age=(now-parse_utc(depth.get("generated_at"))).total_seconds()
+    if age<DEPTH_RECOVERY_SECONDS or age < -60:
+        return False
+    for run in runs:
+        try:run_age=(now-parse_utc(run.get("created_at"))).total_seconds()
+        except (TypeError,ValueError):return False
+        if run_age < -60 or run_age <= DEPTH_DISPATCH_COOLDOWN_SECONDS:
+            return False
+        if run.get("status") in ("queued","in_progress","waiting","requested"):
+            return False
+    return True
+
+
 def paper_recovery_authorized(authority):
     """A watchdog can restart Github only if Github still owns the ledger."""
     return (isinstance(authority,dict)
@@ -110,6 +136,8 @@ def main():
     p.add_argument("--recover", action="store_true")
     p.add_argument("--wide")
     p.add_argument("--recover-wide", action="store_true")
+    p.add_argument("--depth")
+    p.add_argument("--recover-depth", action="store_true")
     args = p.parse_args()
     now = dt.datetime.now(UTC)
     data = {"heartbeat_at": now.isoformat(), "mode": "PAPER_ONLY"}
@@ -170,6 +198,30 @@ def main():
                     data["wide_recovery_attempted"]=True
                 else:
                     data["wide_recovery_skip"]="Recent/active scan, or deadline reached"
+        if args.depth:
+            depth = json.loads(pathlib.Path(args.depth).read_text())
+            if (depth.get("mode")!="PAPER_ONLY"
+                    or depth.get("real_orders") is not False
+                    or depth.get("no_paper_portfolio_mutation") is not True):
+                raise ValueError("Untrusted depth report cannot trigger recovery")
+            depth_age=(now-parse_utc(depth.get("generated_at"))).total_seconds()
+            data["depth_age_minutes"]=round(max(depth_age,0)/60,1)
+            data["depth_stale"]=depth_age>=DEPTH_RECOVERY_SECONDS
+            data["depth_recovery_attempted"]=False
+            if args.recover_depth and data["depth_stale"] and now<DEPTH_PILOT_END:
+                check=subprocess.run(
+                    ["gh","api",f"repos/{args.repo}/actions/workflows/cryptex-depth-pilot.yml/runs",
+                     "-f","per_page=8","-X","GET"],check=True,text=True,
+                    capture_output=True,timeout=25)
+                runs=json.loads(check.stdout).get("workflow_runs",[])
+                if depth_recovery_due(depth,now,runs):
+                    subprocess.run(
+                        ["gh","api","-X","POST",
+                         f"repos/{args.repo}/actions/workflows/cryptex-depth-pilot.yml/dispatches",
+                         "-f","ref=main"],check=True,capture_output=True,text=True,timeout=25)
+                    data["depth_recovery_attempted"]=True
+                else:
+                    data["depth_recovery_skip"]="Existing/recent scan or bounded pilot ended"
     except Exception as exc:
         data["severity"] = "ERROR"
         data["error"] = type(exc).__name__ + ": " + str(exc)[:250]
