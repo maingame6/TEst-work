@@ -1,0 +1,37 @@
+name: CRYPTEX - test single-writer safety without switching owner
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cryptex/ops/writer_authority.json'
+      - 'cryptex/ops/writer_control.py'
+      - 'cryptex/ops/tests/test_writer_control.py'
+      - '.github/workflows/cryptex-writer-fence-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fence-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prove every ownership transition and safety veto
+        run: python3 -m unittest discover -s cryptex/ops/tests -p test_writer_control.py -v
+      - name: Verify main currently authorizes GitHub ONLY
+        run: |
+          python3 cryptex/ops/writer_control.py decision \
+            --file cryptex/ops/writer_authority.json \
+            --actor github --output "$GITHUB_OUTPUT"
+          python3 cryptex/ops/writer_control.py assert-owner \
+            --file cryptex/ops/writer_authority.json --actor github --epoch 1
+          if python3 cryptex/ops/writer_control.py assert-owner \
+            --file cryptex/ops/writer_authority.json --actor server --epoch 1; then
+            echo "::error::Unexpected server ownership"; exit 1
+          fi
+          echo 'Server writer is correctly blocked. Do not cut over yet.'
