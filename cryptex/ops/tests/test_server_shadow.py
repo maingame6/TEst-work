@@ -1,6 +1,6 @@
 import datetime as dt,pathlib,sys,unittest,tempfile,json
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from server_shadow import evaluate,private_destination,save_local_health
+from server_shadow import evaluate,private_destination,save_local_health,proof_from_observations
 NOW=dt.datetime(2026,11,1,12,tzinfo=dt.timezone.utc)
 TS=int(NOW.timestamp())-600
 def inputs():
@@ -59,6 +59,30 @@ class ShadowTests(unittest.TestCase):
             after=json.loads((p/"shadow_evidence.json").read_text())
             self.assertEqual(after["new_candles"],1)
 
+    def test_six_genuine_five_minute_cycles_create_proof(self):
+        now=NOW
+        observations=[{
+            "candle_ts":TS-1500+i*300,
+            "processed_at":(now-dt.timedelta(seconds=(5-i)*300)).isoformat()
+        } for i in range(6)]
+        row={"status":"NEW_CANDLE","paper_accounts":21,"integrity_checks":13,
+             "real_orders":False,"remote_branch_writes":False}
+        result=proof_from_observations({"observations":observations},row,now)
+        self.assertIsNotNone(result)
+        self.assertEqual(result["distinct_server_processed_candles"],6)
+        self.assertEqual(result["missed_intervals"],0)
+    def test_gh_snapshot_or_missing_candle_does_not_create_proof(self):
+        now=NOW
+        observations=[{
+            "candle_ts":TS-1500+i*300,
+            "processed_at":(now-dt.timedelta(seconds=(5-i)*300)).isoformat()
+        } for i in range(6)]
+        row={"status":"NO_NEW_CANDLE","paper_accounts":21,
+             "integrity_checks":13,"real_orders":False,"remote_branch_writes":False}
+        self.assertIsNone(proof_from_observations({"observations":observations},row,now))
+        row["status"]="NEW_CANDLE"
+        observations[-1]["candle_ts"]+=300
+        self.assertIsNone(proof_from_observations({"observations":observations},row,now))
     def test_private_destination_only(self):
         self.assertFalse(private_destination(pathlib.Path("/srv/csgorisky"),pathlib.Path("/var/lib/cryptex-paper-shadow")))
         self.assertFalse(private_destination(pathlib.Path("/tmp/repo"),pathlib.Path("/tmp")))
