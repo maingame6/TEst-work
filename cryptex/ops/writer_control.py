@@ -73,6 +73,14 @@ def check_transition(previous,next_obj,now,other_jobs_active,server_proof):
         if after=="server":
             if not independent_proof_valid(server_proof):
                 raise SafetyError("Unproven server observation / unsafe host")
+            # An old, copied proof is not evidence of a server ready NOW.
+            try:
+                issued=dt.datetime.fromisoformat(server_proof["generated_at"].replace("Z","+00:00"))
+                age=(now-issued).total_seconds()
+            except (ValueError,TypeError,KeyError):
+                raise SafetyError("Missing trusted proof date")
+            if not 0<=age<=10*60:
+                raise SafetyError("Independent proof is stale or in the future")
     else:
         raise SafetyError("Invalid ownership state transition")
     return True
