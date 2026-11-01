@@ -1,10 +1,17 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793509200,
+  "last_ts": 1793509500,
   "first_ts": 1793488500,
-  "observed_candles": 68,
-  "signals": [],
+  "observed_candles": 69,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1793509500,
+      "observed_move": 0.0118735
+    }
+  ],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
