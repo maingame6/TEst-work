@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-01T01:15:10.087034+00:00 (Europe/Dublin)
+Checked: 2026-11-01T01:20:07.519134+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $208.9014 at 2026-10-31T21:15:32.467800+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.0054 as of 2026-11-01T01:15:10.087034+00:00.
+Overnight P&L $-0.0054 as of 2026-11-01T01:20:07.519134+00:00.
 New paper fills since session started: 5.
 
 ## Price prediction versus trading costs
