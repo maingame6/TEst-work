@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-01T22:13:14.276438+00:00",
+  "at": "2026-11-01T23:10:29.301267+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 0.1134,
+  "holdout_window_days": 0.1531,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,12 +39,12 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 45,
+      "snapshots": 60,
       "stale_or_bad": 0,
       "entry_censored": 0,
       "exit_censored": 0,
       "signal_candidates": 0,
-      "gaps": 30
+      "gaps": 45
     }
   },
   "pending_entries": 0,
