@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-01T05:31:24.160340+00:00",
-  "local_time": "2026-11-01T05:31:24.160340+00:00",
+  "generated_at": "2026-11-01T05:36:26.233713+00:00",
+  "local_time": "2026-11-01T05:36:26.233713+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -231,7 +231,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD SUI",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -249,7 +249,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD XRP",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -267,7 +267,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD AAVE",
+      "last_decision": "HOLD AVAX",
       "missing_quote": false
     },
     {
@@ -303,7 +303,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD AAVE",
+      "last_decision": "HOLD AVAX",
       "missing_quote": false
     },
     {
@@ -339,7 +339,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD AAVE",
+      "last_decision": "HOLD AVAX",
       "missing_quote": false
     },
     {
@@ -357,7 +357,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD AAVE",
+      "last_decision": "HOLD AVAX",
       "missing_quote": false
     },
     {
@@ -393,7 +393,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD AAVE",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -423,8 +423,8 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1793510700,
-  "last_candle_research": 1793510700,
+  "last_candle_main": 1793511000,
+  "last_candle_research": 1793511000,
   "total_open": 0,
   "total_queued": 0,
   "total_completed": 71,
@@ -464,7 +464,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-10-31T20:50:39.562635+00:00",
-  "github_run_id": "41277236064",
+  "github_run_id": "41277568059",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-10-31",
@@ -475,7 +475,7 @@
       "fills": 136
     },
     "morning": null,
-    "comparison_at": "2026-11-01T05:31:24.160340+00:00",
+    "comparison_at": "2026-11-01T05:36:26.233713+00:00",
     "change": -0.002157,
     "fills_since_start": 6
   },
@@ -488,33 +488,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 77705.0,
+        "current_mid": 77747.6,
         "start": 10.0,
-        "equity": 9.999743,
-        "pnl": -0.000257,
-        "return_pct": -0.0026,
+        "equity": 10.005225,
+        "pnl": 0.005225,
+        "return_pct": 0.0522,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 2265.05,
+        "current_mid": 2266.05,
         "start": 10.0,
-        "equity": 10.008673,
-        "pnl": 0.008673,
-        "return_pct": 0.0867,
+        "equity": 10.013092,
+        "pnl": 0.013092,
+        "return_pct": 0.1309,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 95.4,
+        "current_mid": 95.46,
         "start": 10.0,
-        "equity": 9.866082,
-        "pnl": -0.133918,
-        "return_pct": -1.3392,
+        "equity": 9.872287,
+        "pnl": -0.127713,
+        "return_pct": -1.2771,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
