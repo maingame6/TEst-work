@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-01T19:40:42.768916+00:00
+Generated: 2026-11-01T19:45:40.744395+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD NEAR |
-| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD BNB |
-| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD BNB |
-| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD BNB |
-| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD BNB |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD TRX |
+| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD TRX |
+| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD AVAX |
+| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD UNI |
+| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD AVAX |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD UNI |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD BNB |
-| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD BNB |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD AVAX |
+| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD AVAX |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD UNI |
-| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD BNB |
+| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD AVAX |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
