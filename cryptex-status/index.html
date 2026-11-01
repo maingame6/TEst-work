@@ -63,6 +63,25 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="card"><div class="label">Modeled round-trip break-even</div><div id="roundtripCost" class="big">—</div><div class="caption">Fee and slippage assumptions, not real fills</div></div>
 </div>
 <p id="costExplanation" class="hint">We will not change thresholds simply to make more trades. Only held-out trades after costs can demonstrate a strategy edge.</p>
+<h2>Prospective experiment — frozen before results</h2>
+<p class="sub" style="margin-bottom:15px">Four predetermined 15-minute order-book momentum thresholds. They are a separate research experiment, NOT the original V4 five-minute signal or real-money trades.</p>
+<div class="grid">
+<div class="card"><div class="label">Snapshot comparisons recorded</div><div class="big" id="experimentObservations">—</div><div class="caption">Genuine observations after 1 Nov 19:30 UTC</div></div>
+<div class="card"><div class="label">Completed research hypotheses</div><div class="big" id="experimentCompleted">—</div><div class="caption">After next-snapshot entry and four later observations</div></div>
+<div class="card"><div class="label">Held-out comparison begins</div><div class="big" style="font-size:18px" id="heldoutStart">—</div><div class="caption">First 72 hours excluded from later validation</div></div>
+<div class="card"><div class="label">Allowed to change live strategy</div><div class="big warnText" id="experimentPromotion">NO</div><div class="caption">No automatic promotion of any threshold</div></div>
+</div>
+<div class="card" style="margin-top:14px"><div class="eyebrow">Four fixed alternatives — same source data</div><div class="scroll"><table class="dataTable"><thead><tr><th>Research rule</th><th>Min. move</th><th>Closed</th><th>After costs</th></tr></thead><tbody id="experimentRows"><tr><td colspan="4">Waiting for future data…</td></tr></tbody></table></div><p class="hint" id="experimentWarning">Same-book bids and asks are estimates, not executable orders. Comparisons must survive missing data, costs, benchmarks and held-out validation.</p></div>
+<h2>Reliability since the scheduler fix</h2>
+<div class="card">
+<div class="grid" style="gap:12px">
+<div><div class="label">New actual five-minute observations</div><div class="big" id="sinceFixObserved">—</div></div>
+<div><div class="label">New missing candles</div><div class="big" id="sinceFixMissed">—</div></div>
+<div><div class="label">Coverage after the fix</div><div class="big" id="sinceFixCoverage">—</div></div>
+<div><div class="label">Seven-day test</div><div class="big" style="font-size:19px" id="sinceFixDuration">—</div></div>
+</div>
+<p class="hint">Frozen baseline: 1 November 2026 at 19:21 UTC, 237 of 241 observations and 4 older missed candles. This does not erase the historical gaps or certify 24/7 uptime.</p>
+</div>
 <h2>Where has the fake money gone?</h2>
 <div class="section">
 <div class="card"><div class="eyebrow">Actual recorded balance history</div><canvas id="curve" role="img" aria-label="Line graph of recorded fake account balances"></canvas><div id="chartInfo" class="caption">Loading actual history…</div></div>
@@ -113,7 +132,7 @@ async function getData(){
  ["state",BASE+PAPER+"state.json"],["continuity",BASE+PAPER+"continuity_report.json"],
  ["integrity",BASE+PAPER+"integrity_report.json"],["portfolio",BASE+PAPER+"portfolio_report.json"],
  ["entry",BASE+PAPER+"entry_study_report.json"],["wide",BASE+WIDE+"wide_scan_report.json"],
- ["forward",BASE+WIDE+"forward_venue_report.json"],["depth",BASE+WIDE+"microstructure_report.json"],["authority",BASE+"main/cryptex/ops/writer_authority.json"],
+ ["forward",BASE+WIDE+"forward_venue_report.json"],["depth",BASE+WIDE+"microstructure_report.json"],["alternatives",BASE+WIDE+"forward_threshold_report.json"],["authority",BASE+"main/cryptex/ops/writer_authority.json"],
  ["history",BASE+PAPER+"combined_equity.csv",true]
  ];let result={};const outcomes=await Promise.allSettled(reqs.map(x=>get(x[1],x[2]||false)));outcomes.forEach((v,i)=>{if(v.status==="fulfilled")result[reqs[i][0]]=v.value;else result[reqs[i][0]+"Error"]=String(v.reason).slice(0,160)});
  // GitHub API gets a separate, lower-frequency request to avoid rate limits.
@@ -152,7 +171,7 @@ function drawGraph(text){
  set("chartInfo",fmtNum(samples.length)+" recorded balance snapshots · "+time(samples[0].t)+" to "+time(last.t)+" · dashed line = $210 start");
 }
 function update(data){
- const s=data.state,c=data.continuity,i=data.integrity,p=data.portfolio,e=data.entry,w=data.wide,f=data.forward,d=data.depth,a=data.authority;
+ const s=data.state,c=data.continuity,i=data.integrity,p=data.portfolio,e=data.entry,w=data.wide,f=data.forward,d=data.depth,alt=data.alternatives,a=data.authority;
  const hasCore=!!(s&&c&&i&&p&&a);
  const coreAge=s&&s.last_run?(Date.now()-Date.parse(s.last_run))/60000:Infinity;
  const validLedger=hasCore && s.mode==="PAPER_ONLY"&&c.mode==="PAPER_ONLY"&&i.mode==="PAPER_ONLY"&&p.mode==="PAPER_ONLY"&&i.no_real_orders===true&&p.real_money===false&&i.audited_accounts===21&&i.starting_paper_usd===210&&i.status==="PASS"&&Array.isArray(i.checks)&&i.checks.length>=12&&i.checks.every(x=>x.passed===true)&&s.last_run===c.generated_at&&s.last_run===i.generated_at&&s.last_run===p.generated_at;
@@ -219,6 +238,48 @@ function update(data){
    set("depthValid","UNAVAILABLE");
    set("depthFreshness","Data collector has not published valid measurements yet");
  }
+
+ const base={observed:237,expected:241,missing:4};
+ const sinceValid=c && c.mode==="PAPER_ONLY" && typeof c.observed_candles==="number" &&
+   typeof c.expected_candles==="number" && typeof c.missing_intervals==="number" &&
+   c.observed_candles>=base.observed && c.expected_candles>=base.expected &&
+   c.missing_intervals>=base.missing &&
+   c.observed_candles+c.missing_intervals===c.expected_candles;
+ if(sinceValid){
+   const seen=c.observed_candles-base.observed,miss=c.missing_intervals-base.missing;
+   const expected=c.expected_candles-base.expected;
+   set("sinceFixObserved",fmtNum(seen)+"/"+fmtNum(expected));
+   set("sinceFixMissed",fmtNum(miss));
+   set("sinceFixCoverage",expected>0?pct(100*seen/expected,2):"Collecting");
+   const days=(Date.parse(c.generated_at)-Date.parse("2026-11-01T19:21:09.985032Z"))/86400000;
+   set("sinceFixDuration",isFinite(days)&&days>=0?days.toFixed(2)+"/7 days":"Not verified");
+   el("sinceFixCoverage").className="big "+(expected>0&&100*seen/expected>=99?"goodText":"warnText");
+ }else{set("sinceFixCoverage","Unverified");set("sinceFixDuration","No trustworthy baseline");}
+ if(alt && alt.mode==="PAPER_ONLY" && alt.real_orders===false &&
+    alt.portfolio_ledger_changes===false && alt.frozen_at==="2026-11-01T19:30:00+00:00"){
+   const counted=alt.state&&alt.state.counters||{};
+   set("experimentObservations",fmtNum(counted.snapshots));
+   set("experimentCompleted",fmtNum(alt.completed_research_hypotheses));
+   const date=new Date("2026-11-04T19:30:00Z");
+   set("heldoutStart",time(date.toISOString()));
+   const promoted=Object.values(alt.gates||{}).some(x=>x.eligible_to_promote===true);
+   set("experimentPromotion",promoted?"CHECK!":"NO");
+   el("experimentPromotion").className="big "+(promoted?"badText":"warnText");
+   const body=el("experimentRows");body.replaceChildren();
+   for(const [name,v] of Object.entries(alt.gates||{})){
+     const tr=document.createElement("tr");
+     [name.replaceAll("_"," "),pct(v.threshold_pct,3),fmtNum(v.closed),
+       typeof v.mean_net_pct==="number"?pct(v.mean_net_pct,3):"No completed sample"]
+       .forEach(value=>{const td=document.createElement("td");td.textContent=value;tr.appendChild(td)});
+     body.appendChild(tr);
+   }
+   set("experimentWarning","Last research update: "+time(alt.at)+". "+fmtNum(counted.gaps||0)+
+     " genuine observation gaps; "+fmtNum(counted.entry_censored||0)+" missed entries and "+
+     fmtNum(counted.exit_censored||0)+" missing exits. The 72h burn-in and held-out comparison are not completed.");
+ }else{
+   set("experimentObservations","UNVERIFIED");
+   set("experimentWarning","Frozen research file is missing, stale or failed PAPER_ONLY validation. No approval to change strategy.");
+ }
  const checks=el("checks");checks.replaceChildren();
  addCheck(checks,"Five-minute engine",technicallyCurrent?"Real paper data processed "+Math.round(Math.max(0,coreAge))+"m ago.":"Current real paper ledger cannot be verified.",techStatus,techStatus==="good"?"RUNNING":techStatus==="warn"?"RECENT":"CHECK");
  addCheck(checks,"21 account records",accountOK?"All account totals and audits reconcile.":"Missing or failed independent accounting evidence.",accountOK?"good":"bad",accountOK?"PASS":"CHECK");
@@ -228,6 +289,7 @@ function update(data){
  addCheck(checks,"Independent Codex server",serverProven?"Server-origin publication reported; on-host process proof still requires manual verification.":"Independent host has NOT been verified as running the paper engine.","warn",serverProven?"REPORTED":"NOT PROVEN");
  addCheck(checks,"Five-exchange research",w?(fmtNum(w.unique_ohlcv_validated_pairs)+" validated histories; report "+(stale(w.generated_at,120)?"is stale.":"is recent.")):"Research report unavailable.",w&&!stale(w.generated_at,120)?"good":"warn",w&&!stale(w.generated_at,120)?"UPDATING":"STALE");
  addCheck(checks,"Live order books (research)",d?(fmtNum(d.valid_orderbook_roundtrip_diagnostics)+"/15 recorded; "+(stale(d.generated_at,45)?"latest report is stale.":"freshly observed.")):"No order-book evidence was loaded.",d&&!stale(d.generated_at,45)?"good":"warn",d&&!stale(d.generated_at,45)?"COLLECTING":"STALE");
+ addCheck(checks,"Frozen held-out threshold comparison",alt?fmtNum(alt.completed_research_hypotheses)+" research outcomes so far; zero promotions.":"No verified experiment report; do not infer performance.",alt&&!stale(alt.at,45)?"good":"warn",alt&&!stale(alt.at,45)?"COLLECTING":"NO CURRENT DATA");
  addCheck(checks,"One ledger writer",actualOwner==="github"?"GitHub remains the sole designated writer.":actualOwner==="drain"?"Handover drain: nobody may publish.":actualOwner==="server"?"Server is designated; Github must be fenced.":"Authority cannot be read.",a&&["github","server","drain"].includes(actualOwner)?"good":"bad",actualOwner==="github"?"GITHUB":actualOwner==="server"?"SERVER":actualOwner==="drain"?"DRAIN":"CHECK");
  if(data.history){window.latestHistory=data.history;drawGraph(data.history);}else{window.latestHistory=null;set("chartInfo","Could not load the recorded balance history; graph not shown.");}
  const body=el("runs");body.replaceChildren();
