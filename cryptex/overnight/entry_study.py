@@ -28,7 +28,7 @@ GATES={
 def blank():
     return {"schema":VERSION,"mode":"PAPER_ONLY","last_ts":0,"first_ts":None,
             "observed_candles":0,"signals":[],"open":[],"trades":[],
-            "missed_fills":0,"censored_exits":0}
+            "missed_fills":0,"censored_exits":0,"diagnostics":{}}
 
 def features(history):
     if len(history)<30:
@@ -92,6 +92,17 @@ def update(state,history,ts):
         x=features(h)
         if x is not None:candidates.append((sym,x))
     for name,params in GATES.items():
+        # Observational rejection counters: do NOT relax the V4 money gate.
+        # Existing persisted V2 state adds counters prospectively, never backfills.
+        diag=state.setdefault("diagnostics",{}).setdefault(name,{
+            "bars":0,"liquid_candidates":0,"move_below_gate":0,
+            "volume_below_gate":0,"qualified":0,"queued":0})
+        diag["bars"]+=1
+        diag["liquid_candidates"]+=len(candidates)
+        diag["move_below_gate"]+=sum(x["move"]<params["move"] for _,x in candidates)
+        diag["volume_below_gate"]+=sum(x["volume_ratio"]<params["volume_ratio"] for _,x in candidates)
+        diag["qualified"]+=sum(x["move"]>=params["move"] and
+                               x["volume_ratio"]>=params["volume_ratio"] for _,x in candidates)
         occupied={(p["gate"],p["symbol"]) for p in state["open"]}
         occupied.update((p["gate"],p["symbol"]) for p in state["signals"])
         capacity=max(0,MAX_OPEN_PER_GATE-sum(p["gate"]==name for p in state["open"]))
@@ -100,6 +111,7 @@ def update(state,history,ts):
                   and x["volume_ratio"]>=params["volume_ratio"]
                   and (name,sym) not in occupied]
         eligible.sort(key=lambda item:item[1]["move"],reverse=True)
+        diag["queued"]+=len(eligible[:capacity])
         for sym,x in eligible[:capacity]:
             state["signals"].append({"gate":name,"symbol":sym,
                 "signal_ts":ts,"observed_move":round(x["move"],8)})
@@ -110,6 +122,18 @@ def summarize(state,now):
     results={}
     for gate in GATES:
         done=[t for t in state["trades"] if t["gate"]==gate]
+        # Freeze the holdout boundary before results appear: first observed
+        # study candle plus 72 hours. No threshold selection on holdout.
+        holdout_start=state["first_ts"]+72*3600 if state.get("first_ts") else None
+        heldout=[t for t in done if holdout_start is not None and t["signal_ts"]>=holdout_start]
+        holdout_net=[t["net_return"] for t in heldout]
+        # Compound independent, unit-notional paper trade returns; NOT portfolio equity.
+        high=equity=1.0
+        max_dd=0.0
+        for t in sorted(done,key=lambda t:(t["exit_ts"],t["symbol"])):
+            equity*=1+t["net_return"]
+            high=max(high,equity)
+            max_dd=max(max_dd,1-equity/high)
         nets=[t["net_return"] for t in done]
         stress=[t["stress_net_return"] for t in done]
         gross=[t["gross_return"] for t in done]
@@ -125,7 +149,14 @@ def summarize(state,now):
             "net_sum_unit_stakes_pct":round(100*sum(nets),5),
             "open":sum(p["gate"]==gate for p in state["open"]),
             "queued":sum(p["gate"]==gate for p in state["signals"]),
-            "threshold_move_pct":round(100*GATES[gate]["move"],3)}
+            "threshold_move_pct":round(100*GATES[gate]["move"],3),
+            "diagnostics_since_instrumentation":state.get("diagnostics",{}).get(gate,{}),
+            "max_compounded_unit_stake_drawdown_pct":round(100*max_dd,5),
+            "heldout_boundary_ts":holdout_start,
+            "heldout_completed":len(heldout),
+            "heldout_after_cost_wins":sum(x>0 for x in holdout_net),
+            "heldout_mean_net_pct":round(100*sum(holdout_net)/len(holdout_net),5) if holdout_net else None,
+            "heldout_stress_mean_pct":round(100*sum(t["stress_net_return"] for t in heldout)/len(heldout),5) if heldout else None}
     return {"generated_at":now,"paper_only":True,"sample_status":"INSUFFICIENT" if max(x["completed"] for x in results.values())<30 else "REVIEW_ONLY",
         "execution":"next observed completed candle only; six-bar exits",
         "first_candle_ts":state["first_ts"],"last_candle_ts":state["last_ts"],
@@ -134,6 +165,7 @@ def summarize(state,now):
         "fees_slippage_per_side_pct":round((FEE+SLIP)*100,3),
         "cost_assumptions":cost_assumptions(),
         "disclaimer":"No real orders; simulations use close prices with estimated fees/slippage, do not model orderbook depth. Cross-market overlap makes samples correlated. No promotion without held-out test.",
+        "heldout_policy":"Frozen at first study candle +72h; diagnostic only; requires sufficient non-overlapping samples, cash and buy-and-hold comparison before promotion.",
         "gates":results}
 
 def store(folder,history,ts,now):
@@ -163,6 +195,13 @@ def store(folder,history,ts,now):
         m="not measured" if r["mean_net_pct"] is None else f"{r['mean_net_pct']:+.4f}%"
         stress="n/a" if r["mean_stress_net_pct"] is None else f"{r['mean_stress_net_pct']:+.4f}%"
         lines.append(f"| {gate} | {r['threshold_move_pct']:.3f}% | {r['completed']} | {r['wins_after_cost']} | {m} | {stress} | {r['gross_up_but_net_down']} | {r['open']} |")
+    lines+=["","## V4 gate diagnostics (from instrumentation onward; never reconstructed)",
+             "| Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |",
+             "|---|---:|---:|---:|---:|---:|---:|---:|"]
+    for gate,r in report["gates"].items():
+        d=r["diagnostics_since_instrumentation"]
+        hv="n/a" if r["heldout_mean_net_pct"] is None else f"{r['heldout_mean_net_pct']:+.4f}%"
+        lines.append(f"| {gate} | {d.get('qualified',0)} | {d.get('move_below_gate',0)} | {d.get('volume_below_gate',0)} | {d.get('queued',0)} | {r['heldout_completed']} | {hv} | {r['max_compounded_unit_stake_drawdown_pct']:.3f}% |")
     lines+=["","A gate only places a *research candidate*, entered on a later observed candle.",
              "No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.",
              "Six-candle exits are evaluation windows, not validated exit strategies.",""]
