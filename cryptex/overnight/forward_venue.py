@@ -99,9 +99,16 @@ def apply(state, rows, now):
 
 
 def report(state):
+    first_seen=min((m["first_ts"] for m in state["markets"].values()),default=None)
+    holdout_start=first_seen+72*3600*1000 if first_seen is not None else None
+    benchmark_returns=[
+        net_return(m["first_mid"],m["last_mid"],m["fee_per_side_assumed"])
+        for m in state["markets"].values() if m["observations"]>=2]
     by_gate={}
     for gate in GATES:
         rows=[r for r in state["closed"] if r["gate"]==gate]
+        heldout=[r for r in rows if holdout_start is not None and
+                 r["signal_ts"]>=holdout_start]
         paper=1.0;peak=1.0;dd=0.0
         for row in sorted(rows,key=lambda x:(x["exit_ts"],x["market"])):
             paper*=1+row["net"];peak=max(peak,paper)
@@ -111,7 +118,10 @@ def report(state):
             "stress_mean_net_pct":round(100*sum(r["stress_net"] for r in rows)/len(rows),5) if rows else None,
             "unit_stake_drawdown_pct":round(100*dd,5),
             "review_sample_minimum":30,
-            "sample_ready":len(rows)>=30}
+            "sample_ready":len(rows)>=30,
+            "frozen_holdout_start_ms":holdout_start,
+            "heldout_completed":len(heldout),
+            "heldout_mean_net_pct":round(100*sum(r["net"] for r in heldout)/len(heldout),5) if heldout else None}
     venues={v:{"observations":0,"markets_observed":0,"completed":0} for v in
             ("kraken","coinbase","bitstamp","okx","kucoin")}
     for m in state["markets"].values():
@@ -125,6 +135,10 @@ def report(state):
             "venues":venues,"markets_observed":len(state["markets"]),
             "forward_observations":state["observations"],
             "completed":len(state["closed"]),
+            "benchmark_cash_pct":0.0,
+            "buy_hold_markets_with_two_observations":len(benchmark_returns),
+            "buy_hold_mean_after_cost_pct":round(100*sum(benchmark_returns)/len(benchmark_returns),5) if benchmark_returns else None,
+            "benchmark_caveat":"Cash benchmark is zero; buy-and-hold spans first-to-latest observations with differing entry times and is descriptive, not a matched risk benchmark.",
             "censored_entries":state["censored_entries"],
             "censored_exits":state["censored_exits"],
             "gates":by_gate,
@@ -139,6 +153,8 @@ def markdown(result):
         f"Distinct forward observations: {result['forward_observations']}",
         f"Completed hypothetical round trips: {result['completed']}",
         f"Censored entries: {result['censored_entries']}; censored exits: {result['censored_exits']}","",
+        f"Cash reference: 0%; fee-adjusted buy/hold markets: {result['buy_hold_markets_with_two_observations']}; mean after costs: {result['buy_hold_mean_after_cost_pct'] if result['buy_hold_mean_after_cost_pct'] is not None else 'n/a'}%.",
+        "Buy/hold holding periods differ and cannot establish strategy superiority.","",
         "| Exchange | Markets observed | Forward observations | Completed simulations |",
         "|---|---:|---:|---:|"]
     for venue,v in result["venues"].items():
@@ -149,5 +165,11 @@ def markdown(result):
         avg="n/a" if v["mean_net_pct"] is None else f"{v['mean_net_pct']:+.4f}%"
         stress="n/a" if v["stress_mean_net_pct"] is None else f"{v['stress_mean_net_pct']:+.4f}%"
         lines.append(f"| {name} | {v['closed']} | {v['after_cost_wins']} | {avg} | {stress} | {v['unit_stake_drawdown_pct']:.3f}% |")
+    lines+=["","**Held-out evaluation**: boundary fixed at earliest truly observed forward candle plus 72h (no retrospective tuning).",
+            "| Gate | Held-out closes | Held-out mean net |",
+            "|---|---:|---:|"]
+    for name,v in result["gates"].items():
+        mean="n/a" if v["heldout_mean_net_pct"] is None else f"{v['heldout_mean_net_pct']:+.4f}%"
+        lines.append(f"| {name} | {v['heldout_completed']} | {mean} |")
     lines+=["","Live orderbook snapshots and user-specific fee tiers are NOT proven. Repeated markets and venues share correlated outcomes. No missing signals or delayed fills are backfilled.",""]
     return "\n".join(lines)
