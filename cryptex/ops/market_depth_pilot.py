@@ -21,7 +21,7 @@ WATCH={
 FEE_ASSUMED={"kraken":0.008,"coinbase":0.015,"bitstamp":0.008,
              "okx":0.002,"kucoin":0.003}
 BAR_MS=300000
-MAX_ROWS=12000  # rolling report window; old Git commits still exist
+MAX_ROWS=100000  # holds full bounded pilot, even with 15x historical 5m bars
 BOOK_LEVELS=20
 MAX_BOOK_AGE_MS=120000
 MAX_LOCAL_CYCLE_SECONDS=570
