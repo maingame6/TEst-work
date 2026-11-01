@@ -9,6 +9,9 @@ DATA_DIR="${CRYPTEX_HEARTBEAT_DATA:-/var/lib/cryptex-heartbeat}"
 mkdir -p "$DATA_DIR"
 exec 9>"$DATA_DIR/.lock"
 flock -n 9 || exit 0
+# Safety barrier before ANY repository fetch or GitHub dispatch.
+# Reject the CSGORisky relay, unknown hosts and busy shared machines.
+python3 "$REPO_DIR/cryptex/ops/host_guard.py"
 test -n "${GH_TOKEN:-}" || { echo "GH_TOKEN missing" >&2; exit 1; }
 git -C "$REPO_DIR" fetch --quiet --depth=1 origin main cryptex-paper-trading-preview
 git -C "$REPO_DIR" show origin/main:cryptex/ops/monitor.py > "$DATA_DIR/monitor.py"
