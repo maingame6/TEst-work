@@ -23,7 +23,7 @@ def timestamp(value):
         raise ValueError("Timezone required")
     return result.astimezone(UTC)
 
-def inspect(state, continuity, integrity, entry, wide, forward, now):
+def inspect(state, continuity, integrity, entry, wide, forward, now, depth=None):
     checks, warnings = [], []
     def check(name, cond, detail=""):
         checks.append({"name": name, "passed": bool(cond), "detail": detail})
@@ -94,6 +94,35 @@ def inspect(state, continuity, integrity, entry, wide, forward, now):
             warnings.append(f"Five-exchange saved report is {wide_age/60:.0f}m old; hourly scanner freshness not proven")
     except Exception:
         warnings.append("Five-exchange report timestamp unavailable")
+    # Independent supplementary research: never let a stale/missing book
+    # masquerade as real-time execution evidence, nor kill the main ledger.
+    depth_summary={"status":"NOT_VERIFIED","valid_books":0,"requested_books":15}
+    if depth is None:
+        warnings.append("No current five-exchange orderbook-depth report available")
+    elif (depth.get("mode")!="PAPER_ONLY"
+          or depth.get("real_orders") is not False
+          or depth.get("no_paper_portfolio_mutation") is not True):
+        warnings.append("Depth collector report violates PAPER_ONLY safety contract")
+    else:
+        depth_valid=depth.get("valid_orderbook_roundtrip_diagnostics",0)
+        depth_targets=depth.get("markets_targeted",0)
+        depth_summary={"status":"OBSERVED","valid_books":depth_valid,
+                       "requested_books":depth_targets,
+                       "historical_candles_stored":depth.get("stored_historical_candles"),
+                       "snapshots_stored":depth.get("stored_snapshots"),
+                       "generated_at":depth.get("generated_at")}
+        if depth_targets!=15 or depth.get("markets_observed")!=15:
+            warnings.append("Five-venue orderbook collector failed to check all 15 markets")
+        if depth_valid<10:
+            warnings.append("Fewer than 10 usable live orderbook snapshots in latest collector run")
+        try:
+            age=(now-timestamp(depth["generated_at"])).total_seconds()
+            if age>45*60 or age< -60:
+                warnings.append(f"Depth collector is stale or clock-skewed ({age/60:.1f} minutes)")
+                depth_summary["status"]="STALE"
+        except (KeyError,ValueError,TypeError):
+            warnings.append("Depth collector has no valid observation time")
+            depth_summary["status"]="UNKNOWN_TIME"
     try:
         cron = state.get("last_native_cron_run") or state.get("last_schedule_run")
         if (now-timestamp(cron)).total_seconds() > 90*60:
@@ -122,6 +151,7 @@ def inspect(state, continuity, integrity, entry, wide, forward, now):
                       "paper_accounts": integrity.get("audited_accounts"),
                       "strict_v4_qualified_closed": sum(counts.values()),
                       "strategies_eligible_for_review": nready},
+        "market_depth": depth_summary,
         "five_exchanges": {"pairs_discovered": wide.get("discovered_listing_total"),
                            "pairs_attempted": wide.get("unique_tested_venue_pairs"),
                            "validated_histories": wide.get("unique_ohlcv_validated_pairs"),
@@ -137,12 +167,17 @@ def main():
     ap=argparse.ArgumentParser()
     for p in ("state", "continuity", "integrity", "entry", "wide", "forward", "output"):
         ap.add_argument("--"+p, required=True)
+    ap.add_argument("--depth")
     a=ap.parse_args()
     now=dt.datetime.now(UTC)
     try:
         reports=[json.loads(pathlib.Path(getattr(a,name)).read_text())
                  for name in ("state","continuity","integrity","entry","wide","forward")]
-        result=inspect(*reports, now)
+        depth=None
+        if a.depth:
+            try:depth=json.loads(pathlib.Path(a.depth).read_text())
+            except (OSError,ValueError):pass
+        result=inspect(*reports, now, depth=depth)
     except Exception as exc:
         result={"generated_at":now.isoformat(),"status":"BLOCKED",
                 "failed":["Unable to inspect all six research files"],
