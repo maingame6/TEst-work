@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from monitor import examine, wide_recovery_due
+from monitor import examine, wide_recovery_due, paper_recovery_authorized
 
 UTC=dt.timezone.utc
 NOW=dt.datetime(2026,11,1,8,45,tzinfo=UTC)
@@ -63,6 +63,23 @@ class WideRecoveryTests(unittest.TestCase):
         old={"mode":"PAPER_ONLY","not_real_orders":True,
              "generated_at":(late-dt.timedelta(hours=3)).isoformat()}
         self.assertFalse(wide_recovery_due(old,late,[]))
+
+class WriterWatchdogTests(unittest.TestCase):
+    def authority(self,writer):
+        return {"schema":1,"mode":"PAPER_ONLY","writer":writer,
+                "pending_writer":None if writer!="drain" else "server",
+                "approved_server_droplet_id":"610231290",
+                "protected_csgorisky_droplet_id":"612199466"}
+    def test_github_can_recover_only_when_github_is_owner(self):
+        self.assertTrue(paper_recovery_authorized(self.authority("github")))
+        self.assertFalse(paper_recovery_authorized(self.authority("server")))
+        self.assertFalse(paper_recovery_authorized(self.authority("drain")))
+        self.assertFalse(paper_recovery_authorized({}))
+    def test_live_or_wrong_csgorisky_host_blocks_recovery(self):
+        a=self.authority("github");a["mode"]="LIVE"
+        self.assertFalse(paper_recovery_authorized(a))
+        a=self.authority("github");a["protected_csgorisky_droplet_id"]="610231290"
+        self.assertFalse(paper_recovery_authorized(a))
 
 if __name__=="__main__":
     unittest.main()
