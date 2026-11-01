@@ -1,0 +1,36 @@
+[Unit]
+Description=CRYPTEX sole PAPER_ONLY GitHub-ledger writer (DO NOT ENABLE BEFORE HANDOVER)
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=/opt/cryptex-server-kit/cryptex/ops/writer_control.py
+
+[Service]
+Type=oneshot
+DynamicUser=true
+StateDirectory=cryptex-paper-writer
+StateDirectoryMode=0700
+WorkingDirectory=/var/lib/cryptex-paper-writer
+LoadCredential=github_token:/etc/cryptex/writer-token
+ExecStartPre=/usr/bin/python3 /opt/cryptex-server-kit/cryptex/ops/host_guard.py
+ExecStart=/usr/bin/python3 /opt/cryptex-server-kit/cryptex/ops/server_writer.py
+TimeoutStartSec=240
+CPUQuota=50%
+Nice=15
+IOSchedulingClass=idle
+MemoryHigh=640M
+MemoryMax=900M
+TasksMax=70
+UMask=0077
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ReadWritePaths=/var/lib/cryptex-paper-writer
+IPAddressDeny=10.0.0.0/8
+IPAddressDeny=172.16.0.0/12
+IPAddressDeny=192.168.0.0/16
