@@ -88,6 +88,30 @@ class ProspectiveTests(unittest.TestCase):
   self.assertTrue(r["quote_currencies_are_not_equivalent"])
   self.assertTrue(all(not x["matched_buy_hold_verified"] for x in r["gates"].values()))
   self.assertTrue(all(not x["eligible_to_promote"] for x in r["gates"].values()))
+ def test_paired_future_cohorts_remain_descriptive_not_promotable(self):
+  s=P.state_new()
+  future="2026-11-05T20:00:00+00:00"
+  standard={"venue":"kraken","symbol":"BTC/USD","signal_time":future,
+            "exit_time":"2026-11-05T21:15:00+00:00",
+            "net_base_pct":-2.1,"paper_only":True}
+  s["completed"]=[
+    {**standard,"gate":"CONTROL_50BPS"},
+    {**standard,"gate":"STRICT_232BPS","net_base_pct":0.4}]
+  result=P.paired_holdout(s,dt.datetime(2026,11,6,tzinfo=UTC))
+  self.assertEqual(result["comparable_completed_cohorts"],1)
+  self.assertAlmostEqual(result["groups"]["STRICT_232BPS"]["mean_paired_delta_vs_control_pct"],2.5)
+  self.assertAlmostEqual(result["groups"]["COST_AWARE_217BPS"]["mean_paired_delta_vs_control_pct"],2.1)
+  self.assertFalse(result["groups"]["STRICT_232BPS"]["safe_to_promote"])
+ def test_censored_alternate_excluded_from_paired_samples(self):
+  s=P.state_new()
+  start="2026-11-05T20:00:00+00:00"
+  s["completed"]=[{"gate":"CONTROL_50BPS","venue":"kraken","symbol":"BTC/USD",
+    "signal_time":start,"net_base_pct":-1.4}]
+  s["censored_cohorts"]=[{"key":"kraken|BTC/USD","gate":"STRICT_232BPS",
+                          "signal_time":start,"reason":"MISSING_NEXT_BOOK"}]
+  r=P.paired_holdout(s,dt.datetime(2026,11,6,tzinfo=UTC))
+  self.assertEqual(r["control_eligible_cohorts"],1)
+  self.assertEqual(r["comparable_completed_cohorts"],0)
  def test_truly_future_rows_are_ignored(self):
   s=P.state_new()
   P.run(s,[book(10)],BASE)
