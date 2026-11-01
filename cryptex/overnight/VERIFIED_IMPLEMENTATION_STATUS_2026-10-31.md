@@ -1,5 +1,19 @@
 # CRYPTEX — verified implementation status (31 October 2026, 23:28 UTC)
 
+## Follow-up audit: 1 November 2026 (reported state 08:57–08:59 UTC)
+
+**Evidence, not a promise:** GitHub results are snapshots. No real money or orders.
+
+- **Separate watchdog deployed on GitHub main:** `.github/workflows/cryptex-watchdog.yml`, test and heartbeat run [41290283288](https://github.com/maingame6/TEst-work/actions/runs/41290283288) completed successfully. It checks real saved candles and continuity; >11min stale state may trigger a guarded paper-only dispatch. It SHARES GitHub infrastructure with the main workflow and does not guarantee 99% uptime.
+- **Optional truly separate VPS watchdog:** deployment files exist at `cryptex/ops/` on main. These files were **NOT installed on any DigitalOcean droplet**; there is no verified independent server or second execution worker. Do not claim it is running. Never run concurrent independent paper-ledger writers.
+- **Historical five-exchange scan:** latest separate-branch report attempted all **4,221** venue/pairs, validated **3,660**, and left **561** unresolved after retries; **20 actual spread snapshots** recorded as contemporary observations, not retroactive backtest inputs. [Verified successful run 41291089212](https://github.com/maingame6/TEst-work/actions/runs/41291089212). Per-market account fees remain unverified; Coinbase and Bitstamp still use marked conservative assumptions.
+- **Prospective five-exchange experiment:** `forward_venue.py` now exists; latest saved report has **103 truly recorded future observations from five venues, zero completed new paper round-trips**. It is based on hourly scan snapshots, NOT a five-minute execution service; it never touches the original $210 accounts. The fixed holdout begins 72h after first recorded observation.
+- **Main Kraken V4 evidence:** 114 of 116 expected candles = **98.276%**, two missing, 0.399 days. Strict V4 gate has **zero completed qualifying trades**; newest diagnostic records 22 screened candidate observations below strict move threshold over two observed instrumented bars. No fee threshold was relaxed. Portfolio remains paper-only; 13 integrity checks passed.
+- **No external hourly ChatGPT alert task added:** account already had five of five allowed scheduled automations. The GitHub watchdog is active; do not claim an OpenAI scheduled watch exists.
+- **Still required:** >=7 elapsed days, >=99% actually observed Kraken five-minute decisions, >=30 post-V4 closes per strategy, and held-out after-cost benchmark evidence. Historical-scan success != profitability. The bounded GitHub fallback is still set to stop 10 Nov 2026; observe Actions charges and decide on a single-writer dedicated execution host before relying on it.
+
+---
+
 ## Update: 23:35 UTC — actual multi-exchange historical scanner now running
 - This section **supersedes the older statement below** that multi-exchange historical evaluation is not implemented. It was true at 23:28 but code was subsequently added.
 - New source `cryptex/overnight/wide_scan.py`; independent [GitHub Actions workflow](https://github.com/maingame6/TEst-work/actions/workflows/cryptex-wide-scan.yml); results isolated to [wide market research branch](https://github.com/maingame6/TEst-work/tree/cryptex-wide-market-research).
