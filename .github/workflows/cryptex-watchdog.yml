@@ -63,7 +63,8 @@ jobs:
           python3 cryptex/ops/monitor.py \
             --state paper-snapshot/cryptex/overnight/data/state.json \
             --continuity paper-snapshot/cryptex/overnight/data/continuity_report.json \
-            --output heartbeat.json --recover
+            --wide wide-snapshot/cryptex/overnight/data/wide_scan_report.json \
+            --output heartbeat.json --recover --recover-wide
       - name: Publish heartbeat evidence
         if: always()
         uses: actions/upload-artifact@v4
