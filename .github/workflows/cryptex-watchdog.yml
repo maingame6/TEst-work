@@ -23,6 +23,8 @@ on:
       - 'cryptex/ops/SPEC.md'
       - 'cryptex/ops/paper_dispatch_clock.py'
       - 'cryptex/ops/tests/test_paper_dispatch_clock.py'
+      - 'cryptex/ops/own_data_review.py'
+      - 'cryptex/ops/tests/test_own_data_review.py'
 
 permissions:
   contents: read
@@ -50,6 +52,7 @@ jobs:
             cryptex/overnight/data/integrity_report.json
             cryptex/overnight/data/entry_study_report.json
             cryptex/overnight/data/portfolio_report.json
+            cryptex/overnight/data/trades.csv
       - name: Checkout independent five-venue research report (read only)
         uses: actions/checkout@v4
         with:
@@ -59,6 +62,7 @@ jobs:
             cryptex/overnight/data/wide_scan_report.json
             cryptex/overnight/data/forward_venue_report.json
             cryptex/overnight/data/microstructure_report.json
+            cryptex/overnight/data/microstructure_snapshots.csv
       - name: Test alert and safety rules
         run: python3 -m unittest discover -s cryptex/ops/tests -p 'test_*.py' -v
       - name: Examine independent heartbeat; recover if stale
@@ -116,6 +120,24 @@ jobs:
           path: |
             cryptex/ops/SPEC.md
             parity-output/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Review own recorded strategy and market data (read only)
+        if: always()
+        run: |
+          python3 cryptex/ops/own_data_review.py \
+            --trades paper-snapshot/cryptex/overnight/data/trades.csv \
+            --books wide-snapshot/cryptex/overnight/data/microstructure_snapshots.csv \
+            --study paper-snapshot/cryptex/overnight/data/entry_study_report.json \
+            --continuity paper-snapshot/cryptex/overnight/data/continuity_report.json \
+            --portfolio paper-snapshot/cryptex/overnight/data/portfolio_report.json \
+            --out research-output
+      - name: Publish own-data report and research assumptions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-own-data-review
+          path: research-output/
           if-no-files-found: warn
           retention-days: 14
       - name: Expose watchdog failure to GitHub
