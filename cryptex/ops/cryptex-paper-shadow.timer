@@ -2,7 +2,8 @@
 Description=Check one genuine CRYPTEX completed five-minute candle on independent host
 
 [Timer]
-OnCalendar=*-*-* *:3/5:35
+# Shortly after bar closure, before the existing GitHub job on minute 2.
+OnCalendar=*-*-* *:1/5:05
 AccuracySec=1s
 RandomizedDelaySec=0
 Persistent=false
