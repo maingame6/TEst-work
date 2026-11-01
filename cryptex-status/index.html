@@ -64,7 +64,7 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <h2>Market research — five exchanges</h2>
 <div class="grid">
 <div class="card"><div class="label">Exchange listings attempted</div><div id="attempted" class="big">—</div><div class="caption">Not actual placed trades</div></div>
-<div class="card"><div class="label">Validated historical markets</div><div id="validated" class="big">—</div><div class="caption">Historical data retrieved successfully</div></div>
+<div class="card"><div class="label">Markets ever validated</div><div id="validated" class="big">—</div><div class="caption">Includes markets that may fail in the latest retry</div></div>
 <div class="card"><div class="label">Still unresolved</div><div id="unresolved" class="big">—</div><div class="caption">Missing or unusable histories</div></div>
 <div class="card"><div class="label">Forward test trades closed</div><div id="forward" class="big">—</div><div id="forwardCaption" class="caption">These are NOT five-minute cross-exchange fills</div></div>
 </div>
@@ -77,6 +77,7 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="card"><div class="label">Last snapshot</div><div id="depthTime" class="big" style="font-size:17px">—</div><div id="depthFreshness" class="caption">A missed collection must be visible</div></div>
 </div>
 <p id="depthCaution" class="hint">Depth, estimated round-trip costs and spreads are diagnostic only. The research does not include real orders and does not change the paper accounts.</p>
+<p id="historyFailureReasons" class="hint">Checking why markets lacked enough historical data…</p>
 <h2>Recent engine runs</h2>
 <div class="card"><div class="scroll"><table class="dataTable"><thead><tr><th>Run (UTC)</th><th>Result</th><th>Evidence</th></tr></thead><tbody id="runs"><tr><td colspan="3">Checking GitHub Actions…</td></tr></tbody></table></div><div class="hint" id="runHint">A successful workflow confirms code execution, not profitable trading. The main run must also publish fresh state.</div></div>
 <h2>See all 21 virtual trading agents</h2><div class="card"><details id="agents"><summary>Open the full 21-agent breakdown</summary><div class="bot-list" id="botlist">Loading…</div></details></div>
@@ -186,6 +187,12 @@ function update(data){
    set("depthTime",time(d.generated_at));
    set("depthFreshness",stale(d.generated_at,45)?"WARNING: data is over 45 minutes old":"Recent collection verified · 15-minute schedule is best-effort");
    set("depthCaution",fmtNum(d.invalid_or_insufficient_book_markets)+" failed or unusable books last cycle. USD and USDT are separate quote currencies. Order books and later-retrieved candle history do not prove executable trades or profits.");
+   const q=d.historical_quality_diagnostics;
+   if(q&&q.status==="AVAILABLE"){
+     const incomplete=(q.failure_buckets&&q.failure_buckets.insufficient)||0;
+     const old=(q.failure_buckets&&q.failure_buckets.stale)||0;
+     set("historyFailureReasons",fmtNum(incomplete)+" markets lacked sufficient completed 5-minute bars; "+fmtNum(old)+" returned stale candle history. These are not extra executable strategies and repeated downloading does not repair short histories.");
+   }
  }else{
    set("depthValid","UNAVAILABLE");
    set("depthFreshness","Data collector has not published valid measurements yet");
