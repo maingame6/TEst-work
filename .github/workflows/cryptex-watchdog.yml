@@ -23,6 +23,7 @@ on:
       - 'cryptex/ops/SPEC.md'
       - 'cryptex/ops/paper_dispatch_clock.py'
       - 'cryptex/ops/tests/test_paper_dispatch_clock.py'
+      - 'cryptex/ops/heldout_gate.py'
       - 'cryptex/ops/own_data_review.py'
       - 'cryptex/ops/tests/test_own_data_review.py'
 
@@ -138,6 +139,22 @@ jobs:
         with:
           name: cryptex-own-data-review
           path: research-output/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Audit fixed held-out after-cost promotion requirements
+        if: always()
+        run: |
+          python3 cryptex/ops/heldout_gate.py \
+            --entry paper-snapshot/cryptex/overnight/data/entry_study_report.json \
+            --continuity paper-snapshot/cryptex/overnight/data/continuity_report.json \
+            --depth wide-snapshot/cryptex/overnight/data/microstructure_report.json \
+            --out research-output
+      - name: Archive held-out decision with own-data review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-heldout-decision
+          path: research-output/heldout_decision.json
           if-no-files-found: warn
           retention-days: 14
       - name: Expose watchdog failure to GitHub
