@@ -1,0 +1,12 @@
+[Unit]
+Description=CRYPTEX PAPER_ONLY server writer every five minutes (enable ONLY after drain)
+
+[Timer]
+OnCalendar=*-*-* *:1/5:40
+AccuracySec=1s
+RandomizedDelaySec=0
+Persistent=false
+Unit=cryptex-paper-writer.service
+
+[Install]
+WantedBy=timers.target
