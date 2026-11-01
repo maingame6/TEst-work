@@ -6,8 +6,8 @@ Goal: keep the CSGORisky Droplet 612199466 untouched; add a bounded, separate PA
 - `server_shadow.py` verifies its **exact DigitalOcean droplet ID** using on-host metadata, plus >=1,536 MB available RAM, >=5 GB free disk, and low load, before fetching any code.
 - Clones only the existing public GitHub PAPER_ONLY branch into /var/lib/cryptex-paper-shadow/repo, a dedicated isolated scratch space. No credential, GitHub push or live exchange API.
 - Uses the **actual CRYPTEX main runner** on newly completed public Kraken 5m data and the integrity audit for all 21 simulated accounts.
-- Records an observation only when a new distinct candle actually exists. The 99% continuity claim must be supported by seven-day evidence, never backfilled.
-- systemd timer starts once every five minutes, offset to minute 3:35. Dynamic user, protected filesystem, private temporary directory, 900 MB max memory, 50% one CPU max, low disk priority, no access to private 10/8, 172.16/12 or 192.168/16 LAN.
+- Records a successful independent observation only when the host's own engine processes a new distinct candle; simply fetching a newer GitHub snapshot does not count. The 99% continuity claim must be supported by seven-day evidence, never backfilled.
+- systemd timer starts once every five minutes, offset to minute 1:05 (to catch a newly closed candle before the existing GitHub runner). Dynamic user, protected filesystem, private temporary directory, 900 MB max memory, 50% one CPU max, low disk priority, no access to private 10/8, 172.16/12 or 192.168/16 LAN.
 - Result stays LOCAL in /var/lib/cryptex-paper-shadow/latest.json and shadow_evidence.json. No CSGORisky service or production paper ledger can be modified by this service.
 - A GitHub Actions **disposable** canary tests the same code; this does not install the server.
 
