@@ -40,7 +40,10 @@ jobs:
           audit=Audit();audit.feed(page)
           required={'headline','reason','balance','coverage','pnl','real','checks',
                     'strictTrades','attempted','validated','unresolved','forward',
-                    'curve','runs','conclusion','checked','refresh'}
+                    'curve','runs','conclusion','checked','refresh',
+                    'experimentObservations','experimentCompleted','experimentRows',
+                    'heldoutStart','experimentPromotion','sinceFixObserved',
+                    'sinceFixMissed','sinceFixCoverage','sinceFixDuration'}
           missing=required-audit.ids
           if missing:raise SystemExit('Missing dashboard fields: '+str(sorted(missing)))
           js=''.join(audit.js)
