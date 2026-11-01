@@ -1,0 +1,47 @@
+name: CRYPTEX status — publish free, read-only dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cryptex-status/**'
+      - '.github/workflows/cryptex-status-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: cryptex-status-page-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout only the read-only web dashboard
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            cryptex-status
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare isolated status site
+        run: |
+          test -s cryptex-status/index.html
+          echo 'Pages contains only client-side read-only GitHub API requests.'
+          touch cryptex-status/.nojekyll
+      - name: Upload page artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: cryptex-status
+      - name: Publish site at GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
