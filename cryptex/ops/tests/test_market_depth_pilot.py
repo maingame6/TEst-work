@@ -62,6 +62,17 @@ class MarketDataTests(unittest.TestCase):
         self.assertEqual(row["status"],"OBSERVED_DIAGNOSTIC")
         self.assertEqual(len(bars),2)
         self.assertEqual(row["closed_candles_in_payload"],2)
+    def test_exchange_book_time_is_measured_after_network_response(self):
+        d=Dummy()
+        moments=iter([NOW+9000,NOW+11000])
+        row,bars=P.gather_market(d,"okx","BTC/USDT",NOW,STAMP,
+                                 clock_ms=lambda:next(moments))
+        self.assertAlmostEqual(row["exchange_book_age_seconds"],13.5,places=2)
+        self.assertEqual(row["observed_at"],
+            dt.datetime.fromtimestamp((NOW+9000)/1000,dt.timezone.utc).isoformat())
+        self.assertEqual(bars[-1]["acquired_at"],
+            dt.datetime.fromtimestamp((NOW+11000)/1000,dt.timezone.utc).isoformat())
+        self.assertEqual(bars[-1]["acquisition_delay_seconds"],11)
     def test_inactive_market_not_transformed_into_trade(self):
         d=Dummy();d.markets["BTC/USDT"]["active"]=False
         row,bars=P.gather_market(d,"okx","BTC/USDT",NOW,STAMP)
