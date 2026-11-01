@@ -72,7 +72,8 @@ jobs:
             --continuity paper-snapshot/cryptex/overnight/data/continuity_report.json \
             --authority cryptex/ops/writer_authority.json \
             --wide wide-snapshot/cryptex/overnight/data/wide_scan_report.json \
-            --output heartbeat.json --recover --recover-wide
+            --depth wide-snapshot/cryptex/overnight/data/microstructure_report.json \
+            --output heartbeat.json --recover --recover-wide --recover-depth
       - name: Publish heartbeat evidence
         if: always()
         uses: actions/upload-artifact@v4
