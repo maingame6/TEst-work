@@ -1,0 +1,40 @@
+name: CRYPTEX - verify independent server publisher fencing (no deploy)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'cryptex/ops/server_writer.py'
+      - 'cryptex/ops/tests/test_server_writer.py'
+      - 'cryptex/ops/writer_control.py'
+      - 'cryptex/ops/tests/test_writer_control.py'
+      - 'cryptex/ops/writer_authority.json'
+      - 'cryptex/ops/cryptex-paper-writer.service'
+      - 'cryptex/ops/cryptex-paper-writer.timer'
+      - '.github/workflows/cryptex-server-writer-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  no-double-writer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prove handover transitions and refusal rules
+        run: |
+          python3 -m unittest discover -s cryptex/ops/tests -p test_writer_control.py -v
+          python3 -m unittest discover -s cryptex/ops/tests -p test_server_writer.py -v
+      - name: Verify GitHub remains the only authorized owner
+        run: |
+          python3 cryptex/ops/writer_control.py assert-owner \
+            --file cryptex/ops/writer_authority.json --actor github --epoch 1
+          if python3 cryptex/ops/writer_control.py assert-owner \
+              --file cryptex/ops/writer_authority.json --actor server --epoch 1; then
+            echo 'Unexpected independent server authority'; exit 1
+          fi
+          echo 'No Cloud Server was accessed; no live credentials provided or used.'
