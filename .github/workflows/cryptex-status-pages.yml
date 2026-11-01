@@ -18,8 +18,48 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  pages-readiness:
+    name: Check whether GitHub Pages is enabled
     if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      enabled: ${{ steps.readiness.outputs.enabled }}
+    steps:
+      - name: Read Pages configuration before attempting deployment
+        id: readiness
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          code=$(curl --silent --show-error --retry 2 --max-time 20 \
+            -o "$RUNNER_TEMP/cryptex_pages_status.json" -w '%{http_code}' \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/pages")
+          if [ "$code" = "404" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Dashboard not published: GitHub Pages is not enabled. Main CRYPTEX paper research is unaffected."
+            {
+              echo "### Dashboard hosting: NOT ENABLED"
+              echo ""
+              echo "GitHub Pages returned HTTP 404. Deployment was intentionally SKIPPED (not falsely reported as successful)."
+              echo "Enable **Settings → Pages → Build and deployment → GitHub Actions**, then rerun this workflow."
+              echo "The main five-minute PAPER_ONLY engine continues independently."
+            } >> "$GITHUB_STEP_SUMMARY"
+          elif [ "$code" = "200" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "GitHub Pages exists. Proceeding with separate dashboard deployment."
+          else
+            echo "::error::Could not verify Pages configuration (HTTP $code). Do not assume Pages is disabled."
+            cat "$RUNNER_TEMP/cryptex_pages_status.json"
+            exit 1
+          fi
+
+  publish:
+    name: Publish read-only dashboard (only if Pages is enabled)
+    needs: pages-readiness
+    if: needs.pages-readiness.outputs.enabled == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
