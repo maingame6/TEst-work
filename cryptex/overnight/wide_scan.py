@@ -160,9 +160,31 @@ def scan_venue(venue,selection,now_ms,ccxt_lib):
      raise ValueError("PAIR_NOT_ACTIVE_SPOT")
     if not m.get("linear") and m.get("contract") is True:
      raise ValueError("CONTRACT_NOT_SPOT")
+    # Exchange-reported market fee metadata is informative, not the user's tier.
+    # Historical P&L continues using the documented conservative fee model.
+    raw_fee=m.get("taker")
+    if isinstance(raw_fee,(int,float)) and math.isfinite(raw_fee) and 0<=raw_fee<1:
+     result["venue_market_taker_metadata"]=round(float(raw_fee),8)
+     result["venue_market_taker_metadata_status"]="UNVERIFIED_EXCHANGE_METADATA"
     result["ohlcv_requested"]=True
     bars=exchange.fetch_ohlcv(sym,timeframe="5m",limit=180)
     result.update(analyze(bars,now_ms,venue,row["quote"]))
+    # Contemporary order book snapshot; NEVER apply today's spread to past bars.
+    # Unavailable order book is explicit, not invented.
+    result["spread_status"]="NOT_AVAILABLE"
+    if getattr(exchange,"has",{}).get("fetchOrderBook"):
+     try:
+      book=exchange.fetch_order_book(sym,limit=5)
+      bids=book.get("bids") or [];asks=book.get("asks") or []
+      bid=float(bids[0][0]) if bids else 0
+      ask=float(asks[0][0]) if asks else 0
+      if 0<bid<=ask and math.isfinite(bid) and math.isfinite(ask):
+       result["spread_bps"]=round(20000*(ask-bid)/(ask+bid),4)
+       result["spread_status"]="OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE"
+      else:
+       result["spread_status"]="INVALID_ORDERBOOK"
+     except Exception as book_exc:
+      result["spread_status"]="UNAVAILABLE:"+type(book_exc).__name__
    except Exception as exc:
     result["reason"]=(type(exc).__name__+":"+str(exc))[:160]
    results.append(result)
@@ -221,7 +243,10 @@ def report(state,market_index,discovery,now):
     "fees":FEES,"slippage_per_side":SLIPPAGE,"stress_slippage_per_side":STRESS_SLIPPAGE,
     "fee_limitations":"Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
     "simulation_limitations":"Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
-    "last_batch":state.get("last_batch",[])}
+    "last_batch":state.get("last_batch",[]),
+    "latest_unavailable_pairs":sum(v["latest_failed"] for v in totals.values()),
+    "current_spread_snapshots":sum(r.get("spread_bps") is not None for r in state["seen"].values()),
+    "spread_usage":"Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles."}
 
 def markdown(r):
  lines=["# CRYPTEX — genuine five-exchange market test coverage","",
@@ -254,7 +279,7 @@ def market_csv(state,path):
  fields=["venue","symbol","quote","checked_at","status","ever_valid",
          "ever_checked","ever_ohlcv_requested",
          "history_bars","last_complete_ms","reason","fee_per_side",
-         "fee_status","momentum_samples","momentum_net_pct",
+         "fee_status","venue_market_taker_metadata","spread_bps","spread_status","momentum_samples","momentum_net_pct",
          "cost_aware_samples","cost_aware_net_pct","breakout_samples",
          "breakout_net_pct","rebound_samples","rebound_net_pct"]
  with pathlib.Path(path).open("w",newline="",encoding="utf-8") as fp:
@@ -273,6 +298,9 @@ def market_csv(state,path):
     "history_bars":r.get("bars"),"last_complete_ms":r.get("last_completed_ms"),
     "reason":r.get("reason",""),"fee_per_side":r.get("fee_per_side"),
     "fee_status":r.get("fee_status"),
+    "venue_market_taker_metadata":r.get("venue_market_taker_metadata"),
+    "spread_bps":r.get("spread_bps"),
+    "spread_status":r.get("spread_status"),
     "momentum_samples":stat("momentum_05","samples"),
     "momentum_net_pct":stat("momentum_05","mean_net_pct"),
     "cost_aware_samples":stat("cost_aware_momentum","samples"),
@@ -283,7 +311,8 @@ def market_csv(state,path):
     "rebound_net_pct":stat("dip_recovery","mean_net_pct")
    })
 
-def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,rescan=False):
+def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,rescan=False,retry_unavailable=False):
+ if rescan and retry_unavailable:raise ValueError("Choose either rescan or unavailable retry")
  if per_venue<1 or per_venue>100:raise ValueError("Unsafe per-venue batch size")
  discovery=json.loads(pathlib.Path(catalogue_path).read_text())
  if discovery.get("status") not in ("OK","PARTIAL"):raise RuntimeError("CCXT catalogue not healthy")
@@ -298,8 +327,21 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,resc
   if not rows:selections[venue]=[];continue
   # First pass checks every distinct venue/pair ONCE before revisiting any.
   # Incomplete/time-budget pairs remain unseen and are retried next batch.
-  unseen=rows if rescan else [r for r in rows if venue+"|"+r["symbol"] not in state["seen"]]
-  selected=unseen[:min(per_venue,len(unseen))]
+  if retry_unavailable:
+   # Reattempt only the unvalidated/failing pairs, oldest observations first.
+   # Never retroactively count a failed request as an executable trade.
+   pool=[r for r in rows if (venue+"|"+r["symbol"]) in state["seen"]
+         and state["seen"][venue+"|"+r["symbol"]]["status"]!="VALIDATED_OHLCV"]
+   pool.sort(key=lambda r:(state["seen"][venue+"|"+r["symbol"]].get("attempts",0),
+                           state["seen"][venue+"|"+r["symbol"]].get("checked_at",""),r["symbol"]))
+   selected=pool[:min(per_venue,len(pool))]
+  elif rescan:
+   # Rotate instead of repeatedly selecting the alphabetical first page.
+   cursor=int(state["cursor"].get(venue,0))%len(rows)
+   selected=(rows[cursor:]+rows[:cursor])[:min(per_venue,len(rows))]
+  else:
+   unseen=[r for r in rows if venue+"|"+r["symbol"] not in state["seen"]]
+   selected=unseen[:min(per_venue,len(unseen))]
   selections[venue]=selected
   state["cursor"][venue]=(int(state["cursor"].get(venue,0))+len(selected))%len(rows)
  now_ms=int(dt.datetime.fromisoformat(now.replace("Z","+00:00")).timestamp()*1000)
@@ -340,10 +382,11 @@ def main():
  parser.add_argument("--catalog",default="cryptex/overnight/data/ccxt_universe.json")
  parser.add_argument("--out",default="cryptex/overnight/data")
  parser.add_argument("--per-venue",type=int,default=MAX_MARKETS_PER_VENUE)
- parser.add_argument("--rescan",action="store_true",help="Explicitly repeat already-checked pairs")
+ parser.add_argument("--rescan",action="store_true",help="Rotate through already-checked pairs")
+ parser.add_argument("--retry-unavailable",action="store_true",help="Retry only the currently unavailable/invalid pairs")
  args=parser.parse_args()
  import ccxt
- result=run(args.catalog,args.out,dt.datetime.now(dt.timezone.utc).isoformat(),ccxt,args.per_venue,args.rescan)
+ result=run(args.catalog,args.out,dt.datetime.now(dt.timezone.utc).isoformat(),ccxt,args.per_venue,args.rescan,args.retry_unavailable)
  print(json.dumps({"attempted":result["unique_tested_venue_pairs"],
     "validated":result["unique_ohlcv_validated_pairs"],
     "batch":result["last_batch"],"scans":result["batches"]}))
