@@ -1,0 +1,60 @@
+{
+  "mode": "PAPER_ONLY",
+  "real_orders": false,
+  "data_source": "Prospective hourly rotating exchange market snapshots only",
+  "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution.",
+  "last_observed_at": "2026-11-01T08:56:26.584837+00:00",
+  "venues": {
+    "kraken": {
+      "observations": 6,
+      "markets_observed": 6,
+      "completed": 0
+    },
+    "coinbase": {
+      "observations": 12,
+      "markets_observed": 12,
+      "completed": 0
+    },
+    "bitstamp": {
+      "observations": 0,
+      "markets_observed": 0,
+      "completed": 0
+    },
+    "okx": {
+      "observations": 0,
+      "markets_observed": 0,
+      "completed": 0
+    },
+    "kucoin": {
+      "observations": 44,
+      "markets_observed": 44,
+      "completed": 0
+    }
+  },
+  "markets_observed": 62,
+  "forward_observations": 62,
+  "completed": 0,
+  "censored_entries": 0,
+  "censored_exits": 0,
+  "gates": {
+    "STRICT_COST": {
+      "closed": 0,
+      "after_cost_wins": 0,
+      "mean_net_pct": null,
+      "stress_mean_net_pct": null,
+      "unit_stake_drawdown_pct": 0.0,
+      "review_sample_minimum": 30,
+      "sample_ready": false
+    },
+    "LOW_HURDLE_CONTROL": {
+      "closed": 0,
+      "after_cost_wins": 0,
+      "mean_net_pct": null,
+      "stress_mean_net_pct": null,
+      "unit_stake_drawdown_pct": 0.0,
+      "review_sample_minimum": 30,
+      "sample_ready": false
+    }
+  },
+  "no_promotion": "No claims of edge without 7d prospective data, independent 99% observation coverage, 30 trades per tested strategy, heldout after-cost benchmark evidence."
+}
