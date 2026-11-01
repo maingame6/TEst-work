@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-10-31T23:56:44.982818+00:00",
+  "generated_at": "2026-10-31T23:58:58.955454+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
   "discovered_listing_total": 4221,
   "catalogue_source_listings": 4221,
-  "unique_tested_venue_pairs": 4030,
-  "unique_exchange_market_metadata_checked": 4030,
-  "unique_ohlcv_requested": 4030,
-  "unique_ohlcv_validated_pairs": 3331,
-  "markets_with_any_historical_signal": 199,
-  "coverage_pct": 95.475,
-  "batches": 13,
+  "unique_tested_venue_pairs": 4130,
+  "unique_exchange_market_metadata_checked": 4130,
+  "unique_ohlcv_requested": 4130,
+  "unique_ohlcv_validated_pairs": 3426,
+  "markets_with_any_historical_signal": 202,
+  "coverage_pct": 97.844,
+  "batches": 14,
   "venues": {
     "kraken": {
       "discovered": 1201,
-      "attempted_distinct": 1025,
-      "metadata_checked_distinct": 1025,
-      "ohlcv_requested_distinct": 1025,
-      "validated_ohlcv_distinct": 1017,
-      "last_attempt_valid": 1017,
-      "latest_failed": 8,
-      "next_cursor": 1025
+      "attempted_distinct": 1110,
+      "metadata_checked_distinct": 1110,
+      "ohlcv_requested_distinct": 1110,
+      "validated_ohlcv_distinct": 1097,
+      "last_attempt_valid": 1097,
+      "latest_failed": 13,
+      "next_cursor": 1110
     },
     "coinbase": {
       "discovered": 867,
@@ -45,13 +45,13 @@
     },
     "okx": {
       "discovered": 1040,
-      "attempted_distinct": 1025,
-      "metadata_checked_distinct": 1025,
-      "ohlcv_requested_distinct": 1025,
-      "validated_ohlcv_distinct": 1025,
-      "last_attempt_valid": 1025,
+      "attempted_distinct": 1040,
+      "metadata_checked_distinct": 1040,
+      "ohlcv_requested_distinct": 1040,
+      "validated_ohlcv_distinct": 1040,
+      "last_attempt_valid": 1040,
       "latest_failed": 0,
-      "next_cursor": 1025
+      "next_cursor": 0
     },
     "kucoin": {
       "discovered": 879,
@@ -66,32 +66,32 @@
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 318,
-      "net_winners": 20,
-      "gross_up_net_down": 108,
-      "weighted_mean_net_pct": -2.36188,
-      "markets_with_samples": 149
+      "historical_samples": 327,
+      "net_winners": 21,
+      "gross_up_net_down": 109,
+      "weighted_mean_net_pct": -2.333966,
+      "markets_with_samples": 152
     },
     "cost_aware_momentum": {
-      "historical_samples": 67,
+      "historical_samples": 71,
       "net_winners": 11,
       "gross_up_net_down": 12,
-      "weighted_mean_net_pct": -2.315143,
-      "markets_with_samples": 44
+      "weighted_mean_net_pct": -2.258388,
+      "markets_with_samples": 45
     },
     "breakout": {
-      "historical_samples": 364,
-      "net_winners": 21,
-      "gross_up_net_down": 123,
-      "weighted_mean_net_pct": -2.221821,
-      "markets_with_samples": 180
+      "historical_samples": 369,
+      "net_winners": 22,
+      "gross_up_net_down": 124,
+      "weighted_mean_net_pct": -2.207319,
+      "markets_with_samples": 183
     },
     "dip_recovery": {
-      "historical_samples": 78,
+      "historical_samples": 79,
       "net_winners": 9,
       "gross_up_net_down": 37,
-      "weighted_mean_net_pct": -1.835777,
-      "markets_with_samples": 64
+      "weighted_mean_net_pct": -1.830484,
+      "markets_with_samples": 65
     }
   },
   "fees": {
@@ -126,8 +126,8 @@
   "fee_limitations": "Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
-    "attempted": 170,
-    "validated": 170,
-    "unavailable": 0
+    "attempted": 100,
+    "validated": 95,
+    "unavailable": 5
   }
 }
