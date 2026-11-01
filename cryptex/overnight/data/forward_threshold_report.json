@@ -1,0 +1,113 @@
+{
+  "at": "2026-11-01T19:38:05.542201+00:00",
+  "frozen_at": "2026-11-01T19:30:00+00:00",
+  "schema": 1,
+  "mode": "PAPER_ONLY",
+  "real_orders": false,
+  "portfolio_ledger_changes": false,
+  "independent_research": true,
+  "holdout_window_days": 0.0056,
+  "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
+  "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
+  "fee_assumptions_per_side": {
+    "kraken": 0.008,
+    "coinbase": 0.015,
+    "bitstamp": 0.008,
+    "okx": 0.002,
+    "kucoin": 0.003
+  },
+  "fee_public_sources_verified_for_venues": {
+    "kraken": true,
+    "okx": true,
+    "coinbase": false,
+    "bitstamp": false,
+    "kucoin": false
+  },
+  "base_slippage_per_side": 0.0025,
+  "stress_slippage_per_side": 0.005,
+  "quote_size_per_hypothetical_trade": 1000,
+  "quote_currencies_are_not_equivalent": true,
+  "minimum_promotion_conditions": {
+    "minimum_heldout_days": 7,
+    "min_independent_hour_groups": 40,
+    "min_heldout_completed_per_gate": 60,
+    "max_gap_seconds": 1500,
+    "minimum_depth_quote": 1000,
+    "hold_snapshots": 4
+  },
+  "promotion_policy": "NEVER_AUTO_PROMOTE: independent review with matched benchmarks, cluster uncertainty, enough days and verified costs required",
+  "state": {
+    "freeze": "2026-11-01T19:30:00+00:00",
+    "counters": {
+      "snapshots": 15,
+      "stale_or_bad": 0,
+      "entry_censored": 0,
+      "exit_censored": 0,
+      "signal_candidates": 0,
+      "gaps": 0
+    }
+  },
+  "pending_entries": 0,
+  "open_hypotheses": 0,
+  "completed_research_hypotheses": 0,
+  "gates": {
+    "STRICT_232BPS": {
+      "threshold_pct": 2.322,
+      "closed": 0,
+      "positive_after_cost": 0,
+      "mean_net_pct": null,
+      "mean_stress_pct": null,
+      "median_net_pct": null,
+      "independent_hour_groups": 0,
+      "cash_benchmark_pct": 0,
+      "matched_buy_hold_verified": false,
+      "statistical_significance_verified": false,
+      "eligible_to_promote": false
+    },
+    "COST_AWARE_217BPS": {
+      "threshold_pct": 2.172,
+      "closed": 0,
+      "positive_after_cost": 0,
+      "mean_net_pct": null,
+      "mean_stress_pct": null,
+      "median_net_pct": null,
+      "independent_hour_groups": 0,
+      "cash_benchmark_pct": 0,
+      "matched_buy_hold_verified": false,
+      "statistical_significance_verified": false,
+      "eligible_to_promote": false
+    },
+    "BALANCED_120BPS": {
+      "threshold_pct": 1.2,
+      "closed": 0,
+      "positive_after_cost": 0,
+      "mean_net_pct": null,
+      "mean_stress_pct": null,
+      "median_net_pct": null,
+      "independent_hour_groups": 0,
+      "cash_benchmark_pct": 0,
+      "matched_buy_hold_verified": false,
+      "statistical_significance_verified": false,
+      "eligible_to_promote": false
+    },
+    "CONTROL_50BPS": {
+      "threshold_pct": 0.5,
+      "closed": 0,
+      "positive_after_cost": 0,
+      "mean_net_pct": null,
+      "mean_stress_pct": null,
+      "median_net_pct": null,
+      "independent_hour_groups": 0,
+      "cash_benchmark_pct": 0,
+      "matched_buy_hold_verified": false,
+      "statistical_significance_verified": false,
+      "eligible_to_promote": false
+    }
+  },
+  "limitations": [
+    "Book VWAP snapshots are not guaranteed executable fills.",
+    "Sparse books and irregular sampling censor trades instead of fabricating a fill.",
+    "Coinbase/Bitstamp/KuCoin fee assumptions remain unverified; no account-specific tier verified.",
+    "A paired historical benchmark and cluster-level uncertainty cannot yet be assessed; no strategy is approved."
+  ]
+}
