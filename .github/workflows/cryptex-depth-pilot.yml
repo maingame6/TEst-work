@@ -47,6 +47,8 @@ jobs:
           sparse-checkout: |
             cryptex/ops/market_depth_pilot.py
             cryptex/ops/tests/test_market_depth_pilot.py
+            cryptex/ops/forward_threshold_pilot.py
+            cryptex/ops/tests/test_forward_threshold_pilot.py
       - name: Checkout independent five-exchange research outputs
         if: steps.time_gate.outputs.enabled == 'true'
         uses: actions/checkout@v4
@@ -63,6 +65,7 @@ jobs:
         run: |
           python3 -m py_compile cryptex/ops/market_depth_pilot.py
           python3 -m unittest discover -s cryptex/ops/tests -p test_market_depth_pilot.py -v
+          python3 -m unittest discover -s cryptex/ops/tests -p test_forward_threshold_pilot.py -v
       - name: Install public CCXT adapter
         if: steps.time_gate.outputs.enabled == 'true'
         run: python3 -m pip install --disable-pip-version-check --quiet 'ccxt==4.5.81'
@@ -72,6 +75,24 @@ jobs:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
           python3 cryptex/ops/market_depth_pilot.py --out wide-output/cryptex/overnight/data
+      - name: Freeze and advance read-only forward threshold comparison
+        id: threshold_study
+        if: steps.time_gate.outputs.enabled == 'true'
+        continue-on-error: true
+        run: |
+          python3 cryptex/ops/forward_threshold_pilot.py \
+            --books wide-output/cryptex/overnight/data/microstructure_snapshots.csv \
+            --out wide-output/cryptex/overnight/data
+          python3 - <<'PY'
+          import json,pathlib
+          p=pathlib.Path("wide-output/cryptex/overnight/data/forward_threshold_report.json")
+          x=json.loads(p.read_text())
+          assert x["mode"]=="PAPER_ONLY" and x["real_orders"] is False
+          assert x["portfolio_ledger_changes"] is False
+          assert len(x["gates"])==4
+          assert all(g["eligible_to_promote"] is False for g in x["gates"].values())
+          print("Forward experiment: all promotion locked; no real orders or $210 account writes")
+          PY
       - name: Reject imaginary orders and publication of sensitive data
         if: steps.time_gate.outputs.enabled == 'true'
         run: |
@@ -97,6 +118,14 @@ jobs:
           git add -f cryptex/overnight/data/microstructure_report.json
           git add -f cryptex/overnight/data/microstructure_snapshots.csv
           git add -f cryptex/overnight/data/microstructure_candles.csv
+          for path in forward_threshold_state.json forward_threshold_report.json forward_threshold_report.md; do
+            full="cryptex/overnight/data/$path"
+            if test -f "$full"; then
+              git add -f "$full"
+            else
+              echo "::warning::Frozen threshold study unavailable: $full"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "No new public observation data"; exit 0
           fi
