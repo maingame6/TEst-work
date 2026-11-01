@@ -350,7 +350,7 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,resc
    liquid=[r for r in rows if r["symbol"] in canonical
            and state["seen"].get(venue+"|"+r["symbol"],{}).get("status")=="VALIDATED_OHLCV"]
    liquid.sort(key=lambda r:canonical.index(r["symbol"]))
-   slots=min(6,max(1,per_venue//8)) if pool else 0
+   slots=min(6,max(1,per_venue//8))
    selected=liquid[:slots]+pool[:max(0,per_venue-min(slots,len(liquid)))]
   elif rescan:
    # Rotate instead of repeatedly selecting the alphabetical first page.
