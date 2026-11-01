@@ -8,7 +8,17 @@ Type=oneshot
 User=cryptex-heartbeat
 Group=cryptex-heartbeat
 EnvironmentFile=/etc/cryptex/monitor.env
+# Protect CSGORisky and pre-existing 4GB Codex workloads.
+ExecStartPre=/usr/bin/python3 /srv/cryptex/TEst-work/cryptex/ops/host_guard.py
 ExecStart=/usr/local/bin/cryptex-server-monitor
+# Gentle monitor quotas; engine worker would require separate review.
+CPUQuota=25%
+Nice=15
+IOSchedulingClass=idle
+MemoryHigh=256M
+MemoryMax=384M
+TasksMax=40
+UMask=0077
 NoNewPrivileges=true
 PrivateTmp=true
 ProtectHome=true
