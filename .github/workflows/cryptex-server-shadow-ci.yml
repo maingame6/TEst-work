@@ -1,0 +1,53 @@
+name: CRYPTEX - independent-host shadow smoke test (no additional cost)
+
+# Disposable test on public repo; no VPS installation, no production writes.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-server-shadow-ci.yml'
+      - 'cryptex/ops/server_shadow.py'
+      - 'cryptex/ops/tests/test_server_shadow.py'
+      - 'cryptex/ops/cryptex-paper-shadow.service'
+      - 'cryptex/ops/cryptex-paper-shadow.timer'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cryptex-server-shadow-test
+  cancel-in-progress: false
+
+jobs:
+  engine-shadow:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      CRYPTEX_SHADOW_CI: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Read only checkout of server host kit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Read only checkout of actual GitHub paper research state
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-paper-trading-preview
+          path: paper-sandbox
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline identity, data, and ledger safety tests
+        run: python3 -m unittest discover -s cryptex/ops/tests -p test_server_shadow.py -v
+      - name: Actual 21-account paper cycle in disposable isolated checkout
+        run: python3 cryptex/ops/server_shadow.py --test-snapshot paper-sandbox
+      - name: Never deploy or write to the paper branch
+        if: always()
+        run: |
+          echo 'No DigitalOcean calls. No SSH. No new server. GitHub token is contents:read.'
+          echo 'All paper changes remain inside this disposable GitHub runner.'
