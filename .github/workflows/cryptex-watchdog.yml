@@ -26,6 +26,8 @@ on:
       - 'cryptex/ops/heldout_gate.py'
       - 'cryptex/ops/own_data_review.py'
       - 'cryptex/ops/tests/test_own_data_review.py'
+      - 'cryptex/ops/cadence_evidence.py'
+      - 'cryptex/ops/tests/test_cadence_evidence.py'
 
 permissions:
   contents: read
@@ -155,6 +157,27 @@ jobs:
         with:
           name: cryptex-heldout-decision
           path: research-output/heldout_decision.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Measure post-fix actual 5m cadence and sampled GitHub run jitter
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh api --method GET \
+            "repos/$GH_REPO/actions/workflows/cryptex-paper.yml/runs?per_page=100" > "$RUNNER_TEMP/cryptex_paper_runs.json"
+          python3 cryptex/ops/cadence_evidence.py \
+            --continuity paper-snapshot/cryptex/overnight/data/continuity_report.json \
+            --runs "$RUNNER_TEMP/cryptex_paper_runs.json" \
+            --out cadence-output
+      - name: Publish frozen post-fix reliability evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-cadence-postfix
+          path: cadence-output/
           if-no-files-found: warn
           retention-days: 14
       - name: Expose watchdog failure to GitHub
