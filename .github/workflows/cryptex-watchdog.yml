@@ -21,6 +21,8 @@ on:
       - 'cryptex/ops/parity_verifier.py'
       - 'cryptex/ops/tests/test_parity_verifier.py'
       - 'cryptex/ops/SPEC.md'
+      - 'cryptex/ops/paper_dispatch_clock.py'
+      - 'cryptex/ops/tests/test_paper_dispatch_clock.py'
 
 permissions:
   contents: read
