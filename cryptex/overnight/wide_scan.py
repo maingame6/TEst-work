@@ -14,6 +14,7 @@ import json
 import math
 import pathlib
 import time
+from forward_venue import empty as forward_empty, apply as forward_apply, report as forward_report, markdown as forward_markdown
 
 VENUES=("kraken","coinbase","bitstamp","okx","kucoin")
 QUOTES=frozenset(("USD","USDT","USDC","EUR"))
@@ -128,7 +129,14 @@ def analyze(raw,now_ms,venue,quote):
    "mean_net_pct":round(100*sum(net)/len(net),6) if net else None,
    "mean_stress_pct":round(100*sum(stress)/len(stress),6) if stress else None,
    "unit_stake_net_sum_pct":round(100*sum(net),6)}
+ prior=sum(b[2] for b in bars[-13:-1])/12
+ latest_vr=bars[-1][2]/prior if prior else 0
+ last_hour_turnover=sum(b[1]*b[2] for b in bars[-12:])
  return {"status":"VALIDATED_OHLCV","bars":len(bars),"last_completed_ms":bars[-1][0],
+         "latest_mid":bars[-1][1],
+         "latest_ret3":round(bars[-1][1]/bars[-4][1]-1,10),
+         "latest_volume_ratio":round(latest_vr,6),
+         "latest_turnover_quote":round(last_hour_turnover,4),
          "strategy_results":outputs,"fee_per_side":fee,"slippage_per_side":SLIPPAGE,
          "stress_slippage_per_side":STRESS_SLIPPAGE,"fee_status":FEES[venue]["status"],
          "roundtrip_break_even_pct":round(100*cost,6),"quote":quote,
@@ -381,6 +389,20 @@ def run(catalogue_path,out_dir,now,ccxt_lib,per_venue=MAX_MARKETS_PER_VENUE,resc
  state["failures"]=(state["failures"]+[{"at":now,**state["last_batch"]}])[-50:]
  state_path.write_text(json.dumps(state,indent=1,allow_nan=False)+"\n")
  result=report(state,index,discovery,now)
+ # Genuine forward-only observations, never replay the 180 historical bars as
+ # future execution. Every simulated entry requires a later scan observation.
+ forward_path=out/"forward_venue_state.json"
+ forward_state=json.loads(forward_path.read_text()) if forward_path.exists() else forward_empty()
+ forward_apply(forward_state,batch,now)
+ forward_path.write_text(json.dumps(forward_state,indent=2,allow_nan=False)+"\\n")
+ prospective=forward_report(forward_state)
+ result["forward_observation_lab"]={
+   "markets_observed":prospective["markets_observed"],
+   "forward_observations":prospective["forward_observations"],
+   "completed":prospective["completed"],
+   "sample_frequency_note":prospective["sample_frequency_note"]}
+ (out/"forward_venue_report.json").write_text(json.dumps(prospective,indent=2,allow_nan=False)+"\\n")
+ (out/"forward_venue_report.md").write_text(forward_markdown(prospective))
  (out/"wide_scan_report.json").write_text(json.dumps(result,indent=2,allow_nan=False)+"\n")
  (out/"wide_scan_report.md").write_text(markdown(result))
  market_csv(state,out/"wide_scan_market_results.csv")
