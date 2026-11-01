@@ -1,17 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793509500,
+  "last_ts": 1793509800,
   "first_ts": 1793488500,
-  "observed_candles": 69,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1793509500,
-      "observed_move": 0.0118735
-    }
-  ],
+  "observed_candles": 70,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -20,6 +13,14 @@
       "entry_ts": 1793508900,
       "entry_mid": 138.74,
       "exit_ts": 1793510700
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1793509500,
+      "entry_ts": 1793509800,
+      "entry_mid": 8.849,
+      "exit_ts": 1793511600
     }
   ],
   "trades": [
