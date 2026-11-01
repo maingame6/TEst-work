@@ -16,6 +16,8 @@ on:
       - 'cryptex/ops/tests/test_host_guard.py'
       - 'cryptex/ops/server_monitor.sh'
       - 'cryptex/ops/cryptex-server-monitor.service'
+      - 'cryptex/ops/acceptance_audit.py'
+      - 'cryptex/ops/tests/test_acceptance_audit.py'
 
 permissions:
   contents: read
@@ -40,6 +42,16 @@ jobs:
           sparse-checkout: |
             cryptex/overnight/data/state.json
             cryptex/overnight/data/continuity_report.json
+            cryptex/overnight/data/integrity_report.json
+            cryptex/overnight/data/entry_study_report.json
+      - name: Checkout independent five-venue research report (read only)
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-wide-market-research
+          path: wide-snapshot
+          sparse-checkout: |
+            cryptex/overnight/data/wide_scan_report.json
+            cryptex/overnight/data/forward_venue_report.json
       - name: Test alert and safety rules
         run: python3 -m unittest discover -s cryptex/ops/tests -p 'test_*.py' -v
       - name: Examine independent heartbeat; recover if stale
@@ -58,6 +70,26 @@ jobs:
         with:
           name: cryptex-watchdog-heartbeat
           path: heartbeat.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Independently audit paper-only accounting, cadence, and five-venue evidence
+        id: acceptance
+        if: always()
+        run: |
+          python3 cryptex/ops/acceptance_audit.py \
+            --state paper-snapshot/cryptex/overnight/data/state.json \
+            --continuity paper-snapshot/cryptex/overnight/data/continuity_report.json \
+            --integrity paper-snapshot/cryptex/overnight/data/integrity_report.json \
+            --entry paper-snapshot/cryptex/overnight/data/entry_study_report.json \
+            --wide wide-snapshot/cryptex/overnight/data/wide_scan_report.json \
+            --forward wide-snapshot/cryptex/overnight/data/forward_venue_report.json \
+            --output acceptance.json
+      - name: Publish CRYPTEX independent acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-acceptance-audit
+          path: acceptance.json
           if-no-files-found: warn
           retention-days: 14
       - name: Expose watchdog failure to GitHub
