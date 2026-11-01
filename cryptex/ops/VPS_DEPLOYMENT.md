@@ -16,6 +16,53 @@ independent *execution* worker requires a single-writer plan, direct server
 access, and disabling the competing GitHub ledger writer. Do not start two
 separate money-ledger writers, even for simulated money.
 
+## CSGORisky isolation: non-negotiable preflight (1 November 2026)
+
+The connected DigitalOcean account has **two distinct active machines**:
+
+| Host | DigitalOcean ID | RAM | Allowed CRYPTEX actions |
+|---|---:|---:|---|
+| `codex-bright-reef-31a8` | `610231290` | 4 GB | Preflight and then CRYPTEX-only service, **only if capacity is verified** |
+| `csgorisky-relay-restore-20261024` | `612199466` | 1 GB | **NO CRYPTEX operations whatsoever** |
+
+All deployment, monitoring and execution tools must refuse the protected ID
+`612199466` and any other unknown ID. Use DigitalOcean's on-host trusted
+metadata endpoint `http://169.254.169.254/metadata/v1/id` to verify the
+machine; do **not** use a hostname, SSH alias or IP alone as a safety proof.
+The fail-closed `cryptex/ops/host_guard.py` already enforces the exact ID.
+
+**Hard boundaries**
+- Never touch, restart, reload, uninstall, reconfigure or otherwise modify
+  **CSGORisky** services, Docker containers, databases, secrets, tunnels,
+  reverse proxies, Cloudflare, firewall, network settings or websites.
+- No CRYPTEX installation in CSGORisky's directories, no use of its credentials,
+  accounts, ports, Docker networks, volumes or database.
+- Never resize/reboot either Droplet or provision a new paid host for this
+  experiment. Expected extra hosting cost: **zero**, conditional on actual
+  free capacity of the existing 4 GB Codex server.
+- The existing Codex server might host other workloads: before any activation
+  inspect `systemctl`, Docker/Podman and process inventories *read-only*,
+  measure sustained RAM/CPU/disk headroom, and block deployment if production
+  services would be affected. A successful preflight alone is NOT that full
+  independent audit.
+- At every monitor invocation refuse to proceed when spare RAM is below
+  **1,536 MB**, free root disk below **5 GB**, one-minute load is above
+  **1.5**, or a CSGORisky-labelled process is detected. Actual checks are
+  continuously re-evaluated, with no intervention on foreign processes.
+- `cryptex-server-monitor.service` is sandboxed with 25% one-core CPU cap,
+  384 MB memory cap, idle I/O priority and low process priority.
+  A **separate main paper engine** needs its own bounded limits and careful
+  single-writer handover; it is **not yet installed or enabled**.
+- Preserve the current GitHub-only paper workflow until a separate execution
+  worker is verified healthy *and* fenced from GitHub writes. Do not allow two
+  independent workers to write the $210 paper journal. Do not fake missed bars.
+- No actions in this repository alter DigitalOcean Droplets by themselves:
+  the scripts/services are inert source files, not an active installation.
+
+**Decision today:** ONLY prepare/review GitHub safety files. Neither droplet's
+runtime configuration has been changed. The CSGORisky relay remains outside
+the CRYPTEX deployment and retains its current role.
+
 ## Prerequisites
 - Linux host with systemd, Python 3, git, `flock`, GitHub CLI `gh`.
 - Repository clone accessible at `/srv/cryptex/TEst-work` by a dedicated
