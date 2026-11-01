@@ -3,40 +3,40 @@
   "real_orders": false,
   "data_source": "Prospective hourly rotating exchange market snapshots only",
   "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution.",
-  "last_observed_at": "2026-11-01T15:10:37.131751+00:00",
+  "last_observed_at": "2026-11-01T15:58:57.472967+00:00",
   "venues": {
     "kraken": {
-      "observations": 14,
+      "observations": 20,
       "markets_observed": 8,
       "completed": 0
     },
     "coinbase": {
-      "observations": 31,
-      "markets_observed": 28,
+      "observations": 42,
+      "markets_observed": 36,
       "completed": 0
     },
     "bitstamp": {
-      "observations": 10,
+      "observations": 15,
       "markets_observed": 5,
       "completed": 0
     },
     "okx": {
-      "observations": 6,
+      "observations": 9,
       "markets_observed": 3,
       "completed": 0
     },
     "kucoin": {
-      "observations": 95,
-      "markets_observed": 92,
+      "observations": 109,
+      "markets_observed": 103,
       "completed": 0
     }
   },
-  "markets_observed": 136,
-  "forward_observations": 156,
+  "markets_observed": 155,
+  "forward_observations": 195,
   "completed": 0,
   "benchmark_cash_pct": 0.0,
   "buy_hold_markets_with_two_observations": 20,
-  "buy_hold_mean_after_cost_pct": -2.22697,
+  "buy_hold_mean_after_cost_pct": -2.40474,
   "benchmark_caveat": "Cash benchmark is zero; buy-and-hold spans first-to-latest observations with differing entry times and is descriptive, not a matched risk benchmark.",
   "censored_entries": 0,
   "censored_exits": 0,
