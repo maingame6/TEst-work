@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-01T07:57:20.451507+00:00 (Europe/Dublin)
+Checked: 2026-11-01T08:02:25.078390+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
@@ -12,7 +12,7 @@ Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
 Realised $-1.1008; unrealised after estimated future sale costs $+0.0000.
 Open: 0; queued: 0; closed: 71; paper fills in current JSON: 142.
 
-Overnight status: IN_PROGRESS
+Overnight status: MORNING_RECORDED
 
 ## Full overnight intelligence briefing
 
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $208.9014 at 2026-10-31T21:15:32.467800+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.0022 as of 2026-11-01T07:57:20.451507+00:00.
+Overnight P&L $-0.0022 as of 2026-11-01T08:02:25.078390+00:00.
 New paper fills since session started: 6.
 
 ## Price prediction versus trading costs
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.0129 | $+0.0129 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.0161 | $+0.0161 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.8630 | $-0.1370 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.0150 | $+0.0150 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.0183 | $+0.0183 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.8671 | $-0.1329 |
 
 ## 21-agent leaderboard
 
@@ -81,7 +81,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793519400 / 1793519400
+Latest main/shadow candle timestamps: 1793519700 / 1793519700
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
