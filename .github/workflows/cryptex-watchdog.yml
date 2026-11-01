@@ -52,6 +52,7 @@ jobs:
           sparse-checkout: |
             cryptex/overnight/data/wide_scan_report.json
             cryptex/overnight/data/forward_venue_report.json
+            cryptex/overnight/data/microstructure_report.json
       - name: Test alert and safety rules
         run: python3 -m unittest discover -s cryptex/ops/tests -p 'test_*.py' -v
       - name: Examine independent heartbeat; recover if stale
@@ -85,6 +86,7 @@ jobs:
             --entry paper-snapshot/cryptex/overnight/data/entry_study_report.json \
             --wide wide-snapshot/cryptex/overnight/data/wide_scan_report.json \
             --forward wide-snapshot/cryptex/overnight/data/forward_venue_report.json \
+            --depth wide-snapshot/cryptex/overnight/data/microstructure_report.json \
             --output acceptance.json
       - name: Publish CRYPTEX independent acceptance evidence
         if: always()
