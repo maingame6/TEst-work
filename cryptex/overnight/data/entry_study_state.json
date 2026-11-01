@@ -1,17 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793538900,
+  "last_ts": 1793539200,
   "first_ts": 1793488500,
-  "observed_candles": 167,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "UNI",
-      "signal_ts": 1793538900,
-      "observed_move": 0.00650927
-    }
-  ],
+  "observed_candles": 168,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -20,6 +13,14 @@
       "entry_ts": 1793538300,
       "entry_mid": 4.3942,
       "exit_ts": 1793540100
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793538900,
+      "entry_ts": 1793539200,
+      "entry_mid": 7.2665,
+      "exit_ts": 1793541000
     }
   ],
   "trades": [
@@ -275,34 +276,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 55,
-      "liquid_candidates": 457,
-      "move_below_gate": 457,
-      "volume_below_gate": 354,
+      "bars": 56,
+      "liquid_candidates": 466,
+      "move_below_gate": 466,
+      "volume_below_gate": 361,
       "qualified": 0,
       "queued": 0
     },
     "COST_AWARE": {
-      "bars": 55,
-      "liquid_candidates": 457,
-      "move_below_gate": 457,
-      "volume_below_gate": 348,
+      "bars": 56,
+      "liquid_candidates": 466,
+      "move_below_gate": 466,
+      "volume_below_gate": 355,
       "qualified": 0,
       "queued": 0
     },
     "BALANCED_TEST": {
-      "bars": 55,
-      "liquid_candidates": 457,
-      "move_below_gate": 457,
-      "volume_below_gate": 348,
+      "bars": 56,
+      "liquid_candidates": 466,
+      "move_below_gate": 466,
+      "volume_below_gate": 355,
       "qualified": 0,
       "queued": 0
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 55,
-      "liquid_candidates": 457,
-      "move_below_gate": 439,
-      "volume_below_gate": 344,
+      "bars": 56,
+      "liquid_candidates": 466,
+      "move_below_gate": 448,
+      "volume_below_gate": 351,
       "qualified": 9,
       "queued": 6
     }
