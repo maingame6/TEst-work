@@ -61,6 +61,7 @@ jobs:
           sparse-checkout: |
             cryptex/ops/writer_authority.json
             cryptex/ops/writer_control.py
+            cryptex/ops/paper_dispatch_clock.py
 
       - name: Verify GitHub is current owner before processing any market
         id: writer_preflight
@@ -227,7 +228,9 @@ jobs:
         run: |
           python3 - <<'PY'
           import datetime as dt
-          import json,os,pathlib,subprocess,time
+          import json,os,pathlib,subprocess,time,sys
+          sys.path.insert(0,"authority-snapshot/cryptex/ops")
+          from paper_dispatch_clock import next_dispatch_delay
           event=os.environ.get("CRYPTEX_EVENT","")
           requested=os.environ.get("CRYPTEX_AUTOPILOT","false").lower()=="true"
           hop=int(os.environ.get("CRYPTEX_HOP") or "0")
@@ -261,11 +264,15 @@ jobs:
               raise SystemExit("Invalid event for recovery chain")
           # A single native cron run does not end the bounded recovery chain.
           # Concurrent jobs share a repo-level lock; candle processing is idempotent.
-          delay=275
+          # CRITICAL: fixed sleep AFTER the runner caused a 305-315s loop
+          # and slowly skipped genuine 300s candles. Re-anchor each future
+          # dispatch to the actual last completed 5m candle timestamp.
+          delay,target=next_dispatch_delay(state.get("last_ts"),now)
+          print(f"Next actual candle-aligned dispatch: {target}, delay {delay}s",flush=True)
           if now+dt.timedelta(seconds=delay+60)>=DEADLINE:
               print("Near deadline; not dispatching another run")
               raise SystemExit(0)
-          print(f"24h paper research hop {hop}/{MAX_HOPS}; next in {delay}s",flush=True)
+          print(f"24h PAPER_ONLY hop {hop}/{MAX_HOPS}; aligned target {target}, next in {delay}s",flush=True)
           time.sleep(delay)
           if dt.datetime.now(dt.timezone.utc)>=DEADLINE:
               raise SystemExit("Evidence deadline reached during wait")
