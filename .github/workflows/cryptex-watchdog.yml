@@ -18,6 +18,9 @@ on:
       - 'cryptex/ops/cryptex-server-monitor.service'
       - 'cryptex/ops/acceptance_audit.py'
       - 'cryptex/ops/tests/test_acceptance_audit.py'
+      - 'cryptex/ops/parity_verifier.py'
+      - 'cryptex/ops/tests/test_parity_verifier.py'
+      - 'cryptex/ops/SPEC.md'
 
 permissions:
   contents: read
@@ -44,6 +47,7 @@ jobs:
             cryptex/overnight/data/continuity_report.json
             cryptex/overnight/data/integrity_report.json
             cryptex/overnight/data/entry_study_report.json
+            cryptex/overnight/data/portfolio_report.json
       - name: Checkout independent five-venue research report (read only)
         uses: actions/checkout@v4
         with:
@@ -94,6 +98,21 @@ jobs:
         with:
           name: cryptex-acceptance-audit
           path: acceptance.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Confirmed-only evidence parity (no trading changes)
+        id: parity
+        if: always()
+        run: |
+          python3 cryptex/ops/parity_verifier.py --out parity-output
+      - name: Publish SPEC, TEST_REPORT, PARITY_MATRIX, RUN and JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-confirmed-evidence-parity
+          path: |
+            cryptex/ops/SPEC.md
+            parity-output/
           if-no-files-found: warn
           retention-days: 14
       - name: Expose watchdog failure to GitHub
