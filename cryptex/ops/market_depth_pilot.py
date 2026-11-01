@@ -148,7 +148,10 @@ def merge_rows(path,new,headers,key,max_rows=MAX_ROWS):
     tmp.replace(path)
     return len(result)
 
-def gather_market(exchange,venue,symbol,now_ms,observed_at):
+def gather_market(exchange,venue,symbol,now_ms,observed_at,clock_ms=None):
+    # In production read the clock AFTER each HTTP response. A cycle-wide
+    # start timestamp can make later exchange books appear to be from the future.
+    capture_time=clock_ms or (lambda:now_ms)
     row={"observed_at":observed_at,"venue":venue,"symbol":symbol,
          "quote":symbol.split("/")[-1],"status":"UNAVAILABLE",
          "reason":"","source":"CCXT_PUBLIC_ONLY","paper_only":True,
@@ -164,18 +167,22 @@ def gather_market(exchange,venue,symbol,now_ms,observed_at):
     # when public 5-minute candles are unavailable, and vice versa.
     try:
         book=exchange.fetch_order_book(symbol,limit=BOOK_LEVELS)
-        row.update(parse_book(book,now_ms,FEE_ASSUMED[venue]))
+        captured=capture_time()
+        row["observed_at"]=dt.datetime.fromtimestamp(captured/1000,dt.timezone.utc).isoformat()
+        row.update(parse_book(book,captured,FEE_ASSUMED[venue]))
     except Exception as exc:
         row["reason"]="BOOK:"+type(exc).__name__+":"+str(exc)[:95]
     if exchange.has.get("fetchOHLCV"):
         try:
             raw=exchange.fetch_ohlcv(symbol,timeframe="5m",limit=12)
-            bars=extract_candles(raw,now_ms,venue,symbol,observed_at)
+            acquired_ms=capture_time()
+            bars=extract_candles(raw,acquired_ms,venue,symbol,
+                dt.datetime.fromtimestamp(acquired_ms/1000,dt.timezone.utc).isoformat())
             row["closed_candles_in_payload"]=len(bars)
             if bars:
                 row["last_closed_candle_ms"]=bars[-1]["candle_start_ms"]
                 row["closed_candle_age_seconds"]=round(
-                    (now_ms-bars[-1]["candle_start_ms"]-BAR_MS)/1000,2)
+                    (acquired_ms-bars[-1]["candle_start_ms"]-BAR_MS)/1000,2)
             if not bars:
                 row["reason"]=(row["reason"]+";NO_VALID_CLOSED_CANDLES").lstrip(";")
         except Exception as exc:
@@ -192,7 +199,8 @@ def collect(exchanges,now_ms,observed_at):
             exchange.load_markets()
             for symbol in WATCH[venue]:
                 try:
-                    row,bars=gather_market(exchange,venue,symbol,now_ms,observed_at)
+                    row,bars=gather_market(exchange,venue,symbol,now_ms,observed_at,
+                                           clock_ms=lambda:int(time.time()*1000))
                 except Exception as exc:
                     row={"observed_at":observed_at,"venue":venue,"symbol":symbol,
                          "status":"UNAVAILABLE","reason":type(exc).__name__+":"+str(exc)[:110],
