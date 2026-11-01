@@ -64,5 +64,32 @@ class AcceptanceTests(unittest.TestCase):
         a=list(fixtures());a[2]["audited_accounts"]=20
         self.assertEqual(inspect(*a,NOW)["status"],"BLOCKED")
 
+class DepthResearchTests(unittest.TestCase):
+    def depth(self,minutes=8,valid=15):
+        return {"generated_at":(NOW-dt.timedelta(minutes=minutes)).isoformat(),
+                "mode":"PAPER_ONLY","real_orders":False,
+                "no_paper_portfolio_mutation":True,"markets_targeted":15,
+                "markets_observed":15,"valid_orderbook_roundtrip_diagnostics":valid,
+                "stored_historical_candles":165,"stored_snapshots":30}
+
+    def test_current_depth_is_observed_not_executable_trading(self):
+        result=inspect(*fixtures(),NOW,depth=self.depth())
+        self.assertEqual(result["failed"],[])
+        self.assertEqual(result["market_depth"]["status"],"OBSERVED")
+        self.assertEqual(result["market_depth"]["valid_books"],15)
+
+    def test_stale_depth_raises_visible_warning(self):
+        result=inspect(*fixtures(),NOW,depth=self.depth(minutes=70))
+        self.assertEqual(result["market_depth"]["status"],"STALE")
+        self.assertTrue(any("Depth collector is stale" in w for w in result["warnings"]))
+
+    def test_missing_books_and_nonpaper_is_never_green(self):
+        result=inspect(*fixtures(),NOW,depth=self.depth(valid=3))
+        self.assertTrue(any("Fewer than 10" in w for w in result["warnings"]))
+        depth=self.depth()
+        depth["real_orders"]=True
+        result=inspect(*fixtures(),NOW,depth=depth)
+        self.assertTrue(any("violates PAPER_ONLY" in w for w in result["warnings"]))
+
 if __name__=="__main__":
     unittest.main()
