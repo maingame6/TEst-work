@@ -9,6 +9,8 @@ on:
       - '.github/workflows/cryptex-depth-pilot.yml'
       - 'cryptex/ops/market_depth_pilot.py'
       - 'cryptex/ops/tests/test_market_depth_pilot.py'
+      - 'cryptex/ops/forward_threshold_pilot.py'
+      - 'cryptex/ops/tests/test_forward_threshold_pilot.py'
   schedule:
     - cron: '8,23,38,53 * * * *'
   workflow_dispatch:
