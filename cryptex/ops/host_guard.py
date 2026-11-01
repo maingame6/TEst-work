@@ -77,7 +77,7 @@ def process_cmdlines():
         except (FileNotFoundError, PermissionError, ProcessLookupError, OSError):
             continue
         if data:
-            yield data.replace(b"\\x00", b" ").decode("utf-8", "replace")
+            yield data.replace(b"\x00", b" ").decode("utf-8", "replace")
 
 
 def main():
