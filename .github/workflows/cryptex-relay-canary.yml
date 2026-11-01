@@ -1,0 +1,53 @@
+name: CRYPTEX - free disposable paper-engine relay test
+
+# Explicit experiment only. The existing $210 paper branch is READ-ONLY and
+# the dedicated CSGORisky droplet is not contacted or modified.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-relay-canary.yml'
+      - 'cryptex/ops/relay_canary.py'
+      - 'cryptex/ops/tests/test_relay_canary.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cryptex-isolated-paper-relay-canary
+  cancel-in-progress: false
+
+jobs:
+  one-paper-cycle:
+    # Standard public GitHub Actions runner: no added VPS hosting bill.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      CRYPTEX_CANARY: isolated-read-only
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Checkout isolated code from main
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Checkout a disposable snapshot of the 21 paper accounts
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-paper-trading-preview
+          path: paper-sandbox
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test isolation gates with offline fixtures
+        run: python3 -m unittest discover -s cryptex/ops/tests -p test_relay_canary.py -v
+      - name: Execute one real market-data PAPER cycle in disposable sandbox
+        run: python3 cryptex/ops/relay_canary.py
+        working-directory: paper-sandbox
+      - name: Verify no outbound deployment secrets or git write credentials
+        if: always()
+        run: |
+          echo "GitHub token: contents-read only; no push or DigitalOcean step."
+          echo "Sandbox discarded after this job; branch-backed paper history unchanged."
