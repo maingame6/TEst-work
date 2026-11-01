@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from monitor import examine, wide_recovery_due, paper_recovery_authorized
+from monitor import examine, wide_recovery_due, paper_recovery_authorized, depth_recovery_due
 
 UTC=dt.timezone.utc
 NOW=dt.datetime(2026,11,1,8,45,tzinfo=UTC)
@@ -63,6 +63,29 @@ class WideRecoveryTests(unittest.TestCase):
         old={"mode":"PAPER_ONLY","not_real_orders":True,
              "generated_at":(late-dt.timedelta(hours=3)).isoformat()}
         self.assertFalse(wide_recovery_due(old,late,[]))
+
+class DepthRecoveryTests(unittest.TestCase):
+    def report(self, minutes):
+        return {"mode":"PAPER_ONLY","real_orders":False,
+                "no_paper_portfolio_mutation":True,"markets_targeted":15,
+                "generated_at":(NOW-dt.timedelta(minutes=minutes)).isoformat()}
+
+    def test_fresh_report_needs_no_dispatch(self):
+        self.assertFalse(depth_recovery_due(self.report(20),NOW,[]))
+    def test_stale_report_dispatches_once(self):
+        self.assertTrue(depth_recovery_due(self.report(49),NOW,[]))
+    def test_recent_success_prevents_duplication(self):
+        run={"status":"completed","created_at":(NOW-dt.timedelta(minutes=5)).isoformat()}
+        self.assertFalse(depth_recovery_due(self.report(90),NOW,[run]))
+    def test_existing_active_run_prevents_duplication(self):
+        run={"status":"in_progress","created_at":(NOW-dt.timedelta(minutes=25)).isoformat()}
+        self.assertFalse(depth_recovery_due(self.report(90),NOW,[run]))
+    def test_bad_data_never_requests_restart(self):
+        bad=self.report(100);bad["real_orders"]=True
+        with self.assertRaises(ValueError):depth_recovery_due(bad,NOW,[])
+    def test_pilot_deadline(self):
+        now=dt.datetime(2026,11,16,tzinfo=UTC)
+        self.assertFalse(depth_recovery_due(self.report(100000),now,[]))
 
 class WriterWatchdogTests(unittest.TestCase):
     def authority(self,writer):
