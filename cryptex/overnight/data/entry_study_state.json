@@ -1,19 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793510400,
+  "last_ts": 1793510700,
   "first_ts": 1793488500,
-  "observed_candles": 72,
+  "observed_candles": 73,
   "signals": [],
   "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1793508600,
-      "entry_ts": 1793508900,
-      "entry_mid": 138.74,
-      "exit_ts": 1793510700
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "AVAX",
@@ -100,6 +92,19 @@
       "fee_drag": 0.0161303912,
       "slippage_drag": 0.0050938078,
       "stress_net_return": -0.0049037583,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1793508600,
+      "entry_ts": 1793508900,
+      "exit_ts": 1793510700,
+      "gross_return": 0.0082888857,
+      "net_return": -0.0126647487,
+      "fee_drag": 0.0159247621,
+      "slippage_drag": 0.0050288722,
+      "stress_net_return": -0.0175891754,
       "paper": true
     }
   ],
