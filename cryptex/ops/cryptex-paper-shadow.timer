@@ -1,0 +1,12 @@
+[Unit]
+Description=Check one genuine CRYPTEX completed five-minute candle on independent host
+
+[Timer]
+OnCalendar=*-*-* *:3/5:35
+AccuracySec=1s
+RandomizedDelaySec=0
+Persistent=false
+Unit=cryptex-paper-shadow.service
+
+[Install]
+WantedBy=timers.target
