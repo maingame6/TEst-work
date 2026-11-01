@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-01T19:38:05.542201+00:00",
+  "at": "2026-11-01T19:44:12.215375+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 0.0056,
+  "holdout_window_days": 0.0099,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,16 +39,17 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 15,
+      "snapshots": 30,
       "stale_or_bad": 0,
       "entry_censored": 0,
       "exit_censored": 0,
       "signal_candidates": 0,
-      "gaps": 0
+      "gaps": 15
     }
   },
   "pending_entries": 0,
   "open_hypotheses": 0,
+  "recorded_censored_cohorts": 0,
   "completed_research_hypotheses": 0,
   "gates": {
     "STRICT_232BPS": {
@@ -103,6 +104,47 @@
       "statistical_significance_verified": false,
       "eligible_to_promote": false
     }
+  },
+  "paired_holdout_comparison": {
+    "holdout_starts": "2026-11-04T19:30:00+00:00",
+    "heldout_days_since_start": 0,
+    "control_eligible_cohorts": 0,
+    "comparable_completed_cohorts": 0,
+    "groups": {
+      "STRICT_232BPS": {
+        "complete_matched_control_cohorts": 0,
+        "distinct_hour_clusters": 0,
+        "mean_paired_delta_vs_control_pct": null,
+        "mean_hour_cluster_delta_pct": null,
+        "cluster_delta_stdev_pct": null,
+        "safe_to_promote": false
+      },
+      "COST_AWARE_217BPS": {
+        "complete_matched_control_cohorts": 0,
+        "distinct_hour_clusters": 0,
+        "mean_paired_delta_vs_control_pct": null,
+        "mean_hour_cluster_delta_pct": null,
+        "cluster_delta_stdev_pct": null,
+        "safe_to_promote": false
+      },
+      "BALANCED_120BPS": {
+        "complete_matched_control_cohorts": 0,
+        "distinct_hour_clusters": 0,
+        "mean_paired_delta_vs_control_pct": null,
+        "mean_hour_cluster_delta_pct": null,
+        "cluster_delta_stdev_pct": null,
+        "safe_to_promote": false
+      },
+      "CONTROL_50BPS": {
+        "complete_matched_control_cohorts": 0,
+        "distinct_hour_clusters": 0,
+        "mean_paired_delta_vs_control_pct": null,
+        "mean_hour_cluster_delta_pct": null,
+        "cluster_delta_stdev_pct": null,
+        "safe_to_promote": false
+      }
+    },
+    "note": "Descriptive paired cohort comparisons only; cash means no entry at this 15m signal. Full matched buy-and-hold, serial-correlation-aware uncertainty and region/account fee verification are not yet proven."
   },
   "limitations": [
     "Book VWAP snapshots are not guaranteed executable fills.",
