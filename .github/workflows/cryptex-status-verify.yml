@@ -38,7 +38,7 @@ jobs:
                   if self.inscript:self.js.append(txt)
           page=Path('cryptex-status/index.html').read_text()
           audit=Audit();audit.feed(page)
-          required={'headline','reason','balance','coverage','pnl','orders','checks',
+          required={'headline','reason','balance','coverage','pnl','real','checks',
                     'strictTrades','attempted','validated','unresolved','forward',
                     'curve','runs','conclusion','checked','refresh'}
           missing=required-audit.ids
