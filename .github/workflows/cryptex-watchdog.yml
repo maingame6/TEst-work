@@ -12,6 +12,10 @@ on:
       - '.github/workflows/cryptex-watchdog.yml'
       - 'cryptex/ops/monitor.py'
       - 'cryptex/ops/tests/test_monitor.py'
+      - 'cryptex/ops/host_guard.py'
+      - 'cryptex/ops/tests/test_host_guard.py'
+      - 'cryptex/ops/server_monitor.sh'
+      - 'cryptex/ops/cryptex-server-monitor.service'
 
 permissions:
   contents: read
