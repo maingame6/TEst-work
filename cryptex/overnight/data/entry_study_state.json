@@ -1,17 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793538000,
+  "last_ts": 1793538300,
   "first_ts": 1793488500,
-  "observed_candles": 164,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1793538000,
-      "observed_move": 0.0055871
-    }
-  ],
+  "observed_candles": 165,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -20,6 +13,14 @@
       "entry_ts": 1793537100,
       "entry_mid": 0.8993,
       "exit_ts": 1793538900
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1793538000,
+      "entry_ts": 1793538300,
+      "entry_mid": 4.3942,
+      "exit_ts": 1793540100
     }
   ],
   "trades": [
@@ -262,34 +263,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 52,
-      "liquid_candidates": 427,
-      "move_below_gate": 427,
-      "volume_below_gate": 329,
+      "bars": 53,
+      "liquid_candidates": 437,
+      "move_below_gate": 437,
+      "volume_below_gate": 337,
       "qualified": 0,
       "queued": 0
     },
     "COST_AWARE": {
-      "bars": 52,
-      "liquid_candidates": 427,
-      "move_below_gate": 427,
-      "volume_below_gate": 323,
+      "bars": 53,
+      "liquid_candidates": 437,
+      "move_below_gate": 437,
+      "volume_below_gate": 331,
       "qualified": 0,
       "queued": 0
     },
     "BALANCED_TEST": {
-      "bars": 52,
-      "liquid_candidates": 427,
-      "move_below_gate": 427,
-      "volume_below_gate": 323,
+      "bars": 53,
+      "liquid_candidates": 437,
+      "move_below_gate": 437,
+      "volume_below_gate": 331,
       "qualified": 0,
       "queued": 0
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 52,
-      "liquid_candidates": 427,
-      "move_below_gate": 413,
-      "volume_below_gate": 320,
+      "bars": 53,
+      "liquid_candidates": 437,
+      "move_below_gate": 422,
+      "volume_below_gate": 327,
       "qualified": 8,
       "queued": 5
     }
