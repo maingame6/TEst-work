@@ -1,0 +1,104 @@
+name: CRYPTEX - five-venue depth and spread evidence (PAPER ONLY)
+
+# Existing GitHub-hosted public repository. No new VPS, trades, keys or money.
+# Bounded pilot through 15 November 2026 inclusive; no self-dispatch loops.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-depth-pilot.yml'
+      - 'cryptex/ops/market_depth_pilot.py'
+      - 'cryptex/ops/tests/test_market_depth_pilot.py'
+  schedule:
+    - cron: '8,23,38,53 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Prevent race with five-venue historical scanner (same target research branch).
+concurrency:
+  group: cryptex-five-venue-historical-research
+  cancel-in-progress: false
+
+jobs:
+  public-market-research:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Restrict collection to bounded no-extra-cost paper pilot
+        id: time_gate
+        run: |
+          python3 - <<'PY'
+          import datetime as dt,os
+          now=dt.datetime.now(dt.timezone.utc)
+          enabled=now < dt.datetime(2026,11,16,tzinfo=dt.timezone.utc)
+          with open(os.environ["GITHUB_OUTPUT"],"a") as out:
+              out.write("enabled="+str(enabled).lower()+"\n")
+          print("PUBLIC PAPER_ONLY data pilot enabled",enabled,
+                "Ends 2026-11-16 UTC. No trading or real-money orders.")
+          PY
+      - name: Checkout source only (default branch)
+        if: steps.time_gate.outputs.enabled == 'true'
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            cryptex/ops/market_depth_pilot.py
+            cryptex/ops/tests/test_market_depth_pilot.py
+      - name: Checkout independent five-exchange research outputs
+        if: steps.time_gate.outputs.enabled == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-wide-market-research
+          path: wide-output
+      - name: Python 3.12
+        if: steps.time_gate.outputs.enabled == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test measurement integrity without exchanges
+        if: steps.time_gate.outputs.enabled == 'true'
+        run: |
+          python3 -m py_compile cryptex/ops/market_depth_pilot.py
+          python3 -m unittest discover -s cryptex/ops/tests -p test_market_depth_pilot.py -v
+      - name: Install public CCXT adapter
+        if: steps.time_gate.outputs.enabled == 'true'
+        run: python3 -m pip install --disable-pip-version-check --quiet 'ccxt==4.5.81'
+      - name: Collect 15 real public spot books and 5m candle evidence
+        if: steps.time_gate.outputs.enabled == 'true'
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 cryptex/ops/market_depth_pilot.py --out wide-output/cryptex/overnight/data
+      - name: Reject imaginary orders and publication of sensitive data
+        if: steps.time_gate.outputs.enabled == 'true'
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          p=pathlib.Path("wide-output/cryptex/overnight/data/microstructure_report.json")
+          x=json.loads(p.read_text())
+          assert x["mode"]=="PAPER_ONLY"
+          assert x["real_orders"] is False and x["zero_real_orders"] is True
+          assert x["no_paper_portfolio_mutation"] is True
+          assert x["markets_targeted"]==15 and x["markets_observed"]==15
+          assert len(x["venues"])==5
+          print("Observed:",x["valid_orderbook_roundtrip_diagnostics"],"/15 books")
+          print("Historical closed bars:",x["five_minute_closed_candles_acquired"])
+          print("No exchange orders, no simulated P&L mutation.")
+          PY
+      - name: Commit ONLY new market data to separate research branch
+        if: steps.time_gate.outputs.enabled == 'true'
+        run: |
+          cd wide-output
+          git config user.name "cryptex-microstructure[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f cryptex/overnight/data/microstructure_report.json
+          git add -f cryptex/overnight/data/microstructure_snapshots.csv
+          git add -f cryptex/overnight/data/microstructure_candles.csv
+          if git diff --cached --quiet; then
+            echo "No new public observation data"; exit 0
+          fi
+          git commit -m "research: recorded contemporary orderbooks and historical-only 5m candles [skip ci]"
+          git push origin HEAD:cryptex-wide-market-research
