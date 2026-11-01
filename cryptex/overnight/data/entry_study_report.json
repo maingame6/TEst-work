@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-01T00:45:06.917107+00:00",
+  "generated_at": "2026-11-01T00:50:12.858262+00:00",
   "paper_only": true,
   "sample_status": "INSUFFICIENT",
   "execution": "next observed completed candle only; six-bar exits",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1793493300,
-  "observed_candles": 17,
+  "last_candle_ts": 1793493600,
+  "observed_candles": 18,
   "missed_fills": 0,
-  "censored_exits": 0,
+  "censored_exits": 1,
   "fees_slippage_per_side_pct": 1.05,
   "cost_assumptions": {
     "base": {
@@ -83,7 +83,7 @@
       "mean_net_pct": null,
       "mean_gross_pct": null,
       "net_sum_unit_stakes_pct": 0,
-      "open": 1,
+      "open": 0,
       "queued": 0,
       "threshold_move_pct": 0.5
     }
