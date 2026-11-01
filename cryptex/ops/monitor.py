@@ -90,9 +90,20 @@ def wide_recovery_due(wide, now, runs):
     return True
 
 
+def paper_recovery_authorized(authority):
+    """A watchdog can restart Github only if Github still owns the ledger."""
+    return (isinstance(authority,dict)
+            and authority.get("schema")==1
+            and authority.get("mode")=="PAPER_ONLY"
+            and authority.get("writer")=="github"
+            and authority.get("pending_writer") is None
+            and authority.get("approved_server_droplet_id")=="610231290"
+            and authority.get("protected_csgorisky_droplet_id")=="612199466")
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--state", required=True)
+    p.add_argument("--authority")
     p.add_argument("--continuity", required=True)
     p.add_argument("--output", required=True)
     p.add_argument("--repo", default="maingame6/TEst-work")
@@ -106,7 +117,15 @@ def main():
         state = json.loads(pathlib.Path(args.state).read_text())
         continuity = json.loads(pathlib.Path(args.continuity).read_text())
         data = examine(state, continuity, now)
-        if args.recover and data["recovery_requested"]:
+        # No automatic failback when the sole-writer lease belongs to
+        # the SERVER or the handover is in DRAIN.
+        authority = {}
+        if args.authority:
+            authority = json.loads(pathlib.Path(args.authority).read_text())
+        data["github_writer_authorized"] = paper_recovery_authorized(authority)
+        if args.recover and not data["github_writer_authorized"]:
+            data["github_recovery_skip_reason"] = "Writer is not Github or authority not verified"
+        if args.recover and data["recovery_requested"] and data["github_writer_authorized"]:
             # Prevent stampedes: GitHub concurrency also serializes paper runs.
             check = subprocess.run(
                 ["gh", "api", f"repos/{args.repo}/actions/workflows/cryptex-paper.yml/runs",
