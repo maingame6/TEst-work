@@ -1,0 +1,84 @@
+name: CRYPTEX dashboard — check actual live data and page JavaScript
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cryptex-status/index.html'
+      - '.github/workflows/cryptex-status-verify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Checkout live dashboard
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate HTML and extract actual JavaScript
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Audit(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.ids=set(); self.inscript=False; self.js=[]
+              def handle_starttag(self,tag,attrs):
+                  for key,value in attrs:
+                      if key=="id":self.ids.add(value)
+                  if tag=="script":self.inscript=True
+              def handle_endtag(self,tag):
+                  if tag=="script":self.inscript=False
+              def handle_data(self,txt):
+                  if self.inscript:self.js.append(txt)
+          page=Path('cryptex-status/index.html').read_text()
+          audit=Audit();audit.feed(page)
+          required={'headline','reason','balance','coverage','pnl','orders','checks',
+                    'strictTrades','attempted','validated','unresolved','forward',
+                    'curve','runs','conclusion','checked','refresh'}
+          missing=required-audit.ids
+          if missing:raise SystemExit('Missing dashboard fields: '+str(sorted(missing)))
+          js=''.join(audit.js)
+          assert 'https://raw.githubusercontent.com/maingame6/TEst-work/' in js
+          assert 'real_orders' in js and 'PAPER_ONLY' in js and 'missing_intervals' in js
+          assert "120000" in js
+          Path('/tmp/cryptex-dashboard.js').write_text(js)
+          print('Dashboard controls and required evidence fields present:',len(required))
+          PY
+      - name: Parse real dashboard JavaScript with Node
+        run: node --check /tmp/cryptex-dashboard.js
+      - name: Verify direct public GitHub sources and real paper integrity
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request
+          base='https://raw.githubusercontent.com/maingame6/TEst-work/'
+          p='cryptex-paper-trading-preview/cryptex/overnight/data/'
+          w='cryptex-wide-market-research/cryptex/overnight/data/'
+          def get(path):
+              request=urllib.request.Request(base+path,headers={'User-Agent':'cryptex-read-only-dashboard-test'})
+              with urllib.request.urlopen(request,timeout=15) as r:
+                  assert r.status==200
+                  return json.load(r)
+          state=get(p+'state.json')
+          money=get(p+'portfolio_report.json')
+          cont=get(p+'continuity_report.json')
+          audit=get(p+'integrity_report.json')
+          wide=get(w+'wide_scan_report.json')
+          owner=get('main/cryptex/ops/writer_authority.json')
+          assert state['mode']==money['mode']==cont['mode']==audit['mode']=='PAPER_ONLY'
+          assert money['real_money'] is False and audit['no_real_orders'] is True
+          assert audit['audited_accounts']==21 and audit['starting_paper_usd']==210
+          assert audit['status']=='PASS' and all(check['passed'] for check in audit['checks'])
+          assert state['last_run']==audit['generated_at']==cont['generated_at']==money['generated_at']
+          assert cont['observed_candles']+cont['missing_intervals']==cont['expected_candles']
+          assert owner['writer']=='github'
+          assert len(wide['venues'])==5
+          print('LIVE PUBLIC SOURCE CHECK PASSED: last ledger',state['last_run'],
+                'observations',cont['observed_candles'],'missed',cont['missing_intervals'],
+                'accounts',audit['audited_accounts'],'market histories',wide['unique_ohlcv_validated_pairs'])
+          PY
