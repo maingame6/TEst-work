@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1793501700; captured candles: 43.
+Last observed closed candle: 1793502000; captured candles: 44.
 Missed fills: 0; censored exits: 1.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -12,7 +12,7 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 | V4_TAKER_STRICT | 2.322% | 0 | 0 | not measured | n/a | 0 | 0 |
 | COST_AWARE | 2.172% | 0 | 0 | not measured | n/a | 0 | 0 |
 | BALANCED_TEST | 1.200% | 0 | 0 | not measured | n/a | 0 | 0 |
-| LOW_HURDLE_CONTROL | 0.500% | 1 | 0 | -2.3499% | -2.8370% | 0 | 1 |
+| LOW_HURDLE_CONTROL | 0.500% | 2 | 0 | -1.6989% | -2.1892% | 1 | 0 |
 
 A gate only places a *research candidate*, entered on a later observed candle.
 No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.

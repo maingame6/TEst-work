@@ -1,20 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793501700,
+  "last_ts": 1793502000,
   "first_ts": 1793488500,
-  "observed_candles": 43,
+  "observed_candles": 44,
   "signals": [],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1793499900,
-      "entry_ts": 1793500200,
-      "entry_mid": 135.91,
-      "exit_ts": 1793502000
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -27,6 +18,19 @@
       "fee_drag": 0.0157500113,
       "slippage_drag": 0.0049736878,
       "stress_net_return": -0.028369689,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1793499900,
+      "entry_ts": 1793500200,
+      "exit_ts": 1793502000,
+      "gross_return": 0.0105216688,
+      "net_return": -0.0104783659,
+      "fee_drag": 0.0159600264,
+      "slippage_drag": 0.0050400083,
+      "stress_net_return": -0.0154136975,
       "paper": true
     }
   ],
