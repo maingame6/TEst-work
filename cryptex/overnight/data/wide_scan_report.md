@@ -2,17 +2,17 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-10-31T23:58:58.955454+00:00; scanning cycles: 14.
+Last batch: 2026-11-01T00:01:11.340552+00:00; scanning cycles: 15.
 Discovered: 4221 distinct venue/pair listings.
-Selected in scan batches: **4130**.
-Checked against exchange metadata: **4130**.
-Real 5m OHLCV requests attempted: **4130**.
-Validated recent closed-candle histories: **3426**.
-Venue/pairs producing historical strategy samples: **202**.
+Selected in scan batches: **4215**.
+Checked against exchange metadata: **4215**.
+Real 5m OHLCV requests attempted: **4215**.
+Validated recent closed-candle histories: **3511**.
+Venue/pairs producing historical strategy samples: **208**.
 
 | Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |
 |---|---:|---:|---:|---:|
-| kraken | 1201 | 1110 | 1097 | 13 |
+| kraken | 1201 | 1195 | 1182 | 13 |
 | coinbase | 867 | 867 | 355 | 512 |
 | bitstamp | 234 | 234 | 234 | 0 |
 | okx | 1040 | 1040 | 1040 | 0 |
@@ -20,9 +20,9 @@ Venue/pairs producing historical strategy samples: **202**.
 
 | Hypothesis | Historical examples | Net winners | Gross winners turned into losses | Weighted average net % |
 |---|---:|---:|---:|---:|
-| momentum_05 | 327 | 21 | 109 | -2.33397% |
+| momentum_05 | 333 | 21 | 111 | -2.33490% |
 | cost_aware_momentum | 71 | 11 | 12 | -2.25839% |
-| breakout | 369 | 22 | 124 | -2.20732% |
+| breakout | 377 | 22 | 126 | -2.21155% |
 | dip_recovery | 79 | 9 | 37 | -1.83048% |
 
 **Fees:** each venue's rate and source/status is machine-readable in wide_scan_report.json. All entries and exits subtract fees AND slippage each way.

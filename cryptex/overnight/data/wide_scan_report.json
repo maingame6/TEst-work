@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-10-31T23:58:58.955454+00:00",
+  "generated_at": "2026-11-01T00:01:11.340552+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
   "discovered_listing_total": 4221,
   "catalogue_source_listings": 4221,
-  "unique_tested_venue_pairs": 4130,
-  "unique_exchange_market_metadata_checked": 4130,
-  "unique_ohlcv_requested": 4130,
-  "unique_ohlcv_validated_pairs": 3426,
-  "markets_with_any_historical_signal": 202,
-  "coverage_pct": 97.844,
-  "batches": 14,
+  "unique_tested_venue_pairs": 4215,
+  "unique_exchange_market_metadata_checked": 4215,
+  "unique_ohlcv_requested": 4215,
+  "unique_ohlcv_validated_pairs": 3511,
+  "markets_with_any_historical_signal": 208,
+  "coverage_pct": 99.858,
+  "batches": 15,
   "venues": {
     "kraken": {
       "discovered": 1201,
-      "attempted_distinct": 1110,
-      "metadata_checked_distinct": 1110,
-      "ohlcv_requested_distinct": 1110,
-      "validated_ohlcv_distinct": 1097,
-      "last_attempt_valid": 1097,
+      "attempted_distinct": 1195,
+      "metadata_checked_distinct": 1195,
+      "ohlcv_requested_distinct": 1195,
+      "validated_ohlcv_distinct": 1182,
+      "last_attempt_valid": 1182,
       "latest_failed": 13,
-      "next_cursor": 1110
+      "next_cursor": 1195
     },
     "coinbase": {
       "discovered": 867,
@@ -66,11 +66,11 @@
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 327,
+      "historical_samples": 333,
       "net_winners": 21,
-      "gross_up_net_down": 109,
-      "weighted_mean_net_pct": -2.333966,
-      "markets_with_samples": 152
+      "gross_up_net_down": 111,
+      "weighted_mean_net_pct": -2.334903,
+      "markets_with_samples": 157
     },
     "cost_aware_momentum": {
       "historical_samples": 71,
@@ -80,11 +80,11 @@
       "markets_with_samples": 45
     },
     "breakout": {
-      "historical_samples": 369,
+      "historical_samples": 377,
       "net_winners": 22,
-      "gross_up_net_down": 124,
-      "weighted_mean_net_pct": -2.207319,
-      "markets_with_samples": 183
+      "gross_up_net_down": 126,
+      "weighted_mean_net_pct": -2.211553,
+      "markets_with_samples": 188
     },
     "dip_recovery": {
       "historical_samples": 79,
@@ -126,8 +126,8 @@
   "fee_limitations": "Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
-    "attempted": 100,
-    "validated": 95,
-    "unavailable": 5
+    "attempted": 85,
+    "validated": 85,
+    "unavailable": 0
   }
 }
