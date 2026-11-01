@@ -8,7 +8,7 @@ on:
     branches: [main]
     paths: ['.github/workflows/cryptex-wide-scan.yml']
   schedule:
-    - cron: '3,13,23,33,43,53 * * * *'
+    - cron: '13 * * * *'
   workflow_dispatch:
     inputs:
       autopilot:
@@ -58,18 +58,26 @@ jobs:
           FORCE_RESCAN: ${{ inputs.force_rescan }}
         run: |
           python3 - <<'PY'
-          import json,os,pathlib
+          import datetime as dt,json,os,pathlib
           report=pathlib.Path("wide-output/cryptex/overnight/data/wide_scan_report.json")
           done=False
+          failed=0
+          due=False
           if report.exists():
               a=json.loads(report.read_text())
               assert a.get("mode")=="PAPER_ONLY" and a.get("not_real_orders") is True
               done=int(a["unique_tested_venue_pairs"])>=int(a["discovered_listing_total"])
+              failed=sum(x.get("latest_failed",0) for x in a.get("venues",{}).values())
+              last=dt.datetime.fromisoformat(a["generated_at"].replace("Z","+00:00"))
+              due=(dt.datetime.now(dt.timezone.utc)-last).total_seconds()>=45*60
           manual=os.environ.get("FORCE_RESCAN","false").lower()=="true"
-          enabled=not done or manual
+          retry=done and failed>0 and due and not manual
+          enabled=not done or manual or retry
           with open(os.environ["GITHUB_OUTPUT"],"a") as fp:
               fp.write("run_scan="+str(enabled).lower()+"\n")
-          print("Full initial catalogue coverage:",done,"; run more:",enabled)
+              fp.write("retry_unavailable="+str(retry).lower()+"\n")
+          print("Full initial catalogue coverage:",done,"; unresolved failures:",failed,
+                "; recovery due:",due,"; retry:",retry,"; run scan:",enabled)
           PY
       - name: Set up Python 3.12
         if: steps.coverage_gate.outputs.run_scan == 'true'
@@ -94,6 +102,7 @@ jobs:
         run: |
           extra=()
           if [ "$CRYPTEX_FORCE_RESCAN" = "true" ]; then extra+=(--rescan); fi
+          if [ "${{ steps.coverage_gate.outputs.retry_unavailable }}" = "true" ]; then extra+=(--retry-unavailable); fi
           python3 cryptex/overnight/wide_scan.py \
             --catalog cryptex/overnight/data/ccxt_universe.json \
             --out wide-output/cryptex/overnight/data \
@@ -112,6 +121,8 @@ jobs:
           print("CCXT listing count (not tested):",a["discovered_listing_total"])
           print("Actual OHLCV attempted:",a["unique_tested_venue_pairs"])
           print("Validated historical 5m OHLCV:",a["unique_ohlcv_validated_pairs"])
+          print("Latest failures still needing retry:",a.get("latest_unavailable_pairs"))
+          print("Contemporary market spread snapshots:",a.get("current_spread_snapshots",0))
           print("Latest API calls:",a["last_batch"])
           print("No orders, no wallets, no inferred data.")
           PY
