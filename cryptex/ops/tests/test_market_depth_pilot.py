@@ -89,6 +89,23 @@ class MarketDataTests(unittest.TestCase):
                            ("venue","symbol","candle_start_ms"),max_rows=20)
             self.assertEqual(n,1)
             with p.open() as f:self.assertEqual(len(list(csv.DictReader(f))),1)
+    def test_short_historical_pools_are_not_mistaken_for_api_outages(self):
+        with tempfile.TemporaryDirectory() as folder:
+            p=pathlib.Path(folder)/"wide_scan_market_results.csv"
+            with p.open("w",newline="") as stream:
+                out=csv.DictWriter(stream,fieldnames=["venue","symbol","status","reason"])
+                out.writeheader()
+                out.writerow({"venue":"coinbase","symbol":"A/USD","status":"UNAVAILABLE",
+                              "reason":"ValueError:INSUFFICIENT_CLOSED_BARS"})
+                out.writerow({"venue":"kucoin","symbol":"B/USDT","status":"UNAVAILABLE",
+                              "reason":"ValueError:STALE_OHLCV"})
+                out.writerow({"venue":"kraken","symbol":"BTC/USD","status":"VALIDATED_OHLCV",
+                              "reason":""})
+            report=P.historical_failure_diagnostics(p)
+            self.assertEqual(report["failure_buckets"]["insufficient"],1)
+            self.assertEqual(report["failure_buckets"]["stale"],1)
+            self.assertEqual(report["venues"]["kraken"]["validated"],1)
+            self.assertTrue(report["not_live_execution"])
     def test_readonly_report_does_not_claim_profit(self):
         result=P.report([{"venue":"kraken","symbol":"BTC/USD",
                          "status":"OBSERVED_DIAGNOSTIC"}],[],STAMP)
