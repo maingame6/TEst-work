@@ -144,7 +144,7 @@ def run_server():
     cmd(["git","push","origin","HEAD:"+BRANCH],cwd=repo,env=env,timeout=45)
     if first_activation:
         marker=STATE_DIR/"activated_writer_epoch.json"
-        marker.write_text(json.dumps({"epoch":current["epoch"],"droplet_id":CODEX})+"\\n")
+        marker.write_text(json.dumps({"epoch":current["epoch"],"droplet_id":CODEX})+"\n")
     print(json.dumps({"status":"PUBLISHED_FENCED_PAPER_ONLY","epoch":current["epoch"],
                       "droplet_id":CODEX,"paper_accounts":21,
                       "new_candle_ts":after["last_ts"],
