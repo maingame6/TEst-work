@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793491500,
+  "last_ts": 1793491800,
   "first_ts": 1793488500,
-  "observed_candles": 11,
-  "signals": [
+  "observed_candles": 12,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "TRX",
       "signal_ts": 1793491500,
-      "observed_move": 0.00614196
+      "entry_ts": 1793491800,
+      "entry_mid": 0.304161,
+      "exit_ts": 1793493600
     }
   ],
-  "open": [],
   "trades": [],
   "missed_fills": 0,
   "censored_exits": 0
