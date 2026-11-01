@@ -3,7 +3,7 @@
   "real_orders": false,
   "data_source": "Prospective hourly rotating exchange market snapshots only",
   "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution.",
-  "last_observed_at": "2026-11-01T08:56:26.584837+00:00",
+  "last_observed_at": "2026-11-01T08:59:15.232472+00:00",
   "venues": {
     "kraken": {
       "observations": 6,
@@ -11,29 +11,33 @@
       "completed": 0
     },
     "coinbase": {
-      "observations": 12,
-      "markets_observed": 12,
+      "observations": 22,
+      "markets_observed": 22,
       "completed": 0
     },
     "bitstamp": {
-      "observations": 0,
-      "markets_observed": 0,
+      "observations": 5,
+      "markets_observed": 5,
       "completed": 0
     },
     "okx": {
-      "observations": 0,
-      "markets_observed": 0,
+      "observations": 3,
+      "markets_observed": 3,
       "completed": 0
     },
     "kucoin": {
-      "observations": 44,
-      "markets_observed": 44,
+      "observations": 67,
+      "markets_observed": 67,
       "completed": 0
     }
   },
-  "markets_observed": 62,
-  "forward_observations": 62,
+  "markets_observed": 103,
+  "forward_observations": 103,
   "completed": 0,
+  "benchmark_cash_pct": 0.0,
+  "buy_hold_markets_with_two_observations": 0,
+  "buy_hold_mean_after_cost_pct": null,
+  "benchmark_caveat": "Cash benchmark is zero; buy-and-hold spans first-to-latest observations with differing entry times and is descriptive, not a matched risk benchmark.",
   "censored_entries": 0,
   "censored_exits": 0,
   "gates": {
@@ -44,7 +48,10 @@
       "stress_mean_net_pct": null,
       "unit_stake_drawdown_pct": 0.0,
       "review_sample_minimum": 30,
-      "sample_ready": false
+      "sample_ready": false,
+      "frozen_holdout_start_ms": 1793780400000,
+      "heldout_completed": 0,
+      "heldout_mean_net_pct": null
     },
     "LOW_HURDLE_CONTROL": {
       "closed": 0,
@@ -53,7 +60,10 @@
       "stress_mean_net_pct": null,
       "unit_stake_drawdown_pct": 0.0,
       "review_sample_minimum": 30,
-      "sample_ready": false
+      "sample_ready": false,
+      "frozen_holdout_start_ms": 1793780400000,
+      "heldout_completed": 0,
+      "heldout_mean_net_pct": null
     }
   },
   "no_promotion": "No claims of edge without 7d prospective data, independent 99% observation coverage, 30 trades per tested strategy, heldout after-cost benchmark evidence."
