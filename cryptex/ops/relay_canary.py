@@ -15,7 +15,7 @@ import resource
 import subprocess
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
+ROOT = pathlib.Path(os.environ.get('CRYPTEX_CANARY_ROOT', pathlib.Path.cwd())).resolve()
 DATA = ROOT / "cryptex" / "overnight" / "data"
 INITIAL_CAPITAL = 210
 CPU_TIME_LIMIT_SECONDS = 105
