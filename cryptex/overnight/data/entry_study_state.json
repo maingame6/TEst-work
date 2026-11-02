@@ -1,10 +1,17 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793589300,
+  "last_ts": 1793589600,
   "first_ts": 1793488500,
-  "observed_candles": 333,
-  "signals": [],
+  "observed_candles": 334,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1793589600,
+      "observed_move": 0.00676359
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -506,36 +513,36 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 221,
-      "liquid_candidates": 1974,
-      "move_below_gate": 1974,
-      "volume_below_gate": 1496,
+      "bars": 222,
+      "liquid_candidates": 1982,
+      "move_below_gate": 1982,
+      "volume_below_gate": 1500,
       "qualified": 0,
       "queued": 0
     },
     "COST_AWARE": {
-      "bars": 221,
-      "liquid_candidates": 1974,
-      "move_below_gate": 1974,
-      "volume_below_gate": 1475,
+      "bars": 222,
+      "liquid_candidates": 1982,
+      "move_below_gate": 1982,
+      "volume_below_gate": 1478,
       "qualified": 0,
       "queued": 0
     },
     "BALANCED_TEST": {
-      "bars": 221,
-      "liquid_candidates": 1974,
-      "move_below_gate": 1969,
-      "volume_below_gate": 1475,
+      "bars": 222,
+      "liquid_candidates": 1982,
+      "move_below_gate": 1977,
+      "volume_below_gate": 1478,
       "qualified": 3,
       "queued": 2
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 221,
-      "liquid_candidates": 1974,
-      "move_below_gate": 1899,
-      "volume_below_gate": 1456,
-      "qualified": 37,
-      "queued": 21
+      "bars": 222,
+      "liquid_candidates": 1982,
+      "move_below_gate": 1904,
+      "volume_below_gate": 1459,
+      "qualified": 38,
+      "queued": 22
     }
   }
 }
