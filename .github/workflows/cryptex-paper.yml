@@ -238,7 +238,7 @@ jobs:
       # GitHub cron is best effort. A bounded fallback runs all day through
       # the 7+ day research window; never trades real money, never runs forever.
       - name: Nine-day evidence pilot - continuous paper-only fallback
-        if: success() && steps.writer_commit.outputs.authorized == 'true' && (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule')
+        if: success() && steps.writer_commit.outputs.authorized == 'true' && (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || github.event_name == 'push')
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -271,16 +271,18 @@ jobs:
           if event=="workflow_dispatch" and not requested:
               print("One-time dispatch only, no autopilot requested")
               raise SystemExit(0)
-          if event=="schedule":
-              # A recent auto-run means the recovery chain is already active.
+          if event in ("schedule","push"):
+              # A failed GitHub push can break the bounded dispatch chain.
+              # A changed-workflow push may safely bootstrap it again, but only
+              # if the persisted heartbeat proves no recent autopilot run.
               if age_seconds(state.get("last_autopilot_dispatch"))<600:
                   print("Autopilot heartbeat present: skip duplicate chain")
                   raise SystemExit(0)
-              if age_seconds(state.get("previous_native_cron_run"))<=600:
+              if event=="schedule" and age_seconds(state.get("previous_native_cron_run"))<=600:
                   print("Multiple recent genuine cron runs: backup not needed")
                   raise SystemExit(0)
-              print("Genuine cron gap: start bounded recovery chain")
-          if event not in ("schedule","workflow_dispatch"):
+              print("Genuine cron/push recovery: start bounded PAPER_ONLY chain")
+          if event not in ("schedule","workflow_dispatch","push"):
               raise SystemExit("Invalid event for recovery chain")
           # A single native cron run does not end the bounded recovery chain.
           # Concurrent jobs share a repo-level lock; candle processing is idempotent.
