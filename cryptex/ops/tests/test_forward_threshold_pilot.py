@@ -126,6 +126,28 @@ class ProspectiveTests(unittest.TestCase):
   self.assertEqual(q["continuous_adjacent_transitions"],1)
   self.assertEqual(q["broken_adjacent_transitions"],1)
   self.assertAlmostEqual(q["continuous_fraction_of_observed_transitions"],.5)
+ def test_research_discontinuities_separate_too_soon_from_too_late(self):
+  state=P.state_new()
+  P.run(state,[book(0),book(1,103)],BASE+dt.timedelta(minutes=16))
+  P.run(state,[book(1,104,stamp=BASE+dt.timedelta(minutes=16))],
+        BASE+dt.timedelta(minutes=17))
+  self.assertEqual(state["counters"]["gap_too_short"],1)
+  P.run(state,[book(5,105)],BASE+dt.timedelta(minutes=80))
+  self.assertEqual(state["counters"]["gap_too_long"],1)
+  q=P.continuity_quality(state)
+  self.assertEqual(q["too_soon_transitions_since_classification"],1)
+  self.assertEqual(q["too_late_transitions_since_classification"],1)
+  self.assertEqual(q["older_unclassified_transitions"],0)
+ def test_preserve_old_discontinuities_without_inventing_early_late(self):
+  state=P.state_new()
+  state["counters"]["snapshots"]=8
+  state["last_by_market"]={"kraken|BTC/USD":{"time":10,"mid":10,"good":True}}
+  state["counters"]["gaps"]=5
+  # Earlier saved data cannot retrospectively prove early vs late.
+  state["counters"].pop("gap_too_short",None)
+  state["counters"].pop("gap_too_long",None)
+  q=P.continuity_quality(state)
+  self.assertEqual(q["older_unclassified_transitions"],5)
  def test_corrupt_continuity_counters_cannot_publish_green(self):
   state=P.state_new()
   state["counters"]["snapshots"]=2
