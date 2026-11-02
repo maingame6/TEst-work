@@ -1,18 +1,27 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793589600,
+  "last_ts": 1793589900,
   "first_ts": 1793488500,
-  "observed_candles": 334,
+  "observed_candles": 335,
   "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1793589900,
+      "observed_move": 0.00630584
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ETH",
       "signal_ts": 1793589600,
-      "observed_move": 0.00676359
+      "entry_ts": 1793589900,
+      "entry_mid": 2306.49,
+      "exit_ts": 1793591700
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -513,36 +522,36 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 222,
-      "liquid_candidates": 1982,
-      "move_below_gate": 1982,
-      "volume_below_gate": 1500,
+      "bars": 223,
+      "liquid_candidates": 1990,
+      "move_below_gate": 1990,
+      "volume_below_gate": 1504,
       "qualified": 0,
       "queued": 0
     },
     "COST_AWARE": {
-      "bars": 222,
-      "liquid_candidates": 1982,
-      "move_below_gate": 1982,
-      "volume_below_gate": 1478,
+      "bars": 223,
+      "liquid_candidates": 1990,
+      "move_below_gate": 1990,
+      "volume_below_gate": 1482,
       "qualified": 0,
       "queued": 0
     },
     "BALANCED_TEST": {
-      "bars": 222,
-      "liquid_candidates": 1982,
-      "move_below_gate": 1977,
-      "volume_below_gate": 1478,
+      "bars": 223,
+      "liquid_candidates": 1990,
+      "move_below_gate": 1985,
+      "volume_below_gate": 1482,
       "qualified": 3,
       "queued": 2
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 222,
-      "liquid_candidates": 1982,
-      "move_below_gate": 1904,
-      "volume_below_gate": 1459,
-      "qualified": 38,
-      "queued": 22
+      "bars": 223,
+      "liquid_candidates": 1990,
+      "move_below_gate": 1908,
+      "volume_below_gate": 1462,
+      "qualified": 40,
+      "queued": 23
     }
   }
 }
