@@ -106,6 +106,7 @@ jobs:
           python3 -m py_compile cryptex/overnight/research_math.py cryptex/overnight/research_flock.py
           python3 -m py_compile cryptex/overnight/research_shadow.py cryptex/overnight/entry_study.py cryptex/overnight/cost_model.py
           python3 -m py_compile cryptex/overnight/portfolio_report.py cryptex/overnight/integrity_audit.py
+          python3 -m py_compile cryptex/overnight/pilot_policy.py
           python3 -m unittest discover -s cryptex/overnight/tests -p test_runner.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_execution_gate.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_continuity.py -v
@@ -167,6 +168,11 @@ jobs:
           git add -f cryptex/overnight/data/shadow_review.json
           git add -f cryptex/overnight/data/shadow_review.md
           git add -f cryptex/overnight/data/portfolio_report.json
+          # Keep immutable-first-observation pilot baseline and prospective
+          # strategy evidence distinct from $210 accounting and historic V4.
+          for path in cryptex/overnight/data/pilot_baseline.json cryptex/overnight/data/pilot_report.json; do
+            if test -f "$path"; then git add -f "$path"; else echo "::notice::Pilot trial has not recorded a baseline yet: $path"; fi
+          done
           git add -f cryptex/overnight/data/continuity_report.json
           git add -f cryptex/overnight/data/continuity_report.md
           for path in cryptex/overnight/data/entry_study_state.json cryptex/overnight/data/entry_study_report.json cryptex/overnight/data/entry_study_report.md; do
