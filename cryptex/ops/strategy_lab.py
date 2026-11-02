@@ -440,6 +440,7 @@ def run(data,now=None,fetch=fetch_kraken):
         existing=report(state)
         existing["updated_symbols"]=[]
         existing["skipped_reason"]="NO_NEW_COMPLETED_HOURLY_CANDLE"
+        existing["failed_symbols"]=failures
         return existing
     snapshot=report(state)
     snapshot["updated_symbols"]=updates
