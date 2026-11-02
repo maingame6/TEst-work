@@ -1,0 +1,61 @@
+name: CRYPTEX — free daily read-only DuckDB and QuantStats reports
+
+# Independent research report: does NOT place any trades, load private exchange
+# credentials, update the live branch, or write into the $210 paper ledger.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-free-analytics-report.yml'
+  schedule:
+    - cron: '17 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cryptex-free-daily-analytics
+  cancel-in-progress: false
+
+jobs:
+  record-observed-research:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read ONLY saved CRYPTEX research branch
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-paper-trading-preview
+          persist-credentials: false
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Isolated research tests
+        run: |
+          python3 -m py_compile cryptex/overnight/analytics_addons.py
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_analytics_addons.py -v
+
+      - name: Install free optional research packages
+        run: |
+          python3 -m pip install --disable-pip-version-check -r cryptex/overnight/requirements-analytics.txt
+
+      - name: Generate evidence without affecting trading
+        run: |
+          python3 cryptex/overnight/analytics_addons.py \
+            --data cryptex/overnight/data \
+            --output "$RUNNER_TEMP/cryptex-daily-analytics"
+          test -s "$RUNNER_TEMP/cryptex-daily-analytics/observations.duckdb"
+          test -s "$RUNNER_TEMP/cryptex-daily-analytics/analytics_summary.json"
+
+      - name: Save read-only research files (not a trading signal)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-free-paper-analytics-${{ github.run_id }}
+          path: ${{ runner.temp }}/cryptex-daily-analytics/
+          retention-days: 30
+          if-no-files-found: error
