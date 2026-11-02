@@ -64,7 +64,7 @@ def _horizon_tick(state,prices,ts):
     still=[]
     for p in positions:
         end=p["entry_ts"]+p["hold_bars"]*INTERVAL
-        if end<ts or (end==ts and p["symbol"] not in prices):
+        if end<ts or p["symbol"] not in prices:
             state["horizon_censored"]+=1
         elif end==ts:
             v=returns(p["entry_mid"],prices[p["symbol"]])
