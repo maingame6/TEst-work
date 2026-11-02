@@ -222,6 +222,71 @@ def compare_to_buy_hold(snap, main, folder):
     return snap
 
 
+
+def record_market_demo(snap, folder):
+    """Audit a separate $30 BTC/ETH/SOL virtual spot basket, using only real
+    closed-candle quotes. It is NOT funded by or added to the $210 competition.
+    Never backfill, resample missing candles, fabricate fills or overwrite
+    historic strategy results. Existing benchmark entry is frozen.
+    """
+    symbols = ("BTC", "ETH", "SOL")
+    demo = {"mode": "PAPER_ONLY", "status": "UNAVAILABLE",
+            "initial_paper_usd": 30.0,
+            "excluded_from_competition_210": True,
+            "no_real_orders": True, "price_source": "Kraken closed candles",
+            "valuation": "Hypothetical sale value after modeled entry, taker fees and slippage",
+            "history": "market_demo_equity.csv", "symbols": list(symbols)}
+    snap["market_demo"] = demo
+    if any(snap["freshness"].get(k, True) for k in
+           ("main_stale", "research_stale", "missing_quotes", "time_misaligned")):
+        demo["status"] = "STALE_FEED"
+        return snap
+    refs = snap.get("benchmarks", {}).get("references", {})
+    if not all(refs.get(sym, {}).get("status") == "PAPER_ONLY" and
+               refs[sym].get("equity") is not None for sym in symbols):
+        demo["status"] = "INCOMPLETE_REFERENCE"
+        return snap
+    values = {sym: numeric(refs[sym]["equity"]) for sym in symbols}
+    if any(x <= 0 for x in values.values()):
+        demo["status"] = "INVALID_QUOTE"
+        return snap
+    candle = int(snap["last_candle_main"])
+    if candle <= 0:
+        return snap
+    total = round(sum(values.values()), 6)
+    demo.update({"status": "OBSERVING", "candle_utc": candle,
+                 "at": snap["generated_at"],
+                 "balance": total, "pnl": round(total - 30.0, 6),
+                 "coins": values, "entries": {
+                      sym: refs[sym]["started_at"] for sym in symbols}})
+    file = Path(folder) / "market_demo_equity.csv"
+    fields = ("candle_utc", "recorded_utc", "btc_usd", "eth_usd",
+              "sol_usd", "demo_usd", "demo_pnl_usd")
+    rows = []
+    if file.exists():
+        with file.open(newline="", encoding="utf8") as fp:
+            rows = list(csv.DictReader(fp))
+    previous = rows[-1] if rows else None
+    if previous and candle < int(previous["candle_utc"]):
+        demo["status"] = "OUT_OF_ORDER_CANDLE"
+        return snap
+    if not previous or candle > int(previous["candle_utc"]):
+        rows.append({"candle_utc": candle, "recorded_utc": snap["generated_at"],
+                     "btc_usd": values["BTC"], "eth_usd": values["ETH"],
+                     "sol_usd": values["SOL"], "demo_usd": total,
+                     "demo_pnl_usd": round(total - 30, 6)})
+        with file.open("w", newline="", encoding="utf8") as fp:
+            writer = csv.DictWriter(fp, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(rows)
+    demo["observations"] = len(rows)
+    if len(rows) > 1:
+        demo["last_move_usd"] = round(total - float(rows[-2]["demo_usd"]), 6)
+    else:
+        demo["last_move_usd"] = None
+    return snap
+
+
 def store(main, research, data_dir, at):
     folder = Path(data_dir)
     folder.mkdir(parents=True, exist_ok=True)
@@ -230,6 +295,13 @@ def store(main, research, data_dir, at):
     nights = json.loads(nights_file.read_text()) if nights_file.exists() else []
     snap, nights = update_night(snap, nights)
     snap = compare_to_buy_hold(snap, main, folder)
+    # Optional display research only; never let a chart block 21-account ledger.
+    try:
+        snap = record_market_demo(snap, folder)
+    except (ValueError, TypeError, OSError, KeyError, csv.Error) as exc:
+        snap["market_demo"] = {"mode": "PAPER_ONLY", "status": "ERROR",
+            "excluded_from_competition_210": True, "no_real_orders": True,
+            "error": type(exc).__name__}
     (folder / 'portfolio_report.json').write_text(json.dumps(snap, indent=2, allow_nan=False) + '\n')
     nights_file.write_text(json.dumps(nights, indent=2, allow_nan=False) + '\n')
     csv_file = folder / 'combined_equity.csv'
