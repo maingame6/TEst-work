@@ -3,40 +3,40 @@
   "real_orders": false,
   "data_source": "Prospective hourly rotating exchange market snapshots only",
   "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution.",
-  "last_observed_at": "2026-11-02T09:44:20.051529+00:00",
+  "last_observed_at": "2026-11-02T17:31:47.783297+00:00",
   "venues": {
     "kraken": {
-      "observations": 60,
-      "markets_observed": 12,
+      "observations": 68,
+      "markets_observed": 14,
       "completed": 0
     },
     "coinbase": {
-      "observations": 94,
-      "markets_observed": 67,
+      "observations": 101,
+      "markets_observed": 70,
       "completed": 0
     },
     "bitstamp": {
-      "observations": 45,
+      "observations": 50,
       "markets_observed": 5,
       "completed": 0
     },
     "okx": {
-      "observations": 27,
+      "observations": 30,
       "markets_observed": 3,
       "completed": 0
     },
     "kucoin": {
-      "observations": 146,
-      "markets_observed": 122,
+      "observations": 150,
+      "markets_observed": 123,
       "completed": 0
     }
   },
-  "markets_observed": 209,
-  "forward_observations": 372,
+  "markets_observed": 215,
+  "forward_observations": 399,
   "completed": 0,
   "benchmark_cash_pct": 0.0,
   "buy_hold_markets_with_two_observations": 21,
-  "buy_hold_mean_after_cost_pct": -2.14855,
+  "buy_hold_mean_after_cost_pct": -3.52156,
   "benchmark_caveat": "Cash benchmark is zero; buy-and-hold spans first-to-latest observations with differing entry times and is descriptive, not a matched risk benchmark.",
   "censored_entries": 0,
   "censored_exits": 0,
