@@ -68,6 +68,7 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="grid">
 <div class="card"><div class="label">Snapshot comparisons recorded</div><div class="big" id="experimentObservations">—</div><div class="caption">Genuine observations after 1 Nov 19:30 UTC</div></div>
 <div class="card"><div class="label">Completed research hypotheses</div><div class="big" id="experimentCompleted">—</div><div class="caption">After next-snapshot entry and four later observations</div></div>
+<div class="card"><div class="label">Consecutive research-feed intervals</div><div class="big" id="experimentContinuity">—</div><div class="caption">Across 15 venue/pair feeds, not Kraken 5m candles</div></div>
 <div class="card"><div class="label">Held-out comparison begins</div><div class="big" style="font-size:18px" id="heldoutStart">—</div><div class="caption">First 72 hours excluded from later validation</div></div>
 <div class="card"><div class="label">Allowed to change live strategy</div><div class="big warnText" id="experimentPromotion">NO</div><div class="caption">No automatic promotion of any threshold</div></div>
 </div>
@@ -260,6 +261,16 @@ function update(data){
    const counted=alt.state&&alt.state.counters||{};
    set("experimentObservations",fmtNum(counted.snapshots));
    set("experimentCompleted",fmtNum(alt.completed_research_hypotheses));
+   const q=alt.book_interval_quality;
+   if(q && Number.isFinite(q.continuous_adjacent_transitions)
+       && Number.isFinite(q.adjacent_observed_transitions)){
+     set("experimentContinuity",fmtNum(q.continuous_adjacent_transitions)+"/"+
+         fmtNum(q.adjacent_observed_transitions));
+     el("experimentContinuity").className="big "+
+       (q.continuous_adjacent_transitions===0?"badText":"warnText");
+   }else{
+     set("experimentContinuity","Not measured");
+   }
    const date=new Date("2026-11-04T19:30:00Z");
    set("heldoutStart",time(date.toISOString()));
    const promoted=Object.values(alt.gates||{}).some(x=>x.eligible_to_promote===true);
@@ -273,11 +284,14 @@ function update(data){
        .forEach(value=>{const td=document.createElement("td");td.textContent=value;tr.appendChild(td)});
      body.appendChild(tr);
    }
-   set("experimentWarning","Last research update: "+time(alt.at)+". "+fmtNum(counted.gaps||0)+
-     " genuine observation gaps; "+fmtNum(counted.entry_censored||0)+" missed entries and "+
-     fmtNum(counted.exit_censored||0)+" missing exits. The 72h burn-in and held-out comparison are not completed.");
+   set("experimentWarning",(stale(alt.at,35)?"STALE DATA — latest report overdue. ":"")+
+     "Last research update: "+time(alt.at)+". "+
+     fmtNum(counted.gaps||0)+" broken venue/pair snapshot transitions (NOT missing Kraken 5m candles); "+
+     fmtNum(counted.entry_censored||0)+" censored entries and "+
+     fmtNum(counted.exit_censored||0)+" censored exits. No held-out performance proof yet.");
  }else{
    set("experimentObservations","UNVERIFIED");
+   set("experimentContinuity","UNVERIFIED");
    set("experimentWarning","Frozen research file is missing, stale or failed PAPER_ONLY validation. No approval to change strategy.");
  }
  const checks=el("checks");checks.replaceChildren();
