@@ -168,6 +168,7 @@ class HourlyDuplicateRun(unittest.TestCase):
                 archive_before=archive.read_bytes()
                 second=s.run(directory,fetch=lambda pair:bars)
                 self.assertEqual(second["updated_symbols"],[])
+                self.assertEqual(second["failed_symbols"],{})
                 self.assertEqual(second["skipped_reason"],"NO_NEW_COMPLETED_HOURLY_CANDLE")
                 self.assertEqual(file.read_bytes(),evidence_before)
                 self.assertEqual(archive.read_bytes(),archive_before)
