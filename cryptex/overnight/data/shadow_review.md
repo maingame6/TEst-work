@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-02T22:06:51.259567+00:00
+Generated: 2026-11-02T22:10:53.255044+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -11,16 +11,16 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
 | FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD PEPE |
-| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD SUI |
-| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD UNI |
-| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD SOL |
-| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD UNI |
+| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD DOGE |
+| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD PEPE |
+| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD PEPE |
+| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD PEPE |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD UNI |
-| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD UNI |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD PEPE |
+| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD PEPE |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD PEPE |
-| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD UNI |
+| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD PEPE |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
