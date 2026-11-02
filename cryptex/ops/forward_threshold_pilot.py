@@ -42,7 +42,8 @@ def state_new():
  return {"version":VERSION,"paper_only":True,"freeze":FROZEN_AT,
          "last_by_market":{},"signals":[],"positions":[],"completed":[],"censored_cohorts":[],
          "counters":{"snapshots":0,"stale_or_bad":0,"entry_censored":0,
-                     "exit_censored":0,"signal_candidates":0,"gaps":0}}
+                     "exit_censored":0,"signal_candidates":0,"gaps":0,
+                     "gap_too_short":0,"gap_too_long":0}}
 def good(row):
  if row.get("paper_only") not in (True,"True","true") or row.get("source")!="CCXT_PUBLIC_ONLY":return False
  if row.get("status")!="OBSERVED_DIAGNOSTIC":return False
@@ -66,6 +67,9 @@ def post_cost(entry_buy,exit_sell,fee,slip):
 def run(state,rows,now):
  if state.get("version")!=VERSION or state.get("paper_only") is not True or state.get("freeze")!=FROZEN_AT:
   raise ValueError("Study configuration mismatch: never overwrite or re-optimize prior prospective state")
+ counters=state["counters"]
+ counters.setdefault("gap_too_short",0)
+ counters.setdefault("gap_too_long",0)
  cutoff=parse_time(FROZEN_AT);ordered=[]
  for row in rows:
   t=parse_time(row.get("observed_at"))
@@ -83,7 +87,10 @@ def run(state,rows,now):
   when=t.timestamp()
   last_gap=when-prev["time"] if prev else None
   continuous=prev is not None and MIN_GAP<=last_gap<=MAX_GAP
-  if prev and not continuous:state["counters"]["gaps"]+=1
+  if prev and not continuous:
+   state["counters"]["gaps"]+=1
+   if last_gap < MIN_GAP:state["counters"]["gap_too_short"]+=1
+   else:state["counters"]["gap_too_long"]+=1
   # A missing or invalid snapshot invalidates pending entries/exits.
   positions=[]
   for position in state["positions"]:
@@ -211,12 +218,19 @@ def continuity_quality(st):
  opportunities=observations-markets
  if opportunities<0 or gaps<0 or gaps>opportunities:
   raise ValueError("Invalid saved public book-continuity counters")
+ short=counters.get("gap_too_short",0)
+ long=counters.get("gap_too_long",0)
+ if short<0 or long<0 or short+long>gaps:
+  raise ValueError("Invalid discontinuity classification counters")
  contiguous=opportunities-gaps
  return {"distinct_spot_pairs_seen":markets,
          "observations_saved_since_freeze":observations,
          "adjacent_observed_transitions":opportunities,
          "continuous_adjacent_transitions":contiguous,
          "broken_adjacent_transitions":gaps,
+         "too_soon_transitions_since_classification":short,
+         "too_late_transitions_since_classification":long,
+         "older_unclassified_transitions":gaps-short-long,
          "continuous_fraction_of_observed_transitions":round(
             contiguous/opportunities,5) if opportunities else None,
          "qualified_momentum_comparisons":counters["signal_candidates"],
