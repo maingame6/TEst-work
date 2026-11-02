@@ -2,7 +2,7 @@
 
 **PAPER ONLY. All balances, profits and orders are simulated; no exchange execution.**
 
-Recorded: 2026-11-02T07:30:59.364763+00:00 | Dublin overnight session: 2026-11-01
+Recorded: 2026-11-02T07:36:01.340653+00:00 | Dublin overnight session: 2026-11-01
 Morning checkpoint: **IN_PROGRESS**. Not the final morning balance yet.
 
 ## 1. The money
@@ -66,42 +66,42 @@ Positive gross trades 0 versus after-cost winners 0. Trading frequently is NOT p
 
 | Asset | Actual baseline time | First price | Latest price | Observed change |
 |---|---|---:|---:|---:|
-| TRX | 2026-11-01T21:00:41.471324+00:00 | 0.312273 | 0.315205 | +0.94% |
-| ETH | 2026-11-01T21:00:41.471324+00:00 | 2261.06 | 2280.78 | +0.87% |
-| UNI | 2026-11-01T21:00:41.471324+00:00 | 7.1636 | 7.1887 | +0.35% |
-| BTC | 2026-11-01T21:00:41.471324+00:00 | 77795.8 | 77995.6 | +0.26% |
-| DOT | 2026-11-01T21:00:41.471324+00:00 | 0.9492 | 0.9511 | +0.20% |
-| DOGE | 2026-11-01T21:00:41.471324+00:00 | 0.0752001 | 0.0752908 | +0.12% |
-| XRP | 2026-11-01T21:00:41.471324+00:00 | 1.24826 | 1.2493 | +0.08% |
-| SOL | 2026-11-01T21:00:41.471324+00:00 | 94.2 | 94.25 | +0.05% |
-| BNB | 2026-11-01T21:00:41.471324+00:00 | 707.41 | 707.06 | -0.05% |
-| XLM | 2026-11-01T21:00:41.471324+00:00 | 0.167525 | 0.167177 | -0.21% |
-| SUI | 2026-11-01T21:00:41.471324+00:00 | 0.8944 | 0.8908 | -0.40% |
-| BCH | 2026-11-01T21:00:41.471324+00:00 | 280.99 | 279.64 | -0.48% |
-| AAVE | 2026-11-01T21:00:41.471324+00:00 | 134.06 | 133.41 | -0.48% |
-| LTC | 2026-11-01T21:00:41.471324+00:00 | 55.37 | 55.06 | -0.56% |
-| ADA | 2026-11-01T21:00:41.471324+00:00 | 0.191937 | 0.190684 | -0.65% |
-| LINK | 2026-11-01T21:00:41.471324+00:00 | 11.39666 | 11.309 | -0.77% |
+| TRX | 2026-11-01T21:00:41.471324+00:00 | 0.312273 | 0.31516 | +0.92% |
+| ETH | 2026-11-01T21:00:41.471324+00:00 | 2261.06 | 2278.45 | +0.77% |
+| BTC | 2026-11-01T21:00:41.471324+00:00 | 77795.8 | 77970.1 | +0.22% |
+| SOL | 2026-11-01T21:00:41.471324+00:00 | 94.2 | 94.2 | +0.00% |
+| XRP | 2026-11-01T21:00:41.471324+00:00 | 1.24826 | 1.24807 | -0.02% |
+| DOT | 2026-11-01T21:00:41.471324+00:00 | 0.9492 | 0.949 | -0.02% |
+| BNB | 2026-11-01T21:00:41.471324+00:00 | 707.41 | 706.85 | -0.08% |
+| XLM | 2026-11-01T21:00:41.471324+00:00 | 0.167525 | 0.16712 | -0.24% |
+| DOGE | 2026-11-01T21:00:41.471324+00:00 | 0.0752001 | 0.0750175 | -0.24% |
+| UNI | 2026-11-01T21:00:41.471324+00:00 | 7.1636 | 7.1386 | -0.35% |
+| SUI | 2026-11-01T21:00:41.471324+00:00 | 0.8944 | 0.8897 | -0.53% |
+| AAVE | 2026-11-01T21:00:41.471324+00:00 | 134.06 | 133.35 | -0.53% |
+| BCH | 2026-11-01T21:00:41.471324+00:00 | 280.99 | 279.48 | -0.54% |
+| ADA | 2026-11-01T21:00:41.471324+00:00 | 0.191937 | 0.190386 | -0.81% |
+| LTC | 2026-11-01T21:00:41.471324+00:00 | 55.37 | 54.92 | -0.81% |
+| LINK | 2026-11-01T21:00:41.471324+00:00 | 11.39666 | 11.29931 | -0.85% |
+| SHIB | 2026-11-01T21:00:41.471324+00:00 | 4.684e-06 | 4.641e-06 | -0.92% |
 | BONK | 2026-11-01T21:00:41.471324+00:00 | 2.902e-06 | 2.873e-06 | -1.00% |
-| SHIB | 2026-11-01T21:00:41.471324+00:00 | 4.684e-06 | 4.635e-06 | -1.05% |
 | FLOKI | 2026-11-01T21:00:41.471324+00:00 | 2.303e-05 | 2.276e-05 | -1.17% |
-| TON | 2026-11-01T21:00:41.471324+00:00 | 1.217 | 1.2 | -1.40% |
-| AVAX | 2026-11-01T21:00:41.471324+00:00 | 8.678 | 8.55 | -1.48% |
-| WIF | 2026-11-01T21:00:41.471324+00:00 | 0.1766 | 0.1734 | -1.81% |
-| PEPE | 2026-11-01T21:00:41.471324+00:00 | 4.932e-06 | 4.833e-06 | -2.01% |
-| NEAR | 2026-11-01T21:00:41.471324+00:00 | 4.277 | 4.0862 | -4.46% |
+| TON | 2026-11-01T21:00:41.471324+00:00 | 1.217 | 1.198 | -1.56% |
+| AVAX | 2026-11-01T21:00:41.471324+00:00 | 8.678 | 8.53 | -1.71% |
+| WIF | 2026-11-01T21:00:41.471324+00:00 | 0.1766 | 0.1733 | -1.87% |
+| PEPE | 2026-11-01T21:00:41.471324+00:00 | 4.932e-06 | 4.805e-06 | -2.58% |
+| NEAR | 2026-11-01T21:00:41.471324+00:00 | 4.277 | 4.0773 | -4.67% |
 
-Observed paper equity samples: 127. Observed range $208.899241–$208.899241, sampled maximum drawdown 0.0%, largest recorded gap 5.5 minutes.
+Observed paper equity samples: 128. Observed range $208.899241–$208.899241, sampled maximum drawdown 0.0%, largest recorded gap 5.5 minutes.
 
 Benchmarks are comparison-only and excluded from the $210 bankroll.
-- BTC: $10 fake reference now $10.0371; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- ETH: $10 fake reference now $10.0782; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- SOL: $10 fake reference now $9.7472; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- BTC: $10 fake reference now $10.0339; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- ETH: $10 fake reference now $10.0679; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- SOL: $10 fake reference now $9.7420; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
 
 ## 5. Broad market radar — monitoring only, NOT new trades
 
 Kraken USD spot market discovery covers majors, L1, DeFi, AI/data, L2/gaming, memes, stablecoin pairs, tokenised-gold proxies and FX references.
-Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-02T06:40:44.008164+00:00; age 50.26 minutes.
+Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-02T06:40:44.008164+00:00; age 55.29 minutes.
 **This does not expand the bounded 24-asset simulated execution universe.**
 Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.
 
@@ -219,22 +219,22 @@ Validated direct USD market quotes: 622; source status OK. One Kraken public fet
 
 ## 6. Public news and research findings
 
-Last public-source poll: 2026-11-02T06:35:44.984143+00:00. Available 8/8 research scouts.
-66 headline(s) first observed within the session. Weak **keyword-only**, uncalibrated sentiment: {'NEUTRAL': 52, 'NEGATIVE': 13, 'POSITIVE': 1}.
+Last public-source poll: 2026-11-02T07:35:59.219238+00:00. Available 8/8 research scouts.
+88 headline(s) first observed within the session. Weak **keyword-only**, uncalibrated sentiment: {'NEUTRAL': 72, 'NEGATIVE': 15, 'POSITIVE': 1}.
 These are unverified third-party headlines, NOT insider information or automatic trade triggers.
 
-- [SEC Issues Exemptive Relief from Treasury Clearing Requirements for Certain Inter-Affiliate and Non-U.S. Repo Transactions](https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence](https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEGATIVE)
-- [SEC Announces Fiscal Year 2027 Examination Priorities](https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers](https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [SEC, FSA Hold Autumn Financial Regulatory Dialogue](https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence](https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [SEC Small Business Advisory Committee to Discuss IPO Modernization and Regulation Crowdfunding](https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [SEC Proposes Expanding Securities Eligible for Cross Trading by Registered Funds](https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [SEC Seeks Final Judgment Against Former Western Asset Co-CIO Ken Leech in Cherry Picking Case](https://www.sec.gov/newsroom/press-releases/2026-103-sec-seeks-final-judgment-against-former-western-asset-co-cio-ken-leech-cherry-picking-case) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [SEC to Host Virtual National Compliance Outreach Seminar for Investment Companies and Investment Advisers](https://www.sec.gov/newsroom/press-releases/2026-102-sec-host-virtual-national-compliance-outreach-seminar-investment-companies-investment-advisers) — SEC_REGULATORY (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
-- [Bitcoin’s Resilience After Binance Hack Masks Market Jitters - Bloomberg](https://news.google.com/rss/articles/CBMisAFBVV95cUxON015ekNBYXdIZHd2dExpZHUxWW9VcTAyWDFjREtEWWRHcG5STzV5MVdkdjRqdVIyT01jak9Cek1vVE1Rb2w2QW4ydzRYak51X1J5anRfaEh3enVhVGUyZFR4emgySTBhUFJsWG84TGdlVlptanlwckdmbk9aR2cyYjlsRHBQYVRFdG1ENEFUdG1YQ3daZkxJRDB0WnNTQmpfa0ZXWlRQNTlnSGI4dmtCOA?oc=5) — SEARCH_RADAR (seen 2026-11-02T06:35:44.984143+00:00, keyword NEGATIVE)
-- [Strangers are begging the Binance hacker for bitcoin, one ‘help me bro’ at a time - CoinDesk](https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWdOVk1ZQjdPcmlxb0IyWmxKbE1Wc2JGTDgzZ0xHZW9QdkdZWlMzNVFSQ19EZU1QLS0yVVVoeXYyYWlmdTc4MnpRcnJnNzJuemtoblF0TDRKYVFkTlZVNnpINlp4dTFjVzEyTGwwQVBSU0NNeW53SkdoNG53ZzhFWE5XTFFSeDJKdjNnZHlaM2d2QWNmd0s0MUhKVF9OdTdUd2NnVzNvN1l2eGxSemZfNmVGbjVTaFFNYmpZ?oc=5) — SEARCH_RADAR (seen 2026-11-02T06:35:44.984143+00:00, keyword NEUTRAL)
+- [Bitcoin ETFs lost $643 million in outflows Friday, and 2026 is barely green now](https://www.coindesk.com/markets/2026/11/02/bitcoin-etfs-lost-usd643-million-in-outflows-friday-and-2026-is-barely-green-now) — CRYPTODESK (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Bitcoin slides below $77,000, BNB drops amid Binance hack](https://www.theblock.co/news/markets/2026-10-29-bitcoin-slides-below-77000-binance-hack-432183) — THE_BLOCK (seen 2026-11-02T07:35:59.219238+00:00, keyword NEGATIVE)
+- [Polygon adds Solana to payment stack linking bank accounts, crypto and payouts](https://www.theblock.co/news/defi/2026-10-29-polygon-adds-solana-payment-stack-432115) — THE_BLOCK (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Federal Reserve issues FOMC statement](https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026](https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Minutes of the Federal Open Market Committee, September 15-16, 2026](https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Federal Reserve issues FOMC statement](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Minutes of the Board's discount rate meetings on July 20 and July 29, 2026](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Minutes of the Federal Open Market Committee, July 28–29, 2026](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Federal Reserve issues FOMC statement](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
+- [Minutes of the Board's discount rate meetings on June 8 and June 17, 2026](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260714a.htm) — FED_MACRO (seen 2026-11-02T07:35:59.219238+00:00, keyword NEUTRAL)
 
 ## 7. Specialist consensus and risk
 
@@ -243,17 +243,17 @@ The 640 specialists are correlated, transparent rule reviews across the ten pare
 |---|---|---:|---:|---:|
 | GAMBLER | HOLD | 6 | 17 | 0 |
 | HOUSE | HOLD | 23 | 0 | 0 |
-| SPY | HOLD | 10 | 19 | 0 |
-| MEME HUNTER | HOLD | 12 | 20 | 1 |
+| SPY | HOLD | 6 | 21 | 0 |
+| MEME HUNTER | HOLD | 12 | 30 | 1 |
 | BREAKOUT | HOLD | 6 | 17 | 0 |
 | CONTRARIAN | HOLD | 23 | 0 | 0 |
 | ROTATOR | HOLD | 6 | 17 | 0 |
 | VORTEX | HOLD | 6 | 17 | 0 |
 | FRACTAL | HOLD | 6 | 17 | 0 |
-| SHOCKWAVE | HOLD | 12 | 20 | 1 |
+| SHOCKWAVE | HOLD | 12 | 30 | 1 |
 
 Main paper risk limit: not triggered. Shadow risk limit: not triggered.
-Last trigger workflow_dispatch; run 41406707958. Native 5-minute cron independently verified: YES.
+Last trigger workflow_dispatch; run 41407252741. Native 5-minute cron independently verified: YES.
 Market-data flags: {'main_stale': False, 'research_stale': False, 'missing_quotes': False, 'time_misaligned': False, 'main_status': 'HEALTHY: paper trading on completed Kraken candles', 'research_status': 'OK'}. Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.
 
 ## 8. Research distillation gate — do not deploy a winner yet
