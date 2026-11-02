@@ -4,6 +4,7 @@ name: CRYPTEX — scheduled paper-market research
 # This workflow checks out a separate CRYPTEX research branch; it does not
 # modify or deploy the site's production code. NO REAL ORDERS OR KEYS.
 # Validate restored research-state migration and prospective benchmark P&L.
+# Revalidate the frozen in-bankroll pilot after the cohort test correction.
 # Re-register Github schedule with staggered non-round minutes. The actor is
 # reset by this commit (GitHub's recommended cron recovery). Best-effort:
 # GitHub may still delay/drop schedule events; inspect last_schedule_run.
