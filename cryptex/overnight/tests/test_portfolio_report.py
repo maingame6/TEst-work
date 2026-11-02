@@ -138,6 +138,42 @@ class PaperMoneyTests(unittest.TestCase):
             self.assertEqual(later['balance'],210)
             self.assertTrue((Path(d)/'benchmark_reference.json').exists())
 
+    def test_market_demo_moves_with_actual_quotes_without_changing_210(self):
+        main, shadow = states()
+        main['last_prices']={'BTC':100.,'ETH':200.,'SOL':50.}
+        with tempfile.TemporaryDirectory() as d:
+            first=P.store(main,shadow,d,'2026-10-30T21:35:00+00:00')
+            self.assertEqual(first['market_demo']['status'],'OBSERVING')
+            self.assertTrue(first['market_demo']['excluded_from_competition_210'])
+            self.assertEqual(first['balance'],210)
+            self.assertEqual(first['market_demo']['observations'],1)
+            first_demo=first['market_demo']['balance']
+            # Re-running the same closed candle cannot invent a second sample.
+            main['last_prices']['BTC']=110.
+            shadow['last_prices']['BTC']=110.
+            same=P.store(main,shadow,d,'2026-10-30T21:36:00+00:00')
+            self.assertEqual(same['market_demo']['observations'],1)
+            main['last_ts']+=300
+            shadow['last_ts']+=300
+            later=P.store(main,shadow,d,'2026-10-30T21:40:00+00:00')
+            self.assertGreater(later['market_demo']['balance'],first_demo)
+            self.assertEqual(later['market_demo']['observations'],2)
+            self.assertAlmostEqual(later['market_demo']['last_move_usd'],
+                                   later['market_demo']['balance']-first_demo,places=5)
+            self.assertEqual(later['balance'],210)
+            self.assertEqual(len((Path(d)/'market_demo_equity.csv').read_text().splitlines()),3)
+
+    def test_market_demo_will_not_print_unaudited_stale_price(self):
+        main, shadow = states()
+        main['last_prices']={'BTC':100.,'ETH':200.,'SOL':50.}
+        with tempfile.TemporaryDirectory() as d:
+            P.store(main,shadow,d,'2026-10-30T21:35:00+00:00')
+            # A stale candle cannot be stamped fresh or appended.
+            stale=P.store(main,shadow,d,'2026-10-31T02:00:00+00:00')
+            self.assertEqual(stale['market_demo']['status'],'STALE_FEED')
+            self.assertEqual(len((Path(d)/'market_demo_equity.csv').read_text().splitlines()),2)
+            self.assertEqual(stale['balance'],210)
+
     def test_report_saves_balances_and_auditable_csv(self):
         main,shadow=states()
         with tempfile.TemporaryDirectory() as d:
