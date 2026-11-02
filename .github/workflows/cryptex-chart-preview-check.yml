@@ -1,0 +1,24 @@
+name: CRYPTEX public status temporary preview availability
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-chart-preview-check.yml'
+      - 'cryptex-status/index.html'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-temporary-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check HTML preview service delivers real chart source
+        run: |
+          set -euo pipefail
+          url='https://raw.githack.com/maingame6/TEst-work/main/cryptex-status/index.html'
+          curl --fail --location --silent --show-error --retry 2 --max-time 30 --header 'Accept: text/html' "$url" --output "$RUNNER_TEMP/cryptex-live-preview.html"
+          grep -q 'id="liveEquityChart"' "$RUNNER_TEMP/cryptex-live-preview.html"
+          grep -q 'lightweight-charts@5.2.1' "$RUNNER_TEMP/cryptex-live-preview.html"
+          grep -q 'cryptex-paper-trading-preview/cryptex/overnight/data/' "$RUNNER_TEMP/cryptex-live-preview.html"
+          echo 'OK: temporary preview serves actual interactive chart source and public research branch data URL'
