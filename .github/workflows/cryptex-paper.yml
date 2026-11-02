@@ -62,6 +62,7 @@ jobs:
             cryptex/ops/writer_authority.json
             cryptex/ops/writer_control.py
             cryptex/ops/paper_dispatch_clock.py
+            cryptex/ops/depth_dispatch_guard.py
 
       - name: Verify GitHub is current owner before processing any market
         id: writer_preflight
@@ -214,6 +215,18 @@ jobs:
             echo "::error::Paper ledger advanced concurrently; refuse rebase, do not overwrite."
             exit 1
           fi
+
+      # Keep optional 5-venue snapshots moving when native Github 15m cron
+      # is dropped. This ONLY dispatches a separate public research workflow,
+      # never fetches exchange credentials, trades or writes paper accounts.
+      - name: Request overdue public five-exchange evidence if safe
+        if: success() && steps.writer_commit.outputs.authorized == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 authority-snapshot/cryptex/ops/depth_dispatch_guard.py
 
       # GitHub cron is best effort. A bounded fallback runs all day through
       # the 7+ day research window; never trades real money, never runs forever.
