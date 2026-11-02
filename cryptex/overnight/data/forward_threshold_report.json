@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-02T14:01:50.056761+00:00",
+  "at": "2026-11-02T14:16:32.378805+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 0.7721,
+  "holdout_window_days": 0.7823,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,11 +39,11 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 390,
-      "stale_or_bad": 1,
+      "snapshots": 405,
+      "stale_or_bad": 4,
       "entry_censored": 0,
-      "exit_censored": 0,
-      "signal_candidates": 225,
+      "exit_censored": 3,
+      "signal_candidates": 237,
       "gaps": 150,
       "gap_too_short": 0,
       "gap_too_long": 0
@@ -51,21 +51,21 @@
   },
   "book_interval_quality": {
     "distinct_spot_pairs_seen": 15,
-    "observations_saved_since_freeze": 390,
-    "adjacent_observed_transitions": 375,
-    "continuous_adjacent_transitions": 225,
+    "observations_saved_since_freeze": 405,
+    "adjacent_observed_transitions": 390,
+    "continuous_adjacent_transitions": 240,
     "broken_adjacent_transitions": 150,
     "too_soon_transitions_since_classification": 0,
     "too_late_transitions_since_classification": 0,
     "older_unclassified_transitions": 150,
-    "continuous_fraction_of_observed_transitions": 0.6,
-    "qualified_momentum_comparisons": 225,
-    "invalid_books_seen": 1,
+    "continuous_fraction_of_observed_transitions": 0.61538,
+    "qualified_momentum_comparisons": 237,
+    "invalid_books_seen": 4,
     "meaning": "Pair-by-pair 15-minute experiment feed continuity, NOT how many historical 5m candles were available or genuine execution opportunity. Missing times cannot be backfilled."
   },
   "pending_entries": 0,
-  "open_hypotheses": 15,
-  "recorded_censored_cohorts": 0,
+  "open_hypotheses": 12,
+  "recorded_censored_cohorts": 3,
   "completed_research_hypotheses": 2,
   "gates": {
     "STRICT_232BPS": {
