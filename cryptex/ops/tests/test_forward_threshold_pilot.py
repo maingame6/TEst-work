@@ -112,6 +112,25 @@ class ProspectiveTests(unittest.TestCase):
   r=P.paired_holdout(s,dt.datetime(2026,11,6,tzinfo=UTC))
   self.assertEqual(r["control_eligible_cohorts"],1)
   self.assertEqual(r["comparable_completed_cohorts"],0)
+ def test_adjacent_snapshot_continuity_counts_real_gaps_separately(self):
+  state=P.state_new()
+  P.run(state,seq()[:2],BASE+dt.timedelta(minutes=16))
+  q=P.continuity_quality(state)
+  self.assertEqual(q["distinct_spot_pairs_seen"],1)
+  self.assertEqual(q["adjacent_observed_transitions"],1)
+  self.assertEqual(q["continuous_adjacent_transitions"],1)
+  self.assertEqual(q["broken_adjacent_transitions"],0)
+  P.run(state,[book(5,105)],BASE+dt.timedelta(minutes=80))
+  q=P.continuity_quality(state)
+  self.assertEqual(q["adjacent_observed_transitions"],2)
+  self.assertEqual(q["continuous_adjacent_transitions"],1)
+  self.assertEqual(q["broken_adjacent_transitions"],1)
+  self.assertAlmostEqual(q["continuous_fraction_of_observed_transitions"],.5)
+ def test_corrupt_continuity_counters_cannot_publish_green(self):
+  state=P.state_new()
+  state["counters"]["snapshots"]=2
+  state["counters"]["gaps"]=3
+  with self.assertRaises(ValueError):P.continuity_quality(state)
  def test_truly_future_rows_are_ignored(self):
   s=P.state_new()
   P.run(s,[book(10)],BASE)
