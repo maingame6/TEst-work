@@ -92,7 +92,6 @@ jobs:
       - name: Freeze and advance read-only forward threshold comparison
         id: threshold_study
         if: steps.time_gate.outputs.enabled == 'true' && steps.sampling_gate.outputs.collect == 'true'
-        continue-on-error: true
         run: |
           python3 cryptex/ops/forward_threshold_pilot.py \
             --books wide-output/cryptex/overnight/data/microstructure_snapshots.csv \
