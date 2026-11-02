@@ -1,0 +1,79 @@
+name: CRYPTEX - isolated hourly 84-strategy research (NO TRADES)
+# A separate branch saves results, NEVER the original $210 paper ledger.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-factor-hourly.yml'
+  schedule:
+    - cron: '37 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cryptex-isolated-hourly-factor-research
+  cancel-in-progress: false
+jobs:
+  independent-factors:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read source code, no credentials stored
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+          path: lab-code
+      - name: Checkout ONLY separate strategy-research branch
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-factor-research
+          persist-credentials: true
+          path: research
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline research tests and independent writer-guard checks
+        run: |
+          python3 -m py_compile lab-code/cryptex/ops/strategy_lab.py
+          python3 -m unittest discover -s lab-code/cryptex/ops/tests -p 'test_strategy_lab.py' -v
+          python3 - <<'PY'
+          import json,pathlib
+          j=json.loads(pathlib.Path('lab-code/cryptex/ops/writer_authority.json').read_text())
+          assert j['mode']=='PAPER_ONLY' and j['writer']=='github', 'Do not touch the live paper writer'
+          assert pathlib.Path('research/.git').exists()
+          PY
+      - name: Observe genuine completed Kraken hours independently
+        run: |
+          python3 lab-code/cryptex/ops/strategy_lab.py --data research/cryptex/strategy-lab/data
+      - name: Assert paper-only ledger and 84 frozen candidates
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          d=pathlib.Path('research/cryptex/strategy-lab/data')
+          s=json.loads((d/'strategy_lab_state.json').read_text())
+          r=json.loads((d/'strategy_lab_report.json').read_text())
+          assert s['mode']==r['mode']=='PAPER_ONLY' and s['real_orders'] is r['real_orders'] is False
+          assert r['independent_of_210_paper_wallets'] and not r['writer_access']
+          assert r['candidate_count']==84 and r['family_count']==28
+          assert all(not v['eligible_to_promote'] for v in r['candidates'].values())
+          PY
+      - name: Commit only separate strategy research evidence
+        working-directory: research
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = "cryptex-factor-research"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f cryptex/strategy-lab/data/strategy_lab_state.json
+          git add -f cryptex/strategy-lab/data/strategy_lab_report.json
+          git add -f cryptex/strategy-lab/data/strategy_lab_report.md
+          paths=$(git diff --cached --name-only)
+          if test -z "$paths"; then echo "No new data"; exit 0; fi
+          if echo "$paths" | grep -v -E '^cryptex/strategy-lab/data/strategy_lab_(state.json|report.json|report.md)$'; then
+            echo "Forbidden staged paths" >&2; exit 1
+          fi
+          git commit -m "research: actual observed hourly paper evidence [skip ci]"
+          git push origin HEAD:refs/heads/cryptex-factor-research

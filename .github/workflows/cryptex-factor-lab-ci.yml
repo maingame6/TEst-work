@@ -1,0 +1,41 @@
+name: CRYPTEX - isolated 84-strategy causal research regression
+on:
+  push:
+    branches: ['feature/cryptex-factor-lab-20261102']
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cryptex/ops/strategy_lab.py'
+      - 'cryptex/ops/tests/test_strategy_lab.py'
+      - '.github/workflows/cryptex-factor-lab-ci.yml'
+permissions:
+  contents: read
+jobs:
+  candidate-safety-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile read-only lab and run all causal tests
+        run: |
+          python3 -m py_compile cryptex/ops/strategy_lab.py
+          python3 -m unittest discover -s cryptex/ops/tests -p 'test_strategy_lab.py' -v
+      - name: Verify existing writer config never changed by this feature
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import importlib.util
+          path=Path('cryptex/ops/writer_authority.json')
+          j=json.loads(path.read_text())
+          assert j['mode']=='PAPER_ONLY' and j['writer']=='github'
+          text=Path('cryptex/ops/strategy_lab.py').read_text()
+          assert 'from runner import' not in text
+          assert 'create_order(' not in text
+          print('PASS: isolated from original 5min writer; no real orders')
+          PY
