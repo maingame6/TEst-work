@@ -68,7 +68,8 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="grid">
 <div class="card"><div class="label">Snapshot comparisons recorded</div><div class="big" id="experimentObservations">—</div><div class="caption">Genuine observations after 1 Nov 19:30 UTC</div></div>
 <div class="card"><div class="label">Completed research hypotheses</div><div class="big" id="experimentCompleted">—</div><div class="caption">After next-snapshot entry and four later observations</div></div>
-<div class="card"><div class="label">Consecutive research-feed intervals</div><div class="big" id="experimentContinuity">—</div><div class="caption">Across 15 venue/pair feeds, not Kraken 5m candles</div></div>
+<div class="card"><div class="label">Research-feed intervals (all time)</div><div class="big" id="experimentContinuity">—</div><div class="caption">Across 15 venue/pair feeds, not Kraken 5m candles</div></div>
+<div class="card"><div class="label">Research-feed intervals since repair</div><div class="big" id="postGuardContinuity">—</div><div class="caption">Baseline frozen 2 Nov at 10:14 UTC, prior bad intervals retained</div></div>
 <div class="card"><div class="label">Held-out comparison begins</div><div class="big" style="font-size:18px" id="heldoutStart">—</div><div class="caption">First 72 hours excluded from later validation</div></div>
 <div class="card"><div class="label">Allowed to change live strategy</div><div class="big warnText" id="experimentPromotion">NO</div><div class="caption">No automatic promotion of any threshold</div></div>
 </div>
@@ -268,8 +269,17 @@ function update(data){
          fmtNum(q.adjacent_observed_transitions));
      el("experimentContinuity").className="big "+
        (q.continuous_adjacent_transitions===0?"badText":"warnText");
+     const after=q.observations_saved_since_freeze-165,
+           missing=q.broken_adjacent_transitions-150,
+           consecutive=q.continuous_adjacent_transitions;
+     if(after>=0 && missing>=0 && consecutive>=0 && after===missing+consecutive){
+       set("postGuardContinuity",after>0?fmtNum(consecutive)+"/"+fmtNum(after):"Collecting");
+       el("postGuardContinuity").className="big "+
+           (after>0 && consecutive/after>=.8?"goodText":"warnText");
+     }else{set("postGuardContinuity","UNVERIFIED");}
    }else{
      set("experimentContinuity","Not measured");
+     set("postGuardContinuity","Not measured");
    }
    const date=new Date("2026-11-04T19:30:00Z");
    set("heldoutStart",time(date.toISOString()));
@@ -295,12 +305,18 @@ function update(data){
  }else{
    set("experimentObservations","UNVERIFIED");
    set("experimentContinuity","UNVERIFIED");
+   set("postGuardContinuity","UNVERIFIED");
    set("experimentWarning","Frozen research file is missing, stale or failed PAPER_ONLY validation. No approval to change strategy.");
  }
  const checks=el("checks");checks.replaceChildren();
  addCheck(checks,"Five-minute engine",technicallyCurrent?"Real paper data processed "+Math.round(Math.max(0,coreAge))+"m ago.":"Current real paper ledger cannot be verified.",techStatus,techStatus==="good"?"RUNNING":techStatus==="warn"?"RECENT":"CHECK");
  addCheck(checks,"21 account records",accountOK?"All account totals and audits reconcile.":"Missing or failed independent accounting evidence.",accountOK?"good":"bad",accountOK?"PASS":"CHECK");
- addCheck(checks,"99% reliability target",c?fmtNum(c.observed_candles)+"/"+fmtNum(c.expected_candles)+" candles; "+fmtNum(c.missing_intervals)+" actually missed.":"No continuity record.",c&&c.coverage_pct>=99?"good":"warn",c&&c.coverage_pct>=99?"AT TARGET":"BELOW");
+ const sevenDayVerified=c && c.days_observed>=7 && c.coverage_pct>=99;
+ addCheck(checks,"Seven-day, 99% reliability proof",c?
+   fmtNum(c.observed_candles)+"/"+fmtNum(c.expected_candles)+" genuine candles; "+
+   Number(c.days_observed||0).toFixed(2)+"/7 days and "+Number(c.coverage_pct||0).toFixed(3)+"% coverage.":
+   "No verified seven-day continuity record.",sevenDayVerified?"good":"warn",
+   sevenDayVerified?"MEETS PRECONDITIONS":"COLLECTING");
  addCheck(checks,"Profitable after costs",strict===0?"Zero strictly qualified completed trades. Profit has not been established.":"Do not equate historical simulated gains with after-fee edge.","warn","NOT PROVEN");
  const serverProven=actualOwner==="server"&&s&&s.trigger_event==="server";
  addCheck(checks,"Independent Codex server",serverProven?"Server-origin publication reported; on-host process proof still requires manual verification.":"Independent host has NOT been verified as running the paper engine.","warn",serverProven?"REPORTED":"NOT PROVEN");
