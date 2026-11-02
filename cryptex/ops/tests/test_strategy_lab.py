@@ -120,4 +120,35 @@ class StrategyLabSafety(unittest.TestCase):
         self.assertNotIn("PRIVATE_KEY",source)
         self.assertNotIn("from runner import",source)
 
+class ArchiveIntegrity(unittest.TestCase):
+    def test_append_only_chained_and_no_duplicate(self):
+        import csv
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            path=Path(d)/"observed_hours.csv"
+            a=candles()[-1]
+            timestamp=dt.datetime.fromtimestamp(a["ts"]+s.STEP+200,dt.timezone.utc).isoformat()
+            count,head=s.append_archive(path,[("BTC",a)],timestamp)
+            self.assertEqual(count,1)
+            self.assertEqual(len(head),64)
+            with path.open(newline="") as handle:
+                rows=list(csv.DictReader(handle))
+            self.assertEqual(s.verify_archive(rows)[0],head)
+            with self.assertRaises(ValueError):
+                s.append_archive(path,[("BTC",a)],timestamp)
+            rows[0]["close"]="999999"
+            with path.open("w",newline="") as handle:
+                writer=csv.DictWriter(handle,fieldnames=s.ARCHIVE_FIELDS)
+                writer.writeheader();writer.writerows(rows)
+            with self.assertRaises(ValueError):
+                s.append_archive(path,[],timestamp)
+
+    def test_reject_future_or_fake_archive(self):
+        with __import__("tempfile").TemporaryDirectory() as d:
+            path=Path(d)/"observed_hours.csv"
+            a=candles()[-1]
+            before=dt.datetime.fromtimestamp(a["ts"]+10,dt.timezone.utc).isoformat()
+            with self.assertRaises(ValueError):
+                s.append_archive(path,[("BTC",a)],before)
+
 if __name__=="__main__":unittest.main()
