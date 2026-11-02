@@ -360,16 +360,74 @@ def fetch_kraken(pair):
     if not validate_bars(out):raise ValueError("Insufficient contiguous completed Kraken hourly candles")
     return out
 
+ARCHIVE_FIELDS=("observed_at","symbol","candle_ts","open","high","low","close","volume","source","prev_hash","row_hash")
+
+def archive_hash(row):
+    fields=(row["observed_at"],row["symbol"],str(row["candle_ts"]),
+        row["open"],row["high"],row["low"],row["close"],row["volume"],row["source"])
+    return hashlib.sha256((str(row["prev_hash"])+"|"+("|".join(fields))).encode()).hexdigest()
+
+def verify_archive(rows):
+    """Verify an append-only hash chain and per-symbol temporal ordering."""
+    prev="GENESIS";last_ts={};last_observed=None
+    for row in rows:
+        if row["source"]!="KRAKEN_PUBLIC_1H_CLOSED":raise ValueError("Unexpected archive source")
+        if row["symbol"] not in PAIRS:raise ValueError("Unknown archived symbol")
+        if row["prev_hash"]!=prev or row["row_hash"]!=archive_hash(row):
+            raise ValueError("Previously archived hourly record was changed")
+        ts=int(row["candle_ts"])
+        if ts%STEP or ts<=last_ts.get(row["symbol"],-1):
+            raise ValueError("Duplicate/out-of-order archive hour")
+        at=dt.datetime.fromisoformat(row["observed_at"])
+        if at.tzinfo is None or at.timestamp()<ts+STEP:
+            raise ValueError("Archived before candle was completed")
+        if last_observed and at<last_observed:
+            raise ValueError("Archive acquisition timestamps out of order")
+        for name in ("open","high","low","close","volume"):_safe(row[name],name)
+        prev=row["row_hash"];last_ts[row["symbol"]]=ts;last_observed=at
+    return prev,last_ts
+
+def append_archive(path,observed,recorded_at):
+    """Add ONLY first-seen completed hourly bars captured in this run.
+
+    The historic 21:35 first experiment starts before this archive; do NOT
+    retroactively pretend those first data points were archived at entry.
+    """
+    rows=[]
+    if path.exists():
+        with path.open(newline="",encoding="utf-8") as source:
+            reader=csv.DictReader(source)
+            if tuple(reader.fieldnames or ())!=ARCHIVE_FIELDS:
+                raise ValueError("Archive header mismatch")
+            rows=list(reader)
+    previous,latest=verify_archive(rows)
+    for symbol,candle in observed:
+        ts=int(candle["ts"])
+        if ts<=latest.get(symbol,-1):raise ValueError("Archive refuses backdated data")
+        row={"observed_at":recorded_at,"symbol":symbol,"candle_ts":str(ts),
+            "source":"KRAKEN_PUBLIC_1H_CLOSED","prev_hash":previous}
+        for name in ("open","high","low","close","volume"):
+            row[name]=format(_safe(candle[name],name),".12g")
+        row["row_hash"]=archive_hash(row)
+        rows.append(row);previous=row["row_hash"];latest[symbol]=ts
+    verify_archive(rows)
+    with path.open("w",newline="",encoding="utf-8") as output:
+        writer=csv.DictWriter(output,fieldnames=ARCHIVE_FIELDS)
+        writer.writeheader();writer.writerows(rows)
+    return len(rows),previous
+
 def run(data,now=None,fetch=fetch_kraken):
     data=pathlib.Path(data);data.mkdir(parents=True,exist_ok=True)
     state_file=data/"strategy_lab_state.json"
     state=json.loads(state_file.read_text()) if state_file.exists() else blank()
     if state.get("config_hash")!=REGISTRY:raise ValueError("Frozen strategy configuration changed")
-    failures={};updates=[]
+    failures={};updates=[];observations=[]
     for symbol,pair in PAIRS.items():
         try:
             bars=fetch(pair)
-            if advance(state,symbol,bars,now):updates.append(symbol)
+            if advance(state,symbol,bars,now):
+                updates.append(symbol)
+                observations.append((symbol,bars[-1]))
         except (ValueError,KeyError,TypeError,TimeoutError,OSError) as error:
             failures[symbol]=type(error).__name__+": "+str(error)[:100]
         time.sleep(.12)
@@ -379,6 +437,11 @@ def run(data,now=None,fetch=fetch_kraken):
     snapshot["updated_symbols"]=updates
     snapshot["failed_symbols"]=failures
     snapshot["source"]="Kraken public OHLC 60; no private APIs"
+    count,head=append_archive(data/"observed_hours.csv",observations,
+                              dt.datetime.now(UTC).isoformat())
+    snapshot["archived_hourly_records"]=count
+    snapshot["archive_hash_chain_head"]=head
+    snapshot["archive_begins_after_first_initial_run"]=True
     # Write to separate research-data branch only. Source trades never touched.
     for target,value in ((state_file,state),(data/"strategy_lab_report.json",snapshot)):
         target.write_text(json.dumps(value,indent=2,allow_nan=False)+"\n",encoding="utf-8")

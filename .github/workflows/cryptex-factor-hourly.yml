@@ -58,6 +58,7 @@ jobs:
           assert s['mode']==r['mode']=='PAPER_ONLY' and s['real_orders'] is r['real_orders'] is False
           assert r['independent_of_210_paper_wallets'] and not r['writer_access']
           assert r['candidate_count']==84 and r['family_count']==28
+          assert (d/'observed_hours.csv').exists() and r['archived_hourly_records']>0
           assert all(not v['eligible_to_promote'] for v in r['candidates'].values())
           PY
       - name: Commit only separate strategy research evidence
@@ -70,9 +71,10 @@ jobs:
           git add -f cryptex/strategy-lab/data/strategy_lab_state.json
           git add -f cryptex/strategy-lab/data/strategy_lab_report.json
           git add -f cryptex/strategy-lab/data/strategy_lab_report.md
+          git add -f cryptex/strategy-lab/data/observed_hours.csv
           paths=$(git diff --cached --name-only)
           if test -z "$paths"; then echo "No new data"; exit 0; fi
-          if echo "$paths" | grep -v -E '^cryptex/strategy-lab/data/strategy_lab_(state.json|report.json|report.md)$'; then
+          if echo "$paths" | grep -v -E '^cryptex/strategy-lab/data/(strategy_lab_(state.json|report.json|report.md)|observed_hours.csv)$'; then
             echo "Forbidden staged paths" >&2; exit 1
           fi
           git commit -m "research: actual observed hourly paper evidence [skip ci]"

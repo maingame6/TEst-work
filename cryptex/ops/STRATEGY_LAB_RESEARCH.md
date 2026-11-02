@@ -32,6 +32,11 @@ skipped intervals. All results, including failures, are published.
   censored samples and all per-candidate pending/active state.
 - `cryptex/strategy-lab/data/strategy_lab_report.json`: full candidate scores.
 - `cryptex/strategy-lab/data/strategy_lab_report.md`: readable scorecard.
+- `cryptex/strategy-lab/data/observed_hours.csv`: immutable-in-Git, append-only
+  SHA256-chained **actually acquired** completed hourly OHLCV snapshots, with
+  source and acquisition time. It intentionally begins after the initial
+  21:35 research baseline; those earlier states are not retrospectively
+  claimed as archived observations. Gaps remain gaps.
 
 **The purpose is to falsify weak trading ideas**, not pretend that correlated
 indicator combinations establish a positive expectancy.
