@@ -7,6 +7,7 @@ import csv, datetime as dt, json, math, os, pathlib, statistics, time, urllib.pa
 from subagents import ROLES, subagent_team, format_votes
 from execution_gate import (main_eligible, next_candle_only, MIN_THREE_BAR_MOVE, VERSION as COST_VERSION)
 from cost_model import FEE, SLIP
+from pilot_policy import PILOTS, VERSION as PILOT_VERSION, idea as pilot_idea, queued_eligible as pilot_queued_eligible, exit_reason as pilot_exit_reason
 from continuity import mark as mark_prospective_candle, report as store_continuity
 BASE=pathlib.Path(__file__).resolve().parent
 DATA=BASE/"data"
@@ -177,7 +178,7 @@ def journal(st,b,order,price,ts,port):
         if budget<.5:return
         fill=price*(1+SLIP);qty=budget/(fill*(1+FEE))
         b["cash"]-=budget
-        b["position"]={"symbol":s,"entry_mid":price,"entry_price":fill,"entry_cost":budget,"entry_ts":ts,"qty":qty,"high_water":price,"trail_armed":False,"entry_reason":order["reason"],"exploratory":bool(order.get("exploratory",False)),"cost_gate_version":order.get("cost_gate_version")}
+        b["position"]={"symbol":s,"entry_mid":price,"entry_price":fill,"entry_cost":budget,"entry_ts":ts,"qty":qty,"high_water":price,"trail_armed":False,"entry_reason":order["reason"],"exploratory":bool(order.get("exploratory",False)),"cost_gate_version":order.get("cost_gate_version"),"pilot_policy":order.get("pilot_policy"),"pilot_version":order.get("pilot_version"),"pilot_hold_bars":order.get("pilot_hold_bars")}
         pnl=None;fees=qty*fill*FEE
         mid_entry=price;mid_exit=None;gross_mid_pnl=None;execution_drag=None;net_return_pct=None
     else:
@@ -188,19 +189,25 @@ def journal(st,b,order,price,ts,port):
         execution_drag=gross_mid_pnl-pnl
         net_return_pct=100*pnl/max(p["entry_cost"],1e-12)
         b["cash"]+=proceeds;b["wins"]+=int(pnl>0);b["closed"]+=1;b["net"]+=pnl
-        if p.get("cost_gate_version")==COST_VERSION:
+        if p.get("cost_gate_version")==COST_VERSION and not p.get("pilot_policy"):
             b["qualified_v4_closed"]=b.get("qualified_v4_closed",0)+1
         b["completed"]=(b["completed"]+[pnl/max(p["entry_cost"],1e-12)])[-80:]
+        if p.get("pilot_policy"):
+            b["pilot_last_exit_ts"]=ts
         b["position"]=None
     rec={"ts":ts,"bot":b["name"],"side":order["side"],"symbol":s,"price":fill,"qty":qty,"fee_rate":FEE,"fees":fees,"pnl":pnl,"reason":order["reason"],"entry_reason":(order["reason"] if buy else p.get("entry_reason","")),"exploratory":bool(order.get("exploratory",False) if buy else p.get("exploratory",False)),
          "entry_mid":mid_entry,"exit_mid":mid_exit,"gross_mid_pnl":gross_mid_pnl,
          "execution_drag":execution_drag,"net_return_pct":net_return_pct,"paper":True,
-         "entry_cost_gate_version":(order.get("cost_gate_version") if buy else p.get("cost_gate_version"))}
+         "entry_cost_gate_version":(order.get("cost_gate_version") if buy else p.get("cost_gate_version")),
+         "pilot_policy":(order.get("pilot_policy") if buy else p.get("pilot_policy")),
+         "pilot_version":(order.get("pilot_version") if buy else p.get("pilot_version"))}
     st["trades"].insert(0,rec);del st["trades"][1500:]
     if buy:event(st,"BUY",b["name"]+" BUY "+s+" simulated "+str(round(budget,2)))
     else:event(st,"SELL",b["name"]+" SELL "+s+" net "+str(round(pnl,4))+" because "+order["reason"])
     return rec
 def exit_signal(pos,i,fs,ts):
+    if pos.get("pilot_policy"):
+        return pilot_exit_reason(pos,fs,ts)
     s=pos["symbol"];x=fs.get(s)
     if x is None:return None
     price=x["price"];gain=price/pos["entry_mid"]-1
@@ -263,9 +270,9 @@ def cycle(st,history,check,radar_results):
         # Existing holdings and SELL/stop actions are never blocked.
         if order and order["side"]=="BUY":
             quote=fs.get(order.get("symbol",""))
-            if (not next_candle_only(order,ts)
-                    or not quote
-                    or not main_eligible(quote,contrarian=i in (1,5))):
+            quote_allowed=(pilot_queued_eligible(i,order,quote) if order.get("pilot_policy")
+                           else main_eligible(quote,contrarian=i in (1,5)) if quote else False)
+            if not next_candle_only(order,ts) or not quote_allowed:
                 event(st,"VETO",b["name"]+" queued BUY cancelled: stale candle or V4 cost/liquidity filter")
                 order=None
         previous_position=b.get("position")
@@ -300,10 +307,11 @@ def cycle(st,history,check,radar_results):
             team=subagent_team(i,fs,watch_symbol=next((sym for sym in UNIVERSES[i] if sym in fs),None))
             record_team_decision(st,i,ts,"HOLD",team)
             continue
-        sig=signal(i,fs,valid)
+        sig=(pilot_idea(i,fs,b,ts) if i in PILOTS else signal(i,fs,valid))
         team=subagent_team(i,fs,proposed=sig,watch_symbol=next((sym for sym in UNIVERSES[i] if sym in fs),None))
         if sig and team["result"]=="BUY":
-            b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"],"exploratory":sig.get("exploratory",False),"cost_gate_version":COST_VERSION,"signal_ts":ts}
+            b["pending"]={"side":"BUY","symbol":sig["symbol"],"reason":sig["reason"],"exploratory":sig.get("exploratory",False),"cost_gate_version":COST_VERSION,"signal_ts":ts,
+                          "pilot_policy":sig.get("pilot_policy"),"pilot_version":sig.get("pilot_version"),"pilot_hold_bars":sig.get("pilot_hold_bars")}
             b["last_reason"]="BUY QUEUED: "+sig["symbol"]+" — "+sig["reason"]
             event(st,"SIGNAL",b["name"]+" queued PAPER BUY "+sig["symbol"]+"; "+sig["reason"])
             record_team_decision(st,i,ts,"BUY",team,sig)
@@ -368,7 +376,12 @@ def main():
         st["last_native_cron_run"]=utc()
     st["schedule_confirmed"]=bool(st.get("last_native_cron_run"))
     st["last_schedule_run"]=st.get("last_native_cron_run")
-    st["trade_profile"]="COST_SCREEN_V4_ALL_ENTRIES_FEE_AWARE_PAPER_ONLY"
+    st["trade_profile"]="V4_STRICT_AND_FROZEN_PILOT_V1_PAPER_ONLY"
+    st["pilot_experiment"]={"version":PILOT_VERSION,"parents":[NAMES[i] for i in sorted(PILOTS)],
+         "cohort":"three of existing $210 wallets, no added money","frozen_rules":True,
+         "no_live_orders":True,"other_agents_unchanged":True,
+         "holdout":"prospective from first pilot execution; no retrospective fills",
+         "success":"heldout net after full costs versus passive BTC/ETH/SOL controls; no automatic promotion"}
     st["subagent_model"]="640_PARAMETERISED_SPECIALIST_REVIEWS_PAPER_ONLY"
     st["guardrails"]={"live_orders_enabled":False,"max_portfolio_per_order":MAX_ORDER,"stop_trigger":STOP,"fees_per_side":FEE,"slippage_per_side":SLIP,"minimum_exploratory_three_bar_move":PROBE_MIN_THREE_BAR_MOVE,"cost_screen_version":COST_VERSION}
     # Wide read-only ticker radar remains distinct from the 24-candle vetted paper universe.
@@ -432,7 +445,7 @@ def main():
     STATE.write_text(json.dumps(st,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
     # Append-only journal: restarting never deletes older fills.
     fields=["timestamp_utc","bot","side","symbol","price","qty","fee_rate","fees","pnl",
-            "reason","entry_reason","exploratory","entry_mid","exit_mid",
+            "reason","entry_reason","exploratory","pilot_policy","pilot_version","entry_mid","exit_mid",
             "gross_mid_pnl","execution_drag","net_return_pct","paper"]
     old=[]
     if TRADES.exists():
