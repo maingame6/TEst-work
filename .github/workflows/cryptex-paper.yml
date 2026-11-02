@@ -278,17 +278,42 @@ jobs:
           if event=="workflow_dispatch" and not requested:
               print("One-time dispatch only, no autopilot requested")
               raise SystemExit(0)
-          if event in ("schedule","push"):
-              # A failed GitHub push can break the bounded dispatch chain.
-              # A changed-workflow push may safely bootstrap it again, but only
-              # if the persisted heartbeat proves no recent autopilot run.
+          if event=="schedule":
               if age_seconds(state.get("last_autopilot_dispatch"))<600:
                   print("Autopilot heartbeat present: skip duplicate chain")
                   raise SystemExit(0)
-              if event=="schedule" and age_seconds(state.get("previous_native_cron_run"))<=600:
+              if age_seconds(state.get("previous_native_cron_run"))<=600:
                   print("Multiple recent genuine cron runs: backup not needed")
                   raise SystemExit(0)
-              print("Genuine cron/push recovery: start bounded PAPER_ONLY chain")
+              print("Genuine cron gap: start bounded PAPER_ONLY chain")
+          if event=="push":
+              # A previous dispatch may have failed AFTER the last recorded
+              # heartbeat, breaking the entire fallback chain. Query actual
+              # run status, never infer continuity from stale saved state.
+              # Refuse to start a second chain if an active/successful recent
+              # workflow_dispatch is already alive. Fail closed on API outage.
+              args=["gh","api","-X","GET",
+                    f"repos/{os.environ['GH_REPO']}/actions/workflows/cryptex-paper.yml/runs?event=workflow_dispatch&per_page=20"]
+              try:
+                  data=json.loads(subprocess.check_output(args,text=True,timeout=20))
+              except (subprocess.SubprocessError,ValueError) as exc:
+                  print("Could not verify dispatch-chain health; skip duplicate push bootstrap:",exc)
+                  raise SystemExit(0)
+              active=[]
+              for r in data.get("workflow_runs",[]):
+                  try:
+                      created=dt.datetime.fromisoformat(r["created_at"].replace("Z","+00:00"))
+                      age=(now-created).total_seconds()
+                  except (KeyError,TypeError,ValueError):
+                      continue
+                  if -60<=age<=340 and (
+                      r.get("status") in ("queued","waiting","in_progress")
+                      or r.get("conclusion")=="success"):
+                      active.append(r.get("id"))
+              if active:
+                  print("Recent healthy dispatch exists, no duplicate push bootstrap:",active)
+                  raise SystemExit(0)
+              print("No healthy recent dispatch found: safely bootstrap bounded PAPER_ONLY chain")
           if event not in ("schedule","workflow_dispatch","push"):
               raise SystemExit("Invalid event for recovery chain")
           # A single native cron run does not end the bounded recovery chain.
