@@ -48,6 +48,9 @@ jobs:
       - name: Observe genuine completed Kraken hours independently
         id: capture
         run: |
+          set -euo pipefail
+          # No-new-hour is a successful read-only check, never a fabricated trade.
+          # Propagate collector failures even when stdout is piped through tee.
           python3 lab-code/cryptex/ops/strategy_lab.py --data research/cryptex/strategy-lab/data | tee "$RUNNER_TEMP/factor-result.json"
           python3 - <<'PY'
           import json,os,pathlib
