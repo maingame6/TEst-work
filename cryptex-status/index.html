@@ -41,6 +41,23 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="card"><div class="label">Actual five-minute coverage</div><div id="coverage" class="big">—</div><div id="coverageDetail" class="caption">Target: at least 99% for seven days</div></div>
 <div class="card"><div class="label">Real-money orders</div><div id="real" class="big">—</div><div class="caption">Must always be ZERO</div></div>
 </div>
+<h2>Live paper-market demo — the fake balance that moves</h2>
+<p class="sub" style="margin-bottom:15px">A separate <strong>$30 virtual BTC / ETH / SOL basket</strong> follows genuine completed Kraken candles and includes estimated buying and selling costs. It can rise or fall with actual market prices; it is NOT one of the 21 trading agents, and is never added to their $210 strategy score.</p>
+<div class="grid" aria-live="polite">
+<div class="card"><div class="label">Market demo: $30 fake starting money</div><div id="demoBalance" class="big">—</div><div class="caption">Three virtual buy-and-hold positions, not real money</div></div>
+<div class="card"><div class="label">Demo gain / loss after estimated costs</div><div id="demoPnl" class="big">—</div><div class="caption">Separate from the $210 agent competition</div></div>
+<div class="card"><div class="label">Change since prior completed candle</div><div id="demoMove" class="big">—</div><div class="caption">Never fabricated if price data is missing</div></div>
+<div class="card"><div class="label">Latest market observation</div><div id="demoSeen" class="big" style="font-size:17px">—</div><div class="caption">Five-minute prices, refreshed with recorded runs</div></div>
+</div>
+<div class="section" style="margin-top:14px">
+<div class="card"><div class="eyebrow">Actual observed demo-balance history</div><canvas id="demoCurve" role="img" aria-label="Market-driven virtual demo balance from genuine recorded candles"></canvas><div id="demoChartInfo" class="caption">Waiting for actual five-minute market samples…</div></div>
+<div class="card"><div class="eyebrow">The virtual holdings</div><table class="dataTable"><thead><tr><th>Coin</th><th>Current after-cost virtual value</th></tr></thead><tbody>
+<tr><td>BTC</td><td id="demoBTC">—</td></tr>
+<tr><td>ETH</td><td id="demoETH">—</td></tr>
+<tr><td>SOL</td><td id="demoSOL">—</td></tr>
+</tbody></table>
+<p id="demoNote" class="hint">The independent $210 strategy portfolio may remain flat when every agent holds cash. This market demo exists to show genuine price-driven changes without forcing unqualified trades.</p></div>
+</div>
 <h2>What is working — and what isn't</h2>
 <div class="section">
 <div class="card" id="checks"><div class="check"><div><strong>Checking live records…</strong><small>Statuses will appear here.</small></div><span class="pill">Loading</span></div></div>
@@ -135,7 +152,8 @@ async function getData(){
  ["integrity",BASE+PAPER+"integrity_report.json"],["portfolio",BASE+PAPER+"portfolio_report.json"],
  ["entry",BASE+PAPER+"entry_study_report.json"],["wide",BASE+WIDE+"wide_scan_report.json"],
  ["forward",BASE+WIDE+"forward_venue_report.json"],["depth",BASE+WIDE+"microstructure_report.json"],["alternatives",BASE+WIDE+"forward_threshold_report.json"],["authority",BASE+"main/cryptex/ops/writer_authority.json"],
- ["history",BASE+PAPER+"combined_equity.csv",true]
+ ["history",BASE+PAPER+"combined_equity.csv",true],
+ ["demoHistory",BASE+PAPER+"market_demo_equity.csv",true]
  ];let result={};const outcomes=await Promise.allSettled(reqs.map(x=>get(x[1],x[2]||false)));outcomes.forEach((v,i)=>{if(v.status==="fulfilled")result[reqs[i][0]]=v.value;else result[reqs[i][0]+"Error"]=String(v.reason).slice(0,160)});
  // GitHub API gets a separate, lower-frequency request to avoid rate limits.
  if(Date.now()-lastRunFetch>240000 || !window.previousRuns){
@@ -172,8 +190,54 @@ function drawGraph(text){
  const last=samples[samples.length-1];ctx.fillStyle="#78c8ff";ctx.beginPath();ctx.arc(x(last),y(last.v),3.8,0,Math.PI*2);ctx.fill();
  set("chartInfo",fmtNum(samples.length)+" recorded balance snapshots · "+time(samples[0].t)+" to "+time(last.t)+" · dashed line = $210 start");
 }
+function drawMarketDemo(text){
+ const canvas=el("demoCurve"),info="demoChartInfo",scale=window.devicePixelRatio||1;
+ const width=Math.max(260,canvas.parentElement.clientWidth-40),height=180;
+ canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);
+ const ctx=canvas.getContext("2d");ctx.scale(scale,scale);ctx.clearRect(0,0,width,height);
+ if(typeof text!=="string"||!text.trim()){set(info,"New forward-only market history is not published yet. No fabricated historical values.");return}
+ const lines=text.trim().split(/\\r?\\n/),h=lines.shift().split(",");
+ const it=h.indexOf("candle_utc"),iv=h.indexOf("demo_usd");
+ if(it<0||iv<0){set(info,"Invalid demo record; no chart shown.");return}
+ const points=lines.map(l=>{const x=l.split(",");return{t:Number(x[it])*1000,v:Number(x[iv])}}).filter(x=>Number.isFinite(x.t)&&x.t>0&&Number.isFinite(x.v)&&x.v>0);
+ if(points.length<2){set(info,points.length+" genuine market sample; the line starts moving with the next different completed candle.");return}
+ const base=30,lo=Math.min(base,...points.map(x=>x.v)),hi=Math.max(base,...points.map(x=>x.v));
+ const pad=Math.max((hi-lo)*.1,.02),min=lo-pad,max=hi+pad;
+ const x=p=>42+(p.t-points[0].t)/Math.max(1,points.at(-1).t-points[0].t)*(width-55);
+ const y=v=>15+(max-v)/(max-min)*(height-38);
+ ctx.strokeStyle="#34445a";ctx.lineWidth=1;
+ for(let i=0;i<4;i++){const yy=15+i*(height-38)/3;ctx.beginPath();ctx.moveTo(42,yy);ctx.lineTo(width-13,yy);ctx.stroke()}
+ ctx.setLineDash([4,4]);ctx.strokeStyle="#8495a8";ctx.beginPath();ctx.moveTo(42,y(base));ctx.lineTo(width-13,y(base));ctx.stroke();ctx.setLineDash([]);
+ ctx.beginPath();points.forEach((p,i)=>{if(i)ctx.lineTo(x(p),y(p.v));else ctx.moveTo(x(p),y(p.v))});
+ ctx.strokeStyle="#66e0ac";ctx.lineWidth=2.6;ctx.stroke();
+ ctx.font="11px Arial";ctx.fillStyle="#b5c3d5";ctx.fillText("$"+hi.toFixed(2),2,19);ctx.fillText("$"+lo.toFixed(2),2,height-19);
+ const end=points.at(-1);ctx.beginPath();ctx.arc(x(end),y(end.v),3,0,Math.PI*2);ctx.fillStyle="#66e0ac";ctx.fill();
+ set(info,points.length+" genuine candle samples · "+time(points[0].t)+" to "+time(end.t)+" · dashed line = $30 starting virtual cash");
+}
 function update(data){
  const s=data.state,c=data.continuity,i=data.integrity,p=data.portfolio,e=data.entry,w=data.wide,f=data.forward,d=data.depth,alt=data.alternatives,a=data.authority;
+ const demo=p&&p.market_demo,refs=p&&p.benchmarks&&p.benchmarks.references||{};
+ const demoOk=!!(p&&p.mode==="PAPER_ONLY"&&p.real_money===false&&
+   p.freshness&&!p.freshness.main_stale&&!p.freshness.research_stale&&
+   !p.freshness.missing_quotes&&!p.freshness.time_misaligned&&
+   ["BTC","ETH","SOL"].every(sym=>refs[sym]&&refs[sym].status==="PAPER_ONLY"&&
+       Number.isFinite(refs[sym].equity)&&refs[sym].equity>0));
+ if(demoOk){
+   const total=demo&&demo.status==="OBSERVING"?demo.balance:["BTC","ETH","SOL"].reduce((a,s)=>a+refs[s].equity,0);
+   const gain=total-30;
+   set("demoBalance",fmtMoney(total));set("demoPnl",(gain>=0?"+":"−")+fmtMoney(Math.abs(gain)));
+   el("demoPnl").className="big "+(gain<0?"badText":gain>0?"goodText":"");
+   for(const sym of ["BTC","ETH","SOL"])set("demo"+sym,fmtMoney(refs[sym].equity));
+   set("demoMove",demo&&typeof demo.last_move_usd==="number"?(demo.last_move_usd>=0?"+":"−")+fmtMoney(Math.abs(demo.last_move_usd)):"Next candle pending");
+   el("demoMove").className="big "+(demo&&demo.last_move_usd<0?"badText":demo&&demo.last_move_usd>0?"goodText":"");
+   set("demoSeen",time(p.generated_at));
+   set("demoNote","$30 virtual buy-and-hold market demo only; estimated fees + slippage on both sides. The $210 official strategy ledger is separate and can be flat when everyone holds cash.");
+ }else{
+   for(const id of ["demoBalance","demoPnl","demoMove","demoSeen","demoBTC","demoETH","demoSOL"])set(id,"—");
+   set("demoNote","No verified fresh BTC/ETH/SOL demo quotes. Missing or stale feed: fake balances are NOT updated.");
+ }
+ if(data.demoHistory){window.latestDemoHistory=data.demoHistory;drawMarketDemo(data.demoHistory)}
+ else {window.latestDemoHistory=null;set("demoChartInfo","Waiting for newly recorded forward-only demo market history; old candles are not fabricated.");}
  const hasCore=!!(s&&c&&i&&p&&a);
  const coreAge=s&&s.last_run?(Date.now()-Date.parse(s.last_run))/60000:Infinity;
  const validLedger=hasCore && s.mode==="PAPER_ONLY"&&c.mode==="PAPER_ONLY"&&i.mode==="PAPER_ONLY"&&p.mode==="PAPER_ONLY"&&i.no_real_orders===true&&p.real_money===false&&i.audited_accounts===21&&i.starting_paper_usd===210&&i.status==="PASS"&&Array.isArray(i.checks)&&i.checks.length>=12&&i.checks.every(x=>x.passed===true)&&s.last_run===c.generated_at&&s.last_run===i.generated_at&&s.last_run===p.generated_at;
@@ -345,7 +409,7 @@ async function refresh(){
  try{const result=await getData();update(result);set("checked","Checked "+new Date().toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit"}));}catch(e){el("statusdot").className="dot bad";set("headline","Dashboard could not verify the system");set("reason","The latest public reports did not load. Do not interpret the last displayed numbers as current.");set("checked","Refresh failed");}finally{busy=false;el("refresh").disabled=false}
 }
 el("refresh").addEventListener("click",refresh);
-window.addEventListener("resize",()=>{if(window.latestHistory)drawGraph(window.latestHistory)});
+window.addEventListener("resize",()=>{if(window.latestHistory)drawGraph(window.latestHistory);if(window.latestDemoHistory)drawMarketDemo(window.latestDemoHistory)});
 setInterval(()=>{if(!document.hidden)refresh()},120000);
 refresh();
 </script>
