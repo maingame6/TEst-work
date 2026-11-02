@@ -26,7 +26,14 @@ details{border-top:1px solid var(--border)}details summary{cursor:pointer;font-w
 footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted);font-size:12px}.links{display:flex;gap:15px;flex-wrap:wrap}.hint{font-size:12px;color:var(--muted);margin-top:9px}
 @media(max-width:820px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section{grid-template-columns:1fr}.bot-list{grid-template-columns:1fr}main{padding-top:25px}}
 @media(max-width:500px){.wrap{padding-inline:14px}.grid{gap:9px}.card{padding:14px}.lead{font-size:29px}.big{font-size:26px}.statusbar{padding:14px}h2{margin-top:22px}}
+.live-chart{height:285px;background:#091827;border:1px solid #294257;border-radius:10px;margin-top:12px;overflow:hidden}
+.chart-controls{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chart-controls span{color:var(--muted);font-size:12px}.chart-controls button{padding:5px 10px;font-size:12px;color:#d2ecff;background:#1e324b;border:1px solid #466079}
+.chart-controls button[aria-pressed="true"]{background:#28577b;border-color:#7ac9ff;color:white}
+[hidden]{display:none!important}
+@media(max-width:500px){.live-chart{height:235px}}
 </style>
+<script defer src="https://cdn.jsdelivr.net/npm/lightweight-charts@5.2.1/dist/lightweight-charts.standalone.production.js"></script>
 </head>
 <body>
 <header><div class="wrap"><div class="brand"><div class="logo">C</div><div>CRYPTEX<small>LIVE PAPER-TRADING STATUS</small></div></div><div class="refreshbox"><div class="last" id="checked">Not yet checked</div><button id="refresh">↻ Refresh now</button></div></div></header>
@@ -117,7 +124,16 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 </div>
 <h2>Where has the fake money gone?</h2>
 <div class="section">
-<div class="card"><div class="eyebrow">Actual recorded balance history</div><canvas id="curve" role="img" aria-label="Line graph of recorded fake account balances"></canvas><div id="chartInfo" class="caption">Loading actual history…</div></div>
+<div class="card"><div class="eyebrow">Interactive $210 paper-equity history</div>
+<div class="chart-controls"><span id="chartMode">Checking actual GitHub observations…</span><div aria-label="Chart time range">
+<button type="button" data-range="1h" aria-pressed="false">1H</button>
+<button type="button" data-range="24h" aria-pressed="false">24H</button>
+<button type="button" data-range="7d" aria-pressed="false">7D</button>
+<button type="button" data-range="all" aria-pressed="true">ALL</button></div></div>
+<div id="liveEquityChart" class="live-chart" role="img" aria-label="Interactive simulated account equity; scroll to zoom and drag to move" hidden></div>
+<div id="curveFallback"><canvas id="curve" role="img" aria-label="Fallback chart of recorded paper account balances"></canvas></div>
+<div id="chartInfo" class="caption">Loading actual history…</div>
+<p class="hint">Actual recorded values only, updated as GitHub publishes new five-minute candles. Missing observations are never backfilled, and connecting lines may span gaps. This is simulated money. Interactive chart: <a href="https://www.tradingview.com/" target="_blank" rel="noopener noreferrer">TradingView Lightweight Charts™</a> © TradingView, Inc. (Apache-2.0).</p></div>
 <div class="card"><div class="eyebrow">Account breakdown</div><table class="dataTable"><thead><tr><th>Group</th><th>Simulated balance</th></tr></thead><tbody><tr><td>Original 10 agents</td><td id="mainBalance">—</td></tr><tr><td>Research 11 agents</td><td id="researchBalance">—</td></tr><tr><td><strong>Total</strong></td><td id="totalBalance"><strong>—</strong></td></tr></tbody></table>
 <p id="ledgerInfo" class="hint">These numbers are only recorded simulated equity.</p></div>
 </div>
@@ -161,6 +177,54 @@ const stale=(date,minutes)=>{const ms=Date.now()-new Date(date).getTime();return
 const pct=(v,d=2)=>Number(v).toFixed(d)+"%";
 const get=async(url,asText=false)=>{const control=new AbortController();const abort=setTimeout(()=>control.abort(),16000);try{const r=await fetch(url+(url.includes("?")?"&":"?")+"live="+Date.now(),{cache:"no-store",signal:control.signal});if(!r.ok)throw Error("HTTP "+r.status);return asText?r.text():r.json()}finally{clearTimeout(abort)}};
 let lastRunFetch=0;
+let equityChart=null, equitySeries=null, equityChartPoints=[], lastEquitySignature="", equitySelectedRange="all", latestEquityCsv=null;
+function chooseEquityRange(){
+ document.querySelectorAll('[data-range]').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.range===equitySelectedRange)));
+ if(!equityChart||equityChartPoints.length<2)return;
+ if(equitySelectedRange==='all'){equityChart.timeScale().fitContent();return}
+ const sec={'1h':3600,'24h':86400,'7d':604800}[equitySelectedRange];
+ const first=equityChartPoints[0].time,last=equityChartPoints[equityChartPoints.length-1].time;
+ if(sec && first<last)equityChart.timeScale().setVisibleRange({from:Math.max(first,last-sec),to:last});
+}
+function renderInteractiveEquity(csv){
+ latestEquityCsv=csv;
+ const L=window.LightweightCharts,box=el('liveEquityChart');
+ if(!L||!L.LineSeries||!box||typeof csv!=='string')return false;
+ const lines=csv.trim().split(/\r?\n/),cols=lines.shift().split(','),t=cols.indexOf('utc'),v=cols.indexOf('total_paper_usd');
+ if(t<0||v<0)return false;
+ const unique=new Map();
+ for(const row of lines){const a=row.split(','),ts=Date.parse(a[t]),val=Number(a[v]);if(Number.isFinite(ts)&&Number.isFinite(val)&&val>0)unique.set(Math.floor(ts/1000),val)}
+ const points=[...unique].sort((a,b)=>a[0]-b[0]).map(([time,value])=>({time,value}));
+ if(points.length<2)return false;
+ try{
+  box.hidden=false;
+  if(!equityChart){
+   equityChart=L.createChart(box,{
+    autoSize:true,height:285,attributionLogo:true,
+    layout:{background:{type:'solid',color:'#091827'},textColor:'#bfd7e8'},
+    grid:{vertLines:{color:'#182f45'},horzLines:{color:'#182f45'}},
+    timeScale:{timeVisible:true,borderColor:'#35536c'},
+    rightPriceScale:{borderColor:'#35536c'}
+   });
+   equitySeries=equityChart.addSeries(L.LineSeries,{color:'#7bcbff',lineWidth:2,lastValueVisible:true,
+    priceLineVisible:true,priceFormat:{type:'price',precision:4,minMove:0.0001}});
+  }
+  const sig=points.length+'|'+points[points.length-1].time+'|'+points[points.length-1].value;
+  equityChartPoints=points;
+  if(lastEquitySignature!==sig){equitySeries.setData(points);lastEquitySignature=sig;chooseEquityRange()}
+  el('curveFallback').hidden=true;
+  set('chartMode','Interactive · '+points.length+' genuine recorded snapshots');
+  return true;
+ }catch(err){
+  box.hidden=true;el('curveFallback').hidden=false;
+  set('chartMode','Static fallback · chart rendering unavailable');return false;
+ }
+}
+document.querySelectorAll('[data-range]').forEach(b=>b.addEventListener('click',()=>{
+ equitySelectedRange=b.dataset.range;chooseEquityRange()
+}));
+window.addEventListener('load',()=>{if(latestEquityCsv)renderInteractiveEquity(latestEquityCsv)},{once:true});
+
 async function getData(){
  const reqs=[
  ["state",BASE+PAPER+"state.json"],["continuity",BASE+PAPER+"continuity_report.json"],
@@ -443,7 +507,19 @@ function update(data){
  addCheck(checks,"Live order books (research)",d?(fmtNum(d.valid_orderbook_roundtrip_diagnostics)+"/15 recorded; "+(stale(d.generated_at,30)?"latest report is stale.":"freshly observed.")):"No order-book evidence was loaded.",d&&!stale(d.generated_at,30)?"good":"warn",d&&!stale(d.generated_at,30)?"COLLECTING":"STALE");
  addCheck(checks,"Frozen held-out threshold comparison",alt?fmtNum(alt.completed_research_hypotheses)+" research outcomes so far; zero promotions.":"No verified experiment report; do not infer performance.",alt&&!stale(alt.at,45)?"good":"warn",alt&&!stale(alt.at,45)?"COLLECTING":"NO CURRENT DATA");
  addCheck(checks,"One ledger writer",actualOwner==="github"?"GitHub remains the sole designated writer.":actualOwner==="drain"?"Handover drain: nobody may publish.":actualOwner==="server"?"Server is designated; Github must be fenced.":"Authority cannot be read.",a&&["github","server","drain"].includes(actualOwner)?"good":"bad",actualOwner==="github"?"GITHUB":actualOwner==="server"?"SERVER":actualOwner==="drain"?"DRAIN":"CHECK");
- if(data.history){window.latestHistory=data.history;drawGraph(data.history);drawRecentPaperBalance(data.history);}else{window.latestHistory=null;set("chartInfo","Could not load the recorded balance history; graph not shown.");set("recentCurveInfo","$210 paper balance history unavailable.");}
+ if(data.history){
+    window.latestHistory=data.history;drawGraph(data.history);drawRecentPaperBalance(data.history);
+    if(!renderInteractiveEquity(data.history)){
+      el('curveFallback').hidden=false;
+      if(!window.LightweightCharts)set('chartMode','Static fallback · chart library unavailable');
+    }
+  }else{
+    window.latestHistory=null;latestEquityCsv=null;
+    el('liveEquityChart').hidden=true;el('curveFallback').hidden=false;
+    set('chartMode','No verified history available');
+    set("chartInfo","Could not load the recorded balance history; graph not shown.");
+    set("recentCurveInfo","$210 paper balance history unavailable.");
+  }
  const body=el("runs");body.replaceChildren();
  const items=data.runs&&Array.isArray(data.runs.workflow_runs)?data.runs.workflow_runs:[];
  if(!items.length){const tr=document.createElement("tr");const td=document.createElement("td");td.colSpan=3;td.textContent="GitHub run history unavailable right now (API rate limit or network). This does not prove the engine stopped.";tr.appendChild(td);body.appendChild(tr)}
