@@ -41,7 +41,7 @@ jobs:
           required={'headline','reason','balance','coverage','pnl','real','checks',
                     'strictTrades','attempted','validated','unresolved','forward',
                     'curve','runs','conclusion','checked','refresh',
-                    'experimentObservations','experimentCompleted','experimentRows',
+                    'experimentObservations','experimentCompleted','experimentContinuity','experimentRows',
                     'heldoutStart','experimentPromotion','sinceFixObserved',
                     'sinceFixMissed','sinceFixCoverage','sinceFixDuration'}
           missing=required-audit.ids
