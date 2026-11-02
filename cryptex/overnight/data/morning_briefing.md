@@ -2,7 +2,7 @@
 
 **PAPER ONLY. All balances, profits and orders are simulated; no exchange execution.**
 
-Recorded: 2026-11-02T17:27:33.767629+00:00 | Dublin overnight session: 2026-11-01
+Recorded: 2026-11-02T17:30:01.102215+00:00 | Dublin overnight session: 2026-11-01
 Morning checkpoint: **MORNING_RECORDED**. A fresh after-08:00 snapshot has been captured.
 
 ## 1. The money
@@ -91,7 +91,7 @@ Positive gross trades 0 versus after-cost winners 0. Trading frequently is NOT p
 | PEPE | 2026-11-01T21:00:41.471324+00:00 | 4.932e-06 | 4.612e-06 | -6.49% |
 | NEAR | 2026-11-01T21:00:41.471324+00:00 | 4.277 | 3.9468 | -7.72% |
 
-Observed paper equity samples: 244. Observed range $208.899241–$208.899241, sampled maximum drawdown 0.0%, largest recorded gap 17.4 minutes.
+Observed paper equity samples: 245. Observed range $208.899241–$208.899241, sampled maximum drawdown 0.0%, largest recorded gap 17.4 minutes.
 
 Benchmarks are comparison-only and excluded from the $210 bankroll.
 - BTC: $10 fake reference now $9.9373; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
@@ -101,7 +101,7 @@ Benchmarks are comparison-only and excluded from the $210 bankroll.
 ## 5. Broad market radar — monitoring only, NOT new trades
 
 Kraken USD spot market discovery covers majors, L1, DeFi, AI/data, L2/gaming, memes, stablecoin pairs, tokenised-gold proxies and FX references.
-Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-02T17:01:01.709146+00:00; age 26.53 minutes.
+Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-02T17:01:01.709146+00:00; age 28.99 minutes.
 **This does not expand the bounded 24-asset simulated execution universe.**
 Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.
 
@@ -253,8 +253,8 @@ The 640 specialists are correlated, transparent rule reviews across the ten pare
 | SHOCKWAVE | HOLD | 8 | 43 | 0 |
 
 Main paper risk limit: not triggered. Shadow risk limit: not triggered.
-Last trigger push; run 41491286010. Native 5-minute cron independently verified: YES.
-Market-data flags: {'main_stale': False, 'research_stale': False, 'missing_quotes': False, 'time_misaligned': False, 'main_status': 'HEALTHY: paper trading on completed Kraken candles', 'research_status': 'OK'}. Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.
+Last trigger push; run 41491628954. Native 5-minute cron independently verified: YES.
+Market-data flags: {'main_stale': False, 'research_stale': False, 'missing_quotes': False, 'time_misaligned': False, 'main_status': 'HEALTHY: waiting for a newly closed Kraken candle', 'research_status': 'OK'}. Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.
 
 ## 8. Research distillation gate — do not deploy a winner yet
 

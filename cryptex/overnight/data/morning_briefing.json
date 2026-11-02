@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T17:27:33.767629+00:00",
+  "generated_at": "2026-11-02T17:30:01.102215+00:00",
   "session": "2026-11-01",
   "session_start": "2026-11-01T21:00:41.471324+00:00",
   "status": "MORNING_RECORDED",
@@ -526,7 +526,7 @@
     }
   ],
   "equity_curve": {
-    "samples": 244,
+    "samples": 245,
     "low": 208.899241,
     "high": 208.899241,
     "observed_drawdown_pct": 0.0,
@@ -912,7 +912,7 @@
     "observed": 71,
     "confirmed": 71,
     "polled_at": "2026-11-02T17:01:01.709146+00:00",
-    "age_minutes": 26.53,
+    "age_minutes": 28.99,
     "sectors": {
       "Majors": {
         "requested": 14,
@@ -1530,13 +1530,13 @@
   "health": {
     "trigger": "push",
     "cron_verified": true,
-    "run_id": "41491286010",
+    "run_id": "41491628954",
     "data": {
       "main_stale": false,
       "research_stale": false,
       "missing_quotes": false,
       "time_misaligned": false,
-      "main_status": "HEALTHY: paper trading on completed Kraken candles",
+      "main_status": "HEALTHY: waiting for a newly closed Kraken candle",
       "research_status": "OK"
     }
   },
