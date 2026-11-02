@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CRYPTEX | Autonomous Paper Trading Desk</title><style>
 :root{--bg:#070d18;--card:#121f30;--line:#263c50;--text:#ecf4ff;--muted:#899db3;--accent:#46dce4;--green:#5ce6b1;--red:#ff8092;--gold:#e9bf7b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% 0%,#1d395d77,transparent 42%),var(--bg);font:14px/1.55 Inter,system-ui,Arial,sans-serif;color:var(--text)}.wrap{max-width:1350px;margin:0 auto;padding:25px}.top{display:flex;align-items:center;gap:24px;justify-content:space-between;margin-bottom:25px}.brand{font-weight:950;font-size:27px;letter-spacing:.075em}.brand em{color:var(--accent);font-style:normal}.sub{color:var(--muted);font-size:11px;letter-spacing:.12em}.pill{border:1px solid #4bb390;background:#103026;padding:7px 12px;color:#9bffd0;border-radius:40px;font-size:11px;font-weight:bold;white-space:nowrap}.pill.warn{border-color:#8a633e;background:#38261b;color:#ffd292}.intro{border:1px solid #35687b;background:#102638;border-radius:16px;padding:18px 22px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px}.intro p{margin:4px 0;color:#a9bed2}.label{font-size:10px;letter-spacing:.14em;color:var(--muted);font-weight:800}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 18px}.metric,.panel,.agent{border:1px solid var(--line);background:linear-gradient(155deg,#17283b,#0d1726);border-radius:14px;padding:17px}.metric .number{font-size:29px;font-weight:850;line-height:1.2;margin-top:8px}.two{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);gap:17px}.agents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.panel h2{margin:0 0 17px;font-size:17px}.agent header{display:flex;justify-content:space-between;font-size:12px;font-weight:800;gap:8px}.agent .value{font-size:23px;font-weight:900;margin:12px 0 4px}.agent .note{font-size:11px;color:var(--muted);line-height:1.5;min-height:32px}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.line{border-bottom:1px solid #26394b;padding:10px 0;font-size:12px;display:grid;gap:3px}.line:last-child{border-bottom:0}.line b{color:#d9ebf6}.line small{color:#93a9b5}.section{margin-top:18px}.rules{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.rule{border:1px solid #334958;border-radius:30px;padding:6px 10px;font-size:10px;color:#a9c2d2}.buttons{display:flex;align-items:center;gap:9px}.btn{border:1px solid #476273;background:#183247;color:#d8f6ff;border-radius:8px;padding:10px 13px;cursor:pointer;font-weight:bold}.warntext{color:#eacb9d}.footer{font-size:11px;color:#8ca0b2;line-height:1.8;margin:17px 0}.feed{max-height:430px;overflow-y:auto}#updated{font-size:11px;color:#84bcb9}#health{font-weight:bold;font-size:12px}#failure{display:none;border:1px solid #bb8067;background:#3f251d;color:#ffe7ce;padding:12px 16px;margin-bottom:16px;border-radius:8px} @media(max-width:950px){.two{display:block}.two>*{margin-bottom:15px}}@media(max-width:650px){.wrap{padding:12px}.top{flex-wrap:wrap}.metrics{grid-template-columns:repeat(2,1fr);gap:8px}.metric .number{font-size:22px}.agents{grid-template-columns:1fr}.intro{display:block}.intro .buttons{margin-top:12px}.brand{font-size:20px}}
-</style></head><body><div class="wrap"><div class="top"><div><div class="brand">CRYPTEX<em>.</em> <small style="font-size:13px;color:#8da4b7">OVERNIGHT</small></div><div class="sub">AUTONOMOUS TRADING RESEARCH LAB</div></div><span class="pill">PAPER FUNDS ONLY · NO REAL ORDERS</span></div>
+</style><script defer src="https://cdn.jsdelivr.net/npm/lightweight-charts@5.2.1/dist/lightweight-charts.standalone.production.js"></script></head><body><div class="wrap"><div class="top"><div><div class="brand">CRYPTEX<em>.</em> <small style="font-size:13px;color:#8da4b7">OVERNIGHT</small></div><div class="sub">AUTONOMOUS TRADING RESEARCH LAB</div></div><span class="pill">PAPER FUNDS ONLY · NO REAL ORDERS</span></div>
 <div id="failure">No saved CRYPTEX paper-trading snapshot yet. The next successful GitHub Actions scheduled run will populate this dashboard. This is not real-money trading.</div>
 <div class="intro"><div><div class="label">ENGINE CONDITION</div><div id="health">Checking backend…</div><p>Independent Kraken five-minute OHLCV · CoinGecko crosscheck · DexScreener radar (unverified tokens not traded)</p><div id="updated">Waiting for server</div></div><div class="buttons"><button class="btn" onclick="refresh()">↻ REFRESH</button></div></div>
 <div class="panel" style="margin:0 0 14px;padding:14px"><b>New: CRYPTEX Morning Intelligence</b><p class="muted" style="margin:6px 0">Read the full overnight trading diary, 21-agent scorecards, price movers, public headlines, and the checklist before distilling any new strategies.</p><a href="./data/morning_briefing.md" style="color:#46dce4;font-weight:700" target="_blank" rel="noopener noreferrer">Open detailed overnight debrief</a> · <a href="./data/morning_briefing.json" style="color:#46dce4" target="_blank" rel="noopener noreferrer">JSON analysis</a></div>
@@ -29,8 +29,8 @@
     <div class="metric"><div class="label">BTC BUY & HOLD BENCHMARK</div><div class="number" id="moneyBTCBenchmark">—</div><div class="muted">Separate $10 paper reference; not counted in bankroll</div></div>
   </div>
   <h2 style="margin:4px 0 8px">Balance history</h2>
-  <div style="width:100%;overflow:hidden"><svg id="moneyChart" viewBox="0 0 900 135" style="width:100%;min-height:110px;display:block;border:1px solid #294151;border-radius:12px;background:#091726" role="img" aria-label="Historical combined paper equity chart"><text x="28" y="70" fill="#90a6b9" font-size="17">Balance chart appears after the first recorded cycles.</text></svg></div>
-  <p class="muted" id="moneyAsOf" style="font-size:11px;margin-top:6px">No confirmed bankroll update yet. GitHub schedules are best-effort; check the as-of timestamp.</p>
+  <div id="interactiveMoneyChart" style="height:270px;display:none;margin-bottom:8px" role="img" aria-label="Interactive observed paper balance chart"></div><div id="moneyChartFallback" style="width:100%;overflow:hidden"><svg id="moneyChart" viewBox="0 0 900 135" style="width:100%;min-height:110px;display:block;border:1px solid #294151;border-radius:12px;background:#091726" role="img" aria-label="Historical combined paper equity chart"><text x="28" y="70" fill="#90a6b9" font-size="17">Balance chart appears after the first recorded cycles.</text></svg></div>
+  <p class="muted" style="font-size:10px;margin:6px 0 0">Interactive chart powered by <a href="https://www.tradingview.com/" target="_blank" rel="noopener noreferrer" style="color:#46dce4">TradingView Lightweight Charts™</a> · Copyright © TradingView, Inc. (Apache-2.0). All balances are simulated and use recorded snapshots only.</p><p class="muted" id="moneyAsOf" style="font-size:11px;margin-top:6px">No confirmed bankroll update yet. GitHub schedules are best-effort; check the as-of timestamp.</p>
   <details style="margin-top:12px" open><summary style="cursor:pointer;font-size:16px;font-weight:bold">21-agent leaderboard · profits, losses and positions</summary>
     <div style="overflow-x:auto;margin-top:10px"><table style="border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap">
       <thead><tr style="color:#8db8c6;border-bottom:1px solid #3d5467"><th style="padding:9px;text-align:left"># / Agent</th><th style="padding:9px;text-align:right">Balance</th><th style="padding:9px;text-align:right">P&L</th><th style="padding:9px;text-align:right">Closed</th><th style="padding:9px;text-align:right">Holding</th><th style="padding:9px;text-align:left">Decision</th></tr></thead>
@@ -116,6 +116,43 @@ const $money=id=>document.getElementById(id);
 const fmt=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:4}).format(Number(n)||0);
 const esc=x=>String(x==null?'':x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const sign=n=>n>0?'+':'';
+let equityChart, equityLine, equityResize;
+function interactiveEquity(csvText){
+  const lib=window.LightweightCharts, box=$money('interactiveMoneyChart');
+  if(!lib || !box) return false;
+  const lines=csvText.trim().split(/\r?\n/), headings=lines[0].split(',');
+  const stampCol=headings.indexOf('utc'), valueCol=headings.indexOf('total_paper_usd');
+  if(stampCol<0 || valueCol<0) return false;
+  const byTime=new Map();
+  for(const row of lines.slice(1)){
+    const cells=row.split(','), t=Math.floor(Date.parse(cells[stampCol])/1000), val=Number(cells[valueCol]);
+    if(Number.isFinite(t)&&Number.isFinite(val)&&val>0) byTime.set(t,val);
+  }
+  const values=[...byTime].sort((a,b)=>a[0]-b[0]).map(([time,value])=>({time,value}));
+  if(values.length<2) return false;
+  try {
+    box.style.display='block';
+    if(!equityChart){
+      equityChart=lib.createChart(box,{
+        height:270,autoSize:true,attributionLogo:true,
+        layout:{background:{type:'solid',color:'#091726'},textColor:'#9bb9cc'},
+        grid:{vertLines:{color:'#183146'},horzLines:{color:'#183146'}},
+        rightPriceScale:{borderColor:'#274c61'},
+        timeScale:{borderColor:'#274c61',timeVisible:true,secondsVisible:false}
+      });
+      equityLine=equityChart.addSeries(lib.LineSeries,{color:'#5ce6b1',lineWidth:2,
+        priceFormat:{type:'price',precision:3,minMove:0.001}});
+      equityChart.timeScale().fitContent();
+    }
+    equityLine.setData(values);
+    $money('moneyChartFallback').style.display='none';
+    return true;
+  }catch(error){
+    box.style.display='none';
+    $money('moneyChartFallback').style.display='block';
+    return false;
+  }
+}
 function pnlSet(id,n){const el=$money(id);el.textContent=sign(n)+fmt(n);el.style.color=n>=0?'#5ce6b1':'#ff8092';}
 async function load(){
 try {
@@ -159,7 +196,9 @@ try {
   try {
     const csv=await fetch('./data/combined_equity.csv',{cache:'no-store'});
     if(csv.ok){
-      const lines=(await csv.text()).trim().split(/\r?\n/);
+      const csvText=await csv.text();
+       interactiveEquity(csvText);
+       const lines=csvText.trim().split(/\r?\n/);
       const vals=lines.slice(1).map(l=>Number(l.split(',')[3])).filter(Number.isFinite).slice(-250);
       if(vals.length){
         const vmin=Math.min(...vals,210),vmax=Math.max(...vals,210);
@@ -176,6 +215,7 @@ try {
   $money('moneyAsOf').textContent='No confirmed combined money report: '+e.message+'. Check GitHub Actions before trusting any displayed balances.';
 }}
 load();setInterval(load,60000);
+ window.addEventListener('load',()=>{if(window.LightweightCharts)load();},{once:true});
 })();
 </script>
 
