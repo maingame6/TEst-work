@@ -227,7 +227,7 @@ function update(data){
    set("depthCandles",fmtNum(d.stored_historical_candles));
    set("depthLiquid",fmtNum(d.hypothetical_1000_quote_depth_eligible));
    set("depthTime",time(d.generated_at));
-   set("depthFreshness",stale(d.generated_at,45)?"WARNING: data is over 45 minutes old":"Recent collection verified · 15-minute schedule is best-effort");
+   set("depthFreshness",stale(d.generated_at,30)?"WARNING: collector last ran over 30 minutes ago":"Recent collection verified · 15-minute schedule is best-effort");
    set("depthCaution",fmtNum(d.invalid_or_insufficient_book_markets)+" failed or unusable books last cycle. USD and USDT are separate quote currencies. Order books and later-retrieved candle history do not prove executable trades or profits.");
    const q=d.historical_quality_diagnostics;
    if(q&&q.status==="AVAILABLE"){
@@ -286,7 +286,10 @@ function update(data){
    }
    set("experimentWarning",(stale(alt.at,35)?"STALE DATA — latest report overdue. ":"")+
      "Last research update: "+time(alt.at)+". "+
-     fmtNum(counted.gaps||0)+" broken venue/pair snapshot transitions (NOT missing Kraken 5m candles); "+
+     fmtNum(counted.gaps||0)+" broken venue/pair snapshot transitions (NOT missing Kraken 5m candles). "+
+     (q ? "Since new classification: "+fmtNum(q.too_soon_transitions_since_classification||0)+" too soon, "+
+       fmtNum(q.too_late_transitions_since_classification||0)+" too late; "+
+       fmtNum(q.older_unclassified_transitions||0)+" older gaps have unknown causes. " : "")+
      fmtNum(counted.entry_censored||0)+" censored entries and "+
      fmtNum(counted.exit_censored||0)+" censored exits. No held-out performance proof yet.");
  }else{
@@ -302,7 +305,7 @@ function update(data){
  const serverProven=actualOwner==="server"&&s&&s.trigger_event==="server";
  addCheck(checks,"Independent Codex server",serverProven?"Server-origin publication reported; on-host process proof still requires manual verification.":"Independent host has NOT been verified as running the paper engine.","warn",serverProven?"REPORTED":"NOT PROVEN");
  addCheck(checks,"Five-exchange research",w?(fmtNum(w.unique_ohlcv_validated_pairs)+" validated histories; report "+(stale(w.generated_at,120)?"is stale.":"is recent.")):"Research report unavailable.",w&&!stale(w.generated_at,120)?"good":"warn",w&&!stale(w.generated_at,120)?"UPDATING":"STALE");
- addCheck(checks,"Live order books (research)",d?(fmtNum(d.valid_orderbook_roundtrip_diagnostics)+"/15 recorded; "+(stale(d.generated_at,45)?"latest report is stale.":"freshly observed.")):"No order-book evidence was loaded.",d&&!stale(d.generated_at,45)?"good":"warn",d&&!stale(d.generated_at,45)?"COLLECTING":"STALE");
+ addCheck(checks,"Live order books (research)",d?(fmtNum(d.valid_orderbook_roundtrip_diagnostics)+"/15 recorded; "+(stale(d.generated_at,30)?"latest report is stale.":"freshly observed.")):"No order-book evidence was loaded.",d&&!stale(d.generated_at,30)?"good":"warn",d&&!stale(d.generated_at,30)?"COLLECTING":"STALE");
  addCheck(checks,"Frozen held-out threshold comparison",alt?fmtNum(alt.completed_research_hypotheses)+" research outcomes so far; zero promotions.":"No verified experiment report; do not infer performance.",alt&&!stale(alt.at,45)?"good":"warn",alt&&!stale(alt.at,45)?"COLLECTING":"NO CURRENT DATA");
  addCheck(checks,"One ledger writer",actualOwner==="github"?"GitHub remains the sole designated writer.":actualOwner==="drain"?"Handover drain: nobody may publish.":actualOwner==="server"?"Server is designated; Github must be fenced.":"Authority cannot be read.",a&&["github","server","drain"].includes(actualOwner)?"good":"bad",actualOwner==="github"?"GITHUB":actualOwner==="server"?"SERVER":actualOwner==="drain"?"DRAIN":"CHECK");
  if(data.history){window.latestHistory=data.history;drawGraph(data.history);}else{window.latestHistory=null;set("chartInfo","Could not load the recorded balance history; graph not shown.");}
