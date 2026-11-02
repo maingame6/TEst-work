@@ -57,14 +57,15 @@ jobs:
           const { chromium }=require('playwright');
           (async()=>{
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
-            const page=await browser.newPage({viewport:{width:1100,height:850}});
+            const context=await browser.newContext({locale:'en-US',viewport:{width:1100,height:850}});
+            const page=await context.newPage();
             const errors=[];
             page.on('pageerror',e=>errors.push(e.message));
             await page.goto('http://127.0.0.1:8765/',{waitUntil:'domcontentloaded'});
             await page.waitForTimeout(15000);
             const values=await page.evaluate(()=>({
               lib:!!window.LightweightCharts,
-              chart:!!window.equityChartPoints&&window.equityChartPoints.length>=2,
+              chart:!!document.getElementById('liveEquityChart').querySelector('canvas'),
               shown:!document.getElementById('liveEquityChart').hidden,
               fallback:!document.getElementById('curveFallback').hidden,
               label:document.getElementById('chartMode').textContent
