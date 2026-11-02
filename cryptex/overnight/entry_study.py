@@ -18,6 +18,9 @@ INTERVAL=300
 HOLD_BARS=6
 MAX_OPEN_PER_GATE=5
 MAX_RECORDS=1600
+# Frozen comparison hypotheses, not funded paper orders; 6-bar control unchanged.
+HORIZON_BARS=(48,288)
+HORIZON_MAX_RECORDS=1600
 GATES={
     "V4_TAKER_STRICT": {"move": ROUND_TRIP_BREAK_EVEN+.002, "volume_ratio":1.25},
     "COST_AWARE": {"move": ROUND_TRIP_BREAK_EVEN+.0005, "volume_ratio":1.20},
@@ -28,7 +31,8 @@ GATES={
 def blank():
     return {"schema":VERSION,"mode":"PAPER_ONLY","last_ts":0,"first_ts":None,
             "observed_candles":0,"signals":[],"open":[],"trades":[],
-            "missed_fills":0,"censored_exits":0,"diagnostics":{}}
+            "missed_fills":0,"censored_exits":0,"diagnostics":{},
+            "horizon_open":[],"horizon_trades":[],"horizon_censored":0}
 
 def features(history):
     if len(history)<30:
@@ -46,12 +50,109 @@ def features(history):
     if turnover<100000 or volatility>.04 or last["close"]<=0:return None
     return {"move":ret3,"volume_ratio":ratio}
 
+
+def _horizon_tick(state,prices,ts):
+    """Longer paper counterfactuals censor missing bars, never backfill."""
+    positions=state.setdefault("horizon_open",[])
+    state.setdefault("horizon_trades",[])
+    state.setdefault("horizon_censored",0)
+    previous=int(state.get("last_ts") or 0)
+    if previous and ts-previous!=INTERVAL:
+        state["horizon_censored"]+=len(positions)
+        state["horizon_open"]=[]
+        return
+    still=[]
+    for p in positions:
+        end=p["entry_ts"]+p["hold_bars"]*INTERVAL
+        if end<ts or p["symbol"] not in prices:
+            state["horizon_censored"]+=1
+        elif end==ts:
+            v=returns(p["entry_mid"],prices[p["symbol"]])
+            stress=returns(p["entry_mid"],prices[p["symbol"]],STRESS_FEE,STRESS_SLIP)
+            state["horizon_trades"].append({
+                "gate":p["gate"],"symbol":p["symbol"],
+                "signal_ts":p["signal_ts"],"entry_ts":p["entry_ts"],
+                "exit_ts":ts,"hold_bars":p["hold_bars"],"paper":True,
+                "gross_return":round(v["gross"],10),"net_return":round(v["net"],10),
+                "stress_net_return":round(stress["net"],10)})
+        else:still.append(p)
+    state["horizon_open"]=still
+    state["horizon_trades"]=state["horizon_trades"][-HORIZON_MAX_RECORDS:]
+
+
+def _horizon_open_from_filled_signal(state,p,entry,ts):
+    """Observe alternative exit times from identical forward entry; no wallet buys."""
+    for hold in HORIZON_BARS:
+        if any(q["gate"]==p["gate"] and q["symbol"]==p["symbol"] and
+               q["hold_bars"]==hold for q in state["horizon_open"]):
+            continue
+        state["horizon_open"].append({
+            "gate":p["gate"],"symbol":p["symbol"],
+            "signal_ts":p["signal_ts"],"entry_ts":ts,
+            "entry_mid":entry,"hold_bars":hold})
+
+
+def _horizon_comparisons(state):
+    """Paired 30m/4h/24h tests with 72h frozen holdout and non-overlap.
+
+    Crypto symbols are still correlated; paired observations are not proof.
+    Benchmarks and multiple-testing adjustments remain external requirements.
+    """
+    boundary=state["first_ts"]+72*3600 if state.get("first_ts") is not None else None
+    short={(t["gate"],t["symbol"],t["entry_ts"]):t
+           for t in state.get("trades",[]) if t.get("paper")}
+    result={}
+    for gate in GATES:
+        group={}
+        for hold in HORIZON_BARS:
+            pairs=[]
+            for t in state.get("horizon_trades",[]):
+                if t["gate"]!=gate or t["hold_bars"]!=hold:continue
+                matched=short.get((gate,t["symbol"],t["entry_ts"]))
+                if matched is not None:pairs.append((t,matched))
+            pairs.sort(key=lambda p:(p[0]["entry_ts"],p[0]["symbol"]))
+            heldout=[p for p in pairs if boundary is not None and p[0]["signal_ts"]>=boundary]
+            nonoverlap=[];free=-1
+            for pair in heldout:
+                if pair[0]["entry_ts"]<free:continue
+                nonoverlap.append(pair)
+                free=pair[0]["exit_ts"]+INTERVAL
+            def mean_net(key):
+                return (round(100*sum(p[0][key] for p in nonoverlap)/len(nonoverlap),5)
+                        if nonoverlap else None)
+            delta=(round(100*sum(a["net_return"]-b["net_return"]
+                    for a,b in nonoverlap)/len(nonoverlap),5) if nonoverlap else None)
+            days=len({dt.datetime.fromtimestamp(a["entry_ts"],dt.timezone.utc).date()
+                      for a,b in nonoverlap})
+            group[str(hold)]={
+                "duration_hours":hold*INTERVAL/3600,
+                "paired_observations":len(pairs),
+                "heldout_pairs":len(heldout),
+                "heldout_nonoverlap_pairs":len(nonoverlap),
+                "heldout_distinct_utc_days":days,
+                "mean_heldout_net_pct":mean_net("net_return"),
+                "mean_heldout_stress_net_pct":mean_net("stress_net_return"),
+                "mean_heldout_advantage_over_30m_pct":delta,
+                "heldout_after_cost_winners":sum(a["net_return"]>0 for a,b in nonoverlap),
+                "assessment":("INSUFFICIENT_EVIDENCE" if len(nonoverlap)<30 or days<7
+                    else "REVIEW_NEEDS_MATCHED_BUY_HOLD_AND_MULTIPLE_TEST_CORRECTION"),
+                "paper_only":True}
+        result[gate]=group
+    return {
+        "hypotheses_frozen":"Identical next observed completed candle entries, 30m vs 4h vs 24h",
+        "heldout_start_ts":boundary,
+        "censored_longer_holds":state.get("horizon_censored",0),
+        "no_auto_promotion":True,
+        "caveat":"Candle-gap censoring is strict. Samples are correlated even with non-overlap. No intrabar stop simulation, broker fill proof or buy-and-hold win established. Never claim edge from this table alone.",
+        "gates":result}
+
 def update(state,history,ts):
     if state.get("schema")!=VERSION or state.get("mode")!="PAPER_ONLY":
         raise ValueError("Refusing incompatible entry study state")
     if ts<=state["last_ts"]:return False
     valid={s:b for s,b in history.items() if len(b)>=30 and b[-1]["ts"]==ts}
     prices={s:b[-1]["close"] for s,b in valid.items()}
+    _horizon_tick(state,prices,ts)
     state["last_ts"]=ts
     if state["first_ts"] is None:state["first_ts"]=ts
     state["observed_candles"]+=1
@@ -86,6 +187,7 @@ def update(state,history,ts):
         state["open"].append({"gate":p["gate"],"symbol":p["symbol"],
             "signal_ts":p["signal_ts"],"entry_ts":ts,
             "entry_mid":entry,"exit_ts":ts+HOLD_BARS*INTERVAL})
+        _horizon_open_from_filled_signal(state,p,entry,ts)
     state["signals"]=remain_signals
     candidates=[]
     for sym,h in valid.items():
@@ -166,7 +268,7 @@ def summarize(state,now):
         "cost_assumptions":cost_assumptions(),
         "disclaimer":"No real orders; simulations use close prices with estimated fees/slippage, do not model orderbook depth. Cross-market overlap makes samples correlated. No promotion without held-out test.",
         "heldout_policy":"Frozen at first study candle +72h; diagnostic only; requires sufficient non-overlapping samples, cash and buy-and-hold comparison before promotion.",
-        "gates":results}
+        "gates":results,"horizon_comparisons":_horizon_comparisons(state)}
 
 def store(folder,history,ts,now):
     directory=pathlib.Path(folder)
@@ -202,6 +304,17 @@ def store(folder,history,ts,now):
         d=r["diagnostics_since_instrumentation"]
         hv="n/a" if r["heldout_mean_net_pct"] is None else f"{r['heldout_mean_net_pct']:+.4f}%"
         lines.append(f"| {gate} | {d.get('qualified',0)} | {d.get('move_below_gate',0)} | {d.get('volume_below_gate',0)} | {d.get('queued',0)} | {r['heldout_completed']} | {hv} | {r['max_compounded_unit_stake_drawdown_pct']:.3f}% |")
+    lines+=["","## Fixed-duration counterfactual research (30m versus 4h and 24h)",
+             "Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.",
+             "Trading costs and slippage are charged at both endpoints for each hypothetical exit.",
+             "Gaps censor long holds. Figures below are not independent across correlated symbols.","",
+             "| Gate | Hold | Matched (all) | Independent heldout | Heldout avg net | Versus paired 30m |",
+             "|---|---:|---:|---:|---:|---:|"]
+    for gate,scenarios in report["horizon_comparisons"]["gates"].items():
+        for k,x in scenarios.items():
+            avg="n/a" if x["mean_heldout_net_pct"] is None else f'{x["mean_heldout_net_pct"]:+.3f}%'
+            delta="n/a" if x["mean_heldout_advantage_over_30m_pct"] is None else f'{x["mean_heldout_advantage_over_30m_pct"]:+.3f}%'
+            lines.append(f'| {gate} | {x["duration_hours"]:g}h | {x["paired_observations"]} | {x["heldout_nonoverlap_pairs"]} | {avg} | {delta} |')
     lines+=["","A gate only places a *research candidate*, entered on a later observed candle.",
              "No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.",
              "Six-candle exits are evaluation windows, not validated exit strategies.",""]
