@@ -198,6 +198,31 @@ def paired_holdout(st,now):
          "groups":comparison,
          "note":"Descriptive paired cohort comparisons only; cash means no entry at this 15m signal. Full matched buy-and-hold, serial-correlation-aware uncertainty and region/account fee verification are not yet proven."}
 
+def continuity_quality(st):
+ """Adjacent *observed* venue/pair transitions, NOT scheduled candle coverage.
+
+ Gaps are discontinuous recorded snapshots; count cannot be interpreted as
+ missing five-minute market candles or missing exchange API listings.
+ """
+ counters=st["counters"]
+ observations=counters["snapshots"]
+ markets=len(st["last_by_market"])
+ gaps=counters["gaps"]
+ opportunities=observations-markets
+ if opportunities<0 or gaps<0 or gaps>opportunities:
+  raise ValueError("Invalid saved public book-continuity counters")
+ contiguous=opportunities-gaps
+ return {"distinct_spot_pairs_seen":markets,
+         "observations_saved_since_freeze":observations,
+         "adjacent_observed_transitions":opportunities,
+         "continuous_adjacent_transitions":contiguous,
+         "broken_adjacent_transitions":gaps,
+         "continuous_fraction_of_observed_transitions":round(
+            contiguous/opportunities,5) if opportunities else None,
+         "qualified_momentum_comparisons":counters["signal_candidates"],
+         "invalid_books_seen":counters["stale_or_bad"],
+         "meaning":"Pair-by-pair 15-minute experiment feed continuity, NOT how many historical 5m candles were available or genuine execution opportunity. Missing times cannot be backfilled."}
+
 def report(st,now):
  start=parse_time(FROZEN_AT)
  gates={}
@@ -227,6 +252,7 @@ def report(st,now):
   "minimum_promotion_conditions":REQUIREMENTS,
   "promotion_policy":"NEVER_AUTO_PROMOTE: independent review with matched benchmarks, cluster uncertainty, enough days and verified costs required",
   "state":{k:v for k,v in st.items() if k in ("counters","freeze")},
+  "book_interval_quality":continuity_quality(st),
   "pending_entries":len(st["signals"]),"open_hypotheses":len(st["positions"]),
   "recorded_censored_cohorts":len(st.get("censored_cohorts",[])),
   "completed_research_hypotheses":len(st["completed"]),"gates":gates,
@@ -261,7 +287,10 @@ def main():
     str(x["mean_net_pct"])+"% | "+str(x["mean_stress_pct"])+"% | No |")
  lines.extend(["","Censored entries: "+str(st["counters"]["entry_censored"]),
   "Censored exits: "+str(st["counters"]["exit_censored"]),
-  "Gaps: "+str(st["counters"]["gaps"]),"",
+  "Gaps: "+str(st["counters"]["gaps"]),
+  "Consecutive observed market-pair intervals: "+str(result["book_interval_quality"]["continuous_adjacent_transitions"])+
+   " of "+str(result["book_interval_quality"]["adjacent_observed_transitions"])+
+   " observed transitions. These are NOT missing five-minute Kraken candles.", "",
   "Cash benchmark: zero assumed. Matched buy/hold and statistically robust comparison NOT YET verified.",
   "Fees are published-spot-tier or labeled assumptions; actual fills unverified.",
   "Snapshots cannot establish actual fills or exchange account profitability.",""])
