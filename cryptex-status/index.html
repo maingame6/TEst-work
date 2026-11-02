@@ -41,7 +41,20 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="card"><div class="label">Actual five-minute coverage</div><div id="coverage" class="big">—</div><div id="coverageDetail" class="caption">Target: at least 99% for seven days</div></div>
 <div class="card"><div class="label">Real-money orders</div><div id="real" class="big">—</div><div class="caption">Must always be ZERO</div></div>
 </div>
-<h2>Live paper-market demo — the fake balance that moves</h2>
+<h2>$210 paper-money auto-buy trial</h2>
+<p class="sub" style="margin-bottom:15px">This is the <strong>original simulated $210 deposit</strong>, not an extra test balance. Three existing agent wallets test a passive BTC control, an ETH trend strategy and a SOL dip strategy. Orders are hypothetical, filled on a later completed candle, and all estimated fees/slippage and losses count against the original account.</p>
+<div class="grid" aria-live="polite">
+<div class="card"><div class="label">Your $210 competition — precise simulated value</div><div id="accountExact" class="big">—</div><div class="caption">Only 21 existing paper wallets; no deposits added</div></div>
+<div class="card"><div class="label">Actual recorded change</div><div id="accountMove" class="big">—</div><div id="accountMoveAt" class="caption">Since the prior recorded balance sample</div></div>
+<div class="card"><div class="label">Open / next-candle queued</div><div id="accountPositions" class="big">—</div><div class="caption">Actual $210 paper agents, not the reference tracker</div></div>
+<div class="card"><div class="label">Prospective pilot status</div><div id="pilotStatus" class="big" style="font-size:19px">—</div><div id="pilotStatusDetail" class="caption">Only held-out after-cost results can validate a rule</div></div>
+</div>
+<div class="section" style="margin-top:14px">
+<div class="card"><div class="eyebrow">Zoomed latest recorded $210 wallet value</div><canvas id="recentAccountCurve" role="img" aria-label="Actual recorded paper competition equity, zoomed for small movements"></canvas><div id="recentCurveInfo" class="caption">Waiting for the paper account ledger…</div></div>
+<div class="card"><div class="eyebrow">Three frozen paper policies</div><table class="dataTable"><thead><tr><th>Agent / test</th><th>Wallet now</th><th>Position</th></tr></thead><tbody id="pilotRows"><tr><td colspan="3">Awaiting validated account state…</td></tr></tbody></table><p class="hint">No policy is promoted automatically. The strict original V4 tests and other 18 paper agents are preserved.</p><div class="eyebrow" style="margin-top:14px">Recent real paper actions</div><p id="actualPaperActions" class="hint">Awaiting BUY / SELL journal entries…</p></div>
+</div>
+<details class="card" style="margin-top:23px"><summary>Optional $30 BTC / ETH / SOL price benchmark (NOT your $210 trading account)</summary>
+<h2>Independent price reference — not a traded $210 wallet</h2>
 <p class="sub" style="margin-bottom:15px">A separate <strong>$30 virtual BTC / ETH / SOL basket</strong> follows genuine completed Kraken candles and includes estimated buying and selling costs. It can rise or fall with actual market prices; it is NOT one of the 21 trading agents, and is never added to their $210 strategy score.</p>
 <div class="grid" aria-live="polite">
 <div class="card"><div class="label">Market demo: $30 fake starting money</div><div id="demoBalance" class="big">—</div><div class="caption">Three virtual buy-and-hold positions, not real money</div></div>
@@ -58,6 +71,7 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 </tbody></table>
 <p id="demoNote" class="hint">The independent $210 strategy portfolio may remain flat when every agent holds cash. This market demo exists to show genuine price-driven changes without forcing unqualified trades.</p></div>
 </div>
+</details>
 <h2>What is working — and what isn't</h2>
 <div class="section">
 <div class="card" id="checks"><div class="check"><div><strong>Checking live records…</strong><small>Statuses will appear here.</small></div><span class="pill">Loading</span></div></div>
@@ -138,6 +152,7 @@ const API="https://api.github.com/repos/maingame6/TEst-work/actions/workflows/cr
 const PAPER="cryptex-paper-trading-preview/cryptex/overnight/data/";
 const WIDE="cryptex-wide-market-research/cryptex/overnight/data/";
 const fmtMoney=x=>typeof x==="number"&&isFinite(x)?"$"+x.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}):"—";
+const money4=x=>typeof x==="number"&&Number.isFinite(x)?"$"+x.toLocaleString("en-US",{minimumFractionDigits:4,maximumFractionDigits:4}):"—";
 const fmtNum=x=>typeof x==="number"&&isFinite(x)?x.toLocaleString("en-US"):"—";
 const el=id=>document.getElementById(id);
 const set=(id,value)=>{el(id).textContent=String(value)};
@@ -189,6 +204,29 @@ function drawGraph(text){
  ctx.beginPath();samples.forEach((a,i)=>{if(i)ctx.lineTo(x(a),y(a.v));else ctx.moveTo(x(a),y(a.v))});ctx.strokeStyle="#78c8ff";ctx.lineWidth=2.6;ctx.stroke();
  const last=samples[samples.length-1];ctx.fillStyle="#78c8ff";ctx.beginPath();ctx.arc(x(last),y(last.v),3.8,0,Math.PI*2);ctx.fill();
  set("chartInfo",fmtNum(samples.length)+" recorded balance snapshots · "+time(samples[0].t)+" to "+time(last.t)+" · dashed line = $210 start");
+}
+function drawRecentPaperBalance(csvText){
+ const canvas=el("recentAccountCurve"),width=Math.max(260,canvas.parentElement.clientWidth-40),height=180,dpr=window.devicePixelRatio||1;
+ canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);
+ const ctx=canvas.getContext("2d");ctx.scale(dpr,dpr);ctx.clearRect(0,0,width,height);
+ if(typeof csvText!=="string"||!csvText.trim()){set("recentCurveInfo","Recorded $210 history unavailable; no synthetic movement shown.");return}
+ const rows=csvText.trim().split(/\r?\n/).map(s=>s.split(",")),h=rows.shift(),it=h.indexOf("utc"),iv=h.indexOf("total_paper_usd");
+ if(it<0||iv<0){set("recentCurveInfo","Cannot verify paper balance CSV columns.");return}
+ const valid=rows.map(x=>({t:Date.parse(x[it]),v:Number(x[iv])})).filter(x=>Number.isFinite(x.t)&&Number.isFinite(x.v));
+ if(!valid.length){set("recentCurveInfo","Awaiting first valid equity reading.");return}
+ const points=valid.slice(-75),first=points[0],last=points.at(-1);
+ set("accountMove",valid.length>1?(last.v>=valid.at(-2).v?"+":"−")+money4(Math.abs(last.v-valid.at(-2).v)):"First reading");
+ set("accountMoveAt","Last real recorded change · "+time(last.t));
+ const low=Math.min(...points.map(x=>x.v)),high=Math.max(...points.map(x=>x.v)),pad=Math.max((high-low)*.15,.0005);
+ const min=low-pad,max=high+pad;
+ const x=p=>40+(p.t-first.t)/Math.max(1,last.t-first.t)*(width-52);
+ const y=v=>12+(max-v)/(max-min)*(height-33);
+ ctx.strokeStyle="#2f4056";ctx.lineWidth=1;
+ for(let k=0;k<4;k++){let a=13+k*(height-34)/3;ctx.beginPath();ctx.moveTo(40,a);ctx.lineTo(width-12,a);ctx.stroke()}
+ if(points.length>1){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(x(p),y(p.v)):ctx.moveTo(x(p),y(p.v)));ctx.strokeStyle="#66e0ac";ctx.lineWidth=2.5;ctx.stroke()}
+ ctx.beginPath();ctx.arc(x(last),y(last.v),3,0,Math.PI*2);ctx.fillStyle="#66e0ac";ctx.fill();
+ ctx.font="11px Arial";ctx.fillStyle="#b5c3d5";ctx.fillText("$"+high.toFixed(4),0,18);ctx.fillText("$"+low.toFixed(4),0,height-11);
+ set("recentCurveInfo",points.length+" actual paper-account snapshots · recent zoom · "+time(first.t)+"–"+time(last.t)+". Flat means all accounts are in cash or movement is too small.");
 }
 function drawMarketDemo(text){
  const canvas=el("demoCurve"),info="demoChartInfo",scale=window.devicePixelRatio||1;
@@ -251,6 +289,23 @@ function update(data){
  set("headline",techStatus==="good"?"YES — the paper engine is running":techStatus==="warn"?"Engine recently ran — next observation due":"Cannot verify a healthy engine right now");
  set("reason",!hasCore?"One or more critical GitHub evidence files could not be loaded.":!validLedger?"Paper state or reconciliation checks did not match; investigate.":!technicallyCurrent?"Last verified paper ledger is "+Math.round(coreAge)+" minutes old — beyond the 11-minute limit.":"Latest validated ledger is "+Math.max(0,Math.round(coreAge))+" minute(s) old; current designated writer: "+niceOwner+".");
  if(p){
+   set("accountExact",money4(p.balance));
+   set("accountPositions",fmtNum(p.total_open)+" / "+fmtNum(p.total_queued));
+   const pilot=p.pilot_evidence;
+   set("pilotStatus",pilot?pilot.status:"AWAITING FIRST RUN");
+   const totalPilot=pilot&&Array.isArray(pilot.agents)?pilot.agents.reduce((a,x)=>a+x.closed,0):0;
+   set("pilotStatusDetail",pilot?totalPilot+" pilot exits recorded · awaiting held-out evidence · no auto-promotion":"New rules not yet published in this paper ledger.");
+   el("pilotRows").replaceChildren();
+   if(pilot&&Array.isArray(pilot.agents)){
+     pilot.agents.forEach(b=>{const tr=document.createElement("tr");
+       const name=document.createElement("td");name.textContent=b.name+" / "+b.market+" "+(b.policy.includes("CONTROL")?"control":"pilot");
+       const amount=document.createElement("td");amount.textContent=money4(b.wallet_equity);
+       const status=document.createElement("td");status.textContent=b.active?"OPEN":b.queued?"BUY QUEUED":"CASH";
+       tr.append(name,amount,status);el("pilotRows").appendChild(tr);
+     });
+   }
+   const actions=s&&Array.isArray(s.trades)?s.trades.filter(t=>t.pilot_policy&&(t.side==="BUY"||t.side==="SELL")).slice(0,3):[];
+   set("actualPaperActions",actions.length?actions.map(t=>t.bot+" "+t.side+" "+t.symbol+" · "+t.pilot_policy+" · "+time(t.ts*1000)).join(" | "):"No recorded pilot fills yet; a signal must wait for the next genuine completed candle.");
    set("balance",fmtMoney(p.balance));set("pnl",(p.pnl>0?"+":"")+fmtMoney(p.pnl));
    el("pnl").className="big "+(p.pnl<0?"badText":p.pnl>0?"goodText":"");
    set("pnlsub",p.pnl===0?"No simulated gain or loss":p.pnl<0?"Fake account is currently down":"Fake account is currently up");
@@ -388,7 +443,7 @@ function update(data){
  addCheck(checks,"Live order books (research)",d?(fmtNum(d.valid_orderbook_roundtrip_diagnostics)+"/15 recorded; "+(stale(d.generated_at,30)?"latest report is stale.":"freshly observed.")):"No order-book evidence was loaded.",d&&!stale(d.generated_at,30)?"good":"warn",d&&!stale(d.generated_at,30)?"COLLECTING":"STALE");
  addCheck(checks,"Frozen held-out threshold comparison",alt?fmtNum(alt.completed_research_hypotheses)+" research outcomes so far; zero promotions.":"No verified experiment report; do not infer performance.",alt&&!stale(alt.at,45)?"good":"warn",alt&&!stale(alt.at,45)?"COLLECTING":"NO CURRENT DATA");
  addCheck(checks,"One ledger writer",actualOwner==="github"?"GitHub remains the sole designated writer.":actualOwner==="drain"?"Handover drain: nobody may publish.":actualOwner==="server"?"Server is designated; Github must be fenced.":"Authority cannot be read.",a&&["github","server","drain"].includes(actualOwner)?"good":"bad",actualOwner==="github"?"GITHUB":actualOwner==="server"?"SERVER":actualOwner==="drain"?"DRAIN":"CHECK");
- if(data.history){window.latestHistory=data.history;drawGraph(data.history);}else{window.latestHistory=null;set("chartInfo","Could not load the recorded balance history; graph not shown.");}
+ if(data.history){window.latestHistory=data.history;drawGraph(data.history);drawRecentPaperBalance(data.history);}else{window.latestHistory=null;set("chartInfo","Could not load the recorded balance history; graph not shown.");set("recentCurveInfo","$210 paper balance history unavailable.");}
  const body=el("runs");body.replaceChildren();
  const items=data.runs&&Array.isArray(data.runs.workflow_runs)?data.runs.workflow_runs:[];
  if(!items.length){const tr=document.createElement("tr");const td=document.createElement("td");td.colSpan=3;td.textContent="GitHub run history unavailable right now (API rate limit or network). This does not prove the engine stopped.";tr.appendChild(td);body.appendChild(tr)}
@@ -409,7 +464,7 @@ async function refresh(){
  try{const result=await getData();update(result);set("checked","Checked "+new Date().toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit"}));}catch(e){el("statusdot").className="dot bad";set("headline","Dashboard could not verify the system");set("reason","The latest public reports did not load. Do not interpret the last displayed numbers as current.");set("checked","Refresh failed");}finally{busy=false;el("refresh").disabled=false}
 }
 el("refresh").addEventListener("click",refresh);
-window.addEventListener("resize",()=>{if(window.latestHistory)drawGraph(window.latestHistory);if(window.latestDemoHistory)drawMarketDemo(window.latestDemoHistory)});
+window.addEventListener("resize",()=>{if(window.latestHistory){drawGraph(window.latestHistory);drawRecentPaperBalance(window.latestHistory)}if(window.latestDemoHistory)drawMarketDemo(window.latestDemoHistory)});
 setInterval(()=>{if(!document.hidden)refresh()},120000);
 refresh();
 </script>
