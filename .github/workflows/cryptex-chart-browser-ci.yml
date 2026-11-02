@@ -1,0 +1,83 @@
+name: CRYPTEX interactive chart - real-browser smoke test
+on:
+  push:
+    branches: ['feature/cryptex-status-live-chart-20261102']
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cryptex-status/index.html'
+      - '.github/workflows/cryptex-chart-browser-ci.yml'
+permissions:
+  contents: read
+jobs:
+  chart-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify HTML fields and JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Parser(HTMLParser):
+              def __init__(self):super().__init__();self.scripts=[];self.in_script=False;self.ids=set();self.external=[]
+              def handle_starttag(self,tag,attrs):
+                  d=dict(attrs)
+                  if 'id' in d:self.ids.add(d['id'])
+                  if tag=='script':
+                      self.in_script=True
+                      if 'src' in d:self.external.append(d['src'])
+              def handle_endtag(self,tag):
+                  if tag=='script':self.in_script=False
+              def handle_data(self,data):
+                  if self.in_script:self.scripts.append(data)
+          p=Parser();p.feed(Path('cryptex-status/index.html').read_text())
+          assert {'liveEquityChart','chartMode','curveFallback','curve','chartInfo'}<=p.ids
+          assert any('lightweight-charts@5.2.1' in s for s in p.external)
+          script=''.join(p.scripts)
+          assert 'total_paper_usd' in script and 'renderInteractiveEquity' in script
+          assert 'setInterval(()=>{if(!document.hidden)refresh()},120000)' in script
+          Path('/tmp/cryptex-status-chart.js').write_text(script)
+          PY
+          node --check /tmp/cryptex-status-chart.js
+      - name: Install isolated Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Serve actual dashboard and check chart in headless browser
+        run: |
+          python3 -m http.server 8765 --directory cryptex-status > /tmp/cryptex-http.log 2>&1 &
+          node - <<'JS'
+          const { chromium }=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+            const page=await browser.newPage({viewport:{width:1100,height:850}});
+            const errors=[];
+            page.on('pageerror',e=>errors.push(e.message));
+            await page.goto('http://127.0.0.1:8765/',{waitUntil:'domcontentloaded'});
+            await page.waitForTimeout(15000);
+            const values=await page.evaluate(()=>({
+              lib:!!window.LightweightCharts,
+              chart:!!window.equityChartPoints&&window.equityChartPoints.length>=2,
+              shown:!document.getElementById('liveEquityChart').hidden,
+              fallback:!document.getElementById('curveFallback').hidden,
+              label:document.getElementById('chartMode').textContent
+            }));
+            if(errors.length){console.error('PAGE ERRORS',errors)}
+            if(!values.lib||!values.chart||!values.shown||values.fallback||errors.length){
+              throw new Error('Interactive chart smoke failed: '+JSON.stringify({values,errors}))
+            }
+            await page.click('[data-range="24h"]');
+            if((await page.getAttribute('[data-range="24h"]','aria-pressed'))!=='true'){
+              throw new Error('24H range control failed')
+            }
+            console.log('PASS real Chromium chart:',values.label);
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)})
+          JS
