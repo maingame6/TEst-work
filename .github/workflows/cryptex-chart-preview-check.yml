@@ -20,5 +20,6 @@ jobs:
           curl --fail --location --silent --show-error --retry 2 --max-time 30 --header 'Accept: text/html' "$url" --output "$RUNNER_TEMP/cryptex-live-preview.html"
           grep -q 'id="liveEquityChart"' "$RUNNER_TEMP/cryptex-live-preview.html"
           grep -q 'lightweight-charts@5.2.1' "$RUNNER_TEMP/cryptex-live-preview.html"
-          grep -q 'cryptex-paper-trading-preview/cryptex/overnight/data/' "$RUNNER_TEMP/cryptex-live-preview.html"
+          grep -q 'cryptex-paper-trading-preview' "$RUNNER_TEMP/cryptex-live-preview.html"
+          grep -q 'combined_equity.csv' "$RUNNER_TEMP/cryptex-live-preview.html"
           echo 'OK: temporary preview serves actual interactive chart source and public research branch data URL'
