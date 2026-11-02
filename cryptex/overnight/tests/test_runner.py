@@ -126,7 +126,7 @@ class PaperOnlySafetyTests(unittest.TestCase):
 
     def test_new_pilot_entries_use_original_wallets_and_not_added_balance(self):
         from pilot_policy import PILOTS, VERSION, idea, queued_eligible
-        self.assertEqual(set(PILOTS),(6,7,8))
+        self.assertEqual(set(PILOTS),{6,7,8})
         st=R.init()
         self.assertEqual(sum(b["cash"] for b in st["bots"]),100.)
         x={"price":100.,"ret8":.003,"ret21":-.001,"one":.001,
