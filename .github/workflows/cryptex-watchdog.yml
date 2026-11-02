@@ -25,6 +25,8 @@ on:
       - 'cryptex/ops/tests/test_paper_dispatch_clock.py'
       - 'cryptex/ops/depth_dispatch_guard.py'
       - 'cryptex/ops/tests/test_depth_dispatch_guard.py'
+      - 'cryptex/ops/forward_feed_health.py'
+      - 'cryptex/ops/tests/test_forward_feed_health.py'
       - 'cryptex/ops/heldout_gate.py'
       - 'cryptex/ops/own_data_review.py'
       - 'cryptex/ops/tests/test_own_data_review.py'
@@ -67,6 +69,7 @@ jobs:
             cryptex/overnight/data/wide_scan_report.json
             cryptex/overnight/data/forward_venue_report.json
             cryptex/overnight/data/microstructure_report.json
+            cryptex/overnight/data/forward_threshold_report.json
             cryptex/overnight/data/microstructure_snapshots.csv
       - name: Test alert and safety rules
         run: python3 -m unittest discover -s cryptex/ops/tests -p 'test_*.py' -v
@@ -180,6 +183,20 @@ jobs:
         with:
           name: cryptex-cadence-postfix
           path: cadence-output/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Audit frozen after-fix 15m market research feed separately
+        if: always()
+        run: |
+          python3 cryptex/ops/forward_feed_health.py \
+            --report wide-snapshot/cryptex/overnight/data/forward_threshold_report.json \
+            --out feed-output
+      - name: Publish independent research feed-quality artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-forward-feed-quality
+          path: feed-output/
           if-no-files-found: warn
           retention-days: 14
       - name: Expose watchdog failure to GitHub
