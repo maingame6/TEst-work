@@ -10,7 +10,7 @@ BAR_SECONDS=300
 # Kraken's latest fully completed 5m bar often becomes available in our
 # public OHLCV fetch after the NEXT bar starts, so target t+2*5min+12s.
 OFFSET_AFTER_CANDLE_START=612
-MIN_WAIT_SECONDS=40
+MIN_WAIT_SECONDS=8   # allow a near-due bar after an early successful push-run
 MAX_WAIT_SECONDS=360
 def next_dispatch_delay(last_candle_ts,now):
     if (type(last_candle_ts) not in (int,float) or
