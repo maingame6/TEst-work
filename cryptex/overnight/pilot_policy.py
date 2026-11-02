@@ -88,9 +88,14 @@ def exit_reason(position, features, candle_ts):
         return None
     symbol=position["symbol"]
     x=features.get(symbol)
-    if not eligible(x):
-        return None  # Caller must preserve the held position on data loss.
+    # Exit decisions require a fresh, finite close, not today's new-entry
+    # turnover/volume screen. A liquidity dip must never veto a protective
+    # paper exit from an already-held position.
+    if not isinstance(x,dict) or type(x.get("price")) not in (int,float):
+        return None
     price=x["price"]
+    if not math.isfinite(price) or price<=0:
+        return None
     gain=price/float(position["entry_mid"])-1.
     if gain <= -STOP:
         return "PILOT V1 observed 6% stop; next-candle simulated exit"
