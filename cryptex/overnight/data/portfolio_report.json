@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-02T17:30:01.102215+00:00",
-  "local_time": "2026-11-02T17:30:01.102215+00:00",
+  "generated_at": "2026-11-02T17:35:41.923420+00:00",
+  "local_time": "2026-11-02T17:35:41.923420+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -164,7 +164,7 @@
         "reason": "PAPER PILOT_V1_2026_11_02: BTC_PASSIVE_CONTROL; forward-only entry, not proven profitable",
         "exploratory": false,
         "cost_gate_version": 4,
-        "signal_ts": 1793640000,
+        "signal_ts": 1793640600,
         "pilot_policy": "BTC_PASSIVE_CONTROL",
         "pilot_version": "PILOT_V1_2026_11_02",
         "pilot_hold_bars": 864
@@ -210,7 +210,7 @@
         "reason": "PAPER PILOT_V1_2026_11_02: SOL_DIP_12H; forward-only entry, not proven profitable",
         "exploratory": false,
         "cost_gate_version": 4,
-        "signal_ts": 1793640000,
+        "signal_ts": 1793640600,
         "pilot_policy": "SOL_DIP_12H",
         "pilot_version": "PILOT_V1_2026_11_02",
         "pilot_hold_bars": 144
@@ -251,7 +251,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD SOL",
+      "last_decision": "HOLD PEPE",
       "missing_quote": false
     },
     {
@@ -269,7 +269,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD BNB",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -287,7 +287,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOT",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -305,7 +305,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOT",
+      "last_decision": "HOLD XRP",
       "missing_quote": false
     },
     {
@@ -323,7 +323,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOT",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -359,7 +359,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOT",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -377,7 +377,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOT",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     },
     {
@@ -431,7 +431,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD BTC",
+      "last_decision": "HOLD TRX",
       "missing_quote": false
     }
   ],
@@ -440,11 +440,11 @@
     "research_stale": false,
     "missing_quotes": false,
     "time_misaligned": false,
-    "main_status": "HEALTHY: waiting for a newly closed Kraken candle",
+    "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1793640000,
-  "last_candle_research": 1793640000,
+  "last_candle_main": 1793640600,
+  "last_candle_research": 1793640600,
   "total_open": 0,
   "total_queued": 2,
   "total_completed": 71,
@@ -481,10 +481,10 @@
     "gross_up_but_net_down": 33,
     "interpretation": "Gross movement is from candle mid-to-mid; execution_drag includes entry/exit fee and slippage assumptions. Numbers cover attributed cached closed trades only."
   },
-  "actual_trigger_event": "push",
+  "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-10-31T20:50:39.562635+00:00",
-  "github_run_id": "41491628954",
+  "github_run_id": "41492560473",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-01",
@@ -512,33 +512,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 77220.0,
+        "current_mid": 76940.0,
         "start": 10.0,
-        "equity": 9.937329,
-        "pnl": -0.062671,
-        "return_pct": -0.6267,
+        "equity": 9.901296,
+        "pnl": -0.098704,
+        "return_pct": -0.987,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 2260.47,
+        "current_mid": 2251.12,
         "start": 10.0,
-        "equity": 9.988435,
-        "pnl": -0.011565,
-        "return_pct": -0.1157,
+        "equity": 9.94712,
+        "pnl": -0.05288,
+        "return_pct": -0.5288,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 92.8,
+        "current_mid": 92.39,
         "start": 10.0,
-        "equity": 9.597195,
-        "pnl": -0.402805,
-        "return_pct": -4.0281,
+        "equity": 9.554794,
+        "pnl": -0.445206,
+        "return_pct": -4.4521,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
@@ -558,22 +558,22 @@
       "ETH",
       "SOL"
     ],
-    "candle_utc": 1793640000,
-    "at": "2026-11-02T17:30:01.102215+00:00",
-    "balance": 29.522959,
-    "pnl": -0.477041,
+    "candle_utc": 1793640600,
+    "at": "2026-11-02T17:35:41.923420+00:00",
+    "balance": 29.40321,
+    "pnl": -0.59679,
     "coins": {
-      "BTC": 9.937329,
-      "ETH": 9.988435,
-      "SOL": 9.597195
+      "BTC": 9.901296,
+      "ETH": 9.94712,
+      "SOL": 9.554794
     },
     "entries": {
       "BTC": "2026-10-30T22:21:37.361980+00:00",
       "ETH": "2026-10-30T22:21:37.361980+00:00",
       "SOL": "2026-10-30T22:21:37.361980+00:00"
     },
-    "observations": 13,
-    "last_move_usd": -0.054329
+    "observations": 14,
+    "last_move_usd": -0.119749
   },
   "pilot_evidence": {
     "mode": "PAPER_ONLY",

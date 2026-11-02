@@ -2,9 +2,9 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-02T17:30:01.102215+00:00 (Europe/Dublin)
+Checked: 2026-11-02T17:35:41.923420+00:00 (Europe/Dublin)
 
-GitHub trigger: push; independently scheduled trading CONFIRMED
+GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
 
 **Starting paper money $210.00 · Current estimated liquidation $208.8992 · P&L $-1.1008 (-0.52%)**
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.9373 | $-0.0627 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.9884 | $-0.0116 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.5972 | $-0.4028 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.9013 | $-0.0987 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.9471 | $-0.0529 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.5548 | $-0.4452 |
 
 ## 21-agent leaderboard
 
@@ -81,7 +81,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793640000 / 1793640000
+Latest main/shadow candle timestamps: 1793640600 / 1793640600
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
