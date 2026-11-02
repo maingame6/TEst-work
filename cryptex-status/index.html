@@ -137,6 +137,16 @@ footer{border-top:1px solid var(--border);padding:25px 0 40px;color:var(--muted)
 <div class="card"><div class="eyebrow">Account breakdown</div><table class="dataTable"><thead><tr><th>Group</th><th>Simulated balance</th></tr></thead><tbody><tr><td>Original 10 agents</td><td id="mainBalance">—</td></tr><tr><td>Research 11 agents</td><td id="researchBalance">—</td></tr><tr><td><strong>Total</strong></td><td id="totalBalance"><strong>—</strong></td></tr></tbody></table>
 <p id="ledgerInfo" class="hint">These numbers are only recorded simulated equity.</p></div>
 </div>
+<h2>New hourly strategy research · independent of $210</h2>
+<p class="sub" style="margin-bottom:15px">These are unproven research hypotheses, not extra trading bots, orders or investment returns. We keep every test, including losers and missing observations.</p>
+<div class="grid" aria-live="polite">
+<div class="card"><div class="label">Frozen strategy variants</div><div id="factorCandidates" class="big">—</div><div class="caption">28 signal families × 3 hourly windows</div></div>
+<div class="card"><div class="label">Genuinely observed symbol-hours</div><div id="factorObservations" class="big">—</div><div class="caption">Timestamped Kraken 1h research feed</div></div>
+<div class="card"><div class="label">Completed paper hypotheses</div><div id="factorClosed" class="big">—</div><div class="caption">24 successive observed hours after a delayed entry</div></div>
+<div class="card"><div class="label">Missing hourly observations</div><div id="factorMissed" class="big">—</div><div class="caption">Gaps are censored, not backfilled</div></div>
+</div>
+<div id="factorNote" class="hint">Checking separate research branch…</div>
+<p class="hint"><a href="https://github.com/maingame6/TEst-work/blob/cryptex-factor-research/cryptex/strategy-lab/data/strategy_lab_report.md" target="_blank" rel="noopener noreferrer">Complete hourly strategy report ↗</a> · Nobody is automatically approved to trade. Multiple-testing and fee stress remain mandatory.</p>
 <h2>Market research — five exchanges</h2>
 <div class="grid">
 <div class="card"><div class="label">Exchange listings attempted</div><div id="attempted" class="big">—</div><div class="caption">Not actual placed trades</div></div>
@@ -232,7 +242,8 @@ async function getData(){
  ["entry",BASE+PAPER+"entry_study_report.json"],["wide",BASE+WIDE+"wide_scan_report.json"],
  ["forward",BASE+WIDE+"forward_venue_report.json"],["depth",BASE+WIDE+"microstructure_report.json"],["alternatives",BASE+WIDE+"forward_threshold_report.json"],["authority",BASE+"main/cryptex/ops/writer_authority.json"],
  ["history",BASE+PAPER+"combined_equity.csv",true],
- ["demoHistory",BASE+PAPER+"market_demo_equity.csv",true]
+ ["demoHistory",BASE+PAPER+"market_demo_equity.csv",true],
+  ["factor",BASE+"cryptex-factor-research/cryptex/strategy-lab/data/strategy_lab_report.json"]
  ];let result={};const outcomes=await Promise.allSettled(reqs.map(x=>get(x[1],x[2]||false)));outcomes.forEach((v,i)=>{if(v.status==="fulfilled")result[reqs[i][0]]=v.value;else result[reqs[i][0]+"Error"]=String(v.reason).slice(0,160)});
  // GitHub API gets a separate, lower-frequency request to avoid rate limits.
  if(Date.now()-lastRunFetch>240000 || !window.previousRuns){
@@ -318,6 +329,17 @@ function drawMarketDemo(text){
 }
 function update(data){
  const s=data.state,c=data.continuity,i=data.integrity,p=data.portfolio,e=data.entry,w=data.wide,f=data.forward,d=data.depth,alt=data.alternatives,a=data.authority;
+ const factor=data.factor;
+ if(factor&&factor.schema===1&&factor.mode==='PAPER_ONLY'&&factor.real_orders===false&&factor.independent_of_210_paper_wallets===true&&factor.candidate_count===84&&factor.family_count===28){
+  set('factorCandidates',String(factor.candidate_count));
+  set('factorObservations',fmtNum(factor.observed_symbol_hours));
+  set('factorClosed',fmtNum(factor.closed_hypotheses));
+  set('factorMissed',fmtNum(factor.missing_symbol_hours));
+  set('factorNote',(stale(factor.generated_at,180)?'RESEARCH FEED STALE — ':'')+'Last independent update '+time(factor.generated_at)+' · '+fmtNum(factor.queued_hypotheses)+' queued hypothetical signals · '+fmtNum(factor.censored_hypotheses)+' censored · all auto-promotions prohibited.');
+ }else{
+  for(const id of ['factorCandidates','factorObservations','factorClosed','factorMissed'])set(id,'—');
+  set('factorNote','Independent hourly report unavailable or failed paper-only verification; five-minute engine status remains separate.');
+ }
  const demo=p&&p.market_demo,refs=p&&p.benchmarks&&p.benchmarks.references||{};
  const demoOk=!!(p&&p.mode==="PAPER_ONLY"&&p.real_money===false&&
    p.freshness&&!p.freshness.main_stale&&!p.freshness.research_stale&&
