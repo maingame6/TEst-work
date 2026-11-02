@@ -310,7 +310,7 @@ def record_pilot_evidence(snap, main, folder):
                   "quote_prices":{sym:main["last_prices"][sym] for sym in
                                  ("BTC","ETH","SOL")},
                   "cash_not_created":True}
-        path.write_text(json.dumps(baseline,indent=2,allow_nan=False)+"\\n")
+        path.write_text(json.dumps(baseline,indent=2,allow_nan=False)+"\n")
     pilot={"mode":"PAPER_ONLY","version":PILOT_VERSION,
            "funding":"three EXISTING $10 wallets within the original $210 simulation",
            "additional_funds":0.0,"no_real_orders":True,
@@ -351,7 +351,7 @@ def record_pilot_evidence(snap, main, folder):
         })
     snap["pilot_evidence"]=pilot
     (Path(folder)/"pilot_report.json").write_text(
-        json.dumps(pilot,indent=2,allow_nan=False)+"\\n")
+        json.dumps(pilot,indent=2,allow_nan=False)+"\n")
     return snap
 
 
