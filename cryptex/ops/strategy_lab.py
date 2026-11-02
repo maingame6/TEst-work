@@ -432,7 +432,15 @@ def run(data,now=None,fetch=fetch_kraken):
             failures[symbol]=type(error).__name__+": "+str(error)[:100]
         time.sleep(.12)
     # If no fresh symbol was observed, refuse to create a misleading report.
-    if not updates:raise RuntimeError("No genuinely new completed hourly observations; "+str(failures))
+    if not updates:
+        if len(failures)==len(PAIRS):
+            raise RuntimeError("All public hourly markets failed; "+str(failures))
+        # A duplicate-hour dispatch is expected on manual or source-code pushes.
+        # No new signals, fills, reports, archive or Git commit are permitted.
+        existing=report(state)
+        existing["updated_symbols"]=[]
+        existing["skipped_reason"]="NO_NEW_COMPLETED_HOURLY_CANDLE"
+        return existing
     snapshot=report(state)
     snapshot["updated_symbols"]=updates
     snapshot["failed_symbols"]=failures
