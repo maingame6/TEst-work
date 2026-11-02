@@ -46,9 +46,18 @@ jobs:
           assert pathlib.Path('research/.git').exists()
           PY
       - name: Observe genuine completed Kraken hours independently
+        id: capture
         run: |
-          python3 lab-code/cryptex/ops/strategy_lab.py --data research/cryptex/strategy-lab/data
+          python3 lab-code/cryptex/ops/strategy_lab.py --data research/cryptex/strategy-lab/data | tee "$RUNNER_TEMP/factor-result.json"
+          python3 - <<'PY'
+          import json,os,pathlib
+          j=json.loads((pathlib.Path(os.environ['RUNNER_TEMP'])/'factor-result.json').read_text())
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              f.write('has_new_data='+('true' if j.get('new') else 'false')+'\n')
+          print('Genuine new completed hourly market observations:',len(j.get('new',[])))
+          PY
       - name: Assert paper-only ledger and 84 frozen candidates
+        if: steps.capture.outputs.has_new_data == 'true'
         run: |
           python3 - <<'PY'
           import json,pathlib
@@ -62,6 +71,7 @@ jobs:
           assert all(not v['eligible_to_promote'] for v in r['candidates'].values())
           PY
       - name: Commit only separate strategy research evidence
+        if: steps.capture.outputs.has_new_data == 'true'
         working-directory: research
         run: |
           set -euo pipefail
