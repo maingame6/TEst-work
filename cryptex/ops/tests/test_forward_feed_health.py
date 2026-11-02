@@ -29,7 +29,9 @@ class ForwardFeedHealthTests(unittest.TestCase):
   j=assess(sample(30,0),NOW+dt.timedelta(hours=1))
   self.assertEqual(j["status"],"STALE_RESEARCH_FEED")
  def test_no_observations_cannot_be_green(self):
-  j=assess(sample(0,0,0),NOW)
+  # At the observation baseline there is no new pair yet, but it is NOT stale.
+  at_baseline=dt.datetime.fromisoformat(BASE["time"])+dt.timedelta(minutes=20)
+  j=assess(sample(0,0,0),at_baseline)
   self.assertEqual(j["status"],"COLLECTING_NO_POST_GUARD_PAIR")
  def test_state_reset_blocks_evidence(self):
   j=sample(15);j["book_interval_quality"]["observations_saved_since_freeze"]=4
