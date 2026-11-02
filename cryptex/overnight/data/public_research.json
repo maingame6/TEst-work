@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-02T10:45:54.718829+00:00",
+  "checked_at": "2026-11-02T11:50:42.966094+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -11,7 +11,7 @@
       "source": "COINTELEGRAPH",
       "purpose": "independent crypto reporting",
       "status": "OK",
-      "items": 14
+      "items": 15
     },
     {
       "source": "THE_BLOCK",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "TimeoutError:The read operation timed out"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -51,6 +52,28 @@
     }
   ],
   "articles": [
+    {
+      "id": "18376ec0dcfb75e8",
+      "source": "CRYPTODESK",
+      "title": "Bitcoin eases to $77,900 as Binance customers pull $3.6 billion after withdrawals reopen",
+      "url": "https://www.coindesk.com/markets/2026/11/02/bitcoin-eases-to-usd77-900-as-binance-customers-pull-usd3-6-billion-after-withdrawals-reopen",
+      "published_at": "2026-11-02T11:30:00+00:00",
+      "first_observed_at": "2026-11-02T11:50:42.966094+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "ebf51dbda61de3c9",
+      "source": "COINTELEGRAPH",
+      "title": "From Uptober to Hacktober: Are Bitcoin’s seasonal patterns becoming obsolete?",
+      "url": "https://cointelegraph.com/markets/uptober-hacktober-bitcoin-seasonal-pattern?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-02T11:19:18+00:00",
+      "first_observed_at": "2026-11-02T11:50:42.966094+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "25040d4c7de48ad1",
       "source": "COINTELEGRAPH",
@@ -2778,34 +2801,12 @@
       "sentiment": "NEGATIVE",
       "score": -1,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "afde79a0dff8aabd",
-      "source": "CRYPTODESK",
-      "title": "Bitcoin stolen from Binance tops Tesla’s holdings and is over twice El Salvador’s reserve",
-      "url": "https://www.coindesk.com/markets/2026/10/31/bitcoin-stolen-from-binance-tops-tesla-s-holdings-and-is-over-twice-el-salvador-s-reserve",
-      "published_at": "2026-10-31T05:01:32+00:00",
-      "first_observed_at": "2026-10-31T10:50:43.198549+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "4f4e4809fa4328df",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin: Boom or Bust - CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4ydGtxaEdsV2RRYUdSVlBGWWs4ZVlJdkxDNE5OenNrRnFsa3FZWmhvbUtZZUFBWURNRFVVckJyU2d2dEE2TUI2dzZTYVVpaVlnc2ZXeQ?oc=5",
-      "published_at": "2026-10-31T08:05:14+00:00",
-      "first_observed_at": "2026-10-31T10:50:43.198549+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 8,
+  "sources_up": 7,
   "sources_total": 8
 }
