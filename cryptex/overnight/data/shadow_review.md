@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-02T02:15:45.847115+00:00
+Generated: 2026-11-02T02:20:41.170761+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -16,11 +16,11 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 | ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD LTC |
 | GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD LTC |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD UNI |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD ETH |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD LTC |
 | QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD LTC |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD ETH |
-| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD LTC |
+| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD LTC |
+| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD SOL |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
