@@ -21,6 +21,14 @@ class ClockTests(unittest.TestCase):
   self.assertGreaterEqual(delay,40)
   self.assertLessEqual(delay,360)
   self.assertEqual(dt.datetime.fromisoformat(target).timestamp()%300,12)
+ def test_early_push_does_not_skip_next_due_candle(self):
+  # Last confirmed closed candle at 17:20, early code-push runner at
+  # 17:30:02; next publication slot 17:30:12 must not be skipped.
+  last=dt.datetime(2026,11,2,17,20,tzinfo=UTC)
+  now=dt.datetime(2026,11,2,17,30,2,tzinfo=UTC)
+  delay,target=next_dispatch_delay(int(last.timestamp()),now)
+  self.assertEqual(target,"2026-11-02T17:30:12+00:00")
+  self.assertEqual(delay,10)
  def test_reject_nonbar_timestamp(self):
   with self.assertRaises(ValueError):next_dispatch_delay(TS+1,BASE)
  def test_reject_future_candle(self):
