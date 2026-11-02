@@ -11,6 +11,8 @@ on:
       - 'cryptex/ops/tests/test_market_depth_pilot.py'
       - 'cryptex/ops/forward_threshold_pilot.py'
       - 'cryptex/ops/tests/test_forward_threshold_pilot.py'
+      - 'cryptex/ops/sampling_clock.py'
+      - 'cryptex/ops/tests/test_sampling_clock.py'
   schedule:
     - cron: '8,23,38,53 * * * *'
   workflow_dispatch:
@@ -51,6 +53,8 @@ jobs:
             cryptex/ops/tests/test_market_depth_pilot.py
             cryptex/ops/forward_threshold_pilot.py
             cryptex/ops/tests/test_forward_threshold_pilot.py
+            cryptex/ops/sampling_clock.py
+            cryptex/ops/tests/test_sampling_clock.py
       - name: Checkout independent five-exchange research outputs
         if: steps.time_gate.outputs.enabled == 'true'
         uses: actions/checkout@v4
@@ -68,18 +72,26 @@ jobs:
           python3 -m py_compile cryptex/ops/market_depth_pilot.py
           python3 -m unittest discover -s cryptex/ops/tests -p test_market_depth_pilot.py -v
           python3 -m unittest discover -s cryptex/ops/tests -p test_forward_threshold_pilot.py -v
-      - name: Install public CCXT adapter
+          python3 -m unittest discover -s cryptex/ops/tests -p test_sampling_clock.py -v
+      - name: Check minimum real market-snapshot spacing
         if: steps.time_gate.outputs.enabled == 'true'
+        id: sampling_gate
+        run: |
+          python3 cryptex/ops/sampling_clock.py \
+            --report wide-output/cryptex/overnight/data/microstructure_report.json \
+            --output "$GITHUB_OUTPUT"
+      - name: Install public CCXT adapter
+        if: steps.time_gate.outputs.enabled == 'true' && steps.sampling_gate.outputs.collect == 'true'
         run: python3 -m pip install --disable-pip-version-check --quiet 'ccxt==4.5.81'
       - name: Collect 15 real public spot books and 5m candle evidence
-        if: steps.time_gate.outputs.enabled == 'true'
+        if: steps.time_gate.outputs.enabled == 'true' && steps.sampling_gate.outputs.collect == 'true'
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
           python3 cryptex/ops/market_depth_pilot.py --out wide-output/cryptex/overnight/data
       - name: Freeze and advance read-only forward threshold comparison
         id: threshold_study
-        if: steps.time_gate.outputs.enabled == 'true'
+        if: steps.time_gate.outputs.enabled == 'true' && steps.sampling_gate.outputs.collect == 'true'
         continue-on-error: true
         run: |
           python3 cryptex/ops/forward_threshold_pilot.py \
@@ -96,7 +108,7 @@ jobs:
           print("Forward experiment: all promotion locked; no real orders or $210 account writes")
           PY
       - name: Reject imaginary orders and publication of sensitive data
-        if: steps.time_gate.outputs.enabled == 'true'
+        if: steps.time_gate.outputs.enabled == 'true' && steps.sampling_gate.outputs.collect == 'true'
         run: |
           python3 - <<'PY'
           import json,pathlib
@@ -112,7 +124,7 @@ jobs:
           print("No exchange orders, no simulated P&L mutation.")
           PY
       - name: Commit ONLY new market data to separate research branch
-        if: steps.time_gate.outputs.enabled == 'true'
+        if: steps.time_gate.outputs.enabled == 'true' && steps.sampling_gate.outputs.collect == 'true'
         run: |
           cd wide-output
           git config user.name "cryptex-microstructure[bot]"
