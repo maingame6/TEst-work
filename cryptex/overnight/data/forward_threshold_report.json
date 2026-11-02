@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-02T20:06:35.678881+00:00",
+  "at": "2026-11-02T20:37:08.189504+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 1.0254,
+  "holdout_window_days": 1.0466,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,33 +39,33 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 735,
+      "snapshots": 750,
       "stale_or_bad": 4,
-      "entry_censored": 0,
+      "entry_censored": 6,
       "exit_censored": 3,
       "signal_candidates": 549,
-      "gaps": 165,
+      "gaps": 180,
       "gap_too_short": 0,
-      "gap_too_long": 15
+      "gap_too_long": 30
     }
   },
   "book_interval_quality": {
     "distinct_spot_pairs_seen": 15,
-    "observations_saved_since_freeze": 735,
-    "adjacent_observed_transitions": 720,
+    "observations_saved_since_freeze": 750,
+    "adjacent_observed_transitions": 735,
     "continuous_adjacent_transitions": 555,
-    "broken_adjacent_transitions": 165,
+    "broken_adjacent_transitions": 180,
     "too_soon_transitions_since_classification": 0,
-    "too_late_transitions_since_classification": 15,
+    "too_late_transitions_since_classification": 30,
     "older_unclassified_transitions": 150,
-    "continuous_fraction_of_observed_transitions": 0.77083,
+    "continuous_fraction_of_observed_transitions": 0.7551,
     "qualified_momentum_comparisons": 549,
     "invalid_books_seen": 4,
     "meaning": "Pair-by-pair 15-minute experiment feed continuity, NOT how many historical 5m candles were available or genuine execution opportunity. Missing times cannot be backfilled."
   },
-  "pending_entries": 6,
+  "pending_entries": 0,
   "open_hypotheses": 0,
-  "recorded_censored_cohorts": 3,
+  "recorded_censored_cohorts": 9,
   "completed_research_hypotheses": 24,
   "gates": {
     "STRICT_232BPS": {
