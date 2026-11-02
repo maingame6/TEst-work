@@ -287,6 +287,74 @@ def record_market_demo(snap, folder):
     return snap
 
 
+
+def record_pilot_evidence(snap, main, folder):
+    """Prospective $210-bankroll trial; never add another dollar to the ledger.
+
+    Freeze an honest first-observation baseline. Historical V3/V4 results stay
+    untouched. A trial can be observed without being auto-promoted.
+    """
+    from pilot_policy import PILOTS, VERSION as PILOT_VERSION
+    path=Path(folder)/"pilot_baseline.json"
+    fresh=not any(snap["freshness"].get(k, True) for k in
+                  ("main_stale","research_stale","missing_quotes","time_misaligned"))
+    baseline=json.loads(path.read_text()) if path.exists() else None
+    if baseline is None and fresh and all(
+          main.get("last_prices",{}).get(PILOTS[i][0],0)>0 for i in PILOTS):
+        account={a["name"]:a["equity"] for a in snap["agents"]}
+        baseline={"version":PILOT_VERSION,
+                  "started_at":snap["generated_at"],
+                  "first_candle_utc":snap["last_candle_main"],
+                  "starting_210_ledger_equity":snap["balance"],
+                  "starting_wallets":account,
+                  "quote_prices":{sym:main["last_prices"][sym] for sym in
+                                 ("BTC","ETH","SOL")},
+                  "cash_not_created":True}
+        path.write_text(json.dumps(baseline,indent=2,allow_nan=False)+"\\n")
+    pilot={"mode":"PAPER_ONLY","version":PILOT_VERSION,
+           "funding":"three EXISTING $10 wallets within the original $210 simulation",
+           "additional_funds":0.0,"no_real_orders":True,
+           "approved_strategy":False,
+           "status":"OBSERVING" if fresh and baseline else
+                    "STALE_FEED" if not fresh else "AWAITING_FIRST_VALID_CANDLE",
+           "start":baseline["started_at"] if baseline else None,
+           "start_candle_utc":baseline["first_candle_utc"] if baseline else None,
+           "portfolio_equity":snap["balance"],
+           "portfolio_since_pilot_start":(
+              round(snap["balance"]-baseline["starting_210_ledger_equity"],6)
+              if baseline else None),
+           "research_holdout_start_utc":(
+               baseline["first_candle_utc"]+72*3600 if baseline else None),
+           "minimum_for_review":"72h prospective calibration then 7 days + 30 after-cost independent closes per rule; compare BTC/ETH/SOL buy-hold, fees, drawdown",
+           "auto_promote":False,"agents":[]}
+    for i,(symbol,policy,hold_bars) in sorted(PILOTS.items()):
+        name=main["bots"][i]["name"]
+        acc=next(a for a in snap["agents"] if a["name"]==name and a["group"]=="main")
+        closes=[t for t in main.get("trades",[]) if
+                t.get("side")=="SELL" and t.get("pilot_policy")==policy and
+                t.get("pilot_version")==PILOT_VERSION]
+        buys=[t for t in main.get("trades",[]) if
+              t.get("side")=="BUY" and t.get("pilot_policy")==policy and
+              t.get("pilot_version")==PILOT_VERSION]
+        pilot["agents"].append({
+            "name":name,"policy":policy,"market":symbol,
+            "max_hold_bars":hold_bars,"wallet_equity":acc["equity"],
+            "wallet_since_pilot_start":(
+                round(acc["equity"]-baseline["starting_wallets"][name],6)
+                if baseline else None),
+            "active":acc["position"]==symbol,"queued":bool(acc["pending"]),
+            "buys":len(buys),"closed":len(closes),
+            "after_cost_wins":sum(float(t.get("pnl") or 0)>0 for t in closes),
+            "realized_after_cost":round(sum(float(t.get("pnl") or 0)
+                                             for t in closes),6),
+            "trade_costs_included":True,
+        })
+    snap["pilot_evidence"]=pilot
+    (Path(folder)/"pilot_report.json").write_text(
+        json.dumps(pilot,indent=2,allow_nan=False)+"\\n")
+    return snap
+
+
 def store(main, research, data_dir, at):
     folder = Path(data_dir)
     folder.mkdir(parents=True, exist_ok=True)
@@ -302,6 +370,11 @@ def store(main, research, data_dir, at):
         snap["market_demo"] = {"mode": "PAPER_ONLY", "status": "ERROR",
             "excluded_from_competition_210": True, "no_real_orders": True,
             "error": type(exc).__name__}
+    try:
+        snap = record_pilot_evidence(snap, main, folder)
+    except (ValueError, TypeError, KeyError, OSError, csv.Error) as exc:
+        snap["pilot_evidence"]={"mode":"PAPER_ONLY","status":"REPORT_ERROR",
+            "auto_promote":False,"error":type(exc).__name__}
     (folder / 'portfolio_report.json').write_text(json.dumps(snap, indent=2, allow_nan=False) + '\n')
     nights_file.write_text(json.dumps(nights, indent=2, allow_nan=False) + '\n')
     csv_file = folder / 'combined_equity.csv'
