@@ -151,4 +151,27 @@ class ArchiveIntegrity(unittest.TestCase):
             with self.assertRaises(ValueError):
                 s.append_archive(path,[("BTC",a)],before)
 
+class HourlyDuplicateRun(unittest.TestCase):
+    def test_repeat_run_does_not_change_evidence(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            bars=candles()
+            # Freeze clock to the bar's actual completed-hour publication period.
+            earlier=s.time.time
+            s.time.time=lambda:now_for(bars)
+            try:
+                first=s.run(directory,fetch=lambda pair:bars)
+                self.assertEqual(len(first["updated_symbols"]),12)
+                file=Path(directory)/"strategy_lab_state.json"
+                archive=Path(directory)/"observed_hours.csv"
+                evidence_before=file.read_bytes()
+                archive_before=archive.read_bytes()
+                second=s.run(directory,fetch=lambda pair:bars)
+                self.assertEqual(second["updated_symbols"],[])
+                self.assertEqual(second["skipped_reason"],"NO_NEW_COMPLETED_HOURLY_CANDLE")
+                self.assertEqual(file.read_bytes(),evidence_before)
+                self.assertEqual(archive.read_bytes(),archive_before)
+            finally:
+                s.time.time=earlier
+
 if __name__=="__main__":unittest.main()
