@@ -124,6 +124,64 @@ class PaperOnlySafetyTests(unittest.TestCase):
         fs={sym:dict(x) for sym in ("BTC","ETH","SOL","BNB")}
         self.assertIsNone(R.signal(0,fs,{}))
 
+    def test_new_pilot_entries_use_original_wallets_and_not_added_balance(self):
+        from pilot_policy import PILOTS, VERSION, idea, queued_eligible
+        self.assertEqual(set(PILOTS),(6,7,8))
+        st=R.init()
+        self.assertEqual(sum(b["cash"] for b in st["bots"]),100.)
+        x={"price":100.,"ret8":.003,"ret21":-.001,"one":.001,
+           "fast":101.,"slow":100.,"z":-.4,"rsi":55.,"vol":.009,
+           "vr":1.0,"hour_volume":2_000_000.}
+        fs={"BTC":dict(x),"ETH":dict(x),"SOL":dict(x)}
+        for i in sorted(PILOTS):
+            sig=idea(i,fs,st["bots"][i],100000)
+            self.assertIsNotNone(sig)
+            self.assertEqual(sig["pilot_version"],VERSION)
+            self.assertTrue(queued_eligible(i,sig,fs[sig["symbol"]]))
+            order={"side":"BUY",**sig}
+            R.journal(st,st["bots"][i],order,100.,100300,100.)
+            self.assertIsNotNone(st["bots"][i]["position"])
+            self.assertTrue(st["trades"][0]["paper"])
+            self.assertEqual(st["trades"][0]["pilot_policy"],PILOTS[i][1])
+            self.assertFalse("exchange_api_key" in str(st))
+        self.assertEqual(sum(b["cash"] for b in st["bots"]) < 100.,True)
+        self.assertTrue(all(b["cash"]>=0 for b in st["bots"]))
+        self.assertEqual(len(st["bots"]),10)
+
+    def test_pilot_does_not_falsely_count_as_strict_v4(self):
+        from pilot_policy import idea, exit_reason
+        st=R.init();b=st["bots"][6]
+        x={"price":100.,"fast":100.,"slow":99.,"ret8":.001,
+           "ret21":0.,"rsi":53.,"z":0.,"vol":.005,
+           "vr":1.,"hour_volume":2_000_000.}
+        sig=idea(6,{"BTC":x},b,100000)
+        R.journal(st,b,{"side":"BUY",**sig},100.,100300,100.)
+        self.assertIsNone(R.exit_signal(b["position"],6,{"BTC":x},100600))
+        low={**x,"price":90.}
+        self.assertIn("stop",exit_reason(b["position"],{"BTC":low},100900))
+        R.journal(st,b,{"side":"SELL","symbol":"BTC","reason":"paper stop"},90.,101200,100.)
+        self.assertEqual(b["closed"],1)
+        self.assertEqual(b.get("qualified_v4_closed",0),0)
+        self.assertEqual(st["trades"][0]["pilot_policy"],"BTC_PASSIVE_CONTROL")
+        self.assertLess(st["trades"][0]["pnl"],0)
+        self.assertEqual(b["pilot_last_exit_ts"],101200)
+        self.assertIsNone(idea(6,{"BTC":x},b,101500))
+
+    def test_pilot_feed_guards_preserve_original_v4(self):
+        from pilot_policy import eligible, idea, queued_eligible
+        st=R.init()
+        x={"price":100.,"fast":101.,"slow":100.,"ret8":.003,
+           "ret21":0.,"rsi":52.,"z":-.5,"vol":.006,
+           "vr":1.,"hour_volume":2_000_000.}
+        self.assertTrue(eligible(x))
+        sig=idea(6,{"BTC":x},st["bots"][6],100000)
+        self.assertFalse(queued_eligible(6,sig,{**x,"hour_volume":0.}))
+        self.assertFalse(queued_eligible(6,sig,{**x,"price":float("nan")}))
+        self.assertFalse(R.next_candle_only({**sig,"signal_ts":100000},100600))
+        self.assertTrue(R.next_candle_only({**sig,"signal_ts":100000},100300))
+        self.assertIsNone(idea(6,{"BTC":{**x,"vr":0.01}},st["bots"][6],100000))
+        self.assertIsNone(idea(0,{"BTC":x},st["bots"][0],100000))
+
     def test_temporary_daily_pause_can_reset_but_peak_drawdown_cannot(self):
         st=R.init()
         st["daily_date"]="2000-01-01"
