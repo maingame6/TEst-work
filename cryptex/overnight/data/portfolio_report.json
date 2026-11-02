@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-02T08:25:42.545935+00:00",
-  "local_time": "2026-11-02T08:25:42.545935+00:00",
+  "generated_at": "2026-11-02T08:30:51.100607+00:00",
+  "local_time": "2026-11-02T08:30:51.100607+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -231,7 +231,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD UNI",
       "missing_quote": false
     },
     {
@@ -267,7 +267,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD ETH",
       "missing_quote": false
     },
     {
@@ -285,7 +285,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD UNI",
       "missing_quote": false
     },
     {
@@ -303,7 +303,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD ETH",
       "missing_quote": false
     },
     {
@@ -339,7 +339,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD ETH",
       "missing_quote": false
     },
     {
@@ -357,7 +357,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD ETH",
       "missing_quote": false
     },
     {
@@ -393,7 +393,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD PEPE",
+      "last_decision": "HOLD UNI",
       "missing_quote": false
     },
     {
@@ -411,7 +411,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD BTC",
+      "last_decision": "HOLD XRP",
       "missing_quote": false
     }
   ],
@@ -423,8 +423,8 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1793607600,
-  "last_candle_research": 1793607600,
+  "last_candle_main": 1793607900,
+  "last_candle_research": 1793607900,
   "total_open": 0,
   "total_queued": 0,
   "total_completed": 71,
@@ -464,7 +464,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-10-31T20:50:39.562635+00:00",
-  "github_run_id": "41412924861",
+  "github_run_id": "41413536127",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-01",
@@ -492,33 +492,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 78011.2,
+        "current_mid": 78050.1,
         "start": 10.0,
-        "equity": 10.039147,
-        "pnl": 0.039147,
-        "return_pct": 0.3915,
+        "equity": 10.044153,
+        "pnl": 0.044153,
+        "return_pct": 0.4415,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 2284.87,
+        "current_mid": 2288.63,
         "start": 10.0,
-        "equity": 10.096252,
-        "pnl": 0.096252,
-        "return_pct": 0.9625,
+        "equity": 10.112867,
+        "pnl": 0.112867,
+        "return_pct": 1.1287,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 94.15,
+        "current_mid": 94.24,
         "start": 10.0,
-        "equity": 9.736809,
-        "pnl": -0.263191,
-        "return_pct": -2.6319,
+        "equity": 9.746117,
+        "pnl": -0.253883,
+        "return_pct": -2.5388,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
