@@ -1,0 +1,44 @@
+name: CRYPTEX — isolated horizon research verification
+
+# Read-only CI: evaluates a proposed PAPER-only hypothesis branch.
+# NEVER runs the trading runner, changes paper wallets, or pushes results.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-edge-proof-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read isolated hypothesis code, not live paper writer
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-edge-horizon-study-20261102
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate research modules without network or exchange orders
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m py_compile cryptex/overnight/entry_study.py cryptex/overnight/cost_model.py
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_entry_study.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_cost_model.py -v
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0,'cryptex/overnight')
+          import entry_study
+          assert entry_study.HORIZON_BARS == (48,288)
+          assert entry_study.blank()['mode'] == 'PAPER_ONLY'
+          assert entry_study.summarize(entry_study.blank(),'TEST')['horizon_comparisons']['no_auto_promotion']
+          print('PASS: separate 30m/4h/24h study; no live exchange permissions or automatic promotion')
+          PY
