@@ -196,7 +196,7 @@ function drawMarketDemo(text){
  canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);
  const ctx=canvas.getContext("2d");ctx.scale(scale,scale);ctx.clearRect(0,0,width,height);
  if(typeof text!=="string"||!text.trim()){set(info,"New forward-only market history is not published yet. No fabricated historical values.");return}
- const lines=text.trim().split(/\\r?\\n/),h=lines.shift().split(",");
+ const lines=text.trim().split(/\r?\n/),h=lines.shift().split(",");
  const it=h.indexOf("candle_utc"),iv=h.indexOf("demo_usd");
  if(it<0||iv<0){set(info,"Invalid demo record; no chart shown.");return}
  const points=lines.map(l=>{const x=l.split(",");return{t:Number(x[it])*1000,v:Number(x[iv])}}).filter(x=>Number.isFinite(x.t)&&x.t>0&&Number.isFinite(x.v)&&x.v>0);
