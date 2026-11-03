@@ -1,18 +1,27 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793728800,
+  "last_ts": 1793729100,
   "first_ts": 1793488500,
-  "observed_candles": 795,
+  "observed_candles": 796,
   "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1793729100,
+      "observed_move": 0.01540356
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1793728800,
-      "observed_move": 0.00749465
+      "entry_ts": 1793729100,
+      "entry_mid": 3.8761,
+      "exit_ts": 1793730900
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -1436,35 +1445,35 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 683,
-      "liquid_candidates": 6690,
-      "move_below_gate": 6688,
-      "volume_below_gate": 5114,
+      "bars": 684,
+      "liquid_candidates": 6701,
+      "move_below_gate": 6699,
+      "volume_below_gate": 5120,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 683,
-      "liquid_candidates": 6690,
-      "move_below_gate": 6688,
-      "volume_below_gate": 5034,
+      "bars": 684,
+      "liquid_candidates": 6701,
+      "move_below_gate": 6699,
+      "volume_below_gate": 5040,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 683,
-      "liquid_candidates": 6690,
-      "move_below_gate": 6661,
-      "volume_below_gate": 5034,
-      "qualified": 22,
-      "queued": 18
+      "bars": 684,
+      "liquid_candidates": 6701,
+      "move_below_gate": 6671,
+      "volume_below_gate": 5040,
+      "qualified": 23,
+      "queued": 19
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 683,
-      "liquid_candidates": 6690,
-      "move_below_gate": 6311,
-      "volume_below_gate": 4949,
-      "qualified": 171,
+      "bars": 684,
+      "liquid_candidates": 6701,
+      "move_below_gate": 6321,
+      "volume_below_gate": 4955,
+      "qualified": 172,
       "queued": 75
     }
   },
