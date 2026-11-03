@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793735400,
+  "last_ts": 1793735700,
   "first_ts": 1793488500,
-  "observed_candles": 817,
+  "observed_candles": 818,
   "signals": [],
   "open": [],
   "trades": [
@@ -1455,47 +1455,39 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 705,
-      "liquid_candidates": 6890,
-      "move_below_gate": 6888,
-      "volume_below_gate": 5273,
+      "bars": 706,
+      "liquid_candidates": 6900,
+      "move_below_gate": 6898,
+      "volume_below_gate": 5282,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 705,
-      "liquid_candidates": 6890,
-      "move_below_gate": 6888,
-      "volume_below_gate": 5192,
+      "bars": 706,
+      "liquid_candidates": 6900,
+      "move_below_gate": 6898,
+      "volume_below_gate": 5201,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 705,
-      "liquid_candidates": 6890,
-      "move_below_gate": 6860,
-      "volume_below_gate": 5192,
+      "bars": 706,
+      "liquid_candidates": 6900,
+      "move_below_gate": 6870,
+      "volume_below_gate": 5201,
       "qualified": 23,
       "queued": 19
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 705,
-      "liquid_candidates": 6890,
-      "move_below_gate": 6509,
-      "volume_below_gate": 5102,
+      "bars": 706,
+      "liquid_candidates": 6900,
+      "move_below_gate": 6519,
+      "volume_below_gate": 5111,
       "qualified": 172,
       "queued": 75
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1793649000,
-      "entry_ts": 1793649300,
-      "entry_mid": 3.8876,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ETH",
@@ -1977,6 +1969,18 @@
       "gross_return": -0.0094435339,
       "net_return": -0.0300286641,
       "stress_net_return": -0.0348664867
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1793649000,
+      "entry_ts": 1793649300,
+      "exit_ts": 1793735700,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0171828377,
+      "net_return": -0.0376071345,
+      "stress_net_return": -0.0424071588
     }
   ],
   "horizon_censored": 0
