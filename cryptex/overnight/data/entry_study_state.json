@@ -1,10 +1,17 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793736000,
+  "last_ts": 1793736300,
   "first_ts": 1793488500,
-  "observed_candles": 819,
-  "signals": [],
+  "observed_candles": 820,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1793736300,
+      "observed_move": 0.0051476
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -1455,71 +1462,39 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 707,
-      "liquid_candidates": 6911,
-      "move_below_gate": 6909,
-      "volume_below_gate": 5289,
+      "bars": 708,
+      "liquid_candidates": 6922,
+      "move_below_gate": 6920,
+      "volume_below_gate": 5298,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 707,
-      "liquid_candidates": 6911,
-      "move_below_gate": 6909,
-      "volume_below_gate": 5208,
+      "bars": 708,
+      "liquid_candidates": 6922,
+      "move_below_gate": 6920,
+      "volume_below_gate": 5216,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 707,
-      "liquid_candidates": 6911,
-      "move_below_gate": 6881,
-      "volume_below_gate": 5208,
+      "bars": 708,
+      "liquid_candidates": 6922,
+      "move_below_gate": 6892,
+      "volume_below_gate": 5216,
       "qualified": 23,
       "queued": 19
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 707,
-      "liquid_candidates": 6911,
-      "move_below_gate": 6530,
-      "volume_below_gate": 5118,
-      "qualified": 172,
-      "queued": 75
+      "bars": 708,
+      "liquid_candidates": 6922,
+      "move_below_gate": 6540,
+      "volume_below_gate": 5126,
+      "qualified": 173,
+      "queued": 76
     }
   },
   "horizon_open": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "NEAR",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 3.9069,
-      "hold_bars": 288
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "UNI",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 7.0236,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "UNI",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 7.0236,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 0.8716,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "PEPE",
@@ -1989,6 +1964,54 @@
       "gross_return": 0.0173017828,
       "net_return": -0.003839152,
       "stress_net_return": -0.0088075972
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793736300,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0203998055,
+      "net_return": -0.0407572492,
+      "stress_net_return": -0.045541562
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793736300,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0263397688,
+      "net_return": 0.0050110122,
+      "stress_net_return": -1.5741e-06
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793736300,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0263397688,
+      "net_return": 0.0050110122,
+      "stress_net_return": -1.5741e-06
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793736300,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0275355668,
+      "net_return": 0.0061819598,
+      "stress_net_return": 0.0011635334
     }
   ],
   "horizon_censored": 0
