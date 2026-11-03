@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793743500,
+  "last_ts": 1793743800,
   "first_ts": 1793488500,
-  "observed_candles": 844,
+  "observed_candles": 845,
   "signals": [],
   "open": [],
   "trades": [
@@ -1481,34 +1481,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 732,
-      "liquid_candidates": 7138,
-      "move_below_gate": 7136,
-      "volume_below_gate": 5453,
+      "bars": 733,
+      "liquid_candidates": 7149,
+      "move_below_gate": 7147,
+      "volume_below_gate": 5462,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 732,
-      "liquid_candidates": 7138,
-      "move_below_gate": 7136,
-      "volume_below_gate": 5369,
+      "bars": 733,
+      "liquid_candidates": 7149,
+      "move_below_gate": 7147,
+      "volume_below_gate": 5378,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 732,
-      "liquid_candidates": 7138,
-      "move_below_gate": 7108,
-      "volume_below_gate": 5369,
+      "bars": 733,
+      "liquid_candidates": 7149,
+      "move_below_gate": 7119,
+      "volume_below_gate": 5378,
       "qualified": 23,
       "queued": 19
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 732,
-      "liquid_candidates": 7138,
-      "move_below_gate": 6751,
-      "volume_below_gate": 5275,
+      "bars": 733,
+      "liquid_candidates": 7149,
+      "move_below_gate": 6762,
+      "volume_below_gate": 5284,
       "qualified": 175,
       "queued": 77
     }
@@ -1569,14 +1569,6 @@
       "entry_ts": 1793712900,
       "entry_mid": 0.191089,
       "hold_bars": 288
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "NEAR",
-      "signal_ts": 1793729100,
-      "entry_ts": 1793729400,
-      "entry_mid": 3.8659,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -2051,6 +2043,18 @@
       "gross_return": 0.0280100334,
       "net_return": 0.0066465664,
       "stress_net_return": 0.0016258227
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1793729100,
+      "entry_ts": 1793729400,
+      "exit_ts": 1793743800,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0060270571,
+      "net_return": -0.0266831864,
+      "stress_net_return": -0.0315376949
     }
   ],
   "horizon_censored": 0
