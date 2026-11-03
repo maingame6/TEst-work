@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793664000,
+  "last_ts": 1793664300,
   "first_ts": 1793488500,
-  "observed_candles": 579,
+  "observed_candles": 580,
   "signals": [],
   "open": [],
   "trades": [
@@ -935,34 +935,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 467,
-      "liquid_candidates": 4514,
-      "move_below_gate": 4513,
-      "volume_below_gate": 3442,
+      "bars": 468,
+      "liquid_candidates": 4521,
+      "move_below_gate": 4520,
+      "volume_below_gate": 3448,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 467,
-      "liquid_candidates": 4514,
-      "move_below_gate": 4513,
-      "volume_below_gate": 3391,
+      "bars": 468,
+      "liquid_candidates": 4521,
+      "move_below_gate": 4520,
+      "volume_below_gate": 3397,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 467,
-      "liquid_candidates": 4514,
-      "move_below_gate": 4501,
-      "volume_below_gate": 3391,
+      "bars": 468,
+      "liquid_candidates": 4521,
+      "move_below_gate": 4508,
+      "volume_below_gate": 3397,
       "qualified": 10,
       "queued": 9
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 467,
-      "liquid_candidates": 4514,
-      "move_below_gate": 4285,
-      "volume_below_gate": 3341,
+      "bars": 468,
+      "liquid_candidates": 4521,
+      "move_below_gate": 4292,
+      "volume_below_gate": 3347,
       "qualified": 95,
       "queued": 45
     }
@@ -998,23 +998,7 @@
       "signal_ts": 1793649600,
       "entry_ts": 1793649900,
       "entry_mid": 3.9069,
-      "hold_bars": 48
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "NEAR",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 3.9069,
       "hold_bars": 288
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "UNI",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 7.0236,
-      "hold_bars": 48
     },
     {
       "gate": "BALANCED_TEST",
@@ -1030,23 +1014,7 @@
       "signal_ts": 1793649600,
       "entry_ts": 1793649900,
       "entry_mid": 7.0236,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "UNI",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 7.0236,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1793649600,
-      "entry_ts": 1793649900,
-      "entry_mid": 0.8716,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -1109,6 +1077,54 @@
       "gross_return": 0.0025503919,
       "net_return": -0.0182839886,
       "stress_net_return": -0.0231803889
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793664300,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0103662751,
+      "net_return": -0.0309322294,
+      "stress_net_return": -0.0357655454
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793664300,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.008827382,
+      "net_return": -0.0121374431,
+      "stress_net_return": -0.0170644998
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793664300,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.008827382,
+      "net_return": -0.0121374431,
+      "stress_net_return": -0.0170644998
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793649600,
+      "entry_ts": 1793649900,
+      "exit_ts": 1793664300,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0006883892,
+      "net_return": -0.0214554634,
+      "stress_net_return": -0.0263360456
     }
   ],
   "horizon_censored": 0
