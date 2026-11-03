@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793678100,
+  "last_ts": 1793678400,
   "first_ts": 1793488500,
-  "observed_candles": 626,
-  "signals": [
+  "observed_candles": 627,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SUI",
       "signal_ts": 1793678100,
-      "observed_move": 0.00591853
+      "entry_ts": 1793678400,
+      "entry_mid": 0.8647,
+      "exit_ts": 1793680200
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -994,34 +996,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 514,
-      "liquid_candidates": 4894,
-      "move_below_gate": 4893,
-      "volume_below_gate": 3738,
+      "bars": 515,
+      "liquid_candidates": 4900,
+      "move_below_gate": 4899,
+      "volume_below_gate": 3744,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 514,
-      "liquid_candidates": 4894,
-      "move_below_gate": 4893,
-      "volume_below_gate": 3683,
+      "bars": 515,
+      "liquid_candidates": 4900,
+      "move_below_gate": 4899,
+      "volume_below_gate": 3689,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 514,
-      "liquid_candidates": 4894,
-      "move_below_gate": 4880,
-      "volume_below_gate": 3683,
+      "bars": 515,
+      "liquid_candidates": 4900,
+      "move_below_gate": 4886,
+      "volume_below_gate": 3689,
       "qualified": 11,
       "queued": 10
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 514,
-      "liquid_candidates": 4894,
-      "move_below_gate": 4649,
-      "volume_below_gate": 3627,
+      "bars": 515,
+      "liquid_candidates": 4900,
+      "move_below_gate": 4655,
+      "volume_below_gate": 3633,
       "qualified": 101,
       "queued": 49
     }
@@ -1121,6 +1123,14 @@
       "signal_ts": 1793675700,
       "entry_ts": 1793676000,
       "entry_mid": 6.8768,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793678100,
+      "entry_ts": 1793678400,
+      "entry_mid": 0.8647,
       "hold_bars": 48
     }
   ],
