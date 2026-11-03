@@ -453,7 +453,7 @@
   "volume_reference": "v[1]: last 24h base-asset volume; 24h USD turnover is approximately last*base_volume",
   "quote_time_warning": "Kraken ticker endpoint has no exchange timestamp for each last trade; observed_at marks local retrieval, not time of last trade.",
   "risk_note": "Spread and volume are observations, not a simulated market-maker fill, trade signal, or evidence of an exploitable edge.",
-  "status": "OK",
+  "status": "UNAVAILABLE",
   "rows": [
     {
       "symbol": "AAVE",
@@ -1530,5 +1530,7 @@
     "total_crypto_24h_volume_usd": 68829080672.10397,
     "bitcoin_market_cap_dominance_pct": 59.219017919299276,
     "global_market_cap_change_24h_pct": -2.715515735527468
-  }
+  },
+  "last_failure_at": "2026-11-03T14:56:11.792887+00:00",
+  "failure_reason": "TimeoutError: The read operation timed out"
 }

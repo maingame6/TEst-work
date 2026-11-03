@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-03T14:51:07.511569+00:00",
+  "generated_at": "2026-11-03T14:56:11.792887+00:00",
   "mode": "PAPER_ONLY",
-  "status": "PASS",
+  "status": "WARNING",
   "audited_accounts": 21,
   "starting_paper_usd": 210,
-  "estimated_paper_equity": 207.600992,
-  "gross_paper_equity": 207.767,
-  "estimated_exit_cost": 0.166008,
+  "estimated_paper_equity": 207.575905,
+  "gross_paper_equity": 207.741647,
+  "estimated_exit_cost": 0.165742,
   "checks": [
     {
       "check": "All systems remain PAPER_ONLY; real-money execution disabled",
@@ -61,7 +61,9 @@
       "passed": true
     }
   ],
-  "warnings": [],
+  "warnings": [
+    "Market radar unavailable; don't call cached quotes fresh"
+  ],
   "no_real_orders": true,
   "note": "Only accounting failures block publishing. Source staleness is explicit; neither profit nor future market performance can be guaranteed."
 }
