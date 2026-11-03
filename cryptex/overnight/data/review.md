@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-03T05:30:51.185464+00:00
+Generated: 2026-11-03T05:35:57.821068+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 98.43; initial USD 100.00; change USD -1.57.
-Closed trades: 43; wins 5; losses/breakevens 38.
+Paper equity: USD 98.31; initial USD 100.00; change USD -1.69.
+Closed trades: 44; wins 5; losses/breakevens 39.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | BTC | 4 | 26 | 0 |
-| HOUSE | HOLD | BTC | 24 | 6 | 0 |
-| SPY | HOLD | SOL | 4 | 29 | 0 |
-| MEME HUNTER | HOLD | DOGE | 4 | 25 | 1 |
-| BREAKOUT | HOLD | BTC | 4 | 26 | 0 |
-| CONTRARIAN | HOLD | BTC | 24 | 6 | 0 |
-| ROTATOR | HOLD | BTC | 4 | 26 | 0 |
-| VORTEX | SELL | ETH | 4 | 20 | 0 |
-| FRACTAL | HOLD | SOL | 4 | 29 | 0 |
-| SHOCKWAVE | HOLD | DOGE | 4 | 25 | 1 |
+| GAMBLER | HOLD | BTC | 5 | 28 | 0 |
+| HOUSE | HOLD | BTC | 33 | 0 | 0 |
+| SPY | HOLD | SOL | 8 | 31 | 0 |
+| MEME HUNTER | HOLD | DOGE | 7 | 26 | 1 |
+| BREAKOUT | HOLD | BTC | 5 | 28 | 0 |
+| CONTRARIAN | HOLD | BTC | 33 | 0 | 0 |
+| ROTATOR | HOLD | BTC | 5 | 28 | 0 |
+| VORTEX | SELL | ETH | 4 | 24 | 0 |
+| FRACTAL | HOLD | SOL | 8 | 31 | 0 |
+| SHOCKWAVE | HOLD | DOGE | 7 | 26 | 1 |
 
 ## Bot performance
 
@@ -37,7 +37,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | BREAKOUT | 4 | 0 | 4 | 0.0% | -0.1994 | 1.00x |
 | CONTRARIAN | 6 | 0 | 6 | 0.0% | -0.0463 | 1.00x |
 | ROTATOR | 1 | 0 | 1 | 0.0% | -0.1467 | 1.00x |
-| VORTEX | 4 | 0 | 4 | 0.0% | -0.4715 | 1.00x |
+| VORTEX | 5 | 0 | 5 | 0.0% | -0.6723 | 1.00x |
 | FRACTAL | 5 | 0 | 5 | 0.0% | -0.0596 | 1.00x |
 | SHOCKWAVE | 5 | 2 | 3 | 40.0% | -0.0131 | 1.00x |
 
@@ -47,9 +47,9 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 - **RSI normalized**: 4 exits; net USD -0.0356
 - **Time-based exit**: 4 exits; net USD -0.3833
 - **Breakout failed**: 3 exits; net USD -0.1827
+- **PILOT V1 trend turned down; next-candle simulated exit**: 3 exits; net USD -0.5217
 - **Timescales disagree**: 2 exits; net USD -0.0146
 - **Range normalized**: 2 exits; net USD -0.0870
-- **PILOT V1 trend turned down; next-candle simulated exit**: 2 exits; net USD -0.3209
 - **Trend failure**: 1 exits; net USD -0.0072
 - **Volume faded**: 1 exits; net USD -0.0095
 - **Shockwave ended**: 1 exits; net USD -0.0095
