@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-03T18:51:10.552179+00:00
+Generated: 2026-11-03T18:57:25.159423+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 97.77; initial USD 100.00; change USD -2.23.
-Closed trades: 49; wins 5; losses/breakevens 44.
+Paper equity: USD 97.66; initial USD 100.00; change USD -2.34.
+Closed trades: 50; wins 6; losses/breakevens 44.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | BTC | 8 | 13 | 0 |
-| HOUSE | HOLD | BTC | 14 | 7 | 0 |
-| SPY | HOLD | SOL | 13 | 9 | 0 |
-| MEME HUNTER | HOLD | DOGE | 8 | 10 | 1 |
-| BREAKOUT | HOLD | BTC | 8 | 13 | 0 |
-| CONTRARIAN | HOLD | BTC | 14 | 7 | 0 |
-| ROTATOR | HOLD | BTC | 8 | 13 | 0 |
-| VORTEX | HOLD | ETH | 4 | 18 | 0 |
-| FRACTAL | SELL | SOL | 13 | 9 | 0 |
-| SHOCKWAVE | HOLD | DOGE | 8 | 10 | 1 |
+| GAMBLER | HOLD | BTC | 8 | 16 | 0 |
+| HOUSE | HOLD | BTC | 17 | 7 | 0 |
+| SPY | HOLD | SOL | 9 | 18 | 0 |
+| MEME HUNTER | HOLD | DOGE | 8 | 12 | 1 |
+| BREAKOUT | HOLD | BTC | 8 | 16 | 0 |
+| CONTRARIAN | HOLD | BTC | 17 | 7 | 0 |
+| ROTATOR | HOLD | BTC | 8 | 16 | 0 |
+| VORTEX | HOLD | ETH | 4 | 20 | 0 |
+| FRACTAL | SELL | SOL | 9 | 18 | 0 |
+| SHOCKWAVE | HOLD | DOGE | 8 | 12 | 1 |
 
 ## Bot performance
 
@@ -38,7 +38,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | CONTRARIAN | 6 | 0 | 6 | 0.0% | -0.0463 | 1.00x |
 | ROTATOR | 1 | 0 | 1 | 0.0% | -0.1467 | 1.00x |
 | VORTEX | 9 | 0 | 9 | 0.0% | -1.2700 | 1.00x |
-| FRACTAL | 6 | 0 | 6 | 0.0% | -0.2670 | 1.00x |
+| FRACTAL | 7 | 1 | 6 | 14.3% | -0.2583 | 1.00x |
 | SHOCKWAVE | 5 | 2 | 3 | 40.0% | -0.0131 | 1.00x |
 
 ## Where paper trades lost money
@@ -58,6 +58,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 ## Where paper trades made money
 
 - **Exploratory 15-minute observation complete (next-bar fill)**: 5 exits; net USD +0.0132
+- **PILOT V1 fixed holding window reached; next-candle simulated exit**: 1 exits; net USD +0.0087
 
 ## How to interpret the results
 
