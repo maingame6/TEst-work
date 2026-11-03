@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793675700,
+  "last_ts": 1793676000,
   "first_ts": 1793488500,
-  "observed_candles": 618,
-  "signals": [
+  "observed_candles": 619,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "UNI",
       "signal_ts": 1793675700,
-      "observed_move": 0.01197016
+      "entry_ts": 1793676000,
+      "entry_mid": 6.8768,
+      "exit_ts": 1793677800
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -981,34 +983,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 506,
-      "liquid_candidates": 4839,
-      "move_below_gate": 4838,
-      "volume_below_gate": 3690,
+      "bars": 507,
+      "liquid_candidates": 4846,
+      "move_below_gate": 4845,
+      "volume_below_gate": 3695,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 506,
-      "liquid_candidates": 4839,
-      "move_below_gate": 4838,
-      "volume_below_gate": 3635,
+      "bars": 507,
+      "liquid_candidates": 4846,
+      "move_below_gate": 4845,
+      "volume_below_gate": 3640,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 506,
-      "liquid_candidates": 4839,
-      "move_below_gate": 4825,
-      "volume_below_gate": 3635,
+      "bars": 507,
+      "liquid_candidates": 4846,
+      "move_below_gate": 4832,
+      "volume_below_gate": 3640,
       "qualified": 11,
       "queued": 10
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 506,
-      "liquid_candidates": 4839,
-      "move_below_gate": 4599,
-      "volume_below_gate": 3579,
+      "bars": 507,
+      "liquid_candidates": 4846,
+      "move_below_gate": 4606,
+      "volume_below_gate": 3584,
       "qualified": 100,
       "queued": 48
     }
@@ -1101,6 +1103,14 @@
       "entry_ts": 1793665800,
       "entry_mid": 4.824e-06,
       "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793675700,
+      "entry_ts": 1793676000,
+      "entry_mid": 6.8768,
+      "hold_bars": 48
     }
   ],
   "horizon_trades": [
