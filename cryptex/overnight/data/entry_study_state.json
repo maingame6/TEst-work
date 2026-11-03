@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793735700,
+  "last_ts": 1793736000,
   "first_ts": 1793488500,
-  "observed_candles": 818,
+  "observed_candles": 819,
   "signals": [],
   "open": [],
   "trades": [
@@ -1455,55 +1455,39 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 706,
-      "liquid_candidates": 6900,
-      "move_below_gate": 6898,
-      "volume_below_gate": 5282,
+      "bars": 707,
+      "liquid_candidates": 6911,
+      "move_below_gate": 6909,
+      "volume_below_gate": 5289,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 706,
-      "liquid_candidates": 6900,
-      "move_below_gate": 6898,
-      "volume_below_gate": 5201,
+      "bars": 707,
+      "liquid_candidates": 6911,
+      "move_below_gate": 6909,
+      "volume_below_gate": 5208,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 706,
-      "liquid_candidates": 6900,
-      "move_below_gate": 6870,
-      "volume_below_gate": 5201,
+      "bars": 707,
+      "liquid_candidates": 6911,
+      "move_below_gate": 6881,
+      "volume_below_gate": 5208,
       "qualified": 23,
       "queued": 19
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 706,
-      "liquid_candidates": 6900,
-      "move_below_gate": 6519,
-      "volume_below_gate": 5111,
+      "bars": 707,
+      "liquid_candidates": 6911,
+      "move_below_gate": 6530,
+      "volume_below_gate": 5118,
       "qualified": 172,
       "queued": 75
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1793649300,
-      "entry_ts": 1793649600,
-      "entry_mid": 2251.3,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "DOGE",
-      "signal_ts": 1793649300,
-      "entry_ts": 1793649600,
-      "entry_mid": 0.073871,
-      "hold_bars": 288
-    },
     {
       "gate": "BALANCED_TEST",
       "symbol": "NEAR",
@@ -1981,6 +1965,30 @@
       "gross_return": -0.0171828377,
       "net_return": -0.0376071345,
       "stress_net_return": -0.0424071588
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1793649300,
+      "entry_ts": 1793649600,
+      "exit_ts": 1793736000,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0157375738,
+      "net_return": -0.0053708545,
+      "stress_net_return": -0.0103316603
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1793649300,
+      "entry_ts": 1793649600,
+      "exit_ts": 1793736000,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0173017828,
+      "net_return": -0.003839152,
+      "stress_net_return": -0.0088075972
     }
   ],
   "horizon_censored": 0
