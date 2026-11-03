@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-03T16:31:02.151538+00:00",
+  "generated_at": "2026-11-03T17:49:09.205784+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
   "discovered_listing_total": 4224,
   "catalogue_source_listings": 4224,
-  "unique_tested_venue_pairs": 4223,
+  "unique_tested_venue_pairs": 4224,
   "unique_exchange_market_metadata_checked": 4223,
   "unique_ohlcv_requested": 4223,
   "unique_ohlcv_validated_pairs": 3808,
   "markets_with_any_historical_signal": 226,
-  "coverage_pct": 99.976,
-  "batches": 33,
+  "coverage_pct": 100.0,
+  "batches": 34,
   "venues": {
     "kraken": {
       "discovered": 1201,
@@ -55,13 +55,13 @@
     },
     "kucoin": {
       "discovered": 885,
-      "attempted_distinct": 884,
+      "attempted_distinct": 885,
       "metadata_checked_distinct": 884,
       "ohlcv_requested_distinct": 884,
       "validated_ohlcv_distinct": 882,
       "last_attempt_valid": 882,
-      "latest_failed": 2,
-      "next_cursor": 458
+      "latest_failed": 3,
+      "next_cursor": 459
     }
   },
   "strategies": {
@@ -126,11 +126,11 @@
   "fee_limitations": "Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
-    "attempted": 108,
-    "validated": 26,
-    "unavailable": 82
+    "attempted": 1,
+    "validated": 0,
+    "unavailable": 1
   },
-  "latest_unavailable_pairs": 416,
+  "latest_unavailable_pairs": 417,
   "current_spread_snapshots": 33,
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {

@@ -6,7 +6,7 @@
   "coinbase": 493,
   "bitstamp": 32,
   "okx": 42,
-  "kucoin": 458
+  "kucoin": 459
  },
  "seen": {
   "kucoin|0G/USDT": {
@@ -246409,10 +246409,24 @@
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
+  },
+  "kucoin|IDOL/USDT": {
+   "venue": "kucoin",
+   "symbol": "IDOL/USDT",
+   "quote": "USDT",
+   "status": "UNAVAILABLE",
+   "metadata_checked": false,
+   "ohlcv_requested": false,
+   "reason": "VENUE_FAILURE:ExchangeError:kucoin {\"code\":\"429000\",\"msg\":\"Too many requests. System-level rate limit exceeded.\"}",
+   "checked_at": "2026-11-03T17:49:09.205784+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": false,
+   "ever_ohlcv_requested": false
   }
  },
- "scan_count": 33,
- "last_scan": "2026-11-03T16:31:02.151538+00:00",
+ "scan_count": 34,
+ "last_scan": "2026-11-03T17:49:09.205784+00:00",
  "failures": [
   {
    "at": "2026-10-31T23:32:33.646676+00:00",
@@ -246611,11 +246625,17 @@
    "attempted": 108,
    "validated": 26,
    "unavailable": 82
+  },
+  {
+   "at": "2026-11-03T17:49:09.205784+00:00",
+   "attempted": 1,
+   "validated": 0,
+   "unavailable": 1
   }
  ],
  "last_batch": {
-  "attempted": 108,
-  "validated": 26,
-  "unavailable": 82
+  "attempted": 1,
+  "validated": 0,
+  "unavailable": 1
  }
 }
