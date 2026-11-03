@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-03T02:10:53.113225+00:00",
+  "generated_utc": "2026-11-03T02:15:53.044647+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -10,90 +10,90 @@
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 4,
-      "opposition": 28,
+      "opposition": 24,
       "veto": 0,
-      "factor_score": -0.1711
+      "factor_score": -0.1686
     },
     "HOUSE": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 27,
+      "support": 23,
       "opposition": 5,
       "veto": 0,
-      "factor_score": 0.2229
+      "factor_score": 0.2228
     },
     "SPY": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 4,
-      "opposition": 38,
+      "support": 5,
+      "opposition": 28,
       "veto": 0,
-      "factor_score": -0.2362
+      "factor_score": -0.1807
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 4,
-      "opposition": 33,
-      "veto": 2,
-      "factor_score": -0.2129
+      "support": 5,
+      "opposition": 23,
+      "veto": 1,
+      "factor_score": -0.1402
     },
     "BREAKOUT": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 4,
-      "opposition": 28,
+      "opposition": 24,
       "veto": 0,
-      "factor_score": -0.1711
+      "factor_score": -0.1686
     },
     "CONTRARIAN": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 27,
+      "support": 23,
       "opposition": 5,
       "veto": 0,
-      "factor_score": 0.2229
+      "factor_score": 0.2228
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 4,
-      "opposition": 28,
+      "opposition": 24,
       "veto": 0,
-      "factor_score": -0.1711
+      "factor_score": -0.1686
     },
     "VORTEX": {
       "decision": "SELL",
       "symbol": "ETH",
-      "support": 8,
-      "opposition": 26,
+      "support": 9,
+      "opposition": 18,
       "veto": 0,
-      "factor_score": -0.092
+      "factor_score": -0.0484
     },
     "FRACTAL": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 4,
-      "opposition": 38,
+      "support": 5,
+      "opposition": 28,
       "veto": 0,
-      "factor_score": -0.2362
+      "factor_score": -0.1807
     },
     "SHOCKWAVE": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 4,
-      "opposition": 33,
-      "veto": 2,
-      "factor_score": -0.2129
+      "support": 5,
+      "opposition": 23,
+      "veto": 1,
+      "factor_score": -0.1402
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 98.649413,
-  "portfolio_paper_change_usd": -1.350587,
-  "all_time_closed_paper_trades": 42,
+  "current_paper_equity_usd": 98.587166,
+  "portfolio_paper_change_usd": -1.412834,
+  "all_time_closed_paper_trades": 43,
   "all_time_closed_wins": 5,
-  "all_time_closed_losses": 37,
-  "aggregate_realized_pnl_usd": -1.039247,
+  "all_time_closed_losses": 38,
+  "aggregate_realized_pnl_usd": -1.213811,
   "agents": {
     "GAMBLER": {
       "closed": 3,
@@ -187,15 +187,15 @@
       "position_size_multiplier": 1.0
     },
     "VORTEX": {
-      "closed": 3,
+      "closed": 4,
       "wins": 0,
-      "losses": 3,
+      "losses": 4,
       "win_rate": 0.0,
-      "realized_net_usd": -0.296951,
-      "average_profit_usd": -0.098984,
+      "realized_net_usd": -0.471514,
+      "average_profit_usd": -0.117879,
       "average_win_usd": null,
-      "average_loss_usd": -0.098984,
-      "last_20_net_usd": -0.296951,
+      "average_loss_usd": -0.117879,
+      "last_20_net_usd": -0.471514,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -270,8 +270,8 @@
       "net_pnl_usd": -0.383271
     },
     "PILOT V1 trend turned down; next-candle simulated exit": {
-      "count": 1,
-      "net_pnl_usd": -0.146369
+      "count": 2,
+      "net_pnl_usd": -0.320932
     }
   },
   "data_errors_latest": {},

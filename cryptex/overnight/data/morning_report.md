@@ -2,15 +2,15 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-03T02:10:52.850528+00:00 (Europe/Dublin)
+Checked: 2026-11-03T02:15:52.768337+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $208.1959 · P&L $-1.8041 (-0.86%)**
+**Starting paper money $210.00 · Current estimated liquidation $208.2153 · P&L $-1.7847 (-0.85%)**
 
-Realised $-1.2471; unrealised after estimated future sale costs $-0.5570.
-Open: 3; queued: 1; closed: 72; paper fills in current JSON: 147.
+Realised $-1.4217; unrealised after estimated future sale costs $-0.3631.
+Open: 2; queued: 0; closed: 73; paper fills in current JSON: 148.
 
 Overnight status: IN_PROGRESS
 
@@ -20,16 +20,16 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $208.2845 at 2026-11-02T21:01:33.472962+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.0887 as of 2026-11-03T02:10:52.850528+00:00.
-New paper fills since session started: 2.
+Overnight P&L $-0.0693 as of 2026-11-03T02:15:52.768337+00:00.
+New paper fills since session started: 3.
 
 ## Price prediction versus trading costs
 
 Estimated price move needed just to break even on a round trip: **2.122%** (0.80% Kraken Tier 1 taker fee + 0.25% estimated slippage **on each side**).
-Gross-versus-net attribution available on 58 of 72 cached closed trades; earlier records are honestly marked unavailable.
-Attributed gross market movement P&L: $+0.021312;
-Attributed fees + slippage drag: $1.155227;
-Attributed net profit/loss: $-1.133915.
+Gross-versus-net attribution available on 59 of 73 cached closed trades; earlier records are honestly marked unavailable.
+Attributed gross market movement P&L: $+0.010871;
+Attributed fees + slippage drag: $1.319349;
+Attributed net profit/loss: $-1.308479.
 Gross winners: 39; after-cost winners: 5; gross winners turned into losses by execution friction: 34.
 Historical older fills were at lower assumed fees; aggregate lifetime return is mixed-policy. V4-only prospective sample is the primary evidence.
 Stress scenario: 0.80% taker fee + 0.50% slippage EACH WAY; break even 2.634%.
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 98.4037 | -1.5963 | -1.0392 | 42 | 3 |
+| Original ten traders | 100.00 | 98.4231 | -1.5769 | -1.2138 | 43 | 2 |
 | Eleven maths/OSS traders | 110.00 | 109.7921 | -0.2079 | -0.2079 | 30 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.8900 | $-0.1100 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.9386 | $-0.0614 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.5010 | $-0.4990 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.8927 | $-0.1073 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.9490 | $-0.0510 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.5124 | $-0.4876 |
 
 ## 21-agent leaderboard
 
@@ -75,13 +75,13 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 16 | GAMBLER | main | 9.8979 | -0.1021 | -0.1021 | 3 | cash |
 | 17 | HOUSE | main | 9.8794 | -0.1206 | -0.1206 | 6 | cash |
 | 18 | BREAKOUT | main | 9.8006 | -0.1994 | -0.1994 | 4 | cash |
-| 19 | FRACTAL | main | 9.7372 | -0.2628 | -0.0596 | 5 | SOL |
-| 20 | ROTATOR | main | 9.6821 | -0.3179 | -0.1467 | 1 | BTC |
-| 21 | VORTEX | main | 9.5204 | -0.4796 | -0.2970 | 3 | ETH |
+| 19 | FRACTAL | main | 9.7464 | -0.2536 | -0.0596 | 5 | SOL |
+| 20 | ROTATOR | main | 9.6842 | -0.3158 | -0.1467 | 1 | BTC |
+| 21 | VORTEX | main | 9.5285 | -0.4715 | -0.4715 | 4 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793671500 / 1793671500
+Latest main/shadow candle timestamps: 1793671800 / 1793671800
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
