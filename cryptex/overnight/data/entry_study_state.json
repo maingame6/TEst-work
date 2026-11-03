@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793722800,
+  "last_ts": 1793723100,
   "first_ts": 1793488500,
-  "observed_candles": 775,
+  "observed_candles": 776,
   "signals": [],
   "open": [],
   "trades": [
@@ -1416,34 +1416,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 663,
-      "liquid_candidates": 6460,
-      "move_below_gate": 6458,
-      "volume_below_gate": 4927,
+      "bars": 664,
+      "liquid_candidates": 6473,
+      "move_below_gate": 6471,
+      "volume_below_gate": 4939,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 663,
-      "liquid_candidates": 6460,
-      "move_below_gate": 6458,
-      "volume_below_gate": 4849,
+      "bars": 664,
+      "liquid_candidates": 6473,
+      "move_below_gate": 6471,
+      "volume_below_gate": 4861,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 663,
-      "liquid_candidates": 6460,
-      "move_below_gate": 6431,
-      "volume_below_gate": 4849,
+      "bars": 664,
+      "liquid_candidates": 6473,
+      "move_below_gate": 6444,
+      "volume_below_gate": 4861,
       "qualified": 22,
       "queued": 18
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 663,
-      "liquid_candidates": 6460,
-      "move_below_gate": 6090,
-      "volume_below_gate": 4768,
+      "bars": 664,
+      "liquid_candidates": 6473,
+      "move_below_gate": 6103,
+      "volume_below_gate": 4780,
       "qualified": 169,
       "queued": 73
     }
@@ -1551,14 +1551,6 @@
       "signal_ts": 1793708400,
       "entry_ts": 1793708700,
       "entry_mid": 0.165062,
-      "hold_bars": 48
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "XLM",
-      "signal_ts": 1793708400,
-      "entry_ts": 1793708700,
-      "entry_mid": 0.165062,
       "hold_bars": 288
     },
     {
@@ -1567,31 +1559,7 @@
       "signal_ts": 1793708400,
       "entry_ts": 1793708700,
       "entry_mid": 0.8932,
-      "hold_bars": 48
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "SUI",
-      "signal_ts": 1793708400,
-      "entry_ts": 1793708700,
-      "entry_mid": 0.8932,
       "hold_bars": 288
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "UNI",
-      "signal_ts": 1793708400,
-      "entry_ts": 1793708700,
-      "entry_mid": 7.2784,
-      "hold_bars": 48
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "PEPE",
-      "signal_ts": 1793708400,
-      "entry_ts": 1793708700,
-      "entry_mid": 4.827e-06,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -1894,6 +1862,54 @@
       "gross_return": -0.0042557957,
       "net_return": -0.0249487343,
       "stress_net_return": -0.0298118935
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "XLM",
+      "signal_ts": 1793708400,
+      "entry_ts": 1793708700,
+      "exit_ts": 1793723100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0104263852,
+      "net_return": -0.0309910904,
+      "stress_net_return": -0.0358241129
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "SUI",
+      "signal_ts": 1793708400,
+      "entry_ts": 1793708700,
+      "exit_ts": 1793723100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0022391402,
+      "net_return": -0.0229739876,
+      "stress_net_return": -0.0278469961
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793708400,
+      "entry_ts": 1793708700,
+      "exit_ts": 1793723100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.002280721,
+      "net_return": -0.0185480554,
+      "stress_net_return": -0.0234431386
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1793708400,
+      "entry_ts": 1793708700,
+      "exit_ts": 1793723100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.0122229128,
+      "net_return": -0.0088124761,
+      "stress_net_return": -0.0137561164
     }
   ],
   "horizon_censored": 0
