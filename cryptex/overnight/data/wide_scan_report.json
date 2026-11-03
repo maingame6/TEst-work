@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T08:40:02.364991+00:00",
+  "generated_at": "2026-11-03T09:28:33.154513+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
@@ -8,30 +8,30 @@
   "unique_tested_venue_pairs": 4223,
   "unique_exchange_market_metadata_checked": 4223,
   "unique_ohlcv_requested": 4223,
-  "unique_ohlcv_validated_pairs": 3798,
-  "markets_with_any_historical_signal": 226,
+  "unique_ohlcv_validated_pairs": 3803,
+  "markets_with_any_historical_signal": 223,
   "coverage_pct": 100.0,
-  "batches": 31,
+  "batches": 32,
   "venues": {
     "kraken": {
       "discovered": 1201,
       "attempted_distinct": 1201,
       "metadata_checked_distinct": 1201,
       "ohlcv_requested_distinct": 1201,
-      "validated_ohlcv_distinct": 1196,
-      "last_attempt_valid": 1196,
-      "latest_failed": 5,
-      "next_cursor": 216
+      "validated_ohlcv_distinct": 1197,
+      "last_attempt_valid": 1197,
+      "latest_failed": 4,
+      "next_cursor": 227
     },
     "coinbase": {
       "discovered": 865,
       "attempted_distinct": 865,
       "metadata_checked_distinct": 865,
       "ohlcv_requested_distinct": 865,
-      "validated_ohlcv_distinct": 447,
-      "last_attempt_valid": 446,
-      "latest_failed": 419,
-      "next_cursor": 323
+      "validated_ohlcv_distinct": 451,
+      "last_attempt_valid": 450,
+      "latest_failed": 415,
+      "next_cursor": 408
     },
     "bitstamp": {
       "discovered": 234,
@@ -41,7 +41,7 @@
       "validated_ohlcv_distinct": 234,
       "last_attempt_valid": 234,
       "latest_failed": 0,
-      "next_cursor": 22
+      "next_cursor": 27
     },
     "okx": {
       "discovered": 1039,
@@ -51,7 +51,7 @@
       "validated_ohlcv_distinct": 1039,
       "last_attempt_valid": 1039,
       "latest_failed": 0,
-      "next_cursor": 36
+      "next_cursor": 39
     },
     "kucoin": {
       "discovered": 884,
@@ -61,16 +61,16 @@
       "validated_ohlcv_distinct": 882,
       "last_attempt_valid": 882,
       "latest_failed": 2,
-      "next_cursor": 448
+      "next_cursor": 453
     }
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 361,
+      "historical_samples": 351,
       "net_winners": 25,
       "gross_up_net_down": 114,
-      "weighted_mean_net_pct": -2.546421,
-      "markets_with_samples": 175
+      "weighted_mean_net_pct": -2.548755,
+      "markets_with_samples": 168
     },
     "cost_aware_momentum": {
       "historical_samples": 80,
@@ -127,15 +127,15 @@
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
     "attempted": 109,
-    "validated": 32,
-    "unavailable": 77
+    "validated": 26,
+    "unavailable": 83
   },
-  "latest_unavailable_pairs": 426,
-  "current_spread_snapshots": 31,
+  "latest_unavailable_pairs": 421,
+  "current_spread_snapshots": 32,
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {
-    "markets_observed": 242,
-    "forward_observations": 468,
+    "markets_observed": 247,
+    "forward_observations": 494,
     "completed": 0,
     "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution."
   }
