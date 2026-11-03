@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-03T01:41:35.268125+00:00",
+  "at": "2026-11-03T01:56:50.018455+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 1.258,
+  "holdout_window_days": 1.2686,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,11 +39,11 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 1050,
+      "snapshots": 1065,
       "stale_or_bad": 10,
       "entry_censored": 6,
       "exit_censored": 3,
-      "signal_candidates": 837,
+      "signal_candidates": 852,
       "gaps": 180,
       "gap_too_short": 0,
       "gap_too_long": 30
@@ -51,15 +51,15 @@
   },
   "book_interval_quality": {
     "distinct_spot_pairs_seen": 15,
-    "observations_saved_since_freeze": 1050,
-    "adjacent_observed_transitions": 1035,
-    "continuous_adjacent_transitions": 855,
+    "observations_saved_since_freeze": 1065,
+    "adjacent_observed_transitions": 1050,
+    "continuous_adjacent_transitions": 870,
     "broken_adjacent_transitions": 180,
     "too_soon_transitions_since_classification": 0,
     "too_late_transitions_since_classification": 30,
     "older_unclassified_transitions": 150,
-    "continuous_fraction_of_observed_transitions": 0.82609,
-    "qualified_momentum_comparisons": 837,
+    "continuous_fraction_of_observed_transitions": 0.82857,
+    "qualified_momentum_comparisons": 852,
     "invalid_books_seen": 10,
     "meaning": "Pair-by-pair 15-minute experiment feed continuity, NOT how many historical 5m candles were available or genuine execution opportunity. Missing times cannot be backfilled."
   },
