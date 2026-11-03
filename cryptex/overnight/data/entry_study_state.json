@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793727000,
+  "last_ts": 1793727300,
   "first_ts": 1793488500,
-  "observed_candles": 789,
+  "observed_candles": 790,
   "signals": [],
   "open": [
     {
@@ -1425,34 +1425,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 677,
-      "liquid_candidates": 6623,
-      "move_below_gate": 6621,
-      "volume_below_gate": 5056,
+      "bars": 678,
+      "liquid_candidates": 6634,
+      "move_below_gate": 6632,
+      "volume_below_gate": 5064,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 677,
-      "liquid_candidates": 6623,
-      "move_below_gate": 6621,
-      "volume_below_gate": 4977,
+      "bars": 678,
+      "liquid_candidates": 6634,
+      "move_below_gate": 6632,
+      "volume_below_gate": 4984,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 677,
-      "liquid_candidates": 6623,
-      "move_below_gate": 6594,
-      "volume_below_gate": 4977,
+      "bars": 678,
+      "liquid_candidates": 6634,
+      "move_below_gate": 6605,
+      "volume_below_gate": 4984,
       "qualified": 22,
       "queued": 18
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 677,
-      "liquid_candidates": 6623,
-      "move_below_gate": 6247,
-      "volume_below_gate": 4893,
+      "bars": 678,
+      "liquid_candidates": 6634,
+      "move_below_gate": 6257,
+      "volume_below_gate": 4900,
       "qualified": 170,
       "queued": 74
     }
@@ -1569,14 +1569,6 @@
       "entry_ts": 1793708700,
       "entry_mid": 0.8932,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ADA",
-      "signal_ts": 1793712600,
-      "entry_ts": 1793712900,
-      "entry_mid": 0.191089,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -1923,6 +1915,18 @@
       "gross_return": -0.0030714615,
       "net_return": -0.0237890122,
       "stress_net_return": -0.0286579556
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1793712600,
+      "entry_ts": 1793712900,
+      "exit_ts": 1793727300,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0072165326,
+      "net_return": -0.027847943,
+      "stress_net_return": -0.0326966421
     }
   ],
   "horizon_censored": 0
