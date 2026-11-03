@@ -2,19 +2,19 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-11-03T21:55:42.284729+00:00; scanning cycles: 35.
+Last batch: 2026-11-03T23:16:34.403413+00:00; scanning cycles: 36.
 Discovered: 4228 distinct venue/pair listings.
-Selected in scan batches: **4224**.
-Checked against exchange metadata: **4224**.
-Real 5m OHLCV requests attempted: **4224**.
-Validated recent closed-candle histories: **3817**.
+Selected in scan batches: **4228**.
+Checked against exchange metadata: **4228**.
+Real 5m OHLCV requests attempted: **4228**.
+Validated recent closed-candle histories: **3821**.
 Venue/pairs producing historical strategy samples: **227**.
 
 | Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |
 |---|---:|---:|---:|---:|
-| kraken | 1204 | 1201 | 1198 | 3 |
+| kraken | 1204 | 1204 | 1201 | 3 |
 | coinbase | 865 | 865 | 463 | 403 |
-| bitstamp | 235 | 234 | 234 | 0 |
+| bitstamp | 235 | 235 | 235 | 0 |
 | okx | 1039 | 1039 | 1039 | 0 |
 | kucoin | 885 | 885 | 883 | 2 |
 
