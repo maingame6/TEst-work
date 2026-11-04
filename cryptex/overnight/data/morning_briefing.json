@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-04T06:20:58.051456+00:00",
+  "generated_at": "2026-11-04T06:26:08.627380+00:00",
   "session": "2026-11-03",
   "session_start": "2026-11-03T21:02:36.819759+00:00",
   "status": "IN_PROGRESS",
-  "session_change": -0.319603,
+  "session_change": -0.335145,
   "paper_only": true,
   "money": {
     "starting": 210,
-    "equity": 206.838868,
-    "net_pnl": -3.161132,
+    "equity": 206.823326,
+    "net_pnl": -3.176674,
     "realised": -2.7993,
-    "unrealised": -0.361832,
+    "unrealised": -0.377374,
     "main": {
       "starting": 100.0,
-      "equity": 97.046749,
-      "gross_equity": 97.291838,
-      "pnl": -2.953251,
+      "equity": 97.031207,
+      "gross_equity": 97.276131,
+      "pnl": -2.968793,
       "realised": -2.591419,
       "closed": 52,
       "wins": 6,
@@ -58,7 +58,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD PEPE"
+      "decision": "HOLD XRP"
     },
     {
       "name": "HUMMINGBOT_FRICTION",
@@ -123,7 +123,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "GEOMETRIC_DIVERSITY",
@@ -136,7 +136,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "NAUTILUS_REGIME",
@@ -149,7 +149,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "GRAPH_COHERENCE",
@@ -162,7 +162,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "QLIB_STYLE",
@@ -175,7 +175,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "FREQTRADE_STYLE",
@@ -214,7 +214,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "CONTRARIAN",
@@ -284,8 +284,8 @@
     {
       "name": "ROTATOR",
       "portfolio": "main",
-      "equity": 9.76705992,
-      "all_time_pnl": -0.23294008,
+      "equity": 9.76432445,
+      "all_time_pnl": -0.23567555,
       "all_time_closed": 1,
       "session_closed": 0,
       "session_wins": 0,
@@ -297,8 +297,8 @@
     {
       "name": "FRACTAL",
       "portfolio": "main",
-      "equity": 9.53931515,
-      "all_time_pnl": -0.46068485,
+      "equity": 9.53111398,
+      "all_time_pnl": -0.46888602,
       "all_time_closed": 7,
       "session_closed": 0,
       "session_wins": 0,
@@ -310,8 +310,8 @@
     {
       "name": "VORTEX",
       "portfolio": "main",
-      "equity": 8.27635556,
-      "all_time_pnl": -1.72364444,
+      "equity": 8.27175018,
+      "all_time_pnl": -1.72824982,
       "all_time_closed": 11,
       "session_closed": 1,
       "session_wins": 0,
@@ -380,60 +380,46 @@
       "change_pct": 4.2463
     },
     {
-      "symbol": "PEPE",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 4.842e-06,
-      "latest": 4.943e-06,
-      "change_pct": 2.0859
-    },
-    {
       "symbol": "NEAR",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 3.8294,
-      "latest": 3.9058,
-      "change_pct": 1.9951
+      "latest": 3.9182,
+      "change_pct": 2.3189
     },
     {
-      "symbol": "UNI",
+      "symbol": "PEPE",
       "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 7.2217,
-      "latest": 7.3214,
-      "change_pct": 1.3806
+      "start": 4.842e-06,
+      "latest": 4.942e-06,
+      "change_pct": 2.0653
     },
     {
       "symbol": "AAVE",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 127.35,
-      "latest": 128.77,
-      "change_pct": 1.115
+      "latest": 128.95,
+      "change_pct": 1.2564
+    },
+    {
+      "symbol": "UNI",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 7.2217,
+      "latest": 7.3119,
+      "change_pct": 1.249
     },
     {
       "symbol": "WIF",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 0.1717,
-      "latest": 0.1728,
-      "change_pct": 0.6407
-    },
-    {
-      "symbol": "TON",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 1.172,
-      "latest": 1.177,
-      "change_pct": 0.4266
+      "latest": 0.1729,
+      "change_pct": 0.6989
     },
     {
       "symbol": "AVAX",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 8.528,
-      "latest": 8.552,
-      "change_pct": 0.2814
-    },
-    {
-      "symbol": "SHIB",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 4.624e-06,
-      "latest": 4.633e-06,
-      "change_pct": 0.1946
+      "latest": 8.561,
+      "change_pct": 0.387
     },
     {
       "symbol": "FLOKI",
@@ -443,106 +429,120 @@
       "change_pct": 0.1785
     },
     {
-      "symbol": "DOT",
+      "symbol": "SHIB",
       "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 0.9413,
-      "latest": 0.942,
-      "change_pct": 0.0744
+      "start": 4.624e-06,
+      "latest": 4.629e-06,
+      "change_pct": 0.1081
     },
     {
-      "symbol": "ETH",
+      "symbol": "TON",
       "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 2288.12,
-      "latest": 2289.5,
-      "change_pct": 0.0603
-    },
-    {
-      "symbol": "BTC",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 77771.9,
-      "latest": 77693.5,
-      "change_pct": -0.1008
-    },
-    {
-      "symbol": "XLM",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 0.162713,
-      "latest": 0.162489,
-      "change_pct": -0.1377
-    },
-    {
-      "symbol": "BNB",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 699.28,
-      "latest": 698.05,
-      "change_pct": -0.1759
-    },
-    {
-      "symbol": "ADA",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 0.190182,
-      "latest": 0.189704,
-      "change_pct": -0.2513
+      "start": 1.172,
+      "latest": 1.173,
+      "change_pct": 0.0853
     },
     {
       "symbol": "BCH",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 274.82,
-      "latest": 273.71,
-      "change_pct": -0.4039
+      "latest": 275.0,
+      "change_pct": 0.0655
     },
     {
-      "symbol": "XRP",
+      "symbol": "ETH",
       "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 1.278,
-      "latest": 1.27281,
-      "change_pct": -0.4061
+      "start": 2288.12,
+      "latest": 2288.13,
+      "change_pct": 0.0004
+    },
+    {
+      "symbol": "DOT",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 0.9413,
+      "latest": 0.9413,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "BNB",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 699.28,
+      "latest": 698.35,
+      "change_pct": -0.133
+    },
+    {
+      "symbol": "BTC",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 77771.9,
+      "latest": 77666.4,
+      "change_pct": -0.1357
+    },
+    {
+      "symbol": "ADA",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 0.190182,
+      "latest": 0.189812,
+      "change_pct": -0.1946
+    },
+    {
+      "symbol": "XLM",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 0.162713,
+      "latest": 0.162279,
+      "change_pct": -0.2667
     },
     {
       "symbol": "TRX",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 0.323367,
-      "latest": 0.321935,
-      "change_pct": -0.4428
+      "latest": 0.322337,
+      "change_pct": -0.3185
     },
     {
-      "symbol": "LTC",
+      "symbol": "XRP",
       "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 54.49,
-      "latest": 54.15,
-      "change_pct": -0.624
+      "start": 1.278,
+      "latest": 1.27211,
+      "change_pct": -0.4609
     },
     {
       "symbol": "SUI",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 0.8957,
-      "latest": 0.8892,
-      "change_pct": -0.7257
+      "latest": 0.89,
+      "change_pct": -0.6364
     },
     {
-      "symbol": "LINK",
+      "symbol": "LTC",
       "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 11.08694,
-      "latest": 10.99758,
-      "change_pct": -0.806
-    },
-    {
-      "symbol": "SOL",
-      "since": "2026-11-03T21:02:36.819759+00:00",
-      "start": 93.5,
-      "latest": 92.7,
-      "change_pct": -0.8556
+      "start": 54.49,
+      "latest": 54.12,
+      "change_pct": -0.679
     },
     {
       "symbol": "DOGE",
       "since": "2026-11-03T21:02:36.819759+00:00",
       "start": 0.0752073,
-      "latest": 0.0744218,
-      "change_pct": -1.0444
+      "latest": 0.0745352,
+      "change_pct": -0.8937
+    },
+    {
+      "symbol": "LINK",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 11.08694,
+      "latest": 10.98229,
+      "change_pct": -0.9439
+    },
+    {
+      "symbol": "SOL",
+      "since": "2026-11-03T21:02:36.819759+00:00",
+      "start": 93.5,
+      "latest": 92.6,
+      "change_pct": -0.9626
     }
   ],
   "equity_curve": {
-    "samples": 113,
+    "samples": 114,
     "low": 206.465273,
     "high": 207.158471,
     "observed_drawdown_pct": -0.3346,
@@ -554,33 +554,33 @@
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 76586.0,
-      "current_mid": 77693.5,
+      "current_mid": 77666.4,
       "start": 10.0,
-      "equity": 9.998263,
-      "pnl": -0.001737,
-      "return_pct": -0.0174,
+      "equity": 9.994775,
+      "pnl": -0.005225,
+      "return_pct": -0.0522,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "ETH": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 2230.44,
-      "current_mid": 2289.5,
+      "current_mid": 2288.13,
       "start": 10.0,
-      "equity": 10.116711,
-      "pnl": 0.116711,
-      "return_pct": 1.1671,
+      "equity": 10.110657,
+      "pnl": 0.110657,
+      "return_pct": 1.1066,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "SOL": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 95.3,
-      "current_mid": 92.7,
+      "current_mid": 92.6,
       "start": 10.0,
-      "equity": 9.586853,
-      "pnl": -0.413147,
-      "return_pct": -4.1315,
+      "equity": 9.576511,
+      "pnl": -0.423489,
+      "return_pct": -4.2349,
       "holding": "buy-and-hold; hypothetical sale costs included"
     }
   },
@@ -928,7 +928,7 @@
     "observed": 71,
     "confirmed": 71,
     "polled_at": "2026-11-04T05:41:06.231085+00:00",
-    "age_minutes": 39.86,
+    "age_minutes": 45.04,
     "sectors": {
       "Majors": {
         "requested": 14,
@@ -1376,15 +1376,78 @@
     "newly_tradable_pairs": 0
   },
   "news": {
-    "last_polled": "2026-11-04T05:26:00.823974+00:00",
+    "last_polled": "2026-11-04T06:26:05.972236+00:00",
     "sources_up": 8,
     "total_sources": 8,
-    "new_items": 38,
+    "new_items": 47,
     "weak_sentiment": {
-      "NEUTRAL": 36,
+      "NEUTRAL": 45,
       "POSITIVE": 2
     },
     "top_items": [
+      {
+        "title": "Bitcoin knocks on $78,000 in V-shaped comeback as midterm election uncertainty fades",
+        "url": "https://www.coindesk.com/markets/2026/11/04/bitcoin-knocks-on-usd78-000-in-v-shaped-comeback-as-midterm-uncertainty-fades",
+        "source": "CRYPTODESK",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Jack Dorsey's Block faces $764 million DOJ settlement as bitcoin profit plunges 50%",
+        "url": "https://www.coindesk.com/markets/2026/11/04/jack-dorsey-s-block-faces-usd764-million-doj-settlement-as-bitcoin-profit-plunges-50",
+        "source": "CRYPTODESK",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Ethereum dev targets 2028 for quantum resistance, a year early",
+        "url": "https://cointelegraph.com/news/ethereum-post-quantum-transition-2028-target?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "COINTELEGRAPH",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Ethereum Rises Despite Six-Day ETF Exodus, With Holders Deep In The Red - Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNNzBVUC1sS0x2WUVCc0hab2dtRWplYUhsMTVFQ2pwT2ZtZFVUQlZyVTdCajF5X2VBNlRjQzkzdHVwYkN4bUlxRk01WkJDSkh3Q1J0aGVOSXUwV3AwUHE4QXpUV3lUbHV5TFZzNW9CNnZ2V2VQLVFQX19xTVFZSkNVbWpwV0FFZ2dlcVpFdW02Y2VDMExxamFpdWsya3QzcUZLZnZ2dmFfRlNvM2pUYzJmOWRxdTFVNFRHZC1TMGR4M3J4NEktRnM0eThuRGZHelFSRDhvbUh3eXhZU004MVlMdnFmMXppLWh5dTRqSDdzM0NLZ2pZTm5RaGhCVi16U2UzdExUdldFVS0?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Cryptocurrencies Price Prediction: Ethereum, Bitcoin & Hyperliquid – Asian Wrap 04 November - FXStreet",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOV1l3OXVoNXBvcjhrOWRPVkZEM09xbWdxVlFuZlNkeXV4X1M3YjMwQjNyZkpSUG1VUzh6Y1dRWEhHWDV1QlZ3VS1RWkhZaF84c3lVdEkyNzM1R3otSjJyN3VvRU5aZjdYVlBzQmlUcnYtcFhmRzRCMGNCdmhhS2FEZ1IxWGZ0LUhxU3dlUWFiRzBLXzQ2R3VmX1BEaVNSOVpwbEFXNGY2QUNtWW0zc0RyY21PelZKMm1lQ2stNzcydzZqWUdTOXQwRUZBUU9QY09YMTlTeGE5VUdETy1FMmc?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin knocks on $78,000 in V-shaped comeback as midterm election uncertainty fades - CoinDesk",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUnlSaG55Rkxpb2V4U2UyXzhYNXNTMjlTcVNWUHhkR1F5d1U0bGNJYUFwdnU5RWFFZ0VTSmQyV21fRG5zc2FLcUFQck1sRmswSlctWGdPM3RrekJpdV9jWnlmSHNvcjE0ZnpwT0xsamk5MHIwLTNYNjJTY1RzWm1mRl9QZ3hHRlUxR0NqLTJ6WTVNYjJOTWJvNlpPZkpIU0N4LWJkQmFKQzFONXRzam5uby1xOHhRNVJQT3BOWjhB?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin price after election night: the $75,740 low - CryptoTicker.io",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5sMnhxcFRybkstX1AxRGhwajN4NmdrQktfMjBpZ1JWNmZHRGZfV2pSaVZLWktGZzFzWUJQU2hTMHZFWFhYZTU0YlR4alJYdkstcDlRX05sRFhweUctN3BxLWRvS3FtT0tydWNFbTU3dHlydEdfd2w0Mw?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "From Gold to Bitcoin: Why the Great Performance Gap of 2026 Signals a Historic Monetary Catch-Up.",
+        "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xngngt/from_gold_to_bitcoin_why_the_great_performance/",
+        "source": "PUBLIC_FORUM",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin Suisse CEO: Switzerland has lost interest in cryptocurrencies",
+        "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xlzmhl/bitcoin_suisse_ceo_switzerland_has_lost_interest/",
+        "source": "PUBLIC_FORUM",
+        "at": "2026-11-04T06:26:05.972236+00:00",
+        "weak_label": "NEUTRAL"
+      },
       {
         "title": "U.S.-sanctioned Moscow Exchange to list bitcoin and Tether’s USDT in December",
         "url": "https://www.coindesk.com/markets/2026/11/04/u-s-sanctioned-moscow-exchange-to-list-bitcoin-and-tether-s-usdt-in-december",
@@ -1405,69 +1468,6 @@
         "source": "CRYPTODESK",
         "at": "2026-11-04T05:26:00.823974+00:00",
         "weak_label": "POSITIVE"
-      },
-      {
-        "title": "Bitcoin briefly sinks to $75,700 as bets on a Democratic sweep rattle markets",
-        "url": "https://www.coindesk.com/markets/2026/11/04/bitcoin-briefly-sinks-to-usd75-700-as-bets-on-a-democratic-sweep-rattle-markets",
-        "source": "CRYPTODESK",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Live updates: Crypto's election gamble falters as Democratic victories usher in a 'blue wave'",
-        "url": "https://www.coindesk.com/tech/2026/11/03/election-2026-coindesk-live-blog",
-        "source": "CRYPTODESK",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Former Sen. Sherrod Brown defeats Jon Husted, dealing a blow to crypto PAC Fairshake",
-        "url": "https://www.theblock.co/news/regulation/2026-11-03-sherrod-brown-defeats-jon-husted-432495",
-        "source": "THE_BLOCK",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Why Bitmine Immersion Technologies Stock Is In Focus After Its Ethereum Buying Spree - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSlh2TXQteC1kdS1DdFFGbldOSGxDQV9BZzlLMzZOeUhtbjdtV1I2bndPX1FpdVhaX2FDU3VZUEd1Y2YybXBTbkdzMDN2VVB6VUwzVHJ1TnFhajEtU0lkdS1Oa1VLWUtIczBwR09lenFZdi1PTk9HcmU2c1JyNlhrUm1zUndLWHk4aEpJRG8xZXNBQ0ZkVnYzYUhNZTdqVDJnME1rdTExTFI?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin briefly sinks to $75,700 as bets on a Democratic sweep rattle markets - CoinDesk",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQamJBY0QtRnVoY3FlMXIyQUNJUk8wWl9xWGpwV2JyNlk4Tm5pTVdCamJqQUROR0plYWZnZjdCT180S3hZVm9UQmctdk1QbjlpLVVNYkphNHVMUHkyWVJZenM3UjlLVWFBaFNXM2h3VmRIaUd6SDljcHEyNjJpSks2bmh6Tk1lajRzeTFrOWNpcm1QdnFoZ3pfcTVhRm10MXVnU3l2VWFaZElrOEV3VUVzVkhlTjBnbEVfMVlBeTB6eEQ?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Democrats Win the House: What It Means for Crypto - CryptoTicker.io",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5uekVrRmc2YzFFOGh0UXAwQ2pwbkViRHcwWGhYNkpfeFRqNFhGZ3Izb096UVM4RDFXYXdYRWh6WDRvTlBWTC1Bb2kzZTJBdENZbGVHVHFPcmg1ZGRUakZhZDVMaUcxZE9wUUpNakpKT21Bd3Y1VUFz?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Top 3 Price Predictions: Bitcoin, Ethereum, Ripple – BTC tests critical support, ETH struggles below resistance, XRP extends losses - FXStreet",
-        "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOTHlNVnBvN2M1X2JUNGZjVXJLTmpvLWFYbkhTVHFQYS1CeGczdVZ6cmtjX0kzWHdPWkF1MXI2VC0yNHM0RU1tU012QnVNSXcxN0JzZ2lpSmp6VzdYbGJzZ2kzSFZHbTRER1pvMEw3UVdkWWtfR0RIVElvZlNxaDNkNUlDdC1MWHNvR3Q0YWllVm9xNWRyU3NCR21kOWp5dnlINWRCYUUweG5OZDVKakhVaE1vMVNybmFqdE1uMTMtOWFpZmVnOFJnR2ZBcDBYTkJRd2k3TUdFVS1XOTlrR2pNZV83eXB5MDZJWjFlUEtNcHdXZERmdzlIZ0dQYmdQMmNEN3hLdl9QRUl2NnVNNHI5a0FR?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Democrats Win the Senate: What It Means for Crypto - CryptoTicker.io",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1JUnM0cFRob1h5WG14Wi1WVXlQWVBkbi1ueW9qNXlrYVVYSEdMZEM5cTlHYk5BVHJoME1kbWpadlBXSjMyaVpCV2tqcTNZR1Z0RmNtbFZTbk1OUnFkWUhWdkNNZlNrVUM5SjU4X1k3aVJUUHM3Zklj?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "U.S.-sanctioned Moscow Exchange to list bitcoin and Tether’s USDT in December - CoinDesk",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZHMtOGFFdnZjeGR3U28tUjZwSkpNVVNwRXZNNmVsRkFvUXF0aDlYcEh0SGNKd2tzWXJkcXhYcjVWanBqNTA2U0tkcE9ab0luZHFWU01JU2IwWThGc3pUWFdkQ0NLcHBrdHZvTGxZVk1zcTBwVHJBTDNJNTdvNDltdEZadmhxTVdHSDF3eV9MT1ZLZmxCdGhuLVhBSDZZcjZzOGNRdjdSNHkwZkREd3E0M2hfZUxyNEpPQmNvNA?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-04T05:26:00.823974+00:00",
-        "weak_label": "NEUTRAL"
       }
     ],
     "feed_errors": []
@@ -1476,63 +1476,63 @@
     "rule_based_review_capacity": 640,
     "latest": {
       "GAMBLER": {
-        "support": 23,
-        "opposition": 10,
+        "support": 22,
+        "opposition": 5,
         "vetoes": 0,
         "action": "HOLD"
       },
       "HOUSE": {
-        "support": 9,
-        "opposition": 24,
+        "support": 8,
+        "opposition": 19,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SPY": {
-        "support": 25,
-        "opposition": 9,
+        "support": 22,
+        "opposition": 6,
         "vetoes": 0,
         "action": "HOLD"
       },
       "MEME HUNTER": {
-        "support": 21,
-        "opposition": 15,
-        "vetoes": 1,
+        "support": 24,
+        "opposition": 7,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "BREAKOUT": {
-        "support": 23,
-        "opposition": 10,
+        "support": 22,
+        "opposition": 5,
         "vetoes": 0,
         "action": "HOLD"
       },
       "CONTRARIAN": {
-        "support": 9,
-        "opposition": 24,
+        "support": 8,
+        "opposition": 19,
         "vetoes": 0,
         "action": "HOLD"
       },
       "ROTATOR": {
-        "support": 23,
-        "opposition": 10,
+        "support": 22,
+        "opposition": 5,
         "vetoes": 0,
         "action": "HOLD"
       },
       "VORTEX": {
         "support": 23,
-        "opposition": 7,
+        "opposition": 10,
         "vetoes": 0,
         "action": "HOLD"
       },
       "FRACTAL": {
-        "support": 25,
-        "opposition": 9,
+        "support": 22,
+        "opposition": 6,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SHOCKWAVE": {
-        "support": 21,
-        "opposition": 15,
-        "vetoes": 1,
+        "support": 24,
+        "opposition": 7,
+        "vetoes": 0,
         "action": "HOLD"
       }
     }
@@ -1545,7 +1545,7 @@
   "health": {
     "trigger": "workflow_dispatch",
     "cron_verified": true,
-    "run_id": "41784835832",
+    "run_id": "41785394174",
     "data": {
       "main_stale": false,
       "research_stale": false,
