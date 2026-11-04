@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-04T07:26:18.286696+00:00",
+  "generated_at": "2026-11-04T07:31:14.350925+00:00",
   "paper_only": true,
   "sample_status": "REVIEW_ONLY",
   "execution": "next observed completed candle only; six-bar exits",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1793776800,
-  "observed_candles": 955,
+  "last_candle_ts": 1793777100,
+  "observed_candles": 956,
   "missed_fills": 0,
   "censored_exits": 1,
   "fees_slippage_per_side_pct": 1.05,
@@ -43,10 +43,10 @@
       "queued": 0,
       "threshold_move_pct": 2.322,
       "diagnostics_since_instrumentation": {
-        "bars": 843,
-        "liquid_candidates": 8529,
-        "move_below_gate": 8527,
-        "volume_below_gate": 6505,
+        "bars": 844,
+        "liquid_candidates": 8541,
+        "move_below_gate": 8539,
+        "volume_below_gate": 6512,
         "qualified": 1,
         "queued": 1
       },
@@ -72,10 +72,10 @@
       "queued": 0,
       "threshold_move_pct": 2.172,
       "diagnostics_since_instrumentation": {
-        "bars": 843,
-        "liquid_candidates": 8529,
-        "move_below_gate": 8526,
-        "volume_below_gate": 6407,
+        "bars": 844,
+        "liquid_candidates": 8541,
+        "move_below_gate": 8538,
+        "volume_below_gate": 6413,
         "qualified": 1,
         "queued": 1
       },
@@ -101,10 +101,10 @@
       "queued": 0,
       "threshold_move_pct": 1.2,
       "diagnostics_since_instrumentation": {
-        "bars": 843,
-        "liquid_candidates": 8529,
-        "move_below_gate": 8470,
-        "volume_below_gate": 6407,
+        "bars": 844,
+        "liquid_candidates": 8541,
+        "move_below_gate": 8482,
+        "volume_below_gate": 6413,
         "qualified": 40,
         "queued": 30
       },
@@ -116,33 +116,33 @@
       "heldout_stress_mean_pct": -3.05535
     },
     "LOW_HURDLE_CONTROL": {
-      "completed": 118,
+      "completed": 119,
       "wins_after_cost": 1,
       "wins_under_stress": 0,
-      "mean_stress_net_pct": -2.77618,
-      "gross_up_but_net_down": 40,
-      "mean_fee_drag_pct": 1.57599,
-      "mean_slippage_drag_pct": 0.49768,
-      "mean_net_pct": -2.28884,
-      "mean_gross_pct": -0.21517,
-      "net_sum_unit_stakes_pct": -270.08253,
+      "mean_stress_net_pct": -2.76962,
+      "gross_up_but_net_down": 41,
+      "mean_fee_drag_pct": 1.57609,
+      "mean_slippage_drag_pct": 0.49771,
+      "mean_net_pct": -2.28224,
+      "mean_gross_pct": -0.20844,
+      "net_sum_unit_stakes_pct": -271.58693,
       "open": 3,
       "queued": 1,
       "threshold_move_pct": 0.5,
       "diagnostics_since_instrumentation": {
-        "bars": 843,
-        "liquid_candidates": 8529,
-        "move_below_gate": 7942,
-        "volume_below_gate": 6300,
-        "qualified": 243,
-        "queued": 110
+        "bars": 844,
+        "liquid_candidates": 8541,
+        "move_below_gate": 7949,
+        "volume_below_gate": 6306,
+        "qualified": 246,
+        "queued": 111
       },
-      "max_compounded_unit_stake_drawdown_pct": 93.51029,
+      "max_compounded_unit_stake_drawdown_pct": 93.60793,
       "heldout_boundary_ts": 1793747700,
-      "heldout_completed": 29,
+      "heldout_completed": 30,
       "heldout_after_cost_wins": 0,
-      "heldout_mean_net_pct": -2.35258,
-      "heldout_stress_mean_pct": -2.83961
+      "heldout_mean_net_pct": -2.32431,
+      "heldout_stress_mean_pct": -2.81148
     }
   },
   "horizon_comparisons": {
@@ -239,8 +239,8 @@
       "LOW_HURDLE_CONTROL": {
         "48": {
           "duration_hours": 4.0,
-          "paired_observations": 29,
-          "heldout_pairs": 6,
+          "paired_observations": 30,
+          "heldout_pairs": 7,
           "heldout_nonoverlap_pairs": 1,
           "heldout_distinct_utc_days": 1,
           "mean_heldout_net_pct": -0.56148,
