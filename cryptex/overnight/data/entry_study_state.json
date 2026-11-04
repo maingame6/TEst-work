@@ -1,10 +1,29 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793767200,
+  "last_ts": 1793767500,
   "first_ts": 1793488500,
-  "observed_candles": 923,
-  "signals": [],
+  "observed_candles": 924,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1793767500,
+      "observed_move": 0.01153759
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793767500,
+      "observed_move": 0.01007326
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1793767500,
+      "observed_move": 0.00782798
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -1715,36 +1734,36 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 811,
-      "liquid_candidates": 8106,
-      "move_below_gate": 8104,
-      "volume_below_gate": 6185,
+      "bars": 812,
+      "liquid_candidates": 8118,
+      "move_below_gate": 8116,
+      "volume_below_gate": 6194,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 811,
-      "liquid_candidates": 8106,
-      "move_below_gate": 8104,
-      "volume_below_gate": 6091,
+      "bars": 812,
+      "liquid_candidates": 8118,
+      "move_below_gate": 8115,
+      "volume_below_gate": 6100,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 811,
-      "liquid_candidates": 8106,
-      "move_below_gate": 8066,
-      "volume_below_gate": 6091,
+      "bars": 812,
+      "liquid_candidates": 8118,
+      "move_below_gate": 8075,
+      "volume_below_gate": 6100,
       "qualified": 28,
       "queued": 22
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 811,
-      "liquid_candidates": 8106,
+      "bars": 812,
+      "liquid_candidates": 8118,
       "move_below_gate": 7609,
-      "volume_below_gate": 5990,
-      "qualified": 202,
-      "queued": 92
+      "volume_below_gate": 5999,
+      "qualified": 205,
+      "queued": 95
     }
   },
   "horizon_open": [
