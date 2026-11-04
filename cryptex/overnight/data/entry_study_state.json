@@ -1,36 +1,51 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793753100,
+  "last_ts": 1793753400,
   "first_ts": 1793488500,
-  "observed_candles": 876,
+  "observed_candles": 877,
   "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1793753400,
+      "observed_move": 0.00557674
+    }
+  ],
+  "open": [
     {
       "gate": "BALANCED_TEST",
       "symbol": "NEAR",
       "signal_ts": 1793753100,
-      "observed_move": 0.0124558
+      "entry_ts": 1793753400,
+      "entry_mid": 3.8331,
+      "exit_ts": 1793755200
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1793753100,
-      "observed_move": 0.0124558
+      "entry_ts": 1793753400,
+      "entry_mid": 3.8331,
+      "exit_ts": 1793755200
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SUI",
       "signal_ts": 1793753100,
-      "observed_move": 0.00740235
+      "entry_ts": 1793753400,
+      "entry_mid": 0.8858,
+      "exit_ts": 1793755200
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "AAVE",
       "signal_ts": 1793753100,
-      "observed_move": 0.005354
+      "entry_ts": 1793753400,
+      "entry_mid": 125.9,
+      "exit_ts": 1793755200
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -1506,36 +1521,36 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 764,
-      "liquid_candidates": 7478,
-      "move_below_gate": 7476,
-      "volume_below_gate": 5683,
+      "bars": 765,
+      "liquid_candidates": 7494,
+      "move_below_gate": 7492,
+      "volume_below_gate": 5697,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 764,
-      "liquid_candidates": 7478,
-      "move_below_gate": 7476,
-      "volume_below_gate": 5595,
+      "bars": 765,
+      "liquid_candidates": 7494,
+      "move_below_gate": 7492,
+      "volume_below_gate": 5608,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 764,
-      "liquid_candidates": 7478,
-      "move_below_gate": 7447,
-      "volume_below_gate": 5595,
+      "bars": 765,
+      "liquid_candidates": 7494,
+      "move_below_gate": 7463,
+      "volume_below_gate": 5608,
       "qualified": 24,
       "queued": 20
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 764,
-      "liquid_candidates": 7478,
-      "move_below_gate": 7080,
-      "volume_below_gate": 5499,
-      "qualified": 178,
-      "queued": 80
+      "bars": 765,
+      "liquid_candidates": 7494,
+      "move_below_gate": 7089,
+      "volume_below_gate": 5512,
+      "qualified": 179,
+      "queued": 81
     }
   },
   "horizon_open": [
@@ -1593,6 +1608,62 @@
       "signal_ts": 1793736300,
       "entry_ts": 1793736600,
       "entry_mid": 3.8095,
+      "hold_bars": 288
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1793753100,
+      "entry_ts": 1793753400,
+      "entry_mid": 3.8331,
+      "hold_bars": 48
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1793753100,
+      "entry_ts": 1793753400,
+      "entry_mid": 3.8331,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1793753100,
+      "entry_ts": 1793753400,
+      "entry_mid": 3.8331,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793753100,
+      "entry_ts": 1793753400,
+      "entry_mid": 0.8858,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793753100,
+      "entry_ts": 1793753400,
+      "entry_mid": 0.8858,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1793753100,
+      "entry_ts": 1793753400,
+      "entry_mid": 125.9,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1793753100,
+      "entry_ts": 1793753400,
+      "entry_mid": 125.9,
       "hold_bars": 288
     }
   ],
