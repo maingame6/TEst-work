@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1793823000; captured candles: 1031.
+Last observed closed candle: 1793823300; captured candles: 1032.
 Missed fills: 0; censored exits: 1.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 2 | 9552 | 7319 | 2 | 1 | -2.3659% | 4.931% |
-| COST_AWARE | 2 | 9551 | 7208 | 2 | 1 | -2.3659% | 4.931% |
-| BALANCED_TEST | 43 | 9492 | 7208 | 32 | 13 | -2.4918% | 58.656% |
-| LOW_HURDLE_CONTROL | 267 | 8883 | 7091 | 125 | 48 | -2.2760% | 95.715% |
+| V4_TAKER_STRICT | 2 | 9564 | 7330 | 2 | 1 | -2.3659% | 4.931% |
+| COST_AWARE | 2 | 9563 | 7219 | 2 | 1 | -2.3659% | 4.931% |
+| BALANCED_TEST | 43 | 9504 | 7219 | 32 | 13 | -2.4918% | 58.656% |
+| LOW_HURDLE_CONTROL | 268 | 8890 | 7101 | 126 | 48 | -2.2760% | 95.715% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -33,9 +33,9 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | V4_TAKER_STRICT | 24h | 0 | 0 | n/a | n/a |
 | COST_AWARE | 4h | 0 | 0 | n/a | n/a |
 | COST_AWARE | 24h | 0 | 0 | n/a | n/a |
-| BALANCED_TEST | 4h | 14 | 2 | -1.341% | +1.083% |
+| BALANCED_TEST | 4h | 15 | 3 | -2.173% | +0.215% |
 | BALANCED_TEST | 24h | 3 | 0 | n/a | n/a |
-| LOW_HURDLE_CONTROL | 4h | 35 | 2 | -0.810% | +1.313% |
+| LOW_HURDLE_CONTROL | 4h | 37 | 3 | -2.609% | -0.130% |
 | LOW_HURDLE_CONTROL | 24h | 7 | 0 | n/a | n/a |
 
 A gate only places a *research candidate*, entered on a later observed candle.
