@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-04T19:31:11.714441+00:00
+Generated: 2026-11-04T19:36:17.112077+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD NEAR |
-| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD BTC |
-| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD NEAR |
-| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD LTC |
-| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD NEAR |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD BCH |
+| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD BCH |
+| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD BCH |
+| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD PEPE |
+| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD BCH |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD LTC |
-| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD NEAR |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD BCH |
+| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD BCH |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD NEAR |
-| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD NEAR |
+| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD BCH |
+| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD BCH |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
