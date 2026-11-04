@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-04T21:41:28.632307+00:00
+Generated: 2026-11-04T21:46:26.495479+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD LTC |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD SUI |
 | FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD BTC |
-| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD ADA |
-| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD ADA |
-| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD ADA |
+| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD XRP |
+| ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD XRP |
+| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD XRP |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD ADA |
-| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD ADA |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD XRP |
+| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD XRP |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD BTC |
-| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD BTC |
+| LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD LTC |
+| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD LTC |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
