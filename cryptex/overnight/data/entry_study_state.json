@@ -1,10 +1,29 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793829900,
+  "last_ts": 1793830200,
   "first_ts": 1793488500,
-  "observed_candles": 1054,
-  "signals": [],
+  "observed_candles": 1055,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1793830200,
+      "observed_move": 0.00755227
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793830200,
+      "observed_move": 0.00629887
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1793830200,
+      "observed_move": 0.00517423
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -2326,36 +2345,36 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 942,
-      "liquid_candidates": 9774,
-      "move_below_gate": 9771,
-      "volume_below_gate": 7499,
+      "bars": 943,
+      "liquid_candidates": 9786,
+      "move_below_gate": 9783,
+      "volume_below_gate": 7509,
       "qualified": 2,
       "queued": 2
     },
     "COST_AWARE": {
-      "bars": 942,
-      "liquid_candidates": 9774,
-      "move_below_gate": 9770,
-      "volume_below_gate": 7388,
+      "bars": 943,
+      "liquid_candidates": 9786,
+      "move_below_gate": 9782,
+      "volume_below_gate": 7398,
       "qualified": 2,
       "queued": 2
     },
     "BALANCED_TEST": {
-      "bars": 942,
-      "liquid_candidates": 9774,
-      "move_below_gate": 9711,
-      "volume_below_gate": 7388,
+      "bars": 943,
+      "liquid_candidates": 9786,
+      "move_below_gate": 9723,
+      "volume_below_gate": 7398,
       "qualified": 43,
       "queued": 32
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 942,
-      "liquid_candidates": 9774,
-      "move_below_gate": 9086,
-      "volume_below_gate": 7266,
-      "qualified": 269,
-      "queued": 127
+      "bars": 943,
+      "liquid_candidates": 9786,
+      "move_below_gate": 9093,
+      "volume_below_gate": 7275,
+      "qualified": 272,
+      "queued": 130
     }
   },
   "horizon_open": [
