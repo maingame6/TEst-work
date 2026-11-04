@@ -1,17 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793774100,
+  "last_ts": 1793774400,
   "first_ts": 1793488500,
-  "observed_candles": 946,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1793774100,
-      "observed_move": 0.00629213
-    }
-  ],
+  "observed_candles": 947,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -44,6 +37,14 @@
       "entry_ts": 1793774100,
       "entry_mid": 5.006e-06,
       "exit_ts": 1793775900
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793774100,
+      "entry_ts": 1793774400,
+      "entry_mid": 0.8945,
+      "exit_ts": 1793776200
     }
   ],
   "trades": [
@@ -1963,34 +1964,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 834,
-      "liquid_candidates": 8419,
-      "move_below_gate": 8417,
-      "volume_below_gate": 6422,
+      "bars": 835,
+      "liquid_candidates": 8434,
+      "move_below_gate": 8432,
+      "volume_below_gate": 6435,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 834,
-      "liquid_candidates": 8419,
-      "move_below_gate": 8416,
-      "volume_below_gate": 6327,
+      "bars": 835,
+      "liquid_candidates": 8434,
+      "move_below_gate": 8431,
+      "volume_below_gate": 6340,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 834,
-      "liquid_candidates": 8419,
-      "move_below_gate": 8362,
-      "volume_below_gate": 6327,
+      "bars": 835,
+      "liquid_candidates": 8434,
+      "move_below_gate": 8377,
+      "volume_below_gate": 6340,
       "qualified": 38,
       "queued": 29
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 834,
-      "liquid_candidates": 8419,
-      "move_below_gate": 7840,
-      "volume_below_gate": 6222,
+      "bars": 835,
+      "liquid_candidates": 8434,
+      "move_below_gate": 7855,
+      "volume_below_gate": 6235,
       "qualified": 238,
       "queued": 106
     }
