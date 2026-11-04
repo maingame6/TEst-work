@@ -1,18 +1,27 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793773200,
+  "last_ts": 1793773500,
   "first_ts": 1793488500,
-  "observed_candles": 943,
+  "observed_candles": 944,
   "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793773500,
+      "observed_move": 0.00834089
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1793773200,
-      "observed_move": 0.00699049
+      "entry_ts": 1793773500,
+      "entry_mid": 3.9425,
+      "exit_ts": 1793775300
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -1930,36 +1939,36 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 831,
-      "liquid_candidates": 8375,
-      "move_below_gate": 8373,
-      "volume_below_gate": 6386,
+      "bars": 832,
+      "liquid_candidates": 8389,
+      "move_below_gate": 8387,
+      "volume_below_gate": 6398,
       "qualified": 1,
       "queued": 1
     },
     "COST_AWARE": {
-      "bars": 831,
-      "liquid_candidates": 8375,
-      "move_below_gate": 8372,
-      "volume_below_gate": 6291,
+      "bars": 832,
+      "liquid_candidates": 8389,
+      "move_below_gate": 8386,
+      "volume_below_gate": 6303,
       "qualified": 1,
       "queued": 1
     },
     "BALANCED_TEST": {
-      "bars": 831,
-      "liquid_candidates": 8375,
-      "move_below_gate": 8320,
-      "volume_below_gate": 6291,
+      "bars": 832,
+      "liquid_candidates": 8389,
+      "move_below_gate": 8334,
+      "volume_below_gate": 6303,
       "qualified": 36,
       "queued": 28
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 831,
-      "liquid_candidates": 8375,
-      "move_below_gate": 7808,
-      "volume_below_gate": 6186,
-      "qualified": 232,
-      "queued": 103
+      "bars": 832,
+      "liquid_candidates": 8389,
+      "move_below_gate": 7818,
+      "volume_below_gate": 6198,
+      "qualified": 233,
+      "queued": 104
     }
   },
   "horizon_open": [
