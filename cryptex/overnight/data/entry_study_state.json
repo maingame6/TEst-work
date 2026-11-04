@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793833500,
+  "last_ts": 1793833800,
   "first_ts": 1793488500,
-  "observed_candles": 1066,
+  "observed_candles": 1067,
   "signals": [],
   "open": [],
   "trades": [
@@ -2404,34 +2404,34 @@
   "censored_exits": 1,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 954,
-      "liquid_candidates": 9944,
-      "move_below_gate": 9941,
-      "volume_below_gate": 7625,
+      "bars": 955,
+      "liquid_candidates": 9959,
+      "move_below_gate": 9956,
+      "volume_below_gate": 7638,
       "qualified": 2,
       "queued": 2
     },
     "COST_AWARE": {
-      "bars": 954,
-      "liquid_candidates": 9944,
-      "move_below_gate": 9940,
-      "volume_below_gate": 7510,
+      "bars": 955,
+      "liquid_candidates": 9959,
+      "move_below_gate": 9955,
+      "volume_below_gate": 7522,
       "qualified": 2,
       "queued": 2
     },
     "BALANCED_TEST": {
-      "bars": 954,
-      "liquid_candidates": 9944,
-      "move_below_gate": 9877,
-      "volume_below_gate": 7510,
+      "bars": 955,
+      "liquid_candidates": 9959,
+      "move_below_gate": 9892,
+      "volume_below_gate": 7522,
       "qualified": 46,
       "queued": 33
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 954,
-      "liquid_candidates": 9944,
-      "move_below_gate": 9217,
-      "volume_below_gate": 7383,
+      "bars": 955,
+      "liquid_candidates": 9959,
+      "move_below_gate": 9232,
+      "volume_below_gate": 7395,
       "qualified": 288,
       "queued": 132
     }
@@ -2476,14 +2476,6 @@
       "entry_ts": 1793815500,
       "entry_mid": 0.167353,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "LINK",
-      "signal_ts": 1793819100,
-      "entry_ts": 1793819400,
-      "entry_mid": 11.47514,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -3358,6 +3350,18 @@
       "gross_return": -0.0031848846,
       "net_return": -0.0239000782,
       "stress_net_return": -0.0287684677
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1793819100,
+      "entry_ts": 1793819400,
+      "exit_ts": 1793833800,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.0010169811,
+      "net_return": -0.0197855331,
+      "stress_net_return": -0.0246744443
     }
   ],
   "horizon_censored": 39
