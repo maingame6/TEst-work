@@ -2,9 +2,9 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-05T17:46:21.272362+00:00 (Europe/Dublin)
+Checked: 2026-11-05T17:47:38.159874+00:00 (Europe/Dublin)
 
-GitHub trigger: schedule; independently scheduled trading CONFIRMED
+GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-05T17:46:21.272386+00:00
 
 **Starting paper money $210.00 · Current estimated liquidation $204.7704 · P&L $-5.2296 (-2.49%)**

@@ -2,8 +2,8 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-05T17:46:22.171653+00:00
-Data status: HEALTHY: paper trading on completed Kraken candles
+Generated: 2026-11-05T17:47:39.043268+00:00
+Data status: HEALTHY: waiting for a newly closed Kraken candle
 Paper equity: USD 95.13; initial USD 100.00; change USD -4.87.
 Closed trades: 65; wins 7; losses/breakevens 58.
 

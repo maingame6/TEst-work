@@ -9,7 +9,7 @@
   "daily_date": "2026-11-05",
   "peak": 100,
   "halted": false,
-  "health": "HEALTHY: paper trading on completed Kraken candles",
+  "health": "HEALTHY: waiting for a newly closed Kraken candle",
   "last_prices": {
     "BTC": 75867.8,
     "ETH": 2250.63,
@@ -3787,7 +3787,7 @@
     }
   },
   "cycles": 1334,
-  "last_run": "2026-11-05T17:46:21.272362+00:00",
+  "last_run": "2026-11-05T17:47:38.159874+00:00",
   "errors": {},
   "run_kind": "SCHEDULED_PAPER_RESEARCH",
   "guardrails": {
@@ -24122,13 +24122,13 @@
     "session_status": "MORNING_RECORDED",
     "paper_only": true
   },
-  "trigger_event": "schedule",
-  "github_run_id": "42077009576",
+  "trigger_event": "workflow_dispatch",
+  "github_run_id": "42077677687",
   "github_run_attempt": "1",
   "schedule_confirmed": true,
   "morning_briefing": {
     "status": "OK",
-    "generated_at": "2026-11-05T17:46:21.272362+00:00",
+    "generated_at": "2026-11-05T17:47:38.159874+00:00",
     "session_closed": 10,
     "distillation": "NOT_READY_FOR_AUTOPROMOTION",
     "paper_only": true
@@ -24233,7 +24233,7 @@
     "paper_only": true,
     "no_automatic_strategy_promotion": true
   },
-  "last_autopilot_dispatch": "2026-11-05T17:41:23.716658+00:00",
+  "last_autopilot_dispatch": "2026-11-05T17:47:38.159903+00:00",
   "pilot_experiment": {
     "version": "PILOT_V1_2026_11_02",
     "parents": [

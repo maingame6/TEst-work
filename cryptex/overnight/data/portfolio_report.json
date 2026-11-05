@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-05T17:46:21.272362+00:00",
-  "local_time": "2026-11-05T17:46:21.272362+00:00",
+  "generated_at": "2026-11-05T17:47:38.159874+00:00",
+  "local_time": "2026-11-05T17:47:38.159874+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -430,7 +430,7 @@
     "research_stale": false,
     "missing_quotes": false,
     "time_misaligned": false,
-    "main_status": "HEALTHY: paper trading on completed Kraken candles",
+    "main_status": "HEALTHY: waiting for a newly closed Kraken candle",
     "research_status": "OK"
   },
   "last_candle_main": 1793900400,
@@ -471,10 +471,10 @@
     "gross_up_but_net_down": 41,
     "interpretation": "Gross movement is from candle mid-to-mid; execution_drag includes entry/exit fee and slippage assumptions. Numbers cover attributed cached closed trades only."
   },
-  "actual_trigger_event": "schedule",
+  "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-11-05T17:46:21.272386+00:00",
-  "github_run_id": "42077009576",
+  "github_run_id": "42077677687",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-04",
@@ -549,7 +549,7 @@
       "SOL"
     ],
     "candle_utc": 1793900400,
-    "at": "2026-11-05T17:46:21.272362+00:00",
+    "at": "2026-11-05T17:47:38.159874+00:00",
     "balance": 28.950741,
     "pnl": -1.049259,
     "coins": {
