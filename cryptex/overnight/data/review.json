@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-05T12:06:40.021284+00:00",
+  "generated_utc": "2026-11-05T12:11:28.422685+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -9,91 +9,91 @@
     "GAMBLER": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 7,
-      "opposition": 22,
+      "support": 4,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": -0.1025
+      "factor_score": -0.1455
     },
     "HOUSE": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 27,
+      "support": 28,
       "opposition": 2,
       "veto": 0,
-      "factor_score": 0.2535
+      "factor_score": 0.2504
     },
     "SPY": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 5,
-      "opposition": 24,
+      "support": 4,
+      "opposition": 31,
       "veto": 0,
-      "factor_score": -0.1411
+      "factor_score": -0.222
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
       "support": 4,
-      "opposition": 29,
+      "opposition": 32,
       "veto": 1,
-      "factor_score": -0.1803
+      "factor_score": -0.2267
     },
     "BREAKOUT": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 7,
-      "opposition": 22,
+      "support": 4,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": -0.1025
+      "factor_score": -0.1455
     },
     "CONTRARIAN": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 27,
+      "support": 28,
       "opposition": 2,
       "veto": 0,
-      "factor_score": 0.2535
+      "factor_score": 0.2504
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 7,
-      "opposition": 22,
+      "support": 4,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": -0.1025
+      "factor_score": -0.1455
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "ETH",
-      "support": 12,
-      "opposition": 9,
+      "support": 8,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": 0.0511
+      "factor_score": -0.1092
     },
     "FRACTAL": {
       "decision": "SELL",
       "symbol": "SOL",
-      "support": 5,
-      "opposition": 24,
+      "support": 4,
+      "opposition": 31,
       "veto": 0,
-      "factor_score": -0.1411
+      "factor_score": -0.222
     },
     "SHOCKWAVE": {
       "decision": "HOLD",
       "symbol": "DOGE",
       "support": 4,
-      "opposition": 29,
+      "opposition": 32,
       "veto": 1,
-      "factor_score": -0.1803
+      "factor_score": -0.2267
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 96.735671,
-  "portfolio_paper_change_usd": -3.264329,
-  "all_time_closed_paper_trades": 61,
+  "current_paper_equity_usd": 96.61031,
+  "portfolio_paper_change_usd": -3.38969,
+  "all_time_closed_paper_trades": 62,
   "all_time_closed_wins": 7,
-  "all_time_closed_losses": 54,
-  "aggregate_realized_pnl_usd": -3.419258,
+  "all_time_closed_losses": 55,
+  "aggregate_realized_pnl_usd": -3.531661,
   "agents": {
     "GAMBLER": {
       "closed": 3,
@@ -200,15 +200,15 @@
       "position_size_multiplier": 1.0
     },
     "FRACTAL": {
-      "closed": 9,
+      "closed": 10,
       "wins": 1,
-      "losses": 8,
-      "win_rate": 0.1111,
-      "realized_net_usd": -0.425759,
-      "average_profit_usd": -0.047307,
+      "losses": 9,
+      "win_rate": 0.1,
+      "realized_net_usd": -0.538162,
+      "average_profit_usd": -0.053816,
       "average_win_usd": 0.008744,
-      "average_loss_usd": -0.054313,
-      "last_20_net_usd": -0.425759,
+      "average_loss_usd": -0.060767,
+      "last_20_net_usd": -0.538162,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -282,8 +282,8 @@
       "net_pnl_usd": -2.547003
     },
     "PILOT V1 fixed holding window reached; next-candle simulated exit": {
-      "count": 3,
-      "net_pnl_usd": -0.374934
+      "count": 4,
+      "net_pnl_usd": -0.487337
     }
   },
   "data_errors_latest": {},
