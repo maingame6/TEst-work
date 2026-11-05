@@ -1,42 +1,18 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793907900,
+  "last_ts": 1793908200,
   "first_ts": 1793488500,
-  "observed_candles": 1305,
+  "observed_candles": 1306,
   "signals": [
     {
       "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "LINK",
-      "signal_ts": 1793907900,
-      "observed_move": 0.00653165
+      "symbol": "SOL",
+      "signal_ts": 1793908200,
+      "observed_move": 0.0058133
     }
   ],
   "open": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "UNI",
-      "signal_ts": 1793906100,
-      "entry_ts": 1793906400,
-      "entry_mid": 6.8517,
-      "exit_ts": 1793908200
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "UNI",
-      "signal_ts": 1793906100,
-      "entry_ts": 1793906400,
-      "entry_mid": 6.8517,
-      "exit_ts": 1793908200
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1793906100,
-      "entry_ts": 1793906400,
-      "entry_mid": 0.8502,
-      "exit_ts": 1793908200
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XLM",
@@ -68,6 +44,14 @@
       "entry_ts": 1793907900,
       "entry_mid": 4.83e-06,
       "exit_ts": 1793909700
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1793907900,
+      "entry_ts": 1793908200,
+      "entry_mid": 10.85446,
+      "exit_ts": 1793910000
     }
   ],
   "trades": [
@@ -2748,42 +2732,81 @@
       "slippage_drag": 0.0050271126,
       "stress_net_return": -0.0179329308,
       "paper": true
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "exit_ts": 1793908200,
+      "gross_return": -0.0007735307,
+      "net_return": -0.0215388355,
+      "fee_drag": 0.0157816317,
+      "slippage_drag": 0.0049836732,
+      "stress_net_return": -0.0264190019,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "exit_ts": 1793908200,
+      "gross_return": -0.0007735307,
+      "net_return": -0.0215388355,
+      "fee_drag": 0.0157816317,
+      "slippage_drag": 0.0049836732,
+      "stress_net_return": -0.0264190019,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "exit_ts": 1793908200,
+      "gross_return": 0.0118795578,
+      "net_return": -0.0091486957,
+      "fee_drag": 0.0159814726,
+      "slippage_drag": 0.0050467808,
+      "stress_net_return": -0.0140906591,
+      "paper": true
     }
   ],
   "missed_fills": 0,
   "censored_exits": 2,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 1193,
-      "liquid_candidates": 12548,
-      "move_below_gate": 12545,
-      "volume_below_gate": 9616,
+      "bars": 1194,
+      "liquid_candidates": 12561,
+      "move_below_gate": 12558,
+      "volume_below_gate": 9625,
       "qualified": 2,
       "queued": 2
     },
     "COST_AWARE": {
-      "bars": 1193,
-      "liquid_candidates": 12548,
-      "move_below_gate": 12544,
-      "volume_below_gate": 9481,
+      "bars": 1194,
+      "liquid_candidates": 12561,
+      "move_below_gate": 12557,
+      "volume_below_gate": 9490,
       "qualified": 2,
       "queued": 2
     },
     "BALANCED_TEST": {
-      "bars": 1193,
-      "liquid_candidates": 12548,
-      "move_below_gate": 12474,
-      "volume_below_gate": 9481,
+      "bars": 1194,
+      "liquid_candidates": 12561,
+      "move_below_gate": 12487,
+      "volume_below_gate": 9490,
       "qualified": 50,
       "queued": 37
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 1193,
-      "liquid_candidates": 12548,
-      "move_below_gate": 11664,
-      "volume_below_gate": 9330,
-      "qualified": 335,
-      "queued": 159
+      "bars": 1194,
+      "liquid_candidates": 12561,
+      "move_below_gate": 11673,
+      "volume_below_gate": 9339,
+      "qualified": 336,
+      "queued": 160
     }
   },
   "horizon_open": [
