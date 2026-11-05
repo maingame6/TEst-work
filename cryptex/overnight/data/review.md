@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-05T15:56:31.637211+00:00
+Generated: 2026-11-05T16:46:20.178727+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 95.29; initial USD 100.00; change USD -4.71.
-Closed trades: 63; wins 7; losses/breakevens 56.
+Paper equity: USD 95.45; initial USD 100.00; change USD -4.55.
+Closed trades: 64; wins 7; losses/breakevens 57.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | BTC | 12 | 46 | 0 |
-| HOUSE | HOLD | BTC | 58 | 0 | 0 |
-| SPY | HOLD | SOL | 12 | 47 | 0 |
-| MEME HUNTER | HOLD | DOGE | 10 | 47 | 0 |
-| BREAKOUT | HOLD | BTC | 12 | 46 | 0 |
-| CONTRARIAN | HOLD | ADA | 58 | 0 | 0 |
-| ROTATOR | HOLD | BTC | 12 | 46 | 0 |
-| VORTEX | HOLD | BTC | 12 | 46 | 0 |
-| FRACTAL | SELL | SOL | 12 | 47 | 0 |
-| SHOCKWAVE | HOLD | DOGE | 10 | 47 | 0 |
+| GAMBLER | HOLD | BTC | 10 | 32 | 0 |
+| HOUSE | HOLD | BTC | 35 | 7 | 0 |
+| SPY | HOLD | SOL | 13 | 25 | 0 |
+| MEME HUNTER | HOLD | DOGE | 10 | 32 | 1 |
+| BREAKOUT | HOLD | BTC | 10 | 32 | 0 |
+| CONTRARIAN | HOLD | ADA | 36 | 10 | 1 |
+| ROTATOR | HOLD | BTC | 10 | 32 | 0 |
+| VORTEX | HOLD | BTC | 10 | 32 | 0 |
+| FRACTAL | SELL | SOL | 13 | 25 | 0 |
+| SHOCKWAVE | HOLD | DOGE | 10 | 32 | 1 |
 
 ## Bot performance
 
@@ -38,7 +38,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | CONTRARIAN | 6 | 0 | 6 | 0.0% | -0.0463 | 1.00x |
 | ROTATOR | 1 | 0 | 1 | 0.0% | -0.1467 | 1.00x |
 | VORTEX | 19 | 1 | 18 | 5.3% | -2.4961 | 1.00x |
-| FRACTAL | 10 | 1 | 9 | 10.0% | -0.5382 | 1.00x |
+| FRACTAL | 11 | 1 | 10 | 9.1% | -1.0854 | 1.00x |
 | SHOCKWAVE | 5 | 2 | 3 | 40.0% | -0.0131 | 1.00x |
 
 ## Where paper trades lost money
@@ -54,6 +54,7 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 - **Trend failure**: 1 exits; net USD -0.0072
 - **Volume faded**: 1 exits; net USD -0.0095
 - **Shockwave ended**: 1 exits; net USD -0.0095
+- **PILOT V1 observed 6% stop; next-candle simulated exit**: 1 exits; net USD -0.5472
 
 ## Where paper trades made money
 
