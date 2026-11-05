@@ -2,14 +2,14 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-05T12:36:30.619139+00:00 (Europe/Dublin)
+Checked: 2026-11-05T12:41:37.619224+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $206.2127 · P&L $-3.7873 (-1.80%)**
+**Starting paper money $210.00 · Current estimated liquidation $206.1878 · P&L $-3.8122 (-1.82%)**
 
-Realised $-3.9249; unrealised after estimated future sale costs $+0.1376.
+Realised $-3.9249; unrealised after estimated future sale costs $+0.1127.
 Open: 1; queued: 0; closed: 93; paper fills in current JSON: 187.
 
 Overnight status: MORNING_RECORDED
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 96.4206 | -3.5794 | -3.7170 | 63 | 1 |
+| Original ten traders | 100.00 | 96.3957 | -3.6043 | -3.7170 | 63 | 1 |
 | Eleven maths/OSS traders | 110.00 | 109.7921 | -0.2079 | -0.2079 | 30 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.2836 | $+0.2836 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.6273 | $+0.6273 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.8723 | $-0.1277 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.2519 | $+0.2519 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.5669 | $+0.5669 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.8175 | $-0.1825 |
 
 ## 21-agent leaderboard
 
@@ -61,16 +61,16 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 2 | HUMMINGBOT_FRICTION | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
 | 3 | MEME HUNTER | main | 9.9943 | -0.0057 | -0.0057 | 4 | cash |
 | 4 | FLUID_VISCOSITY | research | 9.9924 | -0.0076 | -0.0076 | 1 | cash |
-| 5 | ROTATOR | main | 9.9909 | -0.0091 | -0.1467 | 1 | BTC |
-| 6 | SHOCKWAVE | main | 9.9869 | -0.0131 | -0.0131 | 5 | cash |
-| 7 | LEAN_EVENT | research | 9.9835 | -0.0165 | -0.0165 | 3 | cash |
-| 8 | GEOMETRIC_DIVERSITY | research | 9.9786 | -0.0214 | -0.0214 | 2 | cash |
-| 9 | NAUTILUS_REGIME | research | 9.9773 | -0.0227 | -0.0227 | 4 | cash |
-| 10 | GRAPH_COHERENCE | research | 9.9745 | -0.0255 | -0.0255 | 4 | cash |
-| 11 | QLIB_STYLE | research | 9.9745 | -0.0255 | -0.0255 | 4 | cash |
-| 12 | FREQTRADE_STYLE | research | 9.9720 | -0.0280 | -0.0280 | 4 | cash |
-| 13 | ERROR_CODE_CONSENSUS | research | 9.9698 | -0.0302 | -0.0302 | 4 | cash |
-| 14 | FLUID_ADVECTION | research | 9.9694 | -0.0306 | -0.0306 | 4 | cash |
+| 5 | SHOCKWAVE | main | 9.9869 | -0.0131 | -0.0131 | 5 | cash |
+| 6 | LEAN_EVENT | research | 9.9835 | -0.0165 | -0.0165 | 3 | cash |
+| 7 | GEOMETRIC_DIVERSITY | research | 9.9786 | -0.0214 | -0.0214 | 2 | cash |
+| 8 | NAUTILUS_REGIME | research | 9.9773 | -0.0227 | -0.0227 | 4 | cash |
+| 9 | GRAPH_COHERENCE | research | 9.9745 | -0.0255 | -0.0255 | 4 | cash |
+| 10 | QLIB_STYLE | research | 9.9745 | -0.0255 | -0.0255 | 4 | cash |
+| 11 | FREQTRADE_STYLE | research | 9.9720 | -0.0280 | -0.0280 | 4 | cash |
+| 12 | ERROR_CODE_CONSENSUS | research | 9.9698 | -0.0302 | -0.0302 | 4 | cash |
+| 13 | FLUID_ADVECTION | research | 9.9694 | -0.0306 | -0.0306 | 4 | cash |
+| 14 | ROTATOR | main | 9.9660 | -0.0340 | -0.1467 | 1 | BTC |
 | 15 | CONTRARIAN | main | 9.9537 | -0.0463 | -0.0463 | 6 | cash |
 | 16 | SPY | main | 9.9514 | -0.0486 | -0.0486 | 5 | cash |
 | 17 | GAMBLER | main | 9.8979 | -0.1021 | -0.1021 | 3 | cash |
@@ -81,7 +81,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793881800 / 1793881800
+Latest main/shadow candle timestamps: 1793882100 / 1793882100
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
