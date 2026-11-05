@@ -2,14 +2,14 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-05T05:21:33.222023+00:00 (Europe/Dublin)
+Checked: 2026-11-05T05:26:13.467552+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-10-31T20:50:39.562635+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $206.5989 · P&L $-3.4011 (-1.62%)**
+**Starting paper money $210.00 · Current estimated liquidation $206.5823 · P&L $-3.4177 (-1.63%)**
 
-Realised $-3.2911; unrealised after estimated future sale costs $-0.1100.
+Realised $-3.2911; unrealised after estimated future sale costs $-0.1266.
 Open: 3; queued: 0; closed: 89; paper fills in current JSON: 181.
 
 Overnight status: IN_PROGRESS
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $207.1826 at 2026-11-04T21:01:28.631073+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.5837 as of 2026-11-05T05:21:33.222023+00:00.
+Overnight P&L $-0.6003 as of 2026-11-05T05:26:13.467552+00:00.
 New paper fills since session started: 8.
 
 ## Price prediction versus trading costs
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 96.8068 | -3.1932 | -3.0832 | 59 | 3 |
+| Original ten traders | 100.00 | 96.7902 | -3.2098 | -3.0832 | 59 | 3 |
 | Eleven maths/OSS traders | 110.00 | 109.7921 | -0.2079 | -0.2079 | 30 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -49,15 +49,15 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.3418 | $+0.3418 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.7039 | $+0.7039 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.9033 | $-0.0967 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $10.3384 | $+0.3384 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $10.6921 | $+0.6921 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.8961 | $-0.1039 |
 
 ## 21-agent leaderboard
 
 | Rank | Agent | Portfolio | Equity USD | Paper P&L | Realised | Closed | Holding |
 |---:|---|---|---:|---:|---:|---:|---|
-| 1 | ROTATOR | main | 10.0365 | +0.0365 | -0.1467 | 1 | BTC |
+| 1 | ROTATOR | main | 10.0339 | +0.0339 | -0.1467 | 1 | BTC |
 | 2 | LATTICE_ANALOG | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
 | 3 | HUMMINGBOT_FRICTION | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
 | 4 | MEME HUNTER | main | 9.9943 | -0.0057 | -0.0057 | 4 | cash |
@@ -76,12 +76,12 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 17 | GAMBLER | main | 9.8979 | -0.1021 | -0.1021 | 3 | cash |
 | 18 | HOUSE | main | 9.8794 | -0.1206 | -0.1206 | 6 | cash |
 | 19 | BREAKOUT | main | 9.8006 | -0.1994 | -0.1994 | 4 | cash |
-| 20 | FRACTAL | main | 9.4386 | -0.5614 | -0.4258 | 9 | SOL |
-| 21 | VORTEX | main | 7.8676 | -2.1324 | -1.9747 | 16 | ETH |
+| 20 | FRACTAL | main | 9.4330 | -0.5670 | -0.4258 | 9 | SOL |
+| 21 | VORTEX | main | 7.8592 | -2.1408 | -1.9747 | 16 | ETH |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793855700 / 1793855700
+Latest main/shadow candle timestamps: 1793856000 / 1793856000
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
