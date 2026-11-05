@@ -7,36 +7,41 @@
       "symbol": "BTC/USDT",
       "first_mid": 78160.0,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 80272.2,
+      "last_ts": 1793867400000,
+      "last_mid": 80611.1,
       "fee_per_side_assumed": 0.003,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kucoin|ETH/USDT": {
       "venue": "kucoin",
       "symbol": "ETH/USDT",
       "first_mid": 2274.08,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 2425.83,
+      "last_ts": 1793867400000,
+      "last_mid": 2426.78,
       "fee_per_side_assumed": 0.003,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kucoin|SOL/USDT": {
       "venue": "kucoin",
       "symbol": "SOL/USDT",
       "first_mid": 95.76,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 95.02,
+      "last_ts": 1793867400000,
+      "last_mid": 97.03,
       "fee_per_side_assumed": 0.003,
-      "signals": {},
+      "signals": {
+        "LOW_HURDLE_CONTROL": {
+          "signal_ts": 1793867400000,
+          "observed_move": 0.00622213
+        }
+      },
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kucoin|MASK/USDT": {
       "venue": "kucoin",
@@ -535,48 +540,53 @@
       "symbol": "BTC/USD",
       "first_mid": 78040.29,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 80189.68,
+      "last_ts": 1793867400000,
+      "last_mid": 80542.28,
       "fee_per_side_assumed": 0.015,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "coinbase|ETH/USD": {
       "venue": "coinbase",
       "symbol": "ETH/USD",
       "first_mid": 2270.77,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 2422.84,
+      "last_ts": 1793867400000,
+      "last_mid": 2424.36,
       "fee_per_side_assumed": 0.015,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "coinbase|SOL/USD": {
       "venue": "coinbase",
       "symbol": "SOL/USD",
       "first_mid": 95.64,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 94.9,
+      "last_ts": 1793867400000,
+      "last_mid": 96.96,
       "fee_per_side_assumed": 0.015,
-      "signals": {},
+      "signals": {
+        "LOW_HURDLE_CONTROL": {
+          "signal_ts": 1793867400000,
+          "observed_move": 0.0064355408
+        }
+      },
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "coinbase|SOL/USDT": {
       "venue": "coinbase",
       "symbol": "SOL/USDT",
       "first_mid": 95.85,
       "first_ts": 1793522400000,
-      "last_ts": 1793826600000,
-      "last_mid": 95.03,
+      "last_ts": 1793867400000,
+      "last_mid": 97.04,
       "fee_per_side_assumed": 0.015,
       "signals": {},
       "open": {},
-      "observations": 5
+      "observations": 6
     },
     "coinbase|COTI/USD": {
       "venue": "coinbase",
@@ -679,168 +689,178 @@
       "symbol": "BTC/USD",
       "first_mid": 78071.4,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 80192.0,
+      "last_ts": 1793867400000,
+      "last_mid": 80531.9,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kraken|ETH/USD": {
       "venue": "kraken",
       "symbol": "ETH/USD",
       "first_mid": 2270.6,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 2422.99,
+      "last_ts": 1793867400000,
+      "last_mid": 2424.71,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kraken|SOL/USD": {
       "venue": "kraken",
       "symbol": "SOL/USD",
       "first_mid": 95.66,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 94.91,
+      "last_ts": 1793867400000,
+      "last_mid": 96.94,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kraken|BTC/USDT": {
       "venue": "kraken",
       "symbol": "BTC/USDT",
       "first_mid": 78161.0,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 80271.4,
+      "last_ts": 1793867400000,
+      "last_mid": 80620.1,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kraken|ETH/USDT": {
       "venue": "kraken",
       "symbol": "ETH/USDT",
       "first_mid": 2274.14,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 2426.33,
+      "last_ts": 1793867400000,
+      "last_mid": 2426.72,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kraken|SOL/USDT": {
       "venue": "kraken",
       "symbol": "SOL/USDT",
       "first_mid": 95.84,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 95.06,
+      "last_ts": 1793867400000,
+      "last_mid": 97.04,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "okx|BTC/USDT": {
       "venue": "okx",
       "symbol": "BTC/USDT",
       "first_mid": 78166.5,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 80275.0,
+      "last_ts": 1793867400000,
+      "last_mid": 80620.9,
       "fee_per_side_assumed": 0.002,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "okx|ETH/USDT": {
       "venue": "okx",
       "symbol": "ETH/USDT",
       "first_mid": 2273.8,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 2425.56,
+      "last_ts": 1793867400000,
+      "last_mid": 2426.82,
       "fee_per_side_assumed": 0.002,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "okx|SOL/USDT": {
       "venue": "okx",
       "symbol": "SOL/USDT",
       "first_mid": 95.79,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 95.0,
+      "last_ts": 1793867400000,
+      "last_mid": 97.05,
       "fee_per_side_assumed": 0.002,
-      "signals": {},
+      "signals": {
+        "LOW_HURDLE_CONTROL": {
+          "signal_ts": 1793867400000,
+          "observed_move": 0.0064295344
+        }
+      },
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "bitstamp|BTC/USD": {
       "venue": "bitstamp",
       "symbol": "BTC/USD",
       "first_mid": 78055.59,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 80191.85,
+      "last_ts": 1793867400000,
+      "last_mid": 80537.66,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "bitstamp|ETH/USD": {
       "venue": "bitstamp",
       "symbol": "ETH/USD",
       "first_mid": 2270.88,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 2423.54,
+      "last_ts": 1793867400000,
+      "last_mid": 2424.3,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "bitstamp|SOL/USD": {
       "venue": "bitstamp",
       "symbol": "SOL/USD",
       "first_mid": 95.661,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 94.902,
+      "last_ts": 1793867400000,
+      "last_mid": 96.912,
       "fee_per_side_assumed": 0.008,
-      "signals": {},
+      "signals": {
+        "LOW_HURDLE_CONTROL": {
+          "signal_ts": 1793867400000,
+          "observed_move": 0.0060417315
+        }
+      },
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "bitstamp|BTC/USDT": {
       "venue": "bitstamp",
       "symbol": "BTC/USDT",
       "first_mid": 78168.49,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 80179.14,
+      "last_ts": 1793867400000,
+      "last_mid": 80552.79,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "bitstamp|ETH/USDT": {
       "venue": "bitstamp",
       "symbol": "ETH/USDT",
       "first_mid": 2253.31,
       "first_ts": 1793523000000,
-      "last_ts": 1793826600000,
-      "last_mid": 2419.88,
+      "last_ts": 1793867400000,
+      "last_mid": 2420.14,
       "fee_per_side_assumed": 0.008,
       "signals": {},
       "open": {},
-      "observations": 19
+      "observations": 20
     },
     "kucoin|WOO/USDT": {
       "venue": "kucoin",
@@ -2227,12 +2247,12 @@
       "symbol": "BTC/USDT",
       "first_mid": 77936.48,
       "first_ts": 1793574000000,
-      "last_ts": 1793826000000,
-      "last_mid": 80288.2,
+      "last_ts": 1793867400000,
+      "last_mid": 80620.84,
       "fee_per_side_assumed": 0.015,
       "signals": {},
       "open": {},
-      "observations": 14
+      "observations": 15
     },
     "coinbase|CTX/USD": {
       "venue": "coinbase",
@@ -3337,12 +3357,12 @@
       "symbol": "ETH/USDT",
       "first_mid": 2320.64,
       "first_ts": 1793801400000,
-      "last_ts": 1793826300000,
-      "last_mid": 2427.92,
+      "last_ts": 1793867400000,
+      "last_mid": 2423.88,
       "fee_per_side_assumed": 0.015,
       "signals": {},
       "open": {},
-      "observations": 2
+      "observations": 3
     },
     "coinbase|GRASS/USD": {
       "venue": "coinbase",
@@ -3559,11 +3579,203 @@
       "signals": {},
       "open": {},
       "observations": 1
+    },
+    "coinbase|PRIME/USD": {
+      "venue": "coinbase",
+      "symbol": "PRIME/USD",
+      "first_mid": 0.16113,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.16113,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|PRIME/USDC": {
+      "venue": "coinbase",
+      "symbol": "PRIME/USDC",
+      "first_mid": 0.16113,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.16113,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|PROMPT/USD": {
+      "venue": "coinbase",
+      "symbol": "PROMPT/USD",
+      "first_mid": 0.01627,
+      "first_ts": 1793866500000,
+      "last_ts": 1793866500000,
+      "last_mid": 0.01627,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|PROMPT/USDC": {
+      "venue": "coinbase",
+      "symbol": "PROMPT/USDC",
+      "first_mid": 0.01627,
+      "first_ts": 1793866500000,
+      "last_ts": 1793866500000,
+      "last_mid": 0.01627,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|SAPIEN/USD": {
+      "venue": "coinbase",
+      "symbol": "SAPIEN/USD",
+      "first_mid": 0.05078,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.05078,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|SAPIEN/USDC": {
+      "venue": "coinbase",
+      "symbol": "SAPIEN/USDC",
+      "first_mid": 0.05078,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.05078,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|STABLE/USD": {
+      "venue": "coinbase",
+      "symbol": "STABLE/USD",
+      "first_mid": 0.02893,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.02893,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|STABLE/USDC": {
+      "venue": "coinbase",
+      "symbol": "STABLE/USDC",
+      "first_mid": 0.02893,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.02893,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|SXT/USD": {
+      "venue": "coinbase",
+      "symbol": "SXT/USD",
+      "first_mid": 0.008977,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.008977,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|SXT/USDC": {
+      "venue": "coinbase",
+      "symbol": "SXT/USDC",
+      "first_mid": 0.008977,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.008977,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|TRAC/USD": {
+      "venue": "coinbase",
+      "symbol": "TRAC/USD",
+      "first_mid": 0.3531,
+      "first_ts": 1793867100000,
+      "last_ts": 1793867100000,
+      "last_mid": 0.3531,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|TRAC/USDC": {
+      "venue": "coinbase",
+      "symbol": "TRAC/USDC",
+      "first_mid": 0.3531,
+      "first_ts": 1793867100000,
+      "last_ts": 1793867100000,
+      "last_mid": 0.3531,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|TRIA/USD": {
+      "venue": "coinbase",
+      "symbol": "TRIA/USD",
+      "first_mid": 0.002424,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.002424,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|TRIA/USDC": {
+      "venue": "coinbase",
+      "symbol": "TRIA/USDC",
+      "first_mid": 0.002424,
+      "first_ts": 1793867400000,
+      "last_ts": 1793867400000,
+      "last_mid": 0.002424,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|TROLL/USD": {
+      "venue": "coinbase",
+      "symbol": "TROLL/USD",
+      "first_mid": 0.03145,
+      "first_ts": 1793867100000,
+      "last_ts": 1793867100000,
+      "last_mid": 0.03145,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
+    },
+    "coinbase|TROLL/USDC": {
+      "venue": "coinbase",
+      "symbol": "TROLL/USDC",
+      "first_mid": 0.03145,
+      "first_ts": 1793867100000,
+      "last_ts": 1793867100000,
+      "last_mid": 0.03145,
+      "fee_per_side_assumed": 0.015,
+      "signals": {},
+      "open": {},
+      "observations": 1
     }
   },
   "closed": [],
   "censored_entries": 0,
   "censored_exits": 0,
-  "observations": 673,
-  "last_recorded_at": "2026-11-05T01:51:29.295079+00:00"
+  "observations": 712,
+  "last_recorded_at": "2026-11-05T08:35:39.478925+00:00"
 }
