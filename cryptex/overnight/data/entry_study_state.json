@@ -1,38 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1793906100,
+  "last_ts": 1793906400,
   "first_ts": 1793488500,
-  "observed_candles": 1299,
-  "signals": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "UNI",
-      "signal_ts": 1793906100,
-      "observed_move": 0.017887
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "UNI",
-      "signal_ts": 1793906100,
-      "observed_move": 0.017887
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1793906100,
-      "observed_move": 0.00660611
-    }
-  ],
+  "observed_candles": 1300,
+  "signals": [],
   "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "PEPE",
-      "signal_ts": 1793904300,
-      "entry_ts": 1793904600,
-      "entry_mid": 4.825e-06,
-      "exit_ts": 1793906400
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ADA",
@@ -40,6 +13,30 @@
       "entry_ts": 1793906100,
       "entry_mid": 0.183466,
       "exit_ts": 1793907900
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 6.8517,
+      "exit_ts": 1793908200
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 6.8517,
+      "exit_ts": 1793908200
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 0.8502,
+      "exit_ts": 1793908200
     }
   ],
   "trades": [
@@ -2694,40 +2691,53 @@
       "slippage_drag": 0.0050140126,
       "stress_net_return": -0.0204920738,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1793904300,
+      "entry_ts": 1793904600,
+      "exit_ts": 1793906400,
+      "gross_return": -0.0118134715,
+      "net_return": -0.0323493511,
+      "fee_drag": 0.0156072685,
+      "slippage_drag": 0.0049286111,
+      "stress_net_return": -0.0371755991,
+      "paper": true
     }
   ],
   "missed_fills": 0,
   "censored_exits": 2,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 1187,
-      "liquid_candidates": 12467,
-      "move_below_gate": 12464,
-      "volume_below_gate": 9560,
+      "bars": 1188,
+      "liquid_candidates": 12481,
+      "move_below_gate": 12478,
+      "volume_below_gate": 9572,
       "qualified": 2,
       "queued": 2
     },
     "COST_AWARE": {
-      "bars": 1187,
-      "liquid_candidates": 12467,
-      "move_below_gate": 12463,
-      "volume_below_gate": 9429,
+      "bars": 1188,
+      "liquid_candidates": 12481,
+      "move_below_gate": 12477,
+      "volume_below_gate": 9440,
       "qualified": 2,
       "queued": 2
     },
     "BALANCED_TEST": {
-      "bars": 1187,
-      "liquid_candidates": 12467,
-      "move_below_gate": 12395,
-      "volume_below_gate": 9429,
+      "bars": 1188,
+      "liquid_candidates": 12481,
+      "move_below_gate": 12409,
+      "volume_below_gate": 9440,
       "qualified": 48,
       "queued": 35
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 1187,
-      "liquid_candidates": 12467,
-      "move_below_gate": 11607,
-      "volume_below_gate": 9281,
+      "bars": 1188,
+      "liquid_candidates": 12481,
+      "move_below_gate": 11620,
+      "volume_below_gate": 9292,
       "qualified": 321,
       "queued": 156
     }
@@ -2795,6 +2805,54 @@
       "signal_ts": 1793905800,
       "entry_ts": 1793906100,
       "entry_mid": 0.183466,
+      "hold_bars": 288
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 6.8517,
+      "hold_bars": 48
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 6.8517,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 6.8517,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 6.8517,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 0.8502,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1793906100,
+      "entry_ts": 1793906400,
+      "entry_mid": 0.8502,
       "hold_bars": 288
     }
   ],
