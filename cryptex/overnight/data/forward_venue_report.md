@@ -4,31 +4,31 @@
 
 This is NOT every-five-minute cross-exchange execution.
 
-Markets with genuine post-deployment observations: 340
-Distinct forward observations: 856
-Completed hypothetical round trips: 0
+Markets with genuine post-deployment observations: 349
+Distinct forward observations: 888
+Completed hypothetical round trips: 2
 Censored entries: 4; censored exits: 0
 
-Cash reference: 0%; fee-adjusted buy/hold markets: 23; mean after costs: -5.39882%.
+Cash reference: 0%; fee-adjusted buy/hold markets: 23; mean after costs: -5.26939%.
 Buy/hold holding periods differ and cannot establish strategy superiority.
 
 | Exchange | Markets observed | Forward observations | Completed simulations |
 |---|---:|---:|---:|
-| kraken | 21 | 165 | 0 |
-| coinbase | 175 | 283 | 0 |
-| bitstamp | 7 | 127 | 0 |
-| okx | 5 | 77 | 0 |
-| kucoin | 132 | 204 | 0 |
+| kraken | 21 | 171 | 2 |
+| coinbase | 184 | 298 | 0 |
+| bitstamp | 7 | 132 | 0 |
+| okx | 5 | 80 | 0 |
+| kucoin | 132 | 207 | 0 |
 
 | Prespecified gate | Completed | After-cost wins | Mean after costs | Stress mean | Max unit-stake DD |
 |---|---:|---:|---:|---:|---:|
 | STRICT_COST | 0 | 0 | n/a | n/a | 0.000% |
-| LOW_HURDLE_CONTROL | 0 | 0 | n/a | n/a | 0.000% |
+| LOW_HURDLE_CONTROL | 2 | 0 | -2.1148% | -2.6030% | 4.185% |
 
 **Held-out evaluation**: boundary fixed at earliest truly observed forward candle plus 72h (no retrospective tuning).
 | Gate | Held-out closes | Held-out mean net |
 |---|---:|---:|
 | STRICT_COST | 0 | n/a |
-| LOW_HURDLE_CONTROL | 0 | n/a |
+| LOW_HURDLE_CONTROL | 2 | -2.1148% |
 
 Live orderbook snapshots and user-specific fee tiers are NOT proven. Repeated markets and venues share correlated outcomes. No missing signals or delayed fills are backfilled.

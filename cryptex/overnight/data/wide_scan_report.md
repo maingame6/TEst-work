@@ -2,18 +2,18 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-11-06T00:11:55.118835+00:00; scanning cycles: 47.
+Last batch: 2026-11-06T02:34:08.160212+00:00; scanning cycles: 48.
 Discovered: 4207 distinct venue/pair listings.
 Selected in scan batches: **4207**.
 Checked against exchange metadata: **4207**.
 Real 5m OHLCV requests attempted: **4207**.
-Validated recent closed-candle histories: **3870**.
+Validated recent closed-candle histories: **3879**.
 Venue/pairs producing historical strategy samples: **234**.
 
 | Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |
 |---|---:|---:|---:|---:|
 | kraken | 1205 | 1205 | 1203 | 2 |
-| coinbase | 865 | 865 | 530 | 335 |
+| coinbase | 865 | 865 | 539 | 326 |
 | bitstamp | 236 | 236 | 236 | 0 |
 | okx | 1039 | 1039 | 1039 | 0 |
 | kucoin | 862 | 862 | 862 | 0 |
@@ -22,8 +22,8 @@ Venue/pairs producing historical strategy samples: **234**.
 |---|---:|---:|---:|---:|
 | momentum_05 | 403 | 29 | 121 | -2.72209% |
 | cost_aware_momentum | 96 | 16 | 16 | -3.02420% |
-| breakout | 412 | 29 | 134 | -2.45863% |
-| dip_recovery | 119 | 12 | 50 | -2.25499% |
+| breakout | 419 | 29 | 135 | -2.45684% |
+| dip_recovery | 119 | 12 | 50 | -2.25341% |
 
 **Fees:** each venue's rate and source/status is machine-readable in wide_scan_report.json. All entries and exits subtract fees AND slippage each way.
 **Caveat:** Coinbase and Bitstamp currently use high-cost unverified assumptions. OKX and KuCoin have varying jurisdictions/fee classes. No venue-specific profitability claim until tier/depth confirmed.
