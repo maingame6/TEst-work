@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-06T19:31:26.000274+00:00",
+  "checked_at": "2026-11-06T20:31:47.372953+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -28,9 +28,8 @@
     {
       "source": "FED_MACRO",
       "purpose": "official monetary policy",
-      "status": "UNAVAILABLE",
-      "items": 0,
-      "error": "HTTPError:HTTP Error 406: Not Acceptable"
+      "status": "OK",
+      "items": 15
     },
     {
       "source": "SEC_REGULATORY",
@@ -52,6 +51,72 @@
     }
   ],
   "articles": [
+    {
+      "id": "4859d44d2d0285ee",
+      "source": "CRYPTODESK",
+      "title": "Apple, Meta reject OKX–ICE tokenized stock plans, leaving crypto firms as the ones to watch",
+      "url": "https://www.coindesk.com/policy/2026/11/06/apple-meta-reject-okx-ice-tokenized-stock-plans-leaving-crypto-firms-as-the-ones-to-watch",
+      "published_at": "2026-11-06T20:09:18+00:00",
+      "first_observed_at": "2026-11-06T20:31:47.372953+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "9be697a96d8bdd7f",
+      "source": "FED_MACRO",
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "published_at": "2026-06-17T18:00:00+00:00",
+      "first_observed_at": "2026-11-06T20:31:47.372953+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "7791f2a05d98e62e",
+      "source": "FED_MACRO",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617b.htm",
+      "published_at": "2026-06-17T18:00:00+00:00",
+      "first_observed_at": "2026-11-06T20:31:47.372953+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "591157231b37b3ab",
+      "source": "FED_MACRO",
+      "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
+      "published_at": "2026-05-26T18:00:00+00:00",
+      "first_observed_at": "2026-11-06T20:31:47.372953+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "e52895cec62bea55",
+      "source": "FED_MACRO",
+      "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+      "published_at": "2026-05-20T18:00:00+00:00",
+      "first_observed_at": "2026-11-06T20:31:47.372953+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "2dd2ba7e4c508a23",
+      "source": "SEARCH_RADAR",
+      "title": "Michigan sees rise in Bitcoin kiosk scams - Spartan Newsroom",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOG5KZVZUMzV1eFk2V1B1c0dkdDRRaUpabmNSVUxTVTJYRGYxR21BZUVuUnh3dEhMM01xTE80amU4X1hBX2h2eEJObUVMT19JQUJQMEt5cWZLOVdVSWQ5Z01idlprcC1FYjVaOEVTeFV4UVRhWnlGUjRycHNIV2F5Zw?oc=5",
+      "published_at": "2026-11-06T16:48:17+00:00",
+      "first_observed_at": "2026-11-06T20:31:47.372953+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "7fd7ac7350b9777d",
       "source": "COINTELEGRAPH",
@@ -2735,78 +2800,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "cca25d13561edd04",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Federal Open Market Committee, June 16-17, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
-      "published_at": "2026-07-08T18:00:00+00:00",
-      "first_observed_at": "2026-11-05T11:41:28.769879+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "e265c8349fbe2cf0",
-      "source": "SEARCH_RADAR",
-      "title": "American Bitcoin’s $126 Million Quarterly Profit Comes From Its Bitcoin Treasury Gain - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQanNEa3RuZU0xdXlXeUoxWmlsNFhRTlBhTlpLS2hoS0tOYUlpQnhELXBhM2ltU3FwNmRvVlI3ZkFfUk5KS25Sd19UMWttU0lEZnFOTlRiYU1zZFljbGNPcWYwMVByZE5MUUlHbi1oeVFGUU9RLVJyQXM3TmhSY3NoRHVmcUtodnFhcG02d1JwTlNJY29RanY0VnZ5WUtjSUk1QjlkZ0t3?oc=5",
-      "published_at": "2026-11-05T11:00:25+00:00",
-      "first_observed_at": "2026-11-05T11:41:28.769879+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "989dc1fa75368c99",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin win rate vs. S&P 500 recovers as post-midterm history favors stocks - TradingView",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQV1V2T3VwdmI0N3ZBZTY3RXB1VzZMU2dNVHNUX3laUXpsMl9KRHJNaDlNQXNmZHJnNXB6RFluemhhd2d5ZUF4LVl2NWtFajg3RXV0eGwyRzA3eWhNWVp6VWpEczJtZFFMS2hrNEFtT1RTU05zSVcydHBZZWduLWpIU25CMHhKc2ZEMDJ0V2NTalRXaXg0Q3ZUbU9aWkl2enJZR0V4LXpvOTRmTTNJMnRuZWVaMUVrZGpXSlRWUHQ0ZkpEc3JIbFRhN3hCNXJyYTFwYjZacw?oc=5",
-      "published_at": "2026-11-05T10:28:26+00:00",
-      "first_observed_at": "2026-11-05T11:41:28.769879+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a343071ec963da23",
-      "source": "SEARCH_RADAR",
-      "title": "Mercado Bitcoin hack continued hours after exchange said attack was contained, report finds - CoinDesk",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRTdldFA3ejM3b0hWdl9fRXFHWWYwcjI5S0pUbkRIc19wbldMOEUtR0RLaEhhcEg0TVNVa0VHQ1BhcFRoSXdxazc3NnF1eG5TS3BPc2ZrVGFWYndQajZac2Q4Qi10eUJGV1NadjFOaWdUWklHYW04Mnc0LVFBWjgzbEhvM09yVDVXdjh2OXJva3ViWHJqNERNYVNmQ0szUm1sNjM5WlRsdW5meVlEQVJibE9RQVBTZktwbE4zM3VSbkYwVlVsNlN1R1c4dE1kdDFR?oc=5",
-      "published_at": "2026-11-05T10:44:54+00:00",
-      "first_observed_at": "2026-11-05T11:41:28.769879+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "71655ff898a03f42",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin Back Above $80,000 as $468 Million of Shorts Get Wiped Out: Can BTC Clear Its Pre-Hack High? - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPVjRybHlXal9xbjlVVmU0LTRVdEJ5d1diOTV5SEI0V1p5SW1ZUmFDOVZTQzRudkZ6VXRHVlh6Zlp1N3dOZkR6YUlQMWFXcjlLeFVuOGtCNGZhemU0elB5b1IyT3dXUDM1R1JXZ0wtbnB3dTEzVElERlBzUkoySTAyanhFdTgzeVJ5Wjk5cWJMY3dFYmF1?oc=5",
-      "published_at": "2026-11-05T09:15:43+00:00",
-      "first_observed_at": "2026-11-05T11:41:28.769879+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "b6f2861ebcdcd4ad",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin holds above $80,000 after Wednesday’s jump as injective rallies on staked ETF listing - CoinDesk",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPYWNYQUFpdFRkekNzZ2w4a0VmX3doemxYNVVRLXZDMG1HVUpNTGJ5WWlJZ3FGR3JzekpyWTdTS2VRYUJFc0lBUTdneGhybk9qQXBXaE1IM3FnTW92eTJYR19Qa3JQbE5uTGxaZGR6NjJXNk9yQWFCQjFlUU5fczBPcHlCNktfakRLWEQ5UHdEYnRhM0J5S3RJYlFrbjhQUWprel9qdnhqMHh0WVhvTS1ZU2VGd1V3WTRnSmI2Y1hXNzZoME51YzRjNWU1N0ZfVHJoaEZnQUhR?oc=5",
-      "published_at": "2026-11-05T11:30:00+00:00",
-      "first_observed_at": "2026-11-05T11:41:28.769879+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 8,
   "sources_total": 8
 }
