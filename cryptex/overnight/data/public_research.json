@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-06T18:26:40.924694+00:00",
+  "checked_at": "2026-11-06T19:31:26.000274+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -28,8 +28,9 @@
     {
       "source": "FED_MACRO",
       "purpose": "official monetary policy",
-      "status": "OK",
-      "items": 15
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "HTTPError:HTTP Error 406: Not Acceptable"
     },
     {
       "source": "SEC_REGULATORY",
@@ -51,6 +52,138 @@
     }
   ],
   "articles": [
+    {
+      "id": "7fd7ac7350b9777d",
+      "source": "COINTELEGRAPH",
+      "title": "Russia finalizes crypto trading rules ahead of Nov. 17 rollout",
+      "url": "https://cointelegraph.com/news/russia-finalizes-crypto-trading-rules-november-rollout?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-06T18:47:45+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "a5864d476353b2f1",
+      "source": "COINTELEGRAPH",
+      "title": "Strive buys 15,124 Bitcoin in October, closes in on top treasury holders",
+      "url": "https://cointelegraph.com/news/strive-buys-bitcoin-october-top-btc-corporate-holders?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-06T18:22:42+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "f7bc8536f6075562",
+      "source": "THE_BLOCK",
+      "title": "Trump administration moves closer to allowing crypto in 401(k) retirement plans",
+      "url": "https://www.theblock.co/news/regulation/2026-11-06-trump-administration-moves-closer-allowing-crypto-401k-retirement-plans-435939",
+      "published_at": "2026-11-06T18:29:36+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "c76b9e39218244ba",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Issues Exemptive Relief from Treasury Clearing Requirements for Certain Inter-Affiliate and Non-U.S. Repo Transactions",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
+      "published_at": "2026-10-30T19:30:00+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "d7c8aab3d17561e5",
+      "source": "SEC_REGULATORY",
+      "title": "Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence",
+      "published_at": "2026-10-29T16:42:37+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "d49d77150ff03054",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Announces Fiscal Year 2027 Examination Priorities",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+      "published_at": "2026-10-23T14:10:00+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "31f59ecde129bcf5",
+      "source": "SEC_REGULATORY",
+      "title": "SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+      "published_at": "2026-10-20T13:25:16+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "20d7f188f04f037b",
+      "source": "SEC_REGULATORY",
+      "title": "SEC, FSA Hold Autumn Financial Regulatory Dialogue",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue",
+      "published_at": "2026-10-20T12:51:00+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "2797b6b059edd9ed",
+      "source": "SEARCH_RADAR",
+      "title": "A $15 ethereum permission led to a $2.5B Binance drain - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPaktQQVEyVDJIWm42RnltZ1djVTJaT1ItUldNcWg1Qk11OE1jbDBLZi1LSDJZXzNVck9oeDI0QlFzdC1qMnNqNDFlelNOV3h2NFVkUnlkVkVVSDFWSWxrZVdxNlREQjZoYWFnNjI0Q2UzLTU3M3Fsc1VvbG00OGVfdQ?oc=5",
+      "published_at": "2026-11-06T19:00:00+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "20a2582916a80b18",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin, Ethereum, XRP May Look at a Final Decline Before Year-End, Experts Say - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPQ284VkZpdnY0Z3QwR0FWMG1QVV9sTmZDOS0zOThHVGQ4TXlGMHFBY0huVVYtUmsxVDhveGVEeGhKZXAtSnJuMFRkZmRreTRlZGZCRHVOek4tRk14NVhPRXN6X2FUUlhvYnA5aXRmWUdSS2IwMmtiU1B4TkJndldXdFlfXzJSR1RuY1ZZX0lDOWhhYzFheENIX3Bnbkl2UHJFb2VGZ3RlWmFBeHV3SHVKdWxQbGRQVjFKeTBlREhrNGxnYWhRUWxCZG9ISkt0SV94aEdlcg?oc=5",
+      "published_at": "2026-11-06T19:00:09+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "a209b5aead3da28a",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Under $76,000 After $430M ETF Outflows. Has It Bottomed? - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOM0RqZU4wRHBJRXRETTBKbS1DT2d6cjF5SlltdFBzZ0owaW9IVWQ2M1lLRVliQ0laaW85MThnMDNwLXVvQnB3M1RUMVNTSk0yLWhYOWUzNVRZTXRUb0tfWHMteXZ4RHR0TUZUdm1lNXhRNWJFNTRoaWpjUUVHUHhEMFhNUmVLOExhLTk4UmVyOU9oS2xFSVBNTHVJYVNsWlJ3aHF5UEFQRzRkcmtOd3pRYXdWZlFzNUhqRkE?oc=5",
+      "published_at": "2026-11-06T18:01:00+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "4715e4a808a8914b",
+      "source": "SEARCH_RADAR",
+      "title": "Ethereum price prediction: the staking queue vs exit queue - CryptoTicker.io",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPQjE2eURaRVBwaGhRQUQ0NFNqSnBiSWc0c2RHcG85VGJTVmNkdWhBaFFmM1lVeXhldFkxdjlfaDA1WlFqU1paNFliYm8ycnhENWp5LTgtMEZmSXQtLWpRX2VzMHotNVBTVTRXRTdkaVhnTWJ5MUU3WG1rUTNWRTNsNThYVElXMmEzNWRB?oc=5",
+      "published_at": "2026-11-06T19:17:56+00:00",
+      "first_observed_at": "2026-11-06T19:31:26.000274+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "1d5b4fa4bdc3fa01",
       "source": "COINTELEGRAPH",
@@ -2668,144 +2801,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "941e21a8532fa229",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin firms to $80.5k as U.S. elections buoy risk appetite, but outlook unclear - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNc2pXWWNqa3V1TUtJTTdRM19PcFV0TXJsd21WSVZyaFFWMFZPU2tGLWdIN0Z0MFlIdlZnblNLTjg5NGR6My1WQWVZeVhJMEtCNEJJVkdENm9reEZFcWhURE8wMFBycXVVeThnQ3d3ODJPcmVHMmFVUERPTVpRb04yYXY1c0FZd0x6b1Fka1llQQ?oc=5",
-      "published_at": "2026-11-05T06:30:00+00:00",
-      "first_observed_at": "2026-11-05T11:41:28.769879+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "1c5af0c3defe9f4f",
-      "source": "CRYPTODESK",
-      "title": "Bitcoin miner Riot could pay Anthropic 12% interest under $28 billion AI deal",
-      "url": "https://www.coindesk.com/tech/2026/11/05/bitcoin-miner-riot-could-pay-anthropic-12-interest-under-usd28-billion-ai-deal",
-      "published_at": "2026-11-05T09:36:32+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "cb0443a5247075c1",
-      "source": "COINTELEGRAPH",
-      "title": "Bitcoin win rate vs. S&P 500 recovers as post-midterm history favors stocks",
-      "url": "https://cointelegraph.com/markets/bitcoin-win-rate-sp-500-us-midterms-stocks-gains?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "published_at": "2026-11-05T10:28:26+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "bb99be233bfaf3fe",
-      "source": "COINTELEGRAPH",
-      "title": "South Korea seeks 4th crypto tax delay, targets 2029 start",
-      "url": "https://cointelegraph.com/news/south-korea-crypto-tax-fourth-delay-2029?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "published_at": "2026-11-05T09:35:29+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "9be697a96d8bdd7f",
-      "source": "FED_MACRO",
-      "title": "Federal Reserve issues FOMC statement",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
-      "published_at": "2026-06-17T18:00:00+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "7791f2a05d98e62e",
-      "source": "FED_MACRO",
-      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617b.htm",
-      "published_at": "2026-06-17T18:00:00+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "591157231b37b3ab",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
-      "published_at": "2026-05-26T18:00:00+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "e52895cec62bea55",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
-      "published_at": "2026-05-20T18:00:00+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a457b01eff8af387",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin Cash Proposal Seeks Path to Quantum-Resistant Transactions - The Quantum Insider",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMWpJNUNTdnd0NGR3YmZxS09zcmNRbmdOb2dMSDRHdHllNkVZR2F4eHVsYk9IS25TTTZIMmNyWTN3ZmpEVmpyajRVZ0hYeE9ma0dzVDlDcXZ0V1ZKWGdZWVhZdXBJMkIzdnpDQjFEM3pZNVNUN19JS2cxejhfS2dZVVVCUXBzUjRiSVVoY3ZvM0lIanp3ZHpEZGVSUUQwRmxRNVlzRXN3U19SMElM?oc=5",
-      "published_at": "2026-11-05T09:54:03+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "3f53d8537e4394d3",
-      "source": "SEARCH_RADAR",
-      "title": "American Bitcoin Q3 Earnings: $126M Profit - Bitcoin Foundation",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcUpxTHRpeEpFbUVLSTktM2ZRd0hYN1VuWHdzLXM2VXVid25wM1NjREk2Z1h3TGlzTDBxVThmZTFBYUowRmVvWlVPNjFhV0FNX0sxaVRyYy1ZMnZrZGpWdjBRdmpGNEdCdndEMGVwZmJMc3FnUUlSRWpfbmZYWWxVV0tneFVnNS1fem1MemNjS2p5ZHh0dV9RQmg2UjFNMEdFYVdyOVN1NUJHMklDclFF?oc=5",
-      "published_at": "2026-11-05T09:57:54+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "b6fd53ce207545fb",
-      "source": "SEARCH_RADAR",
-      "title": "Pension Funds' Allocation to Bitcoin Need Not Depend on Congress -- Market Talk - Moomoo",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSFNFS0JoYkQ5RWhPVnBPZXRmaXNCNkFobDViZ0FzdGlJNXctaWdVcEFnWUVyanR3VnlQZlAtVmNTUURqSmFRZmlQYTd1aXNrNzZmNXpybjBic09UMjgzNUlqeEZ6OTlRbE1vZGQyRUVOOVpRU2dWYnVZbVBmVldiYjJ4QnJ4X0JXaE91OGRsSWs5bDV3dWZDOWR6OHdyTGpuNXhVR0JQRmE0ZGM?oc=5",
-      "published_at": "2026-11-05T10:08:41+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "f248e804657a0484",
-      "source": "SEARCH_RADAR",
-      "title": "Not Hyperliquid. Not Zcash. This Will Be the Top-Performing Cryptocurrency of 2027. - The Motley Fool",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNdGs1VUVmTGVkbm1nam9SY3VFSU9NWlBYY3VfUlcySlJKZi1kYnRrRzZjSHExWmZTYlZ5Smo3ZlZFOUhwaV9GNW1KeFlUalZZeTY5UjFac0xrLUZvUXlmU0M0ZjBCU1FjU1hQcmI2bENWS2ZlS2w2aWRvREFFQUpKY3VzZ1ZsUWJSZEtYZnRSOUJMYUZwZUsxcw?oc=5",
-      "published_at": "2026-11-05T09:45:00+00:00",
-      "first_observed_at": "2026-11-05T10:41:01.562841+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 8,
+  "sources_up": 7,
   "sources_total": 8
 }
