@@ -4,21 +4,21 @@
 
 This is NOT every-five-minute cross-exchange execution.
 
-Markets with genuine post-deployment observations: 349
-Distinct forward observations: 888
+Markets with genuine post-deployment observations: 355
+Distinct forward observations: 917
 Completed hypothetical round trips: 2
 Censored entries: 4; censored exits: 0
 
-Cash reference: 0%; fee-adjusted buy/hold markets: 23; mean after costs: -5.26939%.
+Cash reference: 0%; fee-adjusted buy/hold markets: 23; mean after costs: -5.77692%.
 Buy/hold holding periods differ and cannot establish strategy superiority.
 
 | Exchange | Markets observed | Forward observations | Completed simulations |
 |---|---:|---:|---:|
-| kraken | 21 | 171 | 2 |
-| coinbase | 184 | 298 | 0 |
-| bitstamp | 7 | 132 | 0 |
-| okx | 5 | 80 | 0 |
-| kucoin | 132 | 207 | 0 |
+| kraken | 21 | 177 | 2 |
+| coinbase | 190 | 310 | 0 |
+| bitstamp | 7 | 137 | 0 |
+| okx | 5 | 83 | 0 |
+| kucoin | 132 | 210 | 0 |
 
 | Prespecified gate | Completed | After-cost wins | Mean after costs | Stress mean | Max unit-stake DD |
 |---|---:|---:|---:|---:|---:|
