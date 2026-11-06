@@ -2,15 +2,15 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-06T08:01:25.387232+00:00 (Europe/Dublin)
+Checked: 2026-11-06T08:06:26.806183+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-05T17:46:21.272386+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $204.0222 · P&L $-5.9778 (-2.85%)**
+**Starting paper money $210.00 · Current estimated liquidation $204.0220 · P&L $-5.9780 (-2.85%)**
 
-Realised $-5.5529; unrealised after estimated future sale costs $-0.4249.
-Open: 3; queued: 1; closed: 100; paper fills in current JSON: 203.
+Realised $-5.6319; unrealised after estimated future sale costs $-0.3461.
+Open: 2; queued: 0; closed: 101; paper fills in current JSON: 204.
 
 Overnight status: MORNING_RECORDED
 
@@ -26,10 +26,10 @@ New paper fills since session started: 5.
 ## Price prediction versus trading costs
 
 Estimated price move needed just to break even on a round trip: **2.122%** (0.80% Kraken Tier 1 taker fee + 0.25% estimated slippage **on each side**).
-Gross-versus-net attribution available on 86 of 100 cached closed trades; earlier records are honestly marked unavailable.
-Attributed gross market movement P&L: $+0.083749;
-Attributed fees + slippage drag: $5.523441;
-Attributed net profit/loss: $-5.439692.
+Gross-versus-net attribution available on 87 of 101 cached closed trades; earlier records are honestly marked unavailable.
+Attributed gross market movement P&L: $+0.083329;
+Attributed fees + slippage drag: $5.602022;
+Attributed net profit/loss: $-5.518693.
 Gross winners: 50; after-cost winners: 7; gross winners turned into losses by execution friction: 43.
 Historical older fills were at lower assumed fees; aggregate lifetime return is mixed-policy. V4-only prospective sample is the primary evidence.
 Stress scenario: 0.80% taker fee + 0.50% slippage EACH WAY; break even 2.634%.
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 94.2301 | -5.7699 | -5.3450 | 70 | 3 |
+| Original ten traders | 100.00 | 94.2298 | -5.7702 | -5.4240 | 71 | 2 |
 | Eleven maths/OSS traders | 110.00 | 109.7921 | -0.2079 | -0.2079 | 30 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -49,8 +49,8 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.7182 | $-0.2818 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.8385 | $-0.1615 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.7214 | $-0.2786 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.8314 | $-0.1686 |
 | SOL | 2026-10-30T22:21:37.361980+00:00 | $9.2621 | $-0.7379 |
 
 ## 21-agent leaderboard
@@ -75,13 +75,13 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 16 | HOUSE | main | 9.8794 | -0.1206 | -0.1206 | 6 | cash |
 | 17 | BREAKOUT | main | 9.8006 | -0.1994 | -0.1994 | 4 | cash |
 | 18 | CONTRARIAN | main | 9.6875 | -0.3125 | -0.3125 | 7 | cash |
-| 19 | ROTATOR | main | 9.3789 | -0.6211 | -0.4172 | 2 | BTC |
+| 19 | ROTATOR | main | 9.3813 | -0.6187 | -0.4172 | 2 | BTC |
 | 20 | FRACTAL | main | 8.6127 | -1.3873 | -1.2427 | 12 | SOL |
-| 21 | VORTEX | main | 7.0408 | -2.9592 | -2.8829 | 22 | ETH |
+| 21 | VORTEX | main | 7.0381 | -2.9619 | -2.9619 | 23 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1793951700 / 1793951700
+Latest main/shadow candle timestamps: 1793952000 / 1793952000
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
