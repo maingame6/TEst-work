@@ -3,7 +3,7 @@
  "mode": "PAPER_ONLY",
  "cursor": {
   "kraken": 385,
-  "coinbase": 208,
+  "coinbase": 210,
   "bitstamp": 119,
   "okx": 95,
   "kucoin": 524
@@ -252642,17 +252642,43 @@
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
+  },
+  "coinbase|CARD/USD": {
+   "venue": "coinbase",
+   "symbol": "CARD/USD",
+   "quote": "USD",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.012,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-07T07:04:39.599295+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "coinbase|CARD/USDC": {
+   "venue": "coinbase",
+   "symbol": "CARD/USDC",
+   "quote": "USDC",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.012,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-07T07:04:39.599295+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
   }
  },
- "scan_count": 53,
- "last_scan": "2026-11-07T00:54:08.179862+00:00",
+ "scan_count": 54,
+ "last_scan": "2026-11-07T07:04:39.599295+00:00",
  "failures": [
-  {
-   "at": "2026-10-31T23:37:20.483536+00:00",
-   "attempted": 425,
-   "validated": 349,
-   "unavailable": 76
-  },
   {
    "at": "2026-10-31T23:39:30.244465+00:00",
    "attempted": 425,
@@ -252946,11 +252972,17 @@
    "attempted": 104,
    "validated": 25,
    "unavailable": 79
+  },
+  {
+   "at": "2026-11-07T07:04:39.599295+00:00",
+   "attempted": 2,
+   "validated": 0,
+   "unavailable": 2
   }
  ],
  "last_batch": {
-  "attempted": 104,
-  "validated": 25,
-  "unavailable": 79
+  "attempted": 2,
+  "validated": 0,
+  "unavailable": 2
  }
 }
