@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-07T23:26:51.148846+00:00
+Generated: 2026-11-07T23:32:09.914189+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,14 +10,14 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XLM |
-| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD LTC |
-| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD LTC |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD UNI |
+| FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD SOL |
+| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD SOL |
 | ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD SOL |
-| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD LTC |
+| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD SOL |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD LTC |
-| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD LTC |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD SOL |
+| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD SOL |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD SOL |
 | NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD SOL |
