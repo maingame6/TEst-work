@@ -2,7 +2,7 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-11-07T13:58:20.073970+00:00; scanning cycles: 55.
+Last batch: 2026-11-07T18:42:44.485591+00:00; scanning cycles: 56.
 Discovered: 4209 distinct venue/pair listings.
 Selected in scan batches: **4209**.
 Checked against exchange metadata: **4209**.
