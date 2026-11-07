@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-07T01:21:52.473658+00:00",
+  "checked_at": "2026-11-07T02:26:43.315705+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -28,8 +28,9 @@
     {
       "source": "FED_MACRO",
       "purpose": "official monetary policy",
-      "status": "OK",
-      "items": 15
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "HTTPError:HTTP Error 406: Not Acceptable"
     },
     {
       "source": "SEC_REGULATORY",
@@ -51,6 +52,50 @@
     }
   ],
   "articles": [
+    {
+      "id": "906f2ef34cd44aab",
+      "source": "CRYPTODESK",
+      "title": "Bitcoin is resilient, but leverage is missing and demand still tepid",
+      "url": "https://www.coindesk.com/daybook-us/2026/11/05/bitcoin-is-resilient-but-leverage-is-missing-and-demand-still-tepid",
+      "published_at": "2026-11-05T12:27:04+00:00",
+      "first_observed_at": "2026-11-07T02:26:43.315705+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "d50a3cd1207fdbfd",
+      "source": "COINTELEGRAPH",
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-06T22:00:15+00:00",
+      "first_observed_at": "2026-11-07T02:26:43.315705+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "f9374091df9ca8e2",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin vs XRP All-Time High: 66.56% vs 209.32% [2026] - tech-insider.org",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSFNNMlRXcnI1OTlNS2pqemxYMDFrNktRcmNjZTFnQmtXTEwwbE5FLUZBcXB5NE9LaGxDOGV3SU5MdmcweE5lNDI1UkpmSGlBREFCQnp3QVVnTk1FZTc5Qm42Y0QxTkxheUtsWG1BM0tocEYwQWNFZHMxbk5TakZKQ2psUThhSWNhQ01reUFNcGxhMjJYRjZEdA?oc=5",
+      "published_at": "2026-11-07T02:04:24+00:00",
+      "first_observed_at": "2026-11-07T02:26:43.315705+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "b6f360549c7151db",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin vs XRP: 66.56% vs 209.32% to a New ATH [2026] - shattered.io",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQTklwM0hOaExEOEM3bEtuQVBTX2JSU3lKODFMTmRySUNjTFVWQlBZNVNTMlNSazQzanhFeG1HMmhjYXhHOW4tbmtTZEtHNzduRG5aSnlCZW1zZVRDZkpJQUd4ZVBwYVJqMmRrNVFYcXRfLTdLMDlwY3I3SE1tRXN1NnNUTjZIR2tRM3NN?oc=5",
+      "published_at": "2026-11-07T01:28:33+00:00",
+      "first_observed_at": "2026-11-07T02:26:43.315705+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "7200241085dcb4f5",
       "source": "FED_MACRO",
@@ -2756,56 +2801,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a3c2088ae2e6dda5",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin and digital assets allocation for advisors: how to size client portfolios - 21Shares",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNX2xIRFlhRkZzYmxNNXZrTFhvVy1icjNqcy1oY0h1SW94OURnX3RvbHNCRlpiNVhXMi1xWDdtQ1lERFIxVmcteWVKdkFRUkhiMnVXa2JIVnU4aG5mVDNzVTFmSkZnYl9oajZLMC04dWE3UGxFR084WWFQejF4STY0UHZqSVQyZVZyMU9Md0RBZHM2a3dD?oc=5",
-      "published_at": "2026-11-05T13:27:13+00:00",
-      "first_observed_at": "2026-11-05T13:46:19.726985+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "b68da13feaa2b17c",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin After the Midterms: 21shares and CoinShares on ETF Outflows, the CLARITY Act and Rates - www.trendingtopics.eu",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaHV5aEwydHdXU3g1TXFnNDBIb3oyUjVHS2NPMVgzWEpPSkFZeG5OVTlkeW5fNndrczFueENUNWlGMnJRSExObnJWQTdkOUdqUFJjZ1NldEJleW5nRkxMNlJQdjRxcXdQWWNRd2ZLQ2pOZEEyU2UxMS1HU2oybVozUk5rUlJZLUIwNFlGNWNlTHBWLUhhTUtUZG1admlrRkNmN3J2OHZMMlozdjU4?oc=5",
-      "published_at": "2026-11-05T13:37:06+00:00",
-      "first_observed_at": "2026-11-05T13:46:19.726985+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "5aefeef02cf826f0",
-      "source": "SEARCH_RADAR",
-      "title": "Current price of Bitcoin for Nov. 5, 2026 - Fortune",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1VRjJ0eVlvRm05QVpsNS1LOHdDZlN6bnJFMzV4ZzRpamd4ajJ4aU5hRS10T1lRVDhfLW5sc2QwQ0hPNmFtOHFfZ3NIMWFULURNT1AzQXBVTUdkUXl6bHNwR0hqY2xzc1U?oc=5",
-      "published_at": "2026-11-05T08:31:23+00:00",
-      "first_observed_at": "2026-11-05T13:46:19.726985+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "d96f4d09b9c26943",
-      "source": "SEARCH_RADAR",
-      "title": "Google could take stake in bitcoin miner TeraWulf’s $19 billion AI project if Anthropic defaults - CoinDesk",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNYWRuWGNUdl9xM0ZqZ1VZV0F4dk4ySVg4aW5tMzB2S3ZXRkwxazd0NjVyM0NHbURkMFRWN01EUUxQbWFCVmlqT1NXYUdIeTJaVmtWZTlLVmRya3NhUzBmRGR6NHJjUW9VY0RLWFlnVExqS2RaWTBHc05od0NQZnRpOWlwUEpFcDBFV01LS09sUWI4RngyMXItdUl4Uk41WHUyalh1Vm5XdXZ5aUNqbGpxRklnQmNxa203ZWhHOVhtRjYwa3l2WEFQM2lwQmZfMk5Y?oc=5",
-      "published_at": "2026-11-05T13:29:40+00:00",
-      "first_observed_at": "2026-11-05T13:46:19.726985+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 8,
+  "sources_up": 7,
   "sources_total": 8
 }
