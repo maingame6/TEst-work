@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-07T20:26:49.493884+00:00",
+  "generated_at": "2026-11-07T20:31:44.894409+00:00",
   "mode": "PAPER_ONLY",
   "live_orders": false,
   "policy": "COST_GATE_V4_KRAKEN_TAKER",
   "first_observed_at": "2026-10-31T23:24:36.636109+00:00",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1794082800,
-  "expected_candles": 1982,
-  "observed_candles": 1831,
+  "last_candle_ts": 1794083100,
+  "expected_candles": 1983,
+  "observed_candles": 1832,
   "missing_intervals": 151,
-  "coverage_pct": 92.381,
+  "coverage_pct": 92.385,
   "max_gap_minutes": 395.0,
   "latest_gaps": [
     {
@@ -63,7 +63,7 @@
       "missing_intervals": 19
     }
   ],
-  "days_observed": 6.878,
+  "days_observed": 6.882,
   "main_new_closed_trades": {
     "GAMBLER": 0,
     "HOUSE": 0,
@@ -115,9 +115,9 @@
     "LEAN_EVENT": false,
     "NAUTILUS_REGIME": false
   },
-  "net_paper_pnl_total": -7.151856,
+  "net_paper_pnl_total": -7.150664,
   "first_policy_equity": 208.880584,
-  "change_since_first_policy_observation": -6.03244,
+  "change_since_first_policy_observation": -6.031248,
   "historical_data_note": "V3 closed trades retain older lower cost assumption; this V4 prospective sample counts only V4-qualified closes. Balance deltas may reflect V3-era holdings.",
   "status": "COLLECTING_WITH_GAPS",
   "caveat": "A ready sample is not a demonstrated edge. Held-out after-cost comparison, uncertainty and regimes still required. Never backfill missing five-minute decisions."
