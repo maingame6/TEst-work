@@ -2,26 +2,26 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-07T20:56:28.546054+00:00 (Europe/Dublin)
+Checked: 2026-11-07T21:02:04.783107+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-05T17:46:21.272386+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $202.4742 · P&L $-7.5258 (-3.58%)**
+**Starting paper money $210.00 · Current estimated liquidation $202.5245 · P&L $-7.4755 (-3.56%)**
 
-Realised $-6.7646; unrealised after estimated future sale costs $-0.7612.
+Realised $-6.7646; unrealised after estimated future sale costs $-0.7109.
 Open: 4; queued: 0; closed: 114; paper fills in current JSON: 232.
 
-Overnight status: MORNING_RECORDED
+Overnight status: IN_PROGRESS
 
 ## Full overnight intelligence briefing
 
 Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders, highest/lowest completed trades, exit reasons, overnight price action, execution-cost attribution, public news, specialist-vote health and research distillation gates.
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
-First observed overnight starting balance $203.6122 at 2026-11-06T21:01:41.340790+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.1871 as of 2026-11-07T08:01:44.238643+00:00.
-New paper fills since session started: 6.
+First observed overnight starting balance $202.5245 at 2026-11-07T21:02:04.783107+00:00 (NOT backdated to 21:00).
+Overnight P&L $+0.0000 as of 2026-11-07T21:02:04.783107+00:00.
+New paper fills since session started: 0.
 
 ## Price prediction versus trading costs
 
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 92.6820 | -7.3180 | -6.5567 | 84 | 4 |
+| Original ten traders | 100.00 | 92.7323 | -7.2677 | -6.5567 | 84 | 4 |
 | Eleven maths/OSS traders | 110.00 | 109.7921 | -0.2079 | -0.2079 | 30 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.7185 | $-0.2815 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.8215 | $-0.1785 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.1815 | $-0.8185 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.7268 | $-0.2732 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.8356 | $-0.1644 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $9.1990 | $-0.8010 |
 
 ## 21-agent leaderboard
 
@@ -73,15 +73,15 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 14 | SPY | main | 9.9514 | -0.0486 | -0.0486 | 5 | cash |
 | 15 | GAMBLER | main | 9.8979 | -0.1021 | -0.1021 | 3 | cash |
 | 16 | BREAKOUT | main | 9.8006 | -0.1994 | -0.1994 | 4 | cash |
-| 17 | HOUSE | main | 9.7245 | -0.2755 | -0.1206 | 6 | BCH |
-| 18 | CONTRARIAN | main | 9.5327 | -0.4673 | -0.3125 | 7 | BCH |
-| 19 | ROTATOR | main | 9.3791 | -0.6209 | -0.4172 | 2 | BTC |
-| 20 | FRACTAL | main | 8.2810 | -1.7190 | -1.4711 | 14 | SOL |
+| 17 | HOUSE | main | 9.7396 | -0.2604 | -0.1206 | 6 | BCH |
+| 18 | CONTRARIAN | main | 9.5478 | -0.4522 | -0.3125 | 7 | BCH |
+| 19 | ROTATOR | main | 9.3854 | -0.6146 | -0.4172 | 2 | BTC |
+| 20 | FRACTAL | main | 8.2949 | -1.7051 | -1.4711 | 14 | SOL |
 | 21 | VORTEX | main | 6.1338 | -3.8662 | -3.8662 | 34 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1794084600 / 1794084600
+Latest main/shadow candle timestamps: 1794084900 / 1794084900
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
