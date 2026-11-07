@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-07T16:16:50.351374+00:00
+Generated: 2026-11-07T16:21:51.060704+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -12,15 +12,15 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 | --- | ---: | ---: | ---: | ---: | --- |
 | FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XLM |
 | FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD LTC |
-| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD AAVE |
+| GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD UNI |
 | ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD UNI |
-| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD AAVE |
+| GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD UNI |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD AAVE |
-| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD AAVE |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD UNI |
+| QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD UNI |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD UNI |
-| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD AAVE |
+| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD PEPE |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
