@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-08T23:22:51.241768+00:00
+Generated: 2026-11-08T23:27:06.140040+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 91.82; initial USD 100.00; change USD -8.18.
-Closed trades: 96; wins 7; losses/breakevens 89.
+Paper equity: USD 91.74; initial USD 100.00; change USD -8.26.
+Closed trades: 97; wins 7; losses/breakevens 90.
 
 ## Specialist research teams
 
@@ -15,23 +15,23 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | BTC | 43 | 2 | 0 |
-| HOUSE | SELL | ETH | 21 | 26 | 0 |
-| SPY | HOLD | SOL | 39 | 13 | 0 |
-| MEME HUNTER | HOLD | DOGE | 38 | 9 | 0 |
-| BREAKOUT | HOLD | BTC | 43 | 2 | 0 |
-| CONTRARIAN | HOLD | BTC | 13 | 32 | 0 |
-| ROTATOR | HOLD | BTC | 43 | 2 | 0 |
-| VORTEX | HOLD | BTC | 43 | 2 | 0 |
-| FRACTAL | HOLD | SOL | 39 | 13 | 0 |
-| SHOCKWAVE | HOLD | DOGE | 38 | 9 | 0 |
+| GAMBLER | HOLD | BTC | 39 | 1 | 0 |
+| HOUSE | SELL | ETH | 19 | 24 | 1 |
+| SPY | HOLD | SOL | 40 | 7 | 0 |
+| MEME HUNTER | HOLD | DOGE | 32 | 12 | 1 |
+| BREAKOUT | HOLD | BTC | 39 | 1 | 0 |
+| CONTRARIAN | HOLD | BTC | 11 | 29 | 0 |
+| ROTATOR | HOLD | BTC | 39 | 1 | 0 |
+| VORTEX | HOLD | BTC | 39 | 1 | 0 |
+| FRACTAL | HOLD | SOL | 40 | 7 | 0 |
+| SHOCKWAVE | HOLD | DOGE | 32 | 12 | 1 |
 
 ## Bot performance
 
 | Bot | Closed | Wins | Losses | Win rate | Realized net USD | Next allocation |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | GAMBLER | 3 | 0 | 3 | 0.0% | -0.1021 | 1.00x |
-| HOUSE | 7 | 0 | 7 | 0.0% | -0.2294 | 1.00x |
+| HOUSE | 8 | 0 | 8 | 0.0% | -0.2712 | 1.00x |
 | SPY | 5 | 1 | 4 | 20.0% | -0.0486 | 1.00x |
 | MEME HUNTER | 4 | 2 | 2 | 50.0% | -0.0057 | 1.00x |
 | BREAKOUT | 4 | 0 | 4 | 0.0% | -0.1994 | 1.00x |
@@ -47,9 +47,9 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 - **Exploratory 15-minute observation complete (next-bar fill)**: 18 exits; net USD -0.1765
 - **PILOT V1 fixed holding window reached; next-candle simulated exit**: 11 exits; net USD -1.7052
 - **RSI normalized**: 7 exits; net USD -0.5212
+- **Range normalized**: 4 exits; net USD -0.2376
 - **Time-based exit**: 4 exits; net USD -0.3833
 - **Breakout failed**: 3 exits; net USD -0.1827
-- **Range normalized**: 3 exits; net USD -0.1958
 - **Timescales disagree**: 2 exits; net USD -0.0146
 - **Trend failure**: 1 exits; net USD -0.0072
 - **Volume faded**: 1 exits; net USD -0.0095
