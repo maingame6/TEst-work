@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-08T16:47:05.697632+00:00",
+  "generated_utc": "2026-11-08T16:52:29.526071+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -10,90 +10,90 @@
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 4,
-      "opposition": 17,
+      "opposition": 22,
       "veto": 0,
-      "factor_score": -0.1029
+      "factor_score": -0.1554
     },
     "HOUSE": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 16,
+      "support": 21,
       "opposition": 5,
       "veto": 0,
-      "factor_score": 0.1753
+      "factor_score": 0.2213
     },
     "SPY": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 5,
-      "opposition": 21,
+      "support": 6,
+      "opposition": 22,
       "veto": 0,
-      "factor_score": -0.1393
+      "factor_score": -0.1596
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
       "support": 8,
-      "opposition": 20,
+      "opposition": 23,
       "veto": 1,
-      "factor_score": -0.0694
+      "factor_score": -0.1254
     },
     "BREAKOUT": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 4,
-      "opposition": 17,
+      "opposition": 22,
       "veto": 0,
-      "factor_score": -0.1029
+      "factor_score": -0.1554
     },
     "CONTRARIAN": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 16,
+      "support": 21,
       "opposition": 5,
       "veto": 0,
-      "factor_score": 0.1753
+      "factor_score": 0.2213
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 4,
-      "opposition": 17,
+      "opposition": 22,
       "veto": 0,
-      "factor_score": -0.1029
+      "factor_score": -0.1554
     },
     "VORTEX": {
       "decision": "SELL",
       "symbol": "ETH",
-      "support": 9,
-      "opposition": 15,
-      "veto": 0,
-      "factor_score": -0.0118
+      "support": 4,
+      "opposition": 24,
+      "veto": 1,
+      "factor_score": -0.1649
     },
     "FRACTAL": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 5,
-      "opposition": 21,
+      "support": 6,
+      "opposition": 22,
       "veto": 0,
-      "factor_score": -0.1393
+      "factor_score": -0.1596
     },
     "SHOCKWAVE": {
       "decision": "HOLD",
       "symbol": "DOGE",
       "support": 8,
-      "opposition": 20,
+      "opposition": 23,
       "veto": 1,
-      "factor_score": -0.0694
+      "factor_score": -0.1254
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 92.295285,
-  "portfolio_paper_change_usd": -7.704715,
-  "all_time_closed_paper_trades": 92,
+  "current_paper_equity_usd": 92.241228,
+  "portfolio_paper_change_usd": -7.758772,
+  "all_time_closed_paper_trades": 93,
   "all_time_closed_wins": 7,
-  "all_time_closed_losses": 85,
-  "aggregate_realized_pnl_usd": -7.513227,
+  "all_time_closed_losses": 86,
+  "aggregate_realized_pnl_usd": -7.597976,
   "agents": {
     "GAMBLER": {
       "closed": 3,
@@ -187,15 +187,15 @@
       "position_size_multiplier": 1.0
     },
     "VORTEX": {
-      "closed": 38,
+      "closed": 39,
       "wins": 1,
-      "losses": 37,
-      "win_rate": 0.0263,
-      "realized_net_usd": -4.173177,
-      "average_profit_usd": -0.10982,
+      "losses": 38,
+      "win_rate": 0.0256,
+      "realized_net_usd": -4.257926,
+      "average_profit_usd": -0.109178,
       "average_win_usd": 0.386813,
-      "average_loss_usd": -0.123243,
-      "last_20_net_usd": -1.862405,
+      "average_loss_usd": -0.12223,
+      "last_20_net_usd": -1.761779,
       "sample_sufficient_for_adaptation": true,
       "position_size_multiplier": 0.5
     },
@@ -278,8 +278,8 @@
       "net_pnl_usd": -0.383271
     },
     "PILOT V1 trend turned down; next-candle simulated exit": {
-      "count": 35,
-      "net_pnl_usd": -4.409408
+      "count": 36,
+      "net_pnl_usd": -4.494156
     },
     "PILOT V1 fixed holding window reached; next-candle simulated exit": {
       "count": 10,
