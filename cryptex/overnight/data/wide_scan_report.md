@@ -2,13 +2,13 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-11-07T22:18:46.903074+00:00; scanning cycles: 57.
+Last batch: 2026-11-08T01:29:05.569642+00:00; scanning cycles: 58.
 Discovered: 4209 distinct venue/pair listings.
 Selected in scan batches: **4209**.
 Checked against exchange metadata: **4209**.
 Real 5m OHLCV requests attempted: **4209**.
 Validated recent closed-candle histories: **3902**.
-Venue/pairs producing historical strategy samples: **216**.
+Venue/pairs producing historical strategy samples: **218**.
 
 | Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |
 |---|---:|---:|---:|---:|
@@ -22,7 +22,7 @@ Venue/pairs producing historical strategy samples: **216**.
 |---|---:|---:|---:|---:|
 | momentum_05 | 375 | 29 | 117 | -2.73780% |
 | cost_aware_momentum | 96 | 16 | 16 | -3.02420% |
-| breakout | 392 | 29 | 127 | -2.47275% |
+| breakout | 395 | 29 | 127 | -2.47519% |
 | dip_recovery | 97 | 12 | 44 | -2.18345% |
 
 **Fees:** each venue's rate and source/status is machine-readable in wide_scan_report.json. All entries and exits subtract fees AND slippage each way.
