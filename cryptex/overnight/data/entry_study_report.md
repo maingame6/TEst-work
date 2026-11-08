@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1794151200; captured candles: 2059.
+Last observed closed candle: 1794151500; captured candles: 2060.
 Missed fills: 0; censored exits: 2.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 2 | 18449 | 14111 | 2 | 1 | -2.3659% | 4.931% |
-| COST_AWARE | 2 | 18448 | 13921 | 2 | 1 | -2.3659% | 4.931% |
-| BALANCED_TEST | 71 | 18351 | 13921 | 47 | 28 | -2.2804% | 69.928% |
-| LOW_HURDLE_CONTROL | 438 | 17306 | 13703 | 223 | 145 | -2.2247% | 99.505% |
+| V4_TAKER_STRICT | 2 | 18457 | 14118 | 2 | 1 | -2.3659% | 4.931% |
+| COST_AWARE | 2 | 18456 | 13928 | 2 | 1 | -2.3659% | 4.931% |
+| BALANCED_TEST | 71 | 18359 | 13928 | 47 | 28 | -2.2804% | 69.928% |
+| LOW_HURDLE_CONTROL | 438 | 17314 | 13710 | 223 | 145 | -2.2247% | 99.505% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -33,9 +33,9 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | V4_TAKER_STRICT | 24h | 0 | 0 | n/a | n/a |
 | COST_AWARE | 4h | 0 | 0 | n/a | n/a |
 | COST_AWARE | 24h | 0 | 0 | n/a | n/a |
-| BALANCED_TEST | 4h | 25 | 7 | -2.325% | -0.402% |
+| BALANCED_TEST | 4h | 26 | 8 | -2.040% | -0.145% |
 | BALANCED_TEST | 24h | 3 | 0 | n/a | n/a |
-| LOW_HURDLE_CONTROL | 4h | 87 | 15 | -2.112% | +0.137% |
+| LOW_HURDLE_CONTROL | 4h | 90 | 16 | -2.143% | +0.118% |
 | LOW_HURDLE_CONTROL | 24h | 13 | 1 | -3.758% | -0.959% |
 
 A gate only places a *research candidate*, entered on a later observed candle.
