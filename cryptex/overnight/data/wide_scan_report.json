@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T21:07:14.933071+00:00",
+  "generated_at": "2026-11-09T00:50:06.589957+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
@@ -8,20 +8,20 @@
   "unique_tested_venue_pairs": 4209,
   "unique_exchange_market_metadata_checked": 4209,
   "unique_ohlcv_requested": 4209,
-  "unique_ohlcv_validated_pairs": 3909,
-  "markets_with_any_historical_signal": 220,
+  "unique_ohlcv_validated_pairs": 3910,
+  "markets_with_any_historical_signal": 231,
   "coverage_pct": 100.0,
-  "batches": 64,
+  "batches": 65,
   "venues": {
     "kraken": {
       "discovered": 1205,
       "attempted_distinct": 1205,
       "metadata_checked_distinct": 1205,
       "ohlcv_requested_distinct": 1205,
-      "validated_ohlcv_distinct": 1204,
-      "last_attempt_valid": 1204,
-      "latest_failed": 1,
-      "next_cursor": 464
+      "validated_ohlcv_distinct": 1205,
+      "last_attempt_valid": 1205,
+      "latest_failed": 0,
+      "next_cursor": 471
     },
     "coinbase": {
       "discovered": 867,
@@ -31,7 +31,7 @@
       "validated_ohlcv_distinct": 568,
       "last_attempt_valid": 565,
       "latest_failed": 302,
-      "next_cursor": 193
+      "next_cursor": 278
     },
     "bitstamp": {
       "discovered": 236,
@@ -41,7 +41,7 @@
       "validated_ohlcv_distinct": 236,
       "last_attempt_valid": 236,
       "latest_failed": 0,
-      "next_cursor": 169
+      "next_cursor": 174
     },
     "okx": {
       "discovered": 1039,
@@ -51,7 +51,7 @@
       "validated_ohlcv_distinct": 1039,
       "last_attempt_valid": 1039,
       "latest_failed": 0,
-      "next_cursor": 125
+      "next_cursor": 128
     },
     "kucoin": {
       "discovered": 862,
@@ -61,37 +61,37 @@
       "validated_ohlcv_distinct": 862,
       "last_attempt_valid": 862,
       "latest_failed": 0,
-      "next_cursor": 554
+      "next_cursor": 557
     }
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 382,
+      "historical_samples": 396,
       "net_winners": 29,
-      "gross_up_net_down": 122,
-      "weighted_mean_net_pct": -2.720919,
-      "markets_with_samples": 174
+      "gross_up_net_down": 124,
+      "weighted_mean_net_pct": -2.728944,
+      "markets_with_samples": 185
     },
     "cost_aware_momentum": {
-      "historical_samples": 96,
+      "historical_samples": 97,
       "net_winners": 16,
       "gross_up_net_down": 16,
-      "weighted_mean_net_pct": -3.024205,
-      "markets_with_samples": 57
+      "weighted_mean_net_pct": -3.018886,
+      "markets_with_samples": 58
     },
     "breakout": {
-      "historical_samples": 404,
+      "historical_samples": 400,
       "net_winners": 29,
-      "gross_up_net_down": 133,
-      "weighted_mean_net_pct": -2.459793,
+      "gross_up_net_down": 129,
+      "weighted_mean_net_pct": -2.466357,
       "markets_with_samples": 197
     },
     "dip_recovery": {
-      "historical_samples": 96,
+      "historical_samples": 105,
       "net_winners": 12,
-      "gross_up_net_down": 44,
-      "weighted_mean_net_pct": -2.170248,
-      "markets_with_samples": 73
+      "gross_up_net_down": 49,
+      "weighted_mean_net_pct": -2.151565,
+      "markets_with_samples": 82
     }
   },
   "fees": {
@@ -127,15 +127,15 @@
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
     "attempted": 103,
-    "validated": 20,
-    "unavailable": 83
+    "validated": 21,
+    "unavailable": 82
   },
-  "latest_unavailable_pairs": 303,
-  "current_spread_snapshots": 46,
+  "latest_unavailable_pairs": 302,
+  "current_spread_snapshots": 47,
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {
-    "markets_observed": 379,
-    "forward_observations": 1233,
+    "markets_observed": 380,
+    "forward_observations": 1254,
     "completed": 2,
     "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution."
   }
