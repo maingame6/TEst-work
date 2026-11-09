@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-08T23:58:20.430349+00:00",
+  "at": "2026-11-09T00:12:36.096840+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 7.1863,
+  "holdout_window_days": 7.1963,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,11 +39,11 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 8805,
-      "stale_or_bad": 40,
+      "snapshots": 8820,
+      "stale_or_bad": 41,
       "entry_censored": 6,
-      "exit_censored": 6,
-      "signal_candidates": 8442,
+      "exit_censored": 7,
+      "signal_candidates": 8456,
       "gaps": 270,
       "gap_too_short": 0,
       "gap_too_long": 120
@@ -51,21 +51,21 @@
   },
   "book_interval_quality": {
     "distinct_spot_pairs_seen": 15,
-    "observations_saved_since_freeze": 8805,
-    "adjacent_observed_transitions": 8790,
-    "continuous_adjacent_transitions": 8520,
+    "observations_saved_since_freeze": 8820,
+    "adjacent_observed_transitions": 8805,
+    "continuous_adjacent_transitions": 8535,
     "broken_adjacent_transitions": 270,
     "too_soon_transitions_since_classification": 0,
     "too_late_transitions_since_classification": 120,
     "older_unclassified_transitions": 150,
-    "continuous_fraction_of_observed_transitions": 0.96928,
-    "qualified_momentum_comparisons": 8442,
-    "invalid_books_seen": 40,
+    "continuous_fraction_of_observed_transitions": 0.96934,
+    "qualified_momentum_comparisons": 8456,
+    "invalid_books_seen": 41,
     "meaning": "Pair-by-pair 15-minute experiment feed continuity, NOT how many historical 5m candles were available or genuine execution opportunity. Missing times cannot be backfilled."
   },
   "pending_entries": 0,
-  "open_hypotheses": 25,
-  "recorded_censored_cohorts": 12,
+  "open_hypotheses": 24,
+  "recorded_censored_cohorts": 13,
   "completed_research_hypotheses": 127,
   "gates": {
     "STRICT_232BPS": {
@@ -123,7 +123,7 @@
   },
   "paired_holdout_comparison": {
     "holdout_starts": "2026-11-04T19:30:00+00:00",
-    "heldout_days_since_start": 4.1863,
+    "heldout_days_since_start": 4.1963,
     "control_eligible_cohorts": 54,
     "comparable_completed_cohorts": 54,
     "groups": {
