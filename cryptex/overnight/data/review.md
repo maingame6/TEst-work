@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-09T21:48:02.035340+00:00
+Generated: 2026-11-09T21:53:00.389430+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 90.07; initial USD 100.00; change USD -9.93.
-Closed trades: 107; wins 7; losses/breakevens 100.
+Paper equity: USD 90.06; initial USD 100.00; change USD -9.94.
+Closed trades: 108; wins 7; losses/breakevens 101.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | BTC | 11 | 15 | 0 |
-| HOUSE | HOLD | BTC | 14 | 12 | 0 |
-| SPY | HOLD | SOL | 4 | 30 | 0 |
-| MEME HUNTER | HOLD | DOGE | 4 | 27 | 1 |
-| BREAKOUT | HOLD | BTC | 11 | 15 | 0 |
-| CONTRARIAN | HOLD | BTC | 14 | 12 | 0 |
-| ROTATOR | HOLD | BTC | 11 | 15 | 0 |
-| VORTEX | SELL | ETH | 8 | 24 | 0 |
-| FRACTAL | HOLD | SOL | 4 | 30 | 0 |
-| SHOCKWAVE | HOLD | DOGE | 4 | 27 | 1 |
+| GAMBLER | HOLD | BTC | 17 | 5 | 0 |
+| HOUSE | HOLD | BTC | 5 | 17 | 0 |
+| SPY | HOLD | SOL | 7 | 22 | 0 |
+| MEME HUNTER | HOLD | DOGE | 5 | 19 | 0 |
+| BREAKOUT | HOLD | BTC | 17 | 5 | 0 |
+| CONTRARIAN | HOLD | BTC | 5 | 17 | 0 |
+| ROTATOR | HOLD | BTC | 17 | 5 | 0 |
+| VORTEX | SELL | ETH | 6 | 15 | 0 |
+| FRACTAL | HOLD | SOL | 7 | 22 | 0 |
+| SHOCKWAVE | HOLD | DOGE | 5 | 19 | 0 |
 
 ## Bot performance
 
@@ -37,13 +37,13 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | BREAKOUT | 5 | 0 | 5 | 0.0% | -0.5066 | 1.00x |
 | CONTRARIAN | 9 | 0 | 9 | 0.0% | -0.5319 | 1.00x |
 | ROTATOR | 3 | 0 | 3 | 0.0% | -0.5873 | 1.00x |
-| VORTEX | 45 | 1 | 44 | 2.2% | -4.7578 | 0.50x |
+| VORTEX | 46 | 1 | 45 | 2.2% | -4.8374 | 0.50x |
 | FRACTAL | 18 | 1 | 17 | 5.6% | -2.2493 | 1.00x |
 | SHOCKWAVE | 5 | 2 | 3 | 40.0% | -0.0131 | 1.00x |
 
 ## Where paper trades lost money
 
-- **PILOT V1 trend turned down; next-candle simulated exit**: 42 exits; net USD -4.9940
+- **PILOT V1 trend turned down; next-candle simulated exit**: 43 exits; net USD -5.0736
 - **Exploratory 15-minute observation complete (next-bar fill)**: 18 exits; net USD -0.1765
 - **PILOT V1 fixed holding window reached; next-candle simulated exit**: 13 exits; net USD -2.0918
 - **RSI normalized**: 7 exits; net USD -0.5212
