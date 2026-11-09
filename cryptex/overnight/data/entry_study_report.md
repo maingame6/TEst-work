@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1794223200; captured candles: 2299.
+Last observed closed candle: 1794223500; captured candles: 2300.
 Missed fills: 0; censored exits: 2.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 3 | 21026 | 16094 | 3 | 2 | -2.6024% | 7.630% |
-| COST_AWARE | 5 | 21022 | 15878 | 5 | 4 | -3.3844% | 15.167% |
-| BALANCED_TEST | 94 | 20872 | 15878 | 63 | 41 | -2.3264% | 78.162% |
-| LOW_HURDLE_CONTROL | 533 | 19561 | 15633 | 269 | 186 | -2.2190% | 99.801% |
+| V4_TAKER_STRICT | 3 | 21037 | 16101 | 3 | 2 | -2.6024% | 7.630% |
+| COST_AWARE | 5 | 21033 | 15885 | 5 | 4 | -3.3844% | 15.167% |
+| BALANCED_TEST | 94 | 20883 | 15885 | 63 | 41 | -2.3264% | 78.162% |
+| LOW_HURDLE_CONTROL | 535 | 19563 | 15640 | 269 | 186 | -2.2190% | 99.801% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -34,9 +34,9 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | COST_AWARE | 4h | 2 | 1 | -3.681% | +0.254% |
 | COST_AWARE | 24h | 0 | 0 | n/a | n/a |
 | BALANCED_TEST | 4h | 33 | 9 | -1.891% | +0.104% |
-| BALANCED_TEST | 24h | 3 | 0 | n/a | n/a |
+| BALANCED_TEST | 24h | 4 | 1 | -0.463% | +1.241% |
 | LOW_HURDLE_CONTROL | 4h | 107 | 19 | -2.346% | -0.105% |
-| LOW_HURDLE_CONTROL | 24h | 15 | 2 | -5.120% | -2.534% |
+| LOW_HURDLE_CONTROL | 24h | 17 | 2 | -5.120% | -2.534% |
 
 A gate only places a *research candidate*, entered on a later observed candle.
 No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.
