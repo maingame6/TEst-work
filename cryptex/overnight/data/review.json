@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-09T16:22:51.415247+00:00",
+  "generated_utc": "2026-11-09T16:27:55.378686+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -9,102 +9,102 @@
     "GAMBLER": {
       "decision": "SELL",
       "symbol": "AVAX",
-      "support": 15,
-      "opposition": 29,
+      "support": 11,
+      "opposition": 33,
       "veto": 0,
-      "factor_score": -0.1294
+      "factor_score": -0.1656
     },
     "HOUSE": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 13,
-      "opposition": 14,
+      "opposition": 15,
       "veto": 0,
-      "factor_score": 0.0347
+      "factor_score": 0.023
     },
     "SPY": {
       "decision": "HOLD",
       "symbol": "SOL",
       "support": 10,
-      "opposition": 21,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": -0.0693
+      "factor_score": -0.1193
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 19,
-      "opposition": 15,
+      "support": 12,
+      "opposition": 19,
       "veto": 0,
-      "factor_score": 0.1112
+      "factor_score": -0.0092
     },
     "BREAKOUT": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 15,
-      "opposition": 12,
+      "support": 14,
+      "opposition": 14,
       "veto": 0,
-      "factor_score": 0.059
+      "factor_score": 0.0334
     },
     "CONTRARIAN": {
       "decision": "HOLD",
       "symbol": "BTC",
       "support": 13,
-      "opposition": 14,
+      "opposition": 15,
       "veto": 0,
-      "factor_score": 0.0347
+      "factor_score": 0.023
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 15,
-      "opposition": 12,
+      "support": 14,
+      "opposition": 14,
       "veto": 0,
-      "factor_score": 0.059
+      "factor_score": 0.0334
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "ETH",
-      "support": 18,
-      "opposition": 13,
+      "support": 16,
+      "opposition": 9,
       "veto": 0,
-      "factor_score": 0.0747
+      "factor_score": 0.0865
     },
     "FRACTAL": {
       "decision": "BUY",
       "symbol": "SOL",
       "support": 10,
-      "opposition": 21,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": -0.0693
+      "factor_score": -0.1193
     },
     "SHOCKWAVE": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 19,
-      "opposition": 15,
+      "support": 12,
+      "opposition": 19,
       "veto": 0,
-      "factor_score": 0.1112
+      "factor_score": -0.0092
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 90.416107,
-  "portfolio_paper_change_usd": -9.583893,
-  "all_time_closed_paper_trades": 105,
+  "current_paper_equity_usd": 90.242748,
+  "portfolio_paper_change_usd": -9.757252,
+  "all_time_closed_paper_trades": 106,
   "all_time_closed_wins": 7,
-  "all_time_closed_losses": 98,
-  "aggregate_realized_pnl_usd": -9.297597,
+  "all_time_closed_losses": 99,
+  "aggregate_realized_pnl_usd": -9.483734,
   "agents": {
     "GAMBLER": {
-      "closed": 3,
+      "closed": 4,
       "wins": 0,
-      "losses": 3,
+      "losses": 4,
       "win_rate": 0.0,
-      "realized_net_usd": -0.102119,
-      "average_profit_usd": -0.03404,
+      "realized_net_usd": -0.288257,
+      "average_profit_usd": -0.072064,
       "average_win_usd": null,
-      "average_loss_usd": -0.03404,
-      "last_20_net_usd": -0.102119,
+      "average_loss_usd": -0.072064,
+      "last_20_net_usd": -0.288257,
       "sample_sufficient_for_adaptation": false,
       "position_size_multiplier": 1.0
     },
@@ -254,8 +254,8 @@
       "net_pnl_usd": -0.489933
     },
     "Trend failure": {
-      "count": 1,
-      "net_pnl_usd": -0.00724
+      "count": 2,
+      "net_pnl_usd": -0.193377
     },
     "Timescales disagree": {
       "count": 2,
