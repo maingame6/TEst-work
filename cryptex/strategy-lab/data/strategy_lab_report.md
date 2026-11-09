@@ -2,7 +2,7 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 312 symbol-hours, 1560 missing.
+Recorded 324 symbol-hours, 1692 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
 Closed 0 hypothetical outcomes; censored 3084.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
