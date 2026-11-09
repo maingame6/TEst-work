@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-09T23:12:28.064874+00:00 (Europe/Dublin)
+Checked: 2026-11-09T23:17:58.197490+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-09T19:45:55.268029+00:00
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $199.6947 at 2026-11-09T21:07:43.552947+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.0434 as of 2026-11-09T23:12:28.064874+00:00.
+Overnight P&L $-0.0434 as of 2026-11-09T23:17:58.197490+00:00.
 New paper fills since session started: 2.
 
 ## Price prediction versus trading costs
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.6569 | $-0.3431 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.4054 | $-0.5946 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $8.9477 | $-1.0523 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.6582 | $-0.3418 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.4094 | $-0.5906 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $8.9446 | $-1.0554 |
 
 ## 21-agent leaderboard
 
@@ -75,13 +75,13 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 16 | SPY | main | 9.6439 | -0.3561 | -0.3561 | 6 | cash |
 | 17 | BREAKOUT | main | 9.4934 | -0.5066 | -0.5066 | 5 | cash |
 | 18 | CONTRARIAN | main | 9.4681 | -0.5319 | -0.5319 | 9 | cash |
-| 19 | ROTATOR | main | 9.1847 | -0.8153 | -0.5873 | 3 | BTC |
-| 20 | FRACTAL | main | 7.5696 | -2.4304 | -2.2493 | 18 | SOL |
-| 21 | VORTEX | main | 5.0778 | -4.9222 | -4.8374 | 46 | ETH |
+| 19 | ROTATOR | main | 9.1857 | -0.8143 | -0.5873 | 3 | BTC |
+| 20 | FRACTAL | main | 7.5672 | -2.4328 | -2.2493 | 18 | SOL |
+| 21 | VORTEX | main | 5.0793 | -4.9207 | -4.8374 | 46 | ETH |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1794265500 / 1794265500
+Latest main/shadow candle timestamps: 1794265800 / 1794265800
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
