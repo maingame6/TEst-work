@@ -2,15 +2,15 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-09T16:42:06.967008+00:00 (Europe/Dublin)
+Checked: 2026-11-09T16:47:32.990193+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-05T17:46:21.272386+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $199.8115 · P&L $-10.1885 (-4.85%)**
+**Starting paper money $210.00 · Current estimated liquidation $199.8184 · P&L $-10.1816 (-4.85%)**
 
-Realised $-9.6916; unrealised after estimated future sale costs $-0.4969.
-Open: 3; queued: 1; closed: 136; paper fills in current JSON: 275.
+Realised $-9.7752; unrealised after estimated future sale costs $-0.4064.
+Open: 2; queued: 0; closed: 137; paper fills in current JSON: 276.
 
 Overnight status: MORNING_RECORDED
 
@@ -26,10 +26,10 @@ New paper fills since session started: 10.
 ## Price prediction versus trading costs
 
 Estimated price move needed just to break even on a round trip: **2.122%** (0.80% Kraken Tier 1 taker fee + 0.25% estimated slippage **on each side**).
-Gross-versus-net attribution available on 122 of 136 cached closed trades; earlier records are honestly marked unavailable.
-Attributed gross market movement P&L: $-0.199833;
-Attributed fees + slippage drag: $9.378569;
-Attributed net profit/loss: $-9.578402.
+Gross-versus-net attribution available on 123 of 137 cached closed trades; earlier records are honestly marked unavailable.
+Attributed gross market movement P&L: $-0.208201;
+Attributed fees + slippage drag: $9.453768;
+Attributed net profit/loss: $-9.661969.
 Gross winners: 63; after-cost winners: 7; gross winners turned into losses by execution friction: 56.
 Historical older fills were at lower assumed fees; aggregate lifetime return is mixed-policy. V4-only prospective sample is the primary evidence.
 Stress scenario: 0.80% taker fee + 0.50% slippage EACH WAY; break even 2.634%.
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 90.0194 | -9.9806 | -9.4837 | 106 | 3 |
+| Original ten traders | 100.00 | 90.0263 | -9.9737 | -9.5673 | 107 | 2 |
 | Eleven maths/OSS traders | 110.00 | 109.7921 | -0.2079 | -0.2079 | 30 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.6285 | $-0.3715 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.3999 | $-0.6001 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $8.9715 | $-1.0285 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.6297 | $-0.3703 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $9.4050 | $-0.5950 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $8.9767 | $-1.0233 |
 
 ## 21-agent leaderboard
 
@@ -75,13 +75,13 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 16 | SPY | main | 9.6439 | -0.3561 | -0.3561 | 6 | cash |
 | 17 | BREAKOUT | main | 9.4934 | -0.5066 | -0.5066 | 5 | cash |
 | 18 | CONTRARIAN | main | 9.4681 | -0.5319 | -0.5319 | 9 | cash |
-| 19 | ROTATOR | main | 9.1637 | -0.8363 | -0.5873 | 3 | BTC |
-| 20 | FRACTAL | main | 7.5883 | -2.4117 | -2.2493 | 18 | SOL |
-| 21 | VORTEX | main | 5.2403 | -4.7597 | -4.6742 | 44 | ETH |
+| 19 | ROTATOR | main | 9.1646 | -0.8354 | -0.5873 | 3 | BTC |
+| 20 | FRACTAL | main | 7.5924 | -2.4076 | -2.2493 | 18 | SOL |
+| 21 | VORTEX | main | 5.2422 | -4.7578 | -4.7578 | 45 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1794242100 / 1794242100
+Latest main/shadow candle timestamps: 1794242400 / 1794242400
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
