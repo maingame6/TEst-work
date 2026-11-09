@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T20:57:18.857892+00:00",
-  "local_time": "2026-11-09T20:57:18.857892+00:00",
+  "generated_at": "2026-11-09T21:07:43.552947+00:00",
+  "local_time": "2026-11-09T21:07:43.552947+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -464,24 +464,20 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-11-09T19:45:55.268029+00:00",
-  "github_run_id": "42696733474",
+  "github_run_id": "42698293639",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
-    "date": "2026-11-08",
-    "status": "MORNING_RECORDED",
+    "date": "2026-11-09",
+    "status": "IN_PROGRESS",
     "start": {
-      "at": "2026-11-08T21:02:09.819423+00:00",
-      "balance": 201.61144,
-      "fills": 252
+      "at": "2026-11-09T21:07:43.552947+00:00",
+      "balance": 199.694689,
+      "fills": 277
     },
-    "morning": {
-      "at": "2026-11-09T08:01:56.994927+00:00",
-      "balance": 200.743798,
-      "fills": 262
-    },
-    "comparison_at": "2026-11-09T08:01:56.994927+00:00",
-    "change": -0.867642,
-    "fills_since_start": 10
+    "morning": null,
+    "comparison_at": "2026-11-09T21:07:43.552947+00:00",
+    "change": 0.0,
+    "fills_since_start": 0
   },
   "benchmarks": {
     "comparison_only": true,
@@ -539,7 +535,7 @@
       "SOL"
     ],
     "candle_utc": 1794256800,
-    "at": "2026-11-09T20:57:18.857892+00:00",
+    "at": "2026-11-09T21:07:43.552947+00:00",
     "balance": 27.940297,
     "pnl": -2.059703,
     "coins": {
