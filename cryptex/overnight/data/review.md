@@ -2,8 +2,8 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-09T20:47:49.732649+00:00
-Data status: HEALTHY: paper trading on completed Kraken candles
+Generated: 2026-11-09T20:57:20.293454+00:00
+Data status: DEGRADED: insufficient or stale market data
 Paper equity: USD 90.09; initial USD 100.00; change USD -9.91.
 Closed trades: 107; wins 7; losses/breakevens 100.
 
@@ -67,4 +67,4 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 A win rate alone is not a trading edge. We must examine risk-adjusted out-of-sample returns, sample size, market regime, costs, feed freshness and rejected decisions.
 Position size decreases after at least 20 closed paper trades if expectancy is weak; this is bounded adaptive sizing, not a trained self-improving prediction model.
 Scheduled sampling can miss interim price moves and delays stop triggers. Backtesting and paper trading are not proof of real profitability.
-Latest unavailable Kraken pairs: none reported
+Latest unavailable Kraken pairs: BTC, ETH, SOL, BNB, XRP, ADA, DOGE, SHIB, PEPE, BONK, WIF, FLOKI, LTC, BCH, LINK, DOT, AVAX, XLM, TRX, NEAR, AAVE, UNI, TON, SUI

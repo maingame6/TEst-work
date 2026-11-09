@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-09T20:47:47.861361+00:00",
+  "generated_at": "2026-11-09T20:57:18.857892+00:00",
   "mode": "PAPER_ONLY",
-  "status": "PASS",
+  "status": "WARNING",
   "audited_accounts": 21,
   "starting_paper_usd": 210,
   "estimated_paper_equity": 199.694689,
@@ -61,7 +61,9 @@
       "passed": true
     }
   ],
-  "warnings": [],
+  "warnings": [
+    "One or more paper engines did not report healthy"
+  ],
   "no_real_orders": true,
   "note": "Only accounting failures block publishing. Source staleness is explicit; neither profit nor future market performance can be guaranteed."
 }

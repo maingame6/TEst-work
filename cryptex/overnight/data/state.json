@@ -9,7 +9,7 @@
   "daily_date": "2026-11-09",
   "peak": 100,
   "halted": false,
-  "health": "HEALTHY: paper trading on completed Kraken candles",
+  "health": "DEGRADED: insufficient or stale market data",
   "last_prices": {
     "BTC": 74681.0,
     "ETH": 2124.16,
@@ -5111,6 +5111,16 @@
   ],
   "events": [
     {
+      "time": "2026-11-09T20:57:18.840102+00:00",
+      "type": "DATA",
+      "msg": "Excluded/unavailable Kraken pairs: AAVE, ADA, AVAX, BCH, BNB, BONK, BTC, DOGE, DOT, ETH, FLOKI, LINK, LTC, NEAR, PEPE, SHIB, SOL, SUI, TON, TRX, UNI, WIF, XLM, XRP"
+    },
+    {
+      "time": "2026-11-09T20:57:18.840072+00:00",
+      "type": "DATA",
+      "msg": "DEGRADED: insufficient or stale market data"
+    },
+    {
       "time": "2026-11-09T20:47:43.970126+00:00",
       "type": "HOLD",
       "msg": "SHOCKWAVE no paper buy: HOLD: no qualified setup"
@@ -5699,16 +5709,6 @@
       "time": "2026-11-09T19:51:54.053888+00:00",
       "type": "HOLD",
       "msg": "SPY no paper buy: HOLD: no qualified setup"
-    },
-    {
-      "time": "2026-11-09T19:51:54.053739+00:00",
-      "type": "HOLD",
-      "msg": "HOUSE no paper buy: HOLD: no qualified setup"
-    },
-    {
-      "time": "2026-11-09T19:51:54.053568+00:00",
-      "type": "HOLD",
-      "msg": "GAMBLER no paper buy: HOLD: no qualified setup"
     }
   ],
   "learning": {
@@ -5794,8 +5794,33 @@
     }
   },
   "cycles": 2447,
-  "last_run": "2026-11-09T20:47:47.861361+00:00",
-  "errors": {},
+  "last_run": "2026-11-09T20:57:18.857892+00:00",
+  "errors": {
+    "BTC": "The read operation timed out",
+    "ETH": "The read operation timed out",
+    "SOL": "The read operation timed out",
+    "BNB": "The read operation timed out",
+    "XRP": "The read operation timed out",
+    "ADA": "The read operation timed out",
+    "DOGE": "The read operation timed out",
+    "SHIB": "The read operation timed out",
+    "PEPE": "The read operation timed out",
+    "BONK": "The read operation timed out",
+    "WIF": "The read operation timed out",
+    "FLOKI": "The read operation timed out",
+    "LTC": "The read operation timed out",
+    "BCH": "The read operation timed out",
+    "LINK": "The read operation timed out",
+    "DOT": "The read operation timed out",
+    "AVAX": "The read operation timed out",
+    "XLM": "The read operation timed out",
+    "TRX": "The read operation timed out",
+    "NEAR": "The read operation timed out",
+    "AAVE": "The read operation timed out",
+    "UNI": "The read operation timed out",
+    "TON": "The read operation timed out",
+    "SUI": "The read operation timed out"
+  },
   "run_kind": "SCHEDULED_PAPER_RESEARCH",
   "guardrails": {
     "live_orders_enabled": false,
@@ -26130,12 +26155,12 @@
     "paper_only": true
   },
   "trigger_event": "workflow_dispatch",
-  "github_run_id": "42695944335",
+  "github_run_id": "42696733474",
   "github_run_attempt": "1",
   "schedule_confirmed": true,
   "morning_briefing": {
     "status": "OK",
-    "generated_at": "2026-11-09T20:47:47.861361+00:00",
+    "generated_at": "2026-11-09T20:57:18.857892+00:00",
     "session_closed": 12,
     "distillation": "NOT_READY_FOR_AUTOPROMOTION",
     "paper_only": true
@@ -26255,7 +26280,7 @@
     "paper_only": true,
     "no_automatic_strategy_promotion": true
   },
-  "last_autopilot_dispatch": "2026-11-09T20:47:47.861385+00:00",
+  "last_autopilot_dispatch": "2026-11-09T20:57:18.857919+00:00",
   "pilot_experiment": {
     "version": "PILOT_V1_2026_11_02",
     "parents": [

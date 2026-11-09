@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-09T20:47:47.861361+00:00 (Europe/Dublin)
+Checked: 2026-11-09T20:57:18.857892+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-09T19:45:55.268029+00:00
