@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-09T20:47:43.984103+00:00",
+  "checked_at": "2026-11-09T21:47:57.542524+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -11,7 +11,7 @@
       "source": "COINTELEGRAPH",
       "purpose": "independent crypto reporting",
       "status": "OK",
-      "items": 15
+      "items": 16
     },
     {
       "source": "THE_BLOCK",
@@ -28,9 +28,8 @@
     {
       "source": "FED_MACRO",
       "purpose": "official monetary policy",
-      "status": "UNAVAILABLE",
-      "items": 0,
-      "error": "HTTPError:HTTP Error 406: Not Acceptable"
+      "status": "OK",
+      "items": 15
     },
     {
       "source": "SEC_REGULATORY",
@@ -48,10 +47,87 @@
       "source": "PUBLIC_FORUM",
       "purpose": "public forum RSS where permitted",
       "status": "OK",
-      "items": 13
+      "items": 11
     }
   ],
   "articles": [
+    {
+      "id": "22eae1921dd163c7",
+      "source": "CRYPTODESK",
+      "title": "Live news: Crypto prices give ground even as stocks and gold surge, oil plunges",
+      "url": "https://www.coindesk.com/tech/2026/11/09/live-news-nvidia-slides-on-ceo-allegations-as-bitcoin-hovers-just-above-its-200-day-average",
+      "published_at": "2026-11-09T10:51:48+00:00",
+      "first_observed_at": "2026-11-09T21:47:57.542524+00:00",
+      "sentiment": "POSITIVE",
+      "score": 1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "c2d0947c9e163724",
+      "source": "COINTELEGRAPH",
+      "title": "Should you leave Australia to avoid paying 47% tax on crypto gains?",
+      "url": "https://cointelegraph.com/magazine/should-you-leave-australia-to-avoid-47-tax-on-crypto-gains?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-09T21:00:00+00:00",
+      "first_observed_at": "2026-11-09T21:47:57.542524+00:00",
+      "sentiment": "POSITIVE",
+      "score": 1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "5fa6f06e73940bc4",
+      "source": "SEARCH_RADAR",
+      "title": "How Bitcoin ETFs Work and What Retirement Account Access Means - Iowa City Press-Citizen",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNVd1Q2pndWVnVHE2T0hHckRWdTJLZk55RmFXQUFRT3R3LVZfbGl3ZEJFUkF1TDNEa21FV3VfaXJISGNFQjdsRjA3WFFab2hETktsSVYwVDVmNDF3ZnRvRG00TU8zM1I3bWhGXzNvbGE4OW5jSERLek9CX0hnOVdxUk4tYlNVVU5HMFFLc3RUNGd2NU9kTUtGZ3BLWkJiUS1oQ21HazhnY1AtbjEwR1hEYUt1UGlib2Y5UU9vdzRJQk1aLVlicDhCdjUtMTJuMGo1NlRMRGR1eVN5ald3UUtmd3dQVTA?oc=5",
+      "published_at": "2026-11-09T20:56:00+00:00",
+      "first_observed_at": "2026-11-09T21:47:57.542524+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "684802ac9b4dc204",
+      "source": "SEARCH_RADAR",
+      "title": "Elon Musk Confirms ‘Global Bankruptcy’ Fears As Tesla And SpaceX Explore Bitcoin Price Game-Changer - Forbes",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWm1DVnZDWlVCRjE2NkVqaFdnZEhsNE9UWHZLZVB2UzJHTFR6c3RwbGFfSWRKZjZ5ZW03OWFqSFcwN2dWd2VldTJTT05NeDRTeHExVXJVc094VFItNk8yZHZTOGNvV1ZraDVpRGdkSElTVVFmWU5oazdHZzRwX2hreHhleVViSmpWcFhSakl4dk9RNmhXSnZiY0pnMmszQndXY0ZNX0UwZHdoLUlWODRBZHhmQ2s2b2RYTTNsYWIwVUtRbHNOWXZ6eTRraF81VVdlZEFGRk5R?oc=5",
+      "published_at": "2026-11-09T21:18:54+00:00",
+      "first_observed_at": "2026-11-09T21:47:57.542524+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "1519c7f268dc2828",
+      "source": "SEARCH_RADAR",
+      "title": "Zcash Is Flat Over 30 Days While Bitcoin, Ethereum and Solana Fell 10% to 21%. Which of the Four Is the Best Buy Now? - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOM0ZGLWFMVzFrNG1Tb2JBWjN5Z1pHTmRDaUVPeGo5dmlJS0J3cjMzSTM3MFVSVmNPb1ZPMmxXVHpnZWVfc3paaDdGQXdtSDB2bDJWUWYxcElsZ09sM2JSOVJZT3kwZ2hkVXFQWFlqRDYtX1cycXJESExkanF1UWRVNzRFQU5ZTHpMRlZZVGFkZldWR0VfSUVXMVBGaF91dFJTR0lVSkdJRTJrNHZBQ0lhWmVIYjhaX0NlSktYUzhPMXpVX3Y3Q1ppX0FrLTlIM2pMenk4RG51MlVrRE1KLTcxVEdNZjVtQzNtd1NzN25IajYtRkIwQWpNbTZiX3NWc0NV?oc=5",
+      "published_at": "2026-11-09T20:53:00+00:00",
+      "first_observed_at": "2026-11-09T21:47:57.542524+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "5dda63b513c8de88",
+      "source": "SEARCH_RADAR",
+      "title": "AI Price Prediction: Is Bitcoin a Buy at $74,000? We Asked ChatGPT, Claude and Grok - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNU9TNkNVWXNEREt1UzhDM0lEbjMwcHRmTDI4RTB3UHdwTjFxYkVoVEhhV3RIbzgyeXVmclhybU9hN3cyeDhEYUpOTlRWbi1nRlpBbzhuZHd2a0hUSG5sODBQbWVvSEo4cGtneWRFaDRLLUJ1V2xIZ2UxcDVMNm43RnpVN25rUi1MamxrRVd0MElRZHRLbkwzNDlJNUt4Z2NUU3pCMlZ3am1iQm5FNXdhUFlISDd5Y3NPdG9kdzdsY1NOd2QycTJVN2ZkS3haOFRGTXdF?oc=5",
+      "published_at": "2026-11-09T21:39:00+00:00",
+      "first_observed_at": "2026-11-09T21:47:57.542524+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "2187ea0cfcfcb441",
+      "source": "PUBLIC_FORUM",
+      "title": "I made a game where you retire on Bitcoin in any month since 2013. How long can you last?",
+      "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xr0i8h/i_made_a_game_where_you_retire_on_bitcoin_in_any/",
+      "published_at": null,
+      "first_observed_at": "2026-11-09T21:47:57.542524+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "0b4de9a90c80c287",
       "source": "CRYPTODESK",
@@ -2724,89 +2800,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a08bc583aec0a349",
-      "source": "COINTELEGRAPH",
-      "title": "GOPAX halts crypto trading, withdrawals to move all assets to cold storage",
-      "url": "https://cointelegraph.com/news/gopax-halts-crypto-trading-withdrawals-cold-storage?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "published_at": "2026-11-06T10:47:33+00:00",
-      "first_observed_at": "2026-11-08T16:12:30.530091+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "add89c4bf8ca0baa",
-      "source": "THE_BLOCK",
-      "title": "Vitalik Buterin says ETH should be valued as a store of value, not a fee-burning token",
-      "url": "https://www.theblock.co/news/ecosystems/2026-11-08-vitalik-buterin-says-eth-should-be-valued-as-a-store-of-value-not-a-fee-burning-token-436022",
-      "published_at": "2026-11-08T15:52:17+00:00",
-      "first_observed_at": "2026-11-08T16:12:30.530091+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "7e4258c4d70cbdea",
-      "source": "SEARCH_RADAR",
-      "title": "How a Big Rapids banker stopped a $36,000 Bitcoin ATM scam - Big Rapids Pioneer",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdGo4bnhnRi0yM19RT1hRWGpJSzZYOVVseGw3LVgyODlvcXJidWlMN3hzSkRDNkJBRVZuR0JMNmNWcmMwekNEam9JS2hETkdPNWdCR1FTM05sOFpDNlNOUkNHMkRBbkpaT0phellmalY1eHAxMmtMbl84ODFjYnc3ZVVZN0E3QkZhQkI3NkFBeHlod1VDc2otdE5hcjMwcVB0YjZaeXFB?oc=5",
-      "published_at": "2026-11-08T16:09:20+00:00",
-      "first_observed_at": "2026-11-08T16:12:30.530091+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "9089acaaee6ac477",
-      "source": "SEARCH_RADAR",
-      "title": "Michael Saylor hints at buying more Bitcoin. “Connecting the dots.” - Moomoo",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUVN1dnE1S2R5dFBaQm5jWWlSRV9YUzdhRzI5bjlCelRNRmJIRWtlRmJsejJyQ3Z0bHVRNXJvYmhlY3lrTnBZZnMxc1NKazhpT2JRR1ppd29sQTU1RktmeWZPdVEtcDdEYTlmNmEtYjZPZ3dFNGt1YnNHd29EYzZJV3NjdktOYlBjQ3drRFc4T2NnQzlUMFJQRmxCckxOdEdsR253cy1faEhlWXVMOHRYRlc4REdoSVR2?oc=5",
-      "published_at": "2026-11-08T15:48:46+00:00",
-      "first_observed_at": "2026-11-08T16:12:30.530091+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "d2b1f67280b0483c",
-      "source": "SEARCH_RADAR",
-      "title": "WILL BITCOIN PUMP OR DUMP THIS WEEK? for BINANCE:BTCUSDT by forexcitypro_leemeenal - TradingView",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQcXFDd2VUakZBTnUwV0NRTTZQZy1GazYwd2ZGaDhDQjBQMHpiWXNhR0tlYjcwMVV0bzdHMTJyTDJ0VVdBcTFwQ1RSdHUtNlpQamVfdVFIQW95VlBfOWhmT3NzdVk3Q0JQcDY4N0FBTFdITDY4cVVZQ0V1WWlmc2FpY3paTlJ4Q0EtaXlkRkRMRVI?oc=5",
-      "published_at": "2026-11-08T14:48:27+00:00",
-      "first_observed_at": "2026-11-08T16:12:30.530091+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a118b1e96dfe00c4",
-      "source": "PUBLIC_FORUM",
-      "title": "Solana Ecosystem News - November 8-2026",
-      "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xr0s1q/solana_ecosystem_news_november_82026/",
-      "published_at": null,
-      "first_observed_at": "2026-11-08T16:12:30.530091+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "4c3a86f0aa60168b",
-      "source": "SEARCH_RADAR",
-      "title": "JUST IN: Michael Saylor hints at another Bitcoin announcement tomorrow 👀 \"Connecting the dots.\" - Moomoo",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTk1zeGFYLS12dDhqT1poY1VHRmJxYm9sWGJZNnA5VEgtc0UwcFJwNzhURVlZakROdnFzMnFuajhsNC1KeUd2NUU3NWtJajNaSUh6V1pkRjhnYmFnNmFaZ21wMzFVNEN4LXRpN1RIOGxLVmdnYXQtaFNfMEllZG1JUGlOQjFkQU9BNnFqcHpwWTRiSlcxMExLVmdNbk5QOTlGTjhWMkdYNUtGaDZOQmFSeXd4LVRCaXRnRC05LTZFbVM?oc=5",
-      "published_at": "2026-11-08T13:56:11+00:00",
-      "first_observed_at": "2026-11-08T15:12:21.459340+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 8,
   "sources_total": 8
 }
