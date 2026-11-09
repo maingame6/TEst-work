@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1794237300; captured candles: 2346.
+Last observed closed candle: 1794237600; captured candles: 2347.
 Missed fills: 0; censored exits: 2.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -11,16 +11,16 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 |---|---:|---:|---:|---:|---:|---:|---:|
 | V4_TAKER_STRICT | 2.322% | 5 | 0 | -2.1383% | -2.6264% | 1 | 0 |
 | COST_AWARE | 2.172% | 7 | 0 | -2.7177% | -3.2029% | 1 | 0 |
-| BALANCED_TEST | 1.200% | 69 | 0 | -2.3731% | -2.8600% | 20 | 2 |
-| LOW_HURDLE_CONTROL | 0.500% | 293 | 1 | -2.2251% | -2.7127% | 109 | 4 |
+| BALANCED_TEST | 1.200% | 71 | 0 | -2.3643% | -2.8513% | 21 | 0 |
+| LOW_HURDLE_CONTROL | 0.500% | 297 | 1 | -2.2238% | -2.7115% | 111 | 0 |
 
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 7 | 21558 | 16505 | 5 | 4 | -2.0161% | 10.264% |
-| COST_AWARE | 9 | 21554 | 16281 | 7 | 6 | -2.7329% | 17.586% |
-| BALANCED_TEST | 102 | 21396 | 16281 | 68 | 47 | -2.3192% | 80.978% |
-| LOW_HURDLE_CONTROL | 570 | 20003 | 16024 | 286 | 204 | -2.2063% | 99.864% |
+| V4_TAKER_STRICT | 7 | 21572 | 16513 | 5 | 4 | -2.0161% | 10.264% |
+| COST_AWARE | 9 | 21568 | 16288 | 7 | 6 | -2.7329% | 17.586% |
+| BALANCED_TEST | 102 | 21410 | 16288 | 68 | 49 | -2.3087% | 81.754% |
+| LOW_HURDLE_CONTROL | 572 | 20015 | 16030 | 288 | 208 | -2.2048% | 99.875% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -33,7 +33,7 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | V4_TAKER_STRICT | 24h | 0 | 0 | n/a | n/a |
 | COST_AWARE | 4h | 2 | 1 | -3.681% | +0.254% |
 | COST_AWARE | 24h | 0 | 0 | n/a | n/a |
-| BALANCED_TEST | 4h | 36 | 10 | -1.716% | +0.213% |
+| BALANCED_TEST | 4h | 38 | 10 | -1.716% | +0.213% |
 | BALANCED_TEST | 24h | 4 | 1 | -0.463% | +1.241% |
 | LOW_HURDLE_CONTROL | 4h | 116 | 20 | -2.279% | -0.071% |
 | LOW_HURDLE_CONTROL | 24h | 18 | 2 | -5.120% | -2.534% |
