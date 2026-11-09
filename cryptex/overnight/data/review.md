@@ -2,9 +2,9 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-09T21:36:50.572879+00:00
-Data status: DEGRADED: insufficient or stale market data
-Paper equity: USD 90.09; initial USD 100.00; change USD -9.91.
+Generated: 2026-11-09T21:42:29.861892+00:00
+Data status: HEALTHY: paper trading on completed Kraken candles
+Paper equity: USD 90.08; initial USD 100.00; change USD -9.92.
 Closed trades: 107; wins 7; losses/breakevens 100.
 
 ## Specialist research teams
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | BTC | 11 | 9 | 0 |
-| HOUSE | HOLD | BTC | 10 | 10 | 0 |
-| SPY | HOLD | SOL | 15 | 16 | 0 |
-| MEME HUNTER | HOLD | DOGE | 10 | 14 | 1 |
-| BREAKOUT | HOLD | BTC | 11 | 9 | 0 |
-| CONTRARIAN | HOLD | BTC | 10 | 10 | 0 |
-| ROTATOR | HOLD | BTC | 11 | 9 | 0 |
-| VORTEX | HOLD | ETH | 12 | 12 | 0 |
-| FRACTAL | HOLD | SOL | 15 | 16 | 0 |
-| SHOCKWAVE | HOLD | DOGE | 10 | 14 | 1 |
+| GAMBLER | HOLD | BTC | 9 | 9 | 0 |
+| HOUSE | HOLD | BTC | 9 | 9 | 0 |
+| SPY | HOLD | SOL | 4 | 30 | 0 |
+| MEME HUNTER | HOLD | DOGE | 7 | 20 | 1 |
+| BREAKOUT | HOLD | BTC | 9 | 9 | 0 |
+| CONTRARIAN | HOLD | BTC | 9 | 9 | 0 |
+| ROTATOR | HOLD | BTC | 9 | 9 | 0 |
+| VORTEX | HOLD | ETH | 12 | 18 | 0 |
+| FRACTAL | HOLD | SOL | 4 | 30 | 0 |
+| SHOCKWAVE | HOLD | DOGE | 7 | 20 | 1 |
 
 ## Bot performance
 
@@ -67,4 +67,4 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 A win rate alone is not a trading edge. We must examine risk-adjusted out-of-sample returns, sample size, market regime, costs, feed freshness and rejected decisions.
 Position size decreases after at least 20 closed paper trades if expectancy is weak; this is bounded adaptive sizing, not a trained self-improving prediction model.
 Scheduled sampling can miss interim price moves and delays stop triggers. Backtesting and paper trading are not proof of real profitability.
-Latest unavailable Kraken pairs: BTC, ETH, SOL, BNB, XRP, ADA, DOGE, SHIB, PEPE, BONK, WIF, FLOKI, LTC, BCH, LINK, DOT, AVAX, XLM, TRX, NEAR, AAVE, UNI, TON, SUI
+Latest unavailable Kraken pairs: none reported

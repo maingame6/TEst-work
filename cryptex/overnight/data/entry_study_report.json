@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-09T21:36:49.534405+00:00",
+  "generated_at": "2026-11-09T21:42:28.331393+00:00",
   "paper_only": true,
   "sample_status": "REVIEW_ONLY",
   "execution": "next observed completed candle only; six-bar exits",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1794256800,
-  "observed_candles": 2393,
+  "last_candle_ts": 1794260100,
+  "observed_candles": 2394,
   "missed_fills": 1,
-  "censored_exits": 2,
+  "censored_exits": 5,
   "fees_slippage_per_side_pct": 1.05,
   "cost_assumptions": {
     "base": {
@@ -43,10 +43,10 @@
       "queued": 0,
       "threshold_move_pct": 2.322,
       "diagnostics_since_instrumentation": {
-        "bars": 2281,
-        "liquid_candidates": 22214,
-        "move_below_gate": 22204,
-        "volume_below_gate": 16986,
+        "bars": 2282,
+        "liquid_candidates": 22223,
+        "move_below_gate": 22213,
+        "volume_below_gate": 16992,
         "qualified": 7,
         "queued": 5
       },
@@ -72,10 +72,10 @@
       "queued": 0,
       "threshold_move_pct": 2.172,
       "diagnostics_since_instrumentation": {
-        "bars": 2281,
-        "liquid_candidates": 22214,
-        "move_below_gate": 22200,
-        "volume_below_gate": 16753,
+        "bars": 2282,
+        "liquid_candidates": 22223,
+        "move_below_gate": 22209,
+        "volume_below_gate": 16759,
         "qualified": 9,
         "queued": 7
       },
@@ -97,14 +97,14 @@
       "mean_net_pct": -2.37642,
       "mean_gross_pct": -0.30461,
       "net_sum_unit_stakes_pct": -171.10213,
-      "open": 1,
+      "open": 0,
       "queued": 0,
       "threshold_move_pct": 1.2,
       "diagnostics_since_instrumentation": {
-        "bars": 2281,
-        "liquid_candidates": 22214,
-        "move_below_gate": 22037,
-        "volume_below_gate": 16753,
+        "bars": 2282,
+        "liquid_candidates": 22223,
+        "move_below_gate": 22046,
+        "volume_below_gate": 16759,
         "qualified": 105,
         "queued": 70
       },
@@ -126,14 +126,14 @@
       "mean_net_pct": -2.22423,
       "mean_gross_pct": -0.1492,
       "net_sum_unit_stakes_pct": -693.96111,
-      "open": 2,
+      "open": 0,
       "queued": 0,
       "threshold_move_pct": 0.5,
       "diagnostics_since_instrumentation": {
-        "bars": 2281,
-        "liquid_candidates": 22214,
-        "move_below_gate": 20582,
-        "volume_below_gate": 16485,
+        "bars": 2282,
+        "liquid_candidates": 22223,
+        "move_below_gate": 20590,
+        "volume_below_gate": 16491,
         "qualified": 602,
         "queued": 304
       },
@@ -148,7 +148,7 @@
   "horizon_comparisons": {
     "hypotheses_frozen": "Identical next observed completed candle entries, 30m vs 4h vs 24h",
     "heldout_start_ts": 1793747700,
-    "censored_longer_holds": 142,
+    "censored_longer_holds": 156,
     "no_auto_promotion": true,
     "caveat": "Candle-gap censoring is strict. Samples are correlated even with non-overlap. No intrabar stop simulation, broker fill proof or buy-and-hold win established. Never claim edge from this table alone.",
     "gates": {
