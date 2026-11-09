@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794193800,
+  "last_ts": 1794194100,
   "first_ts": 1793488500,
-  "observed_candles": 2201,
+  "observed_candles": 2202,
   "signals": [],
   "open": [],
   "trades": [
@@ -4289,34 +4289,34 @@
   "censored_exits": 2,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2089,
-      "liquid_candidates": 20043,
-      "move_below_gate": 20038,
-      "volume_below_gate": 15345,
+      "bars": 2090,
+      "liquid_candidates": 20052,
+      "move_below_gate": 20047,
+      "volume_below_gate": 15350,
       "qualified": 3,
       "queued": 3
     },
     "COST_AWARE": {
-      "bars": 2089,
-      "liquid_candidates": 20043,
-      "move_below_gate": 20034,
-      "volume_below_gate": 15140,
+      "bars": 2090,
+      "liquid_candidates": 20052,
+      "move_below_gate": 20043,
+      "volume_below_gate": 15145,
       "qualified": 5,
       "queued": 5
     },
     "BALANCED_TEST": {
-      "bars": 2089,
-      "liquid_candidates": 20043,
-      "move_below_gate": 19902,
-      "volume_below_gate": 15140,
+      "bars": 2090,
+      "liquid_candidates": 20052,
+      "move_below_gate": 19911,
+      "volume_below_gate": 15145,
       "qualified": 87,
       "queued": 56
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2089,
-      "liquid_candidates": 20043,
-      "move_below_gate": 18673,
-      "volume_below_gate": 14908,
+      "bars": 2090,
+      "liquid_candidates": 20052,
+      "move_below_gate": 18682,
+      "volume_below_gate": 14913,
       "qualified": 504,
       "queued": 251
     }
@@ -4464,31 +4464,7 @@
       "signal_ts": 1794179400,
       "entry_ts": 1794179700,
       "entry_mid": 3.6598,
-      "hold_bars": 48
-    },
-    {
-      "gate": "COST_AWARE",
-      "symbol": "NEAR",
-      "signal_ts": 1794179400,
-      "entry_ts": 1794179700,
-      "entry_mid": 3.6598,
       "hold_bars": 288
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "PEPE",
-      "signal_ts": 1794179400,
-      "entry_ts": 1794179700,
-      "entry_mid": 5.072e-06,
-      "hold_bars": 48
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "SOL",
-      "signal_ts": 1794179400,
-      "entry_ts": 1794179700,
-      "entry_mid": 87.92,
-      "hold_bars": 48
     },
     {
       "gate": "BALANCED_TEST",
@@ -4504,23 +4480,7 @@
       "signal_ts": 1794179400,
       "entry_ts": 1794179700,
       "entry_mid": 0.0701079,
-      "hold_bars": 48
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "DOGE",
-      "signal_ts": 1794179400,
-      "entry_ts": 1794179700,
-      "entry_mid": 0.0701079,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "PEPE",
-      "signal_ts": 1794179400,
-      "entry_ts": 1794179700,
-      "entry_mid": 5.072e-06,
-      "hold_bars": 48
     },
     {
       "gate": "COST_AWARE",
@@ -6371,6 +6331,66 @@
       "gross_return": -0.000232106,
       "net_return": -0.0210086624,
       "stress_net_return": -0.0258914731
+    },
+    {
+      "gate": "COST_AWARE",
+      "symbol": "NEAR",
+      "signal_ts": 1794179400,
+      "entry_ts": 1794179700,
+      "exit_ts": 1794194100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0163670146,
+      "net_return": -0.0368082653,
+      "stress_net_return": -0.041612274
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1794179400,
+      "entry_ts": 1794179700,
+      "exit_ts": 1794194100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0003943218,
+      "net_return": -0.0211675071,
+      "stress_net_return": -0.0260495255
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "SOL",
+      "signal_ts": 1794179400,
+      "entry_ts": 1794179700,
+      "exit_ts": 1794194100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0052320291,
+      "net_return": -0.0259046802,
+      "stress_net_return": -0.0307630716
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "DOGE",
+      "signal_ts": 1794179400,
+      "entry_ts": 1794179700,
+      "exit_ts": 1794194100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.009776359,
+      "net_return": -0.0303545727,
+      "stress_net_return": -0.0351907698
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794179400,
+      "entry_ts": 1794179700,
+      "exit_ts": 1794194100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0003943218,
+      "net_return": -0.0211675071,
+      "stress_net_return": -0.0260495255
     }
   ],
   "horizon_censored": 104
