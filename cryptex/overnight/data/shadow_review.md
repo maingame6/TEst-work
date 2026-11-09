@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-09T09:47:23.920576+00:00
+Generated: 2026-11-09T09:52:44.950703+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD ETH |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XRP |
 | FLUID_VISCOSITY | 9.9924 | 1 | 0 | -0.0076 | HOLD TRX |
 | GEOMETRIC_DIVERSITY | 9.9786 | 2 | 0 | -0.0214 | HOLD TRX |
 | ERROR_CODE_CONSENSUS | 9.9698 | 4 | 0 | -0.0302 | HOLD TRX |
 | GRAPH_COHERENCE | 9.9745 | 4 | 0 | -0.0255 | HOLD TRX |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD TRX |
+| FREQTRADE_STYLE | 9.9720 | 4 | 0 | -0.0280 | HOLD LTC |
 | QLIB_STYLE | 9.9745 | 4 | 0 | -0.0255 | HOLD TRX |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9835 | 3 | 0 | -0.0165 | HOLD TRX |
-| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD XLM |
+| NAUTILUS_REGIME | 9.9773 | 4 | 0 | -0.0227 | HOLD LTC |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
