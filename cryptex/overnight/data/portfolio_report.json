@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T21:07:43.552947+00:00",
-  "local_time": "2026-11-09T21:07:43.552947+00:00",
+  "generated_at": "2026-11-09T21:17:48.232480+00:00",
+  "local_time": "2026-11-09T21:17:48.232480+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -416,8 +416,8 @@
     }
   ],
   "freshness": {
-    "main_stale": false,
-    "research_stale": false,
+    "main_stale": true,
+    "research_stale": true,
     "missing_quotes": false,
     "time_misaligned": false,
     "main_status": "DEGRADED: insufficient or stale market data",
@@ -464,7 +464,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-11-09T19:45:55.268029+00:00",
-  "github_run_id": "42698293639",
+  "github_run_id": "42699924469",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-09",
@@ -475,7 +475,7 @@
       "fills": 277
     },
     "morning": null,
-    "comparison_at": "2026-11-09T21:07:43.552947+00:00",
+    "comparison_at": "2026-11-09T21:17:48.232480+00:00",
     "change": 0.0,
     "fills_since_start": 0
   },
@@ -522,7 +522,7 @@
   },
   "market_demo": {
     "mode": "PAPER_ONLY",
-    "status": "OBSERVING",
+    "status": "STALE_FEED",
     "initial_paper_usd": 30.0,
     "excluded_from_competition_210": true,
     "no_real_orders": true,
@@ -533,23 +533,7 @@
       "BTC",
       "ETH",
       "SOL"
-    ],
-    "candle_utc": 1794256800,
-    "at": "2026-11-09T21:07:43.552947+00:00",
-    "balance": 27.940297,
-    "pnl": -2.059703,
-    "coins": {
-      "BTC": 9.610588,
-      "ETH": 9.386116,
-      "SOL": 8.943593
-    },
-    "entries": {
-      "BTC": "2026-10-30T22:21:37.361980+00:00",
-      "ETH": "2026-10-30T22:21:37.361980+00:00",
-      "SOL": "2026-10-30T22:21:37.361980+00:00"
-    },
-    "observations": 1906,
-    "last_move_usd": -0.04233
+    ]
   },
   "pilot_evidence": {
     "mode": "PAPER_ONLY",
@@ -558,7 +542,7 @@
     "additional_funds": 0.0,
     "no_real_orders": true,
     "approved_strategy": false,
-    "status": "OBSERVING",
+    "status": "STALE_FEED",
     "start": "2026-11-02T17:27:33.767629+00:00",
     "start_candle_utc": 1793640000,
     "portfolio_equity": 199.694689,
