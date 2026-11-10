@@ -14,7 +14,40 @@ def stamp(v):
   d=dt.datetime.fromisoformat(v.replace("Z","+00:00"))
   return d.astimezone(UTC) if d.tzinfo else None
  except (ValueError,AttributeError,OverflowError):return None
-def analyze(trades,books,study,continuity,portfolio,now):
+def summarize_saved_venues(wide,forward,now):
+ """Show previously collected market evidence separately from actual paper fills.
+
+ Historical candles, listings, and hourly forward snapshots cannot be treated
+ as fresh 5m decisions, interchangeable currency quotes, or real fills.
+ """
+ if wide is None or forward is None:
+  return {"status":"UNAVAILABLE","available":False,"no_real_orders":True}
+ if (wide.get("mode")!="PAPER_ONLY" or wide.get("not_real_orders") is not True
+     or forward.get("mode")!="PAPER_ONLY" or forward.get("real_orders") is not False):
+  return {"status":"REJECTED_UNSAFE_INPUT","available":False,"no_real_orders":True}
+ created=stamp(wide.get("generated_at"))
+ age=(now-created).total_seconds()/60 if created else None
+ venues={}
+ for name,values in sorted(wide.get("venues",{}).items()):
+  if isinstance(values,dict):
+   venues[name]={"listings":values.get("discovered"),
+    "pairs_attempted":values.get("attempted_distinct"),
+    "validated_historical_candles":values.get("validated_ohlcv_distinct"),
+    "latest_unavailable":values.get("latest_failed")}
+ return {"status":"STALE" if age is None or age>120 else "RECORDED",
+  "available":True,"no_real_orders":True,
+  "historical_report_age_minutes":round(age,2) if age is not None else None,
+  "discovered_listings":wide.get("discovered_listing_total"),
+  "venue_pairs_attempted":wide.get("unique_tested_venue_pairs"),
+  "historically_validated_pairs":wide.get("unique_ohlcv_validated_pairs"),
+  "currently_unavailable_pairs":wide.get("latest_unavailable_pairs"),
+  "historical_market_signals":wide.get("markets_with_any_historical_signal"),
+  "five_venue_forward_snapshots":forward.get("forward_observations"),
+  "five_venue_forward_hypotheses_completed":forward.get("completed"),
+  "forward_last_observed_at":forward.get("last_observed_at"),
+  "venues":venues,
+  "interpretation":"Separate public-market historical/hourly evidence. Not 5m forward coverage, live fills, trading approval, or verified profitability."}
+def analyze(trades,books,study,continuity,portfolio,now,wide=None,forward=None):
  sells=[t for t in trades if t.get("side")=="SELL"
         and t.get("paper","").lower()=="true" and numeric(t.get("pnl")) is not None]
  bot=collections.defaultdict(list)
@@ -48,8 +81,13 @@ def analyze(trades,books,study,continuity,portfolio,now):
   gates[name]={"completed":x.get("completed"),"mean_gross_pct":x.get("mean_gross_pct"),
     "mean_net_after_cost_pct":x.get("mean_net_pct"),"wins_after_cost":x.get("wins_after_cost"),
     "can_promote":False}
+ strict=study.get("gates",{}).get("V4_TAKER_STRICT",{})
+ strict_done=int(strict.get("completed") or 0)
+ strict_wins=int(strict.get("wins_after_cost") or 0)
+ venue_summary=summarize_saved_venues(wide,forward,now)
  decisions=[
- "Do not lower V4 entry criteria merely to create trades: no V4 strict closes were observed.",
+ (f"Strict V4 has {strict_done} recorded prospective completes, {strict_wins} after-cost wins; investigate sample quality and fees without auto-promoting."
+  if strict_done else "Strict V4 has no recorded prospective completes; do not lower entry criteria just to create trades."),
  "Preserve pre-declared held-out testing and exact 5-minute observation gaps.",
  "Expand independent multi-day book samples before trusting snapshot spreads as execution costs.",
  "Verify actual fee tier without credentials or live orders; historical V3 fees remain unchanged."]
@@ -69,6 +107,7 @@ def analyze(trades,books,study,continuity,portfolio,now):
     "bots":by_bot,"v4_completions_provable_from_csv":0,
     "caveat":"This is a different trade population from the 21-account portfolio; the CSV has no verified V4 entry-cost tag. Historical V3 fees must not be restated."},
   "prospective_fee_study":gates,
+  "saved_five_venue_evidence":venue_summary,
   "public_depth":{"markets":len(markets),"snapshots":sum(x["snapshots"] for x in markets),
     "mature_market_samples":sum(x["eligible_for_48h_quality_review"] for x in markets),
     "by_market":markets,"caveat":"USD and USDT not FX-adjusted; no orderbook snapshot proves a fill."},
@@ -101,17 +140,30 @@ def to_md(result):
   lines.append("| "+m["venue"]+" | "+m["symbol"]+" | "+str(m["snapshots"])+
    " | "+str(m["span_hours"])+" | "+str(m["median_spread_bps"])+
    " | "+str(m["exchange_timestamp_missing"])+" |")
- lines.extend(["","## Prescribed next experiments",""]+["- "+x for x in result["recommendations"]])
+ e=result.get("saved_five_venue_evidence",{})
+ lines.extend(["","## Collected five-venue market data (separate from core fills)","",
+  "Historical market report: "+str(e.get("status","UNAVAILABLE")),
+  "Listed / attempted / historical candle validated: "+
+   " / ".join(str(e.get(k)) for k in ("discovered_listings","venue_pairs_attempted","historically_validated_pairs")),
+  "Unresolved venue pairs: "+str(e.get("currently_unavailable_pairs")),
+  "Independent forward snapshots / completed research hypotheses: "+
+   str(e.get("five_venue_forward_snapshots"))+" / "+str(e.get("five_venue_forward_hypotheses_completed")),
+  "None of these numbers establishes a fresh five-minute forward trade or a profitable signal.","",
+  "## Prescribed next experiments",""]+["- "+x for x in result["recommendations"]])
  lines.extend(["","No false claims of V4 edge, real fills or independent VPS execution.",""])
  return "\n".join(lines)
 def main():
  p=argparse.ArgumentParser()
  for key in ("trades","books","study","continuity","portfolio","out"):p.add_argument("--"+key,required=True)
+ p.add_argument("--wide-report")
+ p.add_argument("--forward-report")
  a=p.parse_args()
  r=analyze(read_csv(a.trades),read_csv(a.books),
            json.loads(pathlib.Path(a.study).read_text()),
            json.loads(pathlib.Path(a.continuity).read_text()),
-           json.loads(pathlib.Path(a.portfolio).read_text()),dt.datetime.now(UTC))
+           json.loads(pathlib.Path(a.portfolio).read_text()),dt.datetime.now(UTC),
+           json.loads(pathlib.Path(a.wide_report).read_text()) if a.wide_report else None,
+           json.loads(pathlib.Path(a.forward_report).read_text()) if a.forward_report else None)
  out=pathlib.Path(a.out);out.mkdir(parents=True,exist_ok=True)
  (out/"own_data_review.json").write_text(json.dumps(r,indent=2,allow_nan=False)+"\n")
  (out/"OWN_DATA_REVIEW.md").write_text(to_md(r)+"\n")
