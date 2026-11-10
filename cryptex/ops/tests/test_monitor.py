@@ -59,7 +59,7 @@ class WideRecoveryTests(unittest.TestCase):
                                "generated_at":NOW.isoformat()},NOW,[])
 
     def test_pilot_deadline_blocks(self):
-        late=dt.datetime(2026,11,10,1,tzinfo=UTC)
+        late=dt.datetime(2026,11,18,1,tzinfo=UTC)
         old={"mode":"PAPER_ONLY","not_real_orders":True,
              "generated_at":(late-dt.timedelta(hours=3)).isoformat()}
         self.assertFalse(wide_recovery_due(old,late,[]))
