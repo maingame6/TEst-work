@@ -265,7 +265,7 @@ jobs:
           if state.get("mode")!="PAPER_ONLY":
               raise SystemExit("No real-money fallback permitted")
           MAX_HOPS=2650
-          DEADLINE=dt.datetime(2026,11,10,0,0,tzinfo=dt.timezone.utc)
+          DEADLINE=dt.datetime(2026,11,18,0,0,tzinfo=dt.timezone.utc)
           now=dt.datetime.now(dt.timezone.utc)
           if now>=DEADLINE or hop>=MAX_HOPS:
               print("Bounded evidence run ended; no self-dispatch")
