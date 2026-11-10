@@ -7,105 +7,579 @@
   "started_at": "2026-11-02T21:35:48.297127+00:00",
   "symbols": {
     "BTC": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
-      "positions": {},
-      "pending": {}
-    },
-    "ETH": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
-      "positions": {},
-      "pending": {}
-    },
-    "SOL": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
-      "positions": {},
-      "pending": {}
-    },
-    "XRP": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
-      "positions": {},
-      "pending": {}
-    },
-    "ADA": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
       "pending": {
-        "macd_trend_8": {
-          "signal_ts": 1794304800
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
         },
-        "macd_trend_16": {
-          "signal_ts": 1794304800
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
         },
-        "macd_trend_32": {
-          "signal_ts": 1794304800
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        }
+      }
+    },
+    "ETH": {
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
+      "positions": {},
+      "pending": {
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        }
+      }
+    },
+    "SOL": {
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
+      "positions": {},
+      "pending": {
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        }
+      }
+    },
+    "XRP": {
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
+      "positions": {},
+      "pending": {
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_32": {
+          "signal_ts": 1794333600
+        }
+      }
+    },
+    "ADA": {
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
+      "positions": {},
+      "pending": {
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_32": {
+          "signal_ts": 1794333600
         }
       }
     },
     "DOGE": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
-      "pending": {}
+      "pending": {
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_32": {
+          "signal_ts": 1794333600
+        }
+      }
     },
     "LTC": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
-      "pending": {}
+      "pending": {
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        }
+      }
     },
     "LINK": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
-      "pending": {}
+      "pending": {
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_32": {
+          "signal_ts": 1794333600
+        }
+      }
     },
     "BCH": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
-      "pending": {}
+      "pending": {
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_32": {
+          "signal_ts": 1794333600
+        }
+      }
     },
     "DOT": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
       "pending": {}
     },
     "AVAX": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
       "pending": {
         "vol_target_momentum_32": {
-          "signal_ts": 1794304800
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_32": {
+          "signal_ts": 1794333600
         },
         "obv_confirmation_32": {
-          "signal_ts": 1794304800
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794333600
         }
       }
     },
     "XLM": {
-      "last_ts": 1794304800,
-      "observed": 29,
-      "missing": 154,
+      "last_ts": 1794333600,
+      "observed": 30,
+      "missing": 161,
       "positions": {},
-      "pending": {}
+      "pending": {
+        "rsi_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794333600
+        },
+        "cci_rebound_32": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794333600
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794333600
+        }
+      }
     }
   },
   "closed": [],
@@ -23405,9 +23879,44 @@
       "reason": "MISSED_NEXT_HOUR_ENTRY",
       "at": 1794304800,
       "signal_ts": 1794272400
+    },
+    {
+      "symbol": "ADA",
+      "candidate": "macd_trend_8",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794333600,
+      "signal_ts": 1794304800
+    },
+    {
+      "symbol": "ADA",
+      "candidate": "macd_trend_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794333600,
+      "signal_ts": 1794304800
+    },
+    {
+      "symbol": "ADA",
+      "candidate": "macd_trend_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794333600,
+      "signal_ts": 1794304800
+    },
+    {
+      "symbol": "AVAX",
+      "candidate": "vol_target_momentum_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794333600,
+      "signal_ts": 1794304800
+    },
+    {
+      "symbol": "AVAX",
+      "candidate": "obv_confirmation_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794333600,
+      "signal_ts": 1794304800
     }
   ],
-  "signals": 3333,
-  "successful_hourly_updates": 348,
+  "signals": 3493,
+  "successful_hourly_updates": 360,
   "duplicate_events": 0
 }
