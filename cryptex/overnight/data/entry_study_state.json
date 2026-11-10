@@ -1,44 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794337200,
+  "last_ts": 1794337500,
   "first_ts": 1793488500,
-  "observed_candles": 2432,
+  "observed_candles": 2433,
   "signals": [],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1794335400,
-      "entry_ts": 1794335700,
-      "entry_mid": 83.11,
-      "exit_ts": 1794337500
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1794335400,
-      "entry_ts": 1794335700,
-      "entry_mid": 3.61,
-      "exit_ts": 1794337500
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1794335400,
-      "entry_ts": 1794335700,
-      "entry_mid": 2044.58,
-      "exit_ts": 1794337500
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1794335400,
-      "entry_ts": 1794335700,
-      "entry_mid": 124.16,
-      "exit_ts": 1794337500
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -5239,40 +5206,92 @@
       "slippage_drag": 0.0049955601,
       "stress_net_return": -0.0240968318,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1794335400,
+      "entry_ts": 1794335700,
+      "exit_ts": 1794337500,
+      "gross_return": -0.003369029,
+      "net_return": -0.0240803958,
+      "fee_drag": 0.0157406388,
+      "slippage_drag": 0.004970728,
+      "stress_net_return": -0.0289478859,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1794335400,
+      "entry_ts": 1794335700,
+      "exit_ts": 1794337500,
+      "gross_return": -0.006398892,
+      "net_return": -0.027047294,
+      "fee_drag": 0.0156927856,
+      "slippage_drag": 0.0049556165,
+      "stress_net_return": -0.0318999865,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1794335400,
+      "entry_ts": 1794335700,
+      "exit_ts": 1794337500,
+      "gross_return": -0.0010075419,
+      "net_return": -0.0217679837,
+      "fee_drag": 0.0157779357,
+      "slippage_drag": 0.004982506,
+      "stress_net_return": -0.0266470072,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1794335400,
+      "entry_ts": 1794335700,
+      "exit_ts": 1794337500,
+      "gross_return": -0.0099871134,
+      "net_return": -0.0305609473,
+      "fee_drag": 0.0156361138,
+      "slippage_drag": 0.0049377201,
+      "stress_net_return": -0.0353961151,
+      "paper": true
     }
   ],
   "missed_fills": 1,
   "censored_exits": 5,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2320,
-      "liquid_candidates": 22607,
-      "move_below_gate": 22597,
-      "volume_below_gate": 17299,
+      "bars": 2321,
+      "liquid_candidates": 22621,
+      "move_below_gate": 22611,
+      "volume_below_gate": 17307,
       "qualified": 7,
       "queued": 5
     },
     "COST_AWARE": {
-      "bars": 2320,
-      "liquid_candidates": 22607,
-      "move_below_gate": 22593,
-      "volume_below_gate": 17060,
+      "bars": 2321,
+      "liquid_candidates": 22621,
+      "move_below_gate": 22607,
+      "volume_below_gate": 17068,
       "qualified": 9,
       "queued": 7
     },
     "BALANCED_TEST": {
-      "bars": 2320,
-      "liquid_candidates": 22607,
-      "move_below_gate": 22429,
-      "volume_below_gate": 17060,
+      "bars": 2321,
+      "liquid_candidates": 22621,
+      "move_below_gate": 22443,
+      "volume_below_gate": 17068,
       "qualified": 105,
       "queued": 70
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2320,
-      "liquid_candidates": 22607,
-      "move_below_gate": 20930,
-      "volume_below_gate": 16785,
+      "bars": 2321,
+      "liquid_candidates": 22621,
+      "move_below_gate": 20944,
+      "volume_below_gate": 16792,
       "qualified": 619,
       "queued": 312
     }
