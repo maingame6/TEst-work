@@ -47,7 +47,30 @@ def summarize_saved_venues(wide,forward,now):
   "forward_last_observed_at":forward.get("last_observed_at"),
   "venues":venues,
   "interpretation":"Separate public-market historical/hourly evidence. Not 5m forward coverage, live fills, trading approval, or verified profitability."}
-def analyze(trades,books,study,continuity,portfolio,now,wide=None,forward=None):
+def summarize_independent_15m(report):
+ """Independent 15-minute book observations never become original paper fills."""
+ if report is None:
+  return {"status":"UNAVAILABLE","can_promote":False}
+ if (report.get("mode")!="PAPER_ONLY" or report.get("real_orders") is not False
+     or report.get("portfolio_ledger_changes") is not False
+     or report.get("independent_research") is not True):
+  return {"status":"REJECTED_UNSAFE_INPUT","can_promote":False}
+ results={}
+ for name,value in sorted(report.get("gates",{}).items()):
+  if isinstance(value,dict):
+   results[name]={"closed":value.get("closed"),
+    "positive_after_cost":value.get("positive_after_cost"),
+    "mean_net_pct":value.get("mean_net_pct"),
+    "mean_stress_pct":value.get("mean_stress_pct"),
+    "matched_buy_hold_verified":value.get("matched_buy_hold_verified"),
+    "eligible_to_promote":False}
+ return {"status":"ISOLATED_HISTORICAL_AND_FORWARD_RESEARCH",
+  "observed_at":report.get("at"),
+  "completed_hypotheses":report.get("completed_research_hypotheses"),
+  "censored_cohorts":report.get("recorded_censored_cohorts"),
+  "gates":results,"can_promote":False,
+  "caveat":"Independent, asynchronous 15m book-snapshot experiment. No 5m signal, no actual trade, no verified edge."}
+def analyze(trades,books,study,continuity,portfolio,now,wide=None,forward=None,threshold=None):
  sells=[t for t in trades if t.get("side")=="SELL"
         and t.get("paper","").lower()=="true" and numeric(t.get("pnl")) is not None]
  bot=collections.defaultdict(list)
@@ -85,6 +108,11 @@ def analyze(trades,books,study,continuity,portfolio,now,wide=None,forward=None):
  strict_done=int(strict.get("completed") or 0)
  strict_wins=int(strict.get("wins_after_cost") or 0)
  venue_summary=summarize_saved_venues(wide,forward,now)
+ threshold_summary=summarize_independent_15m(threshold)
+ cost=portfolio.get("execution_cost_study",{})
+ cost_summary={k:cost.get(k) for k in (
+  "attributed_newer_closes","gross_market_pnl_attributed","execution_drag_attributed",
+  "net_pnl_attributed","gross_up_but_net_down","after_cost_winners","older_closes_missing_attribution")}
  decisions=[
  (f"Strict V4 has {strict_done} recorded prospective completes, {strict_wins} after-cost wins; investigate sample quality and fees without auto-promoting."
   if strict_done else "Strict V4 has no recorded prospective completes; do not lower entry criteria just to create trades."),
@@ -108,6 +136,9 @@ def analyze(trades,books,study,continuity,portfolio,now,wide=None,forward=None):
     "caveat":"This is a different trade population from the 21-account portfolio; the CSV has no verified V4 entry-cost tag. Historical V3 fees must not be restated."},
   "prospective_fee_study":gates,
   "saved_five_venue_evidence":venue_summary,
+  "independent_15m_threshold_evidence":threshold_summary,
+  "historical_cost_attribution":{**cost_summary,
+    "caveat":"Attribution on recorded past closes only, mixed historical fee regimes; not an equal-cohort V4 backtest."},
   "public_depth":{"markets":len(markets),"snapshots":sum(x["snapshots"] for x in markets),
     "mature_market_samples":sum(x["eligible_for_48h_quality_review"] for x in markets),
     "by_market":markets,"caveat":"USD and USDT not FX-adjusted; no orderbook snapshot proves a fill."},
@@ -149,6 +180,14 @@ def to_md(result):
   "Independent forward snapshots / completed research hypotheses: "+
    str(e.get("five_venue_forward_snapshots"))+" / "+str(e.get("five_venue_forward_hypotheses_completed")),
   "None of these numbers establishes a fresh five-minute forward trade or a profitable signal.","",
+  "## Independent 15-minute spread/depth threshold experiments","",
+  "Recorded hypotheses: "+str(result.get("independent_15m_threshold_evidence",{}).get("completed_hypotheses")),
+  "Distinct experiment, no verified executable fills or strategy promotion.","",
+  "## Historical execution-cost attribution (mixed-fee samples)","",
+  "Gross price movement USD: "+str(result.get("historical_cost_attribution",{}).get("gross_market_pnl_attributed")),
+  "Estimated execution drag USD: "+str(result.get("historical_cost_attribution",{}).get("execution_drag_attributed")),
+  "Reported net after costs USD: "+str(result.get("historical_cost_attribution",{}).get("net_pnl_attributed")),
+  "These are historical attributed samples, NOT new homogeneous 0.8% fee backtests.","",
   "## Prescribed next experiments",""]+["- "+x for x in result["recommendations"]])
  lines.extend(["","No false claims of V4 edge, real fills or independent VPS execution.",""])
  return "\n".join(lines)
@@ -157,13 +196,15 @@ def main():
  for key in ("trades","books","study","continuity","portfolio","out"):p.add_argument("--"+key,required=True)
  p.add_argument("--wide-report")
  p.add_argument("--forward-report")
+ p.add_argument("--threshold-report")
  a=p.parse_args()
  r=analyze(read_csv(a.trades),read_csv(a.books),
            json.loads(pathlib.Path(a.study).read_text()),
            json.loads(pathlib.Path(a.continuity).read_text()),
            json.loads(pathlib.Path(a.portfolio).read_text()),dt.datetime.now(UTC),
            json.loads(pathlib.Path(a.wide_report).read_text()) if a.wide_report else None,
-           json.loads(pathlib.Path(a.forward_report).read_text()) if a.forward_report else None)
+           json.loads(pathlib.Path(a.forward_report).read_text()) if a.forward_report else None,
+           json.loads(pathlib.Path(a.threshold_report).read_text()) if a.threshold_report else None)
  out=pathlib.Path(a.out);out.mkdir(parents=True,exist_ok=True)
  (out/"own_data_review.json").write_text(json.dumps(r,indent=2,allow_nan=False)+"\n")
  (out/"OWN_DATA_REVIEW.md").write_text(to_md(r)+"\n")
