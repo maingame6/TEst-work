@@ -2,21 +2,21 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-11-09T18:43:40.710490+00:00; scanning cycles: 67.
-Discovered: 4212 distinct venue/pair listings.
-Selected in scan batches: **4207**.
-Checked against exchange metadata: **4207**.
-Real 5m OHLCV requests attempted: **4207**.
-Validated recent closed-candle histories: **3912**.
+Last batch: 2026-11-10T02:02:27.454865+00:00; scanning cycles: 68.
+Discovered: 4208 distinct venue/pair listings.
+Selected in scan batches: **4208**.
+Checked against exchange metadata: **4208**.
+Real 5m OHLCV requests attempted: **4208**.
+Validated recent closed-candle histories: **3917**.
 Venue/pairs producing historical strategy samples: **233**.
 
 | Venue | Discovered | Attempted | Valid OHLCV | Last attempts failed |
 |---|---:|---:|---:|---:|
 | kraken | 1205 | 1205 | 1205 | 0 |
-| coinbase | 867 | 867 | 572 | 298 |
-| bitstamp | 236 | 234 | 234 | 0 |
-| okx | 1040 | 1039 | 1039 | 0 |
-| kucoin | 864 | 862 | 862 | 0 |
+| coinbase | 863 | 863 | 572 | 294 |
+| bitstamp | 236 | 236 | 236 | 0 |
+| okx | 1040 | 1040 | 1040 | 0 |
+| kucoin | 864 | 864 | 864 | 0 |
 
 | Hypothesis | Historical examples | Net winners | Gross winners turned into losses | Weighted average net % |
 |---|---:|---:|---:|---:|
