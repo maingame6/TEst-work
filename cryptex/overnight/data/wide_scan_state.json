@@ -2,11 +2,11 @@
  "schema": 1,
  "mode": "PAPER_ONLY",
  "cursor": {
-  "kraken": 489,
-  "coinbase": 533,
-  "bitstamp": 191,
-  "okx": 143,
-  "kucoin": 568
+  "kraken": 495,
+  "coinbase": 618,
+  "bitstamp": 196,
+  "okx": 146,
+  "kucoin": 571
  },
  "seen": {
   "kucoin|0G/USDT": {
@@ -9900,21 +9900,21 @@
    "venue_market_taker_metadata": 0.004,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 73159.57,
-   "latest_ret3": -0.0009108753,
-   "latest_volume_ratio": 0.239705,
-   "latest_turnover_quote": 5290539.0647,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 73572.32,
+   "latest_ret3": -0.0035383634,
+   "latest_volume_ratio": 1.727968,
+   "latest_turnover_quote": 7858231.0627,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
      "gross_winners": 1,
      "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.232166,
-     "mean_net_pct": -1.850797,
-     "mean_stress_pct": -2.340325,
-     "unit_stake_net_sum_pct": -1.850797
+     "mean_gross_pct": -0.017527,
+     "mean_net_pct": -2.095301,
+     "mean_stress_pct": -2.583609,
+     "unit_stake_net_sum_pct": -4.190601
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -9927,14 +9927,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.777292,
-     "mean_net_pct": -3.818496,
-     "mean_stress_pct": -4.29821,
-     "unit_stake_net_sum_pct": -3.818496
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.615721,
+     "mean_net_pct": -2.681064,
+     "mean_stress_pct": -3.166451,
+     "unit_stake_net_sum_pct": -8.043191
     },
     "dip_recovery": {
      "samples": 1,
@@ -9955,8 +9955,8 @@
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
    "spread_bps": 0.0014,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -10034,11 +10034,11 @@
    "venue_market_taker_metadata": 0.004,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 73190.83,
-   "latest_ret3": -0.0009099411,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 73853.39,
+   "latest_ret3": -0.0005137272,
    "latest_volume_ratio": 0.0,
-   "latest_turnover_quote": 48769.0936,
+   "latest_turnover_quote": 23928.6325,
    "strategy_results": {
     "momentum_05": {
      "samples": 0,
@@ -10088,9 +10088,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 2.3351,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 3.0278,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -18926,21 +18926,21 @@
    "venue_market_taker_metadata": 0.004,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 2026.84,
-   "latest_ret3": 0.0003652337,
-   "latest_volume_ratio": 1.658896,
-   "latest_turnover_quote": 801751.9622,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 2049.23,
+   "latest_ret3": -0.0034042884,
+   "latest_volume_ratio": 2.011637,
+   "latest_turnover_quote": 394558.1428,
    "strategy_results": {
     "momentum_05": {
-     "samples": 2,
+     "samples": 4,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.873841,
-     "mean_net_pct": -2.933819,
-     "mean_stress_pct": -3.417946,
-     "unit_stake_net_sum_pct": -5.867639
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.353987,
+     "mean_net_pct": -2.424768,
+     "mean_stress_pct": -2.911434,
+     "unit_stake_net_sum_pct": -9.699073
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -18953,14 +18953,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.46839,
-     "mean_net_pct": -3.516013,
-     "mean_stress_pct": -3.997236,
-     "unit_stake_net_sum_pct": -3.516013
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.378885,
+     "mean_net_pct": -2.449149,
+     "mean_stress_pct": -2.935693,
+     "unit_stake_net_sum_pct": -7.347448
     },
     "dip_recovery": {
      "samples": 2,
@@ -18980,9 +18980,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.0493,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 0.0489,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -19060,11 +19060,11 @@
    "venue_market_taker_metadata": 0.004,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 2021.2,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 2052.43,
    "latest_ret3": 0.0,
-   "latest_volume_ratio": 0.0,
-   "latest_turnover_quote": 778.1155,
+   "latest_volume_ratio": 0,
+   "latest_turnover_quote": 0.0,
    "strategy_results": {
     "momentum_05": {
      "samples": 0,
@@ -19114,9 +19114,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 4.6265,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 9.2735,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29011,8 +29011,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29027,8 +29027,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29279,8 +29279,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29295,8 +29295,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29311,8 +29311,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29327,8 +29327,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29601,8 +29601,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29617,8 +29617,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29692,11 +29692,11 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 73168.49,
-   "latest_ret3": -0.0008690175,
-   "latest_volume_ratio": 1.100247,
-   "latest_turnover_quote": 41586315.3098,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 73581.63,
+   "latest_ret3": -0.0034313004,
+   "latest_volume_ratio": 1.112848,
+   "latest_turnover_quote": 21318378.819,
    "strategy_results": {
     "momentum_05": {
      "samples": 1,
@@ -29719,14 +29719,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.812872,
-     "mean_net_pct": -5.190192,
-     "mean_stress_pct": -5.663064,
-     "unit_stake_net_sum_pct": -5.190192
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.602863,
+     "mean_net_pct": -4.021803,
+     "mean_stress_pct": -4.500503,
+     "unit_stake_net_sum_pct": -12.065409
     },
     "dip_recovery": {
      "samples": 1,
@@ -29747,8 +29747,8 @@
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
    "spread_bps": 0.0014,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29881,9 +29881,9 @@
    "ohlcv_requested": true,
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
-   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "reason": "ValueError:STALE_OHLCV",
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29897,9 +29897,9 @@
    "ohlcv_requested": true,
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
-   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "reason": "ValueError:STALE_OHLCV",
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29914,8 +29914,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -29930,8 +29930,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -33293,21 +33293,21 @@
    "venue_market_taker_metadata": 0.001,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 73233.2,
-   "latest_ret3": -0.0009195013,
-   "latest_volume_ratio": 1.605647,
-   "latest_turnover_quote": 9182338.1744,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 73670.1,
+   "latest_ret3": -0.0035033566,
+   "latest_volume_ratio": 1.89644,
+   "latest_turnover_quote": 3539240.2327,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 1,
-     "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.203056,
-     "mean_net_pct": -0.89314,
-     "mean_stress_pct": -1.387445,
-     "unit_stake_net_sum_pct": -0.89314
+     "gross_winners": 2,
+     "gross_winners_lost_to_fees": 2,
+     "mean_gross_pct": -0.00548,
+     "mean_net_pct": -1.099395,
+     "mean_stress_pct": -1.592671,
+     "unit_stake_net_sum_pct": -3.298184
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -33320,14 +33320,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.819541,
-     "mean_net_pct": -2.893611,
-     "mean_stress_pct": -3.377938,
-     "unit_stake_net_sum_pct": -2.893611
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.622723,
+     "mean_net_pct": -1.709885,
+     "mean_stress_pct": -2.200116,
+     "unit_stake_net_sum_pct": -5.129655
     },
     "dip_recovery": {
      "samples": 1,
@@ -33347,8 +33347,8 @@
    "roundtrip_break_even_pct": 1.106075,
    "historical_not_forward": true,
    "spread_status": "UNAVAILABLE:ExchangeError",
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -40352,21 +40352,21 @@
    "venue_market_taker_metadata": 0.004,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 82.483,
-   "latest_ret3": 0.0018340378,
-   "latest_volume_ratio": 6.164061,
-   "latest_turnover_quote": 1575797.7663,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 83.094,
+   "latest_ret3": -0.0031311859,
+   "latest_volume_ratio": 3.504485,
+   "latest_turnover_quote": 382209.7557,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
      "gross_winners": 1,
      "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.155353,
-     "mean_net_pct": -1.926013,
-     "mean_stress_pct": -2.415166,
-     "unit_stake_net_sum_pct": -1.926013
+     "mean_gross_pct": 0.026904,
+     "mean_net_pct": -2.051793,
+     "mean_stress_pct": -2.540319,
+     "unit_stake_net_sum_pct": -6.155379
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -40379,14 +40379,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
      "gross_winners": 0,
      "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.238303,
-     "mean_net_pct": -2.311489,
-     "mean_stress_pct": -2.798719,
-     "unit_stake_net_sum_pct": -2.311489
+     "mean_gross_pct": -0.037321,
+     "mean_net_pct": -2.114683,
+     "mean_stress_pct": -2.602895,
+     "unit_stake_net_sum_pct": -4.229366
     },
     "dip_recovery": {
      "samples": 1,
@@ -40406,9 +40406,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.121,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 0.1206,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -44396,21 +44396,21 @@
    "venue_market_taker_metadata": 0.0015,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 73245.9,
-   "latest_ret3": -0.0009261558,
-   "latest_volume_ratio": 0.878551,
-   "latest_turnover_quote": 24685779.9958,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 73672.7,
+   "latest_ret3": -0.003507277,
+   "latest_volume_ratio": 0.968041,
+   "latest_turnover_quote": 13177878.5042,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
      "gross_winners": 1,
      "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.211408,
-     "mean_net_pct": -0.68645,
-     "mean_stress_pct": -1.181785,
-     "unit_stake_net_sum_pct": -0.68645
+     "mean_gross_pct": -0.028347,
+     "mean_net_pct": -0.924057,
+     "mean_stress_pct": -1.418207,
+     "unit_stake_net_sum_pct": -1.848114
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -44423,14 +44423,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.85011,
-     "mean_net_pct": -2.729497,
-     "mean_stress_pct": -3.214643,
-     "unit_stake_net_sum_pct": -2.729497
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.619974,
+     "mean_net_pct": -1.510383,
+     "mean_stress_pct": -2.001609,
+     "unit_stake_net_sum_pct": -4.531148
     },
     "dip_recovery": {
      "samples": 1,
@@ -44451,8 +44451,8 @@
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
    "spread_bps": 0.0136,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 46,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 47,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -50983,8 +50983,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -50999,8 +50999,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51015,8 +51015,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51031,8 +51031,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51187,8 +51187,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51203,8 +51203,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51345,8 +51345,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51361,8 +51361,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51377,8 +51377,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51659,8 +51659,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51675,8 +51675,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51817,8 +51817,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -51833,8 +51833,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -52255,8 +52255,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -52397,8 +52397,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -52665,8 +52665,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -52681,8 +52681,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -52697,8 +52697,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -52713,8 +52713,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53009,8 +53009,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53025,8 +53025,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53307,8 +53307,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53323,8 +53323,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53759,8 +53759,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53775,8 +53775,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53791,8 +53791,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -53807,8 +53807,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -54288,8 +54288,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -54444,8 +54444,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -54460,8 +54460,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -54798,8 +54798,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -71078,11 +71078,11 @@
    "venue_market_taker_metadata": 0.0026,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 73157.7,
-   "latest_ret3": -0.0008454021,
-   "latest_volume_ratio": 0.240451,
-   "latest_turnover_quote": 39511973.3032,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 73581.7,
+   "latest_ret3": -0.0034873076,
+   "latest_volume_ratio": 2.584634,
+   "latest_turnover_quote": 7930067.6143,
    "strategy_results": {
     "momentum_05": {
      "samples": 1,
@@ -71105,14 +71105,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.779275,
-     "mean_net_pct": -3.820438,
-     "mean_stress_pct": -4.300142,
-     "unit_stake_net_sum_pct": -3.820438
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.795326,
+     "mean_net_pct": -2.856936,
+     "mean_stress_pct": -3.341446,
+     "unit_stake_net_sum_pct": -5.713871
     },
     "dip_recovery": {
      "samples": 1,
@@ -71132,9 +71132,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.0137,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 0.0136,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -71212,21 +71212,21 @@
    "venue_market_taker_metadata": 0.0026,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 73187.8,
-   "latest_ret3": -0.0013467692,
-   "latest_volume_ratio": 2.199421,
-   "latest_turnover_quote": 402897.4057,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 73665.0,
+   "latest_ret3": -0.0032082985,
+   "latest_volume_ratio": 0.296848,
+   "latest_turnover_quote": 231179.8918,
    "strategy_results": {
     "momentum_05": {
-     "samples": 0,
+     "samples": 1,
      "net_winners": 0,
      "gross_winners": 0,
      "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": null,
-     "mean_net_pct": null,
-     "mean_stress_pct": null,
-     "unit_stake_net_sum_pct": 0
+     "mean_gross_pct": -0.221947,
+     "mean_net_pct": -2.295472,
+     "mean_stress_pct": -2.782783,
+     "unit_stake_net_sum_pct": -2.295472
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -71239,14 +71239,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 0,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": null,
-     "mean_net_pct": null,
-     "mean_stress_pct": null,
-     "unit_stake_net_sum_pct": 0
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.056198,
+     "mean_net_pct": -2.133168,
+     "mean_stress_pct": -2.621288,
+     "unit_stake_net_sum_pct": -4.266336
     },
     "dip_recovery": {
      "samples": 0,
@@ -71266,9 +71266,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.8319,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 0.0136,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -75374,8 +75374,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -75390,8 +75390,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -75938,8 +75938,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -76234,8 +76234,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -76250,8 +76250,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -76266,8 +76266,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T00:50:06.589957+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -76471,21 +76471,21 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 2027.11,
-   "latest_ret3": 0.0003849324,
-   "latest_volume_ratio": 1.39876,
-   "latest_turnover_quote": 12343020.6595,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 2049.34,
+   "latest_ret3": -0.0033168625,
+   "latest_volume_ratio": 1.413993,
+   "latest_turnover_quote": 6711854.0503,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.194347,
-     "mean_net_pct": -3.627338,
-     "mean_stress_pct": -4.108006,
-     "unit_stake_net_sum_pct": -3.627338
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": 0.062973,
+     "mean_net_pct": -3.378869,
+     "mean_stress_pct": -3.860776,
+     "unit_stake_net_sum_pct": -10.136608
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -76498,14 +76498,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 0,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": null,
-     "mean_net_pct": null,
-     "mean_stress_pct": null,
-     "unit_stake_net_sum_pct": 0
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": 0.191633,
+     "mean_net_pct": -3.254635,
+     "mean_stress_pct": -3.737161,
+     "unit_stake_net_sum_pct": -6.50927
     },
     "dip_recovery": {
      "samples": 1,
@@ -76525,9 +76525,9 @@
    "roundtrip_break_even_pct": 3.562205,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.8869,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 0.0489,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77134,8 +77134,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77150,8 +77150,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77418,8 +77418,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77434,8 +77434,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77450,8 +77450,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77466,8 +77466,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77482,8 +77482,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77498,8 +77498,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77906,8 +77906,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -77922,8 +77922,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -78456,8 +78456,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -78472,8 +78472,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -78488,8 +78488,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -78504,8 +78504,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -78786,8 +78786,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -78802,8 +78802,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -79084,8 +79084,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -79100,8 +79100,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -79116,8 +79116,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -79643,21 +79643,21 @@
    "venue_market_taker_metadata": 0.001,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 2029.23,
-   "latest_ret3": 0.0003302836,
-   "latest_volume_ratio": 2.207943,
-   "latest_turnover_quote": 2914871.5988,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 2051.69,
+   "latest_ret3": -0.0031387411,
+   "latest_volume_ratio": 0.829715,
+   "latest_turnover_quote": 1570858.0803,
    "strategy_results": {
     "momentum_05": {
-     "samples": 2,
+     "samples": 4,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.857195,
-     "mean_net_pct": -1.941793,
-     "mean_stress_pct": -2.430867,
-     "unit_stake_net_sum_pct": -3.883586
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.352365,
+     "mean_net_pct": -1.442485,
+     "mean_stress_pct": -1.93405,
+     "unit_stake_net_sum_pct": -5.769939
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -79670,14 +79670,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.49295,
-     "mean_net_pct": -2.570593,
-     "mean_stress_pct": -3.056531,
-     "unit_stake_net_sum_pct": -2.570593
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.396006,
+     "mean_net_pct": -1.485649,
+     "mean_stress_pct": -1.976998,
+     "unit_stake_net_sum_pct": -4.456946
     },
     "dip_recovery": {
      "samples": 1,
@@ -79697,8 +79697,8 @@
    "roundtrip_break_even_pct": 1.106075,
    "historical_not_forward": true,
    "spread_status": "UNAVAILABLE:ExchangeError",
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -85281,21 +85281,21 @@
    "venue_market_taker_metadata": 0.0015,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 2028.84,
-   "latest_ret3": 0.0004043353,
-   "latest_volume_ratio": 0.854527,
-   "latest_turnover_quote": 10914513.8285,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 2051.59,
+   "latest_ret3": -0.0033035528,
+   "latest_volume_ratio": 2.762604,
+   "latest_turnover_quote": 3598262.6922,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 4,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.212332,
-     "mean_net_pct": -1.106393,
-     "mean_stress_pct": -1.599634,
-     "unit_stake_net_sum_pct": -1.106393
+     "gross_winners": 2,
+     "gross_winners_lost_to_fees": 2,
+     "mean_gross_pct": 0.094026,
+     "mean_net_pct": -0.80278,
+     "mean_stress_pct": -1.297536,
+     "unit_stake_net_sum_pct": -3.211121
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -85308,14 +85308,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.389548,
-     "mean_net_pct": -1.282021,
-     "mean_stress_pct": -1.774386,
-     "unit_stake_net_sum_pct": -1.282021
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": 0.186013,
+     "mean_net_pct": -0.711617,
+     "mean_stress_pct": -1.206827,
+     "unit_stake_net_sum_pct": -1.423234
     },
     "dip_recovery": {
      "samples": 1,
@@ -85335,9 +85335,9 @@
    "roundtrip_break_even_pct": 0.904064,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.0492,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 46,
+   "spread_bps": 0.0488,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 47,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -95259,8 +95259,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -95275,8 +95275,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -95291,8 +95291,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -95307,8 +95307,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -95323,8 +95323,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -95599,15 +95599,69 @@
    "venue": "coinbase",
    "symbol": "GRT/EUR",
    "quote": "EUR",
-   "status": "UNAVAILABLE",
+   "status": "VALIDATED_OHLCV",
    "metadata_checked": true,
    "ohlcv_requested": true,
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
-   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
-   "ever_valid": false,
+   "bars": 97,
+   "last_completed_ms": 1794348600000,
+   "latest_mid": 0.015898,
+   "latest_ret3": 0.0044225423,
+   "latest_volume_ratio": 0.0,
+   "latest_turnover_quote": 3170.9572,
+   "strategy_results": {
+    "momentum_05": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "cost_aware_momentum": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "breakout": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "dip_recovery": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    }
+   },
+   "fee_per_side": 0.015,
+   "slippage_per_side": 0.0025,
+   "stress_slippage_per_side": 0.005,
+   "fee_status": "UNVERIFIED_CONSERVATIVE_ASSUMPTION",
+   "roundtrip_break_even_pct": 3.562205,
+   "historical_not_forward": true,
+   "spread_status": "NOT_AVAILABLE",
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
+   "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
   },
@@ -96391,8 +96445,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -96799,8 +96853,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -96815,8 +96869,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -96971,8 +97025,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -96987,8 +97041,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -97129,8 +97183,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -97145,8 +97199,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -97287,8 +97341,8 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
-   "checked_at": "2026-11-09T07:55:40.358582+00:00",
-   "attempts": 11,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 12,
    "ever_valid": false,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -111026,21 +111080,21 @@
    "venue_market_taker_metadata": 0.0026,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 2026.79,
-   "latest_ret3": 0.0002122032,
-   "latest_volume_ratio": 1.101477,
-   "latest_turnover_quote": 2315024.4457,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 2049.29,
+   "latest_ret3": -0.0032005915,
+   "latest_volume_ratio": 0.701326,
+   "latest_turnover_quote": 1323091.7041,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.195789,
-     "mean_net_pct": -2.269858,
-     "mean_stress_pct": -2.757296,
-     "unit_stake_net_sum_pct": -2.269858
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": 0.055471,
+     "mean_net_pct": -2.02382,
+     "mean_stress_pct": -2.512485,
+     "unit_stake_net_sum_pct": -6.071459
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -111053,14 +111107,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 0,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": null,
-     "mean_net_pct": null,
-     "mean_stress_pct": null,
-     "unit_stake_net_sum_pct": 0
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": 0.181101,
+     "mean_net_pct": -1.900801,
+     "mean_stress_pct": -2.390079,
+     "unit_stake_net_sum_pct": -3.801601
     },
     "dip_recovery": {
      "samples": 1,
@@ -111080,9 +111134,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.0493,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 0.0489,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -111160,21 +111214,21 @@
    "venue_market_taker_metadata": 0.0026,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 2028.66,
-   "latest_ret3": 0.0004043712,
-   "latest_volume_ratio": 1.216614,
-   "latest_turnover_quote": 264547.9054,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 2051.1,
+   "latest_ret3": -0.0036868105,
+   "latest_volume_ratio": 3.876883,
+   "latest_turnover_quote": 122437.5392,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.57635,
-     "mean_net_pct": -3.621729,
-     "mean_stress_pct": -4.102425,
-     "unit_stake_net_sum_pct": -3.621729
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.433314,
+     "mean_net_pct": -2.502447,
+     "mean_stress_pct": -2.988725,
+     "unit_stake_net_sum_pct": -7.507341
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -111187,14 +111241,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -1.57635,
-     "mean_net_pct": -3.621729,
-     "mean_stress_pct": -4.102425,
-     "unit_stake_net_sum_pct": -3.621729
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.433314,
+     "mean_net_pct": -2.502447,
+     "mean_stress_pct": -2.988725,
+     "unit_stake_net_sum_pct": -7.507341
     },
     "dip_recovery": {
      "samples": 0,
@@ -111214,9 +111268,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 0.1476,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 0.3905,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -164553,21 +164607,21 @@
    "venue_market_taker_metadata": 0.001,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 82.59,
-   "latest_ret3": 0.0023058252,
-   "latest_volume_ratio": 1.922162,
-   "latest_turnover_quote": 1511588.9676,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 83.21,
+   "latest_ret3": -0.0028759736,
+   "latest_volume_ratio": 0.540987,
+   "latest_turnover_quote": 626362.2338,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
      "gross_winners": 1,
      "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.023663,
-     "mean_net_pct": -1.070571,
-     "mean_stress_pct": -1.563991,
-     "unit_stake_net_sum_pct": -1.070571
+     "mean_gross_pct": -0.016191,
+     "mean_net_pct": -1.109989,
+     "mean_stress_pct": -1.603212,
+     "unit_stake_net_sum_pct": -3.329967
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -164580,14 +164634,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
      "gross_winners": 0,
      "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.336427,
-     "mean_net_pct": -1.426721,
-     "mean_stress_pct": -1.918365,
-     "unit_stake_net_sum_pct": -1.426721
+     "mean_gross_pct": -0.036118,
+     "mean_net_pct": -1.129698,
+     "mean_stress_pct": -1.622823,
+     "unit_stake_net_sum_pct": -2.259397
     },
     "dip_recovery": {
      "samples": 1,
@@ -164607,8 +164661,8 @@
    "roundtrip_break_even_pct": 1.106075,
    "historical_not_forward": true,
    "spread_status": "UNAVAILABLE:ExchangeError",
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -169691,21 +169745,21 @@
    "venue_market_taker_metadata": 0.0015,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 82.57,
-   "latest_ret3": 0.0016984108,
-   "latest_volume_ratio": 3.65497,
-   "latest_turnover_quote": 3087057.4182,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 83.19,
+   "latest_ret3": -0.0031156381,
+   "latest_volume_ratio": 1.218487,
+   "latest_turnover_quote": 899490.6664,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 1,
-     "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.094697,
-     "mean_net_pct": -0.802115,
-     "mean_stress_pct": -1.296874,
-     "unit_stake_net_sum_pct": -0.802115
+     "gross_winners": 2,
+     "gross_winners_lost_to_fees": 2,
+     "mean_gross_pct": -0.068631,
+     "mean_net_pct": -0.963979,
+     "mean_stress_pct": -1.457931,
+     "unit_stake_net_sum_pct": -2.891938
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -169720,12 +169774,12 @@
     "breakout": {
      "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.393789,
-     "mean_net_pct": -1.286225,
-     "mean_stress_pct": -1.778569,
-     "unit_stake_net_sum_pct": -2.57245
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.150294,
+     "mean_net_pct": -1.044911,
+     "mean_stress_pct": -1.538459,
+     "unit_stake_net_sum_pct": -2.089823
     },
     "dip_recovery": {
      "samples": 1,
@@ -169745,9 +169799,9 @@
    "roundtrip_break_even_pct": 0.904064,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 1.2088,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 46,
+   "spread_bps": 1.2042,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 47,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -176533,21 +176587,21 @@
    "venue_market_taker_metadata": 0.012,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 82.49,
-   "latest_ret3": 0.0018217148,
-   "latest_volume_ratio": 4.026107,
-   "latest_turnover_quote": 4701777.9844,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 83.11,
+   "latest_ret3": -0.0029990403,
+   "latest_volume_ratio": 0.658126,
+   "latest_turnover_quote": 1752306.4886,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 3,
      "net_winners": 0,
-     "gross_winners": 1,
-     "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.130394,
-     "mean_net_pct": -3.313768,
-     "mean_stress_pct": -3.796,
-     "unit_stake_net_sum_pct": -3.313768
+     "gross_winners": 2,
+     "gross_winners_lost_to_fees": 2,
+     "mean_gross_pct": -0.101108,
+     "mean_net_pct": -3.537307,
+     "mean_stress_pct": -4.018423,
+     "unit_stake_net_sum_pct": -10.61192
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -176560,14 +176614,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": -0.348432,
-     "mean_net_pct": -3.776124,
-     "mean_stress_pct": -4.256049,
-     "unit_stake_net_sum_pct": -3.776124
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": -0.216858,
+     "mean_net_pct": -3.649076,
+     "mean_stress_pct": -4.129635,
+     "unit_stake_net_sum_pct": -7.298152
     },
     "dip_recovery": {
      "samples": 1,
@@ -176587,9 +176641,9 @@
    "roundtrip_break_even_pct": 3.562205,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 1.2101,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 1.2055,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -227653,21 +227707,21 @@
    "venue_market_taker_metadata": 0.0026,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 82.49,
-   "latest_ret3": 0.002308627,
-   "latest_volume_ratio": 1.08542,
-   "latest_turnover_quote": 1809486.0178,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 83.11,
+   "latest_ret3": -0.0028794241,
+   "latest_volume_ratio": 0.498699,
+   "latest_turnover_quote": 487256.5651,
    "strategy_results": {
     "momentum_05": {
-     "samples": 1,
+     "samples": 2,
      "net_winners": 0,
      "gross_winners": 1,
      "gross_winners_lost_to_fees": 1,
-     "mean_gross_pct": 0.118526,
-     "mean_net_pct": -1.962076,
-     "mean_stress_pct": -2.451049,
-     "unit_stake_net_sum_pct": -1.962076
+     "mean_gross_pct": -0.000776,
+     "mean_net_pct": -2.078898,
+     "mean_stress_pct": -2.567288,
+     "unit_stake_net_sum_pct": -4.157795
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -227680,14 +227734,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 0,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": null,
-     "mean_net_pct": null,
-     "mean_stress_pct": null,
-     "unit_stake_net_sum_pct": 0
+     "gross_winners": 2,
+     "gross_winners_lost_to_fees": 2,
+     "mean_gross_pct": 0.138237,
+     "mean_net_pct": -1.942774,
+     "mean_stress_pct": -2.431843,
+     "unit_stake_net_sum_pct": -3.885547
     },
     "dip_recovery": {
      "samples": 2,
@@ -227707,9 +227761,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 1.2101,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 1.2056,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -227787,21 +227841,21 @@
    "venue_market_taker_metadata": 0.0026,
    "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
    "bars": 179,
-   "last_completed_ms": 1794334800000,
-   "latest_mid": 82.64,
-   "latest_ret3": 0.0037653346,
-   "latest_volume_ratio": 1.744532,
-   "latest_turnover_quote": 595722.6314,
+   "last_completed_ms": 1794349500000,
+   "latest_mid": 83.21,
+   "latest_ret3": -0.0026369411,
+   "latest_volume_ratio": 0.050046,
+   "latest_turnover_quote": 71360.4148,
    "strategy_results": {
     "momentum_05": {
-     "samples": 0,
+     "samples": 2,
      "net_winners": 0,
      "gross_winners": 0,
      "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": null,
-     "mean_net_pct": null,
-     "mean_stress_pct": null,
-     "unit_stake_net_sum_pct": 0
+     "mean_gross_pct": -0.222443,
+     "mean_net_pct": -2.295959,
+     "mean_stress_pct": -2.783267,
+     "unit_stake_net_sum_pct": -4.591917
     },
     "cost_aware_momentum": {
      "samples": 0,
@@ -227814,14 +227868,14 @@
      "unit_stake_net_sum_pct": 0
     },
     "breakout": {
-     "samples": 0,
+     "samples": 2,
      "net_winners": 0,
-     "gross_winners": 0,
-     "gross_winners_lost_to_fees": 0,
-     "mean_gross_pct": null,
-     "mean_net_pct": null,
-     "mean_stress_pct": null,
-     "unit_stake_net_sum_pct": 0
+     "gross_winners": 1,
+     "gross_winners_lost_to_fees": 1,
+     "mean_gross_pct": 0.206088,
+     "mean_net_pct": -1.876333,
+     "mean_stress_pct": -2.365734,
+     "unit_stake_net_sum_pct": -3.752666
     },
     "dip_recovery": {
      "samples": 1,
@@ -227841,9 +227895,9 @@
    "roundtrip_break_even_pct": 2.122241,
    "historical_not_forward": true,
    "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
-   "spread_bps": 2.4166,
-   "checked_at": "2026-11-10T18:28:36.487208+00:00",
-   "attempts": 47,
+   "spread_bps": 2.4082,
+   "checked_at": "2026-11-10T22:32:42.689022+00:00",
+   "attempts": 48,
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
@@ -254756,15 +254810,9 @@
    "ever_ohlcv_requested": true
   }
  },
- "scan_count": 70,
- "last_scan": "2026-11-10T18:29:23.441787+00:00",
+ "scan_count": 71,
+ "last_scan": "2026-11-10T22:32:42.689022+00:00",
  "failures": [
-  {
-   "at": "2026-11-01T15:58:57.472967+00:00",
-   "attempted": 146,
-   "validated": 39,
-   "unavailable": 107
-  },
   {
    "at": "2026-11-01T18:20:20.790853+00:00",
    "attempted": 135,
@@ -255058,11 +255106,17 @@
    "attempted": 5,
    "validated": 5,
    "unavailable": 0
+  },
+  {
+   "at": "2026-11-10T22:32:42.689022+00:00",
+   "attempted": 102,
+   "validated": 21,
+   "unavailable": 81
   }
  ],
  "last_batch": {
-  "attempted": 5,
-  "validated": 5,
-  "unavailable": 0
+  "attempted": 102,
+  "validated": 21,
+  "unavailable": 81
  }
 }
