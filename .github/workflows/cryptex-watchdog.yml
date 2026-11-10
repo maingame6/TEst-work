@@ -141,6 +141,7 @@ jobs:
             --portfolio paper-snapshot/cryptex/overnight/data/portfolio_report.json \
             --wide-report wide-snapshot/cryptex/overnight/data/wide_scan_report.json \
             --forward-report wide-snapshot/cryptex/overnight/data/forward_venue_report.json \
+            --threshold-report wide-snapshot/cryptex/overnight/data/forward_threshold_report.json \
             --out research-output
       - name: Publish own-data report and research assumptions
         if: always()
