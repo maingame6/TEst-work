@@ -1,6 +1,6 @@
 import datetime as dt,pathlib,sys,unittest
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from cadence_evidence import analyze,BASE
+from cadence_evidence import analyze,BASE,REPAIR
 UTC=dt.timezone.utc
 START=dt.datetime.fromisoformat(BASE["timestamp"])
 def c(new=10,miss=0):
@@ -60,4 +60,30 @@ class ContinuityTests(unittest.TestCase):
   r=analyze(c(10),rs,START+dt.timedelta(minutes=65))
   self.assertEqual(r["cancelled_runs_in_sample"],1)
   self.assertEqual(r["successful_runs_in_sample"],7)
+
+class RepairWindowTests(unittest.TestCase):
+ def snapshot(self,bars=10,miss=0):
+  return {"mode":"PAPER_ONLY","live_orders":False,
+   "generated_at":(dt.datetime.fromisoformat(REPAIR["timestamp"])+dt.timedelta(minutes=5*(bars+1))).isoformat(),
+   "observed_candles":REPAIR["observed_candles"]+bars-miss,
+   "expected_candles":REPAIR["expected_candles"]+bars,
+   "missing_intervals":REPAIR["missing_intervals"]+miss,
+   "last_candle_ts":REPAIR["last_candle_ts"]+bars*300}
+ def test_new_evidence_does_not_erase_prior_misses(self):
+  row=self.snapshot(10,0)
+  r=analyze(row,[],dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1))
+  self.assertEqual(r["repair_period"]["expected"],10)
+  self.assertEqual(r["repair_period"]["coverage_pct"],100)
+  self.assertFalse(r["repair_period"]["target_met"])
+  self.assertEqual(r["post_fix_missed_candles"],REPAIR["missing_intervals"]-BASE["missing_intervals"])
+ def test_new_missing_candle_stays_missing(self):
+  row=self.snapshot(10,1)
+  r=analyze(row,[],dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1))
+  self.assertEqual(r["repair_period"]["coverage_pct"],90)
+  self.assertEqual(r["repair_period"]["missed"],1)
+ def test_inconsistent_new_counters_fail_closed(self):
+  row=self.snapshot(10)
+  row["observed_candles"]+=1
+  with self.assertRaises(ValueError):
+   analyze(row,[],dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1))
 if __name__=="__main__":unittest.main()
