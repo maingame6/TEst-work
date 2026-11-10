@@ -59,4 +59,34 @@ class OwnEvidenceTests(unittest.TestCase):
   self.assertFalse(out["real_orders"])
   self.assertFalse(out["money_modified"])
   self.assertFalse(out["trading_rules_modified"])
+class CollectedVenueTests(unittest.TestCase):
+ def test_current_strict_samples_reflected_and_venue_data_separate(self):
+  args=list(inputs())
+  args[2]["gates"]["V4_TAKER_STRICT"]={"completed":5,"wins_after_cost":0,"mean_net_pct":-2.1}
+  wide={"mode":"PAPER_ONLY","not_real_orders":True,
+   "generated_at":"2026-11-01T19:00:00+00:00",
+   "discovered_listing_total":4208,"unique_tested_venue_pairs":4208,
+   "unique_ohlcv_validated_pairs":3917,"latest_unavailable_pairs":294,
+   "markets_with_any_historical_signal":233,
+   "venues":{"coinbase":{"discovered":863,"attempted_distinct":863,
+     "validated_ohlcv_distinct":572,"latest_failed":294}}}
+  forward={"mode":"PAPER_ONLY","real_orders":False,
+   "forward_observations":1303,"completed":2,
+   "last_observed_at":"2026-11-01T19:00:00+00:00"}
+  actual=analyze(*args,NOW,wide,forward)
+  self.assertIn("5 recorded prospective completes",actual["recommendations"][0])
+  evidence=actual["saved_five_venue_evidence"]
+  self.assertEqual(evidence["status"],"RECORDED")
+  self.assertEqual(evidence["historically_validated_pairs"],3917)
+  self.assertEqual(evidence["currently_unavailable_pairs"],294)
+  self.assertEqual(evidence["five_venue_forward_hypotheses_completed"],2)
+  self.assertFalse(actual["profit_proven"])
+ def test_unsafe_venue_input_is_rejected(self):
+  wide={"mode":"LIVE","not_real_orders":False}
+  forward={"mode":"PAPER_ONLY","real_orders":False}
+  actual=analyze(*inputs(),NOW,wide,forward)
+  self.assertEqual(actual["saved_five_venue_evidence"]["status"],"REJECTED_UNSAFE_INPUT")
+ def test_missing_venue_data_is_not_invented(self):
+  actual=analyze(*inputs(),NOW)
+  self.assertEqual(actual["saved_five_venue_evidence"]["status"],"UNAVAILABLE")
 if __name__=="__main__":unittest.main()
