@@ -1,35 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794341700,
+  "last_ts": 1794342000,
   "first_ts": 1793488500,
-  "observed_candles": 2447,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1794341700,
-      "observed_move": 0.00588137
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "DOGE",
-      "signal_ts": 1794341700,
-      "observed_move": 0.0054883
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XLM",
-      "signal_ts": 1794341700,
-      "observed_move": 0.00547238
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1794341700,
-      "observed_move": 0.00527041
-    }
-  ],
+  "observed_candles": 2448,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -38,6 +13,38 @@
       "entry_ts": 1794340500,
       "entry_mid": 5.253e-06,
       "exit_ts": 1794342300
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 2049.87,
+      "exit_ts": 1794343800
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 0.0675926,
+      "exit_ts": 1794343800
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 0.144388,
+      "exit_ts": 1794343800
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 123.94,
+      "exit_ts": 1794343800
     }
   ],
   "trades": [
@@ -5298,35 +5305,35 @@
   "censored_exits": 5,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2335,
-      "liquid_candidates": 22783,
-      "move_below_gate": 22773,
-      "volume_below_gate": 17443,
+      "bars": 2336,
+      "liquid_candidates": 22793,
+      "move_below_gate": 22783,
+      "volume_below_gate": 17447,
       "qualified": 7,
       "queued": 5
     },
     "COST_AWARE": {
-      "bars": 2335,
-      "liquid_candidates": 22783,
-      "move_below_gate": 22769,
-      "volume_below_gate": 17204,
+      "bars": 2336,
+      "liquid_candidates": 22793,
+      "move_below_gate": 22779,
+      "volume_below_gate": 17208,
       "qualified": 9,
       "queued": 7
     },
     "BALANCED_TEST": {
-      "bars": 2335,
-      "liquid_candidates": 22783,
-      "move_below_gate": 22605,
-      "volume_below_gate": 17204,
+      "bars": 2336,
+      "liquid_candidates": 22793,
+      "move_below_gate": 22615,
+      "volume_below_gate": 17208,
       "qualified": 105,
       "queued": 70
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2335,
-      "liquid_candidates": 22783,
-      "move_below_gate": 21094,
-      "volume_below_gate": 16928,
-      "qualified": 624,
+      "bars": 2336,
+      "liquid_candidates": 22793,
+      "move_below_gate": 21102,
+      "volume_below_gate": 16931,
+      "qualified": 626,
       "queued": 317
     }
   },
@@ -5425,6 +5432,38 @@
       "signal_ts": 1794340200,
       "entry_ts": 1794340500,
       "entry_mid": 5.253e-06,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 0.0675926,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 0.0675926,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 0.144388,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1794341700,
+      "entry_ts": 1794342000,
+      "entry_mid": 0.144388,
       "hold_bars": 288
     }
   ],
