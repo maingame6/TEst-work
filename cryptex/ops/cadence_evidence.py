@@ -11,6 +11,12 @@ BASE={
  "timestamp":"2026-11-01T19:21:09.985032+00:00",
  "last_candle_ts":1793560500,
  "observed_candles":237,"expected_candles":241,"missing_intervals":4}
+# Frozen from the published PAPER_ONLY continuity report at 2026-11-10 17:43:46Z.
+# This is a second, independent measurement window; the older baseline remains.
+REPAIR={
+ "timestamp":"2026-11-10T17:43:46.518879+00:00",
+ "last_candle_ts":1794332100,
+ "observed_candles":2424,"expected_candles":2813,"missing_intervals":389}
 TARGET=99.0
 def time(s):
  try:
@@ -39,6 +45,25 @@ def analyze(continuity,runs,now):
  start=time(BASE["timestamp"])
  span_days=(now_record-start).total_seconds()/86400
  prospective_coverage=100*new_observed/new_expected if new_expected else None
+ # Separate repair-period reliability. Do not reset or overwrite old evidence.
+ repair_start=time(REPAIR["timestamp"])
+ if last<REPAIR["last_candle_ts"]:
+  repair={"status":"NOT_STARTED","baseline":REPAIR,"target_met":False}
+ else:
+  repair_expected=expected-REPAIR["expected_candles"]
+  repair_observed=observed-REPAIR["observed_candles"]
+  repair_missed=missing-REPAIR["missing_intervals"]
+  if (min(repair_expected,repair_observed,repair_missed)<0
+      or repair_observed+repair_missed!=repair_expected
+      or (last-REPAIR["last_candle_ts"])//300 != repair_expected):
+   raise ValueError("Repair-period counters inconsistent; do not rebaseline")
+  repair_coverage=(100*repair_observed/repair_expected) if repair_expected else None
+  repair_days=(now_record-repair_start).total_seconds()/86400
+  repair={"status":"MEASURING","baseline":REPAIR,
+   "observed":repair_observed,"expected":repair_expected,"missed":repair_missed,
+   "coverage_pct":round(repair_coverage,5) if repair_coverage is not None else None,
+   "days_elapsed":round(max(0,repair_days),5),
+   "target_met":bool(repair_days>=7 and repair_coverage is not None and repair_coverage>=TARGET)}
  # Actual 5-minute paper observations are the PRIMARY reliability metric.
  # GitHub-created workflow timestamps are NOT proof of successful processing.
  entries=[]
@@ -56,6 +81,7 @@ def analyze(continuity,runs,now):
  latest_success=max(successes).isoformat() if successes else None
  return {"generated_at":now.isoformat(),"mode":"PAPER_ONLY","real_orders":False,
   "freeze_at":BASE["timestamp"],"original_baseline":BASE,
+  "repair_period":repair,
   "baseline_preserved":True,
   "post_fix_closed_candles_expected":new_expected,
   "post_fix_closed_candles_observed":new_observed,
@@ -89,6 +115,7 @@ def main():
  "; coverage="+str(result["post_fix_actual_5m_coverage_pct"])+"%.",
  "Observed duration: "+str(result["post_fix_days_elapsed"])+" days. Must reach 7 days and >=99%.",
  "Historical four gaps are RETAINED and not erased.",
+ "New repair-period window: "+json.dumps(result["repair_period"],sort_keys=True),
  "Sampled GitHub runs: "+str(result["run_sample_count"])+"; successful="+
  str(result["successful_runs_in_sample"])+".",
  "Dispatched-run interval pairs within 240–360 seconds: "+

@@ -74,7 +74,7 @@ jobs:
           # After the first pass, keep a bounded prospective 5-venue major-pair
           # observation pilot, even if formerly unavailable markets recover.
           # This does not claim five-minute live fills (hourly snapshots only).
-          pilot=dt.datetime.now(dt.timezone.utc)<dt.datetime(2026,11,10,tzinfo=dt.timezone.utc)
+          pilot=dt.datetime.now(dt.timezone.utc)<dt.datetime(2026,11,18,tzinfo=dt.timezone.utc)
           retry=done and pilot and (due or os.environ.get("GITHUB_EVENT_NAME")=="push") and not manual
           enabled=not done or manual or retry
           with open(os.environ["GITHUB_OUTPUT"],"a") as fp:
