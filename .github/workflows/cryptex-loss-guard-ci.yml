@@ -1,0 +1,54 @@
+name: CRYPTEX paper pilot after-cost loss guard CI
+
+on:
+  push:
+    branches: [cryptex-loss-guard-20261110]
+    paths:
+      - 'cryptex/overnight/pilot_policy.py'
+      - 'cryptex/overnight/runner.py'
+      - 'cryptex/overnight/tests/test_pilot_loss_guard.py'
+      - '.github/workflows/cryptex-loss-guard-ci.yml'
+  pull_request:
+    branches: [cryptex-paper-trading-preview]
+    paths:
+      - 'cryptex/overnight/pilot_policy.py'
+      - 'cryptex/overnight/runner.py'
+      - 'cryptex/overnight/tests/test_pilot_loss_guard.py'
+      - '.github/workflows/cryptex-loss-guard-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-paper-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile and verify loss guard plus existing runner
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m py_compile cryptex/overnight/pilot_policy.py cryptex/overnight/runner.py
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_pilot_loss_guard.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_runner.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_cost_model.py -v
+          python3 -m unittest discover -s cryptex/overnight/tests -p test_integrity_audit.py -v
+      - name: Audit safety boundaries
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          src = Path('cryptex/overnight/runner.py').read_text()
+          guard = Path('cryptex/overnight/pilot_policy.py').read_text()
+          assert 'from pilot_policy import' in src and 'after_cost_loss_guard' in src
+          assert 'queued pilot PAPER BUY cancelled' in src
+          assert 'if b["position"]:' in src
+          assert 'paper_only": True' in guard
+          assert 'def after_cost_loss_guard' in guard
+          print('PASS: paper-only entry guard keeps existing exit flow')
+          PY

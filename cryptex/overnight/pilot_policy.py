@@ -107,3 +107,51 @@ def exit_reason(position, features, candle_ts):
     if bars>=int(position.get("pilot_hold_bars") or 288):
         return "PILOT V1 fixed holding window reached; next-candle simulated exit"
     return None
+
+# Stop loss-making pilot versions opening more PAPER entries after enough
+# genuinely completed V4 trades. Never change, delete or backfill old fills.
+LOSS_GUARD_MIN_CLOSES = 20
+LOSS_GUARD_MAX_WINS = 2
+LOSS_GUARD_MAX_MEAN_NET_PCT = -1.0
+
+
+def after_cost_loss_guard(parent_id, wallet, trades):
+    """Return an auditable PAPER entry pause for persistently losing pilots.
+
+    Only closed, version-matched pilot V1 fills with recorded net P&L qualify.
+    The passive BTC benchmark remains untouched. Existing positions and exits
+    must always be processed by the caller, even while new buys are paused.
+    This is a downside control, not a profitable-strategy claim.
+    """
+    if parent_id not in (7, 8) or not isinstance(wallet, dict):
+        return None
+    stored = wallet.get("pilot_loss_pause")
+    if isinstance(stored, dict) and stored.get("version") == VERSION:
+        return stored
+    rows = []
+    for trade in trades:
+        if (not isinstance(trade, dict) or trade.get("bot") != wallet.get("name")
+                or trade.get("side") != "SELL"
+                or trade.get("pilot_version") != VERSION
+                or trade.get("entry_cost_gate_version") != 4):
+            continue
+        net = trade.get("net_return_pct")
+        if type(net) not in (int, float) or not math.isfinite(net):
+            continue
+        try:
+            ts = int(trade["ts"])
+        except (KeyError, ValueError, TypeError):
+            continue
+        rows.append((ts, float(net)))
+    rows.sort(key=lambda row: row[0])
+    if len(rows) < LOSS_GUARD_MIN_CLOSES:
+        return None
+    recent = rows[-LOSS_GUARD_MIN_CLOSES:]
+    wins = sum(net > 0 for _, net in recent)
+    mean_net_pct = sum(net for _, net in recent) / len(recent)
+    if wins > LOSS_GUARD_MAX_WINS or mean_net_pct > LOSS_GUARD_MAX_MEAN_NET_PCT:
+        return None
+    return {"version": VERSION, "sample_size": len(recent),
+            "wins_after_cost": wins, "mean_net_return_pct": round(mean_net_pct, 5),
+            "reason": "PILOT V1: repeated after-cost losses; future PAPER buys paused",
+            "paper_only": True}

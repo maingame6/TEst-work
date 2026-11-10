@@ -7,7 +7,7 @@ import csv, datetime as dt, json, math, os, pathlib, statistics, time, urllib.pa
 from subagents import ROLES, subagent_team, format_votes
 from execution_gate import (main_eligible, next_candle_only, MIN_THREE_BAR_MOVE, VERSION as COST_VERSION)
 from cost_model import FEE, SLIP
-from pilot_policy import PILOTS, VERSION as PILOT_VERSION, idea as pilot_idea, queued_eligible as pilot_queued_eligible, exit_reason as pilot_exit_reason
+from pilot_policy import PILOTS, VERSION as PILOT_VERSION, idea as pilot_idea, queued_eligible as pilot_queued_eligible, exit_reason as pilot_exit_reason, after_cost_loss_guard
 from continuity import mark as mark_prospective_candle, report as store_continuity
 BASE=pathlib.Path(__file__).resolve().parent
 DATA=BASE/"data"
@@ -264,7 +264,17 @@ def cycle(st,history,check,radar_results):
         if not st["halted"]:event(st,"HALT","15% peak drawdown / 5% daily paper loss, no new buys")
         st["halted"]=True
     for i,b in enumerate(st["bots"]):
+        # Freeze an observed, versioned PAPER-only loss pause; never block exits.
+        guard=after_cost_loss_guard(i,b,st["trades"]) if i in PILOTS else None
+        if guard and not b.get("pilot_loss_pause"):
+            b["pilot_loss_pause"]={**guard,"triggered_ts":ts}
+            guard=b["pilot_loss_pause"]
+            event(st,"HALT",b["name"]+": "+guard["reason"]+
+                  " (last 20 V4 closes; no real orders)")
         order=b["pending"];b["pending"]=None
+        if guard and order and order["side"]=="BUY" and order.get("pilot_policy"):
+            event(st,"VETO",b["name"]+": queued pilot PAPER BUY cancelled by after-cost loss guard")
+            order=None
         # Only NEXT completed candle may fill a new cost-approved BUY. Old
         # queued orders after missed cycles, and all pre-V4 buys, are vetoed.
         # Existing holdings and SELL/stop actions are never blocked.
@@ -304,6 +314,11 @@ def cycle(st,history,check,radar_results):
             continue
         if st["halted"]:
             b["last_reason"]="PAUSED: risk loss guard"
+            team=subagent_team(i,fs,watch_symbol=next((sym for sym in UNIVERSES[i] if sym in fs),None))
+            record_team_decision(st,i,ts,"HOLD",team)
+            continue
+        if guard:
+            b["last_reason"]="PAUSED: "+guard["reason"]
             team=subagent_team(i,fs,watch_symbol=next((sym for sym in UNIVERSES[i] if sym in fs),None))
             record_team_decision(st,i,ts,"HOLD",team)
             continue
