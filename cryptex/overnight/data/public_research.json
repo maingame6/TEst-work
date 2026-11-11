@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-11T02:12:35.538535+00:00",
+  "checked_at": "2026-11-11T03:13:10.368547+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,9 +40,8 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "UNAVAILABLE",
-      "items": 0,
-      "error": "HTTPError:HTTP Error 503: Service Unavailable"
+      "status": "OK",
+      "items": 18
     },
     {
       "source": "PUBLIC_FORUM",
@@ -52,6 +51,28 @@
     }
   ],
   "articles": [
+    {
+      "id": "d61872af1464110b",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Analysis: BTC Weakness Deepens as Price Approaches $70K - StoneX",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOQ3JDaGo5T0hTM0N5UDV0d3VHUzk1aHhHNzQwV1lCc1hERTRHZW1kMk5WTTZORkJpcXBubjRMdGxEaFd5N0dMZFhKVjR0TmxxaHlrbUVOVFkzazd3Z3RrSTZZMWpYV0RxaTkxMWthSE54NHp3cnR2OFJxZ0FXN081Vk1ITWMtR0lna3pvTjFqS3Q5dm1EOVZldmJ4WVlzQWF1VWxCQm91QlJ4NmRSR2lIR3BNRVBpemtVSTR1eQ?oc=5",
+      "published_at": "2026-11-11T00:37:51+00:00",
+      "first_observed_at": "2026-11-11T03:13:10.368547+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "43de7eddb1b3609d",
+      "source": "SEARCH_RADAR",
+      "title": "Ethereum Price Fell 20%, But Stakers Are Refusing to Sell - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdFdqbXdlZl8zZ0pSaEpuTzNyYWVXNndkaXRkbXA2M3p5Y3R5aEhpa09ISjBTUzFLdzE5cFRJOWZlNjJrblA0ZnJicU5HcC1zelc3UGVqVElhVFotN21fbG4tVVhfdjdVWlhXR0NYdlZJMnNuRE81UkJMQ1d4T1RHQU02b2ZFTThOLXBxOUhDckNFQXdRemNDc2ZFUQ?oc=5",
+      "published_at": "2026-11-10T23:54:53+00:00",
+      "first_observed_at": "2026-11-11T03:13:10.368547+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "bece51ee74dc87cc",
       "source": "COINTELEGRAPH",
@@ -2779,34 +2800,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "9e710332747b980b",
-      "source": "SEARCH_RADAR",
-      "title": "Two Ethereum Proposals Aim to Protect 200,000 Contracts From Glamsterdam - Bitcoin Foundation",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQeUtQNnI4TC1feVI0cG9jY1d5MEwxVVFhS0tkcjV2SUJBU25HWXZseVFacUtoT0tOa3Z3cjRGRzFFQk9wZHdLODVQOGtiNXhseFlQV2t4WHpSRDhueHo1NFFMM2ViZllKcHkxelVwY3lDWkVSSVozYm9tUWtIU2hQMGVZSFFaYWN3ZktmLVdpRTNuSkZoUlVkRkFILTR3QW9nTVJDSHJTelpDZlpOczBPLWswVW92YXA5?oc=5",
-      "published_at": "2026-11-09T09:10:53+00:00",
-      "first_observed_at": "2026-11-09T12:47:33.282705+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "2ceed0309a5124d4",
-      "source": "SEARCH_RADAR",
-      "title": "Vitalik Proposes ETH as a Store of Value Amid Ongoing Ethereum Upgrades - KuCoin",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNVF6S2tKcHdNei14TTNaYmJoY1lqX01oUEFNTU1sekRoUkRXMFpNSDlJNlZnRmlNLTU3cnMzQjBwZVBRN3AyVVRVWFR0bUhPbW94cGFrYkRIbU1yQnVMYlR6WmRKUE9rVTF5UWo1ZUhUMmY5dE5nRWxpNnIxWEFBUHdmcDU5dGYtV2R0NkZjdllhWFE5eWo3Rk44eERyZjVTWmM5SVl3?oc=5",
-      "published_at": "2026-11-09T11:54:47+00:00",
-      "first_observed_at": "2026-11-09T12:47:33.282705+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 8,
   "sources_total": 8
 }
