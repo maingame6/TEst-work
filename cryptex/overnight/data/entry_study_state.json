@@ -1,18 +1,27 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794397500,
+  "last_ts": 1794397800,
   "first_ts": 1793488500,
-  "observed_candles": 2631,
+  "observed_candles": 2632,
   "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1794397800,
+      "observed_move": 0.02169215
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1794397500,
-      "observed_move": 0.00707916
+      "entry_ts": 1794397800,
+      "entry_mid": 3.735,
+      "exit_ts": 1794399600
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -6012,35 +6021,35 @@
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2519,
-      "liquid_candidates": 24481,
-      "move_below_gate": 24469,
-      "volume_below_gate": 18747,
+      "bars": 2520,
+      "liquid_candidates": 24490,
+      "move_below_gate": 24478,
+      "volume_below_gate": 18752,
       "qualified": 8,
       "queued": 6
     },
     "COST_AWARE": {
-      "bars": 2519,
-      "liquid_candidates": 24481,
-      "move_below_gate": 24464,
-      "volume_below_gate": 18487,
+      "bars": 2520,
+      "liquid_candidates": 24490,
+      "move_below_gate": 24473,
+      "volume_below_gate": 18492,
       "qualified": 11,
       "queued": 9
     },
     "BALANCED_TEST": {
-      "bars": 2519,
-      "liquid_candidates": 24481,
-      "move_below_gate": 24288,
-      "volume_below_gate": 18487,
-      "qualified": 113,
-      "queued": 76
+      "bars": 2520,
+      "liquid_candidates": 24490,
+      "move_below_gate": 24296,
+      "volume_below_gate": 18492,
+      "qualified": 114,
+      "queued": 77
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2519,
-      "liquid_candidates": 24481,
-      "move_below_gate": 22603,
-      "volume_below_gate": 18182,
-      "qualified": 695,
+      "bars": 2520,
+      "liquid_candidates": 24490,
+      "move_below_gate": 22611,
+      "volume_below_gate": 18187,
+      "qualified": 696,
       "queued": 363
     }
   },
