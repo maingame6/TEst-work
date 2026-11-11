@@ -2,7 +2,7 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-11-11T06:06:23.851968+00:00; scanning cycles: 73.
+Last batch: 2026-11-11T09:18:23.232243+00:00; scanning cycles: 74.
 Discovered: 4213 distinct venue/pair listings.
 Selected in scan batches: **4213**.
 Checked against exchange metadata: **4213**.
@@ -20,9 +20,9 @@ Venue/pairs producing historical strategy samples: **235**.
 
 | Hypothesis | Historical examples | Net winners | Gross winners turned into losses | Weighted average net % |
 |---|---:|---:|---:|---:|
-| momentum_05 | 430 | 29 | 129 | -2.66985% |
+| momentum_05 | 410 | 29 | 126 | -2.71628% |
 | cost_aware_momentum | 96 | 16 | 16 | -3.02420% |
-| breakout | 450 | 29 | 144 | -2.41747% |
+| breakout | 439 | 29 | 140 | -2.42884% |
 | dip_recovery | 99 | 12 | 44 | -2.22399% |
 
 **Fees:** each venue's rate and source/status is machine-readable in wide_scan_report.json. All entries and exits subtract fees AND slippage each way.
