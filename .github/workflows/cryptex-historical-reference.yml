@@ -1,0 +1,64 @@
+name: CRYPTEX - independent historical reference data (PAPER ONLY)
+
+# Manual-only research workflow. Reads only public historical archives. No keys,
+# paper ledger, strategy promotion, schedule, branch write or paid infrastructure.
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        description: 'Binance spot symbol, e.g. BTCUSDT (USDT is not USD)'
+        required: true
+        default: BTCUSDT
+        type: string
+      interval:
+        description: 'Completed historic bar interval'
+        required: true
+        default: 5m
+        type: choice
+        options: ['5m', '1h']
+      month:
+        description: 'Fully completed historic UTC month (YYYY-MM)'
+        required: true
+        default: '2026-10'
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cryptex-history-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  reference-only:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independently test imported historic data handling
+        run: python3 -m unittest discover -s cryptex/ops/tests -p 'test_historical_*.py' -v
+      - name: Download and authenticate one official public monthly archive
+        env:
+          RESEARCH_SYMBOL: ${{ inputs.symbol }}
+          RESEARCH_INTERVAL: ${{ inputs.interval }}
+          RESEARCH_MONTH: ${{ inputs.month }}
+        run: |
+          python3 cryptex/ops/historical_archive.py \
+            --symbol "$RESEARCH_SYMBOL" --interval "$RESEARCH_INTERVAL" \
+            --month "$RESEARCH_MONTH" --out "$RUNNER_TEMP/cryptex-history"
+          python3 cryptex/ops/historical_replay.py --reference "$RUNNER_TEMP/cryptex-history"
+          test -s "$RUNNER_TEMP/cryptex-history/historical_reference.json"
+          test -s "$RUNNER_TEMP/cryptex-history/historical_replay.json"
+      - name: Save external historical data as research artifact only
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptex-historical-reference-${{ github.run_id }}
+          path: ${{ runner.temp }}/cryptex-history/
+          retention-days: 14
+          if-no-files-found: error
