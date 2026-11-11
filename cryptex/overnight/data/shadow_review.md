@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-11T12:07:20.333467+00:00
+Generated: 2026-11-11T12:12:48.691839+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 

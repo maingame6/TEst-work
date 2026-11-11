@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794398400,
+  "last_ts": 1794398700,
   "first_ts": 1793488500,
-  "observed_candles": 2634,
+  "observed_candles": 2635,
   "signals": [],
   "open": [
     {
@@ -6038,34 +6038,34 @@
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2522,
-      "liquid_candidates": 24508,
-      "move_below_gate": 24494,
-      "volume_below_gate": 18764,
+      "bars": 2523,
+      "liquid_candidates": 24517,
+      "move_below_gate": 24503,
+      "volume_below_gate": 18769,
       "qualified": 10,
       "queued": 7
     },
     "COST_AWARE": {
-      "bars": 2522,
-      "liquid_candidates": 24508,
-      "move_below_gate": 24489,
-      "volume_below_gate": 18503,
+      "bars": 2523,
+      "liquid_candidates": 24517,
+      "move_below_gate": 24498,
+      "volume_below_gate": 18508,
       "qualified": 13,
       "queued": 10
     },
     "BALANCED_TEST": {
-      "bars": 2522,
-      "liquid_candidates": 24508,
-      "move_below_gate": 24312,
-      "volume_below_gate": 18503,
+      "bars": 2523,
+      "liquid_candidates": 24517,
+      "move_below_gate": 24321,
+      "volume_below_gate": 18508,
       "qualified": 116,
       "queued": 77
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2522,
-      "liquid_candidates": 24508,
-      "move_below_gate": 22627,
-      "volume_below_gate": 18198,
+      "bars": 2523,
+      "liquid_candidates": 24517,
+      "move_below_gate": 22635,
+      "volume_below_gate": 18203,
       "qualified": 698,
       "queued": 363
     }
@@ -6166,14 +6166,6 @@
       "entry_ts": 1794382200,
       "entry_mid": 122.91,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1794384000,
-      "entry_ts": 1794384300,
-      "entry_mid": 8.622,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -8788,6 +8780,18 @@
       "gross_return": 0.0090942161,
       "net_return": -0.0118761542,
       "stress_net_return": -0.0168045141
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1794384000,
+      "entry_ts": 1794384300,
+      "exit_ts": 1794398700,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0088146602,
+      "net_return": -0.0294128593,
+      "stress_net_return": -0.0342537532
     }
   ],
   "horizon_censored": 190
