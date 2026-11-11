@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-11T13:03:23.974222+00:00",
+  "generated_at": "2026-11-11T13:08:29.375955+00:00",
   "paper_only": true,
-  "candle_ts": 1794401700,
-  "cycles": 2696,
+  "candle_ts": 1794402000,
+  "cycles": 2697,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,17 +16,17 @@
       "wins": 0,
       "realized": -0.030568,
       "paper_return": -0.030568,
-      "latest_decision": "HOLD XLM",
+      "latest_decision": "HOLD AVAX",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
-      "equity": 9.97648,
+      "equity": 9.975687,
       "closed": 1,
       "wins": 0,
       "realized": -0.007571,
-      "paper_return": -0.02352,
+      "paper_return": -0.024313,
       "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
@@ -42,13 +42,17 @@
       "sample_sufficient": false
     },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 9.982795,
+      "equity": 9.981988,
       "closed": 2,
       "wins": 0,
       "realized": -0.02135,
-      "paper_return": -0.017205,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.018012,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.8074217028622563,
@@ -62,13 +66,17 @@
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.973929,
+      "equity": 9.973122,
       "closed": 4,
       "wins": 0,
       "realized": -0.030213,
-      "paper_return": -0.026071,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.026878,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.8067045563987288,
@@ -82,13 +90,17 @@
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.978614,
+      "equity": 9.977807,
       "closed": 4,
       "wins": 0,
       "realized": -0.02553,
-      "paper_return": -0.021386,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.022193,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.8070834952352083,
@@ -113,13 +125,17 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.976188,
+      "equity": 9.975381,
       "closed": 4,
       "wins": 0,
       "realized": -0.027954,
-      "paper_return": -0.023812,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.024619,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.8068873099647079,
@@ -133,13 +149,17 @@
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.978614,
+      "equity": 9.977807,
       "closed": 4,
       "wins": 0,
       "realized": -0.02553,
-      "paper_return": -0.021386,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.022193,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.8070834952352083,
@@ -164,13 +184,17 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.987692,
+      "equity": 9.986885,
       "closed": 3,
       "wins": 0,
       "realized": -0.016455,
-      "paper_return": -0.012308,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.013115,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.8078177833546659,
@@ -184,13 +208,17 @@
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.981435,
+      "equity": 9.980628,
       "closed": 4,
       "wins": 0,
       "realized": -0.02271,
-      "paper_return": -0.018565,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.019372,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.8073116701409467,
