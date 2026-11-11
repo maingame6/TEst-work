@@ -1,51 +1,42 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794399900,
+  "last_ts": 1794400200,
   "first_ts": 1793488500,
-  "observed_candles": 2639,
-  "signals": [
+  "observed_candles": 2640,
+  "signals": [],
+  "open": [
     {
       "gate": "V4_TAKER_STRICT",
       "symbol": "TON",
       "signal_ts": 1794399900,
-      "observed_move": 0.02874049
+      "entry_ts": 1794400200,
+      "entry_mid": 1.223,
+      "exit_ts": 1794402000
     },
     {
       "gate": "COST_AWARE",
       "symbol": "TON",
       "signal_ts": 1794399900,
-      "observed_move": 0.02874049
+      "entry_ts": 1794400200,
+      "entry_mid": 1.223,
+      "exit_ts": 1794402000
     },
     {
       "gate": "BALANCED_TEST",
       "symbol": "TON",
       "signal_ts": 1794399900,
-      "observed_move": 0.02874049
+      "entry_ts": 1794400200,
+      "entry_mid": 1.223,
+      "exit_ts": 1794402000
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "TON",
       "signal_ts": 1794399900,
-      "observed_move": 0.02874049
-    }
-  ],
-  "open": [
-    {
-      "gate": "V4_TAKER_STRICT",
-      "symbol": "NEAR",
-      "signal_ts": 1794398100,
-      "entry_ts": 1794398400,
-      "entry_mid": 3.7766,
-      "exit_ts": 1794400200
-    },
-    {
-      "gate": "COST_AWARE",
-      "symbol": "NEAR",
-      "signal_ts": 1794398100,
-      "entry_ts": 1794398400,
-      "entry_mid": 3.7766,
-      "exit_ts": 1794400200
+      "entry_ts": 1794400200,
+      "entry_mid": 1.223,
+      "exit_ts": 1794402000
     }
   ],
   "trades": [
@@ -6067,41 +6058,67 @@
       "slippage_drag": 0.0049325551,
       "stress_net_return": -0.0364051291,
       "paper": true
+    },
+    {
+      "gate": "V4_TAKER_STRICT",
+      "symbol": "NEAR",
+      "signal_ts": 1794398100,
+      "entry_ts": 1794398400,
+      "exit_ts": 1794400200,
+      "gross_return": -0.0168405444,
+      "net_return": -0.0372719545,
+      "fee_drag": 0.0155278717,
+      "slippage_drag": 0.0049035384,
+      "stress_net_return": -0.0420736505,
+      "paper": true
+    },
+    {
+      "gate": "COST_AWARE",
+      "symbol": "NEAR",
+      "signal_ts": 1794398100,
+      "entry_ts": 1794398400,
+      "exit_ts": 1794400200,
+      "gross_return": -0.0168405444,
+      "net_return": -0.0372719545,
+      "fee_drag": 0.0155278717,
+      "slippage_drag": 0.0049035384,
+      "stress_net_return": -0.0420736505,
+      "paper": true
     }
   ],
   "missed_fills": 1,
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2527,
-      "liquid_candidates": 24553,
-      "move_below_gate": 24538,
-      "volume_below_gate": 18797,
-      "qualified": 11,
+      "bars": 2528,
+      "liquid_candidates": 24562,
+      "move_below_gate": 24546,
+      "volume_below_gate": 18801,
+      "qualified": 12,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2527,
-      "liquid_candidates": 24553,
-      "move_below_gate": 24533,
-      "volume_below_gate": 18535,
-      "qualified": 14,
+      "bars": 2528,
+      "liquid_candidates": 24562,
+      "move_below_gate": 24541,
+      "volume_below_gate": 18539,
+      "qualified": 15,
       "queued": 11
     },
     "BALANCED_TEST": {
-      "bars": 2527,
-      "liquid_candidates": 24553,
-      "move_below_gate": 24356,
-      "volume_below_gate": 18535,
-      "qualified": 117,
+      "bars": 2528,
+      "liquid_candidates": 24562,
+      "move_below_gate": 24364,
+      "volume_below_gate": 18539,
+      "qualified": 118,
       "queued": 78
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2527,
-      "liquid_candidates": 24553,
-      "move_below_gate": 22670,
-      "volume_below_gate": 18229,
-      "qualified": 699,
+      "bars": 2528,
+      "liquid_candidates": 24562,
+      "move_below_gate": 22678,
+      "volume_below_gate": 18233,
+      "qualified": 700,
       "queued": 364
     }
   },
@@ -6344,6 +6361,22 @@
       "signal_ts": 1794398100,
       "entry_ts": 1794398400,
       "entry_mid": 3.7766,
+      "hold_bars": 288
+    },
+    {
+      "gate": "V4_TAKER_STRICT",
+      "symbol": "TON",
+      "signal_ts": 1794399900,
+      "entry_ts": 1794400200,
+      "entry_mid": 1.223,
+      "hold_bars": 48
+    },
+    {
+      "gate": "V4_TAKER_STRICT",
+      "symbol": "TON",
+      "signal_ts": 1794399900,
+      "entry_ts": 1794400200,
+      "entry_mid": 1.223,
       "hold_bars": 288
     }
   ],
