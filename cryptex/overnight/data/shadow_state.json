@@ -1,8 +1,8 @@
 {
   "version": 1,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794381300,
-  "cycles": 2628,
+  "last_ts": 1794381600,
+  "cycles": 2629,
   "initial_capital": 110,
   "bots": {
     "FLUID_ADVECTION": {
@@ -43,7 +43,7 @@
         -0.006849685212065526,
         -0.014500335460962632
       ],
-      "last_decision": "HOLD BTC"
+      "last_decision": "HOLD AVAX"
     },
     "ERROR_CODE_CONSENSUS": {
       "cash": 9.969787010300891,
@@ -58,7 +58,7 @@
         -0.011167647124204705,
         -0.007450751127052069
       ],
-      "last_decision": "HOLD AVAX"
+      "last_decision": "HOLD XRP"
     },
     "GRAPH_COHERENCE": {
       "cash": 9.97447018639016,
@@ -73,7 +73,7 @@
         -0.007562430550042798,
         -0.006167971383158388
       ],
-      "last_decision": "HOLD BTC"
+      "last_decision": "HOLD AVAX"
     },
     "LATTICE_ANALOG": {
       "cash": 10.0,
@@ -98,7 +98,7 @@
         -0.004423994546338017,
         -0.009338969758517779
       ],
-      "last_decision": "HOLD BTC"
+      "last_decision": "HOLD AVAX"
     },
     "QLIB_STYLE": {
       "cash": 9.97447018639016,
@@ -113,7 +113,7 @@
         -0.007562430550042798,
         -0.006167971383158388
       ],
-      "last_decision": "HOLD BTC"
+      "last_decision": "HOLD AVAX"
     },
     "HUMMINGBOT_FRICTION": {
       "cash": 10.0,
@@ -137,7 +137,7 @@
         -0.001542223614693694,
         -0.008063087866379548
       ],
-      "last_decision": "HOLD XRP"
+      "last_decision": "HOLD NEAR"
     },
     "NAUTILUS_REGIME": {
       "cash": 9.977290122379443,
@@ -152,7 +152,7 @@
         -0.0023795575728344787,
         -0.007740552501866782
       ],
-      "last_decision": "HOLD BTC"
+      "last_decision": "HOLD UNI"
     }
   },
   "trades": [
@@ -1106,6 +1106,105 @@
     }
   ],
   "decisions": [
+    {
+      "ts": 1794381600,
+      "model": "NAUTILUS_REGIME",
+      "action": "HOLD",
+      "symbol": "UNI",
+      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.457, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.45663,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "LEAN_EVENT",
+      "action": "HOLD",
+      "symbol": "NEAR",
+      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.698, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.69753,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "HUMMINGBOT_FRICTION",
+      "action": "HOLD",
+      "symbol": null,
+      "reason": "No verified L2 order book, bid/ask or queue position: market maker disallowed",
+      "score": 0.0,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "QLIB_STYLE",
+      "action": "HOLD",
+      "symbol": "AVAX",
+      "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
+      "score": 0.9,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "FREQTRADE_STYLE",
+      "action": "HOLD",
+      "symbol": "AVAX",
+      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.459, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.45938,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "LATTICE_ANALOG",
+      "action": "HOLD",
+      "symbol": "XRP",
+      "reason": "Historical nearest-vector analog, 0/9 after-cost positives in old samples; score=-1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": -1.0,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "GRAPH_COHERENCE",
+      "action": "HOLD",
+      "symbol": "AVAX",
+      "reason": "Relative-strength shock in asset co-movement graph; score=+0.389, gate=0.09; after-cost candidate screen (not a forecast)",
+      "score": 0.3887,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "ERROR_CODE_CONSENSUS",
+      "action": "HOLD",
+      "symbol": "XRP",
+      "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 1.0,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "GEOMETRIC_DIVERSITY",
+      "action": "HOLD",
+      "symbol": "AVAX",
+      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.359, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.35904,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "FLUID_VISCOSITY",
+      "action": "HOLD",
+      "symbol": "BTC",
+      "reason": "Momentum less empirical log-return diffusion/noise; score=-0.005, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": -0.00486,
+      "paper": true
+    },
+    {
+      "ts": 1794381600,
+      "model": "FLUID_ADVECTION",
+      "action": "HOLD",
+      "symbol": "UNI",
+      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.620, gate=0.09; after-cost candidate screen (not a forecast)",
+      "score": 0.62026,
+      "paper": true
+    },
     {
       "ts": 1794381300,
       "model": "NAUTILUS_REGIME",
@@ -4606,167 +4705,68 @@
       "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
       "score": 0.9,
       "paper": true
-    },
-    {
-      "ts": 1794370800,
-      "model": "FREQTRADE_STYLE",
-      "action": "HOLD",
-      "symbol": "PEPE",
-      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.075, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 0.07511,
-      "paper": true
-    },
-    {
-      "ts": 1794370800,
-      "model": "LATTICE_ANALOG",
-      "action": "HOLD",
-      "symbol": "XRP",
-      "reason": "Historical nearest-vector analog, 0/9 after-cost positives in old samples; score=-1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": -1.0,
-      "paper": true
-    },
-    {
-      "ts": 1794370800,
-      "model": "GRAPH_COHERENCE",
-      "action": "HOLD",
-      "symbol": "PEPE",
-      "reason": "Relative-strength shock in asset co-movement graph; score=+0.397, gate=0.09; after-cost candidate screen (not a forecast)",
-      "score": 0.39652,
-      "paper": true
-    },
-    {
-      "ts": 1794370800,
-      "model": "ERROR_CODE_CONSENSUS",
-      "action": "HOLD",
-      "symbol": "PEPE",
-      "reason": "Agreement across three return horizons (code redundancy analogy); score=-0.429, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": -0.42857,
-      "paper": true
-    },
-    {
-      "ts": 1794370800,
-      "model": "GEOMETRIC_DIVERSITY",
-      "action": "HOLD",
-      "symbol": "PEPE",
-      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.150, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 0.14964,
-      "paper": true
-    },
-    {
-      "ts": 1794370800,
-      "model": "FLUID_VISCOSITY",
-      "action": "HOLD",
-      "symbol": "ETH",
-      "reason": "Momentum less empirical log-return diffusion/noise; score=-0.180, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": -0.18033,
-      "paper": true
-    },
-    {
-      "ts": 1794370800,
-      "model": "FLUID_ADVECTION",
-      "action": "HOLD",
-      "symbol": "UNI",
-      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.300, gate=0.09; after-cost candidate screen (not a forecast)",
-      "score": 0.30007,
-      "paper": true
-    },
-    {
-      "ts": 1794370500,
-      "model": "NAUTILUS_REGIME",
-      "action": "HOLD",
-      "symbol": "ETH",
-      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=-0.178, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": -0.17784,
-      "paper": true
-    },
-    {
-      "ts": 1794370500,
-      "model": "LEAN_EVENT",
-      "action": "HOLD",
-      "symbol": "XRP",
-      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=-0.300, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": -0.3,
-      "paper": true
-    },
-    {
-      "ts": 1794370500,
-      "model": "HUMMINGBOT_FRICTION",
-      "action": "HOLD",
-      "symbol": null,
-      "reason": "No verified L2 order book, bid/ask or queue position: market maker disallowed",
-      "score": 0.0,
-      "paper": true
-    },
-    {
-      "ts": 1794370500,
-      "model": "QLIB_STYLE",
-      "action": "HOLD",
-      "symbol": "BCH",
-      "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
-      "score": 0.9,
-      "paper": true
     }
   ],
   "last_prices": {
-    "BTC": 73663.9,
-    "ETH": 2057.7,
-    "SOL": 82.6,
-    "BNB": 677.93,
-    "XRP": 1.05505,
-    "ADA": 0.173743,
-    "DOGE": 0.0676971,
+    "BTC": 73879.3,
+    "ETH": 2063.54,
+    "SOL": 82.94,
+    "BNB": 680.09,
+    "XRP": 1.05817,
+    "ADA": 0.174645,
+    "DOGE": 0.0678894,
     "SHIB": 4.41e-06,
-    "PEPE": 5.253e-06,
+    "PEPE": 5.282e-06,
     "BONK": 2.789e-06,
     "WIF": 0.156,
-    "FLOKI": 2.078e-05,
-    "LTC": 50.44,
-    "BCH": 228.42,
-    "LINK": 10.26253,
-    "DOT": 0.8303,
-    "AVAX": 8.47,
-    "XLM": 0.144358,
-    "TRX": 0.317268,
-    "NEAR": 3.5904,
-    "AAVE": 122.05,
-    "UNI": 6.4249,
-    "TON": 1.16,
-    "SUI": 0.8195
+    "FLOKI": 2.082e-05,
+    "LTC": 50.65,
+    "BCH": 229.66,
+    "LINK": 10.31487,
+    "DOT": 0.8346,
+    "AVAX": 8.505,
+    "XLM": 0.145089,
+    "TRX": 0.317492,
+    "NEAR": 3.6231,
+    "AAVE": 123.13,
+    "UNI": 6.4898,
+    "TON": 1.158,
+    "SUI": 0.8238
   },
   "last_review": {
     "FLUID_ADVECTION": {
       "action": "HOLD",
       "symbol": "UNI",
-      "score": 0.71434,
-      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.714, gate=0.09; after-cost candidate screen (not a forecast)",
+      "score": 0.62026,
+      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.620, gate=0.09; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "FLUID_VISCOSITY": {
       "action": "HOLD",
       "symbol": "BTC",
-      "score": -0.15632,
-      "reason": "Momentum less empirical log-return diffusion/noise; score=-0.156, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": -0.00486,
+      "reason": "Momentum less empirical log-return diffusion/noise; score=-0.005, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "GEOMETRIC_DIVERSITY": {
       "action": "HOLD",
-      "symbol": "BTC",
-      "score": -0.04884,
-      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=-0.049, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "AVAX",
+      "score": 0.35904,
+      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.359, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "ERROR_CODE_CONSENSUS": {
       "action": "HOLD",
-      "symbol": "AVAX",
-      "score": 0.28571,
-      "reason": "Agreement across three return horizons (code redundancy analogy); score=+0.286, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "XRP",
+      "score": 1.0,
+      "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "GRAPH_COHERENCE": {
       "action": "HOLD",
-      "symbol": "BTC",
-      "score": 0.22359,
-      "reason": "Relative-strength shock in asset co-movement graph; score=+0.224, gate=0.09; after-cost candidate screen (not a forecast)",
+      "symbol": "AVAX",
+      "score": 0.3887,
+      "reason": "Relative-strength shock in asset co-movement graph; score=+0.389, gate=0.09; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "LATTICE_ANALOG": {
@@ -4778,14 +4778,14 @@
     },
     "FREQTRADE_STYLE": {
       "action": "HOLD",
-      "symbol": "BTC",
-      "score": -0.13491,
-      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=-0.135, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "AVAX",
+      "score": 0.45938,
+      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.459, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "QLIB_STYLE": {
       "action": "HOLD",
-      "symbol": "BTC",
+      "symbol": "AVAX",
       "score": 0.9,
       "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
       "sample_ok": true
@@ -4799,16 +4799,16 @@
     },
     "LEAN_EVENT": {
       "action": "HOLD",
-      "symbol": "XRP",
-      "score": -0.3,
-      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=-0.300, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "NEAR",
+      "score": 0.69753,
+      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.698, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "NAUTILUS_REGIME": {
       "action": "HOLD",
-      "symbol": "BTC",
-      "score": -0.0814,
-      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=-0.081, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "UNI",
+      "score": 0.45663,
+      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.457, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     }
   },
