@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-11T16:34:05.773142+00:00",
+  "generated_at": "2026-11-11T16:38:00.499712+00:00",
   "paper_only": true,
   "sample_status": "REVIEW_ONLY",
   "execution": "next observed completed candle only; six-bar exits",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1794414300,
-  "observed_candles": 2687,
+  "last_candle_ts": 1794414600,
+  "observed_candles": 2688,
   "missed_fills": 1,
   "censored_exits": 7,
   "fees_slippage_per_side_pct": 1.05,
@@ -43,10 +43,10 @@
       "queued": 0,
       "threshold_move_pct": 2.322,
       "diagnostics_since_instrumentation": {
-        "bars": 2575,
-        "liquid_candidates": 25093,
-        "move_below_gate": 25076,
-        "volume_below_gate": 19188,
+        "bars": 2576,
+        "liquid_candidates": 25109,
+        "move_below_gate": 25092,
+        "volume_below_gate": 19200,
         "qualified": 13,
         "queued": 8
       },
@@ -72,10 +72,10 @@
       "queued": 0,
       "threshold_move_pct": 2.172,
       "diagnostics_since_instrumentation": {
-        "bars": 2575,
-        "liquid_candidates": 25093,
-        "move_below_gate": 25071,
-        "volume_below_gate": 18921,
+        "bars": 2576,
+        "liquid_candidates": 25109,
+        "move_below_gate": 25087,
+        "volume_below_gate": 18933,
         "qualified": 16,
         "queued": 11
       },
@@ -101,10 +101,10 @@
       "queued": 0,
       "threshold_move_pct": 1.2,
       "diagnostics_since_instrumentation": {
-        "bars": 2575,
-        "liquid_candidates": 25093,
-        "move_below_gate": 24872,
-        "volume_below_gate": 18921,
+        "bars": 2576,
+        "liquid_candidates": 25109,
+        "move_below_gate": 24888,
+        "volume_below_gate": 18933,
         "qualified": 134,
         "queued": 86
       },
@@ -130,10 +130,10 @@
       "queued": 0,
       "threshold_move_pct": 0.5,
       "diagnostics_since_instrumentation": {
-        "bars": 2575,
-        "liquid_candidates": 25093,
-        "move_below_gate": 23111,
-        "volume_below_gate": 18608,
+        "bars": 2576,
+        "liquid_candidates": 25109,
+        "move_below_gate": 23127,
+        "volume_below_gate": 18620,
         "qualified": 752,
         "queued": 385
       },
@@ -155,8 +155,8 @@
       "V4_TAKER_STRICT": {
         "48": {
           "duration_hours": 4.0,
-          "paired_observations": 3,
-          "heldout_pairs": 3,
+          "paired_observations": 4,
+          "heldout_pairs": 4,
           "heldout_nonoverlap_pairs": 3,
           "heldout_distinct_utc_days": 2,
           "mean_heldout_net_pct": -1.56958,
