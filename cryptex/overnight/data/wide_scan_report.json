@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-11T14:12:17.170570+00:00",
+  "generated_at": "2026-11-11T17:14:09.305094+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
   "discovered_listing_total": 4218,
   "catalogue_source_listings": 4218,
-  "unique_tested_venue_pairs": 4213,
-  "unique_exchange_market_metadata_checked": 4213,
-  "unique_ohlcv_requested": 4213,
-  "unique_ohlcv_validated_pairs": 3936,
+  "unique_tested_venue_pairs": 4218,
+  "unique_exchange_market_metadata_checked": 4218,
+  "unique_ohlcv_requested": 4218,
+  "unique_ohlcv_validated_pairs": 3940,
   "markets_with_any_historical_signal": 235,
-  "coverage_pct": 99.881,
-  "batches": 75,
+  "coverage_pct": 100.0,
+  "batches": 76,
   "venues": {
     "kraken": {
       "discovered": 1205,
@@ -45,23 +45,23 @@
     },
     "okx": {
       "discovered": 1049,
-      "attempted_distinct": 1045,
-      "metadata_checked_distinct": 1045,
-      "ohlcv_requested_distinct": 1045,
-      "validated_ohlcv_distinct": 1045,
-      "last_attempt_valid": 1045,
+      "attempted_distinct": 1049,
+      "metadata_checked_distinct": 1049,
+      "ohlcv_requested_distinct": 1049,
+      "validated_ohlcv_distinct": 1049,
+      "last_attempt_valid": 1049,
       "latest_failed": 0,
-      "next_cursor": 158
+      "next_cursor": 162
     },
     "kucoin": {
       "discovered": 865,
-      "attempted_distinct": 864,
-      "metadata_checked_distinct": 864,
-      "ohlcv_requested_distinct": 864,
+      "attempted_distinct": 865,
+      "metadata_checked_distinct": 865,
+      "ohlcv_requested_distinct": 865,
       "validated_ohlcv_distinct": 864,
       "last_attempt_valid": 864,
-      "latest_failed": 0,
-      "next_cursor": 583
+      "latest_failed": 1,
+      "next_cursor": 584
     }
   },
   "strategies": {
@@ -126,16 +126,16 @@
   "fee_limitations": "Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
-    "attempted": 102,
-    "validated": 20,
-    "unavailable": 82
+    "attempted": 5,
+    "validated": 4,
+    "unavailable": 1
   },
-  "latest_unavailable_pairs": 280,
-  "current_spread_snapshots": 54,
+  "latest_unavailable_pairs": 281,
+  "current_spread_snapshots": 58,
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {
-    "markets_observed": 408,
-    "forward_observations": 1442,
+    "markets_observed": 412,
+    "forward_observations": 1446,
     "completed": 2,
     "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution."
   }
