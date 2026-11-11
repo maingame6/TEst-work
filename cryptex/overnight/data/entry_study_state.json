@@ -1,44 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794419100,
+  "last_ts": 1794419400,
   "first_ts": 1793488500,
-  "observed_candles": 2703,
+  "observed_candles": 2704,
   "signals": [],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1794417300,
-      "entry_ts": 1794417600,
-      "entry_mid": 2093.75,
-      "exit_ts": 1794419400
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1794417300,
-      "entry_ts": 1794417600,
-      "entry_mid": 0.8498,
-      "exit_ts": 1794419400
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1794417300,
-      "entry_ts": 1794417600,
-      "entry_mid": 85.51,
-      "exit_ts": 1794419400
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1794417300,
-      "entry_ts": 1794417600,
-      "entry_mid": 8.694,
-      "exit_ts": 1794419400
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -6526,40 +6493,92 @@
       "slippage_drag": 0.0050159543,
       "stress_net_return": -0.0201127581,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "exit_ts": 1794419400,
+      "gross_return": -0.0007498507,
+      "net_return": -0.0215156477,
+      "fee_drag": 0.0157820057,
+      "slippage_drag": 0.0049837913,
+      "stress_net_return": -0.0263959298,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "exit_ts": 1794419400,
+      "gross_return": -0.0055307131,
+      "net_return": -0.0261971571,
+      "fee_drag": 0.0157064975,
+      "slippage_drag": 0.0049599466,
+      "stress_net_return": -0.0310540897,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "exit_ts": 1794419400,
+      "gross_return": -0.0012863993,
+      "net_return": -0.022041046,
+      "fee_drag": 0.0157735315,
+      "slippage_drag": 0.0049811152,
+      "stress_net_return": -0.0269187076,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "exit_ts": 1794419400,
+      "gross_return": -0.0049459397,
+      "net_return": -0.0256245362,
+      "fee_drag": 0.0157157333,
+      "slippage_drag": 0.0049628631,
+      "stress_net_return": -0.0304843248,
+      "paper": true
     }
   ],
   "missed_fills": 1,
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2591,
-      "liquid_candidates": 25306,
-      "move_below_gate": 25289,
-      "volume_below_gate": 19361,
+      "bars": 2592,
+      "liquid_candidates": 25320,
+      "move_below_gate": 25303,
+      "volume_below_gate": 19371,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2591,
-      "liquid_candidates": 25306,
-      "move_below_gate": 25284,
-      "volume_below_gate": 19092,
+      "bars": 2592,
+      "liquid_candidates": 25320,
+      "move_below_gate": 25298,
+      "volume_below_gate": 19102,
       "qualified": 16,
       "queued": 11
     },
     "BALANCED_TEST": {
-      "bars": 2591,
-      "liquid_candidates": 25306,
-      "move_below_gate": 25085,
-      "volume_below_gate": 19092,
+      "bars": 2592,
+      "liquid_candidates": 25320,
+      "move_below_gate": 25099,
+      "volume_below_gate": 19102,
       "qualified": 134,
       "queued": 86
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2591,
-      "liquid_candidates": 25306,
-      "move_below_gate": 23303,
-      "volume_below_gate": 18776,
+      "bars": 2592,
+      "liquid_candidates": 25320,
+      "move_below_gate": 23317,
+      "volume_below_gate": 18786,
       "qualified": 763,
       "queued": 390
     }
