@@ -1,29 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794381900,
+  "last_ts": 1794382200,
   "first_ts": 1793488500,
-  "observed_candles": 2579,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "PEPE",
-      "signal_ts": 1794381900,
-      "observed_move": 0.01089658
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1794381900,
-      "observed_move": 0.00910284
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1794381900,
-      "observed_move": 0.00752938
-    }
-  ],
+  "observed_candles": 2580,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -40,6 +21,30 @@
       "entry_ts": 1794381900,
       "entry_mid": 82.9,
       "exit_ts": 1794383700
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794381900,
+      "entry_ts": 1794382200,
+      "entry_mid": 5.286e-06,
+      "exit_ts": 1794384000
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1794381900,
+      "entry_ts": 1794382200,
+      "entry_mid": 122.91,
+      "exit_ts": 1794384000
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1794381900,
+      "entry_ts": 1794382200,
+      "entry_mid": 1.05801,
+      "exit_ts": 1794384000
     }
   ],
   "trades": [
@@ -5794,34 +5799,34 @@
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2467,
-      "liquid_candidates": 23988,
-      "move_below_gate": 23976,
-      "volume_below_gate": 18370,
+      "bars": 2468,
+      "liquid_candidates": 23998,
+      "move_below_gate": 23986,
+      "volume_below_gate": 18379,
       "qualified": 8,
       "queued": 6
     },
     "COST_AWARE": {
-      "bars": 2467,
-      "liquid_candidates": 23988,
-      "move_below_gate": 23972,
-      "volume_below_gate": 18116,
+      "bars": 2468,
+      "liquid_candidates": 23998,
+      "move_below_gate": 23982,
+      "volume_below_gate": 18125,
       "qualified": 10,
       "queued": 8
     },
     "BALANCED_TEST": {
-      "bars": 2467,
-      "liquid_candidates": 23988,
-      "move_below_gate": 23800,
-      "volume_below_gate": 18116,
+      "bars": 2468,
+      "liquid_candidates": 23998,
+      "move_below_gate": 23810,
+      "volume_below_gate": 18125,
       "qualified": 110,
       "queued": 74
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2467,
-      "liquid_candidates": 23988,
-      "move_below_gate": 22162,
-      "volume_below_gate": 17819,
+      "bars": 2468,
+      "liquid_candidates": 23998,
+      "move_below_gate": 22169,
+      "volume_below_gate": 17828,
       "qualified": 673,
       "queued": 351
     }
@@ -5945,6 +5950,30 @@
       "signal_ts": 1794381600,
       "entry_ts": 1794381900,
       "entry_mid": 82.9,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1794381900,
+      "entry_ts": 1794382200,
+      "entry_mid": 122.91,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1794381900,
+      "entry_ts": 1794382200,
+      "entry_mid": 122.91,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1794381900,
+      "entry_ts": 1794382200,
+      "entry_mid": 1.05801,
       "hold_bars": 48
     }
   ],
