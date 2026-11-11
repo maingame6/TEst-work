@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1794406500; captured candles: 2661.
+Last observed closed candle: 1794406800; captured candles: 2662.
 Missed fills: 1; censored exits: 7.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 13 | 24730 | 18939 | 8 | 7 | -2.2170% | 16.810% |
-| COST_AWARE | 16 | 24725 | 18675 | 11 | 10 | -2.6253% | 25.433% |
-| BALANCED_TEST | 122 | 24544 | 18675 | 80 | 58 | -2.3332% | 85.432% |
-| LOW_HURDLE_CONTROL | 715 | 22832 | 18367 | 373 | 289 | -2.2132% | 99.980% |
+| V4_TAKER_STRICT | 13 | 24739 | 18947 | 8 | 7 | -2.2170% | 16.810% |
+| COST_AWARE | 16 | 24734 | 18683 | 11 | 10 | -2.6253% | 25.433% |
+| BALANCED_TEST | 122 | 24553 | 18683 | 80 | 58 | -2.3332% | 85.432% |
+| LOW_HURDLE_CONTROL | 715 | 22841 | 18375 | 373 | 289 | -2.2132% | 99.980% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -31,9 +31,9 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 |---|---:|---:|---:|---:|---:|
 | V4_TAKER_STRICT | 4h | 2 | 2 | -0.868% | +0.694% |
 | V4_TAKER_STRICT | 24h | 0 | 0 | n/a | n/a |
-| COST_AWARE | 4h | 3 | 2 | -0.585% | +1.525% |
+| COST_AWARE | 4h | 4 | 3 | -1.164% | +1.043% |
 | COST_AWARE | 24h | 0 | 0 | n/a | n/a |
-| BALANCED_TEST | 4h | 41 | 12 | -1.449% | +0.428% |
+| BALANCED_TEST | 4h | 42 | 13 | -1.516% | +0.402% |
 | BALANCED_TEST | 24h | 4 | 1 | -0.463% | +1.241% |
 | LOW_HURDLE_CONTROL | 4h | 141 | 24 | -2.271% | -0.165% |
 | LOW_HURDLE_CONTROL | 24h | 18 | 2 | -5.120% | -2.534% |
