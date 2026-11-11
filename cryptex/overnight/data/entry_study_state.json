@@ -1,10 +1,23 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794413700,
+  "last_ts": 1794414000,
   "first_ts": 1793488500,
-  "observed_candles": 2685,
-  "signals": [],
+  "observed_candles": 2686,
+  "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "TON",
+      "signal_ts": 1794414000,
+      "observed_move": 0.0177665
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "TON",
+      "signal_ts": 1794414000,
+      "observed_move": 0.0177665
+    }
+  ],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -6446,36 +6459,36 @@
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2573,
-      "liquid_candidates": 25061,
-      "move_below_gate": 25044,
-      "volume_below_gate": 19166,
+      "bars": 2574,
+      "liquid_candidates": 25077,
+      "move_below_gate": 25060,
+      "volume_below_gate": 19176,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2573,
-      "liquid_candidates": 25061,
-      "move_below_gate": 25039,
-      "volume_below_gate": 18899,
+      "bars": 2574,
+      "liquid_candidates": 25077,
+      "move_below_gate": 25055,
+      "volume_below_gate": 18909,
       "qualified": 16,
       "queued": 11
     },
     "BALANCED_TEST": {
-      "bars": 2573,
-      "liquid_candidates": 25061,
-      "move_below_gate": 24842,
-      "volume_below_gate": 18899,
-      "qualified": 133,
-      "queued": 85
+      "bars": 2574,
+      "liquid_candidates": 25077,
+      "move_below_gate": 24857,
+      "volume_below_gate": 18909,
+      "qualified": 134,
+      "queued": 86
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2573,
-      "liquid_candidates": 25061,
-      "move_below_gate": 23084,
-      "volume_below_gate": 18587,
-      "qualified": 750,
-      "queued": 384
+      "bars": 2574,
+      "liquid_candidates": 25077,
+      "move_below_gate": 23098,
+      "volume_below_gate": 18596,
+      "qualified": 752,
+      "queued": 385
     }
   },
   "horizon_open": [
