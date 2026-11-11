@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-11T12:28:28.524367+00:00",
+  "generated_at": "2026-11-11T12:32:22.836556+00:00",
   "paper_only": true,
-  "candle_ts": 1794399600,
-  "cycles": 2689,
+  "candle_ts": 1794399900,
+  "cycles": 2690,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,8 +16,14 @@
       "wins": 0,
       "realized": -0.030568,
       "paper_return": -0.030568,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -27,7 +33,7 @@
       "wins": 0,
       "realized": -0.007571,
       "paper_return": -0.007571,
-      "latest_decision": "HOLD NEAR",
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -38,8 +44,14 @@
       "wins": 0,
       "realized": -0.02135,
       "paper_return": -0.02135,
-      "latest_decision": "HOLD NEAR",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -49,8 +61,14 @@
       "wins": 0,
       "realized": -0.030213,
       "paper_return": -0.030213,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -60,8 +78,14 @@
       "wins": 0,
       "realized": -0.02553,
       "paper_return": -0.02553,
-      "latest_decision": "HOLD NEAR",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -82,8 +106,14 @@
       "wins": 0,
       "realized": -0.027954,
       "paper_return": -0.027954,
-      "latest_decision": "HOLD NEAR",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -93,8 +123,14 @@
       "wins": 0,
       "realized": -0.02553,
       "paper_return": -0.02553,
-      "latest_decision": "HOLD NEAR",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -115,8 +151,14 @@
       "wins": 0,
       "realized": -0.016455,
       "paper_return": -0.016455,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -126,8 +168,14 @@
       "wins": 0,
       "realized": -0.02271,
       "paper_return": -0.02271,
-      "latest_decision": "HOLD NEAR",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED TON",
+      "queued": {
+        "side": "BUY",
+        "symbol": "TON",
+        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794399900
+      },
       "position": null,
       "sample_sufficient": false
     }
