@@ -1,35 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794417300,
+  "last_ts": 1794417600,
   "first_ts": 1793488500,
-  "observed_candles": 2697,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1794417300,
-      "observed_move": 0.00819759
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1794417300,
-      "observed_move": 0.00699052
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1794417300,
-      "observed_move": 0.00659833
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1794417300,
-      "observed_move": 0.006365
-    }
-  ],
+  "observed_candles": 2698,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -38,6 +13,38 @@
       "entry_ts": 1794416400,
       "entry_mid": 6.5803,
       "exit_ts": 1794418200
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "entry_mid": 2093.75,
+      "exit_ts": 1794419400
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "entry_mid": 0.8498,
+      "exit_ts": 1794419400
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "entry_mid": 85.51,
+      "exit_ts": 1794419400
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "entry_mid": 8.694,
+      "exit_ts": 1794419400
     }
   ],
   "trades": [
@@ -6520,35 +6527,35 @@
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2585,
-      "liquid_candidates": 25228,
-      "move_below_gate": 25211,
-      "volume_below_gate": 19297,
+      "bars": 2586,
+      "liquid_candidates": 25240,
+      "move_below_gate": 25223,
+      "volume_below_gate": 19302,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2585,
-      "liquid_candidates": 25228,
-      "move_below_gate": 25206,
-      "volume_below_gate": 19030,
+      "bars": 2586,
+      "liquid_candidates": 25240,
+      "move_below_gate": 25218,
+      "volume_below_gate": 19035,
       "qualified": 16,
       "queued": 11
     },
     "BALANCED_TEST": {
-      "bars": 2585,
-      "liquid_candidates": 25228,
-      "move_below_gate": 25007,
-      "volume_below_gate": 19030,
+      "bars": 2586,
+      "liquid_candidates": 25240,
+      "move_below_gate": 25019,
+      "volume_below_gate": 19035,
       "qualified": 134,
       "queued": 86
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2585,
-      "liquid_candidates": 25228,
-      "move_below_gate": 23231,
-      "volume_below_gate": 18716,
-      "qualified": 758,
+      "bars": 2586,
+      "liquid_candidates": 25240,
+      "move_below_gate": 23237,
+      "volume_below_gate": 18720,
+      "qualified": 763,
       "queued": 390
     }
   },
@@ -6723,14 +6730,6 @@
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1794402900,
-      "entry_ts": 1794403200,
-      "entry_mid": 3.7655,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
       "signal_ts": 1794403200,
       "entry_ts": 1794403500,
@@ -6879,6 +6878,14 @@
       "signal_ts": 1794414000,
       "entry_ts": 1794414300,
       "entry_mid": 1.206,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1794417300,
+      "entry_ts": 1794417600,
+      "entry_mid": 8.694,
       "hold_bars": 48
     }
   ],
@@ -9534,6 +9541,18 @@
       "gross_return": -0.0020124774,
       "net_return": -0.0227520352,
       "stress_net_return": -0.0276261506
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1794402900,
+      "entry_ts": 1794403200,
+      "exit_ts": 1794417600,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.0068516797,
+      "net_return": -0.0140720875,
+      "stress_net_return": -0.018989495
     }
   ],
   "horizon_censored": 190
