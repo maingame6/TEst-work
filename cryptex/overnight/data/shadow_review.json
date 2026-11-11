@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-11T13:08:29.375955+00:00",
+  "generated_at": "2026-11-11T13:13:29.292324+00:00",
   "paper_only": true,
-  "candle_ts": 1794402000,
-  "cycles": 2697,
+  "candle_ts": 1794402300,
+  "cycles": 2698,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,19 +16,23 @@
       "wins": 0,
       "realized": -0.030568,
       "paper_return": -0.030568,
-      "latest_decision": "HOLD AVAX",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
-      "equity": 9.975687,
+      "equity": 9.97331,
       "closed": 1,
       "wins": 0,
       "realized": -0.007571,
-      "paper_return": -0.024313,
-      "latest_decision": "HOLD TON",
-      "queued": null,
+      "paper_return": -0.02669,
+      "latest_decision": "SELL_QUEUED TON",
+      "queued": {
+        "side": "SELL",
+        "symbol": "TON",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "TON",
         "quantity": 0.7923399551212833,
@@ -42,75 +46,36 @@
       "sample_sufficient": false
     },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 9.981988,
-      "closed": 2,
+      "equity": 9.969098,
+      "closed": 3,
       "wins": 0,
-      "realized": -0.02135,
-      "paper_return": -0.018012,
-      "latest_decision": "SELL_QUEUED TON",
-      "queued": {
-        "side": "SELL",
-        "symbol": "TON",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "TON",
-        "quantity": 0.8074217028622563,
-        "entry_cost": 0.9978649979326971,
-        "entry_market": 1.223,
-        "entry_time": 1794400200,
-        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.248,
-        "cost_gate_version": 4
-      },
+      "realized": -0.030902,
+      "paper_return": -0.030902,
+      "latest_decision": "FILLED_SELL TON",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.973122,
-      "closed": 4,
+      "equity": 9.960244,
+      "closed": 5,
       "wins": 0,
-      "realized": -0.030213,
-      "paper_return": -0.026878,
-      "latest_decision": "SELL_QUEUED TON",
-      "queued": {
-        "side": "SELL",
-        "symbol": "TON",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "TON",
-        "quantity": 0.8067045563987288,
-        "entry_cost": 0.9969787010300891,
-        "entry_market": 1.223,
-        "entry_time": 1794400200,
-        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.248,
-        "cost_gate_version": 4
-      },
+      "realized": -0.039756,
+      "paper_return": -0.039756,
+      "latest_decision": "FILLED_SELL TON",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.977807,
-      "closed": 4,
+      "equity": 9.964923,
+      "closed": 5,
       "wins": 0,
-      "realized": -0.02553,
-      "paper_return": -0.022193,
-      "latest_decision": "SELL_QUEUED TON",
-      "queued": {
-        "side": "SELL",
-        "symbol": "TON",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "TON",
-        "quantity": 0.8070834952352083,
-        "entry_cost": 0.9974470186390161,
-        "entry_market": 1.223,
-        "entry_time": 1794400200,
-        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
-        "peak": 1.248,
-        "cost_gate_version": 4
-      },
+      "realized": -0.035077,
+      "paper_return": -0.035077,
+      "latest_decision": "FILLED_SELL TON",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "LATTICE_ANALOG": {
@@ -125,51 +90,25 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.975381,
-      "closed": 4,
+      "equity": 9.9625,
+      "closed": 5,
       "wins": 0,
-      "realized": -0.027954,
-      "paper_return": -0.024619,
-      "latest_decision": "SELL_QUEUED TON",
-      "queued": {
-        "side": "SELL",
-        "symbol": "TON",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "TON",
-        "quantity": 0.8068873099647079,
-        "entry_cost": 0.9972045599413513,
-        "entry_market": 1.223,
-        "entry_time": 1794400200,
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.248,
-        "cost_gate_version": 4
-      },
+      "realized": -0.0375,
+      "paper_return": -0.0375,
+      "latest_decision": "FILLED_SELL TON",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.977807,
-      "closed": 4,
+      "equity": 9.964923,
+      "closed": 5,
       "wins": 0,
-      "realized": -0.02553,
-      "paper_return": -0.022193,
-      "latest_decision": "SELL_QUEUED TON",
-      "queued": {
-        "side": "SELL",
-        "symbol": "TON",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "TON",
-        "quantity": 0.8070834952352083,
-        "entry_cost": 0.9974470186390161,
-        "entry_market": 1.223,
-        "entry_time": 1794400200,
-        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
-        "peak": 1.248,
-        "cost_gate_version": 4
-      },
+      "realized": -0.035077,
+      "paper_return": -0.035077,
+      "latest_decision": "FILLED_SELL TON",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "HUMMINGBOT_FRICTION": {
@@ -184,51 +123,25 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.986885,
-      "closed": 3,
+      "equity": 9.973989,
+      "closed": 4,
       "wins": 0,
-      "realized": -0.016455,
-      "paper_return": -0.013115,
-      "latest_decision": "SELL_QUEUED TON",
-      "queued": {
-        "side": "SELL",
-        "symbol": "TON",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "TON",
-        "quantity": 0.8078177833546659,
-        "entry_cost": 0.9983545003306862,
-        "entry_market": 1.223,
-        "entry_time": 1794400200,
-        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.248,
-        "cost_gate_version": 4
-      },
+      "realized": -0.026011,
+      "paper_return": -0.026011,
+      "latest_decision": "FILLED_SELL TON",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.980628,
-      "closed": 4,
+      "equity": 9.96774,
+      "closed": 5,
       "wins": 0,
-      "realized": -0.02271,
-      "paper_return": -0.019372,
-      "latest_decision": "SELL_QUEUED TON",
-      "queued": {
-        "side": "SELL",
-        "symbol": "TON",
-        "reason": "Shadow thirty minute hold completed"
-      },
-      "position": {
-        "symbol": "TON",
-        "quantity": 0.8073116701409467,
-        "entry_cost": 0.9977290122379444,
-        "entry_market": 1.223,
-        "entry_time": 1794400200,
-        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.248,
-        "cost_gate_version": 4
-      },
+      "realized": -0.03226,
+      "paper_return": -0.03226,
+      "latest_decision": "FILLED_SELL TON",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     }
   },

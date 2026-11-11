@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-11T13:08:29.375955+00:00
+Generated: 2026-11-11T13:13:29.292324+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD AVAX |
-| FLUID_VISCOSITY | 9.9757 | 1 | 0 | -0.0076 | HOLD TON |
-| GEOMETRIC_DIVERSITY | 9.9820 | 2 | 0 | -0.0214 | SELL_QUEUED TON |
-| ERROR_CODE_CONSENSUS | 9.9731 | 4 | 0 | -0.0302 | SELL_QUEUED TON |
-| GRAPH_COHERENCE | 9.9778 | 4 | 0 | -0.0255 | SELL_QUEUED TON |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD ETH |
+| FLUID_VISCOSITY | 9.9733 | 1 | 0 | -0.0076 | SELL_QUEUED TON |
+| GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | FILLED_SELL TON |
+| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | FILLED_SELL TON |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | FILLED_SELL TON |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9754 | 4 | 0 | -0.0280 | SELL_QUEUED TON |
-| QLIB_STYLE | 9.9778 | 4 | 0 | -0.0255 | SELL_QUEUED TON |
+| FREQTRADE_STYLE | 9.9625 | 5 | 0 | -0.0375 | FILLED_SELL TON |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | FILLED_SELL TON |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9869 | 3 | 0 | -0.0165 | SELL_QUEUED TON |
-| NAUTILUS_REGIME | 9.9806 | 4 | 0 | -0.0227 | SELL_QUEUED TON |
+| LEAN_EVENT | 9.9740 | 4 | 0 | -0.0260 | FILLED_SELL TON |
+| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | FILLED_SELL TON |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
