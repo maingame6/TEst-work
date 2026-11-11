@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-11T01:08:03.433981+00:00",
+  "checked_at": "2026-11-11T02:12:35.538535+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "HTTPError:HTTP Error 503: Service Unavailable"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -51,6 +52,17 @@
     }
   ],
   "articles": [
+    {
+      "id": "bece51ee74dc87cc",
+      "source": "COINTELEGRAPH",
+      "title": "LNbits rushes emergency patch after reported Bitcoin wallet thefts",
+      "url": "https://cointelegraph.com/news/lnbits-rushes-emergency-patch-after-reported-bitcoin-wallet-thefts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-11T01:16:58+00:00",
+      "first_observed_at": "2026-11-11T02:12:35.538535+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "dfba9255e388e5d2",
       "source": "COINTELEGRAPH",
@@ -2789,23 +2801,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "beab25c13e41c959",
-      "source": "CRYPTODESK",
-      "title": "Live news: Nvidia slides on CEO allegations as bitcoin hovers just above its 200-day average",
-      "url": "https://www.coindesk.com/tech/2026/11/09/live-news-nvidia-slides-on-ceo-allegations-as-bitcoin-hovers-just-above-its-200-day-average",
-      "published_at": "2026-11-09T10:51:48+00:00",
-      "first_observed_at": "2026-11-09T11:43:06.820909+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 8,
+  "sources_up": 7,
   "sources_total": 8
 }
