@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-11T13:32:55.765480+00:00
+Generated: 2026-11-11T13:37:17.371960+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD LINK |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XLM |
 | FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD DOT |
-| GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | HOLD TON |
-| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD TON |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD TON |
+| GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | HOLD DOT |
+| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD SOL |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD DOT |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9625 | 5 | 0 | -0.0375 | HOLD TON |
+| FREQTRADE_STYLE | 9.9625 | 5 | 0 | -0.0375 | HOLD DOT |
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD DOT |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9740 | 4 | 0 | -0.0260 | HOLD TON |
-| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD TON |
+| LEAN_EVENT | 9.9740 | 4 | 0 | -0.0260 | HOLD DOT |
+| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD DOT |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
