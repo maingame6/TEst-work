@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-11T12:38:22.397628+00:00",
+  "generated_at": "2026-11-11T12:42:45.831556+00:00",
   "paper_only": true,
-  "candle_ts": 1794400200,
-  "cycles": 2691,
+  "candle_ts": 1794400500,
+  "cycles": 2692,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,35 +16,44 @@
       "wins": 0,
       "realized": -0.030568,
       "paper_return": -0.030568,
-      "latest_decision": "HOLD XLM",
-      "queued": null,
-      "position": null,
-      "sample_sufficient": false
-    },
-    "FLUID_VISCOSITY": {
-      "equity": 9.992429,
-      "closed": 1,
-      "wins": 0,
-      "realized": -0.007571,
-      "paper_return": -0.007571,
       "latest_decision": "BUY_QUEUED TON",
       "queued": {
         "side": "BUY",
         "symbol": "TON",
-        "reason": "Momentum less empirical log-return diffusion/noise; score=+0.144, gate=0.14; after-cost candidate screen (not a forecast)",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
         "cost_gate_version": 4,
-        "signal_ts": 1794400200
+        "signal_ts": 1794400500
       },
       "position": null,
       "sample_sufficient": false
     },
+    "FLUID_VISCOSITY": {
+      "equity": 9.982026,
+      "closed": 1,
+      "wins": 0,
+      "realized": -0.007571,
+      "paper_return": -0.017974,
+      "latest_decision": "FILLED_BUY TON",
+      "queued": null,
+      "position": {
+        "symbol": "TON",
+        "quantity": 0.7923399551212833,
+        "entry_cost": 0.9992428635685506,
+        "entry_market": 1.248,
+        "entry_time": 1794400500,
+        "reason": "Momentum less empirical log-return diffusion/noise; score=+0.144, gate=0.14; after-cost candidate screen (not a forecast)",
+        "peak": 1.248,
+        "cost_gate_version": 4
+      },
+      "sample_sufficient": false
+    },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 9.968262,
+      "equity": 9.988447,
       "closed": 2,
       "wins": 0,
       "realized": -0.02135,
-      "paper_return": -0.031738,
-      "latest_decision": "FILLED_BUY TON",
+      "paper_return": -0.011553,
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
         "symbol": "TON",
@@ -53,18 +62,18 @@
         "entry_market": 1.223,
         "entry_time": 1794400200,
         "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.223,
+        "peak": 1.248,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.959408,
+      "equity": 9.979576,
       "closed": 4,
       "wins": 0,
       "realized": -0.030213,
-      "paper_return": -0.040592,
-      "latest_decision": "FILLED_BUY TON",
+      "paper_return": -0.020424,
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
         "symbol": "TON",
@@ -73,18 +82,18 @@
         "entry_market": 1.223,
         "entry_time": 1794400200,
         "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.223,
+        "peak": 1.248,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.964086,
+      "equity": 9.984263,
       "closed": 4,
       "wins": 0,
       "realized": -0.02553,
-      "paper_return": -0.035914,
-      "latest_decision": "FILLED_BUY TON",
+      "paper_return": -0.015737,
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
         "symbol": "TON",
@@ -93,7 +102,7 @@
         "entry_market": 1.223,
         "entry_time": 1794400200,
         "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
-        "peak": 1.223,
+        "peak": 1.248,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
@@ -110,12 +119,12 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.961664,
+      "equity": 9.981836,
       "closed": 4,
       "wins": 0,
       "realized": -0.027954,
-      "paper_return": -0.038336,
-      "latest_decision": "FILLED_BUY TON",
+      "paper_return": -0.018164,
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
         "symbol": "TON",
@@ -124,18 +133,18 @@
         "entry_market": 1.223,
         "entry_time": 1794400200,
         "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.223,
+        "peak": 1.248,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.964086,
+      "equity": 9.984263,
       "closed": 4,
       "wins": 0,
       "realized": -0.02553,
-      "paper_return": -0.035914,
-      "latest_decision": "FILLED_BUY TON",
+      "paper_return": -0.015737,
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
         "symbol": "TON",
@@ -144,7 +153,7 @@
         "entry_market": 1.223,
         "entry_time": 1794400200,
         "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
-        "peak": 1.223,
+        "peak": 1.248,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
@@ -161,12 +170,12 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.973152,
+      "equity": 9.993347,
       "closed": 3,
       "wins": 0,
       "realized": -0.016455,
-      "paper_return": -0.026848,
-      "latest_decision": "FILLED_BUY TON",
+      "paper_return": -0.006653,
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
         "symbol": "TON",
@@ -175,18 +184,18 @@
         "entry_market": 1.223,
         "entry_time": 1794400200,
         "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.223,
+        "peak": 1.248,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.966903,
+      "equity": 9.987086,
       "closed": 4,
       "wins": 0,
       "realized": -0.02271,
-      "paper_return": -0.033097,
-      "latest_decision": "FILLED_BUY TON",
+      "paper_return": -0.012914,
+      "latest_decision": "HOLD TON",
       "queued": null,
       "position": {
         "symbol": "TON",
@@ -195,7 +204,7 @@
         "entry_market": 1.223,
         "entry_time": 1794400200,
         "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.223,
+        "peak": 1.248,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
