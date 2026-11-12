@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-12T12:13:54.379709+00:00",
+  "at": "2026-11-12T12:29:41.382767+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 10.6972,
+  "holdout_window_days": 10.7081,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,11 +39,11 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 12495,
+      "snapshots": 12510,
       "stale_or_bad": 63,
       "entry_censored": 6,
       "exit_censored": 8,
-      "signal_candidates": 11985,
+      "signal_candidates": 12000,
       "gaps": 375,
       "gap_too_short": 0,
       "gap_too_long": 225
@@ -51,15 +51,15 @@
   },
   "book_interval_quality": {
     "distinct_spot_pairs_seen": 15,
-    "observations_saved_since_freeze": 12495,
-    "adjacent_observed_transitions": 12480,
-    "continuous_adjacent_transitions": 12105,
+    "observations_saved_since_freeze": 12510,
+    "adjacent_observed_transitions": 12495,
+    "continuous_adjacent_transitions": 12120,
     "broken_adjacent_transitions": 375,
     "too_soon_transitions_since_classification": 0,
     "too_late_transitions_since_classification": 225,
     "older_unclassified_transitions": 150,
-    "continuous_fraction_of_observed_transitions": 0.96995,
-    "qualified_momentum_comparisons": 11985,
+    "continuous_fraction_of_observed_transitions": 0.96999,
+    "qualified_momentum_comparisons": 12000,
     "invalid_books_seen": 63,
     "meaning": "Pair-by-pair 15-minute experiment feed continuity, NOT how many historical 5m candles were available or genuine execution opportunity. Missing times cannot be backfilled."
   },
@@ -123,7 +123,7 @@
   },
   "paired_holdout_comparison": {
     "holdout_starts": "2026-11-04T19:30:00+00:00",
-    "heldout_days_since_start": 7.6972,
+    "heldout_days_since_start": 7.7081,
     "control_eligible_cohorts": 167,
     "comparable_completed_cohorts": 167,
     "groups": {
