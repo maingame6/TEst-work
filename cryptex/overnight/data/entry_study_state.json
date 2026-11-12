@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794454500,
+  "last_ts": 1794454800,
   "first_ts": 1793488500,
-  "observed_candles": 2783,
+  "observed_candles": 2784,
   "signals": [],
   "open": [],
   "trades": [
@@ -6694,47 +6694,39 @@
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2671,
-      "liquid_candidates": 26225,
-      "move_below_gate": 26208,
-      "volume_below_gate": 20099,
+      "bars": 2672,
+      "liquid_candidates": 26231,
+      "move_below_gate": 26214,
+      "volume_below_gate": 20102,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2671,
-      "liquid_candidates": 26225,
-      "move_below_gate": 26203,
-      "volume_below_gate": 19822,
+      "bars": 2672,
+      "liquid_candidates": 26231,
+      "move_below_gate": 26209,
+      "volume_below_gate": 19825,
       "qualified": 16,
       "queued": 11
     },
     "BALANCED_TEST": {
-      "bars": 2671,
-      "liquid_candidates": 26225,
-      "move_below_gate": 26003,
-      "volume_below_gate": 19822,
+      "bars": 2672,
+      "liquid_candidates": 26231,
+      "move_below_gate": 26009,
+      "volume_below_gate": 19825,
       "qualified": 134,
       "queued": 86
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2671,
-      "liquid_candidates": 26225,
-      "move_below_gate": 24159,
-      "volume_below_gate": 19496,
+      "bars": 2672,
+      "liquid_candidates": 26231,
+      "move_below_gate": 24165,
+      "volume_below_gate": 19499,
       "qualified": 775,
       "queued": 401
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1794440100,
-      "entry_ts": 1794440400,
-      "entry_mid": 120.17,
-      "hold_bars": 48
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "AAVE",
@@ -9608,6 +9600,18 @@
       "gross_return": -0.0069356104,
       "net_return": -0.0275728587,
       "stress_net_return": -0.0324229298
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AAVE",
+      "signal_ts": 1794440100,
+      "entry_ts": 1794440400,
+      "exit_ts": 1794454800,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0116501623,
+      "net_return": -0.0321894357,
+      "stress_net_return": -0.0370164813
     }
   ],
   "horizon_censored": 221
