@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-12T20:24:17.486426+00:00
+Generated: 2026-11-12T20:27:39.678552+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,10 +10,10 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XLM |
-| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD PEPE |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD LTC |
+| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD ETH |
 | GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | HOLD PEPE |
-| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD XLM |
+| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD XRP |
 | GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD PEPE |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
 | FREQTRADE_STYLE | 9.9625 | 5 | 0 | -0.0375 | HOLD PEPE |
