@@ -1,10 +1,23 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794489300,
+  "last_ts": 1794489600,
   "first_ts": 1793488500,
-  "observed_candles": 2899,
-  "signals": [],
+  "observed_candles": 2900,
+  "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "TON",
+      "signal_ts": 1794489600,
+      "observed_move": 0.0183121
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1794489600,
+      "observed_move": 0.00824559
+    }
+  ],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -6807,36 +6820,36 @@
   "censored_exits": 7,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2787,
-      "liquid_candidates": 27264,
-      "move_below_gate": 27247,
-      "volume_below_gate": 20860,
+      "bars": 2788,
+      "liquid_candidates": 27283,
+      "move_below_gate": 27266,
+      "volume_below_gate": 20877,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2787,
-      "liquid_candidates": 27264,
-      "move_below_gate": 27242,
-      "volume_below_gate": 20565,
+      "bars": 2788,
+      "liquid_candidates": 27283,
+      "move_below_gate": 27261,
+      "volume_below_gate": 20582,
       "qualified": 16,
       "queued": 11
     },
     "BALANCED_TEST": {
-      "bars": 2787,
-      "liquid_candidates": 27264,
-      "move_below_gate": 27037,
-      "volume_below_gate": 20565,
-      "qualified": 137,
-      "queued": 88
+      "bars": 2788,
+      "liquid_candidates": 27283,
+      "move_below_gate": 27054,
+      "volume_below_gate": 20582,
+      "qualified": 138,
+      "queued": 89
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2787,
-      "liquid_candidates": 27264,
-      "move_below_gate": 25161,
-      "volume_below_gate": 20233,
-      "qualified": 786,
-      "queued": 408
+      "bars": 2788,
+      "liquid_candidates": 27283,
+      "move_below_gate": 25167,
+      "volume_below_gate": 20250,
+      "qualified": 788,
+      "queued": 409
     }
   },
   "horizon_open": [
