@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-12T18:04:54.080884+00:00
+Generated: 2026-11-12T18:13:26.215592+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -20,7 +20,7 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD XLM |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9740 | 4 | 0 | -0.0260 | HOLD XLM |
-| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD PEPE |
+| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD XLM |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.

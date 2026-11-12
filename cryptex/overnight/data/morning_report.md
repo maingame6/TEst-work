@@ -2,14 +2,14 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-12T18:04:55.097216+00:00 (Europe/Dublin)
+Checked: 2026-11-12T18:13:27.150108+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-11T23:30:32.492006+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $198.2895 · P&L $-11.7105 (-5.58%)**
+**Starting paper money $210.00 · Current estimated liquidation $198.2959 · P&L $-11.7041 (-5.57%)**
 
-Realised $-11.3384; unrealised after estimated future sale costs $-0.3721.
+Realised $-11.3384; unrealised after estimated future sale costs $-0.3657.
 Open: 2; queued: 0; closed: 154; paper fills in current JSON: 310.
 
 Overnight status: MORNING_RECORDED
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 88.5960 | -11.4040 | -11.0320 | 116 | 2 |
+| Original ten traders | 100.00 | 88.6024 | -11.3976 | -11.0320 | 116 | 2 |
 | Eleven maths/OSS traders | 110.00 | 109.6935 | -0.3065 | -0.3065 | 38 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.2442 | $-0.7558 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $8.9029 | $-1.0971 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $8.4358 | $-1.5642 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $9.2482 | $-0.7518 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $8.9065 | $-1.0935 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $8.4441 | $-1.5559 |
 
 ## 21-agent leaderboard
 
@@ -75,13 +75,13 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 16 | SPY | main | 9.6439 | -0.3561 | -0.3561 | 6 | cash |
 | 17 | BREAKOUT | main | 9.4934 | -0.5066 | -0.5066 | 5 | cash |
 | 18 | CONTRARIAN | main | 9.4681 | -0.5319 | -0.5319 | 9 | cash |
-| 19 | ROTATOR | main | 8.7793 | -1.2207 | -0.8823 | 4 | BTC |
-| 20 | FRACTAL | main | 6.8222 | -3.1778 | -3.1441 | 22 | SOL |
+| 19 | ROTATOR | main | 8.7823 | -1.2177 | -0.8823 | 4 | BTC |
+| 20 | FRACTAL | main | 6.8257 | -3.1743 | -3.1441 | 22 | SOL |
 | 21 | VORTEX | main | 4.9699 | -5.0301 | -5.0301 | 48 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1794506100 / 1794506100
+Latest main/shadow candle timestamps: 1794506700 / 1794506700
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
