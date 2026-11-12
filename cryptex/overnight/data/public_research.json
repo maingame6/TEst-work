@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-12T14:08:53.705274+00:00",
+  "checked_at": "2026-11-12T15:14:46.261683+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -16,15 +16,14 @@
     {
       "source": "THE_BLOCK",
       "purpose": "crypto sector reporting",
-      "status": "UNAVAILABLE",
-      "items": 0,
-      "error": "TimeoutError:The read operation timed out"
+      "status": "OK",
+      "items": 13
     },
     {
       "source": "EXCHANGE_BLOG",
       "purpose": "public exchange announcements",
       "status": "OK",
-      "items": 0
+      "items": 1
     },
     {
       "source": "FED_MACRO",
@@ -52,6 +51,292 @@
     }
   ],
   "articles": [
+    {
+      "id": "75a5d21d967676b9",
+      "source": "CRYPTODESK",
+      "title": "Jupiter adds Anchorage-backed USDGO to its $1 billion Solana lending platform",
+      "url": "https://www.coindesk.com/business/2026/11/12/jupiter-adds-anchorage-backed-usdgo-to-its-usd1-billion-solana-lending-platform",
+      "published_at": "2026-11-12T14:45:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "2f26cdc7b72aa4bf",
+      "source": "CRYPTODESK",
+      "title": "Live updates: Bitcoin slumps below $72,000 as Nvidia's Huang resigns, interest rates surge",
+      "url": "https://www.coindesk.com/tech/2026/11/12/live-news-strategy-kicked-out-of-msci-indexes-as-nvidia-slump-rattles-markets",
+      "published_at": "2026-11-12T09:15:04+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "POSITIVE",
+      "score": 1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "7d14cda29a137b00",
+      "source": "THE_BLOCK",
+      "title": "Andreessen Horowitz, DeFi Education Fund push back against Illinois crypto tax",
+      "url": "https://www.theblock.co/news/regulation/2026-11-12-andreessen-horowitz-defi-education-fund-push-back-against-illinois-crypto-tax-438573",
+      "published_at": "2026-11-12T15:01:02+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "1a17b74d2a54f381",
+      "source": "THE_BLOCK",
+      "title": "DTCC plans to bring tokenized securities to Solana in second half of 2027",
+      "url": "https://www.theblock.co/news/business/2026-11-12-dtcc-plans-bring-tokenized-securities-solana-second-half-of-2027-438559",
+      "published_at": "2026-11-12T14:23:11+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "2515acbcd52639d1",
+      "source": "THE_BLOCK",
+      "title": "SoFiUSD goes live on Polygon as bank-issued stablecoin expands reach",
+      "url": "https://www.theblock.co/news/ecosystems/2026-11-12-sofiusd-goes-live-on-polygon-as-bank-issued-stablecoin-expands-reach-438542",
+      "published_at": "2026-11-12T14:00:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "f2a85093f4f79fb0",
+      "source": "EXCHANGE_BLOG",
+      "title": "Get up to $100 in BTC with our Black Friday Deposit & Trade Bonus",
+      "url": "https://blog.kraken.com/product/promotions/black-friday-deposit-trade-bonus",
+      "published_at": "2026-11-12T14:55:13+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "9be697a96d8bdd7f",
+      "source": "FED_MACRO",
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "published_at": "2026-06-17T18:00:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "7791f2a05d98e62e",
+      "source": "FED_MACRO",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617b.htm",
+      "published_at": "2026-06-17T18:00:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "591157231b37b3ab",
+      "source": "FED_MACRO",
+      "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
+      "published_at": "2026-05-26T18:00:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "e52895cec62bea55",
+      "source": "FED_MACRO",
+      "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+      "published_at": "2026-05-20T18:00:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "bfbddf0e087056b6",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Announces Enforcement Annual Results for Fiscal Year 2026",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+      "published_at": "2026-11-10T16:15:35+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "c76b9e39218244ba",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Issues Exemptive Relief from Treasury Clearing Requirements for Certain Inter-Affiliate and Non-U.S. Repo Transactions",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
+      "published_at": "2026-10-30T19:30:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "d7c8aab3d17561e5",
+      "source": "SEC_REGULATORY",
+      "title": "Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence",
+      "published_at": "2026-10-29T16:42:37+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "d49d77150ff03054",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Announces Fiscal Year 2027 Examination Priorities",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+      "published_at": "2026-10-23T14:10:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "31f59ecde129bcf5",
+      "source": "SEC_REGULATORY",
+      "title": "SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+      "published_at": "2026-10-20T13:25:16+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "20d7f188f04f037b",
+      "source": "SEC_REGULATORY",
+      "title": "SEC, FSA Hold Autumn Financial Regulatory Dialogue",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue",
+      "published_at": "2026-10-20T12:51:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "74a3c45d425f714c",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+      "published_at": "2026-10-19T17:19:43+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "c3f1358e2a6b2e90",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Small Business Advisory Committee to Discuss IPO Modernization and Regulation Crowdfunding",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+      "published_at": "2026-10-14T14:30:47+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "edaacce02fd6f58d",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Falls Below $73K For First Time Since August: Michael Van De Poppe Wants One More Flush Before Buying The Dip - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQaUljcHBYLVlFUElEenJPdHVnZDZmYllvX2lLNi1CQXRDVDdzN1h4OGZJRWMxNFRnbGVOa2lUU3VIT2xQUWxjTXF6M0hDMzJoNkpBSmM4S0IxSHNnQVlNSzJnTDFrdUtYNUQydWRvM1RSVXRjYmpCZ2otcy1Tb2daa2VwVGZBc1hHR2Y2UDg1SHE5VmhGa2Zka0Z3?oc=5",
+      "published_at": "2026-11-12T13:03:38+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "0a2e2615370481ff",
+      "source": "SEARCH_RADAR",
+      "title": "Current price of Ethereum for November 12, 2026 - Fortune",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9oMDJxVGNZUXRselM2Z3pwQU1RNUlhUWUtLVg0amRmWGFpTzBDQ1hSaTZGRXF1NHVvRFVidUZpUlkzQ3E5bFNaZ0ZtVXRQY2Q1Uk9Yb1pfUDBPOW01dUdHZEVkY3RqWVZW?oc=5",
+      "published_at": "2026-11-12T12:10:35+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "815dd05ff1676681",
+      "source": "SEARCH_RADAR",
+      "title": "Rumble (RUM) Sells Two-Thirds of Its Bitcoin as AI Cloud Business Delivers First Profitable Quarter - Bitcoin Magazine",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5pUVZjalg5ZlV6MDFQSVVacVhyXzlSd1ZpYUVzODd1dU5aMzNyd0E1Um95R1NsQWRZazhMOFQyZ0RCX3dqcG9xNEhac2pjd19IYlVkWjU0Sl9oTi1BYnNzNHUwc2VmQnBvdDBoR0xNcHgxaGV0czlj?oc=5",
+      "published_at": "2026-11-12T14:53:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "77317e66fdb6fd48",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Gained 7% in September, but NEAR and Arbitrum Reportedly Surged 187% and 137% - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPNW1ZVGdvekw5QW5aa09RZnIwYmE2UVJ2NU5uRmp3R05nTHlCYUZxWE9iTllYTzNTMk5tQjUtT1U0dHVKajQwU3NQMF9RclVfNGFSWGhLeXJ6a3BLT0ZNc1htWi1tVkdSZ1RVRGxhRHd2UnltVWVFYjd3Z1BnQVZFSXR1eWhDYkZGWEhSOTRmd0psSG8tVmpHeUs3Z2xLalpPMGI2V0tVV1czSW53QnBzV2sxa3lHWXNfNjdHcXJGYklxelhtRFEzQlk2elpHOWNmOTU5TlEwQQ?oc=5",
+      "published_at": "2026-11-12T14:19:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "0d0f8b5014cf0c9c",
+      "source": "SEARCH_RADAR",
+      "title": "Strategy Sinks As MSCI Axes Bitcoin Whale; Is Nasdaq 100 Next? - Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUFJJWHVqZkRrWUlDV3N6V04yUUVCbHVJczFOYk1hQmhlUURjalNDaTF3N2g0Y0FtUDlKeUFSRkI1WW5mdTRmal8xQ0NaU25oNU0xdXpzWHptRmlyR1p3YjBtQzdYZ2tTSi02Y0o3c2dTYS1BSXFKb19iSTQxZ2V1WjNFZHZscXNHcHZLVEdLaDM2QQ?oc=5",
+      "published_at": "2026-11-12T15:08:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "aa22a53beaf89338",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Price Crashes to $72,700 as Leveraged Traders Buy the Dip: Is the Bottom In? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcE5JVXNSVGE2UUZqcHFoOUk4N0ZGZllQMk5maTdGM2k1dzVsaGV3MmJvMnNFMG5lT1I1Nml1N3RIcElLbUNqSDRXZTNfOHBYNWtwSXdmNVczdnl2cmFaQVBWTVp6MGtnQk5KLWJHNjQ2TXc4d1lKejE1b3NPTFc4ejYwZFR0TU5RVXpuMUl3Y1UzRVB6dk9laA?oc=5",
+      "published_at": "2026-11-12T14:28:02+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "eab08a2e0ae6bb01",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin to $1 Million by 2028? Blockstream CEO Adam Back Says Yes - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPamRzRFlSYWh3dEJwVy1vX2FJQnJRSHpBaWtQVU9FZVBDbVdiS0pfS3Rza0dvS3Ewd0xlZUNRQVFjTldySzJGcVE4REZ0RnVhamlnUFNZVGp3Z3FsdnFTTXVjZm44aW9OeHZVU19PdFlCNDhXc1dKQkRxbVZmeHFScnMyRkpwczZyRGdkdF83WFRnVmZtLTFxMG9VamtQejFBVTF2MDhVaE1ENkdoenJ1WjU1VHc3R1FDNXcwekJidFpLeVU?oc=5",
+      "published_at": "2026-11-12T14:10:08+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "84e0de425abb17c3",
+      "source": "SEARCH_RADAR",
+      "title": "BlackRock’s IBIT Bleeds $2 Billion in Nine Straight Days of Outflows - Bitcoin Magazine",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE03aE9KZ0pBVXVXYk5XOTljc1pDaVZiNnhKRUExQm9tLWpLbVBVZUFmVEJYTkc0QlNQWFFpUVV1Mkstd0dNS0pBaFB0Q01HTEdsMThCMzhuU1ZJdkY0aDVEbnFMSUNXQmVxMzkzelpSY2psZHBjMmplaw?oc=5",
+      "published_at": "2026-11-12T14:24:00+00:00",
+      "first_observed_at": "2026-11-12T15:14:46.261683+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "86ffd11b930ce30a",
       "source": "CRYPTODESK",
@@ -2515,298 +2800,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "58e03b4d4df5b1d6",
-      "source": "COINTELEGRAPH",
-      "title": "Ava Labs exec says NYSE deal marks end of blockchain’s ‘general purpose era’",
-      "url": "https://cointelegraph.com/interview/ava-labs-nyse-general-purpose-chains?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "published_at": "2026-11-10T21:07:44+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "d50a3cd1207fdbfd",
-      "source": "COINTELEGRAPH",
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "published_at": "2026-11-10T13:34:37+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "fb62b4794a7476f9",
-      "source": "THE_BLOCK",
-      "title": "Forward Industries grows SOL treasury to 8.7 million as token hits nearly three-month low",
-      "url": "https://www.theblock.co/news/markets/2026-11-10-forward-industries-grows-sol-treasury-8-7-million-token-hits-three-month-low-437330",
-      "published_at": "2026-11-10T21:51:19+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "7200241085dcb4f5",
-      "source": "FED_MACRO",
-      "title": "Federal Reserve issues FOMC statement",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
-      "published_at": "2026-10-28T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "18fe7e2142ca5766",
-      "source": "SEARCH_RADAR",
-      "title": "Miami-Dade County Tax Collector Dariel Fernandez announces Bitcoin payment method for property taxes - WLRN",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNWXR6cGN0eW0yZ0prbjg2OU9QSDZmWmhJeVl2OFViYXFTa055S2tEUDc5VFExZHR1OFB1UkJYLXhTeWhmcThXUnVPRmRtZXhiX2trTXExdlhtWkF6U2NPN1JRTDgyU0VsSm8tc3VMSUxhemgtXzg5d09Jc0hKWFA0RFl5Yk9yd0tvSWZWVWVic1RlSGRrVVdWUjJVVTlzQUkyc1JiYmRneU5uaVEtazR2NjBZb2kwSXh4dUt2bEJxSmhUNmd1OThqZnctWFh6aUd5NTBHMzZwMDAyQzNiZ1Q0?oc=5",
-      "published_at": "2026-11-10T21:11:00+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "3dd97c6b01dcbd11",
-      "source": "SEARCH_RADAR",
-      "title": "Hardin County officials warn residents about Bitcoin ATM scams - 12newsnow.com",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOOVdXTUIyM1A5SnpuQ3NhTWh1NmZ4bVBKT3lSZHZVZnRna0VnNUl0VnBKUTlEYkxTYnU2eVEzZkstU3BMYjhZNVZzVVgxdnR2QjBFT2VVWjFPQzhqZjJRU0NVamlYWnhPd2F5Tl9pM2R2VU1hMG0yeVY0d3ZVazlrREpuTHlfOFNiVmJwUkd0aUVBSDNFd1FfZ0ZnS0RiM2U0elI2ZzZYWUpXa09LR3Y1eDdId1lQZk02Q2x1QzJEWDZTTkpKN1Z0VVZ3dWtVMVlwRFlZOQ?oc=5",
-      "published_at": "2026-11-10T20:51:49+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "5ed071ddca27d9eb",
-      "source": "SEARCH_RADAR",
-      "title": "Why Bitcoin Fell With Tech Stocks After the Election - ETF Database",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPcjE4QkY3M1NTNzY0TVlSLV9UazJwRENIWW53VVhlYzgzRldJblBDV25oRm51ZjRrdGt3U2tuUjBSY0l4TmlOTjZEZmRxM0s0S2dYbFRxbW9Id2o3cWJsazNFYnJhZUNHN01XVlJHTENQQXZneW1WV2N5ZERCM3FqZnhxLW9iQW93bFU3NlE4T1QxNVg4UkdrT25sSnlEVnB3LWhiU3BvSDlndncyRGV5S2x3?oc=5",
-      "published_at": "2026-11-10T19:42:58+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "b8f02f3c778befbe",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin BTC (BTC-CAD) Live Price, News, Chart & Price History - Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1OTUoxc0R0OEZfLUJzRTRneHdSdV9aVWFWbks0bUtpS2g2YTA2eE5NckxEU0JSOUk5U2NYQXYwX3FFQnRSdkZ0aXJhWk52ci15Y1d1Z0lB?oc=5",
-      "published_at": "2026-11-10T14:36:03+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "7c381bf077bd21eb",
-      "source": "SEARCH_RADAR",
-      "title": "$1,000 in Zcash or Bitcoin: Which Could Be Worth More by 2030? - 24/7 Wall St.",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYmtjVXBfeFVNOExPYjNMVWF0WDhRS0k0d2ZaWEozNG93THN4LXZnYlZlQXJUdUs1ZVIzYjA1RWFaS3AxVEFmZWlIWUxmaVk1c1RJOVd0REEzWG1fUVJndlpUaUcwcnNmX0gwQll5SXA4WXZhckVwb2xJaE1rM0RtcW9RMG5EbGNHQ0UtTkZiZmQtNHFnMXoybFJ0b3Fxcy1Tcm1wNXhwVnpZeGNPdXN6UzJXT1VWd2xn?oc=5",
-      "published_at": "2026-11-10T21:27:00+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "f249913ccbebc042",
-      "source": "SEARCH_RADAR",
-      "title": "Metaplanet (TSE:3350) Stock Looks Pricey Despite Bitcoin Japan Launch - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTWVQcXlEcTc4Vml4d1YzcHF3VW1tUUtseWpLUVlYS2tjWUh0U0xEQmFTSzJ4bjNlTUNsMUVYYlhGcUo1N2RfT0lKcEUxUlF6enRLZnVVaTFOek0xSHZYZVJSYVZxVXVOd2hReW1obVBvMGFoRXdTMFR1TDNoRi03RGRhY2s1WmpIdkJ0M0huS242cFZkRERlN1VXZVg?oc=5",
-      "published_at": "2026-11-10T21:15:05+00:00",
-      "first_observed_at": "2026-11-10T21:58:11.316702+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "c7161ae83042308f",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
-      "published_at": "2026-10-13T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "03d614db4d9dccc2",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
-      "published_at": "2026-10-07T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "7314b2dbf54ab03f",
-      "source": "FED_MACRO",
-      "title": "Federal Reserve issues FOMC statement",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
-      "published_at": "2026-09-16T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "3e8123066c3729d8",
-      "source": "FED_MACRO",
-      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm",
-      "published_at": "2026-09-16T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a9203644cfd504d5",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Board's discount rate meetings on July 20 and July 29, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm",
-      "published_at": "2026-08-25T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "c81daf7a7eefd1df",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
-      "published_at": "2026-08-19T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a1de3cf50e8db135",
-      "source": "FED_MACRO",
-      "title": "Federal Reserve issues FOMC statement",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
-      "published_at": "2026-07-29T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "6b4471d226e5258a",
-      "source": "SEARCH_RADAR",
-      "title": "Why Bitcoin Fell With Tech Stocks After the Election - ETF Database",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOS3Y2UXJUNHJRVWhTRVpKLWdUaXBLTW1vVmFhSlN1OUI3NkNPLUZ5OGhRTjNpY2dHSW1MRmNXZkoxSjdzU0pqb3N3NHpNUFBibFVqaG8tVTBuSThBREc1OEc3VTdtQm5uVDBOTHRIb0NJZzRUMlR4YXFNOFE3NFFiTW9aQzFwa2NxMjY3NHk0aw?oc=5",
-      "published_at": "2026-11-10T19:52:30+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "9d108bf9f086da56",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin falls to nearly 3-month low as US inflation dampens risk appetite - Anadolu Ajansı",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbmhOdmRWS2E0UlNyQU00SVE3aG00Q183NXBjWDJkd1V5WFJQVUx2bFQ5X1ROMmFvTG43MEpDZkxYNHl6Mk9oTXkwSlphZ3dtV0pZMDFNNUctdkJucWFFVU5CZDFNRzEwT29GU1F3Q1dOaVZzdXpBYWx2RkpEX1lMbXA5MHY4cTZ4Wm9CeUNFZ1BsdDdzYjV2aUVDakJ3elJtbEU5TkphT2RQRUl4S25J?oc=5",
-      "published_at": "2026-11-10T20:27:44+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "e61c546c00b1b546",
-      "source": "SEARCH_RADAR",
-      "title": "7.1 Million Bitcoin Sit in Wallets a Quantum Computer Could One Day Crack. Is Yours One of Them? - 24/7 Wall St.",
-      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPa0s5UmU4cHJpd01Yb0k0UVNKUGd2UlN4c2k1VVdEQ1AyekNLYUxHY3NhUU8wSk5ha0hJQjlRanZ2VFJxRmVJYThKZnRWUlF2X2FLdnl6TzJUalVfY2Y4UHlNWmV0ZmhuUmlXa3hGdTlvT3BCQ3FUOHVUaGVfYjRRZHJVVTRlUFNONGpIT1NpelJZT3lrSnluUmY1NFVjQ1l1V1ZPU0h4ekpZYWw4VWVLenRuY2FxNm9KWlQwM3RwVDBvTGlRbVVEa0ZjLXl1SnBkenF6N3N2UlJFSldfMjNEalk1dWx2cXdh?oc=5",
-      "published_at": "2026-11-10T20:04:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "ca123c8095724e55",
-      "source": "SEARCH_RADAR",
-      "title": "Elon Musk Grok AI Predicts a Huge Bitcoin Price Rally: Can it Really Go This High? - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPTDhLUHRPYXo5UEluLXVPT0tnSjI0UHdBUlpwSVE2NGZSRHFoWkI2aTF0Y3pzZ2J4VVZKT2tDZFNPdTIwRGlFSkNuVF8zcV9fUWdUVEpkSWlOZnJVV0lHRXdkN0M2R1dvY3E5MTlLVllxNzF1UlVhMHB6N2ZNUDJxbGZhVV83VU1neFk3X3JqWHRteVNjZXc?oc=5",
-      "published_at": "2026-11-10T19:25:21+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "POSITIVE",
-      "score": 1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "b13cf3e1afa3c98f",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin Just Did Something Completely Unexpected. History Says This Will Happen Next. - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQV0pVQ3pDMGU1ZTd0UGlJMk5fRkhuQXpJZF9aaC00QS1zQURtZnI1RjdSN3R2VVVlUTJZUmViY1gxTllZODY5LWlBcDRFUjJsWDFRUlJjekdBZV92bjZJdVBZZUVLX0tGa0tianhWUDYwbFdjZTk2Wk9hVFJJMDFDQ25CeG9FZ2c3Z1hKZXVxdTljdUdHc1NNWWczbDN3YVFnVjVkTQ?oc=5",
-      "published_at": "2026-11-10T15:50:00+00:00",
-      "first_observed_at": "2026-11-10T20:53:08.606505+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "d2cef0955584c6c1",
-      "source": "THE_BLOCK",
-      "title": "Bitcoin slides below $74,000 after hotter-than-expected CPI as analysts warn of drop to $70k",
-      "url": "https://www.theblock.co/news/markets/2026-11-10-bitcoin-price-cpi-inflation-73000-support-437301",
-      "published_at": "2026-11-10T19:38:18+00:00",
-      "first_observed_at": "2026-11-10T19:48:33.019816+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "37be864d5551ee5b",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Board's discount rate meetings on June 8 and June 17, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260714a.htm",
-      "published_at": "2026-07-14T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T19:48:33.019816+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "f58bc9eb0333e843",
-      "source": "FED_MACRO",
-      "title": "Federal Reserve announces the leadership and objectives of its task forces to advance the conduct of monetary policy",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260709a.htm",
-      "published_at": "2026-07-09T19:00:00+00:00",
-      "first_observed_at": "2026-11-10T19:48:33.019816+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "cca25d13561edd04",
-      "source": "FED_MACRO",
-      "title": "Minutes of the Federal Open Market Committee, June 16-17, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
-      "published_at": "2026-07-08T18:00:00+00:00",
-      "first_observed_at": "2026-11-10T19:48:33.019816+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 8,
   "sources_total": 8
 }
