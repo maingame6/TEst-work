@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-12T10:58:59.134069+00:00",
+  "generated_at": "2026-11-12T18:52:54.019733+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
-  "discovered_listing_total": 4221,
-  "catalogue_source_listings": 4221,
-  "unique_tested_venue_pairs": 4220,
-  "unique_exchange_market_metadata_checked": 4220,
-  "unique_ohlcv_requested": 4220,
-  "unique_ohlcv_validated_pairs": 3945,
+  "discovered_listing_total": 4225,
+  "catalogue_source_listings": 4225,
+  "unique_tested_venue_pairs": 4225,
+  "unique_exchange_market_metadata_checked": 4225,
+  "unique_ohlcv_requested": 4225,
+  "unique_ohlcv_validated_pairs": 3950,
   "markets_with_any_historical_signal": 227,
-  "coverage_pct": 99.976,
-  "batches": 80,
+  "coverage_pct": 100.0,
+  "batches": 81,
   "venues": {
     "kraken": {
       "discovered": 1205,
@@ -44,22 +44,22 @@
       "next_cursor": 231
     },
     "okx": {
-      "discovered": 1053,
-      "attempted_distinct": 1052,
-      "metadata_checked_distinct": 1052,
-      "ohlcv_requested_distinct": 1052,
-      "validated_ohlcv_distinct": 1052,
-      "last_attempt_valid": 1052,
+      "discovered": 1056,
+      "attempted_distinct": 1056,
+      "metadata_checked_distinct": 1056,
+      "ohlcv_requested_distinct": 1056,
+      "validated_ohlcv_distinct": 1056,
+      "last_attempt_valid": 1056,
       "latest_failed": 0,
-      "next_cursor": 174
+      "next_cursor": 178
     },
     "kucoin": {
-      "discovered": 864,
-      "attempted_distinct": 864,
-      "metadata_checked_distinct": 864,
-      "ohlcv_requested_distinct": 864,
-      "validated_ohlcv_distinct": 864,
-      "last_attempt_valid": 864,
+      "discovered": 865,
+      "attempted_distinct": 865,
+      "metadata_checked_distinct": 865,
+      "ohlcv_requested_distinct": 865,
+      "validated_ohlcv_distinct": 865,
+      "last_attempt_valid": 865,
       "latest_failed": 0,
       "next_cursor": 594
     }
@@ -126,16 +126,16 @@
   "fee_limitations": "Per venue fee tiers and per-pair categories vary. Published base/EEA or CONSERVATIVE PLACEHOLDERS as labelled. Not the user's actual tier. Candle-only slippage is assumed, not measured depth.",
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
-    "attempted": 102,
-    "validated": 20,
-    "unavailable": 82
+    "attempted": 4,
+    "validated": 4,
+    "unavailable": 0
   },
   "latest_unavailable_pairs": 278,
-  "current_spread_snapshots": 61,
+  "current_spread_snapshots": 65,
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {
-    "markets_observed": 418,
-    "forward_observations": 1512,
+    "markets_observed": 422,
+    "forward_observations": 1516,
     "completed": 2,
     "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution."
   }
