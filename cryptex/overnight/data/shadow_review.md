@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-12T14:24:03.249215+00:00
+Generated: 2026-11-12T14:29:09.486896+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,8 +10,8 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD TON |
-| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD AAVE |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD ETH |
+| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD TRX |
 | GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | HOLD PEPE |
 | ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD PEPE |
 | GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD PEPE |
@@ -20,7 +20,7 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD PEPE |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9740 | 4 | 0 | -0.0260 | HOLD PEPE |
-| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD BNB |
+| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD AAVE |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
