@@ -1,24 +1,53 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794498900,
+  "last_ts": 1794499200,
   "first_ts": 1793488500,
-  "observed_candles": 2930,
+  "observed_candles": 2931,
   "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "TON",
+      "signal_ts": 1794499200,
+      "observed_move": 0.01746032
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "TON",
+      "signal_ts": 1794499200,
+      "observed_move": 0.01746032
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1794499200,
+      "observed_move": 0.00899895
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1794499200,
+      "observed_move": 0.00839959
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "LTC",
       "signal_ts": 1794498900,
-      "observed_move": 0.00656949
+      "entry_ts": 1794499200,
+      "entry_mid": 49.12,
+      "exit_ts": 1794501000
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "AVAX",
       "signal_ts": 1794498900,
-      "observed_move": 0.00649038
+      "entry_ts": 1794499200,
+      "entry_mid": 8.359,
+      "exit_ts": 1794501000
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -6902,39 +6931,72 @@
   "censored_exits": 14,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2818,
-      "liquid_candidates": 27796,
-      "move_below_gate": 27779,
-      "volume_below_gate": 21280,
+      "bars": 2819,
+      "liquid_candidates": 27812,
+      "move_below_gate": 27795,
+      "volume_below_gate": 21288,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2818,
-      "liquid_candidates": 27796,
-      "move_below_gate": 27772,
-      "volume_below_gate": 20979,
+      "bars": 2819,
+      "liquid_candidates": 27812,
+      "move_below_gate": 27788,
+      "volume_below_gate": 20987,
       "qualified": 18,
       "queued": 12
     },
     "BALANCED_TEST": {
-      "bars": 2818,
-      "liquid_candidates": 27796,
-      "move_below_gate": 27555,
-      "volume_below_gate": 20979,
-      "qualified": 145,
-      "queued": 94
+      "bars": 2819,
+      "liquid_candidates": 27812,
+      "move_below_gate": 27570,
+      "volume_below_gate": 20987,
+      "qualified": 146,
+      "queued": 95
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2818,
-      "liquid_candidates": 27796,
-      "move_below_gate": 25609,
-      "volume_below_gate": 20645,
-      "qualified": 809,
-      "queued": 416
+      "bars": 2819,
+      "liquid_candidates": 27812,
+      "move_below_gate": 25612,
+      "volume_below_gate": 20653,
+      "qualified": 816,
+      "queued": 419
     }
   },
-  "horizon_open": [],
+  "horizon_open": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LTC",
+      "signal_ts": 1794498900,
+      "entry_ts": 1794499200,
+      "entry_mid": 49.12,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LTC",
+      "signal_ts": 1794498900,
+      "entry_ts": 1794499200,
+      "entry_mid": 49.12,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1794498900,
+      "entry_ts": 1794499200,
+      "entry_mid": 8.359,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1794498900,
+      "entry_ts": 1794499200,
+      "entry_mid": 8.359,
+      "hold_bars": 288
+    }
+  ],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
