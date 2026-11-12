@@ -7,148 +7,220 @@
   "started_at": "2026-11-02T21:35:48.297127+00:00",
   "symbols": {
     "BTC": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {
-        "macd_trend_8": {
-          "signal_ts": 1794434400
-        },
-        "macd_trend_16": {
-          "signal_ts": 1794434400
-        },
-        "macd_trend_32": {
-          "signal_ts": 1794434400
-        },
-        "obv_confirmation_8": {
-          "signal_ts": 1794434400
-        },
-        "obv_confirmation_16": {
-          "signal_ts": 1794434400
-        },
-        "roc_acceleration_16": {
-          "signal_ts": 1794434400
+        "obv_confirmation_32": {
+          "signal_ts": 1794452400
         }
       }
     },
     "ETH": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
-      "positions": {},
-      "pending": {}
-    },
-    "SOL": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {
-        "macd_trend_8": {
-          "signal_ts": 1794434400
-        },
-        "macd_trend_16": {
-          "signal_ts": 1794434400
-        },
-        "macd_trend_32": {
-          "signal_ts": 1794434400
-        },
-        "obv_confirmation_16": {
-          "signal_ts": 1794434400
+        "obv_confirmation_32": {
+          "signal_ts": 1794452400
+        }
+      }
+    },
+    "SOL": {
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
+      "positions": {},
+      "pending": {
+        "obv_confirmation_32": {
+          "signal_ts": 1794452400
         }
       }
     },
     "XRP": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {}
     },
     "ADA": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {}
     },
     "DOGE": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {}
     },
     "LTC": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
-      "pending": {}
+      "pending": {
+        "rsi_rebound_16": {
+          "signal_ts": 1794452400
+        },
+        "bollinger_rebound_32": {
+          "signal_ts": 1794452400
+        },
+        "stochastic_rebound_16": {
+          "signal_ts": 1794452400
+        },
+        "stochastic_rebound_32": {
+          "signal_ts": 1794452400
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794452400
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794452400
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794452400
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794452400
+        },
+        "cci_rebound_16": {
+          "signal_ts": 1794452400
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794452400
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794452400
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794452400
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794452400
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794452400
+        }
+      }
     },
     "LINK": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {}
     },
     "BCH": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
-      "positions": {},
-      "pending": {}
-    },
-    "DOT": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {
-        "obv_confirmation_16": {
-          "signal_ts": 1794434400
+        "rsi_rebound_8": {
+          "signal_ts": 1794452400
+        },
+        "macd_acceleration_8": {
+          "signal_ts": 1794452400
+        },
+        "macd_acceleration_16": {
+          "signal_ts": 1794452400
+        },
+        "macd_acceleration_32": {
+          "signal_ts": 1794452400
+        },
+        "vwap_reclaim_16": {
+          "signal_ts": 1794452400
+        },
+        "vwap_reclaim_32": {
+          "signal_ts": 1794452400
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794452400
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794452400
+        },
+        "cmf_accumulation_8": {
+          "signal_ts": 1794452400
+        },
+        "mfi_recovery_8": {
+          "signal_ts": 1794452400
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794452400
+        }
+      }
+    },
+    "DOT": {
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
+      "positions": {},
+      "pending": {
+        "obv_confirmation_32": {
+          "signal_ts": 1794452400
         }
       }
     },
     "AVAX": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {
-        "sma_trend_32": {
-          "signal_ts": 1794434400
+        "sma_trend_16": {
+          "signal_ts": 1794452400
         },
-        "obv_confirmation_16": {
-          "signal_ts": 1794434400
+        "sma_trend_32": {
+          "signal_ts": 1794452400
+        },
+        "ema_trend_8": {
+          "signal_ts": 1794452400
+        },
+        "ema_trend_16": {
+          "signal_ts": 1794452400
+        },
+        "ema_trend_32": {
+          "signal_ts": 1794452400
+        },
+        "vol_target_momentum_32": {
+          "signal_ts": 1794452400
+        },
+        "rsi_trend_32": {
+          "signal_ts": 1794452400
         },
         "obv_confirmation_32": {
-          "signal_ts": 1794434400
+          "signal_ts": 1794452400
         },
-        "aroon_uptrend_32": {
-          "signal_ts": 1794434400
+        "adx_uptrend_16": {
+          "signal_ts": 1794452400
+        },
+        "cmf_accumulation_32": {
+          "signal_ts": 1794452400
+        },
+        "roc_acceleration_8": {
+          "signal_ts": 1794452400
+        },
+        "low_vol_trend_32": {
+          "signal_ts": 1794452400
         }
       }
     },
     "XLM": {
-      "last_ts": 1794434400,
-      "observed": 34,
-      "missing": 185,
+      "last_ts": 1794452400,
+      "observed": 35,
+      "missing": 189,
       "positions": {},
       "pending": {
-        "momentum_16": {
-          "signal_ts": 1794434400
-        },
-        "vol_target_momentum_16": {
-          "signal_ts": 1794434400
-        },
-        "aroon_uptrend_32": {
-          "signal_ts": 1794434400
-        },
-        "roc_acceleration_32": {
-          "signal_ts": 1794434400
+        "vol_target_momentum_32": {
+          "signal_ts": 1794452400
         }
       }
     }
@@ -29274,9 +29346,142 @@
       "reason": "MISSED_NEXT_HOUR_ENTRY",
       "at": 1794434400,
       "signal_ts": 1794409200
+    },
+    {
+      "symbol": "BTC",
+      "candidate": "macd_trend_8",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "BTC",
+      "candidate": "macd_trend_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "BTC",
+      "candidate": "macd_trend_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "BTC",
+      "candidate": "obv_confirmation_8",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "BTC",
+      "candidate": "obv_confirmation_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "BTC",
+      "candidate": "roc_acceleration_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "SOL",
+      "candidate": "macd_trend_8",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "SOL",
+      "candidate": "macd_trend_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "SOL",
+      "candidate": "macd_trend_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "SOL",
+      "candidate": "obv_confirmation_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "DOT",
+      "candidate": "obv_confirmation_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "AVAX",
+      "candidate": "sma_trend_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "AVAX",
+      "candidate": "obv_confirmation_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "AVAX",
+      "candidate": "obv_confirmation_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "AVAX",
+      "candidate": "aroon_uptrend_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "XLM",
+      "candidate": "momentum_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "XLM",
+      "candidate": "vol_target_momentum_16",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "XLM",
+      "candidate": "aroon_uptrend_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
+    },
+    {
+      "symbol": "XLM",
+      "candidate": "roc_acceleration_32",
+      "reason": "MISSED_NEXT_HOUR_ENTRY",
+      "at": 1794452400,
+      "signal_ts": 1794434400
     }
   ],
-  "signals": 4179,
-  "successful_hourly_updates": 408,
+  "signals": 4221,
+  "successful_hourly_updates": 420,
   "duplicate_events": 0
 }
