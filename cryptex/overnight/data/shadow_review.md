@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-12T03:58:48.725365+00:00
+Generated: 2026-11-12T04:03:45.084814+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,8 +10,8 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XRP |
-| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD BTC |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD NEAR |
+| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD LTC |
 | GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | HOLD LTC |
 | ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD LTC |
 | GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD LTC |
@@ -20,7 +20,7 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD LTC |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9740 | 4 | 0 | -0.0260 | HOLD LTC |
-| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD LTC |
+| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | HOLD SOL |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
