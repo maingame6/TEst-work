@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-13T04:43:36.385815+00:00",
+  "generated_at": "2026-11-13T04:50:13.565212+00:00",
   "paper_only": true,
   "sample_status": "REVIEW_ONLY",
   "execution": "next observed completed candle only; six-bar exits",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1794544500,
-  "observed_candles": 3078,
+  "last_candle_ts": 1794544800,
+  "observed_candles": 3079,
   "missed_fills": 1,
-  "censored_exits": 14,
+  "censored_exits": 15,
   "fees_slippage_per_side_pct": 1.05,
   "cost_assumptions": {
     "base": {
@@ -43,10 +43,10 @@
       "queued": 0,
       "threshold_move_pct": 2.322,
       "diagnostics_since_instrumentation": {
-        "bars": 2966,
-        "liquid_candidates": 29527,
-        "move_below_gate": 29510,
-        "volume_below_gate": 22581,
+        "bars": 2967,
+        "liquid_candidates": 29531,
+        "move_below_gate": 29514,
+        "volume_below_gate": 22585,
         "qualified": 13,
         "queued": 8
       },
@@ -72,10 +72,10 @@
       "queued": 0,
       "threshold_move_pct": 2.172,
       "diagnostics_since_instrumentation": {
-        "bars": 2966,
-        "liquid_candidates": 29527,
-        "move_below_gate": 29502,
-        "volume_below_gate": 22259,
+        "bars": 2967,
+        "liquid_candidates": 29531,
+        "move_below_gate": 29506,
+        "volume_below_gate": 22263,
         "qualified": 19,
         "queued": 13
       },
@@ -101,10 +101,10 @@
       "queued": 0,
       "threshold_move_pct": 1.2,
       "diagnostics_since_instrumentation": {
-        "bars": 2966,
-        "liquid_candidates": 29527,
-        "move_below_gate": 29276,
-        "volume_below_gate": 22259,
+        "bars": 2967,
+        "liquid_candidates": 29531,
+        "move_below_gate": 29280,
+        "volume_below_gate": 22263,
         "qualified": 152,
         "queued": 99
       },
@@ -116,39 +116,39 @@
       "heldout_stress_mean_pct": -2.90321
     },
     "LOW_HURDLE_CONTROL": {
-      "completed": 445,
+      "completed": 446,
       "wins_after_cost": 1,
       "wins_under_stress": 0,
-      "mean_stress_net_pct": -2.72291,
+      "mean_stress_net_pct": -2.72315,
       "gross_up_but_net_down": 163,
       "mean_fee_drag_pct": 1.57685,
       "mean_slippage_drag_pct": 0.49795,
-      "mean_net_pct": -2.2353,
-      "mean_gross_pct": -0.1605,
-      "net_sum_unit_stakes_pct": -994.70767,
-      "open": 2,
+      "mean_net_pct": -2.23554,
+      "mean_gross_pct": -0.16074,
+      "net_sum_unit_stakes_pct": -997.04993,
+      "open": 0,
       "queued": 0,
       "threshold_move_pct": 0.5,
       "diagnostics_since_instrumentation": {
-        "bars": 2966,
-        "liquid_candidates": 29527,
-        "move_below_gate": 27228,
-        "volume_below_gate": 21909,
+        "bars": 2967,
+        "liquid_candidates": 29531,
+        "move_below_gate": 27232,
+        "volume_below_gate": 21913,
         "qualified": 862,
         "queued": 442
       },
-      "max_compounded_unit_stake_drawdown_pct": 99.99577,
+      "max_compounded_unit_stake_drawdown_pct": 99.99587,
       "heldout_boundary_ts": 1793747700,
-      "heldout_completed": 356,
+      "heldout_completed": 357,
       "heldout_after_cost_wins": 0,
-      "heldout_mean_net_pct": -2.22711,
-      "heldout_stress_mean_pct": -2.71476
+      "heldout_mean_net_pct": -2.22743,
+      "heldout_stress_mean_pct": -2.71508
     }
   },
   "horizon_comparisons": {
     "hypotheses_frozen": "Identical next observed completed candle entries, 30m vs 4h vs 24h",
     "heldout_start_ts": 1793747700,
-    "censored_longer_holds": 285,
+    "censored_longer_holds": 301,
     "no_auto_promotion": true,
     "caveat": "Candle-gap censoring is strict. Samples are correlated even with non-overlap. No intrabar stop simulation, broker fill proof or buy-and-hold win established. Never claim edge from this table alone.",
     "gates": {
