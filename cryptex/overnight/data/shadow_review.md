@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-13T09:28:42.855892+00:00
+Generated: 2026-11-13T09:35:09.427958+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,12 +10,12 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD UNI |
-| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD BNB |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD SUI |
+| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | HOLD TRX |
 | GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | HOLD BNB |
-| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD BTC |
+| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | HOLD TRX |
 | GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD BNB |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD UNI |
 | FREQTRADE_STYLE | 9.9625 | 5 | 0 | -0.0375 | HOLD BNB |
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD BNB |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
