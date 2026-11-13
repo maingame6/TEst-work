@@ -4,8 +4,8 @@
  "cursor": {
   "kraken": 555,
   "coinbase": 607,
-  "bitstamp": 10,
-  "okx": 189,
+  "bitstamp": 11,
+  "okx": 192,
   "kucoin": 603
  },
  "seen": {
@@ -256734,17 +256734,295 @@
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
+  },
+  "bitstamp|ZK/EUR": {
+   "venue": "bitstamp",
+   "symbol": "ZK/EUR",
+   "quote": "EUR",
+   "status": "VALIDATED_OHLCV",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.004,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "bars": 179,
+   "last_completed_ms": 1794586200000,
+   "latest_mid": 0.011409,
+   "latest_ret3": 0.0,
+   "latest_volume_ratio": 0,
+   "latest_turnover_quote": 0.0,
+   "strategy_results": {
+    "momentum_05": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "cost_aware_momentum": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "breakout": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "dip_recovery": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    }
+   },
+   "fee_per_side": 0.008,
+   "slippage_per_side": 0.0025,
+   "stress_slippage_per_side": 0.005,
+   "fee_status": "UNVERIFIED_CONSERVATIVE_ASSUMPTION",
+   "roundtrip_break_even_pct": 2.122241,
+   "historical_not_forward": true,
+   "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
+   "spread_bps": 7096.7742,
+   "checked_at": "2026-11-13T16:16:50.613833+00:00",
+   "attempts": 1,
+   "ever_valid": true,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "okx|XIBKR/USDT": {
+   "venue": "okx",
+   "symbol": "XIBKR/USDT",
+   "quote": "USDT",
+   "status": "VALIDATED_OHLCV",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "bars": 105,
+   "last_completed_ms": 1794586200000,
+   "latest_mid": 81.0,
+   "latest_ret3": 0.0,
+   "latest_volume_ratio": 0.0,
+   "latest_turnover_quote": 460.9119,
+   "strategy_results": {
+    "momentum_05": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "cost_aware_momentum": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "breakout": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "dip_recovery": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    }
+   },
+   "fee_per_side": 0.002,
+   "slippage_per_side": 0.0025,
+   "stress_slippage_per_side": 0.005,
+   "fee_status": "PUBLISHED_EEA_SPOT_ONLY_REGULAR",
+   "roundtrip_break_even_pct": 0.904064,
+   "historical_not_forward": true,
+   "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
+   "spread_bps": 40.4625,
+   "checked_at": "2026-11-13T16:16:50.613833+00:00",
+   "attempts": 1,
+   "ever_valid": true,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "okx|XMP/USDT": {
+   "venue": "okx",
+   "symbol": "XMP/USDT",
+   "quote": "USDT",
+   "status": "VALIDATED_OHLCV",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "bars": 99,
+   "last_completed_ms": 1794586200000,
+   "latest_mid": 38.551,
+   "latest_ret3": -0.0074918902,
+   "latest_volume_ratio": 0.0,
+   "latest_turnover_quote": 1889.6162,
+   "strategy_results": {
+    "momentum_05": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "cost_aware_momentum": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "breakout": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "dip_recovery": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    }
+   },
+   "fee_per_side": 0.002,
+   "slippage_per_side": 0.0025,
+   "stress_slippage_per_side": 0.005,
+   "fee_status": "PUBLISHED_EEA_SPOT_ONLY_REGULAR",
+   "roundtrip_break_even_pct": 0.904064,
+   "historical_not_forward": true,
+   "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
+   "spread_bps": 35.344,
+   "checked_at": "2026-11-13T16:16:50.613833+00:00",
+   "attempts": 1,
+   "ever_valid": true,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "okx|XMPWR/USDT": {
+   "venue": "okx",
+   "symbol": "XMPWR/USDT",
+   "quote": "USDT",
+   "status": "VALIDATED_OHLCV",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "bars": 93,
+   "last_completed_ms": 1794586200000,
+   "latest_mid": 1366.4,
+   "latest_ret3": 0.0044104675,
+   "latest_volume_ratio": 7.929461,
+   "latest_turnover_quote": 246.7249,
+   "strategy_results": {
+    "momentum_05": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "cost_aware_momentum": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "breakout": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    },
+    "dip_recovery": {
+     "samples": 0,
+     "net_winners": 0,
+     "gross_winners": 0,
+     "gross_winners_lost_to_fees": 0,
+     "mean_gross_pct": null,
+     "mean_net_pct": null,
+     "mean_stress_pct": null,
+     "unit_stake_net_sum_pct": 0
+    }
+   },
+   "fee_per_side": 0.002,
+   "slippage_per_side": 0.0025,
+   "stress_slippage_per_side": 0.005,
+   "fee_status": "PUBLISHED_EEA_SPOT_ONLY_REGULAR",
+   "roundtrip_break_even_pct": 0.904064,
+   "historical_not_forward": true,
+   "spread_status": "OBSERVED_SINGLE_ORDERBOOK_SNAPSHOT_NOT_EXECUTABLE",
+   "spread_bps": 47.8768,
+   "checked_at": "2026-11-13T16:16:50.613833+00:00",
+   "attempts": 1,
+   "ever_valid": true,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
   }
  },
- "scan_count": 85,
- "last_scan": "2026-11-13T15:42:05.246866+00:00",
+ "scan_count": 86,
+ "last_scan": "2026-11-13T16:16:50.613833+00:00",
  "failures": [
-  {
-   "at": "2026-11-03T23:16:34.403413+00:00",
-   "attempted": 4,
-   "validated": 4,
-   "unavailable": 0
-  },
   {
    "at": "2026-11-04T01:44:45.278154+00:00",
    "attempted": 107,
@@ -257038,11 +257316,17 @@
    "attempted": 103,
    "validated": 26,
    "unavailable": 77
+  },
+  {
+   "at": "2026-11-13T16:16:50.613833+00:00",
+   "attempted": 4,
+   "validated": 4,
+   "unavailable": 0
   }
  ],
  "last_batch": {
-  "attempted": 103,
-  "validated": 26,
-  "unavailable": 77
+  "attempted": 4,
+  "validated": 4,
+  "unavailable": 0
  }
 }
