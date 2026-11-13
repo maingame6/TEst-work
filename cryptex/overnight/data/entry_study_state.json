@@ -1,37 +1,53 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794552900,
+  "last_ts": 1794553200,
   "first_ts": 1793488500,
-  "observed_candles": 3104,
+  "observed_candles": 3105,
   "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1794553200,
+      "observed_move": 0.00937082
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1794553200,
+      "observed_move": 0.00633744
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1794553200,
+      "observed_move": 0.00614574
+    }
+  ],
+  "open": [
     {
       "gate": "BALANCED_TEST",
       "symbol": "NEAR",
       "signal_ts": 1794552900,
-      "observed_move": 0.01355045
+      "entry_ts": 1794553200,
+      "entry_mid": 3.5012,
+      "exit_ts": 1794555000
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1794552900,
-      "observed_move": 0.01355045
+      "entry_ts": 1794553200,
+      "entry_mid": 3.5012,
+      "exit_ts": 1794555000
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ADA",
       "signal_ts": 1794552900,
-      "observed_move": 0.00545814
-    }
-  ],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "PEPE",
-      "signal_ts": 1794551100,
-      "entry_ts": 1794551400,
-      "entry_mid": 4.563e-06,
-      "exit_ts": 1794553200
+      "entry_ts": 1794553200,
+      "entry_mid": 0.171078,
+      "exit_ts": 1794555000
     }
   ],
   "trades": [
@@ -7496,42 +7512,55 @@
       "slippage_drag": 0.0049986671,
       "stress_net_return": -0.0234898681,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794551100,
+      "entry_ts": 1794551400,
+      "exit_ts": 1794553200,
+      "gross_return": 0.0017532325,
+      "net_return": -0.019064582,
+      "fee_drag": 0.015821539,
+      "slippage_drag": 0.0049962755,
+      "stress_net_return": -0.0239570889,
+      "paper": true
     }
   ],
   "missed_fills": 1,
   "censored_exits": 15,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2992,
-      "liquid_candidates": 29915,
-      "move_below_gate": 29898,
-      "volume_below_gate": 22894,
+      "bars": 2993,
+      "liquid_candidates": 29927,
+      "move_below_gate": 29910,
+      "volume_below_gate": 22899,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2992,
-      "liquid_candidates": 29915,
-      "move_below_gate": 29889,
-      "volume_below_gate": 22569,
+      "bars": 2993,
+      "liquid_candidates": 29927,
+      "move_below_gate": 29901,
+      "volume_below_gate": 22574,
       "qualified": 19,
       "queued": 13
     },
     "BALANCED_TEST": {
-      "bars": 2992,
-      "liquid_candidates": 29915,
-      "move_below_gate": 29647,
-      "volume_below_gate": 22569,
-      "qualified": 156,
+      "bars": 2993,
+      "liquid_candidates": 29927,
+      "move_below_gate": 29657,
+      "volume_below_gate": 22574,
+      "qualified": 157,
       "queued": 103
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2992,
-      "liquid_candidates": 29915,
-      "move_below_gate": 27527,
-      "volume_below_gate": 22218,
-      "qualified": 885,
-      "queued": 454
+      "bars": 2993,
+      "liquid_candidates": 29927,
+      "move_below_gate": 27528,
+      "volume_below_gate": 22223,
+      "qualified": 891,
+      "queued": 457
     }
   },
   "horizon_open": [
@@ -7709,6 +7738,22 @@
       "signal_ts": 1794550800,
       "entry_ts": 1794551100,
       "entry_mid": 1930.81,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1794552900,
+      "entry_ts": 1794553200,
+      "entry_mid": 0.171078,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1794552900,
+      "entry_ts": 1794553200,
+      "entry_mid": 0.171078,
       "hold_bars": 288
     }
   ],
