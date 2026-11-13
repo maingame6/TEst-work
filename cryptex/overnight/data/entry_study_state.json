@@ -1,29 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794591300,
+  "last_ts": 1794591600,
   "first_ts": 1793488500,
-  "observed_candles": 3221,
-  "signals": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "PEPE",
-      "signal_ts": 1794591300,
-      "observed_move": 0.01421801
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "PEPE",
-      "signal_ts": 1794591300,
-      "observed_move": 0.01421801
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "LINK",
-      "signal_ts": 1794591300,
-      "observed_move": 0.00824019
-    }
-  ],
+  "observed_candles": 3222,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -48,6 +29,30 @@
       "entry_ts": 1794591300,
       "entry_mid": 1.02318,
       "exit_ts": 1794593100
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 4.513e-06,
+      "exit_ts": 1794593400
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 4.513e-06,
+      "exit_ts": 1794593400
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 9.96863,
+      "exit_ts": 1794593400
     }
   ],
   "trades": [
@@ -7843,35 +7848,35 @@
   "censored_exits": 30,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3109,
-      "liquid_candidates": 31346,
-      "move_below_gate": 31322,
-      "volume_below_gate": 23995,
+      "bars": 3110,
+      "liquid_candidates": 31356,
+      "move_below_gate": 31332,
+      "volume_below_gate": 24001,
       "qualified": 18,
       "queued": 12
     },
     "COST_AWARE": {
-      "bars": 3109,
-      "liquid_candidates": 31346,
-      "move_below_gate": 31310,
-      "volume_below_gate": 23662,
+      "bars": 3110,
+      "liquid_candidates": 31356,
+      "move_below_gate": 31320,
+      "volume_below_gate": 23668,
       "qualified": 27,
       "queued": 18
     },
     "BALANCED_TEST": {
-      "bars": 3109,
-      "liquid_candidates": 31346,
-      "move_below_gate": 31031,
-      "volume_below_gate": 23662,
-      "qualified": 184,
+      "bars": 3110,
+      "liquid_candidates": 31356,
+      "move_below_gate": 31040,
+      "volume_below_gate": 23668,
+      "qualified": 185,
       "queued": 109
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3109,
-      "liquid_candidates": 31346,
-      "move_below_gate": 28776,
-      "volume_below_gate": 23293,
-      "qualified": 970,
+      "bars": 3110,
+      "liquid_candidates": 31356,
+      "move_below_gate": 28777,
+      "volume_below_gate": 23299,
+      "qualified": 974,
       "queued": 481
     }
   },
@@ -7922,6 +7927,54 @@
       "signal_ts": 1794591000,
       "entry_ts": 1794591300,
       "entry_mid": 1.02318,
+      "hold_bars": 288
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 4.513e-06,
+      "hold_bars": 48
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 4.513e-06,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 4.513e-06,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 4.513e-06,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 9.96863,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1794591300,
+      "entry_ts": 1794591600,
+      "entry_mid": 9.96863,
       "hold_bars": 288
     }
   ],
