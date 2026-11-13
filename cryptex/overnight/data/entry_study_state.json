@@ -1,30 +1,55 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794591000,
+  "last_ts": 1794591300,
   "first_ts": 1793488500,
-  "observed_candles": 3220,
+  "observed_candles": 3221,
   "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "observed_move": 0.01421801
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794591300,
+      "observed_move": 0.01421801
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1794591300,
+      "observed_move": 0.00824019
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XLM",
       "signal_ts": 1794591000,
-      "observed_move": 0.00779513
+      "entry_ts": 1794591300,
+      "entry_mid": 0.148271,
+      "exit_ts": 1794593100
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1794591000,
-      "observed_move": 0.00705154
+      "entry_ts": 1794591300,
+      "entry_mid": 3.5257,
+      "exit_ts": 1794593100
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XRP",
       "signal_ts": 1794591000,
-      "observed_move": 0.00517778
+      "entry_ts": 1794591300,
+      "entry_mid": 1.02318,
+      "exit_ts": 1794593100
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -7818,39 +7843,88 @@
   "censored_exits": 30,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3108,
-      "liquid_candidates": 31336,
-      "move_below_gate": 31312,
-      "volume_below_gate": 23991,
+      "bars": 3109,
+      "liquid_candidates": 31346,
+      "move_below_gate": 31322,
+      "volume_below_gate": 23995,
       "qualified": 18,
       "queued": 12
     },
     "COST_AWARE": {
-      "bars": 3108,
-      "liquid_candidates": 31336,
-      "move_below_gate": 31300,
-      "volume_below_gate": 23658,
+      "bars": 3109,
+      "liquid_candidates": 31346,
+      "move_below_gate": 31310,
+      "volume_below_gate": 23662,
       "qualified": 27,
       "queued": 18
     },
     "BALANCED_TEST": {
-      "bars": 3108,
-      "liquid_candidates": 31336,
-      "move_below_gate": 31022,
-      "volume_below_gate": 23658,
-      "qualified": 183,
-      "queued": 108
+      "bars": 3109,
+      "liquid_candidates": 31346,
+      "move_below_gate": 31031,
+      "volume_below_gate": 23662,
+      "qualified": 184,
+      "queued": 109
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3108,
-      "liquid_candidates": 31336,
-      "move_below_gate": 28773,
-      "volume_below_gate": 23289,
-      "qualified": 965,
-      "queued": 479
+      "bars": 3109,
+      "liquid_candidates": 31346,
+      "move_below_gate": 28776,
+      "volume_below_gate": 23293,
+      "qualified": 970,
+      "queued": 481
     }
   },
-  "horizon_open": [],
+  "horizon_open": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1794591000,
+      "entry_ts": 1794591300,
+      "entry_mid": 0.148271,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1794591000,
+      "entry_ts": 1794591300,
+      "entry_mid": 0.148271,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1794591000,
+      "entry_ts": 1794591300,
+      "entry_mid": 3.5257,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1794591000,
+      "entry_ts": 1794591300,
+      "entry_mid": 3.5257,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1794591000,
+      "entry_ts": 1794591300,
+      "entry_mid": 1.02318,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1794591000,
+      "entry_ts": 1794591300,
+      "entry_mid": 1.02318,
+      "hold_bars": 288
+    }
+  ],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
