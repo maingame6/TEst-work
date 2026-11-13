@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-13T02:23:36.866414+00:00",
+  "generated_utc": "2026-11-13T02:28:33.005513+00:00",
   "status": "HEALTHY: paper trading on completed Kraken candles",
   "paper_only": true,
   "research_team_count": 10,
@@ -9,91 +9,91 @@
     "GAMBLER": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 8,
-      "opposition": 29,
+      "support": 4,
+      "opposition": 28,
       "veto": 0,
-      "factor_score": -0.1419
+      "factor_score": -0.2066
     },
     "HOUSE": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 35,
-      "opposition": 2,
+      "support": 29,
+      "opposition": 3,
       "veto": 0,
-      "factor_score": 0.3229
+      "factor_score": 0.2806
     },
     "SPY": {
       "decision": "HOLD",
       "symbol": "SOL",
-      "support": 12,
-      "opposition": 25,
+      "support": 8,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": -0.1024
+      "factor_score": -0.1729
     },
     "MEME HUNTER": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 8,
-      "opposition": 34,
+      "support": 5,
+      "opposition": 29,
       "veto": 0,
-      "factor_score": -0.1933
+      "factor_score": -0.2352
     },
     "BREAKOUT": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 8,
-      "opposition": 29,
+      "support": 4,
+      "opposition": 28,
       "veto": 0,
-      "factor_score": -0.1419
+      "factor_score": -0.2066
     },
     "CONTRARIAN": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 35,
-      "opposition": 2,
+      "support": 29,
+      "opposition": 3,
       "veto": 0,
-      "factor_score": 0.3229
+      "factor_score": 0.2806
     },
     "ROTATOR": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 8,
-      "opposition": 29,
+      "support": 4,
+      "opposition": 28,
       "veto": 0,
-      "factor_score": -0.1419
+      "factor_score": -0.2066
     },
     "VORTEX": {
       "decision": "HOLD",
       "symbol": "BTC",
-      "support": 8,
-      "opposition": 29,
+      "support": 4,
+      "opposition": 28,
       "veto": 0,
-      "factor_score": -0.1419
+      "factor_score": -0.2066
     },
     "FRACTAL": {
       "decision": "SELL",
       "symbol": "SOL",
-      "support": 12,
-      "opposition": 25,
+      "support": 8,
+      "opposition": 26,
       "veto": 0,
-      "factor_score": -0.1024
+      "factor_score": -0.1729
     },
     "SHOCKWAVE": {
       "decision": "HOLD",
       "symbol": "DOGE",
-      "support": 8,
-      "opposition": 34,
+      "support": 5,
+      "opposition": 29,
       "veto": 0,
-      "factor_score": -0.1933
+      "factor_score": -0.2352
     }
   },
   "initial_paper_capital_usd": 100,
-  "current_paper_equity_usd": 88.549807,
-  "portfolio_paper_change_usd": -11.450193,
-  "all_time_closed_paper_trades": 116,
+  "current_paper_equity_usd": 88.505028,
+  "portfolio_paper_change_usd": -11.494972,
+  "all_time_closed_paper_trades": 117,
   "all_time_closed_wins": 7,
-  "all_time_closed_losses": 109,
-  "aggregate_realized_pnl_usd": -11.031965,
+  "all_time_closed_losses": 110,
+  "aggregate_realized_pnl_usd": -11.102272,
   "agents": {
     "GAMBLER": {
       "closed": 4,
@@ -200,15 +200,15 @@
       "position_size_multiplier": 0.5
     },
     "FRACTAL": {
-      "closed": 22,
+      "closed": 23,
       "wins": 1,
-      "losses": 21,
-      "win_rate": 0.0455,
-      "realized_net_usd": -3.144076,
-      "average_profit_usd": -0.142913,
+      "losses": 22,
+      "win_rate": 0.0435,
+      "realized_net_usd": -3.214383,
+      "average_profit_usd": -0.139756,
       "average_win_usd": 0.008744,
-      "average_loss_usd": -0.150134,
-      "last_20_net_usd": -3.129028,
+      "average_loss_usd": -0.146506,
+      "last_20_net_usd": -3.191961,
       "sample_sufficient_for_adaptation": true,
       "position_size_multiplier": 0.5
     },
@@ -282,8 +282,8 @@
       "net_pnl_usd": -5.266376
     },
     "PILOT V1 fixed holding window reached; next-candle simulated exit": {
-      "count": 18,
-      "net_pnl_usd": -3.281589
+      "count": 19,
+      "net_pnl_usd": -3.351896
     },
     "PILOT V1 observed 6% stop; next-candle simulated exit": {
       "count": 1,
