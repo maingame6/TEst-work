@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794544800,
+  "last_ts": 1794545400,
   "first_ts": 1793488500,
-  "observed_candles": 3079,
+  "observed_candles": 3080,
   "signals": [],
   "open": [],
   "trades": [
@@ -7318,56 +7318,39 @@
   "censored_exits": 15,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2967,
-      "liquid_candidates": 29531,
-      "move_below_gate": 29514,
-      "volume_below_gate": 22585,
+      "bars": 2968,
+      "liquid_candidates": 29547,
+      "move_below_gate": 29530,
+      "volume_below_gate": 22600,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2967,
-      "liquid_candidates": 29531,
-      "move_below_gate": 29506,
-      "volume_below_gate": 22263,
+      "bars": 2968,
+      "liquid_candidates": 29547,
+      "move_below_gate": 29522,
+      "volume_below_gate": 22278,
       "qualified": 19,
       "queued": 13
     },
     "BALANCED_TEST": {
-      "bars": 2967,
-      "liquid_candidates": 29531,
-      "move_below_gate": 29280,
-      "volume_below_gate": 22263,
+      "bars": 2968,
+      "liquid_candidates": 29547,
+      "move_below_gate": 29296,
+      "volume_below_gate": 22278,
       "qualified": 152,
       "queued": 99
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2967,
-      "liquid_candidates": 29531,
-      "move_below_gate": 27232,
-      "volume_below_gate": 21913,
+      "bars": 2968,
+      "liquid_candidates": 29547,
+      "move_below_gate": 27248,
+      "volume_below_gate": 21928,
       "qualified": 862,
       "queued": 442
     }
   },
-  "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1794542700,
-      "entry_ts": 1794543000,
-      "entry_mid": 1.00471,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1794542700,
-      "entry_ts": 1794543000,
-      "entry_mid": 1.00471,
-      "hold_bars": 288
-    }
-  ],
+  "horizon_open": [],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -10286,5 +10269,5 @@
       "stress_net_return": -0.0597549424
     }
   ],
-  "horizon_censored": 301
+  "horizon_censored": 303
 }
