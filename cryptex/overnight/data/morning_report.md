@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-13T03:43:45.175547+00:00 (Europe/Dublin)
+Checked: 2026-11-13T03:48:48.542078+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-12T19:59:17.779291+00:00
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $198.2296 at 2026-11-12T21:02:42.472647+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.3030 as of 2026-11-13T03:43:45.175547+00:00.
+Overnight P&L $-0.3030 as of 2026-11-13T03:48:48.542078+00:00.
 New paper fills since session started: 3.
 
 ## Price prediction versus trading costs
@@ -49,8 +49,8 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.8932 | $-1.1068 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $8.6303 | $-1.3697 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.8840 | $-1.1160 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $8.6188 | $-1.3812 |
 | SOL | 2026-10-30T22:21:37.361980+00:00 | $8.1586 | $-1.8414 |
 
 ## 21-agent leaderboard
@@ -81,7 +81,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1794540900 / 1794540900
+Latest main/shadow candle timestamps: 1794541200 / 1794541200
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
