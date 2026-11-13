@@ -1,10 +1,23 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794548400,
+  "last_ts": 1794548700,
   "first_ts": 1793488500,
-  "observed_candles": 3089,
-  "signals": [],
+  "observed_candles": 3090,
+  "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1794548700,
+      "observed_move": 0.01445348
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794548700,
+      "observed_move": 0.01445348
+    }
+  ],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -7359,36 +7372,36 @@
   "censored_exits": 15,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2977,
-      "liquid_candidates": 29670,
-      "move_below_gate": 29653,
-      "volume_below_gate": 22699,
+      "bars": 2978,
+      "liquid_candidates": 29685,
+      "move_below_gate": 29668,
+      "volume_below_gate": 22708,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2977,
-      "liquid_candidates": 29670,
-      "move_below_gate": 29645,
-      "volume_below_gate": 22374,
+      "bars": 2978,
+      "liquid_candidates": 29685,
+      "move_below_gate": 29660,
+      "volume_below_gate": 22383,
       "qualified": 19,
       "queued": 13
     },
     "BALANCED_TEST": {
-      "bars": 2977,
-      "liquid_candidates": 29670,
-      "move_below_gate": 29418,
-      "volume_below_gate": 22374,
-      "qualified": 153,
-      "queued": 100
+      "bars": 2978,
+      "liquid_candidates": 29685,
+      "move_below_gate": 29432,
+      "volume_below_gate": 22383,
+      "qualified": 154,
+      "queued": 101
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2977,
-      "liquid_candidates": 29670,
-      "move_below_gate": 27352,
-      "volume_below_gate": 22024,
-      "qualified": 866,
-      "queued": 446
+      "bars": 2978,
+      "liquid_candidates": 29685,
+      "move_below_gate": 27362,
+      "volume_below_gate": 22033,
+      "qualified": 869,
+      "queued": 447
     }
   },
   "horizon_open": [
