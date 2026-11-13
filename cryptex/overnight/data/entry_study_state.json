@@ -1,10 +1,23 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794534900,
+  "last_ts": 1794535200,
   "first_ts": 1793488500,
-  "observed_candles": 3046,
-  "signals": [],
+  "observed_candles": 3047,
+  "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "PEPE",
+      "signal_ts": 1794535200,
+      "observed_move": 0.0120826
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1794535200,
+      "observed_move": 0.0120826
+    }
+  ],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -7249,36 +7262,36 @@
   "censored_exits": 14,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 2934,
-      "liquid_candidates": 29039,
-      "move_below_gate": 29022,
-      "volume_below_gate": 22232,
+      "bars": 2935,
+      "liquid_candidates": 29048,
+      "move_below_gate": 29031,
+      "volume_below_gate": 22239,
       "qualified": 13,
       "queued": 8
     },
     "COST_AWARE": {
-      "bars": 2934,
-      "liquid_candidates": 29039,
-      "move_below_gate": 29015,
-      "volume_below_gate": 21915,
+      "bars": 2935,
+      "liquid_candidates": 29048,
+      "move_below_gate": 29024,
+      "volume_below_gate": 21922,
       "qualified": 18,
       "queued": 12
     },
     "BALANCED_TEST": {
-      "bars": 2934,
-      "liquid_candidates": 29039,
-      "move_below_gate": 28791,
-      "volume_below_gate": 21915,
-      "qualified": 149,
-      "queued": 98
+      "bars": 2935,
+      "liquid_candidates": 29048,
+      "move_below_gate": 28799,
+      "volume_below_gate": 21922,
+      "qualified": 150,
+      "queued": 99
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 2934,
-      "liquid_candidates": 29039,
-      "move_below_gate": 26750,
-      "volume_below_gate": 21570,
-      "qualified": 856,
-      "queued": 438
+      "bars": 2935,
+      "liquid_candidates": 29048,
+      "move_below_gate": 26758,
+      "volume_below_gate": 21577,
+      "qualified": 857,
+      "queued": 439
     }
   },
   "horizon_open": [
