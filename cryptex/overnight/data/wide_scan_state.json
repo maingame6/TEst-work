@@ -3,9 +3,9 @@
  "mode": "PAPER_ONLY",
  "cursor": {
   "kraken": 549,
-  "coinbase": 520,
+  "coinbase": 522,
   "bitstamp": 5,
-  "okx": 184,
+  "okx": 185,
   "kucoin": 600
  },
  "seen": {
@@ -256361,17 +256361,59 @@
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
+  },
+  "coinbase|PEARL/USD": {
+   "venue": "coinbase",
+   "symbol": "PEARL/USD",
+   "quote": "USD",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.012,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-13T07:54:05.686786+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "coinbase|PEARL/USDC": {
+   "venue": "coinbase",
+   "symbol": "PEARL/USDC",
+   "quote": "USDC",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.012,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-13T07:54:05.686786+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "okx|XGILD/USDT": {
+   "venue": "okx",
+   "symbol": "XGILD/USDT",
+   "quote": "USDT",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-13T07:54:05.686786+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
   }
  },
- "scan_count": 83,
- "last_scan": "2026-11-13T07:40:50.343883+00:00",
+ "scan_count": 84,
+ "last_scan": "2026-11-13T07:54:05.686786+00:00",
  "failures": [
-  {
-   "at": "2026-11-03T17:49:09.205784+00:00",
-   "attempted": 1,
-   "validated": 0,
-   "unavailable": 1
-  },
   {
    "at": "2026-11-03T21:55:42.284729+00:00",
    "attempted": 108,
@@ -256665,11 +256707,17 @@
    "attempted": 102,
    "validated": 24,
    "unavailable": 78
+  },
+  {
+   "at": "2026-11-13T07:54:05.686786+00:00",
+   "attempted": 3,
+   "validated": 0,
+   "unavailable": 3
   }
  ],
  "last_batch": {
-  "attempted": 102,
-  "validated": 24,
-  "unavailable": 78
+  "attempted": 3,
+  "validated": 0,
+  "unavailable": 3
  }
 }
