@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-14T21:35:26.287741+00:00 (Europe/Dublin)
+Checked: 2026-11-14T21:43:28.820877+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-12T19:59:17.779291+00:00
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $197.1344 at 2026-11-14T21:00:25.894594+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.0278 as of 2026-11-14T21:35:26.287741+00:00.
+Overnight P&L $-0.0278 as of 2026-11-14T21:43:28.820877+00:00.
 New paper fills since session started: 1.
 
 ## Price prediction versus trading costs
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.3008 | $-1.6992 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.8635 | $-2.1365 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.2351 | $-2.7649 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.3362 | $-1.6638 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.9020 | $-2.0980 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.2672 | $-2.7328 |
 
 ## 21-agent leaderboard
 
@@ -81,7 +81,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1794691800 / 1794691800
+Latest main/shadow candle timestamps: 1794692100 / 1794692100
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
