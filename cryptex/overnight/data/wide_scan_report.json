@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T10:23:41.503911+00:00",
+  "generated_at": "2026-11-14T14:53:20.853935+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
@@ -11,7 +11,7 @@
   "unique_ohlcv_validated_pairs": 3978,
   "markets_with_any_historical_signal": 237,
   "coverage_pct": 100.0,
-  "batches": 92,
+  "batches": 93,
   "venues": {
     "kraken": {
       "discovered": 1206,
@@ -21,7 +21,7 @@
       "validated_ohlcv_distinct": 1206,
       "last_attempt_valid": 1206,
       "latest_failed": 0,
-      "next_cursor": 586
+      "next_cursor": 592
     },
     "coinbase": {
       "discovered": 865,
@@ -31,7 +31,7 @@
       "validated_ohlcv_distinct": 610,
       "last_attempt_valid": 607,
       "latest_failed": 258,
-      "next_cursor": 167
+      "next_cursor": 252
     },
     "bitstamp": {
       "discovered": 237,
@@ -41,7 +41,7 @@
       "validated_ohlcv_distinct": 237,
       "last_attempt_valid": 237,
       "latest_failed": 0,
-      "next_cursor": 36
+      "next_cursor": 41
     },
     "okx": {
       "discovered": 1060,
@@ -51,7 +51,7 @@
       "validated_ohlcv_distinct": 1060,
       "last_attempt_valid": 1060,
       "latest_failed": 0,
-      "next_cursor": 207
+      "next_cursor": 210
     },
     "kucoin": {
       "discovered": 865,
@@ -61,16 +61,16 @@
       "validated_ohlcv_distinct": 865,
       "last_attempt_valid": 865,
       "latest_failed": 0,
-      "next_cursor": 618
+      "next_cursor": 621
     }
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 380,
+      "historical_samples": 379,
       "net_winners": 29,
-      "gross_up_net_down": 120,
-      "weighted_mean_net_pct": -2.759777,
-      "markets_with_samples": 175
+      "gross_up_net_down": 119,
+      "weighted_mean_net_pct": -2.762935,
+      "markets_with_samples": 174
     },
     "cost_aware_momentum": {
       "historical_samples": 96,
@@ -80,18 +80,18 @@
       "markets_with_samples": 57
     },
     "breakout": {
-      "historical_samples": 411,
+      "historical_samples": 417,
       "net_winners": 29,
       "gross_up_net_down": 137,
-      "weighted_mean_net_pct": -2.44912,
-      "markets_with_samples": 204
+      "weighted_mean_net_pct": -2.438491,
+      "markets_with_samples": 210
     },
     "dip_recovery": {
-      "historical_samples": 126,
+      "historical_samples": 118,
       "net_winners": 12,
-      "gross_up_net_down": 60,
-      "weighted_mean_net_pct": -2.152869,
-      "markets_with_samples": 92
+      "gross_up_net_down": 58,
+      "weighted_mean_net_pct": -2.161093,
+      "markets_with_samples": 90
     }
   },
   "fees": {
@@ -135,7 +135,7 @@
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {
     "markets_observed": 450,
-    "forward_observations": 1704,
+    "forward_observations": 1724,
     "completed": 2,
     "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution."
   }
