@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794643800,
+  "last_ts": 1794644400,
   "first_ts": 1793488500,
-  "observed_candles": 3349,
+  "observed_candles": 3350,
   "signals": [],
   "open": [
     {
@@ -7964,56 +7964,39 @@
   "censored_exits": 32,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3237,
-      "liquid_candidates": 32546,
-      "move_below_gate": 32522,
-      "volume_below_gate": 24925,
+      "bars": 3238,
+      "liquid_candidates": 32555,
+      "move_below_gate": 32531,
+      "volume_below_gate": 24931,
       "qualified": 18,
       "queued": 12
     },
     "COST_AWARE": {
-      "bars": 3237,
-      "liquid_candidates": 32546,
-      "move_below_gate": 32510,
-      "volume_below_gate": 24577,
+      "bars": 3238,
+      "liquid_candidates": 32555,
+      "move_below_gate": 32519,
+      "volume_below_gate": 24583,
       "qualified": 27,
       "queued": 18
     },
     "BALANCED_TEST": {
-      "bars": 3237,
-      "liquid_candidates": 32546,
-      "move_below_gate": 32229,
-      "volume_below_gate": 24577,
+      "bars": 3238,
+      "liquid_candidates": 32555,
+      "move_below_gate": 32238,
+      "volume_below_gate": 24583,
       "qualified": 186,
       "queued": 110
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3237,
-      "liquid_candidates": 32546,
-      "move_below_gate": 29888,
-      "volume_below_gate": 24196,
+      "bars": 3238,
+      "liquid_candidates": 32555,
+      "move_below_gate": 29897,
+      "volume_below_gate": 24202,
       "qualified": 990,
       "queued": 493
     }
   },
-  "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1794643500,
-      "entry_ts": 1794643800,
-      "entry_mid": 8.044,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1794643500,
-      "entry_ts": 1794643800,
-      "entry_mid": 8.044,
-      "hold_bars": 288
-    }
-  ],
+  "horizon_open": [],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -10932,5 +10915,5 @@
       "stress_net_return": -0.0597549424
     }
   ],
-  "horizon_censored": 413
+  "horizon_censored": 415
 }
