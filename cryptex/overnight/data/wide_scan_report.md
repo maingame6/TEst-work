@@ -2,7 +2,7 @@
 
 **These are historic, per-venue 5-minute candle evaluations; no real orders and no changes to the original $210 PAPER ledger.**
 
-Last batch: 2026-11-14T17:02:15.447945+00:00; scanning cycles: 94.
+Last batch: 2026-11-14T19:32:13.222938+00:00; scanning cycles: 95.
 Discovered: 4233 distinct venue/pair listings.
 Selected in scan batches: **4233**.
 Checked against exchange metadata: **4233**.
@@ -20,10 +20,10 @@ Venue/pairs producing historical strategy samples: **237**.
 
 | Hypothesis | Historical examples | Net winners | Gross winners turned into losses | Weighted average net % |
 |---|---:|---:|---:|---:|
-| momentum_05 | 384 | 29 | 119 | -2.75311% |
-| cost_aware_momentum | 96 | 16 | 16 | -3.02420% |
-| breakout | 417 | 29 | 137 | -2.43849% |
-| dip_recovery | 108 | 12 | 45 | -2.22125% |
+| momentum_05 | 398 | 29 | 125 | -2.72608% |
+| cost_aware_momentum | 98 | 16 | 18 | -2.98168% |
+| breakout | 416 | 29 | 131 | -2.45002% |
+| dip_recovery | 111 | 12 | 47 | -2.23223% |
 
 **Fees:** each venue's rate and source/status is machine-readable in wide_scan_report.json. All entries and exits subtract fees AND slippage each way.
 **Caveat:** Coinbase and Bitstamp currently use high-cost unverified assumptions. OKX and KuCoin have varying jurisdictions/fee classes. No venue-specific profitability claim until tier/depth confirmed.
