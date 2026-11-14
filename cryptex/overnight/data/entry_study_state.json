@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794636600,
+  "last_ts": 1794637200,
   "first_ts": 1793488500,
-  "observed_candles": 3333,
+  "observed_candles": 3334,
   "signals": [],
   "open": [
     {
@@ -7954,72 +7954,39 @@
   "censored_exits": 31,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3221,
-      "liquid_candidates": 32412,
-      "move_below_gate": 32388,
-      "volume_below_gate": 24822,
+      "bars": 3222,
+      "liquid_candidates": 32420,
+      "move_below_gate": 32396,
+      "volume_below_gate": 24828,
       "qualified": 18,
       "queued": 12
     },
     "COST_AWARE": {
-      "bars": 3221,
-      "liquid_candidates": 32412,
-      "move_below_gate": 32376,
-      "volume_below_gate": 24477,
+      "bars": 3222,
+      "liquid_candidates": 32420,
+      "move_below_gate": 32384,
+      "volume_below_gate": 24483,
       "qualified": 27,
       "queued": 18
     },
     "BALANCED_TEST": {
-      "bars": 3221,
-      "liquid_candidates": 32412,
-      "move_below_gate": 32095,
-      "volume_below_gate": 24477,
+      "bars": 3222,
+      "liquid_candidates": 32420,
+      "move_below_gate": 32103,
+      "volume_below_gate": 24483,
       "qualified": 186,
       "queued": 110
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3221,
-      "liquid_candidates": 32412,
-      "move_below_gate": 29756,
-      "volume_below_gate": 24096,
+      "bars": 3222,
+      "liquid_candidates": 32420,
+      "move_below_gate": 29764,
+      "volume_below_gate": 24102,
       "qualified": 989,
       "queued": 492
     }
   },
-  "horizon_open": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "PEPE",
-      "signal_ts": 1794635700,
-      "entry_ts": 1794636000,
-      "entry_mid": 4.235e-06,
-      "hold_bars": 48
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "PEPE",
-      "signal_ts": 1794635700,
-      "entry_ts": 1794636000,
-      "entry_mid": 4.235e-06,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "PEPE",
-      "signal_ts": 1794635700,
-      "entry_ts": 1794636000,
-      "entry_mid": 4.235e-06,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "PEPE",
-      "signal_ts": 1794635700,
-      "entry_ts": 1794636000,
-      "entry_mid": 4.235e-06,
-      "hold_bars": 288
-    }
-  ],
+  "horizon_open": [],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -10938,5 +10905,5 @@
       "stress_net_return": -0.0597549424
     }
   ],
-  "horizon_censored": 409
+  "horizon_censored": 413
 }
