@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-14T21:10:24.091993+00:00",
-  "local_time": "2026-11-14T21:10:24.091993+00:00",
+  "generated_at": "2026-11-14T21:20:32.129989+00:00",
+  "local_time": "2026-11-14T21:20:32.129989+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -159,7 +159,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "SELL EXECUTED (PAPER): BTC \u2014 PILOT V1 observed 6% stop; next-candle simulated exit",
+      "last_decision": "HOLD: no qualified setup",
       "missing_quote": false
     },
     {
@@ -231,7 +231,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOT",
+      "last_decision": "HOLD XLM",
       "missing_quote": false
     },
     {
@@ -423,8 +423,8 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1794690300,
-  "last_candle_research": 1794690300,
+  "last_candle_main": 1794690900,
+  "last_candle_research": 1794690900,
   "total_open": 0,
   "total_queued": 0,
   "total_completed": 159,
@@ -464,7 +464,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-11-12T19:59:17.779291+00:00",
-  "github_run_id": "43640913355",
+  "github_run_id": "43641813849",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-14",
@@ -475,7 +475,7 @@
       "fills": 317
     },
     "morning": null,
-    "comparison_at": "2026-11-14T21:10:24.091993+00:00",
+    "comparison_at": "2026-11-14T21:20:32.129989+00:00",
     "change": -0.027792,
     "fills_since_start": 1
   },
@@ -488,33 +488,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 64429.8,
+        "current_mid": 64455.7,
         "start": 10.0,
-        "equity": 8.291377,
-        "pnl": -1.708623,
-        "return_pct": -17.0862,
+        "equity": 8.29471,
+        "pnl": -1.70529,
+        "return_pct": -17.0529,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 1773.84,
+        "current_mid": 1770.56,
         "start": 10.0,
-        "equity": 7.838142,
-        "pnl": -2.161858,
-        "return_pct": -21.6186,
+        "equity": 7.823649,
+        "pnl": -2.176351,
+        "return_pct": -21.7635,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 70.13,
+        "current_mid": 69.82,
         "start": 10.0,
-        "equity": 7.252708,
-        "pnl": -2.747292,
-        "return_pct": -27.4729,
+        "equity": 7.220648,
+        "pnl": -2.779352,
+        "return_pct": -27.7935,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
@@ -534,22 +534,22 @@
       "ETH",
       "SOL"
     ],
-    "candle_utc": 1794690300,
-    "at": "2026-11-14T21:10:24.091993+00:00",
-    "balance": 23.382227,
-    "pnl": -6.617773,
+    "candle_utc": 1794690900,
+    "at": "2026-11-14T21:20:32.129989+00:00",
+    "balance": 23.339007,
+    "pnl": -6.660993,
     "coins": {
-      "BTC": 8.291377,
-      "ETH": 7.838142,
-      "SOL": 7.252708
+      "BTC": 8.29471,
+      "ETH": 7.823649,
+      "SOL": 7.220648
     },
     "entries": {
       "BTC": "2026-10-30T22:21:37.361980+00:00",
       "ETH": "2026-10-30T22:21:37.361980+00:00",
       "SOL": "2026-10-30T22:21:37.361980+00:00"
     },
-    "observations": 2971,
-    "last_move_usd": -0.106078
+    "observations": 2972,
+    "last_move_usd": -0.04322
   },
   "pilot_evidence": {
     "mode": "PAPER_ONLY",
