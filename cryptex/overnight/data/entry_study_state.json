@@ -1,10 +1,23 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794723300,
+  "last_ts": 1794723900,
   "first_ts": 1793488500,
-  "observed_candles": 3537,
-  "signals": [],
+  "observed_candles": 3538,
+  "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1794723900,
+      "observed_move": 0.01647021
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1794723900,
+      "observed_move": 0.01647021
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -8527,36 +8540,36 @@
   "censored_exits": 41,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3425,
-      "liquid_candidates": 34983,
-      "move_below_gate": 34930,
-      "volume_below_gate": 26743,
+      "bars": 3426,
+      "liquid_candidates": 34992,
+      "move_below_gate": 34939,
+      "volume_below_gate": 26751,
       "qualified": 36,
       "queued": 18
     },
     "COST_AWARE": {
-      "bars": 3425,
-      "liquid_candidates": 34983,
-      "move_below_gate": 34915,
-      "volume_below_gate": 26376,
+      "bars": 3426,
+      "liquid_candidates": 34992,
+      "move_below_gate": 34924,
+      "volume_below_gate": 26384,
       "qualified": 46,
       "queued": 25
     },
     "BALANCED_TEST": {
-      "bars": 3425,
-      "liquid_candidates": 34983,
-      "move_below_gate": 34571,
-      "volume_below_gate": 26376,
-      "qualified": 221,
-      "queued": 124
+      "bars": 3426,
+      "liquid_candidates": 34992,
+      "move_below_gate": 34579,
+      "volume_below_gate": 26384,
+      "qualified": 222,
+      "queued": 125
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3425,
-      "liquid_candidates": 34983,
-      "move_below_gate": 31980,
-      "volume_below_gate": 25962,
-      "qualified": 1085,
-      "queued": 543
+      "bars": 3426,
+      "liquid_candidates": 34992,
+      "move_below_gate": 31982,
+      "volume_below_gate": 25970,
+      "qualified": 1086,
+      "queued": 544
     }
   },
   "horizon_open": [],

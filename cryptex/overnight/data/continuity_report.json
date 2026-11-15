@@ -1,22 +1,17 @@
 {
-  "generated_at": "2026-11-15T06:23:39.954144+00:00",
+  "generated_at": "2026-11-15T06:30:39.973739+00:00",
   "mode": "PAPER_ONLY",
   "live_orders": false,
   "policy": "COST_GATE_V4_KRAKEN_TAKER",
   "first_observed_at": "2026-10-31T23:24:36.636109+00:00",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1794723300,
-  "expected_candles": 4117,
-  "observed_candles": 3537,
-  "missing_intervals": 580,
-  "coverage_pct": 85.912,
+  "last_candle_ts": 1794723900,
+  "expected_candles": 4119,
+  "observed_candles": 3538,
+  "missing_intervals": 581,
+  "coverage_pct": 85.895,
   "max_gap_minutes": 460.0,
   "latest_gaps": [
-    {
-      "previous_candle_ts": 1794715200,
-      "next_candle_ts": 1794715800,
-      "missing_intervals": 1
-    },
     {
       "previous_candle_ts": 1794715800,
       "next_candle_ts": 1794716400,
@@ -61,9 +56,14 @@
       "previous_candle_ts": 1794722400,
       "next_candle_ts": 1794723000,
       "missing_intervals": 1
+    },
+    {
+      "previous_candle_ts": 1794723300,
+      "next_candle_ts": 1794723900,
+      "missing_intervals": 1
     }
   ],
-  "days_observed": 14.292,
+  "days_observed": 14.299,
   "main_new_closed_trades": {
     "GAMBLER": 1,
     "HOUSE": 2,
@@ -115,9 +115,9 @@
     "LEAN_EVENT": false,
     "NAUTILUS_REGIME": false
   },
-  "net_paper_pnl_total": -13.325384,
+  "net_paper_pnl_total": -13.299893,
   "first_policy_equity": 208.880584,
-  "change_since_first_policy_observation": -12.205968,
+  "change_since_first_policy_observation": -12.180477,
   "historical_data_note": "V3 closed trades retain older lower cost assumption; this V4 prospective sample counts only V4-qualified closes. Balance deltas may reflect V3-era holdings.",
   "status": "COLLECTING_WITH_GAPS",
   "caveat": "A ready sample is not a demonstrated edge. Held-out after-cost comparison, uncertainty and regimes still required. Never backfill missing five-minute decisions."
