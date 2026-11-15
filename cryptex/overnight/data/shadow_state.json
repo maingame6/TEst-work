@@ -1,8 +1,8 @@
 {
   "version": 1,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794748800,
-  "cycles": 3643,
+  "last_ts": 1794749100,
+  "cycles": 3644,
   "initial_capital": 110,
   "bots": {
     "FLUID_ADVECTION": {
@@ -18,7 +18,7 @@
         -0.0064357648447067595,
         -0.0099383857190255
       ],
-      "last_decision": "HOLD NEAR"
+      "last_decision": "HOLD TON"
     },
     "FLUID_VISCOSITY": {
       "cash": 9.95277272162667,
@@ -32,7 +32,7 @@
         -0.03174215279730108,
         -0.007913761261534424
       ],
-      "last_decision": "HOLD LINK",
+      "last_decision": "HOLD TON",
       "qualified_v4_closed": 2
     },
     "GEOMETRIC_DIVERSITY": {
@@ -48,7 +48,7 @@
         -0.009551572666783414,
         -0.012907620680144394
       ],
-      "last_decision": "HOLD XRP",
+      "last_decision": "HOLD TON",
       "qualified_v4_closed": 2
     },
     "ERROR_CODE_CONSENSUS": {
@@ -83,7 +83,7 @@
         -0.006167971383158388,
         -0.00954757176525367
       ],
-      "last_decision": "HOLD XRP",
+      "last_decision": "HOLD TON",
       "qualified_v4_closed": 1
     },
     "LATTICE_ANALOG": {
@@ -94,7 +94,7 @@
       "wins": 0,
       "realized": 0.0,
       "recent_outcomes": [],
-      "last_decision": "HOLD XRP"
+      "last_decision": "HOLD UNI"
     },
     "FREQTRADE_STYLE": {
       "cash": 9.949601270707163,
@@ -111,7 +111,7 @@
         -0.009545250948435502,
         -0.012899077757912769
       ],
-      "last_decision": "HOLD LINK",
+      "last_decision": "HOLD TON",
       "qualified_v4_closed": 2
     },
     "QLIB_STYLE": {
@@ -128,7 +128,7 @@
         -0.006167971383158388,
         -0.00954757176525367
       ],
-      "last_decision": "HOLD LINK",
+      "last_decision": "HOLD TON",
       "qualified_v4_closed": 1
     },
     "HUMMINGBOT_FRICTION": {
@@ -155,7 +155,7 @@
         -0.009556258188106237,
         -0.012913952509889248
       ],
-      "last_decision": "HOLD AAVE",
+      "last_decision": "HOLD TON",
       "qualified_v4_closed": 2
     },
     "NAUTILUS_REGIME": {
@@ -1632,6 +1632,105 @@
     }
   ],
   "decisions": [
+    {
+      "ts": 1794749100,
+      "model": "NAUTILUS_REGIME",
+      "action": "HOLD",
+      "symbol": "XRP",
+      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.484, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.48388,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "LEAN_EVENT",
+      "action": "HOLD",
+      "symbol": "TON",
+      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.397, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.39739,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "HUMMINGBOT_FRICTION",
+      "action": "HOLD",
+      "symbol": null,
+      "reason": "No verified L2 order book, bid/ask or queue position: market maker disallowed",
+      "score": 0.0,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "QLIB_STYLE",
+      "action": "HOLD",
+      "symbol": "TON",
+      "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
+      "score": 0.9,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "FREQTRADE_STYLE",
+      "action": "HOLD",
+      "symbol": "TON",
+      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.711, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.71125,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "LATTICE_ANALOG",
+      "action": "HOLD",
+      "symbol": "UNI",
+      "reason": "Historical nearest-vector analog, 2/9 after-cost positives in old samples; score=-0.948, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": -0.94759,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "GRAPH_COHERENCE",
+      "action": "HOLD",
+      "symbol": "TON",
+      "reason": "Relative-strength shock in asset co-movement graph; score=+0.867, gate=0.09; after-cost candidate screen (not a forecast)",
+      "score": 0.86713,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "ERROR_CODE_CONSENSUS",
+      "action": "HOLD",
+      "symbol": "XRP",
+      "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 1.0,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "GEOMETRIC_DIVERSITY",
+      "action": "HOLD",
+      "symbol": "TON",
+      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.614, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.61363,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "FLUID_VISCOSITY",
+      "action": "HOLD",
+      "symbol": "TON",
+      "reason": "Momentum less empirical log-return diffusion/noise; score=+0.106, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.10582,
+      "paper": true
+    },
+    {
+      "ts": 1794749100,
+      "model": "FLUID_ADVECTION",
+      "action": "HOLD",
+      "symbol": "TON",
+      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.047, gate=0.09; after-cost candidate screen (not a forecast)",
+      "score": 0.04682,
+      "paper": true
+    },
     {
       "ts": 1794748800,
       "model": "NAUTILUS_REGIME",
@@ -5132,153 +5231,54 @@
       "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
       "score": 0.9,
       "paper": true
-    },
-    {
-      "ts": 1794732900,
-      "model": "FREQTRADE_STYLE",
-      "action": "HOLD",
-      "symbol": "SOL",
-      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 1.0,
-      "paper": true
-    },
-    {
-      "ts": 1794732900,
-      "model": "LATTICE_ANALOG",
-      "action": "HOLD",
-      "symbol": "XRP",
-      "reason": "Historical nearest-vector analog, 0/9 after-cost positives in old samples; score=-1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": -1.0,
-      "paper": true
-    },
-    {
-      "ts": 1794732900,
-      "model": "GRAPH_COHERENCE",
-      "action": "HOLD",
-      "symbol": "BTC",
-      "reason": "Relative-strength shock in asset co-movement graph; score=+0.600, gate=0.09; after-cost candidate screen (not a forecast)",
-      "score": 0.60016,
-      "paper": true
-    },
-    {
-      "ts": 1794732900,
-      "model": "ERROR_CODE_CONSENSUS",
-      "action": "HOLD",
-      "symbol": "XRP",
-      "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 1.0,
-      "paper": true
-    },
-    {
-      "ts": 1794732900,
-      "model": "GEOMETRIC_DIVERSITY",
-      "action": "HOLD",
-      "symbol": "BTC",
-      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.817, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 0.81691,
-      "paper": true
-    },
-    {
-      "ts": 1794732900,
-      "model": "FLUID_VISCOSITY",
-      "action": "HOLD",
-      "symbol": "BTC",
-      "reason": "Momentum less empirical log-return diffusion/noise; score=+0.326, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 0.32603,
-      "paper": true
-    },
-    {
-      "ts": 1794732900,
-      "model": "FLUID_ADVECTION",
-      "action": "HOLD",
-      "symbol": "ADA",
-      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.465, gate=0.09; after-cost candidate screen (not a forecast)",
-      "score": 0.4645,
-      "paper": true
-    },
-    {
-      "ts": 1794732600,
-      "model": "NAUTILUS_REGIME",
-      "action": "HOLD",
-      "symbol": "BTC",
-      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.924, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 0.92378,
-      "paper": true
-    },
-    {
-      "ts": 1794732600,
-      "model": "LEAN_EVENT",
-      "action": "HOLD",
-      "symbol": "PEPE",
-      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.600, gate=0.14; after-cost candidate screen (not a forecast)",
-      "score": 0.59952,
-      "paper": true
-    },
-    {
-      "ts": 1794732600,
-      "model": "HUMMINGBOT_FRICTION",
-      "action": "HOLD",
-      "symbol": null,
-      "reason": "No verified L2 order book, bid/ask or queue position: market maker disallowed",
-      "score": 0.0,
-      "paper": true
-    },
-    {
-      "ts": 1794732600,
-      "model": "QLIB_STYLE",
-      "action": "HOLD",
-      "symbol": "BTC",
-      "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
-      "score": 0.9,
-      "paper": true
     }
   ],
   "last_prices": {
-    "BTC": 65645.0,
-    "ETH": 1836.59,
-    "SOL": 73.11,
-    "BNB": 597.58,
-    "XRP": 0.97738,
-    "ADA": 0.156362,
-    "DOGE": 0.0595314,
-    "SHIB": 3.967e-06,
-    "PEPE": 4.031e-06,
-    "BONK": 2.406e-06,
+    "BTC": 65527.8,
+    "ETH": 1835.22,
+    "SOL": 72.89,
+    "BNB": 596.64,
+    "XRP": 0.97484,
+    "ADA": 0.156162,
+    "DOGE": 0.0594734,
+    "SHIB": 3.963e-06,
+    "PEPE": 4.02e-06,
+    "BONK": 2.41e-06,
     "WIF": 0.1353,
     "FLOKI": 1.887e-05,
-    "LTC": 45.41,
-    "BCH": 211.8,
-    "LINK": 9.36455,
-    "DOT": 0.7391,
-    "AVAX": 7.33,
-    "XLM": 0.14074,
-    "TRX": 0.307085,
-    "NEAR": 3.1934,
-    "AAVE": 108.18,
-    "UNI": 5.1976,
-    "TON": 1.05,
-    "SUI": 0.736
+    "LTC": 45.4,
+    "BCH": 210.77,
+    "LINK": 9.35,
+    "DOT": 0.7386,
+    "AVAX": 7.328,
+    "XLM": 0.14052,
+    "TRX": 0.306905,
+    "NEAR": 3.1898,
+    "AAVE": 107.6,
+    "UNI": 5.1931,
+    "TON": 1.051,
+    "SUI": 0.7354
   },
   "last_review": {
     "FLUID_ADVECTION": {
       "action": "HOLD",
-      "symbol": "NEAR",
-      "score": 0.35589,
-      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.356, gate=0.09; after-cost candidate screen (not a forecast)",
+      "symbol": "TON",
+      "score": 0.04682,
+      "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.047, gate=0.09; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "FLUID_VISCOSITY": {
       "action": "HOLD",
-      "symbol": "LINK",
-      "score": 0.05238,
-      "reason": "Momentum less empirical log-return diffusion/noise; score=+0.052, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "TON",
+      "score": 0.10582,
+      "reason": "Momentum less empirical log-return diffusion/noise; score=+0.106, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "GEOMETRIC_DIVERSITY": {
       "action": "HOLD",
-      "symbol": "XRP",
-      "score": 0.32298,
-      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.323, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "TON",
+      "score": 0.61363,
+      "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+0.614, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "ERROR_CODE_CONSENSUS": {
@@ -5290,28 +5290,28 @@
     },
     "GRAPH_COHERENCE": {
       "action": "HOLD",
-      "symbol": "XRP",
-      "score": 0.38203,
-      "reason": "Relative-strength shock in asset co-movement graph; score=+0.382, gate=0.09; after-cost candidate screen (not a forecast)",
+      "symbol": "TON",
+      "score": 0.86713,
+      "reason": "Relative-strength shock in asset co-movement graph; score=+0.867, gate=0.09; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "LATTICE_ANALOG": {
       "action": "HOLD",
-      "symbol": "XRP",
-      "score": -1.0,
-      "reason": "Historical nearest-vector analog, 0/9 after-cost positives in old samples; score=-1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "UNI",
+      "score": -0.94759,
+      "reason": "Historical nearest-vector analog, 2/9 after-cost positives in old samples; score=-0.948, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "FREQTRADE_STYLE": {
       "action": "HOLD",
-      "symbol": "LINK",
-      "score": 0.53645,
-      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.536, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "TON",
+      "score": 0.71125,
+      "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+0.711, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "QLIB_STYLE": {
       "action": "HOLD",
-      "symbol": "LINK",
+      "symbol": "TON",
       "score": 0.9,
       "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
       "sample_ok": true
@@ -5325,16 +5325,16 @@
     },
     "LEAN_EVENT": {
       "action": "HOLD",
-      "symbol": "AAVE",
-      "score": 0.49447,
-      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.494, gate=0.14; after-cost candidate screen (not a forecast)",
+      "symbol": "TON",
+      "score": 0.39739,
+      "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+0.397, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     },
     "NAUTILUS_REGIME": {
       "action": "HOLD",
       "symbol": "XRP",
-      "score": 0.53829,
-      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.538, gate=0.14; after-cost candidate screen (not a forecast)",
+      "score": 0.48388,
+      "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+0.484, gate=0.14; after-cost candidate screen (not a forecast)",
       "sample_ok": true
     }
   },
