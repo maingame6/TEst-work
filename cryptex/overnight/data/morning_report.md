@@ -2,15 +2,15 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-15T02:34:34.329361+00:00 (Europe/Dublin)
+Checked: 2026-11-15T02:39:14.257683+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-12T19:59:17.779291+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $196.5625 · P&L $-13.4375 (-6.40%)**
+**Starting paper money $210.00 · Current estimated liquidation $196.6069 · P&L $-13.3931 (-6.38%)**
 
-Realised $-12.8934; unrealised after estimated future sale costs $-0.5441.
-Open: 10; queued: 0; closed: 159; paper fills in current JSON: 328.
+Realised $-12.8934; unrealised after estimated future sale costs $-0.4997.
+Open: 10; queued: 1; closed: 159; paper fills in current JSON: 328.
 
 Overnight status: IN_PROGRESS
 
@@ -20,7 +20,7 @@ Read **[the detailed morning debrief](morning_briefing.md)** for all 21 traders,
 The extended [machine-readable briefing](morning_briefing.json) has the same independently auditable data; it is updated by each successful run but a missing briefing must never stop paper trading.
 
 First observed overnight starting balance $197.1344 at 2026-11-14T21:00:25.894594+00:00 (NOT backdated to 21:00).
-Overnight P&L $-0.5719 as of 2026-11-15T02:34:34.329361+00:00.
+Overnight P&L $-0.5275 as of 2026-11-15T02:39:14.257683+00:00.
 New paper fills since session started: 11.
 
 ## Price prediction versus trading costs
@@ -40,8 +40,8 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 86.9964 | -13.0036 | -12.5869 | 121 | 4 |
-| Eleven maths/OSS traders | 110.00 | 109.5661 | -0.4339 | -0.3065 | 38 | 6 |
+| Original ten traders | 100.00 | 87.0350 | -12.9650 | -12.5869 | 121 | 4 |
+| Eleven maths/OSS traders | 110.00 | 109.5719 | -0.4281 | -0.3065 | 38 | 6 |
 
 ## Buy-and-hold benchmarks (not part of $210)
 
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.2955 | $-1.7045 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.9663 | $-2.0337 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.3003 | $-2.6997 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.3214 | $-1.6786 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.9647 | $-2.0353 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.3055 | $-2.6945 |
 
 ## 21-agent leaderboard
 
@@ -60,28 +60,28 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 1 | LATTICE_ANALOG | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
 | 2 | HUMMINGBOT_FRICTION | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
 | 3 | FLUID_ADVECTION | research | 9.9694 | -0.0306 | -0.0306 | 4 | cash |
-| 4 | GRAPH_COHERENCE | research | 9.9649 | -0.0351 | -0.0351 | 5 | cash |
-| 5 | QLIB_STYLE | research | 9.9649 | -0.0351 | -0.0351 | 5 | cash |
-| 6 | SHOCKWAVE | main | 9.9623 | -0.0377 | -0.0157 | 6 | SUI |
-| 7 | LEAN_EVENT | research | 9.9511 | -0.0489 | -0.0260 | 4 | XRP |
-| 8 | FLUID_VISCOSITY | research | 9.9476 | -0.0524 | -0.0393 | 2 | UNI |
-| 9 | GEOMETRIC_DIVERSITY | research | 9.9462 | -0.0538 | -0.0309 | 3 | XRP |
-| 10 | NAUTILUS_REGIME | research | 9.9449 | -0.0551 | -0.0323 | 5 | XRP |
-| 11 | FREQTRADE_STYLE | research | 9.9396 | -0.0604 | -0.0375 | 5 | XRP |
-| 12 | ERROR_CODE_CONSENSUS | research | 9.9374 | -0.0626 | -0.0398 | 5 | XRP |
-| 13 | MEME HUNTER | main | 9.8471 | -0.1529 | -0.0057 | 4 | SUI |
+| 4 | SHOCKWAVE | main | 9.9650 | -0.0350 | -0.0157 | 6 | SUI |
+| 5 | GRAPH_COHERENCE | research | 9.9649 | -0.0351 | -0.0351 | 5 | cash |
+| 6 | QLIB_STYLE | research | 9.9649 | -0.0351 | -0.0351 | 5 | cash |
+| 7 | LEAN_EVENT | research | 9.9525 | -0.0475 | -0.0260 | 4 | XRP |
+| 8 | GEOMETRIC_DIVERSITY | research | 9.9476 | -0.0524 | -0.0309 | 3 | XRP |
+| 9 | FLUID_VISCOSITY | research | 9.9467 | -0.0533 | -0.0393 | 2 | UNI |
+| 10 | NAUTILUS_REGIME | research | 9.9462 | -0.0538 | -0.0323 | 5 | XRP |
+| 11 | FREQTRADE_STYLE | research | 9.9410 | -0.0590 | -0.0375 | 5 | XRP |
+| 12 | ERROR_CODE_CONSENSUS | research | 9.9387 | -0.0613 | -0.0398 | 5 | XRP |
+| 13 | MEME HUNTER | main | 9.8653 | -0.1347 | -0.0057 | 4 | SUI |
 | 14 | HOUSE | main | 9.7288 | -0.2712 | -0.2712 | 8 | cash |
 | 15 | GAMBLER | main | 9.7117 | -0.2883 | -0.2883 | 4 | cash |
 | 16 | SPY | main | 9.6439 | -0.3561 | -0.3561 | 6 | cash |
 | 17 | CONTRARIAN | main | 9.4681 | -0.5319 | -0.5319 | 9 | cash |
-| 18 | BREAKOUT | main | 9.3336 | -0.6664 | -0.5066 | 5 | LINK |
-| 19 | ROTATOR | main | 7.8519 | -2.1481 | -2.0605 | 6 | BTC |
+| 18 | BREAKOUT | main | 9.3295 | -0.6705 | -0.5066 | 5 | LINK |
+| 19 | ROTATOR | main | 7.8735 | -2.1265 | -2.0605 | 6 | BTC |
 | 20 | FRACTAL | main | 6.4792 | -3.5208 | -3.5208 | 25 | cash |
 | 21 | VORTEX | main | 4.9699 | -5.0301 | -5.0301 | 48 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1794709500 / 1794709500
+Latest main/shadow candle timestamps: 1794709800 / 1794709800
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
