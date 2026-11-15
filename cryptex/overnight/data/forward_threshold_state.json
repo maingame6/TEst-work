@@ -4,97 +4,284 @@
   "freeze": "2026-11-01T19:30:00+00:00",
   "last_by_market": {
     "kraken|BTC/USD": {
-      "time": 1794732895.417,
-      "mid": 64740.95,
+      "time": 1794733880.823,
+      "mid": 65963.0,
       "good": true,
-      "at": "2026-11-15T08:54:55.417000+00:00"
+      "at": "2026-11-15T09:11:20.823000+00:00"
     },
     "kraken|ETH/USD": {
-      "time": 1794732897.798,
-      "mid": 1800.76,
+      "time": 1794733883.218,
+      "mid": 1840.85,
       "good": true,
-      "at": "2026-11-15T08:54:57.798000+00:00"
+      "at": "2026-11-15T09:11:23.218000+00:00"
     },
     "kraken|SOL/USD": {
-      "time": 1794732900.196,
-      "mid": 70.625,
+      "time": 1794733885.616,
+      "mid": 72.245,
       "good": true,
-      "at": "2026-11-15T08:55:00.196000+00:00"
+      "at": "2026-11-15T09:11:25.616000+00:00"
     },
     "coinbase|BTC/USD": {
-      "time": 1794732902.696,
-      "mid": 64720.375,
+      "time": 1794733888.068,
+      "mid": 65952.91500000001,
       "good": true,
-      "at": "2026-11-15T08:55:02.696000+00:00"
+      "at": "2026-11-15T09:11:28.068000+00:00"
     },
     "coinbase|ETH/USD": {
-      "time": 1794732902.936,
-      "mid": 1800.245,
+      "time": 1794733888.27,
+      "mid": 1840.58,
       "good": true,
-      "at": "2026-11-15T08:55:02.936000+00:00"
+      "at": "2026-11-15T09:11:28.270000+00:00"
     },
     "coinbase|SOL/USD": {
-      "time": 1794732903.174,
-      "mid": 70.625,
+      "time": 1794733888.532,
+      "mid": 72.28,
       "good": true,
-      "at": "2026-11-15T08:55:03.174000+00:00"
+      "at": "2026-11-15T09:11:28.532000+00:00"
     },
     "bitstamp|BTC/USD": {
-      "time": 1794732903.634,
-      "mid": 64722.354999999996,
+      "time": 1794733889.014,
+      "mid": 65958.315,
       "good": true,
-      "at": "2026-11-15T08:55:03.634000+00:00"
+      "at": "2026-11-15T09:11:29.014000+00:00"
     },
     "bitstamp|ETH/USD": {
-      "time": 1794732903.998,
-      "mid": 1800.34,
+      "time": 1794733889.36,
+      "mid": 1840.2649999999999,
       "good": true,
-      "at": "2026-11-15T08:55:03.998000+00:00"
+      "at": "2026-11-15T09:11:29.360000+00:00"
     },
     "bitstamp|SOL/USD": {
-      "time": 1794732904.198,
-      "mid": 70.6175,
+      "time": 1794733889.654,
+      "mid": 72.256,
       "good": true,
-      "at": "2026-11-15T08:55:04.198000+00:00"
+      "at": "2026-11-15T09:11:29.654000+00:00"
     },
     "okx|BTC/USDT": {
-      "time": 1794732905.705,
-      "mid": 64778.149999999994,
+      "time": 1794733891.692,
+      "mid": 65992.95,
       "good": true,
-      "at": "2026-11-15T08:55:05.705000+00:00"
+      "at": "2026-11-15T09:11:31.692000+00:00"
     },
     "okx|ETH/USDT": {
-      "time": 1794732905.976,
-      "mid": 1802.1550000000002,
+      "time": 1794733892.087,
+      "mid": 1841.165,
       "good": true,
-      "at": "2026-11-15T08:55:05.976000+00:00"
+      "at": "2026-11-15T09:11:32.087000+00:00"
     },
     "okx|SOL/USDT": {
-      "time": 1794732906.207,
-      "mid": 70.695,
+      "time": 1794733892.436,
+      "mid": 72.295,
       "good": true,
-      "at": "2026-11-15T08:55:06.207000+00:00"
+      "at": "2026-11-15T09:11:32.436000+00:00"
     },
     "kucoin|BTC/USDT": {
-      "time": 1794732907.325,
-      "mid": 64770.25,
+      "time": 1794733894.37,
+      "mid": 65998.75,
       "good": true,
-      "at": "2026-11-15T08:55:07.325000+00:00"
+      "at": "2026-11-15T09:11:34.370000+00:00"
     },
     "kucoin|ETH/USDT": {
-      "time": 1794732907.642,
-      "mid": 1802.185,
+      "time": 1794733894.703,
+      "mid": 1842.1350000000002,
       "good": true,
-      "at": "2026-11-15T08:55:07.642000+00:00"
+      "at": "2026-11-15T09:11:34.703000+00:00"
     },
     "kucoin|SOL/USDT": {
-      "time": 1794732907.87,
-      "mid": 70.705,
+      "time": 1794733895.028,
+      "mid": 72.33500000000001,
       "good": true,
-      "at": "2026-11-15T08:55:07.870000+00:00"
+      "at": "2026-11-15T09:11:35.028000+00:00"
     }
   },
-  "signals": [],
+  "signals": [
+    {
+      "key": "kraken|BTC/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:20.823000+00:00",
+      "move": 0.018875997
+    },
+    {
+      "key": "kraken|ETH/USD",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:23.218000+00:00",
+      "move": 0.022262822
+    },
+    {
+      "key": "kraken|ETH/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:23.218000+00:00",
+      "move": 0.022262822
+    },
+    {
+      "key": "kraken|SOL/USD",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:25.616000+00:00",
+      "move": 0.022938053
+    },
+    {
+      "key": "kraken|SOL/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:25.616000+00:00",
+      "move": 0.022938053
+    },
+    {
+      "key": "kraken|SOL/USD",
+      "gate": "CONTROL_50BPS",
+      "signal_time": "2026-11-15T09:11:25.616000+00:00",
+      "move": 0.022938053
+    },
+    {
+      "key": "coinbase|BTC/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:28.068000+00:00",
+      "move": 0.01904408
+    },
+    {
+      "key": "coinbase|BTC/USD",
+      "gate": "CONTROL_50BPS",
+      "signal_time": "2026-11-15T09:11:28.068000+00:00",
+      "move": 0.01904408
+    },
+    {
+      "key": "coinbase|ETH/USD",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:28.270000+00:00",
+      "move": 0.022405284
+    },
+    {
+      "key": "coinbase|ETH/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:28.270000+00:00",
+      "move": 0.022405284
+    },
+    {
+      "key": "coinbase|SOL/USD",
+      "gate": "STRICT_232BPS",
+      "signal_time": "2026-11-15T09:11:28.532000+00:00",
+      "move": 0.023433628
+    },
+    {
+      "key": "coinbase|SOL/USD",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:28.532000+00:00",
+      "move": 0.023433628
+    },
+    {
+      "key": "coinbase|SOL/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:28.532000+00:00",
+      "move": 0.023433628
+    },
+    {
+      "key": "coinbase|SOL/USD",
+      "gate": "CONTROL_50BPS",
+      "signal_time": "2026-11-15T09:11:28.532000+00:00",
+      "move": 0.023433628
+    },
+    {
+      "key": "bitstamp|BTC/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:29.014000+00:00",
+      "move": 0.019096339
+    },
+    {
+      "key": "bitstamp|ETH/USD",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:29.360000+00:00",
+      "move": 0.022176367
+    },
+    {
+      "key": "bitstamp|ETH/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:29.360000+00:00",
+      "move": 0.022176367
+    },
+    {
+      "key": "bitstamp|SOL/USD",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:29.654000+00:00",
+      "move": 0.023202464
+    },
+    {
+      "key": "bitstamp|SOL/USD",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:29.654000+00:00",
+      "move": 0.023202464
+    },
+    {
+      "key": "bitstamp|SOL/USD",
+      "gate": "CONTROL_50BPS",
+      "signal_time": "2026-11-15T09:11:29.654000+00:00",
+      "move": 0.023202464
+    },
+    {
+      "key": "okx|BTC/USDT",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:31.692000+00:00",
+      "move": 0.018753237
+    },
+    {
+      "key": "okx|ETH/USDT",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:32.087000+00:00",
+      "move": 0.021646307
+    },
+    {
+      "key": "okx|SOL/USDT",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:32.436000+00:00",
+      "move": 0.022632435
+    },
+    {
+      "key": "okx|SOL/USDT",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:32.436000+00:00",
+      "move": 0.022632435
+    },
+    {
+      "key": "okx|SOL/USDT",
+      "gate": "CONTROL_50BPS",
+      "signal_time": "2026-11-15T09:11:32.436000+00:00",
+      "move": 0.022632435
+    },
+    {
+      "key": "kucoin|BTC/USDT",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:34.370000+00:00",
+      "move": 0.018967041
+    },
+    {
+      "key": "kucoin|ETH/USDT",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:34.703000+00:00",
+      "move": 0.022167536
+    },
+    {
+      "key": "kucoin|ETH/USDT",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:34.703000+00:00",
+      "move": 0.022167536
+    },
+    {
+      "key": "kucoin|SOL/USDT",
+      "gate": "COST_AWARE_217BPS",
+      "signal_time": "2026-11-15T09:11:35.028000+00:00",
+      "move": 0.023053532
+    },
+    {
+      "key": "kucoin|SOL/USDT",
+      "gate": "BALANCED_120BPS",
+      "signal_time": "2026-11-15T09:11:35.028000+00:00",
+      "move": 0.023053532
+    },
+    {
+      "key": "kucoin|SOL/USDT",
+      "gate": "CONTROL_50BPS",
+      "signal_time": "2026-11-15T09:11:35.028000+00:00",
+      "move": 0.023053532
+    }
+  ],
   "positions": [
     {
       "key": "okx|ETH/USDT",
@@ -103,7 +290,7 @@
       "entry_time": "2026-11-15T08:21:35.658000+00:00",
       "entry_mid": 1784.295,
       "entry_buy": 1784.3,
-      "remaining": 2
+      "remaining": 1
     },
     {
       "key": "kraken|BTC/USD",
@@ -112,7 +299,7 @@
       "entry_time": "2026-11-15T08:54:55.417000+00:00",
       "entry_mid": 64740.95,
       "entry_buy": 64741.0,
-      "remaining": 4
+      "remaining": 3
     },
     {
       "key": "kraken|ETH/USD",
@@ -121,7 +308,7 @@
       "entry_time": "2026-11-15T08:54:57.798000+00:00",
       "entry_mid": 1800.76,
       "entry_buy": 1800.9174607064,
-      "remaining": 4
+      "remaining": 3
     },
     {
       "key": "coinbase|ETH/USD",
@@ -130,7 +317,7 @@
       "entry_time": "2026-11-15T08:55:02.936000+00:00",
       "entry_mid": 1800.245,
       "entry_buy": 1800.5193700039,
-      "remaining": 4
+      "remaining": 3
     },
     {
       "key": "bitstamp|BTC/USD",
@@ -139,7 +326,7 @@
       "entry_time": "2026-11-15T08:55:03.634000+00:00",
       "entry_mid": 64722.354999999996,
       "entry_buy": 64722.36,
-      "remaining": 4
+      "remaining": 3
     },
     {
       "key": "bitstamp|ETH/USD",
@@ -148,7 +335,7 @@
       "entry_time": "2026-11-15T08:55:03.998000+00:00",
       "entry_mid": 1800.34,
       "entry_buy": 1800.392191764,
-      "remaining": 4
+      "remaining": 3
     },
     {
       "key": "okx|BTC/USDT",
@@ -157,7 +344,7 @@
       "entry_time": "2026-11-15T08:55:05.705000+00:00",
       "entry_mid": 64778.149999999994,
       "entry_buy": 64778.2,
-      "remaining": 4
+      "remaining": 3
     },
     {
       "key": "kucoin|BTC/USDT",
@@ -166,7 +353,7 @@
       "entry_time": "2026-11-15T08:55:07.325000+00:00",
       "entry_mid": 64770.25,
       "entry_buy": 64770.3,
-      "remaining": 4
+      "remaining": 3
     },
     {
       "key": "kucoin|ETH/USDT",
@@ -175,7 +362,7 @@
       "entry_time": "2026-11-15T08:55:07.642000+00:00",
       "entry_mid": 1802.185,
       "entry_buy": 1802.403223561,
-      "remaining": 4
+      "remaining": 3
     }
   ],
   "completed": [
@@ -7029,11 +7216,11 @@
     }
   ],
   "counters": {
-    "snapshots": 16275,
+    "snapshots": 16290,
     "stale_or_bad": 98,
     "entry_censored": 10,
     "exit_censored": 13,
-    "signal_candidates": 15697,
+    "signal_candidates": 15712,
     "gaps": 375,
     "gap_too_short": 0,
     "gap_too_long": 225
