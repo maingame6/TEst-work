@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T02:49:16.791765+00:00",
+  "generated_at": "2026-11-15T02:54:19.684748+00:00",
   "paper_only": true,
-  "candle_ts": 1794710400,
-  "cycles": 3557,
+  "candle_ts": 1794710700,
+  "cycles": 3558,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -22,13 +22,17 @@
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
-      "equity": 9.960813,
+      "equity": 9.958567,
       "closed": 2,
       "wins": 0,
       "realized": -0.039314,
-      "paper_return": -0.039187,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "paper_return": -0.041433,
+      "latest_decision": "SELL_QUEUED UNI",
+      "queued": {
+        "side": "SELL",
+        "symbol": "UNI",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "UNI",
         "quantity": 0.19878977388763033,
@@ -42,13 +46,17 @@
       "sample_sufficient": false
     },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 9.963307,
+      "equity": 9.963943,
       "closed": 3,
       "wins": 0,
       "realized": -0.030902,
-      "paper_return": -0.036693,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.036057,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.0425696475362085,
@@ -56,19 +64,23 @@
         "entry_market": 0.94625,
         "entry_time": 1794708900,
         "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.95065,
+        "peak": 0.95126,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.954458,
+      "equity": 9.955093,
       "closed": 5,
       "wins": 0,
       "realized": -0.039756,
-      "paper_return": -0.045542,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.044907,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.041643644267952,
@@ -76,7 +88,7 @@
         "entry_market": 0.94625,
         "entry_time": 1794708900,
         "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.95065,
+        "peak": 0.95126,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
@@ -87,7 +99,7 @@
       "wins": 0,
       "realized": -0.035077,
       "paper_return": -0.035077,
-      "latest_decision": "HOLD NEAR",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -104,13 +116,17 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.956713,
+      "equity": 9.957349,
       "closed": 5,
       "wins": 0,
       "realized": -0.0375,
-      "paper_return": -0.043287,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.042651,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.0418796217258197,
@@ -118,7 +134,7 @@
         "entry_market": 0.94625,
         "entry_time": 1794708900,
         "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.95065,
+        "peak": 0.95126,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
@@ -129,7 +145,7 @@
       "wins": 0,
       "realized": -0.035077,
       "paper_return": -0.035077,
-      "latest_decision": "HOLD NEAR",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -146,13 +162,17 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.968195,
+      "equity": 9.968831,
       "closed": 4,
       "wins": 0,
       "realized": -0.026011,
-      "paper_return": -0.031805,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.031169,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.0430810797876624,
@@ -160,19 +180,23 @@
         "entry_market": 0.94625,
         "entry_time": 1794708900,
         "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.95065,
+        "peak": 0.95126,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.96195,
+      "equity": 9.962586,
       "closed": 5,
       "wins": 0,
       "realized": -0.03226,
-      "paper_return": -0.03805,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.037414,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.042427569641762,
@@ -180,7 +204,7 @@
         "entry_market": 0.94625,
         "entry_time": 1794708900,
         "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.95065,
+        "peak": 0.95126,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
