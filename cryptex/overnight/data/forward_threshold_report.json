@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-15T01:16:24.150185+00:00",
+  "at": "2026-11-15T01:34:20.805925+00:00",
   "frozen_at": "2026-11-01T19:30:00+00:00",
   "schema": 1,
   "mode": "PAPER_ONLY",
   "real_orders": false,
   "portfolio_ledger_changes": false,
   "independent_research": true,
-  "holdout_window_days": 13.2406,
+  "holdout_window_days": 13.253,
   "signal_method": "15m snapshot-to-snapshot book mid momentum; NOT the original three-5m-candle V4 signal",
   "execution_method": "entry at next observed 15m book estimated ask VWAP; exit four consecutive snapshots later at estimated bid VWAP; estimated costs, NOT verified fills",
   "fee_assumptions_per_side": {
@@ -39,11 +39,11 @@
   "state": {
     "freeze": "2026-11-01T19:30:00+00:00",
     "counters": {
-      "snapshots": 15855,
+      "snapshots": 15870,
       "stale_or_bad": 95,
       "entry_censored": 10,
       "exit_censored": 11,
-      "signal_candidates": 15283,
+      "signal_candidates": 15298,
       "gaps": 375,
       "gap_too_short": 0,
       "gap_too_long": 225
@@ -51,22 +51,22 @@
   },
   "book_interval_quality": {
     "distinct_spot_pairs_seen": 15,
-    "observations_saved_since_freeze": 15855,
-    "adjacent_observed_transitions": 15840,
-    "continuous_adjacent_transitions": 15465,
+    "observations_saved_since_freeze": 15870,
+    "adjacent_observed_transitions": 15855,
+    "continuous_adjacent_transitions": 15480,
     "broken_adjacent_transitions": 375,
     "too_soon_transitions_since_classification": 0,
     "too_late_transitions_since_classification": 225,
     "older_unclassified_transitions": 150,
-    "continuous_fraction_of_observed_transitions": 0.97633,
-    "qualified_momentum_comparisons": 15283,
+    "continuous_fraction_of_observed_transitions": 0.97635,
+    "qualified_momentum_comparisons": 15298,
     "invalid_books_seen": 95,
     "meaning": "Pair-by-pair 15-minute experiment feed continuity, NOT how many historical 5m candles were available or genuine execution opportunity. Missing times cannot be backfilled."
   },
   "pending_entries": 0,
-  "open_hypotheses": 7,
+  "open_hypotheses": 0,
   "recorded_censored_cohorts": 21,
-  "completed_research_hypotheses": 380,
+  "completed_research_hypotheses": 387,
   "gates": {
     "STRICT_232BPS": {
       "threshold_pct": 2.322,
@@ -96,12 +96,12 @@
     },
     "BALANCED_120BPS": {
       "threshold_pct": 1.2,
-      "closed": 29,
+      "closed": 36,
       "positive_after_cost": 0,
-      "mean_net_pct": -2.55915,
-      "mean_stress_pct": -3.04514,
-      "median_net_pct": -2.22569,
-      "independent_hour_groups": 5,
+      "mean_net_pct": -2.97388,
+      "mean_stress_pct": -3.45781,
+      "median_net_pct": -3.10761,
+      "independent_hour_groups": 6,
       "cash_benchmark_pct": 0,
       "matched_buy_hold_verified": false,
       "statistical_significance_verified": false,
@@ -123,7 +123,7 @@
   },
   "paired_holdout_comparison": {
     "holdout_starts": "2026-11-04T19:30:00+00:00",
-    "heldout_days_since_start": 10.2406,
+    "heldout_days_since_start": 10.253,
     "control_eligible_cohorts": 281,
     "comparable_completed_cohorts": 281,
     "groups": {
