@@ -1,21 +1,15 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794744900,
+  "last_ts": 1794745500,
   "first_ts": 1793488500,
-  "observed_candles": 3586,
+  "observed_candles": 3587,
   "signals": [
     {
       "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1794744900,
-      "observed_move": 0.01055409
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XRP",
-      "signal_ts": 1794744900,
-      "observed_move": 0.00649689
+      "signal_ts": 1794745500,
+      "observed_move": 0.0053256
     }
   ],
   "open": [],
@@ -8549,40 +8543,40 @@
       "paper": true
     }
   ],
-  "missed_fills": 55,
+  "missed_fills": 57,
   "censored_exits": 45,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3474,
-      "liquid_candidates": 35525,
-      "move_below_gate": 35468,
-      "volume_below_gate": 27167,
+      "bars": 3475,
+      "liquid_candidates": 35535,
+      "move_below_gate": 35478,
+      "volume_below_gate": 27176,
       "qualified": 37,
       "queued": 19
     },
     "COST_AWARE": {
-      "bars": 3474,
-      "liquid_candidates": 35525,
-      "move_below_gate": 35452,
-      "volume_below_gate": 26797,
+      "bars": 3475,
+      "liquid_candidates": 35535,
+      "move_below_gate": 35462,
+      "volume_below_gate": 26806,
       "qualified": 48,
       "queued": 27
     },
     "BALANCED_TEST": {
-      "bars": 3474,
-      "liquid_candidates": 35525,
-      "move_below_gate": 35094,
-      "volume_below_gate": 26797,
+      "bars": 3475,
+      "liquid_candidates": 35535,
+      "move_below_gate": 35104,
+      "volume_below_gate": 26806,
       "qualified": 230,
       "queued": 132
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3474,
-      "liquid_candidates": 35525,
-      "move_below_gate": 32431,
-      "volume_below_gate": 26379,
-      "qualified": 1113,
-      "queued": 564
+      "bars": 3475,
+      "liquid_candidates": 35535,
+      "move_below_gate": 32439,
+      "volume_below_gate": 26388,
+      "qualified": 1114,
+      "queued": 565
     }
   },
   "horizon_open": [],
