@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T02:09:35.334919+00:00",
+  "generated_at": "2026-11-15T02:15:32.902793+00:00",
   "paper_only": true,
-  "candle_ts": 1794708000,
-  "cycles": 3550,
+  "candle_ts": 1794708600,
+  "cycles": 3551,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,8 +16,14 @@
       "wins": 0,
       "realized": -0.030568,
       "paper_return": -0.030568,
-      "latest_decision": "HOLD AAVE",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED XLM",
+      "queued": {
+        "side": "BUY",
+        "symbol": "XLM",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+0.648, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -27,8 +33,14 @@
       "wins": 0,
       "realized": -0.039314,
       "paper_return": -0.039314,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED UNI",
+      "queued": {
+        "side": "BUY",
+        "symbol": "UNI",
+        "reason": "Momentum less empirical log-return diffusion/noise; score=+0.594, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -38,8 +50,14 @@
       "wins": 0,
       "realized": -0.030902,
       "paper_return": -0.030902,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED XRP",
+      "queued": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -49,8 +67,14 @@
       "wins": 0,
       "realized": -0.039756,
       "paper_return": -0.039756,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED XRP",
+      "queued": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -60,8 +84,14 @@
       "wins": 0,
       "realized": -0.035077,
       "paper_return": -0.035077,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED UNI",
+      "queued": {
+        "side": "BUY",
+        "symbol": "UNI",
+        "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -82,8 +112,14 @@
       "wins": 0,
       "realized": -0.0375,
       "paper_return": -0.0375,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED XRP",
+      "queued": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -93,8 +129,14 @@
       "wins": 0,
       "realized": -0.035077,
       "paper_return": -0.035077,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED UNI",
+      "queued": {
+        "side": "BUY",
+        "symbol": "UNI",
+        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -115,8 +157,14 @@
       "wins": 0,
       "realized": -0.026011,
       "paper_return": -0.026011,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED XRP",
+      "queued": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     },
@@ -126,8 +174,14 @@
       "wins": 0,
       "realized": -0.03226,
       "paper_return": -0.03226,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "latest_decision": "BUY_QUEUED XRP",
+      "queued": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1794708600
+      },
       "position": null,
       "sample_sufficient": false
     }
