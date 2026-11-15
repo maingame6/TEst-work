@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-15T23:03:38.995747+00:00
+Generated: 2026-11-15T23:08:46.688341+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,8 +10,8 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD SUI |
-| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD XRP |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD PEPE |
+| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD XLM |
 | GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD NEAR |
 | ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD XRP |
 | GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD NEAR |
@@ -19,7 +19,7 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 | FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD NEAR |
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD NEAR |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD SOL |
+| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD NEAR |
 | NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD NEAR |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
