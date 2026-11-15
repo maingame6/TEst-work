@@ -1,42 +1,52 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794783600,
+  "last_ts": 1794783900,
   "first_ts": 1793488500,
-  "observed_candles": 3674,
-  "signals": [
+  "observed_candles": 3675,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1794783600,
-      "observed_move": 0.00960998
+      "entry_ts": 1794783900,
+      "entry_mid": 3.2023,
+      "exit_ts": 1794785700
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
       "signal_ts": 1794783600,
-      "observed_move": 0.00928235
+      "entry_ts": 1794783900,
+      "entry_mid": 72.36,
+      "exit_ts": 1794785700
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XRP",
       "signal_ts": 1794783600,
-      "observed_move": 0.00927264
+      "entry_ts": 1794783900,
+      "entry_mid": 0.97447,
+      "exit_ts": 1794785700
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SUI",
       "signal_ts": 1794783600,
-      "observed_move": 0.00887009
+      "entry_ts": 1794783900,
+      "entry_mid": 0.7346,
+      "exit_ts": 1794785700
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ADA",
       "signal_ts": 1794783600,
-      "observed_move": 0.00873617
+      "entry_ts": 1794783900,
+      "entry_mid": 0.154741,
+      "exit_ts": 1794785700
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -8740,39 +8750,120 @@
   "censored_exits": 45,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3562,
-      "liquid_candidates": 36431,
-      "move_below_gate": 36374,
-      "volume_below_gate": 27853,
+      "bars": 3563,
+      "liquid_candidates": 36444,
+      "move_below_gate": 36387,
+      "volume_below_gate": 27862,
       "qualified": 37,
       "queued": 19
     },
     "COST_AWARE": {
-      "bars": 3562,
-      "liquid_candidates": 36431,
-      "move_below_gate": 36358,
-      "volume_below_gate": 27472,
+      "bars": 3563,
+      "liquid_candidates": 36444,
+      "move_below_gate": 36371,
+      "volume_below_gate": 27481,
       "qualified": 48,
       "queued": 27
     },
     "BALANCED_TEST": {
-      "bars": 3562,
-      "liquid_candidates": 36431,
-      "move_below_gate": 36000,
-      "volume_below_gate": 27472,
+      "bars": 3563,
+      "liquid_candidates": 36444,
+      "move_below_gate": 36013,
+      "volume_below_gate": 27481,
       "qualified": 230,
       "queued": 132
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3562,
-      "liquid_candidates": 36431,
-      "move_below_gate": 33275,
-      "volume_below_gate": 27041,
-      "qualified": 1149,
+      "bars": 3563,
+      "liquid_candidates": 36444,
+      "move_below_gate": 33287,
+      "volume_below_gate": 27050,
+      "qualified": 1150,
       "queued": 592
     }
   },
-  "horizon_open": [],
+  "horizon_open": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 3.2023,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 3.2023,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 72.36,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 72.36,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 0.97447,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 0.97447,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 0.7346,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 0.7346,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 0.154741,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1794783600,
+      "entry_ts": 1794783900,
+      "entry_mid": 0.154741,
+      "hold_bars": 288
+    }
+  ],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
