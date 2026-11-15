@@ -2,15 +2,15 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-15T19:15:48.074210+00:00
+Generated: 2026-11-15T19:24:30.852422+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
-Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guesses).
+Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guesses).
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XLM |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD ETH |
 | FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD LTC |
 | GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD AAVE |
 | ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD XRP |
