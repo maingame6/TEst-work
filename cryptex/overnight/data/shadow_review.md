@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-15T02:15:32.902793+00:00
+Generated: 2026-11-15T02:23:23.326078+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | BUY_QUEUED XLM |
-| FLUID_VISCOSITY | 9.9607 | 2 | 0 | -0.0393 | BUY_QUEUED UNI |
-| GEOMETRIC_DIVERSITY | 9.9691 | 3 | 0 | -0.0309 | BUY_QUEUED XRP |
-| ERROR_CODE_CONSENSUS | 9.9602 | 5 | 0 | -0.0398 | BUY_QUEUED XRP |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | BUY_QUEUED UNI |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | BUY_QUEUED XRP |
+| FLUID_VISCOSITY | 9.9503 | 2 | 0 | -0.0393 | FILLED_BUY UNI |
+| GEOMETRIC_DIVERSITY | 9.9587 | 3 | 0 | -0.0309 | FILLED_BUY XRP |
+| ERROR_CODE_CONSENSUS | 9.9499 | 5 | 0 | -0.0398 | FILLED_BUY XRP |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | BUY_QUEUED NEAR |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9625 | 5 | 0 | -0.0375 | BUY_QUEUED XRP |
-| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | BUY_QUEUED UNI |
+| FREQTRADE_STYLE | 9.9521 | 5 | 0 | -0.0375 | FILLED_BUY XRP |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | BUY_QUEUED NEAR |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9740 | 4 | 0 | -0.0260 | BUY_QUEUED XRP |
-| NAUTILUS_REGIME | 9.9677 | 5 | 0 | -0.0323 | BUY_QUEUED XRP |
+| LEAN_EVENT | 9.9636 | 4 | 0 | -0.0260 | FILLED_BUY XRP |
+| NAUTILUS_REGIME | 9.9574 | 5 | 0 | -0.0323 | FILLED_BUY XRP |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
