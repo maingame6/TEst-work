@@ -14,7 +14,7 @@ Frozen at 2026-11-01T19:30:00+00:00
 Censored entries: 10
 Censored exits: 11
 Gaps: 375
-Consecutive observed market-pair intervals: 15420 of 15795 observed transitions. These are NOT missing five-minute Kraken candles.
+Consecutive observed market-pair intervals: 15435 of 15810 observed transitions. These are NOT missing five-minute Kraken candles.
 
 Cash benchmark: zero assumed. Matched buy/hold and statistically robust comparison NOT YET verified.
 Fees are published-spot-tier or labeled assumptions; actual fills unverified.
