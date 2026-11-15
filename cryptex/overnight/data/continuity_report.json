@@ -1,22 +1,17 @@
 {
-  "generated_at": "2026-11-15T02:54:20.513285+00:00",
+  "generated_at": "2026-11-15T03:00:29.865074+00:00",
   "mode": "PAPER_ONLY",
   "live_orders": false,
   "policy": "COST_GATE_V4_KRAKEN_TAKER",
   "first_observed_at": "2026-10-31T23:24:36.636109+00:00",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1794710700,
-  "expected_candles": 4075,
-  "observed_candles": 3510,
-  "missing_intervals": 565,
-  "coverage_pct": 86.135,
+  "last_candle_ts": 1794711300,
+  "expected_candles": 4077,
+  "observed_candles": 3511,
+  "missing_intervals": 566,
+  "coverage_pct": 86.117,
   "max_gap_minutes": 460.0,
   "latest_gaps": [
-    {
-      "previous_candle_ts": 1794699600,
-      "next_candle_ts": 1794700200,
-      "missing_intervals": 1
-    },
     {
       "previous_candle_ts": 1794701100,
       "next_candle_ts": 1794701700,
@@ -61,9 +56,14 @@
       "previous_candle_ts": 1794708000,
       "next_candle_ts": 1794708600,
       "missing_intervals": 1
+    },
+    {
+      "previous_candle_ts": 1794710700,
+      "next_candle_ts": 1794711300,
+      "missing_intervals": 1
     }
   ],
-  "days_observed": 14.146,
+  "days_observed": 14.153,
   "main_new_closed_trades": {
     "GAMBLER": 1,
     "HOUSE": 2,
@@ -78,16 +78,16 @@
   },
   "research_new_closed_trades": {
     "FLUID_ADVECTION": 0,
-    "FLUID_VISCOSITY": 1,
-    "GEOMETRIC_DIVERSITY": 1,
-    "ERROR_CODE_CONSENSUS": 1,
+    "FLUID_VISCOSITY": 2,
+    "GEOMETRIC_DIVERSITY": 2,
+    "ERROR_CODE_CONSENSUS": 2,
     "GRAPH_COHERENCE": 1,
     "LATTICE_ANALOG": 0,
-    "FREQTRADE_STYLE": 1,
+    "FREQTRADE_STYLE": 2,
     "QLIB_STYLE": 1,
     "HUMMINGBOT_FRICTION": 0,
-    "LEAN_EVENT": 1,
-    "NAUTILUS_REGIME": 1
+    "LEAN_EVENT": 2,
+    "NAUTILUS_REGIME": 2
   },
   "minimum_days": 7,
   "minimum_coverage_pct": 99.0,
@@ -115,9 +115,9 @@
     "LEAN_EVENT": false,
     "NAUTILUS_REGIME": false
   },
-  "net_paper_pnl_total": -13.297841,
+  "net_paper_pnl_total": -13.226195,
   "first_policy_equity": 208.880584,
-  "change_since_first_policy_observation": -12.178425,
+  "change_since_first_policy_observation": -12.106779,
   "historical_data_note": "V3 closed trades retain older lower cost assumption; this V4 prospective sample counts only V4-qualified closes. Balance deltas may reflect V3-era holdings.",
   "status": "COLLECTING_WITH_GAPS",
   "caveat": "A ready sample is not a demonstrated edge. Held-out after-cost comparison, uncertainty and regimes still required. Never backfill missing five-minute decisions."
