@@ -1,23 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794859200,
+  "last_ts": 1794859800,
   "first_ts": 1793488500,
-  "observed_candles": 3812,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1794859200,
-      "observed_move": 0.00737237
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ADA",
-      "signal_ts": 1794859200,
-      "observed_move": 0.00643688
-    }
-  ],
+  "observed_candles": 3813,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -8904,76 +8891,43 @@
       "paper": true
     }
   ],
-  "missed_fills": 102,
+  "missed_fills": 104,
   "censored_exits": 48,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3700,
-      "liquid_candidates": 37602,
-      "move_below_gate": 37544,
-      "volume_below_gate": 28751,
+      "bars": 3701,
+      "liquid_candidates": 37609,
+      "move_below_gate": 37551,
+      "volume_below_gate": 28757,
       "qualified": 38,
       "queued": 20
     },
     "COST_AWARE": {
-      "bars": 3700,
-      "liquid_candidates": 37602,
-      "move_below_gate": 37527,
-      "volume_below_gate": 28360,
+      "bars": 3701,
+      "liquid_candidates": 37609,
+      "move_below_gate": 37534,
+      "volume_below_gate": 28366,
       "qualified": 50,
       "queued": 29
     },
     "BALANCED_TEST": {
-      "bars": 3700,
-      "liquid_candidates": 37602,
-      "move_below_gate": 37149,
-      "volume_below_gate": 28360,
+      "bars": 3701,
+      "liquid_candidates": 37609,
+      "move_below_gate": 37156,
+      "volume_below_gate": 28366,
       "qualified": 249,
       "queued": 143
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3700,
-      "liquid_candidates": 37602,
-      "move_below_gate": 34314,
-      "volume_below_gate": 27918,
+      "bars": 3701,
+      "liquid_candidates": 37609,
+      "move_below_gate": 34321,
+      "volume_below_gate": 27924,
       "qualified": 1202,
       "queued": 628
     }
   },
-  "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1794858900,
-      "entry_ts": 1794859200,
-      "entry_mid": 0.96029,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1794858900,
-      "entry_ts": 1794859200,
-      "entry_mid": 0.96029,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1794858900,
-      "entry_ts": 1794859200,
-      "entry_mid": 71.6,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1794858900,
-      "entry_ts": 1794859200,
-      "entry_mid": 71.6,
-      "hold_bars": 288
-    }
-  ],
+  "horizon_open": [],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -11892,5 +11846,5 @@
       "stress_net_return": -0.0597549424
     }
   ],
-  "horizon_censored": 587
+  "horizon_censored": 591
 }
