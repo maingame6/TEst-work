@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16T21:16:20.289287+00:00",
+  "checked_at": "2026-11-16T22:21:37.592335+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -17,14 +17,13 @@
       "source": "THE_BLOCK",
       "purpose": "crypto sector reporting",
       "status": "OK",
-      "items": 14
+      "items": 13
     },
     {
       "source": "EXCHANGE_BLOG",
       "purpose": "public exchange announcements",
-      "status": "UNAVAILABLE",
-      "items": 0,
-      "error": "HTTPError:HTTP Error 403: Forbidden"
+      "status": "OK",
+      "items": 1
     },
     {
       "source": "FED_MACRO",
@@ -52,6 +51,72 @@
     }
   ],
   "articles": [
+    {
+      "id": "c8166db48d0d5590",
+      "source": "SEARCH_RADAR",
+      "title": "Crypto Stuck Near Multimonth Lows After Sluggish Weekend - WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNemJKTlE0N1hQT0Z3amttWTkyZmJNMi1rQlZKSkVGeUpvWFlEUl9QY0pZVGVvWjQ2dWZOemtNdjVULUpsNjNWdlBCZHBMUndmZ0pfazNhT2hRZDBqUmkxbEc0VDk2ZVNxYzBLTUhsSEdWMG1GbEZ3a1plN2dDRkx2UnNFdXJhZ1g0blU4YkV5T29FUG80QkE0a3pjc2ZSM29adWc?oc=5",
+      "published_at": "2026-11-16T21:05:00+00:00",
+      "first_observed_at": "2026-11-16T22:21:37.592335+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "7eb23d3b575a354c",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Price Holds Near $65,000 as Nvidia Turmoil Drags Nasdaq Down 2.5% - Bitcoin Magazine",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1CU1pVMFZxVC1QR3VTRm5McUhwcVNNajhYRWtOYmNPclB0WFBYMGtXYzlxTXFGc19Kd1VYNnNuSUxUUXlybmd3QU1pRWtubHIyS1lJZFNxLVMyckJfb2ZNdnlpd2JDQnJqTkhCTkxMdXlhZGdXQXdtaU92UVRDZw?oc=5",
+      "published_at": "2026-11-16T21:20:36+00:00",
+      "first_observed_at": "2026-11-16T22:21:37.592335+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "41b374032fd00263",
+      "source": "SEARCH_RADAR",
+      "title": "Peraire-Bueno brothers acquitted of wire fraud in $25 million Ethereum MEV case - The Block",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNUFJclJRaUlMbW5PdEE4WExjWkhld2l2RnF3RnFZTjFrcHl3REx4Y0o2alc4Q3BVTWhOdzl0T0dOcFFqUndwdDQ3TkpoWTFqaG9RUVFWMnBrUnlNTFBtVGVCcThUc3RIR3lJVEh6aUVBMmVpRkMydk5hYjBYLWJrb1F6ZWtRbG1oc05CT0ljRTBYZEdvbzNwUWpxd1AxQjRkcTAzQWlINU04WTlyemd6dFlOdjY?oc=5",
+      "published_at": "2026-11-16T20:30:00+00:00",
+      "first_observed_at": "2026-11-16T22:21:37.592335+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "8e40ef3354dc2ba0",
+      "source": "SEARCH_RADAR",
+      "title": "Should You Buy the Bitcoin Dip Now or Dollar-Cost Average Into 2027? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPd08yMVFmaGV5aXdCWlZSdmM4TE54QnZRZ0phb1hHTEVZOXhRbUV3V3Bna0k0UGRIVEc5NnJjb29zWVBjallGQ3lPbVdvREpoMEx6aVRXRnhBVkNLM25SNmMzOEl5MWZfNC15UmllQWFmVEFFQ1licVN5dXZDMElqZzNYVFlrSF9NTmw4eWhtQ2l6d2hoNUE?oc=5",
+      "published_at": "2026-11-16T21:06:33+00:00",
+      "first_observed_at": "2026-11-16T22:21:37.592335+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "aae976c6fb0145f8",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin's $2 Billion Liquidation Weekend Leaves Traders Watching $60,000 - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaVVmaUIyVmhROS05R0RtcHl6Ny13OGU4OWtCS2QzNmo4dklxZkwydm1aMF9ieVkzYmdzc3ZCT2lMc0JpY21NN2RGalFvcFp1Q25tVGtTRFIxSmJTb1NyZ2VzTDIySXpCQWtuR0ktZmVudUxzT05TamFmeC0tVXJfQzU5YkVzMEtxTlhIdUlvR3lxNXJfb2FBdlJYZDY1dmVpTjhOSWJn?oc=5",
+      "published_at": "2026-11-16T21:46:03+00:00",
+      "first_observed_at": "2026-11-16T22:21:37.592335+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "e62d3d69a1ccea5b",
+      "source": "PUBLIC_FORUM",
+      "title": "Is there a best blockchain for real-world assets or can I go with any of them?",
+      "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xwvi8d/is_there_a_best_blockchain_for_realworld_assets/",
+      "published_at": null,
+      "first_observed_at": "2026-11-16T22:21:37.592335+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "b913ed03622fa872",
       "source": "CRYPTODESK",
@@ -2735,78 +2800,12 @@
       "sentiment": "NEGATIVE",
       "score": -1,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "e65e117ef2406b2e",
-      "source": "CRYPTODESK",
-      "title": "Crypto insiders aren't counting on silver linings in Congress' 'lame duck' session",
-      "url": "https://www.coindesk.com/news-analysis/2026/11/13/crypto-insiders-aren-t-counting-on-silver-linings-in-congress-lame-duck-session",
-      "published_at": "2026-11-15T14:00:00+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "79522c2ec0e19e29",
-      "source": "CRYPTODESK",
-      "title": "Bitcoin's momentum gauge is turning red, could send prices back below $60,000",
-      "url": "https://www.coindesk.com/daybook-us/2026/11/13/bitcoin-s-momentum-gauge-is-turning-red-could-send-prices-back-below-usd60-000",
-      "published_at": "2026-11-13T12:14:22+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "819731b12a4351ca",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin price crash explained: 8 reasons BTC plunged from $81K to $62K - Crypto News",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBoMVlEcHpRYl80a2c1MUY0OHJrd3NsWk1tbngyaTJvWVRLdkNKSjNVRnh5bFRWanItcHlUSVRQaEJ5bFBkbkV5ZG1iRUxQd0ZHMVVMRGhSUDJxbWZnU3c?oc=5",
-      "published_at": "2026-11-15T12:29:58+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "1c453f9e9f095421",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin Hits Four-Month Low at $62K as Liquidations Pile Up - Bitbo",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1RdDctWkJNUlFNZjJ5cUNtU2JOZXpYLVFJbG14ZWpMQnhsWVNlaFpiSEJ0bGctV3dIVnpQeWxfZ0h6ZlUwaWdYSUMyaTZ4WjFmM1ZFTmYzcmRKcU92YXpzaHkwR0JveGQ5TlE?oc=5",
-      "published_at": "2026-11-15T13:40:00+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "7b55167019aaa71b",
-      "source": "SEARCH_RADAR",
-      "title": "Futures Loom For Shaky Rally As Bitcoin Dives. What To Do Now. - Investor's Business Daily",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPQmoxeERFTVM2VG9DVVBnRERlZG4tcU0tOGFveC1mYlhEZEJydUZNM2ptaExRYU1LYXg3XzlUUHhtZ29JSF9OYlZtd0FSaF9mME9TYzhTWUVJT0lSSGVPSTMxZlhkTWhQMVp4MkRFVUdUZHRTNVd1bTdTckF2Q3VYdUxKY3kyaFpDaTZkQ1BVMHdrTUNQLUhnVVhPZzJIM3h6Tlg2THNnZU5NRDRvV3NFZUlta28wVXloNGhfNUFFTWdKR3Q3Vk05RnBhQXdWQkl3UTlGRC1RRGo2QU9rTmc?oc=5",
-      "published_at": "2026-11-15T13:42:00+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "POSITIVE",
-      "score": 1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "47ef427e5629a35d",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin ETF Flows Can Whipsaw: How to Know If You Should Ride It Out - The Motley Fool",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZmQ2ZU1JcnNYODkxamY1UHJCUTM5SkZZTFJMYWhMSHJEdjVRV1dha1BoT3I2LTFBR0FrLUp0Y19iRnNmNWN0cVJWLVlzOFRfbEJFdFRNWV84cVlWc25BcXZaV2Y5Z24zbGRDcHNVUUNxaGZ3QjF3bkxyMzhTQ0hfOEZ2UGUtUmdBTEVuZlRfdHV1Q1FhbUFnNHBOazVYbFRQY09NUHFxMTh0TFY5Yl9z?oc=5",
-      "published_at": "2026-11-15T13:15:00+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 8,
   "sources_total": 8
 }
