@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16T11:19:58.771295+00:00",
+  "checked_at": "2026-11-16T12:24:52.306310+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "TimeoutError:The read operation timed out"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -51,6 +52,28 @@
     }
   ],
   "articles": [
+    {
+      "id": "70301e87556e7589",
+      "source": "CRYPTODESK",
+      "title": "Bitcoin was supposed to gain as AI faltered, but it crashed. Here's why.",
+      "url": "https://www.coindesk.com/daybook-us/2026/11/16/bitcoin-was-supposed-to-gain-as-ai-faltered-but-it-crashed-here-s-why",
+      "published_at": "2026-11-16T12:09:00+00:00",
+      "first_observed_at": "2026-11-16T12:24:52.306310+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "91ca1e0cfc21c95e",
+      "source": "CRYPTODESK",
+      "title": "Ethereum scaling project MegaETH slashes staff by 20% as it pursues AI business",
+      "url": "https://www.coindesk.com/business/2026/11/14/ethereum-scaling-project-megaeth-slashes-staff-by-20-as-it-pursues-ai-business",
+      "published_at": "2026-11-14T16:33:23+00:00",
+      "first_observed_at": "2026-11-16T12:24:52.306310+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "67055a311de907cb",
       "source": "CRYPTODESK",
@@ -2778,34 +2801,12 @@
       "sentiment": "NEGATIVE",
       "score": -1,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "6aff3d01693c60ab",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin ETFs lose $1 billion for the second week in a row as crypto funds, except one, continue bleeding - The Block",
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOd2RhQ3lIWVBkNjRaQ1ZucjBhNkItQ21qZi1NMFhuRE1Kd0FPMWhsb0F6eWVLVkpRVDZtSHJoQWdCQ0RacUNkdEJLQ1dHLVdHYzN4MkpUdU1od1FUcm8ybmdUdFEzb25BYTl0WUtJQy1oQ21nSnRybXBUbFExQmpmZDN2b3g2dTRZMjRHWE9FVlZ5UldzMVhMb0ZiWktmcjJHOElUYndGbG5XQS10dm5oLTlQQkphTEFTYUZubTVRbUpyV0pWV3VuV2ZESVpyOHdvSG9ieW5Bck9sTDFHUVhHZWY0WGJXYW9yelBHcA?oc=5",
-      "published_at": "2026-11-14T17:50:00+00:00",
-      "first_observed_at": "2026-11-14T18:04:14.189259+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "51c8d2ab4e2f7783",
-      "source": "PUBLIC_FORUM",
-      "title": "5 year CAGR of BTC is now 1.83%",
-      "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xw7b6c/5_year_cagr_of_btc_is_now_183/",
-      "published_at": null,
-      "first_observed_at": "2026-11-14T18:04:14.189259+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 8,
+  "sources_up": 7,
   "sources_total": 8
 }
