@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16T20:09:04.924981+00:00",
+  "checked_at": "2026-11-16T21:16:20.289287+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -11,19 +11,20 @@
       "source": "COINTELEGRAPH",
       "purpose": "independent crypto reporting",
       "status": "OK",
-      "items": 15
+      "items": 16
     },
     {
       "source": "THE_BLOCK",
       "purpose": "crypto sector reporting",
       "status": "OK",
-      "items": 12
+      "items": 14
     },
     {
       "source": "EXCHANGE_BLOG",
       "purpose": "public exchange announcements",
-      "status": "OK",
-      "items": 1
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "HTTPError:HTTP Error 403: Forbidden"
     },
     {
       "source": "FED_MACRO",
@@ -47,10 +48,120 @@
       "source": "PUBLIC_FORUM",
       "purpose": "public forum RSS where permitted",
       "status": "OK",
-      "items": 15
+      "items": 14
     }
   ],
   "articles": [
+    {
+      "id": "b913ed03622fa872",
+      "source": "CRYPTODESK",
+      "title": "Bitcoin risks falling below $60,000 as Nvidia earnings threaten to deepen crypto sell-off",
+      "url": "https://www.coindesk.com/markets/2026/11/16/bitcoin-risks-falling-below-usd60-000-as-nvidia-earnings-threaten-to-deepen-crypto-sell-off",
+      "published_at": "2026-11-16T20:35:21+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "f9275d3f0eca2a8b",
+      "source": "CRYPTODESK",
+      "title": "Live updates: Bitcoin trades near $65,000 as Nasdaq closes with 2.5% loss",
+      "url": "https://www.coindesk.com/tech/2026/11/16/live-news-bitcoin-posts-sixth-weekly-loss-as-tech-stocks-and-metals-slide",
+      "published_at": "2026-11-16T09:34:18+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "88771e1072615ba7",
+      "source": "COINTELEGRAPH",
+      "title": "Bitmine edges toward 5% of ETH supply as treasuries report buys amid market slump",
+      "url": "https://cointelegraph.com/markets/bitmine-nears-5-eth-supply-treasuries-report-buys-amid-market-slump?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-16T20:45:47+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "3f44bd2813cabfc9",
+      "source": "COINTELEGRAPH",
+      "title": "Boris Johnson says UK must lead blockchain development despite crypto doubts",
+      "url": "https://cointelegraph.com/news/boris-johnson-uk-must-lead-blockchain-development-despite-crypto-doubts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-16T20:18:02+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "671e3b522bc4804a",
+      "source": "THE_BLOCK",
+      "title": "Democratic senators warn SEC’s tokenized stock exemption has illicit finance gaps",
+      "url": "https://www.theblock.co/news/regulation/2026-11-16-democratic-senators-warn-secs-tokenized-stock-exemption-illicit-finance-gaps-441432",
+      "published_at": "2026-11-16T20:44:01+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "6967211984e4bf92",
+      "source": "THE_BLOCK",
+      "title": "Peraire-Bueno brothers acquitted of wire fraud in $25 million Ethereum MEV case",
+      "url": "https://www.theblock.co/news/regulation/2026-11-16-peraire-bueno-brothers-acquitted-ethereum-mev-wire-fraud-441425",
+      "published_at": "2026-11-16T20:30:37+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "25320cc9f5b5beb8",
+      "source": "THE_BLOCK",
+      "title": "Bitwise sees Solana reaching $1,100 by 2031 in bull case as onchain trading grows",
+      "url": "https://www.theblock.co/news/markets/2026-11-16-bitwise-solana-price-prediction-1100-2031-441407",
+      "published_at": "2026-11-16T20:27:32+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "6a9e3d64b339c2f5",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin risks falling below $60,000 as Nvidia earnings threaten to deepen crypto sell-off - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUTgyYXRGdWRSOEtFSW5ycThhNWdOSDRaR3UxOVdJRDk0X19SNGNoMVF6WDJfMVE1Q0xkX2ZNdXJVYkZPdGkzcU1kc3d0LWRDWkQ5SWhnSVRvQWtyV3FtUTkwU1U0dHBveWQ3TjhJemFYUk4td2JOd095dVh6eVJzLXp2a3NqTEM3ZVRxR25LZ01XaElwR0pWU29SMG1FSEs3QzdlOVcyQloxQ1BGQ3RkM3J5d0o3a2hSNTdRLVRJWFNzNjB1Nm51UGhKTGRBMk40?oc=5",
+      "published_at": "2026-11-16T20:35:21+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "bef9e49f41d3dc06",
+      "source": "SEARCH_RADAR",
+      "title": "Tom Lee Blames Nvidia and Anthropic IPO for Ethereum Plunge as Bitmine Buys the Dip - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNmszM1lzclB2RFRmdXhEOE54WUJHUUUwNnl5MzVPVXpRS2hIS0t3Xy02dExtRnFUb21aWmNmc3pWTDBYb1ZpVWZMQUdLU01xQndwOEV0THZhWGp4bUZhX19tUnlmNGszYjF3a1ItVGhJRlNrR2ZlTVJ3ZzJZNG01MnNucnRkS0xwN3NnOUZFTTVTLXZ5bzRkVkUzSW4?oc=5",
+      "published_at": "2026-11-16T20:36:03+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "0212faa8255d7410",
+      "source": "SEARCH_RADAR",
+      "title": "Boris Johnson Links Bitcoin to Drug Dealers But Urges UK to Lead on Blockchain - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNbjBncV9VUFNoLXBNcWpVcHJGTnY2d3RHa3l4YTdERkh2QXE0M3VRM0l0anRTMnAzbE5BSTVlRHp6SGF6UnROT0t1OE4yMFluV1RPUmVlTUF2WGRRR0dJQnFMZDM0cXVUY0FrcEpxM1BiTUtYLVBzNUlubWRycmZqN2hRNlNYUE5PMnVPbjc2Sy14WVZzbDdhUk9QQjFIdw?oc=5",
+      "published_at": "2026-11-16T18:28:42+00:00",
+      "first_observed_at": "2026-11-16T21:16:20.289287+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "5ae2b61261d6f9b5",
       "source": "SEARCH_RADAR",
@@ -2690,122 +2801,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "4c53c864013c8a91",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin ETFs Lose $2.1 Billion in November as Outflow Streak Hits Seven Days - Decrypt",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPaU5hRnFDb0tjOEhBc2ExUTVNWmpoMURNSFJETTRmV1phOTY0X0RZQkt3aHFWbzNhVFJKYk8zWlBTQmx4cTB4V3VkZWFLWVExLXlaT0R1dE1ubDJzTFkwbGllQklVLW5tUjZDWk9XUUtPWTdRemU0VXVIQ1ZEUElNX2EzTWNjc2ZFTTRxSEtvNVNkVHFo?oc=5",
-      "published_at": "2026-11-15T14:01:02+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "51faaac49c32d903",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin ETF Flows Can Whipsaw: How to Know If You Should Ride It Out - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWF9kc2lPZXBrZ19UQmlpMk5aWGU3RS1nenI2V3ZCWU5lZ3JNZklKT3JyVFBpY2ZoNEVfQW9mckRZSFhOcTVNOFNGYXZhZFhmOTdBblgtRnQtWGItU2VXaW5xREltd0VUSU9tZkxsOHU4U1M4MmJlc3RmSXhWS25YTzU5eEtBZDFIdUQ0TjhZN0dRb3NiemdCeFNWTQ?oc=5",
-      "published_at": "2026-11-15T13:35:02+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "5cac6750cb8631a1",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin price selloff is normal, Binance CEO says as US trading pressure grows - Crypto News",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA4ZGVOaUNCOURlZXhja3ZQaE02d2kycnlmT2I1cnVSVUwtamswYVJveWQ1VVg0OXEzNWI1MGZBYVlVbkY5OHNqX3Bjb2ZNeDNkUEVJc294Wmt3S2IzYkZZSUtFam5IZzVORmxBUVl3?oc=5",
-      "published_at": "2026-11-15T13:43:04+00:00",
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "e62d3d69a1ccea5b",
-      "source": "PUBLIC_FORUM",
-      "title": "Is there a best blockchain for real-world assets or can I go with any of them?",
-      "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xwvi8d/is_there_a_best_blockchain_for_realworld_assets/",
-      "published_at": null,
-      "first_observed_at": "2026-11-15T14:10:42.283775+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "6622f88f952d168f",
-      "source": "COINTELEGRAPH",
-      "title": "Israeli police arrest five in $5M WhatsApp crypto trading probe",
-      "url": "https://cointelegraph.com/news/israel-police-arrest-five-5m-whatsapp-crypto-scheme?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "published_at": "2026-11-13T12:19:01+00:00",
-      "first_observed_at": "2026-11-15T13:06:07.448593+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "c0aeded6e046710d",
-      "source": "THE_BLOCK",
-      "title": "UK, Singapore, and Thailand central banks complete foreign exchange settlement trial linking traditional and tokenized systems",
-      "url": "https://www.theblock.co/news/regulation/2026-11-13-uk-singapore-and-thailand-central-banks-complete-foreign-exchange-settlement-trial-linking-traditional-and-tokenized-systems-439692",
-      "published_at": "2026-11-13T12:27:41+00:00",
-      "first_observed_at": "2026-11-15T13:06:07.448593+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "513bef3946480c87",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin Slides, Dogecoin Evolves and Kevin O’Leary Demands Clarity: Crypto Stories From This Week - Benzinga",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ005ejZYQ3BVVll6TWlXZkF2bjFyUGRYN0VkZVZLaTRGUFYxSEFjOEY1OXRkRTVTdGg4UzM2LUpqeUVGb0ZpSnNIOXhaSXE0Ykg0Q0NUeHZZTTZ1SWs2WHd1OUs4OGFDQXVxdG5KTlkxd1JyR3otajl0NDlRWUJVSW5xR25TMWtUYV83RzdZSkRLeVFLdlBmQTNiVGx3M1U?oc=5",
-      "published_at": "2026-11-15T13:00:06+00:00",
-      "first_observed_at": "2026-11-15T13:06:07.448593+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "8d5fcc5ae57ed373",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin Regains $65,000 After Falling to Four-Month Low - The Defiant",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWW9sS2lSMExaNEhNYjdxOXRRVGhPQkc1UHJPUzdpdnFoMGc3UXBadHcxVW9IZ1dsaW5WTU1UUHVBRS1rTnFiRjdzeHQ4NEE2YWlncC0zTmRQRkdyQUZqTnZ4VXZuSXVTYlo4bG5CM0x5Um12U3Y0MktUVHdPX0FFYnBuanMtenlzMVpySnl3UmdpMUE?oc=5",
-      "published_at": "2026-11-15T12:12:00+00:00",
-      "first_observed_at": "2026-11-15T13:06:07.448593+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a5dbcbed0e9b3e1a",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin miner Jiang Zhuoer sells DeFi tokens after BTC falls to $62K - Crypto News",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA1NkFNUVZobFpuQXQxMS1lSEVBOEhZeXFrbUx1WUlQN0VPV01JLVJYVng1UDVTMFlVcERfemkxOFFXMjhhbXhGWDNDNkhfcmVYbjdRRlI0RkV6MTZRLWVSNy1nVklpT2ZZME9zM3lOSWl0WGM?oc=5",
-      "published_at": "2026-11-15T12:37:50+00:00",
-      "first_observed_at": "2026-11-15T13:06:07.448593+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "6285722f314e68e1",
-      "source": "SEARCH_RADAR",
-      "title": "Peter Schiff Warns Of ‘A Black Monday’ For BitMine And Ethereum ETFs If ETH Loses Key Support - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZ1UzV2hkbjRfQTB6ZjFIU3ZxV2hxN1B5MGZnSy1PeGxlSEdiekNhTWpYTzBmRmk4OE1qVFNZSS1jdVBQUW5aWWlDX2dfQlBXcDRTdmwyY09lZmU5Z19UTm1jX1hRLTNIT28zSkZ3WGZuVGtKTkE1VTNqaUVRWnBvdDh1R1lOTXo1TV80bFVwU1EyczdUTldhMS1YWGs?oc=5",
-      "published_at": "2026-11-15T10:26:05+00:00",
-      "first_observed_at": "2026-11-15T13:06:07.448593+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 8,
+  "sources_up": 7,
   "sources_total": 8
 }
