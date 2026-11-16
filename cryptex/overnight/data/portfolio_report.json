@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-11-16T16:53:05.272131+00:00",
-  "local_time": "2026-11-16T16:53:05.272131+00:00",
+  "generated_at": "2026-11-16T17:00:19.659546+00:00",
+  "local_time": "2026-11-16T17:00:19.659546+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
-  "balance": 196.645404,
-  "gross_mark_to_market": 196.718668,
-  "estimated_future_exit_costs": 0.073264,
-  "pnl": -13.354596,
-  "pnl_pct": -6.35933,
+  "balance": 196.677285,
+  "gross_mark_to_market": 196.750886,
+  "estimated_future_exit_costs": 0.073601,
+  "pnl": -13.322715,
+  "pnl_pct": -6.34415,
   "realised": -13.279041,
-  "unrealised_estimate": -0.075555,
+  "unrealised_estimate": -0.043674,
   "groups": {
     "main": {
       "starting": 100.0,
-      "equity": 87.024305,
-      "gross_equity": 87.097569,
-      "pnl": -12.975695,
+      "equity": 87.056186,
+      "gross_equity": 87.129787,
+      "pnl": -12.943814,
       "realised": -12.90014,
       "closed": 124,
       "wins": 7,
@@ -149,12 +149,12 @@
       "name": "ROTATOR",
       "initial": 10.0,
       "cash": 0.94644143,
-      "equity": 7.86393151,
-      "gross_equity": 7.9371946,
-      "pnl": -2.13606849,
-      "pnl_pct": -21.36068,
+      "equity": 7.89581186,
+      "gross_equity": 7.9694126,
+      "pnl": -2.10418814,
+      "pnl_pct": -21.04188,
       "realised": -2.06051378,
-      "unrealised_estimate": -0.07555471,
+      "unrealised_estimate": -0.04367436,
       "closed": 6,
       "wins": 0,
       "position": "BTC",
@@ -231,7 +231,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOGE",
+      "last_decision": "HOLD SUI",
       "missing_quote": false
     },
     {
@@ -249,7 +249,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD TRX",
+      "last_decision": "HOLD NEAR",
       "missing_quote": false
     },
     {
@@ -267,7 +267,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOGE",
+      "last_decision": "HOLD NEAR",
       "missing_quote": false
     },
     {
@@ -285,7 +285,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD TRX",
+      "last_decision": "HOLD XRP",
       "missing_quote": false
     },
     {
@@ -303,7 +303,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOGE",
+      "last_decision": "HOLD NEAR",
       "missing_quote": false
     },
     {
@@ -339,7 +339,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOGE",
+      "last_decision": "HOLD NEAR",
       "missing_quote": false
     },
     {
@@ -357,7 +357,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOGE",
+      "last_decision": "HOLD NEAR",
       "missing_quote": false
     },
     {
@@ -393,7 +393,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD DOGE",
+      "last_decision": "HOLD NEAR",
       "missing_quote": false
     },
     {
@@ -411,7 +411,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD NEAR",
+      "last_decision": "HOLD DOGE",
       "missing_quote": false
     }
   ],
@@ -423,8 +423,8 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1794847500,
-  "last_candle_research": 1794847500,
+  "last_candle_main": 1794848100,
+  "last_candle_research": 1794848100,
   "total_open": 1,
   "total_queued": 0,
   "total_completed": 168,
@@ -464,7 +464,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-11-12T19:59:17.779291+00:00",
-  "github_run_id": "43900730950",
+  "github_run_id": "43912764147",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-15",
@@ -492,33 +492,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 64574.1,
+        "current_mid": 64871.7,
         "start": 10.0,
-        "equity": 8.309946,
-        "pnl": -1.690054,
-        "return_pct": -16.9005,
+        "equity": 8.348244,
+        "pnl": -1.651756,
+        "return_pct": -16.5176,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 1821.95,
+        "current_mid": 1827.41,
         "start": 10.0,
-        "equity": 8.050728,
-        "pnl": -1.949272,
-        "return_pct": -19.4927,
+        "equity": 8.074854,
+        "pnl": -1.925146,
+        "return_pct": -19.2515,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 70.95,
+        "current_mid": 71.33,
         "start": 10.0,
-        "equity": 7.337511,
-        "pnl": -2.662489,
-        "return_pct": -26.6249,
+        "equity": 7.376809,
+        "pnl": -2.623191,
+        "return_pct": -26.2319,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
@@ -538,22 +538,22 @@
       "ETH",
       "SOL"
     ],
-    "candle_utc": 1794847500,
-    "at": "2026-11-16T16:53:05.272131+00:00",
-    "balance": 23.698185,
-    "pnl": -6.301815,
+    "candle_utc": 1794848100,
+    "at": "2026-11-16T17:00:19.659546+00:00",
+    "balance": 23.799907,
+    "pnl": -6.200093,
     "coins": {
-      "BTC": 8.309946,
-      "ETH": 8.050728,
-      "SOL": 7.337511
+      "BTC": 8.348244,
+      "ETH": 8.074854,
+      "SOL": 7.376809
     },
     "entries": {
       "BTC": "2026-10-30T22:21:37.361980+00:00",
       "ETH": "2026-10-30T22:21:37.361980+00:00",
       "SOL": "2026-10-30T22:21:37.361980+00:00"
     },
-    "observations": 3301,
-    "last_move_usd": 0.114448
+    "observations": 3302,
+    "last_move_usd": 0.101722
   },
   "pilot_evidence": {
     "mode": "PAPER_ONLY",
@@ -565,8 +565,8 @@
     "status": "OBSERVING",
     "start": "2026-11-02T17:27:33.767629+00:00",
     "start_candle_utc": 1793640000,
-    "portfolio_equity": 196.645404,
-    "portfolio_since_pilot_start": -12.253837,
+    "portfolio_equity": 196.677285,
+    "portfolio_since_pilot_start": -12.221956,
     "research_holdout_start_utc": 1793899200,
     "minimum_for_review": "72h prospective calibration then 7 days + 30 after-cost independent closes per rule; compare BTC/ETH/SOL buy-hold, fees, drawdown",
     "auto_promote": false,
@@ -576,8 +576,8 @@
         "policy": "BTC_PASSIVE_CONTROL",
         "market": "BTC",
         "max_hold_bars": 864,
-        "wallet_equity": 7.86393151,
-        "wallet_since_pilot_start": -1.989323,
+        "wallet_equity": 7.89581186,
+        "wallet_since_pilot_start": -1.957443,
         "active": true,
         "queued": false,
         "buys": 6,
