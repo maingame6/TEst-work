@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-16T06:49:38.156913+00:00
+Generated: 2026-11-16T06:54:45.839569+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD AAVE |
-| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD AAVE |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD AAVE |
-| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD AAVE |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD AAVE |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD ADA |
+| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD BTC |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD LINK |
+| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD DOGE |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD LINK |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD AAVE |
-| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD AAVE |
+| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD BTC |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD BTC |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD AAVE |
-| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD BTC |
+| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD LINK |
+| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD LTC |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
