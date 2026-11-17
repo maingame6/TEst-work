@@ -17,6 +17,14 @@ REPAIR={
  "timestamp":"2026-11-10T17:43:46.518879+00:00",
  "last_candle_ts":1794332100,
  "observed_candles":2424,"expected_candles":2813,"missing_intervals":389}
+# Frozen actual V4 continuity row from the first completed 5-minute paper
+# run after the 17 Nov shallow/sparse checkout repair, not a guessed baseline.
+# Source: cryptex-paper-trading-preview at commit 64eca1d0ec5428c6c0baf458d72bf423f33662fc
+CHECKOUT={
+ "timestamp":"2026-11-17T18:50:41.039037+00:00",
+ "last_candle_ts":1794941100,
+ "observed_candles":3901,"expected_candles":4843,"missing_intervals":942,
+ "source_commit":"64eca1d0ec5428c6c0baf458d72bf423f33662fc"}
 TARGET=99.0
 def time(s):
  try:
@@ -64,6 +72,31 @@ def analyze(continuity,runs,now):
    "coverage_pct":round(repair_coverage,5) if repair_coverage is not None else None,
    "days_elapsed":round(max(0,repair_days),5),
    "target_met":bool(repair_days>=7 and repair_coverage is not None and repair_coverage>=TARGET)}
+ # Separate, immutable post-checkout cohort. Measure genuine processed
+ # completed Kraken candles; never infer coverage from GitHub green ticks.
+ # Keep all pre-checkout gaps in the global and repair-period histories.
+ if last<CHECKOUT["last_candle_ts"]:
+  checkout={"status":"NOT_STARTED","baseline":CHECKOUT,"target_met":False}
+ else:
+  ck_expected=expected-CHECKOUT["expected_candles"]
+  ck_observed=observed-CHECKOUT["observed_candles"]
+  ck_missed=missing-CHECKOUT["missing_intervals"]
+  ck_span=last-CHECKOUT["last_candle_ts"]
+  if (min(ck_expected,ck_observed,ck_missed)<0
+      or ck_observed+ck_missed!=ck_expected
+      or ck_span%300 or ck_span//300!=ck_expected):
+   raise ValueError("Post-checkout counters inconsistent; cannot claim success")
+  ck_coverage=100*ck_observed/ck_expected if ck_expected else None
+  ck_days=ck_span/86400
+  ck_age=(now_record-dt.datetime.fromtimestamp(last,UTC)).total_seconds()/60
+  ck_fresh=0<=ck_age<=20
+  checkout={"status":"MEASURING" if ck_expected else "AWAITING_NEW_CANDLE",
+   "baseline":CHECKOUT,"observed":ck_observed,"expected":ck_expected,
+   "missed":ck_missed,"coverage_pct":round(ck_coverage,5) if ck_coverage is not None else None,
+   "days_elapsed":round(ck_days,5),"last_candle_age_minutes":round(ck_age,3),
+   "source_fresh":ck_fresh,
+   "target_met":bool(ck_days>=7 and ck_coverage is not None and ck_coverage>=TARGET and ck_fresh),
+   "note":"This repair-cohort measurement does not reset historical V4 evidence or promote a strategy."}
  # Actual 5-minute paper observations are the PRIMARY reliability metric.
  # GitHub-created workflow timestamps are NOT proof of successful processing.
  entries=[]
@@ -82,6 +115,7 @@ def analyze(continuity,runs,now):
  return {"generated_at":now.isoformat(),"mode":"PAPER_ONLY","real_orders":False,
   "freeze_at":BASE["timestamp"],"original_baseline":BASE,
   "repair_period":repair,
+  "checkout_17nov_cohort":checkout,
   "baseline_preserved":True,
   "post_fix_closed_candles_expected":new_expected,
   "post_fix_closed_candles_observed":new_observed,
@@ -116,6 +150,7 @@ def main():
  "Observed duration: "+str(result["post_fix_days_elapsed"])+" days. Must reach 7 days and >=99%.",
  "Historical four gaps are RETAINED and not erased.",
  "New repair-period window: "+json.dumps(result["repair_period"],sort_keys=True),
+ "17 Nov checkout cohort (separate from old gaps): "+json.dumps(result["checkout_17nov_cohort"],sort_keys=True),
  "Sampled GitHub runs: "+str(result["run_sample_count"])+"; successful="+
  str(result["successful_runs_in_sample"])+".",
  "Dispatched-run interval pairs within 240–360 seconds: "+
