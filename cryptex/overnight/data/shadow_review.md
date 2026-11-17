@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-17T00:30:17.648194+00:00
+Generated: 2026-11-17T00:41:29.224290+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD DOGE |
-| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD UNI |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD UNI |
-| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD UNI |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD UNI |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XLM |
-| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD UNI |
-| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD UNI |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD SOL |
+| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD BNB |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD SOL |
+| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD SOL |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD SOL |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD UNI |
+| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD SOL |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD SOL |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD UNI |
-| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD ADA |
+| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD SOL |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
