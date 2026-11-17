@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-17T08:17:32.631035+00:00
+Generated: 2026-11-17T08:26:59.767941+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,11 +10,11 @@ Public research feeds reachable: 8 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD AAVE |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD BTC |
 | FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD BTC |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD ETH |
-| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD XRP |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD ETH |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD NEAR |
+| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD NEAR |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD NEAR |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
 | FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD NEAR |
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD ETH |
