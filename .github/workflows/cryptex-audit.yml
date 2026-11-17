@@ -4,6 +4,9 @@ name: CRYPTEX — independent paper-money integrity audit
 # Independent of the 5-minute trading workflow's concurrency / backlog.
 on:
   workflow_dispatch:
+  # Best-effort independent daily audit; does not place trades.
+  schedule:
+    - cron: '17 3 * * *'
   push:
     branches: [main]
     paths:
@@ -20,7 +23,7 @@ jobs:
   verify-paper-accounts:
     name: Verify 21 paper wallets and latest saved market research
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 6
     steps:
       - name: Read isolated paper research branch
         uses: actions/checkout@v4
@@ -28,6 +31,8 @@ jobs:
           ref: cryptex-paper-trading-preview
           persist-credentials: false
           fetch-depth: 1
+          sparse-checkout: |
+            cryptex/overnight
 
       - name: Python 3.12
         uses: actions/setup-python@v5
@@ -52,14 +57,43 @@ jobs:
           r=json.loads((d/"integrity_report.json").read_text())
           p=json.loads((d/"portfolio_report.json").read_text())
           assert r["audited_accounts"]==21 and r["mode"]=="PAPER_ONLY"
+          assert r["starting_paper_usd"]==210 and p["initial"]==210
+          assert p["mode"]=="PAPER_ONLY" and p["real_money"] is False
           assert all(x["passed"] for x in r["checks"])
           assert p["balance"]<=p["gross_mark_to_market"]+0.00006
           c=json.loads((d/"continuity_report.json").read_text())
-          assert c["mode"]=="PAPER_ONLY" and c["policy"]=="COST_GATE_V3"
+          # Since the V4 fee repair, a V3-only assertion makes this
+          # independent audit fail even for genuine, valid ledgers.
+          assert c["mode"]=="PAPER_ONLY" and c["policy"]=="COST_GATE_V4_KRAKEN_TAKER"
+          assert c["minimum_coverage_pct"]==99
           assert c["observed_candles"]+c["missing_intervals"]==c["expected_candles"]
           print("AUDIT VERIFIED: "+str(len(r["checks"]))+
                 " independent assertions, $210 original paper capital, "+
                 str(r["audited_accounts"])+" wallets")
+          # Once specialist votes are rotated, verify every old record
+          # exists in the immutable gzip archive and matches its SHA256.
+          import csv, gzip, hashlib
+          manifest_file=d/"subagent_decisions_archive_manifest.json"
+          if manifest_file.exists():
+            manifest=json.loads(manifest_file.read_text())
+            assert manifest["version"]==1
+            archive_rows=0
+            for entry in manifest["archives"]:
+              fn=entry["file"]
+              assert Path(fn).name==fn and fn.endswith(".csv.gz")
+              archive=d/"subagent_decisions_archive"/fn
+              assert archive.is_file()
+              digest=hashlib.sha256()
+              with archive.open("rb") as fp:
+                for block in iter(lambda: fp.read(1<<20), b""):
+                  digest.update(block)
+              assert digest.hexdigest()==entry["sha256_gzip"]
+              with gzip.open(archive,"rt",encoding="utf-8",newline="") as fp:
+                count=sum(1 for _ in csv.DictReader(fp))
+              assert count==entry["rows"]
+              archive_rows+=count
+            assert archive_rows==manifest["archived_rows"]
+            print(f"Specialist archive verified: {archive_rows} historical decision records")
           print("Paper NAV: "+str(p["balance"])+", gross NAV "+
                 str(p["gross_mark_to_market"])+", estimated unwind cost "+
                 str(p["estimated_future_exit_costs"]))
