@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-17T01:30:24.569474+00:00",
+  "checked_at": "2026-11-17T02:35:32.230605+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "HTTPError:HTTP Error 429: Too Many Requests"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -2806,6 +2807,6 @@
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 8,
+  "sources_up": 7,
   "sources_total": 8
 }
