@@ -1,27 +1,21 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1794885300,
+  "last_ts": 1794885900,
   "first_ts": 1793488500,
-  "observed_candles": 3858,
+  "observed_candles": 3859,
   "signals": [
     {
       "gate": "BALANCED_TEST",
       "symbol": "AAVE",
-      "signal_ts": 1794885300,
-      "observed_move": 0.01832532
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "NEAR",
-      "signal_ts": 1794885300,
-      "observed_move": 0.01242725
+      "signal_ts": 1794885900,
+      "observed_move": 0.01350378
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1794885300,
-      "observed_move": 0.00787104
+      "symbol": "ADA",
+      "signal_ts": 1794885900,
+      "observed_move": 0.00625884
     }
   ],
   "open": [
@@ -8952,108 +8946,43 @@
       "paper": true
     }
   ],
-  "missed_fills": 105,
+  "missed_fills": 108,
   "censored_exits": 48,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 3746,
-      "liquid_candidates": 37973,
-      "move_below_gate": 37915,
-      "volume_below_gate": 29019,
+      "bars": 3747,
+      "liquid_candidates": 37982,
+      "move_below_gate": 37924,
+      "volume_below_gate": 29022,
       "qualified": 38,
       "queued": 20
     },
     "COST_AWARE": {
-      "bars": 3746,
-      "liquid_candidates": 37973,
-      "move_below_gate": 37898,
-      "volume_below_gate": 28627,
+      "bars": 3747,
+      "liquid_candidates": 37982,
+      "move_below_gate": 37907,
+      "volume_below_gate": 28630,
       "qualified": 50,
       "queued": 29
     },
     "BALANCED_TEST": {
-      "bars": 3746,
-      "liquid_candidates": 37973,
-      "move_below_gate": 37518,
-      "volume_below_gate": 28627,
-      "qualified": 251,
-      "queued": 145
+      "bars": 3747,
+      "liquid_candidates": 37982,
+      "move_below_gate": 37526,
+      "volume_below_gate": 28630,
+      "qualified": 252,
+      "queued": 146
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 3746,
-      "liquid_candidates": 37973,
+      "bars": 3747,
+      "liquid_candidates": 37982,
       "move_below_gate": 34666,
-      "volume_below_gate": 28181,
-      "qualified": 1210,
-      "queued": 634
+      "volume_below_gate": 28184,
+      "qualified": 1216,
+      "queued": 635
     }
   },
-  "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 112.25,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AAVE",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 112.25,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 3.218,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 3.218,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 72.3,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 72.3,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 0.7242,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1794885000,
-      "entry_ts": 1794885300,
-      "entry_mid": 0.7242,
-      "hold_bars": 288
-    }
-  ],
+  "horizon_open": [],
   "horizon_trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -11972,5 +11901,5 @@
       "stress_net_return": -0.0597549424
     }
   ],
-  "horizon_censored": 591
+  "horizon_censored": 599
 }
