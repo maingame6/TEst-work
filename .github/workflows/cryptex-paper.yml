@@ -73,6 +73,8 @@ jobs:
             cryptex/ops/depth_dispatch_guard.py
             cryptex/ops/rotate_specialists.py
             cryptex/ops/tests/test_rotate_specialists.py
+            cryptex/ops/factor_dispatch_guard.py
+            cryptex/ops/tests/test_factor_dispatch_guard.py
 
       - name: Verify GitHub is current owner before processing any market
         id: writer_preflight
@@ -128,6 +130,7 @@ jobs:
           # A lossless, checksummed archive prevents the 100 MB GitHub blob
           # rejection without changing trade fills or paper money.
           PYTHONPATH=authority-snapshot/cryptex/ops python3 -m unittest discover -s authority-snapshot/cryptex/ops/tests -p test_rotate_specialists.py -v
+          PYTHONPATH=authority-snapshot/cryptex/ops python3 -m unittest discover -s authority-snapshot/cryptex/ops/tests -p test_factor_dispatch_guard.py -v
 
       - name: Optional cross-market and morning presentation tests
         if: steps.writer_preflight.outputs.authorized == 'true'
@@ -267,6 +270,18 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: |
           python3 authority-snapshot/cryptex/ops/depth_dispatch_guard.py
+
+      # Hourly 84-candidate research is intentionally independent from the
+      # 21 money-simulation wallets. If native GitHub cron skips an hour,
+      # request at most one bounded, due, public-data-only factor workflow.
+      - name: Recover overdue isolated hourly factor research if safe
+        if: success() && steps.writer_commit.outputs.authorized == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 authority-snapshot/cryptex/ops/factor_dispatch_guard.py
 
       # GitHub cron is best effort. A bounded fallback runs all day through
       # the 7+ day research window; never trades real money, never runs forever.
