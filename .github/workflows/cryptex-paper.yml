@@ -71,6 +71,8 @@ jobs:
             cryptex/ops/writer_control.py
             cryptex/ops/paper_dispatch_clock.py
             cryptex/ops/depth_dispatch_guard.py
+            cryptex/ops/rotate_specialists.py
+            cryptex/ops/tests/test_rotate_specialists.py
 
       - name: Verify GitHub is current owner before processing any market
         id: writer_preflight
@@ -123,6 +125,9 @@ jobs:
           python3 -m unittest discover -s cryptex/overnight/tests -p test_integrity_audit.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_cost_model.py -v
           python3 -m unittest discover -s cryptex/overnight/tests -p test_entry_study.py -v
+          # A lossless, checksummed archive prevents the 100 MB GitHub blob
+          # rejection without changing trade fills or paper money.
+          PYTHONPATH=authority-snapshot/cryptex/ops python3 -m unittest discover -s authority-snapshot/cryptex/ops/tests -p test_rotate_specialists.py -v
 
       - name: Optional cross-market and morning presentation tests
         if: steps.writer_preflight.outputs.authorized == 'true'
@@ -159,6 +164,14 @@ jobs:
             --file "$RUNNER_TEMP/cryptex_authority_latest.json" \
             --actor github --epoch "$WRITER_EPOCH" --output "$GITHUB_OUTPUT"
 
+      # Every decision remains on GitHub, but no single CSV may exceed the
+      # GitHub 100 MB file limit. Archives and live tail are committed together.
+      # Fail before publishing any state when archival validation fails.
+      - name: Archive oversized specialist decisions without losing rows
+        if: success() && steps.writer_commit.outputs.authorized == 'true'
+        run: |
+          python3 authority-snapshot/cryptex/ops/rotate_specialists.py --data cryptex/overnight/data
+
       - name: Save paper state, entries, exits and equity to GitHub
         if: success() && steps.writer_commit.outputs.authorized == 'true'
         env:
@@ -170,6 +183,12 @@ jobs:
           git add -f cryptex/overnight/data/trades.csv
           git add -f cryptex/overnight/data/decisions.csv
           git add -f cryptex/overnight/data/subagent_decisions.csv
+          # The active CSV's earlier decisions are in checksummed compressed
+          # archives. Stage them with the tail and manifest, in one commit.
+          if test -f cryptex/overnight/data/subagent_decisions_archive_manifest.json; then
+            git add -f cryptex/overnight/data/subagent_decisions_archive_manifest.json
+            git add -f cryptex/overnight/data/subagent_decisions_archive/
+          fi
           git add -f cryptex/overnight/data/shadow_state.json
           git add -f cryptex/overnight/data/shadow_trades.csv
           git add -f cryptex/overnight/data/shadow_decisions.csv
