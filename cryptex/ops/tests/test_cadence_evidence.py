@@ -1,6 +1,6 @@
 import datetime as dt,pathlib,sys,unittest
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from cadence_evidence import analyze,BASE,REPAIR
+from cadence_evidence import analyze,BASE,REPAIR,CHECKOUT
 UTC=dt.timezone.utc
 START=dt.datetime.fromisoformat(BASE["timestamp"])
 def c(new=10,miss=0):
@@ -86,4 +86,45 @@ class RepairWindowTests(unittest.TestCase):
   row["observed_candles"]+=1
   with self.assertRaises(ValueError):
    analyze(row,[],dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1))
+class CheckoutWindowTests(unittest.TestCase):
+ def snapshot(self,bars=19,miss=0):
+  start=dt.datetime.fromisoformat(CHECKOUT["timestamp"])
+  return {"mode":"PAPER_ONLY","live_orders":False,
+   "generated_at":(start+dt.timedelta(minutes=5*(bars+1))).isoformat(),
+   "observed_candles":CHECKOUT["observed_candles"]+bars-miss,
+   "expected_candles":CHECKOUT["expected_candles"]+bars,
+   "missing_intervals":CHECKOUT["missing_intervals"]+miss,
+   "last_candle_ts":CHECKOUT["last_candle_ts"]+bars*300}
+ def test_exact_19_of_19_after_checkout(self):
+  row=self.snapshot()
+  now=dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1)
+  out=analyze(row,[],now)["checkout_17nov_cohort"]
+  self.assertEqual(out["observed"],19)
+  self.assertEqual(out["expected"],19)
+  self.assertEqual(out["missed"],0)
+  self.assertEqual(out["coverage_pct"],100)
+  self.assertFalse(out["target_met"])
+  self.assertTrue(out["source_fresh"])
+  self.assertEqual(out["baseline"]["missing_intervals"],942)
+ def test_missing_candle_not_hidden(self):
+  row=self.snapshot(19,1)
+  now=dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1)
+  out=analyze(row,[],now)["checkout_17nov_cohort"]
+  self.assertEqual(out["observed"],18)
+  self.assertEqual(out["missed"],1)
+  self.assertAlmostEqual(out["coverage_pct"],94.73684)
+  self.assertFalse(out["target_met"])
+ def test_cannot_forge_candle_count(self):
+  row=self.snapshot()
+  row["observed_candles"]+=1
+  with self.assertRaises(ValueError):
+   analyze(row,[],dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1))
+ def test_99pct_requires_full_seven_day_candle_span_and_freshness(self):
+  row=self.snapshot(2016,0)
+  now=dt.datetime.fromisoformat(row["generated_at"])+dt.timedelta(minutes=1)
+  out=analyze(row,[],now)["checkout_17nov_cohort"]
+  self.assertTrue(out["target_met"])
+  row["generated_at"]=(now+dt.timedelta(hours=5)).isoformat()
+  self.assertFalse(analyze(row,[],now+dt.timedelta(hours=5))["checkout_17nov_cohort"]["target_met"])
+
 if __name__=="__main__":unittest.main()
