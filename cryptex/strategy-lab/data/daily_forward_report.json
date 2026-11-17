@@ -1,0 +1,42 @@
+{
+  "mode": "PAPER_ONLY",
+  "real_orders": false,
+  "real_funding": false,
+  "original_21_accounts_unchanged": true,
+  "strategy": "ROTATE3_30",
+  "selection_from_inspected_history": true,
+  "first_eligible_date": "2026-11-18",
+  "last_observed_date": null,
+  "observed_forward_days": 0,
+  "expected_forward_days": 0,
+  "missing_forward_days": 0,
+  "forward_day_coverage_pct": null,
+  "base": {
+    "nav": 100.0,
+    "net_return_pct": 0.0,
+    "max_drawdown_pct": 0.0,
+    "completed_exits": 0,
+    "after_cost_profitable_exits": 0
+  },
+  "stress": {
+    "nav": 100.0,
+    "net_return_pct": 0.0,
+    "max_drawdown_pct": 0.0,
+    "completed_exits": 0,
+    "after_cost_profitable_exits": 0
+  },
+  "btc_hodl_comparator": {
+    "nav": 100.0,
+    "net_return_pct": 0.0,
+    "max_drawdown_pct": 0.0,
+    "completed_exits": 0,
+    "after_cost_profitable_exits": 0
+  },
+  "cash_comparator_nav": 100.0,
+  "validated_positive_repeatable_edge": false,
+  "live_or_original_paper_promotion": false,
+  "review_requirements": "At least 365 prospective days, 99% genuine days, 30 completed exits and superiority over cash and BTC under stress; independently review before any policy change.",
+  "limitations": "Forward quote observations, not executable fills. Slippage simulated. No independent/live proof.",
+  "run_status": "WAITING_FOR_FIRST_UNSEEN_DAY",
+  "generated_at": "2026-11-17T21:24:12.702052+00:00"
+}
