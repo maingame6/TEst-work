@@ -1,0 +1,112 @@
+name: CRYPTEX - ROTATE3_30 genuine forward paper-only quote experiment
+
+# Independent forward virtual $100 cohort. Historical results inspected;
+# starts 18 Nov 2026 and cannot recreate missed days or past trades.
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/cryptex-daily-forward.yml']
+  workflow_dispatch:
+  schedule:
+    - cron: '17 0 * * *'
+
+permissions:
+  contents: write
+
+# Avoid conflicts with the hourly and daily historical factor data writers.
+concurrency:
+  group: cryptex-isolated-hourly-factor-research
+  cancel-in-progress: false
+
+jobs:
+  forward-only:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Read frozen code and deterministic no-replay tests
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+          fetch-depth: 1
+          path: research-code
+          sparse-checkout: |
+            cryptex/ops/daily_edge_lab.py
+            cryptex/ops/daily_forward_shadow.py
+            cryptex/ops/tests/test_daily_forward_shadow.py
+            cryptex/ops/writer_authority.json
+
+      - name: Checkout ONLY separate research evidence branch
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-factor-research
+          path: research-output
+          fetch-depth: 1
+          sparse-checkout: |
+            cryptex/strategy-lab/data
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify sole authorised paper research and no account writes
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          auth=json.loads(pathlib.Path("research-code/cryptex/ops/writer_authority.json").read_text())
+          assert auth["mode"]=="PAPER_ONLY" and auth["writer"]=="github"
+          assert auth["pending_writer"] is None
+          assert pathlib.Path("research-output/.git").is_dir()
+          print("Only isolated forward research allowed; original paper money inaccessible")
+          PY
+
+      - name: Prove future-only deterministic safety and fee stress
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m py_compile research-code/cryptex/ops/daily_forward_shadow.py
+          PYTHONPATH=research-code/cryptex/ops python3 -m unittest discover -s research-code/cryptex/ops/tests -p test_daily_forward_shadow.py -v
+
+      - name: Record only actual new public daily quote observations
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 research-code/cryptex/ops/daily_forward_shadow.py --data research-output/cryptex/strategy-lab/data
+
+      - name: Fail closed on fabricated profit or retroactive observations
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,datetime as dt
+          path=pathlib.Path("research-output/cryptex/strategy-lab/data")
+          a=json.loads((path/"daily_forward_state.json").read_text())
+          r=json.loads((path/"daily_forward_report.json").read_text())
+          assert a["mode"]==r["mode"]=="PAPER_ONLY"
+          assert a["real_orders"] is r["real_orders"] is False
+          assert r["original_21_accounts_unchanged"] and not r["validated_positive_repeatable_edge"]
+          assert not r["live_or_original_paper_promotion"]
+          assert a["start_date"]=="2026-11-18"
+          assert r["observed_forward_days"]+r["missing_forward_days"]==r["expected_forward_days"]
+          assert len(a["days"])==r["observed_forward_days"]
+          assert all(x["date"]>="2026-11-18" for x in a["days"])
+          print("Prospective-only, no promotion. Real observed days:",len(a["days"]))
+          PY
+
+      - name: Commit only isolated prospective state and report
+        working-directory: research-output
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = "cryptex-factor-research"
+          git config user.name "cryptex-forward-paper[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f cryptex/strategy-lab/data/daily_forward_state.json
+          git add -f cryptex/strategy-lab/data/daily_forward_report.json
+          git add -f cryptex/strategy-lab/data/daily_forward_report.md
+          changed="$(git diff --cached --name-only)"
+          if test -z "$changed"; then echo "No new forward evidence"; exit 0; fi
+          if echo "$changed" | grep -v -E '^cryptex/strategy-lab/data/daily_forward_(state.json|report.json|report.md)$'; then
+            echo "FORBIDDEN stage path"; exit 1
+          fi
+          git commit -m "research: append genuine prospective daily paper quotes [skip ci]"
+          git push origin HEAD:refs/heads/cryptex-factor-research
