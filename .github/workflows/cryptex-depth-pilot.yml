@@ -1,7 +1,7 @@
 name: CRYPTEX - five-venue depth and spread evidence (PAPER ONLY)
 
 # Existing GitHub-hosted public repository. No new VPS, trades, keys or money.
-# Bounded pilot through 15 November 2026 inclusive; no self-dispatch loops.
+# Bounded paper-only depth observation through 24 November 2026 inclusive; no self-dispatch loops.
 on:
   push:
     branches: [main]
@@ -37,11 +37,11 @@ jobs:
           python3 - <<'PY'
           import datetime as dt,os
           now=dt.datetime.now(dt.timezone.utc)
-          enabled=now < dt.datetime(2026,11,16,tzinfo=dt.timezone.utc)
+          enabled=now < dt.datetime(2026,11,25,tzinfo=dt.timezone.utc)
           with open(os.environ["GITHUB_OUTPUT"],"a") as out:
               out.write("enabled="+str(enabled).lower()+"\n")
           print("PUBLIC PAPER_ONLY data pilot enabled",enabled,
-                "Ends 2026-11-16 UTC. No trading or real-money orders.")
+                "Ends 2026-11-25 UTC. No trading or real-money orders.")
           PY
       - name: Checkout source only (default branch)
         if: steps.time_gate.outputs.enabled == 'true'
@@ -61,6 +61,9 @@ jobs:
         with:
           ref: cryptex-wide-market-research
           path: wide-output
+          fetch-depth: 1
+          sparse-checkout: |
+            cryptex/overnight/data
       - name: Python 3.12
         if: steps.time_gate.outputs.enabled == 'true'
         uses: actions/setup-python@v5
