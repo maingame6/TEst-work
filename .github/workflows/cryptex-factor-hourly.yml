@@ -25,12 +25,20 @@ jobs:
           ref: main
           persist-credentials: false
           path: lab-code
+          fetch-depth: 1
+          sparse-checkout: |
+            cryptex/ops/strategy_lab.py
+            cryptex/ops/tests/test_strategy_lab.py
+            cryptex/ops/writer_authority.json
       - name: Checkout ONLY separate strategy-research branch
         uses: actions/checkout@v4
         with:
           ref: cryptex-factor-research
           persist-credentials: true
           path: research
+          fetch-depth: 1
+          sparse-checkout: |
+            cryptex/strategy-lab/data
       - name: Python 3.12
         uses: actions/setup-python@v5
         with:
