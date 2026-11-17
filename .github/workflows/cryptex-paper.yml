@@ -50,7 +50,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: cryptex-paper-trading-preview
-          fetch-depth: 0
+          # The former fetch-depth: 0 downloaded every historical paper-data
+          # commit, making a 5-minute observation take longer than its candle.
+          # Latest state and code are sufficient. Never rewrite old state.
+          fetch-depth: 1
+          # Avoid unrelated site and large flooring-data files in this repo.
+          # Include ALL CRYPTEX source, tests and persisted paper-ledger files.
+          sparse-checkout: |
+            cryptex
 
 
       - name: Checkout paper-writer authority from default branch
