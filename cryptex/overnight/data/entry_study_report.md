@@ -2,25 +2,25 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1794952800; captured candles: 3940.
+Last observed closed candle: 1794953100; captured candles: 3941.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
 
 | Gate | Signal threshold | Closed | Net wins | Mean net | Stress mean net | Gross winners that became net losers | Active |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 2.322% | 16 | 0 | -2.2247% | -2.7124% | 7 | 1 |
-| COST_AWARE | 2.172% | 22 | 0 | -2.4942% | -2.9805% | 7 | 1 |
-| BALANCED_TEST | 1.200% | 116 | 1 | -2.3699% | -2.8568% | 36 | 1 |
+| V4_TAKER_STRICT | 2.322% | 17 | 0 | -2.2359% | -2.7235% | 7 | 0 |
+| COST_AWARE | 2.172% | 23 | 0 | -2.4907% | -2.9771% | 7 | 0 |
+| BALANCED_TEST | 1.200% | 117 | 1 | -2.3725% | -2.8595% | 36 | 0 |
 | LOW_HURDLE_CONTROL | 0.500% | 545 | 2 | -2.2104% | -2.6982% | 206 | 0 |
 
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 39 | 38563 | 29512 | 21 | 15 | -2.1979% | 30.291% |
-| COST_AWARE | 51 | 38546 | 29111 | 30 | 21 | -2.4878% | 42.706% |
-| BALANCED_TEST | 259 | 38156 | 29111 | 150 | 94 | -2.3422% | 93.843% |
-| LOW_HURDLE_CONTROL | 1251 | 35236 | 28658 | 649 | 456 | -2.1992% | 99.999% |
+| V4_TAKER_STRICT | 39 | 38575 | 29517 | 21 | 16 | -2.2115% | 31.975% |
+| COST_AWARE | 51 | 38558 | 29116 | 30 | 22 | -2.4845% | 44.089% |
+| BALANCED_TEST | 259 | 38168 | 29116 | 150 | 95 | -2.3458% | 94.008% |
+| LOW_HURDLE_CONTROL | 1251 | 35248 | 28663 | 649 | 456 | -2.1992% | 99.999% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
