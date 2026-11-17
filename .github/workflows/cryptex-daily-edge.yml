@@ -1,0 +1,104 @@
+name: CRYPTEX - pre-registered daily after-cost swing hypothesis test
+
+# Historical research only. Separate research branch; never trades or writes
+# the original $210 paper portfolio. A green run is not proof of trading edge.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cryptex-daily-edge.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '7 1 * * 1'
+
+permissions:
+  contents: write
+
+# Serialized with existing isolated hourly factor research on the SAME branch.
+concurrency:
+  group: cryptex-isolated-hourly-factor-research
+  cancel-in-progress: false
+
+jobs:
+  backtest-research-only:
+    if: github.repository == 'maingame6/TEst-work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read strategy code and deterministic tests from main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: research-code
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            cryptex/ops/daily_edge_lab.py
+            cryptex/ops/tests/test_daily_edge_lab.py
+            cryptex/ops/writer_authority.json
+      - name: Checkout isolated factor-research result branch
+        uses: actions/checkout@v4
+        with:
+          ref: cryptex-factor-research
+          path: research-output
+          fetch-depth: 1
+          sparse-checkout: |
+            cryptex/strategy-lab/data
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fail closed unless the current writer is paper only
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          a=json.loads(pathlib.Path("research-code/cryptex/ops/writer_authority.json").read_text())
+          assert a["mode"]=="PAPER_ONLY" and a["writer"]=="github"
+          assert a["pending_writer"] is None
+          assert pathlib.Path("research-output/.git").is_dir()
+          print("ISOLATED HISTORICAL RESEARCH ONLY; main paper ledger not available")
+          PY
+      - name: Regression tests for next-open timing and fee-model integrity
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m py_compile research-code/cryptex/ops/daily_edge_lab.py
+          PYTHONPATH=research-code/cryptex/ops python3 -m unittest discover -s research-code/cryptex/ops/tests -p test_daily_edge_lab.py -v
+      - name: Fetch genuine completed daily Kraken candles and evaluate frozen hypotheses
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 research-code/cryptex/ops/daily_edge_lab.py --out research-output/cryptex/strategy-lab/data
+      - name: Verify no claims of a proven winner and no paper money mutation
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          out=pathlib.Path("research-output/cryptex/strategy-lab/data")
+          r=json.loads((out/"daily_edge_report.json").read_text())
+          assert r["mode"]=="PAPER_ONLY" and r["real_orders"] is False
+          assert r["funds_used"]==0 and r["independent_of_210_paper_wallets"]
+          assert r["tested_families_count"]==7
+          assert not r["automatic_promotion"]
+          assert all(not v["repeatable_positive_edge_verified"]
+                     and not v["eligible_for_automatic_live_or_paper_promotion"]
+                     for v in r["candidates"].values())
+          assert r["source_file_sha256"]
+          print("HISTORICAL TEST ONLY; all unproven candidates remain blocked")
+          PY
+      - name: Commit ONLY evidence to separate factor research branch
+        working-directory: research-output
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = "cryptex-factor-research"
+          git config user.name "cryptex-daily-research[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f cryptex/strategy-lab/data/daily_verified_kraken_bars.csv
+          git add -f cryptex/strategy-lab/data/daily_edge_report.json
+          git add -f cryptex/strategy-lab/data/daily_edge_report.md
+          changed="$(git diff --cached --name-only)"
+          if test -z "$changed"; then echo "No new daily historical evidence"; exit 0; fi
+          if echo "$changed" | grep -v -E '^cryptex/strategy-lab/data/(daily_verified_kraken_bars.csv|daily_edge_report.json|daily_edge_report.md)$'; then
+            echo "FORBIDDEN staged path"; exit 1
+          fi
+          git commit -m "research: public daily Kraken no-lookahead fee-stressed screen [skip ci]"
+          git push origin HEAD:refs/heads/cryptex-factor-research
