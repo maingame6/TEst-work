@@ -2,9 +2,9 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-17T22:10:42.448543+00:00
+Generated: 2026-11-17T22:15:34.751300+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 87.07; initial USD 100.00; change USD -12.93.
+Paper equity: USD 87.08; initial USD 100.00; change USD -12.92.
 Closed trades: 124; wins 7; losses/breakevens 117.
 
 ## Specialist research teams
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | BTC | 29 | 4 | 0 |
-| HOUSE | HOLD | BTC | 9 | 24 | 0 |
-| SPY | HOLD | SOL | 30 | 6 | 0 |
-| MEME HUNTER | HOLD | DOGE | 21 | 8 | 0 |
-| BREAKOUT | HOLD | BTC | 29 | 4 | 0 |
-| CONTRARIAN | HOLD | BTC | 9 | 24 | 0 |
-| ROTATOR | HOLD | BTC | 29 | 4 | 0 |
-| VORTEX | HOLD | BTC | 29 | 4 | 0 |
-| FRACTAL | HOLD | BTC | 29 | 4 | 0 |
-| SHOCKWAVE | HOLD | DOGE | 21 | 8 | 0 |
+| GAMBLER | HOLD | BTC | 28 | 3 | 0 |
+| HOUSE | HOLD | BTC | 7 | 24 | 0 |
+| SPY | HOLD | SOL | 25 | 9 | 0 |
+| MEME HUNTER | HOLD | DOGE | 15 | 17 | 1 |
+| BREAKOUT | HOLD | BTC | 28 | 3 | 0 |
+| CONTRARIAN | HOLD | BTC | 7 | 24 | 0 |
+| ROTATOR | SELL | BTC | 28 | 3 | 0 |
+| VORTEX | HOLD | BTC | 28 | 3 | 0 |
+| FRACTAL | HOLD | BTC | 28 | 3 | 0 |
+| SHOCKWAVE | HOLD | DOGE | 15 | 17 | 1 |
 
 ## Bot performance
 
