@@ -1,0 +1,995 @@
+{
+  "generated_at": "2026-11-17T21:20:26.837294+00:00",
+  "mode": "PAPER_ONLY",
+  "real_orders": false,
+  "funds_used": 0,
+  "independent_of_210_paper_wallets": true,
+  "source": "KRAKEN_PUBLIC_DAILY_OHLC_HISTORICAL_ONLY",
+  "source_first_date": "2024-11-27",
+  "source_last_complete_date": "2026-11-16",
+  "common_daily_bars": 720,
+  "config_hash": "523b26683da6f2f98cf9580c1234e0bc14232c243ac47444819e49712cb0e0fa",
+  "locked_config": {
+    "symbols": {
+      "BTC": "XBTUSD",
+      "ETH": "ETHUSD",
+      "SOL": "SOLUSD",
+      "XRP": "XRPUSD",
+      "ADA": "ADAUSD",
+      "LINK": "LINKUSD"
+    },
+    "fee_per_side": 0.008,
+    "base_slippage_per_side": 0.0025,
+    "stress_slippage_per_side": 0.005,
+    "training_start": "2025-01-01",
+    "blind_holdout_start": "2026-01-01",
+    "candidates": {
+      "BTC_TREND_90": [
+        "BTC",
+        90,
+        180,
+        7,
+        0.0
+      ],
+      "BTC_MOM_30": [
+        "BTC",
+        30,
+        90,
+        7,
+        0.0
+      ],
+      "ROTATE3_30": [
+        "BTC,ETH,SOL",
+        30,
+        90,
+        7,
+        0.0
+      ],
+      "ROTATE3_90": [
+        "BTC,ETH,SOL",
+        90,
+        180,
+        7,
+        0.0
+      ],
+      "ROTATE6_60": [
+        "BTC,ETH,SOL,XRP,ADA,LINK",
+        60,
+        120,
+        7,
+        0.0
+      ],
+      "ROTATE6_120": [
+        "BTC,ETH,SOL,XRP,ADA,LINK",
+        120,
+        180,
+        7,
+        0.0
+      ],
+      "ROTATE3_60_BUFFER": [
+        "BTC,ETH,SOL",
+        60,
+        120,
+        7,
+        0.08
+      ]
+    },
+    "simulation": "signals previous completed close, hypothetical next open; 7d rebalance"
+  },
+  "training_used_to_fit_parameters": false,
+  "heldout_result_used_for_optimisation": false,
+  "lookahead_protection": "close(t-1) signal; open(t) simulated fill; no same-candle fills",
+  "execution": "0.8% taker fee per side + 0.25% slippage (0.50% stress); end-window unwind estimated",
+  "candidates": {
+    "BTC_TREND_90": {
+      "params": [
+        "BTC",
+        90,
+        180,
+        7,
+        0.0
+      ],
+      "periods": {
+        "development_2025": {
+          "base": {
+            "net_return_pct": 5.86231,
+            "max_drawdown_pct": -12.24465,
+            "days": 199,
+            "roundtrips_including_end_mark": 1,
+            "realized_exits": 1,
+            "after_cost_winners": 1,
+            "turnover_sides": 2,
+            "profitable_months": 3,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 1.32854
+          },
+          "stress": {
+            "net_return_pct": 5.33431,
+            "max_drawdown_pct": -12.24465,
+            "days": 199,
+            "roundtrips_including_end_mark": 1,
+            "realized_exits": 1,
+            "after_cost_winners": 1,
+            "turnover_sides": 2,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 1.33244
+          },
+          "underlying_trades": [
+            {
+              "at": "2025-10-15",
+              "symbol": "BTC",
+              "net_return_pct": 5.862309744528016
+            }
+          ]
+        },
+        "heldout_2026": {
+          "base": {
+            "net_return_pct": -23.42847,
+            "max_drawdown_pct": -25.95879,
+            "days": 320,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 1,
+            "after_cost_winners": 0,
+            "turnover_sides": 3,
+            "profitable_months": 1,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.08481
+          },
+          "stress": {
+            "net_return_pct": -24.19038,
+            "max_drawdown_pct": -25.95879,
+            "days": 320,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 1,
+            "after_cost_winners": 0,
+            "turnover_sides": 3,
+            "profitable_months": 1,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.09127
+          },
+          "underlying_trades": [
+            {
+              "at": "2026-05-14",
+              "symbol": "BTC",
+              "net_return_pct": -4.658389513335692
+            },
+            {
+              "at": "2026-11-16",
+              "symbol": "BTC",
+              "net_return_pct": -19.687187912895755,
+              "end_of_window_mark_only": true
+            }
+          ]
+        }
+      },
+      "positive_both_calendar_periods_even_after_costs": false,
+      "beat_btc_heldout_after_cost": true,
+      "minimum_heldout_evidence": false,
+      "historically_interesting_only": false,
+      "repeatable_positive_edge_verified": false,
+      "eligible_for_automatic_live_or_paper_promotion": false
+    },
+    "BTC_MOM_30": {
+      "params": [
+        "BTC",
+        30,
+        90,
+        7,
+        0.0
+      ],
+      "periods": {
+        "development_2025": {
+          "base": {
+            "net_return_pct": -7.48178,
+            "max_drawdown_pct": -18.28456,
+            "days": 199,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 2,
+            "after_cost_winners": 1,
+            "turnover_sides": 4,
+            "profitable_months": 1,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 0.92617
+          },
+          "stress": {
+            "net_return_pct": -8.40237,
+            "max_drawdown_pct": -18.69212,
+            "days": 199,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 2,
+            "after_cost_winners": 1,
+            "turnover_sides": 4,
+            "profitable_months": 1,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 0.92857
+          },
+          "underlying_trades": [
+            {
+              "at": "2025-08-20",
+              "symbol": "BTC",
+              "net_return_pct": 1.4262370976193761
+            },
+            {
+              "at": "2025-10-15",
+              "symbol": "BTC",
+              "net_return_pct": -8.782756179413209
+            }
+          ]
+        },
+        "heldout_2026": {
+          "base": {
+            "net_return_pct": -0.20614,
+            "max_drawdown_pct": -15.96353,
+            "days": 320,
+            "roundtrips_including_end_mark": 3,
+            "realized_exits": 3,
+            "after_cost_winners": 1,
+            "turnover_sides": 6,
+            "profitable_months": 3,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.07611
+          },
+          "stress": {
+            "net_return_pct": -1.6919,
+            "max_drawdown_pct": -16.79972,
+            "days": 320,
+            "roundtrips_including_end_mark": 3,
+            "realized_exits": 3,
+            "after_cost_winners": 1,
+            "turnover_sides": 6,
+            "profitable_months": 3,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.0801
+          },
+          "underlying_trades": [
+            {
+              "at": "2026-01-22",
+              "symbol": "BTC",
+              "net_return_pct": -9.715734913044594
+            },
+            {
+              "at": "2026-05-28",
+              "symbol": "BTC",
+              "net_return_pct": -6.9201389141335
+            },
+            {
+              "at": "2026-10-22",
+              "symbol": "BTC",
+              "net_return_pct": 18.750662493654
+            }
+          ]
+        }
+      },
+      "positive_both_calendar_periods_even_after_costs": false,
+      "beat_btc_heldout_after_cost": true,
+      "minimum_heldout_evidence": false,
+      "historically_interesting_only": false,
+      "repeatable_positive_edge_verified": false,
+      "eligible_for_automatic_live_or_paper_promotion": false
+    },
+    "ROTATE3_30": {
+      "params": [
+        "BTC,ETH,SOL",
+        30,
+        90,
+        7,
+        0.0
+      ],
+      "periods": {
+        "development_2025": {
+          "base": {
+            "net_return_pct": 45.1542,
+            "max_drawdown_pct": -22.14819,
+            "days": 199,
+            "roundtrips_including_end_mark": 4,
+            "realized_exits": 4,
+            "after_cost_winners": 2,
+            "turnover_sides": 8,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 2.79245
+          },
+          "stress": {
+            "net_return_pct": 42.27992,
+            "max_drawdown_pct": -22.14819,
+            "days": 199,
+            "roundtrips_including_end_mark": 4,
+            "realized_exits": 4,
+            "after_cost_winners": 2,
+            "turnover_sides": 8,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 2.79379
+          },
+          "underlying_trades": [
+            {
+              "at": "2025-06-25",
+              "symbol": "ETH",
+              "net_return_pct": -4.491747592188567
+            },
+            {
+              "at": "2025-09-03",
+              "symbol": "ETH",
+              "net_return_pct": 61.978838306762675
+            },
+            {
+              "at": "2025-10-08",
+              "symbol": "SOL",
+              "net_return_pct": 2.8616514521139447
+            },
+            {
+              "at": "2025-10-15",
+              "symbol": "BTC",
+              "net_return_pct": -8.782756179413198
+            }
+          ]
+        },
+        "heldout_2026": {
+          "base": {
+            "net_return_pct": 0.60271,
+            "max_drawdown_pct": -25.4967,
+            "days": 320,
+            "roundtrips_including_end_mark": 6,
+            "realized_exits": 6,
+            "after_cost_winners": 2,
+            "turnover_sides": 12,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.88883
+          },
+          "stress": {
+            "net_return_pct": -2.37059,
+            "max_drawdown_pct": -26.97198,
+            "days": 320,
+            "roundtrips_including_end_mark": 6,
+            "realized_exits": 6,
+            "after_cost_winners": 2,
+            "turnover_sides": 12,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.89611
+          },
+          "underlying_trades": [
+            {
+              "at": "2026-01-22",
+              "symbol": "SOL",
+              "net_return_pct": -13.612492286665745
+            },
+            {
+              "at": "2026-04-30",
+              "symbol": "ETH",
+              "net_return_pct": -6.579663195722663
+            },
+            {
+              "at": "2026-05-28",
+              "symbol": "BTC",
+              "net_return_pct": -3.9081451042787374
+            },
+            {
+              "at": "2026-08-27",
+              "symbol": "ETH",
+              "net_return_pct": 28.718384654073148
+            },
+            {
+              "at": "2026-10-15",
+              "symbol": "SOL",
+              "net_return_pct": -0.0736650049704024
+            },
+            {
+              "at": "2026-10-22",
+              "symbol": "BTC",
+              "net_return_pct": 0.8579633947621845
+            }
+          ]
+        }
+      },
+      "positive_both_calendar_periods_even_after_costs": false,
+      "beat_btc_heldout_after_cost": true,
+      "minimum_heldout_evidence": false,
+      "historically_interesting_only": false,
+      "repeatable_positive_edge_verified": false,
+      "eligible_for_automatic_live_or_paper_promotion": false
+    },
+    "ROTATE3_90": {
+      "params": [
+        "BTC,ETH,SOL",
+        90,
+        180,
+        7,
+        0.0
+      ],
+      "periods": {
+        "development_2025": {
+          "base": {
+            "net_return_pct": 11.80063,
+            "max_drawdown_pct": -35.60487,
+            "days": 199,
+            "roundtrips_including_end_mark": 4,
+            "realized_exits": 4,
+            "after_cost_winners": 2,
+            "turnover_sides": 8,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 3.10713
+          },
+          "stress": {
+            "net_return_pct": 9.58679,
+            "max_drawdown_pct": -35.92605,
+            "days": 199,
+            "roundtrips_including_end_mark": 4,
+            "realized_exits": 4,
+            "after_cost_winners": 2,
+            "turnover_sides": 8,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 3.10875
+          },
+          "underlying_trades": [
+            {
+              "at": "2025-06-25",
+              "symbol": "ETH",
+              "net_return_pct": -4.491747592188567
+            },
+            {
+              "at": "2025-07-09",
+              "symbol": "BTC",
+              "net_return_pct": 0.5355727865381965
+            },
+            {
+              "at": "2025-10-29",
+              "symbol": "ETH",
+              "net_return_pct": 48.998833636861086
+            },
+            {
+              "at": "2025-11-05",
+              "symbol": "SOL",
+              "net_return_pct": -21.8550873639624
+            }
+          ]
+        },
+        "heldout_2026": {
+          "base": {
+            "net_return_pct": -37.20732,
+            "max_drawdown_pct": -45.95661,
+            "days": 320,
+            "roundtrips_including_end_mark": 6,
+            "realized_exits": 5,
+            "after_cost_winners": 2,
+            "turnover_sides": 11,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.57925
+          },
+          "stress": {
+            "net_return_pct": -39.06315,
+            "max_drawdown_pct": -46.76122,
+            "days": 320,
+            "roundtrips_including_end_mark": 6,
+            "realized_exits": 5,
+            "after_cost_winners": 2,
+            "turnover_sides": 11,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.59489
+          },
+          "underlying_trades": [
+            {
+              "at": "2026-05-14",
+              "symbol": "BTC",
+              "net_return_pct": -4.658389513335692
+            },
+            {
+              "at": "2026-09-03",
+              "symbol": "ETH",
+              "net_return_pct": 3.9872330425694047
+            },
+            {
+              "at": "2026-09-24",
+              "symbol": "SOL",
+              "net_return_pct": 12.171248505562126
+            },
+            {
+              "at": "2026-10-08",
+              "symbol": "ETH",
+              "net_return_pct": -6.134029925304674
+            },
+            {
+              "at": "2026-11-12",
+              "symbol": "SOL",
+              "net_return_pct": -29.928247744941373
+            },
+            {
+              "at": "2026-11-16",
+              "symbol": "BTC",
+              "net_return_pct": -14.155236071455002,
+              "end_of_window_mark_only": true
+            }
+          ]
+        }
+      },
+      "positive_both_calendar_periods_even_after_costs": false,
+      "beat_btc_heldout_after_cost": false,
+      "minimum_heldout_evidence": false,
+      "historically_interesting_only": false,
+      "repeatable_positive_edge_verified": false,
+      "eligible_for_automatic_live_or_paper_promotion": false
+    },
+    "ROTATE6_60": {
+      "params": [
+        "BTC,ETH,SOL,XRP,ADA,LINK",
+        60,
+        120,
+        7,
+        0.0
+      ],
+      "periods": {
+        "development_2025": {
+          "base": {
+            "net_return_pct": -12.33567,
+            "max_drawdown_pct": -45.7338,
+            "days": 199,
+            "roundtrips_including_end_mark": 9,
+            "realized_exits": 9,
+            "after_cost_winners": 3,
+            "turnover_sides": 18,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 3.27148
+          },
+          "stress": {
+            "net_return_pct": -16.19318,
+            "max_drawdown_pct": -47.33763,
+            "days": 199,
+            "roundtrips_including_end_mark": 9,
+            "realized_exits": 9,
+            "after_cost_winners": 3,
+            "turnover_sides": 18,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 3.27797
+          },
+          "underlying_trades": [
+            {
+              "at": "2025-07-23",
+              "symbol": "ETH",
+              "net_return_pct": 46.25374089426748
+            },
+            {
+              "at": "2025-07-30",
+              "symbol": "XRP",
+              "net_return_pct": -13.786111800389754
+            },
+            {
+              "at": "2025-08-20",
+              "symbol": "ETH",
+              "net_return_pct": 5.196694796828516
+            },
+            {
+              "at": "2025-08-27",
+              "symbol": "LINK",
+              "net_return_pct": 1.3761845452177512
+            },
+            {
+              "at": "2025-09-03",
+              "symbol": "ETH",
+              "net_return_pct": -7.914362773132044
+            },
+            {
+              "at": "2025-09-17",
+              "symbol": "LINK",
+              "net_return_pct": -2.051370736493696
+            },
+            {
+              "at": "2025-09-24",
+              "symbol": "SOL",
+              "net_return_pct": -11.879414749760198
+            },
+            {
+              "at": "2025-10-08",
+              "symbol": "LINK",
+              "net_return_pct": -0.7307528686649079
+            },
+            {
+              "at": "2025-10-22",
+              "symbol": "SOL",
+              "net_return_pct": -17.373701895495984
+            }
+          ]
+        },
+        "heldout_2026": {
+          "base": {
+            "net_return_pct": -34.2595,
+            "max_drawdown_pct": -34.46242,
+            "days": 320,
+            "roundtrips_including_end_mark": 11,
+            "realized_exits": 11,
+            "after_cost_winners": 3,
+            "turnover_sides": 22,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.89776
+          },
+          "stress": {
+            "net_return_pct": -37.77764,
+            "max_drawdown_pct": -37.96971,
+            "days": 320,
+            "roundtrips_including_end_mark": 11,
+            "realized_exits": 11,
+            "after_cost_winners": 3,
+            "turnover_sides": 22,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.90968
+          },
+          "underlying_trades": [
+            {
+              "at": "2026-04-30",
+              "symbol": "BTC",
+              "net_return_pct": -5.147493268771686
+            },
+            {
+              "at": "2026-05-14",
+              "symbol": "BTC",
+              "net_return_pct": -4.658389513335692
+            },
+            {
+              "at": "2026-05-21",
+              "symbol": "LINK",
+              "net_return_pct": -7.704675331724175
+            },
+            {
+              "at": "2026-06-04",
+              "symbol": "BTC",
+              "net_return_pct": -19.066385105825244
+            },
+            {
+              "at": "2026-08-27",
+              "symbol": "LINK",
+              "net_return_pct": 31.26747272020691
+            },
+            {
+              "at": "2026-09-03",
+              "symbol": "ETH",
+              "net_return_pct": -6.610215758600946
+            },
+            {
+              "at": "2026-09-24",
+              "symbol": "LINK",
+              "net_return_pct": 8.834689908779314
+            },
+            {
+              "at": "2026-10-01",
+              "symbol": "SOL",
+              "net_return_pct": 0.5186942795750937
+            },
+            {
+              "at": "2026-10-15",
+              "symbol": "LINK",
+              "net_return_pct": -15.278064681510594
+            },
+            {
+              "at": "2026-10-29",
+              "symbol": "SOL",
+              "net_return_pct": -3.826239181774904
+            },
+            {
+              "at": "2026-11-12",
+              "symbol": "BTC",
+              "net_return_pct": -10.942617269808508
+            }
+          ]
+        }
+      },
+      "positive_both_calendar_periods_even_after_costs": false,
+      "beat_btc_heldout_after_cost": false,
+      "minimum_heldout_evidence": false,
+      "historically_interesting_only": false,
+      "repeatable_positive_edge_verified": false,
+      "eligible_for_automatic_live_or_paper_promotion": false
+    },
+    "ROTATE6_120": {
+      "params": [
+        "BTC,ETH,SOL,XRP,ADA,LINK",
+        120,
+        180,
+        7,
+        0.0
+      ],
+      "periods": {
+        "development_2025": {
+          "base": {
+            "net_return_pct": 25.44047,
+            "max_drawdown_pct": -31.95487,
+            "days": 199,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 2,
+            "after_cost_winners": 2,
+            "turnover_sides": 4,
+            "profitable_months": 3,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 2.97366
+          },
+          "stress": {
+            "net_return_pct": 24.1923,
+            "max_drawdown_pct": -31.95487,
+            "days": 199,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 2,
+            "after_cost_winners": 2,
+            "turnover_sides": 4,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 2.97262
+          },
+          "underlying_trades": [
+            {
+              "at": "2025-07-09",
+              "symbol": "BTC",
+              "net_return_pct": 1.95535637794646
+            },
+            {
+              "at": "2025-11-05",
+              "symbol": "ETH",
+              "net_return_pct": 23.034706394039127
+            }
+          ]
+        },
+        "heldout_2026": {
+          "base": {
+            "net_return_pct": -39.54657,
+            "max_drawdown_pct": -47.42384,
+            "days": 320,
+            "roundtrips_including_end_mark": 7,
+            "realized_exits": 6,
+            "after_cost_winners": 3,
+            "turnover_sides": 13,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.82615
+          },
+          "stress": {
+            "net_return_pct": -41.62587,
+            "max_drawdown_pct": -48.74739,
+            "days": 320,
+            "roundtrips_including_end_mark": 7,
+            "realized_exits": 6,
+            "after_cost_winners": 3,
+            "turnover_sides": 13,
+            "profitable_months": 1,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.83967
+          },
+          "underlying_trades": [
+            {
+              "at": "2026-09-03",
+              "symbol": "LINK",
+              "net_return_pct": 3.2109609355770674
+            },
+            {
+              "at": "2026-09-10",
+              "symbol": "SOL",
+              "net_return_pct": -0.9565230350418896
+            },
+            {
+              "at": "2026-09-24",
+              "symbol": "LINK",
+              "net_return_pct": 2.481606173825046
+            },
+            {
+              "at": "2026-10-01",
+              "symbol": "SOL",
+              "net_return_pct": 0.5186942795751159
+            },
+            {
+              "at": "2026-10-08",
+              "symbol": "LINK",
+              "net_return_pct": -9.170685795112787
+            },
+            {
+              "at": "2026-10-15",
+              "symbol": "SOL",
+              "net_return_pct": -12.229191302541986
+            },
+            {
+              "at": "2026-11-16",
+              "symbol": "LINK",
+              "net_return_pct": -27.988748948958843,
+              "end_of_window_mark_only": true
+            }
+          ]
+        }
+      },
+      "positive_both_calendar_periods_even_after_costs": false,
+      "beat_btc_heldout_after_cost": false,
+      "minimum_heldout_evidence": false,
+      "historically_interesting_only": false,
+      "repeatable_positive_edge_verified": false,
+      "eligible_for_automatic_live_or_paper_promotion": false
+    },
+    "ROTATE3_60_BUFFER": {
+      "params": [
+        "BTC,ETH,SOL",
+        60,
+        120,
+        7,
+        0.08
+      ],
+      "periods": {
+        "development_2025": {
+          "base": {
+            "net_return_pct": 40.95235,
+            "max_drawdown_pct": -28.38379,
+            "days": 199,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 2,
+            "after_cost_winners": 1,
+            "turnover_sides": 4,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 3.10748
+          },
+          "stress": {
+            "net_return_pct": 39.54983,
+            "max_drawdown_pct": -28.74098,
+            "days": 199,
+            "roundtrips_including_end_mark": 2,
+            "realized_exits": 2,
+            "after_cost_winners": 1,
+            "turnover_sides": 4,
+            "profitable_months": 2,
+            "months": 7,
+            "last_date": "2025-12-31",
+            "return_volatility_daily_pct": 3.10588
+          },
+          "underlying_trades": [
+            {
+              "at": "2025-10-01",
+              "symbol": "ETH",
+              "net_return_pct": 61.77777201995958
+            },
+            {
+              "at": "2025-10-22",
+              "symbol": "SOL",
+              "net_return_pct": -12.872858655673191
+            }
+          ]
+        },
+        "heldout_2026": {
+          "base": {
+            "net_return_pct": -33.8497,
+            "max_drawdown_pct": -34.05389,
+            "days": 320,
+            "roundtrips_including_end_mark": 5,
+            "realized_exits": 5,
+            "after_cost_winners": 1,
+            "turnover_sides": 10,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.40513
+          },
+          "stress": {
+            "net_return_pct": -35.48298,
+            "max_drawdown_pct": -35.68213,
+            "days": 320,
+            "roundtrips_including_end_mark": 5,
+            "realized_exits": 5,
+            "after_cost_winners": 1,
+            "turnover_sides": 10,
+            "profitable_months": 2,
+            "months": 11,
+            "last_date": "2026-11-16",
+            "return_volatility_daily_pct": 1.41754
+          },
+          "underlying_trades": [
+            {
+              "at": "2026-04-30",
+              "symbol": "BTC",
+              "net_return_pct": -5.147493268771686
+            },
+            {
+              "at": "2026-06-04",
+              "symbol": "BTC",
+              "net_return_pct": -23.00235580486476
+            },
+            {
+              "at": "2026-09-24",
+              "symbol": "ETH",
+              "net_return_pct": 16.73164486813907
+            },
+            {
+              "at": "2026-10-29",
+              "symbol": "SOL",
+              "net_return_pct": -12.874148859656797
+            },
+            {
+              "at": "2026-11-12",
+              "symbol": "BTC",
+              "net_return_pct": -10.942617269808519
+            }
+          ]
+        }
+      },
+      "positive_both_calendar_periods_even_after_costs": false,
+      "beat_btc_heldout_after_cost": false,
+      "minimum_heldout_evidence": false,
+      "historically_interesting_only": false,
+      "repeatable_positive_edge_verified": false,
+      "eligible_for_automatic_live_or_paper_promotion": false
+    }
+  },
+  "benchmarks": {
+    "development_2025": {
+      "BTC_BUY_HOLD": {
+        "net_return_pct": -18.84778,
+        "max_drawdown_pct": -32.1293,
+        "days": 199,
+        "roundtrips_including_end_mark": 1,
+        "realized_exits": 0,
+        "after_cost_winners": 0,
+        "turnover_sides": 1,
+        "profitable_months": 2,
+        "months": 7,
+        "last_date": "2025-12-31",
+        "return_volatility_daily_pct": 1.8525
+      },
+      "CASH": {
+        "net_return_pct": 0.0,
+        "max_drawdown_pct": 0,
+        "days": 365,
+        "roundtrips_including_end_mark": 0
+      }
+    },
+    "heldout_2026": {
+      "BTC_BUY_HOLD": {
+        "net_return_pct": -27.47017,
+        "max_drawdown_pct": -39.61631,
+        "days": 320,
+        "roundtrips_including_end_mark": 1,
+        "realized_exits": 0,
+        "after_cost_winners": 0,
+        "turnover_sides": 1,
+        "profitable_months": 5,
+        "months": 11,
+        "last_date": "2026-11-16",
+        "return_volatility_daily_pct": 2.35828
+      },
+      "CASH": {
+        "net_return_pct": 0.0,
+        "max_drawdown_pct": 0,
+        "days": 320,
+        "roundtrips_including_end_mark": 0
+      }
+    }
+  },
+  "tested_families_count": 7,
+  "automatic_promotion": false,
+  "limitation": "Historical paper backtest, not independently replicated prospective live results. Missing spreads, latency, and unexecuted size may worsen returns.",
+  "source_file_sha256": "d7e67c4edd9d25520bbf6f629ceed6645be49dc868380986ce81c221d041ad8b"
+}
