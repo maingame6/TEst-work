@@ -12,9 +12,9 @@ Frozen at 2026-11-01T19:30:00+00:00
 | CONTROL_50BPS | 0.5% | 415 | -1.99135% | -2.48017% | No |
 
 Censored entries: 10
-Censored exits: 13
-Gaps: 375
-Consecutive observed market-pair intervals: 16680 of 17055 observed transitions. These are NOT missing five-minute Kraken candles.
+Censored exits: 25
+Gaps: 390
+Consecutive observed market-pair intervals: 16680 of 17070 observed transitions. These are NOT missing five-minute Kraken candles.
 
 Cash benchmark: zero assumed. Matched buy/hold and statistically robust comparison NOT YET verified.
 Fees are published-spot-tier or labeled assumptions; actual fills unverified.
