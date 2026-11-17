@@ -21,7 +21,7 @@ import daily_edge_lab as HIST
 
 UTC = dt.timezone.utc
 START = dt.date(2026, 11, 18)
-STOP = dt.date(2027, 5, 18)
+STOP = dt.date(2027, 11, 18)
 INITIAL_CASH = 100.0
 NAME = "ROTATE3_30"
 MARKETS = ("BTC", "ETH", "SOL")
@@ -211,9 +211,14 @@ def report(state):
         raise ValueError("Forward-day coverage counter inconsistency")
     def side(w):
         last=state["days"][-1] if n else None
-        equity=last["base_net_liquidation_nav"] if w is state["wallets"]["base"] else (
-            last["stress_net_liquidation_nav"] if w is state["wallets"]["stress"] else
-            last["btc_buy_hold_net_liquidation_nav"]) if last else INITIAL_CASH
+        if last is None:
+            equity = INITIAL_CASH
+        elif w is state["wallets"]["base"]:
+            equity = last["base_net_liquidation_nav"]
+        elif w is state["wallets"]["stress"]:
+            equity = last["stress_net_liquidation_nav"]
+        else:
+            equity = last["btc_buy_hold_net_liquidation_nav"]
         return {"nav":equity,"net_return_pct":round(100*(equity/INITIAL_CASH-1),5),
                 "max_drawdown_pct":round(w["max_drawdown_pct"],5),
                 "completed_exits":len(w["closed"]),
@@ -232,7 +237,7 @@ def report(state):
             "cash_comparator_nav":INITIAL_CASH,
             "validated_positive_repeatable_edge":False,
             "live_or_original_paper_promotion":False,
-            "review_requirements":"At least 90 prospective days, 99% genuine days, 30 completed exits and superiority over cash and BTC under stress; independently review before any policy change.",
+            "review_requirements":"At least 365 prospective days, 99% genuine days, 30 completed exits and superiority over cash and BTC under stress; independently review before any policy change.",
             "limitations":"Forward quote observations, not executable fills. Slippage simulated. No independent/live proof."}
 
 
