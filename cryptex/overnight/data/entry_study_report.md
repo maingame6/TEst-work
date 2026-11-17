@@ -2,25 +2,25 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1794951000; captured candles: 3934.
+Last observed closed candle: 1794951300; captured candles: 3935.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
 
 | Gate | Signal threshold | Closed | Net wins | Mean net | Stress mean net | Gross winners that became net losers | Active |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 2.322% | 16 | 0 | -2.2247% | -2.7124% | 7 | 0 |
-| COST_AWARE | 2.172% | 22 | 0 | -2.4942% | -2.9805% | 7 | 0 |
-| BALANCED_TEST | 1.200% | 115 | 1 | -2.3708% | -2.8577% | 36 | 1 |
-| LOW_HURDLE_CONTROL | 0.500% | 540 | 2 | -2.2136% | -2.7013% | 203 | 5 |
+| V4_TAKER_STRICT | 2.322% | 16 | 0 | -2.2247% | -2.7124% | 7 | 1 |
+| COST_AWARE | 2.172% | 22 | 0 | -2.4942% | -2.9805% | 7 | 1 |
+| BALANCED_TEST | 1.200% | 115 | 1 | -2.3708% | -2.8577% | 36 | 2 |
+| LOW_HURDLE_CONTROL | 0.500% | 543 | 2 | -2.2097% | -2.6974% | 206 | 2 |
 
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 39 | 38492 | 29451 | 21 | 15 | -2.1979% | 30.291% |
-| COST_AWARE | 51 | 38475 | 29051 | 30 | 21 | -2.4878% | 42.706% |
-| BALANCED_TEST | 259 | 38085 | 29051 | 150 | 93 | -2.3430% | 93.701% |
-| LOW_HURDLE_CONTROL | 1251 | 35165 | 28598 | 649 | 451 | -2.2029% | 99.999% |
+| V4_TAKER_STRICT | 39 | 38504 | 29459 | 21 | 15 | -2.1979% | 30.291% |
+| COST_AWARE | 51 | 38487 | 29059 | 30 | 21 | -2.4878% | 42.706% |
+| BALANCED_TEST | 259 | 38097 | 29059 | 150 | 93 | -2.3430% | 93.701% |
+| LOW_HURDLE_CONTROL | 1251 | 35177 | 28606 | 649 | 454 | -2.1983% | 99.999% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
