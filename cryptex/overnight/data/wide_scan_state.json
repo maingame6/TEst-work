@@ -5,7 +5,7 @@
   "kraken": 682,
   "coinbase": 662,
   "bitstamp": 116,
-  "okx": 256,
+  "okx": 260,
   "kucoin": 666
  },
  "seen": {
@@ -259296,17 +259296,75 @@
    "ever_valid": true,
    "ever_checked": true,
    "ever_ohlcv_requested": true
+  },
+  "okx|XNVO/USDT": {
+   "venue": "okx",
+   "symbol": "XNVO/USDT",
+   "quote": "USDT",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-17T13:16:32.937456+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "okx|XPANW/USDT": {
+   "venue": "okx",
+   "symbol": "XPANW/USDT",
+   "quote": "USDT",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-17T13:16:32.937456+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "okx|XPDD/USDT": {
+   "venue": "okx",
+   "symbol": "XPDD/USDT",
+   "quote": "USDT",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-17T13:16:32.937456+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
+  },
+  "okx|XPEP/USDT": {
+   "venue": "okx",
+   "symbol": "XPEP/USDT",
+   "quote": "USDT",
+   "status": "UNAVAILABLE",
+   "metadata_checked": true,
+   "ohlcv_requested": true,
+   "venue_market_taker_metadata": 0.0015,
+   "venue_market_taker_metadata_status": "UNVERIFIED_EXCHANGE_METADATA",
+   "reason": "ValueError:INSUFFICIENT_CLOSED_BARS",
+   "checked_at": "2026-11-17T13:16:32.937456+00:00",
+   "attempts": 1,
+   "ever_valid": false,
+   "ever_checked": true,
+   "ever_ohlcv_requested": true
   }
  },
- "scan_count": 109,
- "last_scan": "2026-11-17T08:50:27.924357+00:00",
+ "scan_count": 110,
+ "last_scan": "2026-11-17T13:16:32.937456+00:00",
  "failures": [
-  {
-   "at": "2026-11-08T07:43:43.478368+00:00",
-   "attempted": 104,
-   "validated": 22,
-   "unavailable": 82
-  },
   {
    "at": "2026-11-08T10:13:51.059232+00:00",
    "attempted": 104,
@@ -259600,11 +259658,17 @@
    "attempted": 102,
    "validated": 22,
    "unavailable": 80
+  },
+  {
+   "at": "2026-11-17T13:16:32.937456+00:00",
+   "attempted": 4,
+   "validated": 0,
+   "unavailable": 4
   }
  ],
  "last_batch": {
-  "attempted": 102,
-  "validated": 22,
-  "unavailable": 80
+  "attempted": 4,
+  "validated": 0,
+  "unavailable": 4
  }
 }
