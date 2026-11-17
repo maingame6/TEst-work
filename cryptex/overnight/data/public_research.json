@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-17T02:35:32.230605+00:00",
+  "checked_at": "2026-11-17T03:40:06.392976+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,9 +40,8 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "UNAVAILABLE",
-      "items": 0,
-      "error": "HTTPError:HTTP Error 429: Too Many Requests"
+      "status": "OK",
+      "items": 18
     },
     {
       "source": "PUBLIC_FORUM",
@@ -52,6 +51,28 @@
     }
   ],
   "articles": [
+    {
+      "id": "4a277eb8f2b09e9e",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin, XRP, Dogecoin Slide, Ethereum Steady as ‘Extreme Fear’ Persists: Analyst Says ‘Selling Hasn’t St - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNODQxSGVWTFBGUmxBR1pJRW91MGJ6alpCdVJHN3NSalRiRXJucVQ4dzlrWC0wNW5BU0xFNHpQai12V0ZrX2J2eFVGSmtVYWhZdEpTMmJTeGZqbWJwdEVqZFdjVUZCdUFMMThKaWo4WVdfUF96UXZYeTJzbHE5a1ZqSmtLd1Uwb2dBLUsyV1JJN0lkYW5zRVZZMk1peEVPa1B1dTBxRmItaw?oc=5",
+      "published_at": "2026-11-17T01:56:14+00:00",
+      "first_observed_at": "2026-11-17T03:40:06.392976+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "b32cc8fdcf27da72",
+      "source": "SEARCH_RADAR",
+      "title": "As Bitcoin Plummets, Trump Media Warns It May Have To Sell Some To Repay Noteholders. Here’s Why Nov. 30 Is The Key Date For Its $1 Billion In Notes - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNUWkyYVh4ejV4UWdHa3hmNmlsVENnazVKWDdBRnp0SjB6ZHFLb3VORTROSU5jTGpGWVY4R0ZiVnI0T0JpVUItdktyc2JReWlCdGp0RHF3TnQ0a3JaYUJxcFgxV2JpX1lmWFRtbGtEQVh6MWFMR2lrd1R4SjkxaXBDSmxlZ3hTRmNMaXhoSG5DZWRENDFRWUNjdmRxN1BaZUIy?oc=5",
+      "published_at": "2026-11-17T02:30:15+00:00",
+      "first_observed_at": "2026-11-17T03:40:06.392976+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "edfc7294e656f146",
       "source": "COINTELEGRAPH",
@@ -2779,34 +2800,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "d685b6416f5cfe3d",
-      "source": "SEARCH_RADAR",
-      "title": "How Buterin Complicates Ethereum's Wall Street Pitch by Aiming at Bitcoin - Cryptonews.net",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE13ZV9PX1pNUzRmb1h1SWp2cXhRVGJvRUdvczFfbzhIempOWkp0TGNFUFFZQndrX1RXS25rU3hzMjg0VC1TdEN2a1R3MEZoa2xhZXlhb1ZGYnk3UQ?oc=5",
-      "published_at": "2026-11-15T16:36:36+00:00",
-      "first_observed_at": "2026-11-15T17:14:43.746595+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "03abeeeb262c0ac7",
-      "source": "SEARCH_RADAR",
-      "title": "Binance Holds the Least Ethereum Since 2021 - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQaHFLV1NSSmdrWkNHWVUyeDdNb1BUNVZrRkxfQWxwVndramc5REdzQTBpTHdHNmlMUkNtYzFQYVZOekRMR1QwTXlhM3dBZWU5cTNQenMydXdXSlRDXzRUb2dFT01udl9HUDI5TzNtc2NLdEtQcmlBTy15SGpFY1lQRWVJbnhzSzFzUjVsaEtTQXdqUURmZjZzNXBVbmNNdjJF?oc=5",
-      "published_at": "2026-11-15T15:46:28+00:00",
-      "first_observed_at": "2026-11-15T17:14:43.746595+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 8,
   "sources_total": 8
 }
