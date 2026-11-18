@@ -1,18 +1,27 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795027200,
+  "last_ts": 1795027500,
   "first_ts": 1793488500,
-  "observed_candles": 4188,
+  "observed_candles": 4189,
   "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795027500,
+      "observed_move": 0.00616664
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1795027200,
-      "observed_move": 0.00983007
+      "entry_ts": 1795027500,
+      "entry_mid": 3.2636,
+      "exit_ts": 1795029300
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -9574,36 +9583,36 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4076,
-      "liquid_candidates": 40886,
-      "move_below_gate": 40827,
-      "volume_below_gate": 31231,
+      "bars": 4077,
+      "liquid_candidates": 40897,
+      "move_below_gate": 40838,
+      "volume_below_gate": 31241,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4076,
-      "liquid_candidates": 40886,
-      "move_below_gate": 40810,
-      "volume_below_gate": 30810,
+      "bars": 4077,
+      "liquid_candidates": 40897,
+      "move_below_gate": 40821,
+      "volume_below_gate": 30820,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4076,
-      "liquid_candidates": 40886,
-      "move_below_gate": 40389,
-      "volume_below_gate": 30810,
+      "bars": 4077,
+      "liquid_candidates": 40897,
+      "move_below_gate": 40400,
+      "volume_below_gate": 30820,
       "qualified": 271,
       "queued": 158
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4076,
-      "liquid_candidates": 40886,
-      "move_below_gate": 37311,
-      "volume_below_gate": 30332,
-      "qualified": 1322,
-      "queued": 675
+      "bars": 4077,
+      "liquid_candidates": 40897,
+      "move_below_gate": 37318,
+      "volume_below_gate": 30342,
+      "qualified": 1323,
+      "queued": 676
     }
   },
   "horizon_open": [
