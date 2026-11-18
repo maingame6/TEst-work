@@ -111,6 +111,12 @@ class StrategyLabSafety(unittest.TestCase):
         self.assertFalse(r["real_orders"]);self.assertFalse(r["writer_access"])
         self.assertTrue(r["not_an_execution_simulator"])
         self.assertEqual(r["closed_hypotheses"],0)
+        # The recovery guard needs real persisted first-seen hourly markers,
+        # never an inferred hour based on a workflow success flag.
+        markers=r["latest_observed_hour_ts_by_symbol"]
+        self.assertEqual(set(markers),set(s.PAIRS))
+        self.assertEqual(markers["BTC"],bs[-1]["ts"])
+        self.assertTrue(all(ts==0 for k,ts in markers.items() if k!="BTC"))
 
     def test_no_exchange_order_imports(self):
         source=Path(s.__file__).read_text()
