@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-18T10:35:42.204730+00:00",
+  "checked_at": "2026-11-18T11:40:44.954123+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
       "purpose": "independent crypto reporting",
       "status": "OK",
-      "items": 16
+      "items": 17
     },
     {
       "source": "COINTELEGRAPH",
@@ -17,7 +17,7 @@
       "source": "THE_BLOCK",
       "purpose": "crypto sector reporting",
       "status": "OK",
-      "items": 11
+      "items": 12
     },
     {
       "source": "EXCHANGE_BLOG",
@@ -48,10 +48,87 @@
       "purpose": "public forum RSS where permitted",
       "status": "UNAVAILABLE",
       "items": 0,
-      "error": "HTTPError:HTTP Error 404: Not Found"
+      "error": "HTTPError:HTTP Error 429: Too Many Requests"
     }
   ],
   "articles": [
+    {
+      "id": "3d86f009a39c7824",
+      "source": "CRYPTODESK",
+      "title": "Bitcoin outpaces gold even as both assets tumble ahead of a likely Fed rate hike",
+      "url": "https://www.coindesk.com/markets/2026/11/18/bitcoin-outpaces-gold-even-as-both-assets-tumble-ahead-of-a-likely-fed-rate-hike",
+      "published_at": "2026-11-18T10:58:36+00:00",
+      "first_observed_at": "2026-11-18T11:40:44.954123+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "7912698f065b2671",
+      "source": "COINTELEGRAPH",
+      "title": "Bitwise seeks Texas Stock Exchange listing for Zcash ETF",
+      "url": "https://cointelegraph.com/news/bitwise-zcash-etf-texas-stock-exchange-listing?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-18T10:33:07+00:00",
+      "first_observed_at": "2026-11-18T11:40:44.954123+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "9abe310da8342f66",
+      "source": "THE_BLOCK",
+      "title": "TD Cowen tempers ether outlook, maintains Buy rating on Sharplink",
+      "url": "https://www.theblock.co/news/ecosystems/2026-11-18-td-cowen-maintains-buy-rating-sharplink-442987",
+      "published_at": "2026-11-18T11:08:27+00:00",
+      "first_observed_at": "2026-11-18T11:40:44.954123+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "239acf2390091699",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin's (BTC) 12% slide through the 200-week average has a bullish past - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZlNxOHJWbE9MR084TDUtUHB3UDJ5WE14eERlVUl0RnFSLVJXRWI1M3g2UHlaV3FsMzU0Snc1ak9KMmRWb1RLYUttUFpsV1d5eVR5Uzg0SFY5WmZZSUlyNnJVV1FlMURMNnpJa2F4cVpNcDRfSHlyb1o0YzR3WFY5YkdVRjFYOFpRZlV5WlVoZWFtSHhxQ19kcEc0cGd1Tm82SlBpOURHeW1RVUhPSFNZdWhlUjhKUUYybzFfQ29vYWo?oc=5",
+      "published_at": "2026-11-18T07:52:08+00:00",
+      "first_observed_at": "2026-11-18T11:40:44.954123+00:00",
+      "sentiment": "POSITIVE",
+      "score": 1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "9953c08557b333e1",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Sheds Most of Post-Nvidia Bounce in 35 Minutes - The Defiant",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZndLcktFZ1ZpOFljT0oxb04tLVMzUklJV0ZwaVZ5c19PRmdkSXlKd0Yyc1hNMV9vVnE0Z0VnTFhBYWZrZ0ZMNHZvbnF1REdvME5iOWgtclpZdkxQb0hoNmFudkZwRTFJOG41NlRnQ1FhMjMzM1JYWVM1WUFwb3NweWltdFNLM3RHei15OEZYdjVsWEE?oc=5",
+      "published_at": "2026-11-18T11:01:24+00:00",
+      "first_observed_at": "2026-11-18T11:40:44.954123+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "4ebd7f52728feab9",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin steadies after Nvidia’s earnings beat as $60K bids stand out - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVnhkeFVmaVFJeTNNSU4yOWk4UFJiOUVYazUwTldqU0YzWjhaa1hvWENOaExpc2E0dDBqMndpTVI1VndSYXVoWnR5RXZ3a2FfTUhqODJMcU1KN1FfMkdoSGZicmJlLXdWR193RG9TS0dpVG5UeUFoQkNJbzRYdm9fRWt3dzZGT0w3Y0l4bTZxbzlzekY3U2Q5REtPN3poSVRJcVN6QWdDRzlBUnI5bWFhMy1VYWVCQ1J2c2hVTW5kWnhrYjR4Szc3UWQ2VQ?oc=5",
+      "published_at": "2026-11-18T10:31:20+00:00",
+      "first_observed_at": "2026-11-18T11:40:44.954123+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "64737d511bd59794",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin-to-gold ratio flashes bullish signal as BTC price outperforms the precious metal - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQR1JRUnBpbkVvbnQ2WTcxbHI3dloxazRwd0FYT25wWkF1Z0ZFNmNpbU9nTlJ4NjlaTGcySE1SeVk4ZTBoTmc4VmltTU9hQ0ZjLU4zVThMaW1jdW96bHdYWGh4ZVZSZkFEWUVqVlV4WVYwYXJDOERaMmc0dFMtS3pXOUU5VVkyVVB2V2VnMEw4OEVLbkxIWHAwdG9YdHYwTTB3cDhxMGVyeUkweVM0a09NaTBJeVh0ZGZTODdvYy1MY0c5QQ?oc=5",
+      "published_at": "2026-11-18T10:58:36+00:00",
+      "first_observed_at": "2026-11-18T11:40:44.954123+00:00",
+      "sentiment": "POSITIVE",
+      "score": 1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "ac891b6dbbde8c3a",
       "source": "COINTELEGRAPH",
@@ -2723,83 +2800,6 @@
       "first_observed_at": "2026-11-16T16:53:02.263862+00:00",
       "sentiment": "NEUTRAL",
       "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "cbeb0969d6f9da3b",
-      "source": "PUBLIC_FORUM",
-      "title": "Vitalik Buterin Defends Ethereum Gas Overhaul Amid Glamsterdam Upgrade Delay",
-      "url": "https://www.reddit.com/r/CryptoCurrency/comments/1xxsksl/vitalik_buterin_defends_ethereum_gas_overhaul/",
-      "published_at": null,
-      "first_observed_at": "2026-11-16T16:53:02.263862+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "d50939f4c5365436",
-      "source": "CRYPTODESK",
-      "title": "Live updates: Bitcoin holds near weekend lows as Nasdaq sinks 2%",
-      "url": "https://www.coindesk.com/tech/2026/11/16/live-news-bitcoin-posts-sixth-weekly-loss-as-tech-stocks-and-metals-slide",
-      "published_at": "2026-11-16T09:34:18+00:00",
-      "first_observed_at": "2026-11-16T15:26:22.247220+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "1aa82adb1430e6af",
-      "source": "COINTELEGRAPH",
-      "title": "Zelle picks Solana for ZelleUSD stablecoin and international payments",
-      "url": "https://cointelegraph.com/news/zelle-solana-zelleusd-stablecoin-international-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "published_at": "2026-11-16T14:55:46+00:00",
-      "first_observed_at": "2026-11-16T15:26:22.247220+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "90d7cccdc0e32e51",
-      "source": "THE_BLOCK",
-      "title": "Tom Lee says Ethereum’s ‘waterfall decline in price’ defies fundamentals as Bitmine adds 7,653 ETH",
-      "url": "https://www.theblock.co/news/business/2026-11-16-tom-lee-ethereum-waterfall-decline-price-defies-fundamentals-bitmine-adds-7653-eth-440904",
-      "published_at": "2026-11-16T15:00:18+00:00",
-      "first_observed_at": "2026-11-16T15:26:22.247220+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "d31f389902e9104a",
-      "source": "THE_BLOCK",
-      "title": "Bitwise CIO says bitcoin may fall further in the near term but still calls it the best risk-adjusted trade of the next decade",
-      "url": "https://www.theblock.co/news/markets/2026-11-16-bitwise-cio-says-bitcoin-may-fall-further-in-the-near-term-but-still-calls-it-the-best-risk-adjusted-trade-of-the-next-decade-440901",
-      "published_at": "2026-11-16T14:52:43+00:00",
-      "first_observed_at": "2026-11-16T15:26:22.247220+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "17987274b2712894",
-      "source": "THE_BLOCK",
-      "title": "Kava Lend loses roughly $3.8 million to hack, sending KAVA token down nearly 40%",
-      "url": "https://www.theblock.co/news/defi/2026-11-14-kava-lend-loses-roughly-3-8-million-to-hack-sending-kava-token-down-nearly-40-440350",
-      "published_at": "2026-11-14T23:07:35+00:00",
-      "first_observed_at": "2026-11-16T15:26:22.247220+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "789764181effec2d",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin slides to $62,000 following liquidation cascade, then rebounds slightly - CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPQlo2VlBtaV9NV21sUjRUYjVQek5hc0ppTjFySzhnQmxpZzlUcXZOa0wzQlZ3X3FMWkNLTHptMDN0TV9Jd1p4N1V4ZFdvdTUxeDJZY3B4Nm5jRE5TbEw5UER0akkya1lqbGlEeUFFVWhxTS1GakhOX01BaElXQnlEX214S3NGQnRkR1NLMFVhMnBMb285UzJRLTZlMV9PT25janpzSVBYbjR6Vkd6ZjZIMHZZY9IBuAFBVV95cUxOZEZpNy1nOG9RUVVHbFJGaWE4dGpqNDFHSWxLZmJUVXM4WHZRVjFqMmJVUTFyUEhGRkZFY1FuU0dxZ1NUR29MdFUybThHOUNOakdpc2RmN2R1VmdTQkZ4ZFBuVk5hMFp1RDk4VW4wQnl6NkQ4ZU1JbFF6M",
-      "published_at": "2026-11-16T14:29:09+00:00",
-      "first_observed_at": "2026-11-16T15:26:22.247220+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
       "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
