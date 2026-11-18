@@ -6,8 +6,10 @@ on:
     paths:
       - 'cryptex/ops/strategy_lab.py'
       - 'cryptex/ops/factor_dispatch_guard.py'
+      - 'cryptex/ops/depth_dispatch_guard.py'
       - 'cryptex/ops/tests/test_strategy_lab.py'
       - 'cryptex/ops/tests/test_factor_dispatch_guard.py'
+      - 'cryptex/ops/tests/test_depth_dispatch_guard.py'
       - '.github/workflows/cryptex-hourly-recovery-ci.yml'
 
 permissions:
@@ -28,6 +30,7 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
-          python3 -m py_compile cryptex/ops/strategy_lab.py cryptex/ops/factor_dispatch_guard.py
+          python3 -m py_compile cryptex/ops/strategy_lab.py cryptex/ops/factor_dispatch_guard.py cryptex/ops/depth_dispatch_guard.py
           PYTHONPATH=cryptex/ops python3 -m unittest discover -s cryptex/ops/tests -p 'test_factor_dispatch_guard.py' -v
+          PYTHONPATH=cryptex/ops python3 -m unittest discover -s cryptex/ops/tests -p 'test_depth_dispatch_guard.py' -v
           PYTHONPATH=cryptex/ops python3 -m unittest discover -s cryptex/ops/tests -p 'test_strategy_lab.py' -v
