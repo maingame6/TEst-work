@@ -46,13 +46,14 @@ class DepthDispatchGuardTests(unittest.TestCase):
   rep=report(-10)
   self.assertFalse(decide(authority(),rep,[],NOW)[0])
  def test_after_pilot_deadline_refuses(self):
-  after=dt.datetime(2026,11,25,0,tzinfo=UTC)
+  after=dt.datetime(2026,12,21,0,tzinfo=UTC)
   self.assertFalse(decide(authority(),report(10000),[],after)[0])
  def test_resumed_paper_depth_pilot_within_bound(self):
   current=dt.datetime(2026,11,17,20,20,tzinfo=UTC)
   rep=report();rep["generated_at"]=(current-dt.timedelta(minutes=18)).isoformat()
   self.assertTrue(decide(authority(),rep,[],current)[0])
-  self.assertFalse(decide(authority(),rep,[],dt.datetime(2026,11,25,tzinfo=UTC))[0])
+  self.assertTrue(decide(authority(),rep,[],dt.datetime(2026,11,25,tzinfo=UTC))[0])
+  self.assertFalse(decide(authority(),rep,[],dt.datetime(2026,12,21,tzinfo=UTC))[0])
  def test_recent_collector_status_cannot_be_success_claim(self):
   # A failed collector remains an actual failure, but a very recent attempt
   # must not immediately be spammed by every 5-minute core run.

@@ -26,7 +26,9 @@ class GuardTests(unittest.TestCase):
     def test_recent_run_prevents_duplicate_dispatch(self):
         self.assertFalse(decide(authority(),report(),[run(10)],NOW)[0])
         self.assertFalse(decide(authority(),report(),[run(200,'in_progress')],NOW)[0])
-    def test_expiry_blocks_at_25_nov(self):
+    def test_bounded_recovery_covers_full_30_day_prospective_sample(self):
+        self.assertGreaterEqual((END-dt.datetime(2026,11,18,tzinfo=UTC)).days,30)
+        self.assertTrue(decide(authority(),report(),[],dt.datetime(2026,11,25,tzinfo=UTC))[0])
         self.assertFalse(decide(authority(),report(),[],END)[0])
     def test_nonpaper_or_authority_handover_blocks(self):
         a=authority();a['writer']='server'
