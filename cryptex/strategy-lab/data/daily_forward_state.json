@@ -31,17 +31,52 @@
   },
   "benchmarks": {
     "btc": {
-      "cash": 100.0,
-      "qty": 0.0,
-      "owned": null,
-      "entry_basis": null,
+      "cash": 0.0,
+      "qty": 0.0015295921378314099,
+      "owned": "BTC",
+      "entry_basis": 100.0,
       "closed": [],
       "peak_nav": 100.0,
-      "max_drawdown_pct": 0.0
+      "max_drawdown_pct": -2.078289344563655
     }
   },
-  "days": [],
+  "days": [
+    {
+      "date": "2026-11-18",
+      "quote_observed_at": "2026-11-18T07:23:41.333091+00:00",
+      "last_completed_candle": "2026-11-17",
+      "target_if_due": null,
+      "missing_prior_days": 0,
+      "is_rebalance_day": true,
+      "trade_allowed": false,
+      "actual_bid_ask": {
+        "BTC": {
+          "bid": 64696.2,
+          "ask": 64696.3,
+          "source": "KRAKEN_PUBLIC_TICKER",
+          "observed_at": "2026-11-18T07:23:41.224201+00:00"
+        },
+        "ETH": {
+          "bid": 1814.89,
+          "ask": 1814.9,
+          "source": "KRAKEN_PUBLIC_TICKER",
+          "observed_at": "2026-11-18T07:23:41.280172+00:00"
+        },
+        "SOL": {
+          "bid": 75.12,
+          "ask": 75.13,
+          "source": "KRAKEN_PUBLIC_TICKER",
+          "observed_at": "2026-11-18T07:23:41.333073+00:00"
+        }
+      },
+      "base_paper_actions": [],
+      "stress_paper_actions": [],
+      "base_net_liquidation_nav": 100.0,
+      "stress_net_liquidation_nav": 100.0,
+      "btc_buy_hold_net_liquidation_nav": 97.921711
+    }
+  ],
   "missed_days": 0,
-  "last_day": null,
-  "last_observed_close_ts": null
+  "last_day": "2026-11-18",
+  "last_observed_close_ts": 1794873600
 }
