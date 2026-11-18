@@ -1,0 +1,33 @@
+name: CRYPTEX - hourly observation recovery safety checks
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cryptex/ops/strategy_lab.py'
+      - 'cryptex/ops/factor_dispatch_guard.py'
+      - 'cryptex/ops/tests/test_strategy_lab.py'
+      - 'cryptex/ops/tests/test_factor_dispatch_guard.py'
+      - '.github/workflows/cryptex-hourly-recovery-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  paper-only-hourly-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Causal hourly research and no-real-orders regression
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m py_compile cryptex/ops/strategy_lab.py cryptex/ops/factor_dispatch_guard.py
+          PYTHONPATH=cryptex/ops python3 -m unittest discover -s cryptex/ops/tests -p 'test_factor_dispatch_guard.py' -v
+          PYTHONPATH=cryptex/ops python3 -m unittest discover -s cryptex/ops/tests -p 'test_strategy_lab.py' -v
