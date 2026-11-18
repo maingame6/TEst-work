@@ -7,602 +7,1424 @@
   "started_at": "2026-11-02T21:35:48.297127+00:00",
   "symbols": {
     "BTC": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "williams_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cci_rebound_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 64382.4,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "rsi_rebound_16": {
+          "signal_ts": 1794970800
+        },
+        "rsi_trend_8": {
+          "signal_ts": 1794970800
+        },
+        "adx_uptrend_8": {
+          "signal_ts": 1794970800
+        },
+        "low_vol_trend_8": {
+          "signal_ts": 1794970800
         }
       }
     },
     "ETH": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "williams_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cci_rebound_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 1803.21,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "rsi_rebound_16": {
+          "signal_ts": 1794970800
         }
       }
     },
     "SOL": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "sma_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "sma_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "sma_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "ema_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "ema_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cci_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "adx_uptrend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "efficiency_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cmf_accumulation_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 74.71,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "rsi_trend_8": {
+          "signal_ts": 1794970800
         }
       }
     },
     "XRP": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "sma_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "sma_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "sma_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "ema_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "ema_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "adx_uptrend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.97631,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "cci_trend_32": {
+          "signal_ts": 1794970800
+        },
+        "vwap_reclaim_8": {
+          "signal_ts": 1794970800
         }
       }
     },
     "ADA": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "williams_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cci_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.15335,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "ema_trend_8": {
+          "signal_ts": 1794970800
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794970800
+        },
+        "rsi_trend_8": {
+          "signal_ts": 1794970800
+        },
+        "stochastic_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "adx_uptrend_8": {
+          "signal_ts": 1794970800
         }
       }
     },
     "DOGE": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "sma_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cmf_accumulation_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.0592815,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "williams_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794970800
+        },
+        "cmf_accumulation_16": {
+          "signal_ts": 1794970800
         }
       }
     },
     "LTC": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "williams_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cci_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cci_rebound_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "mfi_recovery_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "mfi_recovery_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 44.67,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "rsi_rebound_16": {
+          "signal_ts": 1794970800
         }
       }
     },
     "LINK": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 9.21448,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 9.21448,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 9.21448,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 9.21448,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 9.21448,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 9.21448,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "sma_trend_8": {
+          "signal_ts": 1794970800
+        },
+        "ema_trend_8": {
+          "signal_ts": 1794970800
+        },
+        "rsi_trend_8": {
+          "signal_ts": 1794970800
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "vwap_reclaim_32": {
+          "signal_ts": 1794970800
+        },
+        "adx_uptrend_8": {
+          "signal_ts": 1794970800
+        },
+        "mfi_recovery_32": {
+          "signal_ts": 1794970800
+        },
+        "low_vol_trend_8": {
+          "signal_ts": 1794970800
         }
       }
     },
     "BCH": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "williams_rebound_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "cci_rebound_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "atr_pullback_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 208.92,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "sma_trend_32": {
+          "signal_ts": 1794970800
+        },
+        "rsi_rebound_16": {
+          "signal_ts": 1794970800
+        },
+        "mfi_recovery_16": {
+          "signal_ts": 1794970800
         }
       }
     },
     "DOT": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.732,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.732,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.732,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.732,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.732,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.732,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.732,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "williams_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "obv_confirmation_32": {
+          "signal_ts": 1794970800
+        },
+        "vwap_reclaim_32": {
+          "signal_ts": 1794970800
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794970800
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794970800
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794970800
         }
       }
     },
     "AVAX": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 7.146,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 7.146,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 7.146,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 7.146,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 7.146,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 7.146,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "rsi_rebound_16": {
+          "signal_ts": 1794970800
+        },
+        "williams_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "williams_rebound_16": {
+          "signal_ts": 1794970800
+        },
+        "williams_rebound_32": {
+          "signal_ts": 1794970800
+        },
+        "cci_rebound_8": {
+          "signal_ts": 1794970800
+        },
+        "atr_pullback_8": {
+          "signal_ts": 1794970800
+        },
+        "atr_pullback_16": {
+          "signal_ts": 1794970800
+        },
+        "atr_pullback_32": {
+          "signal_ts": 1794970800
         }
       }
     },
     "XLM": {
-      "last_ts": 1794967200,
-      "observed": 60,
+      "last_ts": 1794970800,
+      "observed": 61,
       "missing": 307,
-      "positions": {},
-      "pending": {
+      "positions": {
         "sma_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "sma_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "ema_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "ema_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "momentum_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "momentum_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vol_target_momentum_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "rsi_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "macd_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "obv_confirmation_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "vwap_reclaim_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "adx_uptrend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "aroon_uptrend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "roc_acceleration_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_8": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_16": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
         },
         "low_vol_trend_32": {
-          "signal_ts": 1794967200
+          "signal_ts": 1794967200,
+          "entry_ts": 1794970800,
+          "entry": 0.140263,
+          "last_ts": 1794970800,
+          "held": 0
+        }
+      },
+      "pending": {
+        "momentum_32": {
+          "signal_ts": 1794970800
+        },
+        "cci_trend_32": {
+          "signal_ts": 1794970800
         }
       }
     }
@@ -49526,7 +50348,7 @@
       "entry_ts": 1794960000
     }
   ],
-  "signals": 7156,
-  "successful_hourly_updates": 720,
+  "signals": 7202,
+  "successful_hourly_updates": 732,
   "duplicate_events": 0
 }
