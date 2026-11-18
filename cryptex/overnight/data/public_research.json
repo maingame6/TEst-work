@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T08:30:37.042802+00:00",
+  "checked_at": "2026-11-18T09:30:52.363438+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "HTTPError:HTTP Error 429: Too Many Requests"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -52,6 +53,39 @@
     }
   ],
   "articles": [
+    {
+      "id": "b51842d826fd9720",
+      "source": "CRYPTODESK",
+      "title": "Hyundai tests AI agent commerce on JPMorgan’s Kinexys blockchain",
+      "url": "https://www.coindesk.com/business/2026/11/18/hyundai-tests-ai-agent-commerce-on-jpmorgan-s-kinexys-blockchain",
+      "published_at": "2026-11-18T09:14:15+00:00",
+      "first_observed_at": "2026-11-18T09:30:52.363438+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "7ad91e30014c3e2f",
+      "source": "COINTELEGRAPH",
+      "title": "SOL comes out of Breakpoint 7% higher as Solana exits beta",
+      "url": "https://cointelegraph.com/markets/solana-sol-gains-7-percent-breakpoint-beta-tokenization?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-18T08:41:16+00:00",
+      "first_observed_at": "2026-11-18T09:30:52.363438+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "bd63add5345e1b9d",
+      "source": "THE_BLOCK",
+      "title": "Hong Kong central bank explores agentic AI to detect crypto-related financial crime",
+      "url": "https://www.theblock.co/news/regulation/2026-11-18-hong-kong-agentic-ai-crypto-crime-442959",
+      "published_at": "2026-11-18T08:43:02+00:00",
+      "first_observed_at": "2026-11-18T09:30:52.363438+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "2832ce78dc6f8b70",
       "source": "COINTELEGRAPH",
@@ -2768,45 +2802,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "817b858edd716c81",
-      "source": "SEARCH_RADAR",
-      "title": "Strategy (MSTR) Adds 485 Bitcoin for $33.4 Million as It Spends $228 Million Buying Back Preferred Stock - Bitcoin Magazine",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE55eUNXWWYwR09ua0cxaUFxZmpzT0hDd3dmUFVuX21jQ0lORXZuZUhCWEgyMUFUbjZQb1d2cThCb0c3V3l1a1EzWTNvbUlPclNLZ0tVMmxOVTZrUUhMNkdnOEZ1ajhNaGljVDFQQ2RtVTltV1N5WHhHVjB4VGU?oc=5",
-      "published_at": "2026-11-16T13:38:30+00:00",
-      "first_observed_at": "2026-11-16T14:26:11.949940+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "3ddaf44588ff30e8",
-      "source": "SEARCH_RADAR",
-      "title": "Current price of Bitcoin for Nov. 16, 2026 - Fortune",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9nV25Edng4OEdJYUx0X2pPOEhLNGE4bnVZQm4tX1d1SVZ3Y3NFbjJpNzdERDVRQlBVSmZOU0VHWmhoWi03MWtZZHNZbHBYaHNTZ0UzRHprU05YZ18xMW04M0Nsck5NOTg?oc=5",
-      "published_at": "2026-11-16T12:45:00+00:00",
-      "first_observed_at": "2026-11-16T14:26:11.949940+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "6541a5974eae26f4",
-      "source": "SEARCH_RADAR",
-      "title": "Wall Street Traders Bet That Bitcoin Will Fall Below $60,000 - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQSWV6Nk04OWF0dERpdmN4azhtTXBzcGR2RFJOWm9vbG16RE9iYXB2U2pBRS1RX002bzI2SWZlMjZtb1A1TlJtY0JyTWdYUG90WkhVcU5ITFdzc1gyRmNpa3lFRzdnazV0Uk5CLThXZVA3eGViR1VNX055X0xRLWdNa0tCOVVpdTFjTWJhbU00b0dqQjZneU9YMHFmWHo?oc=5",
-      "published_at": "2026-11-16T13:33:00+00:00",
-      "first_observed_at": "2026-11-16T14:26:11.949940+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 6,
   "sources_total": 8
 }
