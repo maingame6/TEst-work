@@ -15,7 +15,12 @@ import urllib.request
 UTC = dt.timezone.utc
 END = dt.datetime(2026, 11, 25, tzinfo=UTC)
 MIN_REPORT_AGE = 75 * 60
-MIN_RUN_SPACING = 65 * 60
+MIN_RUN_SPACING = 65 * 60  # legacy reports without actual candle markers
+MIN_MARKER_RUN_SPACING = 35 * 60
+MIN_FEED_SETTLE_MINUTE = 10
+HOUR_SECONDS = 3600
+EXPECTED_SYMBOLS = frozenset(
+    ("BTC","ETH","SOL","XRP","ADA","DOGE","LTC","LINK","BCH","DOT","AVAX","XLM"))
 FUTURE_ALLOWANCE = 90
 REPO = 'maingame6/TEst-work'
 WORKFLOW = 'cryptex-factor-hourly.yml'
@@ -53,8 +58,29 @@ def decide(authority, report, runs, now):
     age = (now - last).total_seconds()
     if age < -FUTURE_ALLOWANCE:
         return False, 'REPORT_FROM_FUTURE'
-    if age < MIN_REPORT_AGE:
-        return False, 'RECENT_FACTOR_OBSERVATION'
+    # Backward compatibility: legacy reports lack actual candle markers.
+    # Never infer a completed hourly observation from a successful job.
+    markers = report.get('latest_observed_hour_ts_by_symbol')
+    if markers is None:
+        if age < MIN_REPORT_AGE:
+            return False, 'RECENT_FACTOR_OBSERVATION'
+    else:
+        if (not isinstance(markers, dict)
+                or set(markers) != EXPECTED_SYMBOLS
+                or set(report.get('symbols', [])) != EXPECTED_SYMBOLS
+                or any(type(value) is not int or value < 0
+                       or value % HOUR_SECONDS for value in markers.values())):
+            return False, 'INVALID_HOURLY_CANDLE_MARKERS'
+        utc_now = now.astimezone(UTC)
+        # Kraken's OHLC candle starting in the previous UTC hour has only
+        # finished after the present hour begins. Allow publication delay.
+        if utc_now.minute < MIN_FEED_SETTLE_MINUTE:
+            return False, 'WAIT_FOR_COMPLETED_KRAKEN_HOUR'
+        expected = (int(utc_now.timestamp()) // HOUR_SECONDS - 1) * HOUR_SECONDS
+        if any(value > expected for value in markers.values()):
+            return False, 'FUTURE_HOURLY_CANDLE_MARKER'
+        if all(value == expected for value in markers.values()):
+            return False, 'LATEST_HOURLY_CANDLES_ALREADY_ARCHIVED'
     if not isinstance(runs, list):
         return False, 'RUN_HISTORY_UNAVAILABLE'
     for item in runs:
@@ -66,9 +92,11 @@ def decide(authority, report, runs, now):
             return False, 'FACTOR_RUN_FROM_FUTURE'
         if item.get('status') in ('queued', 'pending', 'in_progress', 'requested', 'waiting'):
             return False, 'FACTOR_WORKFLOW_ALREADY_ACTIVE'
-        if run_age < MIN_RUN_SPACING:
+        spacing = MIN_MARKER_RUN_SPACING if markers is not None else MIN_RUN_SPACING
+        if run_age < spacing:
             return False, 'RECENT_FACTOR_WORKFLOW_ATTEMPT'
-    return True, 'FACTOR_DATA_STALE_AND_NO_RECENT_RUN'
+    return True, ('LATEST_COMPLETED_HOUR_MISSING' if markers is not None
+                  else 'FACTOR_DATA_STALE_AND_NO_RECENT_RUN')
 
 
 def main():

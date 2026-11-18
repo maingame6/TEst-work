@@ -313,7 +313,14 @@ def report(state):
        "independent_of_210_paper_wallets":True,"writer_access":False,
        "generated_at":now.isoformat(),"config_hash":REGISTRY,
        "family_count":len(FAMILIES),"candidate_count":len(CANDIDATES),
-       "symbols":list(PAIRS),"indicator_count":len(indicators_fixture_names()),
+       "symbols":list(PAIRS),
+       # Publish actual first-seen completed hourly candle starts; the
+       # independent paper runner can recover missing future observations
+       # without inventing trades or resetting the historical gap counters.
+       "latest_observed_hour_ts_by_symbol":{
+           symbol:int(state["symbols"].get(symbol,{}).get("last_ts",0))
+           for symbol in PAIRS},
+       "indicator_count":len(indicators_fixture_names()),
        "observed_symbol_hours":observed,"missing_symbol_hours":missing,
        "observation_coverage_pct":round(100*observed/(observed+missing),4) if observed+missing else 0,
        "closed_hypotheses":len(state["closed"]),"censored_hypotheses":len(state["censored"]),
