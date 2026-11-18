@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795035900,
+  "last_ts": 1795036200,
   "first_ts": 1793488500,
-  "observed_candles": 4217,
-  "signals": [
+  "observed_candles": 4218,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "AVAX",
       "signal_ts": 1795035900,
-      "observed_move": 0.00577201
+      "entry_ts": 1795036200,
+      "entry_mid": 6.96,
+      "exit_ts": 1795038000
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -9626,34 +9628,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4105,
-      "liquid_candidates": 41168,
-      "move_below_gate": 41109,
-      "volume_below_gate": 31436,
+      "bars": 4106,
+      "liquid_candidates": 41179,
+      "move_below_gate": 41120,
+      "volume_below_gate": 31447,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4105,
-      "liquid_candidates": 41168,
-      "move_below_gate": 41092,
-      "volume_below_gate": 31008,
+      "bars": 4106,
+      "liquid_candidates": 41179,
+      "move_below_gate": 41103,
+      "volume_below_gate": 31019,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4105,
-      "liquid_candidates": 41168,
-      "move_below_gate": 40671,
-      "volume_below_gate": 31008,
+      "bars": 4106,
+      "liquid_candidates": 41179,
+      "move_below_gate": 40682,
+      "volume_below_gate": 31019,
       "qualified": 271,
       "queued": 158
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4105,
-      "liquid_candidates": 41168,
-      "move_below_gate": 37581,
-      "volume_below_gate": 30525,
+      "bars": 4106,
+      "liquid_candidates": 41179,
+      "move_below_gate": 37592,
+      "volume_below_gate": 30536,
       "qualified": 1326,
       "queued": 679
     }
@@ -9818,6 +9820,14 @@
       "entry_ts": 1795032900,
       "entry_mid": 3.248,
       "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795035900,
+      "entry_ts": 1795036200,
+      "entry_mid": 6.96,
+      "hold_bars": 48
     }
   ],
   "horizon_trades": [
