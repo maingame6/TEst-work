@@ -2,15 +2,15 @@
 
 **PAPER ONLY. All balances, profits and orders are simulated; no exchange execution.**
 
-Recorded: 2026-11-19T11:30:43.197655+00:00 | Dublin overnight session: 2026-11-18
+Recorded: 2026-11-19T11:35:40.246646+00:00 | Dublin overnight session: 2026-11-18
 Morning checkpoint: **MORNING_RECORDED**. A fresh after-08:00 snapshot has been captured.
 
 ## 1. The money
 
-Initial fake competition capital **$210.00**; current estimated liquidation **$196.3682**, total after-cost P&L **$-13.6318**.
-Realised $-13.3759; unrealised after estimated selling costs $-0.2559.
+Initial fake competition capital **$210.00**; current estimated liquidation **$196.3836**, total after-cost P&L **$-13.6164**.
+Realised $-13.3759; unrealised after estimated selling costs $-0.2404.
 From the first REAL recorded overnight balance at 2026-11-18T21:00:36.401364+00:00: **$+0.1188**.
-Main ten: $86.7471 ($-13.2529); eleven maths/OSS agents: $109.6211 ($-0.3789).
+Main ten: $86.7625 ($-13.2375); eleven maths/OSS agents: $109.6211 ($-0.3789).
 
 ## 2. What the 21 traders actually did
 
@@ -40,7 +40,7 @@ An order fill is not a completed round trip. Pending BUY/SELL is not an executed
 | SPY | main | $9.6439 | $-0.3561 | 0 | $+0.0000 | Cash |
 | CONTRARIAN | main | $9.4681 | $-0.5319 | 0 | $+0.0000 | Cash |
 | BREAKOUT | main | $9.3491 | $-0.6509 | 0 | $+0.0000 | Cash |
-| ROTATOR | main | $7.5867 | $-2.4133 | 0 | $+0.0000 | BTC |
+| ROTATOR | main | $7.6021 | $-2.3979 | 0 | $+0.0000 | BTC |
 | FRACTAL | main | $6.4792 | $-3.5208 | 0 | $+0.0000 | Cash |
 | VORTEX | main | $4.9699 | $-5.0301 | 0 | $+0.0000 | Cash |
 
@@ -66,42 +66,42 @@ Positive gross trades 0 versus after-cost winners 0. Trading frequently is NOT p
 
 | Asset | Actual baseline time | First price | Latest price | Observed change |
 |---|---|---:|---:|---:|
-| NEAR | 2026-11-18T21:00:36.401364+00:00 | 3.2665 | 3.3952 | +3.94% |
-| PEPE | 2026-11-18T21:00:36.401364+00:00 | 3.729e-06 | 3.859e-06 | +3.49% |
-| ETH | 2026-11-18T21:00:36.401364+00:00 | 1751.71 | 1805.86 | +3.09% |
-| BNB | 2026-11-18T21:00:36.401364+00:00 | 578.03 | 591.91 | +2.40% |
-| WIF | 2026-11-18T21:00:36.401364+00:00 | 0.1316 | 0.1347 | +2.36% |
-| AVAX | 2026-11-18T21:00:36.401364+00:00 | 6.94 | 7.099 | +2.29% |
-| SOL | 2026-11-18T21:00:36.401364+00:00 | 72.96 | 74.6 | +2.25% |
-| SHIB | 2026-11-18T21:00:36.401364+00:00 | 3.782e-06 | 3.86e-06 | +2.06% |
-| BTC | 2026-11-18T21:00:36.401364+00:00 | 62539.3 | 63821.6 | +2.05% |
-| BONK | 2026-11-18T21:00:36.401364+00:00 | 2.324e-06 | 2.37e-06 | +1.98% |
-| TON | 2026-11-18T21:00:36.401364+00:00 | 1.012 | 1.032 | +1.98% |
-| AAVE | 2026-11-18T21:00:36.401364+00:00 | 107.86 | 109.98 | +1.97% |
-| LINK | 2026-11-18T21:00:36.401364+00:00 | 9.02965 | 9.19717 | +1.86% |
-| ADA | 2026-11-18T21:00:36.401364+00:00 | 0.151005 | 0.153764 | +1.83% |
+| PEPE | 2026-11-18T21:00:36.401364+00:00 | 3.729e-06 | 3.898e-06 | +4.53% |
+| NEAR | 2026-11-18T21:00:36.401364+00:00 | 3.2665 | 3.4073 | +4.31% |
+| ETH | 2026-11-18T21:00:36.401364+00:00 | 1751.71 | 1810.16 | +3.34% |
+| AVAX | 2026-11-18T21:00:36.401364+00:00 | 6.94 | 7.131 | +2.75% |
+| WIF | 2026-11-18T21:00:36.401364+00:00 | 0.1316 | 0.135 | +2.58% |
+| BNB | 2026-11-18T21:00:36.401364+00:00 | 578.03 | 592.95 | +2.58% |
+| SOL | 2026-11-18T21:00:36.401364+00:00 | 72.96 | 74.82 | +2.55% |
+| BONK | 2026-11-18T21:00:36.401364+00:00 | 2.324e-06 | 2.38e-06 | +2.41% |
+| SHIB | 2026-11-18T21:00:36.401364+00:00 | 3.782e-06 | 3.871e-06 | +2.35% |
+| AAVE | 2026-11-18T21:00:36.401364+00:00 | 107.86 | 110.38 | +2.34% |
+| BTC | 2026-11-18T21:00:36.401364+00:00 | 62539.3 | 63968.4 | +2.29% |
+| LINK | 2026-11-18T21:00:36.401364+00:00 | 9.02965 | 9.22247 | +2.14% |
+| XRP | 2026-11-18T21:00:36.401364+00:00 | 0.96629 | 0.98679 | +2.12% |
+| ADA | 2026-11-18T21:00:36.401364+00:00 | 0.151005 | 0.1541 | +2.05% |
+| LTC | 2026-11-18T21:00:36.401364+00:00 | 43.69 | 44.56 | +1.99% |
+| SUI | 2026-11-18T21:00:36.401364+00:00 | 0.7172 | 0.7313 | +1.97% |
+| TON | 2026-11-18T21:00:36.401364+00:00 | 1.012 | 1.031 | +1.88% |
+| DOGE | 2026-11-18T21:00:36.401364+00:00 | 0.0585351 | 0.0596199 | +1.85% |
 | FLOKI | 2026-11-18T21:00:36.401364+00:00 | 1.753e-05 | 1.784e-05 | +1.77% |
-| LTC | 2026-11-18T21:00:36.401364+00:00 | 43.69 | 44.46 | +1.76% |
-| XRP | 2026-11-18T21:00:36.401364+00:00 | 0.96629 | 0.98318 | +1.75% |
-| SUI | 2026-11-18T21:00:36.401364+00:00 | 0.7172 | 0.7279 | +1.49% |
-| DOGE | 2026-11-18T21:00:36.401364+00:00 | 0.0585351 | 0.0594014 | +1.48% |
-| BCH | 2026-11-18T21:00:36.401364+00:00 | 206.46 | 209.11 | +1.28% |
-| TRX | 2026-11-18T21:00:36.401364+00:00 | 0.308713 | 0.312493 | +1.22% |
-| UNI | 2026-11-18T21:00:36.401364+00:00 | 5.1594 | 5.2134 | +1.05% |
-| XLM | 2026-11-18T21:00:36.401364+00:00 | 0.13733 | 0.138416 | +0.79% |
-| DOT | 2026-11-18T21:00:36.401364+00:00 | 0.7126 | 0.7168 | +0.59% |
+| BCH | 2026-11-18T21:00:36.401364+00:00 | 206.46 | 209.55 | +1.50% |
+| UNI | 2026-11-18T21:00:36.401364+00:00 | 5.1594 | 5.2287 | +1.34% |
+| TRX | 2026-11-18T21:00:36.401364+00:00 | 0.308713 | 0.312541 | +1.24% |
+| XLM | 2026-11-18T21:00:36.401364+00:00 | 0.13733 | 0.13874 | +1.03% |
+| DOT | 2026-11-18T21:00:36.401364+00:00 | 0.7126 | 0.7194 | +0.95% |
 
-Observed paper equity samples: 175. Observed range $196.18204–$196.369919, sampled maximum drawdown -0.0449%, largest recorded gap 5.4 minutes.
+Observed paper equity samples: 176. Observed range $196.18204–$196.383618, sampled maximum drawdown -0.0449%, largest recorded gap 5.4 minutes.
 
 Benchmarks are comparison-only and excluded from the $210 bankroll.
-- BTC: $10 fake reference now $8.2131; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- ETH: $10 fake reference now $7.9796; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- SOL: $10 fake reference now $7.7150; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- BTC: $10 fake reference now $8.2320; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- ETH: $10 fake reference now $7.9986; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- SOL: $10 fake reference now $7.7377; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
 
 ## 5. Broad market radar — monitoring only, NOT new trades
 
 Kraken USD spot market discovery covers majors, L1, DeFi, AI/data, L2/gaming, memes, stablecoin pairs, tokenised-gold proxies and FX references.
-Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-19T11:05:38.896633+00:00; age 25.07 minutes.
+Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-19T11:05:38.896633+00:00; age 30.02 minutes.
 **This does not expand the bounded 24-asset simulated execution universe.**
 Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.
 
@@ -219,22 +219,22 @@ Validated direct USD market quotes: 627; source status OK. One Kraken public fet
 
 ## 6. Public news and research findings
 
-Last public-source poll: 2026-11-19T10:30:43.755863+00:00. Available 7/8 research scouts.
-57 headline(s) first observed within the session. Weak **keyword-only**, uncalibrated sentiment: {'NEUTRAL': 50, 'NEGATIVE': 6, 'POSITIVE': 1}.
+Last public-source poll: 2026-11-19T11:35:37.829211+00:00. Available 7/8 research scouts.
+66 headline(s) first observed within the session. Weak **keyword-only**, uncalibrated sentiment: {'NEUTRAL': 59, 'NEGATIVE': 6, 'POSITIVE': 1}.
 These are unverified third-party headlines, NOT insider information or automatic trade triggers.
 
+- [North Korean hackers used Sky's stablecoin system, putting billions at freeze risk](https://www.coindesk.com/business/2026/11/19/north-korean-hackers-used-sky-s-stablecoin-system-putting-billions-at-freeze-risk) — CRYPTODESK (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [Live updates: Bitcoin nears $64,000 as Anthropic’s record IPO lifts tech](https://www.coindesk.com/markets/2026/11/19/live-updates-bitcoin-nears-usd64-000-as-anthropic-s-record-ipo-lifts-tech) — CRYPTODESK (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [Sweden’s H100 could tap Bitcoin trading pool to fund share buybacks](https://cointelegraph.com/news/swedens-h100-13m-q3-loss-share-buyback-approval?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound) — COINTELEGRAPH (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [Bitcoin BTC (BTC-USD) Live Price, News, Chart and Price History - Yahoo Finance Singapore](https://news.google.com/rss/articles/CBMiVkFVX3lxTE5yOVM0ZTRBWjRWRW9KcFF1czB4bV9VbHNOYnZqSTRlXzk2SHBHTEo5RnIzR0xkNklES1Z6ZnZZSTRhM2tjZEFnQ3VEd1BCUDFPcFRBSlhB?oc=5) — SEARCH_RADAR (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [Not Bitcoin. Not Ethereum. This Could Be the Best Cryptocurrency to Hold During the Next 5 Years. - The Motley Fool](https://news.google.com/rss/articles/CBMi0AFBVV95cUxOSFJGWjFSRnhqNjhOZTBfQVBLRmFFOWFMYVNLUVRNejcwam1GUmFqUVZvTU8wVTZtM2EybUtDcUhNbkJfRFRBR0g4WW1MRWczN0ItOGpuNE1nRU9FNVhtcTF5QnVYb1BTdmZMTFFEdjZNOFdtY1F5dkk1UVpUSW1IYnVqbTNqVkdBV1VLN2V3TGlzQjFsclR6WFRtY2dWNXlucG9OYjd3Rm5CR2lLUFNrQlNUVkVQbFNkZHBDeGtzaEVsaHdiZG5VX2h3ZUh0RGV3?oc=5) — SEARCH_RADAR (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [$Bitcoin (BTC.CC)$ - Moomoo](https://news.google.com/rss/articles/CBMid0FVX3lxTFA0cW12YkkteFotM2x5QktRYmpBMHFlUmgzUWtZdmZKR3J4WnlIY3lxXzhWb3ZiZE1vZXlBWFFXU3l5SjlIcERqOXZMS3haZDRTa1FMOW1MMEoySmplaGZlOXJsOXRMVm1oMlpWZ1hDckZzUEhEeTdV?oc=5) — SEARCH_RADAR (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [Bitcoin Struggles to Hold $64,000 as ETF Outflows Hit $2.9B in November - Decrypt](https://news.google.com/rss/articles/CBMimgFBVV95cUxNcDBHZnpGUDMtLXc3QTlWOEVGZ3JtT2J3WkJQdGk5YlpiNHVjSkFOeGVwVmtLdU1NUkJlSk1oM09Pd3A2ckxaeG56dUJWZnBFY3RZMTNVd3VSTmFOTFMzY0kxbEZvLWxtV19XWkpVanRGeERxMnlmMldEX0NEejA5T251cHdXTmtsN0J3el9nTXVHT3REZmhGU2pB?oc=5) — SEARCH_RADAR (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [Bitcoin Price: Heading For The $50,000s? - Yahoo Finance](https://news.google.com/rss/articles/CBMimgFBVV95cUxPQV9YeUVYSEtDMlplNEViNGotVnBDUVBONW9rOHd2NF9MTTZRMGxTRXVySG5XWklDVTRGVE9YWjh0MEFYb2hRQmpqUXllMHpEWmk4LTc0cERGcUtNTEFQRUZFRWkzcEw4VHN4aUlESkh1dmlLRFpLVFpJNU8taEdidlM1SmNXZmx2MjgyaDNINUlEbU9fbFplSVZR?oc=5) — SEARCH_RADAR (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
+- [Binance Hacker Moves Another $248M of Ethereum as the Exchange Pockets $6.5B Court Order - Yahoo Finance](https://news.google.com/rss/articles/CBMinwFBVV95cUxNT0h5QVhraW5TbWlJSzNxM0dnck9WUGJIQmM2Snc3QllpNlM4MXJselIyQTVzYnFOTjlLOC1RQVpza0xIdVNTRmFxZEtjNEwwUGxQdGhSYWFKMlNzQWdlN0tZY0w4TC14ODdDR3dQc1lqckUxVUhKYTQwOWp6STdfdGo0alYyamJwVkNIMjk0YVRRYmhWRDFSaFNwV01ON0U?oc=5) — SEARCH_RADAR (seen 2026-11-19T11:35:37.829211+00:00, keyword NEUTRAL)
 - [Roundhill scraps Solana and XRP income ETFs as rival funds indicate low demand](https://www.coindesk.com/markets/2026/11/19/roundhill-scraps-solana-and-xrp-income-etfs-as-rival-funds-attract-just-usd12-million) — CRYPTODESK (seen 2026-11-19T10:30:43.755863+00:00, keyword NEUTRAL)
 - [Bitcoin - United States dollar (BTC/USD) Stock Price, Quote, News & History - Benzinga](https://news.google.com/rss/articles/CBMiT0FVX3lxTFBCWFBIazJDbms2NktwS3pGOTI0OGdwYTZpWE5lbWNIaDQ5by0wdl82N3QyUG9SVjAyTW1WcWhkelZsRUlia2J6anREYU9YLXc?oc=5) — SEARCH_RADAR (seen 2026-11-19T10:30:43.755863+00:00, keyword NEUTRAL)
 - [Bitcoin Mining Could Become Less Profitable as Miners Sell BTC To Chase AI Data Center Profits - Coinpedia](https://news.google.com/rss/articles/CBMivwFBVV95cUxObmVLWUxUT2lLd3BXaU5YSXI0X2RIR18yRFNnOTFYT0NhekFHc3lwdjNiUlAyMWVfdEVtbXJEeXVtWm01N2h4Y1BfYTgwN0Y3S2dsazZWakpsOHpnTVpaa3ZIVy1qVTdzZlU5Y0d5MUNRcnRocWxtUnNyN1R6dTlzb0t6aURGQTkwdXZuMV9yVGVOWFhPSmVxUlNicE5hdDAxUDVhWTN5QXBoQkpyWnZNNi01VTVfRS1fSXpIM2VOd9IBxAFBVV95cUxNV2JkRUpoSDNjczFWUXRlWW5RNjV4SUhnVjR4VUtxUlN1RGJJSERiVlI4V2NERF9zcm9JT2JuMUhwTHlvUTI3b3JQU3FMWW1CTjdLcm11eGxjbjhoN19FeFdRNDVQV1dQdXV2MWlYS) — SEARCH_RADAR (seen 2026-11-19T10:30:43.755863+00:00, keyword NEUTRAL)
-- [Bitcoin Bounces From $62K: Is Gold and Silver’s 14% Crash Sending Money Into Crypto? - Yahoo Finance](https://news.google.com/rss/articles/CBMinAFBVV95cUxPUzhKUXlGSlhrN25iT0ZGUUs4QlR2QUExdExJU0FxT3M3VEpWWDZqRlBFZmhDWFRHUC0zYjFVa2h3LVNSUmkyNFRBbDJRWFkwVEJxS2s1Y0pDazF4LU5GczJidFkxUFhjcG9xVU1NdmVYYWsxdEFkTzF4d1ZUOHJPalpsUjJOZ2ZtRWt0d0ZSX2JNa2Z4SnF1S295bXI?oc=5) — SEARCH_RADAR (seen 2026-11-19T10:30:43.755863+00:00, keyword NEGATIVE)
-- ['The Bitcoin Standard' Author Says BTC Has Bottomed Around $60,000: 'I Can't See It Dropping Much Below This' - Benzinga](https://news.google.com/rss/articles/CBMi9gFBVV95cUxPeEFhSVJNcVFjU25VZTFhU05fdHVLcndDZlR1T1RVdWVhQWZ4THJZQnJDTUV6a0EyWlBwb19hLXI4RTIxbFNKQ2dzZWNPUjMtUkphNWh2LTllTlJ2ajl5TEd6bHRsYjJtMFBDQmlFNXFMOV85cDhOa0xMRHJiOGdNUGhfMFNpQzB4MkI0b0plWXZRdk5BY256UldDZGVwMHR0MGd1Tk00SXZNUGwzT2k5b2c1OGd4dldxUWJpWGVyWENTNDZxY0FfNi1mVWVreDRtRWxHSHNud3RSY191UVk3Wk1mZTA1d3FGandidlpiczdiMXd2M2c?oc=5) — SEARCH_RADAR (seen 2026-11-19T10:30:43.755863+00:00, keyword NEUTRAL)
-- [Bitcoin ETF assets fall to three-month low as 2026 net outflows top $2.5B](https://cointelegraph.com/markets/bitcoin-etf-assets-three-month-low-78-billion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound) — COINTELEGRAPH (seen 2026-11-19T09:30:39.896451+00:00, keyword NEUTRAL)
-- [Is Ethereum a Buy Right Now? - The Motley Fool](https://news.google.com/rss/articles/CBMid0FVX3lxTE51WXdvazZ2SkU1SFpCeGxLV3gwMU4tbndRR1BscU55MlhEbFJVemtsX1hhS3FxczlTMk5BV1hJcFFtbnBXT2NnUzg4aWVQWjluWm5ybkotY2MzcXBZd2NfMmNvSE1mMHpCNVJGZWRkd0dNT1ZuczZN?oc=5) — SEARCH_RADAR (seen 2026-11-19T09:30:39.896451+00:00, keyword NEUTRAL)
-- [Is Ethereum a Buy Right Now? - Yahoo Finance](https://news.google.com/rss/articles/CBMiiAFBVV95cUxQenZGVEZsR0NoOHFLd3pKQWtyYlpMZ1pPU1R5MEliYURQakR3cHE0ajlDN0JPWURHTW5EeUFVelVlTnZ2MFp0bXdWeFpWN3dBYmxTUVpIdmFsb0VIS0xKNlFpZ05KMXNFQy05T1lqTWpJcFc4ckdsdXlqbE90Z0NNY042WXlIdjlf?oc=5) — SEARCH_RADAR (seen 2026-11-19T09:30:39.896451+00:00, keyword NEUTRAL)
-- [Binance Hack Wallet Moves Another $250M in ETH - Bitcoin Foundation](https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTG1lb1pyTU9vV3Y1QzA5a3hMSXZvUmViRHJJUGhHLVBFS3h3emhsVkplYlhfSWd3Q2laOTluWmtPZXFWZTZOX1FVaUo3RjB3elVQVGlGVjBtQnFGbERyUmhTd1NiY0lFQXhiYmRycGM4VktnWFZnNUFDY2ZkbmJndDdicFk5ZVNyWHRicWJfbFBxV2xFWkE4YkZnb2dGNVNBSmtRWlJTY0w3RXc?oc=5) — SEARCH_RADAR (seen 2026-11-19T09:30:39.896451+00:00, keyword NEGATIVE)
-- [Bitcoin’s 10+ BTC Club is GROWING Amid Distribution - Santiment](https://news.google.com/rss/articles/CBMinAFBVV95cUxQY29kaUM4cURQOUF2dkFndTkyemM1ZVppc1BXOGlqc1dnRmE4MDlNOHVpNmh0dmtGWjJETEZKSmdOTHo3V3hjWnhzVElmdkdic29qREJtM1BoY0NrV2lKLVI0dkJpU3EteDBnM0ZxQUUzZmk2QU9wYTR4QnJuYmVGeVo3T3ZNX2pEQ3hsbzY2OVpUdExIeFoxMG0tRkY?oc=5) — SEARCH_RADAR (seen 2026-11-19T09:30:39.896451+00:00, keyword NEUTRAL)
-- [Ethereum consolidates around recent lows as the bearish momentum wanes amid lack of catalysts - investingLive](https://news.google.com/rss/articles/CBMi0AFBVV95cUxQYWo3dFo1NktNY1FRQnc1NDdhQzJrQmMyYy1WVnB5SENWRHZuUjlVWG9tUkJOSkgyLURscGw0RTNZbUVVeEhZTEItZmRaSHJDU1FRQjJWb1JpQ0hFZEc1ekpkTGhIa2JEZXdUeXA3SnpIa0JKeGJPWV95Wlk5TmRnV3hwM0pKdmt1SDFOX0Z4X3Etal9GeDRIVUJSTzIxWHM5VHpabWhPZWtVYUt3bDZUeGVZdHpZMGlvbmZRWG1zR09vRU5fMGxJR1lIc2tBQkVC?oc=5) — SEARCH_RADAR (seen 2026-11-19T09:30:39.896451+00:00, keyword NEGATIVE)
-- [US Pending Home Sales Hit a Record Low. Why That Could Help Bitcoin and Stocks - Yahoo Finance](https://news.google.com/rss/articles/CBMikAFBVV95cUxOcWoxR1BfNjBJRXRsZDJMZ2dOSHBSRW5YdHdzT2IzS2VvWTgweEJFalQtZmR5OVMtUTB5My1uclV2OHBMZ3JyMHVKUzF4c3VFbGJ4NWdmc0FQeW9JeXVwZjJ5a2pxbVFDaFNIWWJPZHZwZDlDMXZxSFZhQ2pTRUtzbmVQOFpKTmRLSmdfZFpfQWM?oc=5) — SEARCH_RADAR (seen 2026-11-19T09:30:39.896451+00:00, keyword NEUTRAL)
 Unavailable feeds: PUBLIC_FORUM
 
 ## 7. Specialist consensus and risk
@@ -242,19 +242,19 @@ Unavailable feeds: PUBLIC_FORUM
 The 640 specialists are correlated, transparent rule reviews across the ten parent traders, not separately trained language models.
 | Parent | Action | Support | Opposition | Vetoes |
 |---|---|---:|---:|---:|
-| GAMBLER | HOLD | 14 | 9 | 0 |
-| HOUSE | HOLD | 8 | 15 | 0 |
-| SPY | HOLD | 18 | 9 | 0 |
-| MEME HUNTER | HOLD | 15 | 7 | 1 |
-| BREAKOUT | HOLD | 14 | 9 | 0 |
-| CONTRARIAN | HOLD | 8 | 15 | 0 |
-| ROTATOR | HOLD | 14 | 9 | 0 |
-| VORTEX | HOLD | 14 | 9 | 0 |
-| FRACTAL | HOLD | 14 | 9 | 0 |
-| SHOCKWAVE | HOLD | 15 | 7 | 1 |
+| GAMBLER | HOLD | 29 | 6 | 0 |
+| HOUSE | HOLD | 12 | 23 | 0 |
+| SPY | HOLD | 38 | 0 | 0 |
+| MEME HUNTER | HOLD | 28 | 10 | 2 |
+| BREAKOUT | HOLD | 29 | 6 | 0 |
+| CONTRARIAN | HOLD | 12 | 23 | 0 |
+| ROTATOR | HOLD | 29 | 6 | 0 |
+| VORTEX | HOLD | 29 | 6 | 0 |
+| FRACTAL | HOLD | 29 | 6 | 0 |
+| SHOCKWAVE | HOLD | 28 | 10 | 2 |
 
 Main paper risk limit: not triggered. Shadow risk limit: not triggered.
-Last trigger workflow_dispatch; run 44515387630. Native 5-minute cron independently verified: YES.
+Last trigger workflow_dispatch; run 44516152017. Native 5-minute cron independently verified: YES.
 Market-data flags: {'main_stale': False, 'research_stale': False, 'missing_quotes': False, 'time_misaligned': False, 'main_status': 'HEALTHY: paper trading on completed Kraken candles', 'research_status': 'OK'}. Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.
 
 ## 8. Research distillation gate — do not deploy a winner yet
