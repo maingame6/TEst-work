@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795050300; captured candles: 4265.
+Last observed closed candle: 1795050600; captured candles: 4266.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -12,15 +12,15 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 | V4_TAKER_STRICT | 2.322% | 17 | 0 | -2.2359% | -2.7235% | 7 | 0 |
 | COST_AWARE | 2.172% | 23 | 0 | -2.4907% | -2.9771% | 7 | 0 |
 | BALANCED_TEST | 1.200% | 126 | 1 | -2.3767% | -2.8636% | 39 | 0 |
-| LOW_HURDLE_CONTROL | 0.500% | 582 | 2 | -2.1947% | -2.6825% | 226 | 3 |
+| LOW_HURDLE_CONTROL | 0.500% | 585 | 2 | -2.1951% | -2.6829% | 226 | 0 |
 
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 39 | 41588 | 31795 | 21 | 16 | -2.2115% | 31.975% |
-| COST_AWARE | 51 | 41571 | 31360 | 30 | 22 | -2.4845% | 44.089% |
-| BALANCED_TEST | 272 | 41145 | 31360 | 159 | 104 | -2.3531% | 95.199% |
-| LOW_HURDLE_CONTROL | 1343 | 37995 | 30873 | 689 | 493 | -2.1815% | 100.000% |
+| V4_TAKER_STRICT | 39 | 41596 | 31801 | 21 | 16 | -2.2115% | 31.975% |
+| COST_AWARE | 51 | 41579 | 31366 | 30 | 22 | -2.4845% | 44.089% |
+| BALANCED_TEST | 272 | 41153 | 31366 | 159 | 104 | -2.3531% | 95.199% |
+| LOW_HURDLE_CONTROL | 1343 | 38003 | 30879 | 689 | 496 | -2.1820% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -35,7 +35,7 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | COST_AWARE | 24h | 1 | 1 | -2.441% | -0.027% |
 | BALANCED_TEST | 4h | 59 | 17 | -1.348% | +0.684% |
 | BALANCED_TEST | 24h | 10 | 2 | -0.992% | +0.784% |
-| LOW_HURDLE_CONTROL | 4h | 184 | 31 | -2.098% | +0.112% |
+| LOW_HURDLE_CONTROL | 4h | 185 | 32 | -2.072% | +0.130% |
 | LOW_HURDLE_CONTROL | 24h | 26 | 3 | -3.247% | -0.885% |
 
 A gate only places a *research candidate*, entered on a later observed candle.
