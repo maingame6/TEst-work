@@ -1,44 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795062300,
+  "last_ts": 1795062600,
   "first_ts": 1793488500,
-  "observed_candles": 4305,
+  "observed_candles": 4306,
   "signals": [],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1795060500,
-      "entry_ts": 1795060800,
-      "entry_mid": 1800.86,
-      "exit_ts": 1795062600
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1795060500,
-      "entry_ts": 1795060800,
-      "entry_mid": 74.44,
-      "exit_ts": 1795062600
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1795060500,
-      "entry_ts": 1795060800,
-      "entry_mid": 0.97315,
-      "exit_ts": 1795062600
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795060500,
-      "entry_ts": 1795060800,
-      "entry_mid": 3.4047,
-      "exit_ts": 1795062600
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -9893,40 +9860,92 @@
       "slippage_drag": 0.0050216343,
       "stress_net_return": -0.0190031457,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795060500,
+      "entry_ts": 1795060800,
+      "exit_ts": 1795062600,
+      "gross_return": -0.0028264274,
+      "net_return": -0.0235490702,
+      "fee_drag": 0.0157492085,
+      "slippage_drag": 0.0049734343,
+      "stress_net_return": -0.0284192104,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795060500,
+      "entry_ts": 1795060800,
+      "exit_ts": 1795062600,
+      "gross_return": 0.0020150457,
+      "net_return": -0.0188082096,
+      "fee_drag": 0.015825674,
+      "slippage_drag": 0.0049975813,
+      "stress_net_return": -0.0237019953,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795060500,
+      "entry_ts": 1795060800,
+      "exit_ts": 1795062600,
+      "gross_return": -0.0016852489,
+      "net_return": -0.022431607,
+      "fee_drag": 0.0157672321,
+      "slippage_drag": 0.0049791259,
+      "stress_net_return": -0.0273073206,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795060500,
+      "entry_ts": 1795060800,
+      "exit_ts": 1795062600,
+      "gross_return": 5.87423e-05,
+      "net_return": -0.0207238583,
+      "fee_drag": 0.0157947765,
+      "slippage_drag": 0.0049878242,
+      "stress_net_return": -0.0256080895,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4193,
-      "liquid_candidates": 42009,
-      "move_below_gate": 41950,
-      "volume_below_gate": 32060,
+      "bars": 4194,
+      "liquid_candidates": 42019,
+      "move_below_gate": 41960,
+      "volume_below_gate": 32065,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4193,
-      "liquid_candidates": 42009,
-      "move_below_gate": 41933,
-      "volume_below_gate": 31622,
+      "bars": 4194,
+      "liquid_candidates": 42019,
+      "move_below_gate": 41943,
+      "volume_below_gate": 31627,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4193,
-      "liquid_candidates": 42009,
-      "move_below_gate": 41507,
-      "volume_below_gate": 31622,
+      "bars": 4194,
+      "liquid_candidates": 42019,
+      "move_below_gate": 41517,
+      "volume_below_gate": 31627,
       "qualified": 272,
       "queued": 159
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4193,
-      "liquid_candidates": 42009,
-      "move_below_gate": 38308,
-      "volume_below_gate": 31128,
+      "bars": 4194,
+      "liquid_candidates": 42019,
+      "move_below_gate": 38318,
+      "volume_below_gate": 31133,
       "qualified": 1365,
       "queued": 700
     }
