@@ -4,7 +4,7 @@
   "real_orders": false,
   "independent_of_210_paper_wallets": true,
   "writer_access": false,
-  "generated_at": "2026-11-19T13:11:08.164097+00:00",
+  "generated_at": "2026-11-19T14:31:06.910596+00:00",
   "config_hash": "43936e93e138e0b1db1c2c09da43d7aa28bf38f33625589802fbccb6a9a65f5e",
   "family_count": 28,
   "candidate_count": 84,
@@ -23,29 +23,29 @@
     "XLM"
   ],
   "latest_observed_hour_ts_by_symbol": {
-    "BTC": 1795089600,
-    "ETH": 1795089600,
-    "SOL": 1795089600,
-    "XRP": 1795089600,
-    "ADA": 1795089600,
-    "DOGE": 1795089600,
-    "LTC": 1795089600,
-    "LINK": 1795089600,
-    "BCH": 1795089600,
-    "DOT": 1795089600,
-    "AVAX": 1795089600,
-    "XLM": 1795089600
+    "BTC": 1795093200,
+    "ETH": 1795093200,
+    "SOL": 1795093200,
+    "XRP": 1795093200,
+    "ADA": 1795093200,
+    "DOGE": 1795093200,
+    "LTC": 1795093200,
+    "LINK": 1795093200,
+    "BCH": 1795093200,
+    "DOT": 1795093200,
+    "AVAX": 1795093200,
+    "XLM": 1795093200
   },
   "indicator_count": 47,
-  "observed_symbol_hours": 1104,
+  "observed_symbol_hours": 1116,
   "missing_symbol_hours": 3708,
-  "observation_coverage_pct": 22.9426,
-  "closed_hypotheses": 116,
+  "observation_coverage_pct": 23.1343,
+  "closed_hypotheses": 121,
   "censored_hypotheses": 7473,
-  "open_hypotheses": 606,
-  "queued_hypotheses": 12,
-  "signals": 8207,
-  "days_observed": 16.65,
+  "open_hypotheses": 613,
+  "queued_hypotheses": 27,
+  "signals": 8234,
+  "days_observed": 16.705,
   "heldout_starts_at": "2026-11-10T00:00:00+00:00",
   "review_minimum_closes_per_candidate": 60,
   "review_minimum_days": 30,
@@ -105,12 +105,12 @@
       "eligible_to_promote": false
     },
     "ema_trend_32": {
-      "closed": 0,
-      "holdout_closed": 0,
+      "closed": 1,
+      "holdout_closed": 1,
       "wins_after_cost": 0,
-      "mean_after_cost_pct": null,
-      "mean_stress_pct": null,
-      "mean_heldout_pct": null,
+      "mean_after_cost_pct": -1.47641,
+      "mean_stress_pct": -1.96781,
+      "mean_heldout_pct": -1.47641,
       "eligible_to_promote": false
     },
     "momentum_8": {
@@ -420,12 +420,12 @@
       "eligible_to_promote": false
     },
     "williams_rebound_16": {
-      "closed": 1,
-      "holdout_closed": 1,
+      "closed": 2,
+      "holdout_closed": 2,
       "wins_after_cost": 0,
-      "mean_after_cost_pct": -1.45619,
-      "mean_stress_pct": -1.94769,
-      "mean_heldout_pct": -1.45619,
+      "mean_after_cost_pct": -2.62117,
+      "mean_stress_pct": -3.10686,
+      "mean_heldout_pct": -2.62117,
       "eligible_to_promote": false
     },
     "williams_rebound_32": {
@@ -438,12 +438,12 @@
       "eligible_to_promote": false
     },
     "cci_rebound_8": {
-      "closed": 1,
-      "holdout_closed": 1,
+      "closed": 2,
+      "holdout_closed": 2,
       "wins_after_cost": 0,
-      "mean_after_cost_pct": -1.45619,
-      "mean_stress_pct": -1.94769,
-      "mean_heldout_pct": -1.45619,
+      "mean_after_cost_pct": -2.62117,
+      "mean_stress_pct": -3.10686,
+      "mean_heldout_pct": -2.62117,
       "eligible_to_promote": false
     },
     "cci_rebound_16": {
@@ -627,21 +627,21 @@
       "eligible_to_promote": false
     },
     "atr_pullback_8": {
-      "closed": 1,
-      "holdout_closed": 1,
+      "closed": 2,
+      "holdout_closed": 2,
       "wins_after_cost": 0,
-      "mean_after_cost_pct": -1.45619,
-      "mean_stress_pct": -1.94769,
-      "mean_heldout_pct": -1.45619,
+      "mean_after_cost_pct": -2.62117,
+      "mean_stress_pct": -3.10686,
+      "mean_heldout_pct": -2.62117,
       "eligible_to_promote": false
     },
     "atr_pullback_16": {
-      "closed": 1,
-      "holdout_closed": 1,
+      "closed": 2,
+      "holdout_closed": 2,
       "wins_after_cost": 0,
-      "mean_after_cost_pct": -1.45619,
-      "mean_stress_pct": -1.94769,
-      "mean_heldout_pct": -1.45619,
+      "mean_after_cost_pct": -2.62117,
+      "mean_stress_pct": -3.10686,
+      "mean_heldout_pct": -2.62117,
       "eligible_to_promote": false
     },
     "atr_pullback_32": {
@@ -832,7 +832,7 @@
   ],
   "failed_symbols": {},
   "source": "Kraken public OHLC 60; no private APIs",
-  "archived_hourly_records": 1092,
-  "archive_hash_chain_head": "840bf437361ad5489f97bf2732f288d2bce53a560f06c450468369fc4e56b292",
+  "archived_hourly_records": 1104,
+  "archive_hash_chain_head": "665c8633ae213121b05646061a09a337d8866d275a33ff9a593955b43578d619",
   "archive_begins_after_first_initial_run": true
 }
