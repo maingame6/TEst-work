@@ -1,10 +1,29 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795048200,
+  "last_ts": 1795048500,
   "first_ts": 1793488500,
-  "observed_candles": 4258,
-  "signals": [],
+  "observed_candles": 4259,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795048500,
+      "observed_move": 0.00735254
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795048500,
+      "observed_move": 0.00627334
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1795048500,
+      "observed_move": 0.00586364
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -9736,36 +9755,36 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4146,
-      "liquid_candidates": 41591,
-      "move_below_gate": 41532,
-      "volume_below_gate": 31755,
+      "bars": 4147,
+      "liquid_candidates": 41599,
+      "move_below_gate": 41540,
+      "volume_below_gate": 31760,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4146,
-      "liquid_candidates": 41591,
-      "move_below_gate": 41515,
-      "volume_below_gate": 31323,
+      "bars": 4147,
+      "liquid_candidates": 41599,
+      "move_below_gate": 41523,
+      "volume_below_gate": 31328,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4146,
-      "liquid_candidates": 41591,
-      "move_below_gate": 41090,
-      "volume_below_gate": 31323,
+      "bars": 4147,
+      "liquid_candidates": 41599,
+      "move_below_gate": 41097,
+      "volume_below_gate": 31328,
       "qualified": 272,
       "queued": 159
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4146,
-      "liquid_candidates": 41591,
+      "bars": 4147,
+      "liquid_candidates": 41599,
       "move_below_gate": 37948,
-      "volume_below_gate": 30836,
-      "qualified": 1340,
-      "queued": 686
+      "volume_below_gate": 30841,
+      "qualified": 1343,
+      "queued": 689
     }
   },
   "horizon_open": [
