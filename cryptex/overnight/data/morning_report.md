@@ -2,12 +2,12 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-19T14:10:38.192385+00:00 (Europe/Dublin)
+Checked: 2026-11-19T14:15:42.881588+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-17T18:01:51.403833+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $196.3732 · P&L $-13.6268 (-6.49%)**
+**Starting paper money $210.00 · Current estimated liquidation $196.3731 · P&L $-13.6269 (-6.49%)**
 
 Realised $-13.3759; unrealised after estimated future sale costs $-0.2509.
 Open: 1; queued: 0; closed: 169; paper fills in current JSON: 339.
@@ -40,7 +40,7 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 86.7521 | -13.2479 | -12.9970 | 125 | 1 |
+| Original ten traders | 100.00 | 86.7520 | -13.2480 | -12.9970 | 125 | 1 |
 | Eleven maths/OSS traders | 110.00 | 109.6211 | -0.3789 | -0.3789 | 44 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
@@ -50,8 +50,8 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
 | BTC | 2026-10-30T22:21:37.361980+00:00 | $8.2192 | $-1.7808 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.9962 | $-2.0038 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.7553 | $-2.2447 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.9946 | $-2.0054 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.7595 | $-2.2405 |
 
 ## 21-agent leaderboard
 
@@ -81,7 +81,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1795097100 / 1795097100
+Latest main/shadow candle timestamps: 1795097400 / 1795097400
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
