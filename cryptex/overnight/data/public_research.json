@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-19T18:55:36.071194+00:00",
+  "checked_at": "2026-11-19T19:55:46.961370+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -17,7 +17,7 @@
       "source": "THE_BLOCK",
       "purpose": "crypto sector reporting",
       "status": "OK",
-      "items": 10
+      "items": 11
     },
     {
       "source": "EXCHANGE_BLOG",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "TimeoutError:The read operation timed out"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -52,6 +53,28 @@
     }
   ],
   "articles": [
+    {
+      "id": "d6195bd1c55e6a3c",
+      "source": "CRYPTODESK",
+      "title": "Sky's USDS stablecoin shrinks 35% as $1.5 billion exits reserves after illicit-finance report",
+      "url": "https://www.coindesk.com/business/2026/11/19/sky-s-usds-stablecoin-shrinks-35-as-usd1-5-billion-exits-reserves-after-illicit-finance-report",
+      "published_at": "2026-11-19T19:53:42+00:00",
+      "first_observed_at": "2026-11-19T19:55:46.961370+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "756f4a3b8ed2549f",
+      "source": "THE_BLOCK",
+      "title": "Ripple’s Alderoty doubts Elizabeth Warren will ‘set crypto policy in this country,’ backs durable agency rules",
+      "url": "https://www.theblock.co/news/regulation/2026-11-19-ripple-alderoty-elizabeth-warren-wont-set-crypto-policy-backs-durable-agency-rules-444105",
+      "published_at": "2026-11-19T18:47:30+00:00",
+      "first_observed_at": "2026-11-19T19:55:46.961370+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "1442b750057479a7",
       "source": "CRYPTODESK",
@@ -2779,34 +2802,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "ab22a435e12af1ba",
-      "source": "SEARCH_RADAR",
-      "title": "Bitcoin muted below $65k as rate, tech jitters persist; Fed minutes awaited - Investing.com",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNcC1sbVljWFNrLWY1YUcxTmlNOXIyWFF4UmJ4RUJoNXBobXZwNU5kNUFDS3FEUzJ1eXdINGV6SW1CUkxVSFNyQXZ2eFlzTHpSaXp4MllBcm54c0Z0SDZaYVJucU9VYUY3dEFHanhpMmI2dG04aDdYTXhXQTM4amVZallVd0F1Zks4YWVhdXhFYmkzQ3RQb3pfWE1kNzhrQmlyZER0WDJzRkFzXzVNbGxoNG9idVB4UEFCdVlDbUJodm9fR2RmRW04eHBxUQ?oc=5",
-      "published_at": "2026-11-18T06:49:21+00:00",
-      "first_observed_at": "2026-11-18T07:30:36.084360+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "61abdab5a64708e5",
-      "source": "SEARCH_RADAR",
-      "title": "Cryptocurrencies Price Prediction: Dogecoin, Pi Network & Bitcoin – Asian Wrap 18 November - FXStreet",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNRzE3cE5UcTV1ME5GdC1NbHZ2YXlfemdyOF9KY0xJOG94aUVwVk9GQ3ViY1k0YlVaS3lEdUc5SXF6bWt1OUZPRUk0SVd4dEsxN053bkVDQTJaRmtDTTNvajJ4ZlFyVWh1QUVtZjlFblF3MkF0MS1CRzljQ2MtV0E1SS0zMHlwQk55MGg3aVdqeENYNU52SkkwNjFqejJvYXdYR1VUR21DaDc1TUVINW9Xc1pCWDV4aU5JMnpkeXpDZ0pVQ2REbEJTb09jZFpRN3lKM1VtLVRVTzRoWEVV?oc=5",
-      "published_at": "2026-11-18T06:20:43+00:00",
-      "first_observed_at": "2026-11-18T07:30:36.084360+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 6,
   "sources_total": 8
 }
