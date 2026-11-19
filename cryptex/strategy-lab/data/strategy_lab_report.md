@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1212 symbol-hours, 3708 missing.
+Recorded 1224 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 311 hypothetical outcomes; censored 7473.
+Closed 314 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -55,7 +55,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | macd_trend_32 | 5 | 0 | -2.1634 | -2.6513 | 5 |
 | macd_trend_8 | 5 | 0 | -2.1634 | -2.6513 | 5 |
 | mfi_recovery_16 | 11 | 0 | -2.1265 | -2.6146 | 11 |
-| mfi_recovery_32 | 2 | 0 | -2.2159 | -2.7036 | 2 |
+| mfi_recovery_32 | 3 | 0 | -1.8151 | -2.3048 | 3 |
 | mfi_recovery_8 | 11 | 0 | -2.4407 | -2.9272 | 11 |
 | momentum_16 | 2 | 0 | -1.7446 | -2.2347 | 2 |
 | momentum_32 | 3 | 0 | -2.6145 | -3.1002 | 3 |
@@ -68,7 +68,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | roc_acceleration_8 | 1 | 0 | -1.4055 | -1.8973 | 1 |
 | rsi_rebound_16 | 10 | 0 | -2.2489 | -2.7364 | 10 |
 | rsi_rebound_32 | 6 | 0 | -2.6774 | -3.1629 | 6 |
-| rsi_rebound_8 | 10 | 0 | -2.0627 | -2.5512 | 10 |
+| rsi_rebound_8 | 11 | 0 | -2.0475 | -2.5360 | 11 |
 | rsi_trend_16 | 4 | 0 | -1.9744 | -2.4633 | 4 |
 | rsi_trend_32 | 4 | 0 | -2.2611 | -2.7485 | 4 |
 | rsi_trend_8 | 1 | 0 | -3.2974 | -3.7797 | 1 |
@@ -78,7 +78,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | squeeze_breakout_16 | 0 | 0 | — | — | 0 |
 | squeeze_breakout_32 | 0 | 0 | — | — | 0 |
 | squeeze_breakout_8 | 0 | 0 | — | — | 0 |
-| stochastic_rebound_16 | 7 | 0 | -2.7175 | -3.2027 | 7 |
+| stochastic_rebound_16 | 8 | 0 | -2.5045 | -2.9907 | 8 |
 | stochastic_rebound_32 | 7 | 0 | -1.9634 | -2.4523 | 7 |
 | stochastic_rebound_8 | 3 | 0 | -1.9942 | -2.4830 | 3 |
 | vol_target_momentum_16 | 4 | 0 | -2.0972 | -2.5855 | 4 |
