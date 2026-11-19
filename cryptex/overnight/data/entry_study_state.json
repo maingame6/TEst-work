@@ -1,18 +1,51 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795112400,
+  "last_ts": 1795112700,
   "first_ts": 1793488500,
-  "observed_candles": 4472,
+  "observed_candles": 4473,
   "signals": [
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1795112700,
+      "observed_move": 0.01468977
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1795112700,
+      "observed_move": 0.01468977
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795112700,
+      "observed_move": 0.01013692
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1795112700,
+      "observed_move": 0.01009959
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1795112700,
+      "observed_move": 0.00940975
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "LTC",
       "signal_ts": 1795112400,
-      "observed_move": 0.00540541
+      "entry_ts": 1795112700,
+      "entry_mid": 42.95,
+      "exit_ts": 1795114500
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -10302,36 +10335,36 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4360,
-      "liquid_candidates": 43795,
-      "move_below_gate": 43736,
-      "volume_below_gate": 33382,
+      "bars": 4361,
+      "liquid_candidates": 43809,
+      "move_below_gate": 43750,
+      "volume_below_gate": 33391,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4360,
-      "liquid_candidates": 43795,
-      "move_below_gate": 43718,
-      "volume_below_gate": 32917,
+      "bars": 4361,
+      "liquid_candidates": 43809,
+      "move_below_gate": 43732,
+      "volume_below_gate": 32926,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4360,
-      "liquid_candidates": 43795,
-      "move_below_gate": 43274,
-      "volume_below_gate": 32917,
-      "qualified": 279,
-      "queued": 164
+      "bars": 4361,
+      "liquid_candidates": 43809,
+      "move_below_gate": 43285,
+      "volume_below_gate": 32926,
+      "qualified": 280,
+      "queued": 165
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4360,
-      "liquid_candidates": 43795,
+      "bars": 4361,
+      "liquid_candidates": 43809,
       "move_below_gate": 39975,
-      "volume_below_gate": 32391,
-      "qualified": 1402,
-      "queued": 725
+      "volume_below_gate": 32400,
+      "qualified": 1407,
+      "queued": 729
     }
   },
   "horizon_open": [
@@ -10582,6 +10615,14 @@
       "entry_ts": 1795109700,
       "entry_mid": 74.04,
       "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LTC",
+      "signal_ts": 1795112400,
+      "entry_ts": 1795112700,
+      "entry_mid": 42.95,
+      "hold_bars": 48
     }
   ],
   "horizon_trades": [
