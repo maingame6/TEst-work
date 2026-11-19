@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-19T00:05:41.761860+00:00",
+  "checked_at": "2026-11-19T01:05:44.543173+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
       "purpose": "independent crypto reporting",
       "status": "OK",
-      "items": 16
+      "items": 15
     },
     {
       "source": "COINTELEGRAPH",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "TimeoutError:The read operation timed out"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -52,6 +53,17 @@
     }
   ],
   "articles": [
+    {
+      "id": "946e47d24f6932af",
+      "source": "COINTELEGRAPH",
+      "title": "Fed officials saw October rate hold as a ‘close call,’ minutes show",
+      "url": "https://cointelegraph.com/markets/fed-officials-saw-october-rate-hold-as-close-call-minutes-show?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-19T00:35:49+00:00",
+      "first_observed_at": "2026-11-19T01:05:44.543173+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "1ce39dec2c6f95dd",
       "source": "SEARCH_RADAR",
@@ -2790,23 +2802,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "ea759c3287079ae6",
-      "source": "SEARCH_RADAR",
-      "title": "Wells Fargo doubles down on bitcoin ETF, and Chase goes down, but bitcoin stays - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQYy1NN2M3V0NmeklaWmg4T085WHlvNDl3cmwwMU1ReEJIRFNOaXhGamJNeWNtRVhZOTlZaXlsaDlaRWppRkFDd2hZanltd3poQVM1bFdvWDNOdG56VVhINVZjNXpTeWdORGxNT1FhUF94aUM0UjlHWDMtQ1JyRW5lalhBNmhSZw?oc=5",
-      "published_at": "2026-11-17T17:00:00+00:00",
-      "first_observed_at": "2026-11-17T18:01:48.901198+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 6,
   "sources_total": 8
 }
