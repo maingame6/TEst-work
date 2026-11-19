@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795084200,
+  "last_ts": 1795084500,
   "first_ts": 1793488500,
-  "observed_candles": 4378,
+  "observed_candles": 4379,
   "signals": [],
   "open": [],
   "trades": [
@@ -10035,34 +10035,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4266,
-      "liquid_candidates": 42642,
-      "move_below_gate": 42583,
-      "volume_below_gate": 32553,
+      "bars": 4267,
+      "liquid_candidates": 42650,
+      "move_below_gate": 42591,
+      "volume_below_gate": 32560,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4266,
-      "liquid_candidates": 42642,
-      "move_below_gate": 42566,
-      "volume_below_gate": 32103,
+      "bars": 4267,
+      "liquid_candidates": 42650,
+      "move_below_gate": 42574,
+      "volume_below_gate": 32110,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4266,
-      "liquid_candidates": 42642,
-      "move_below_gate": 42140,
-      "volume_below_gate": 32103,
+      "bars": 4267,
+      "liquid_candidates": 42650,
+      "move_below_gate": 42148,
+      "volume_below_gate": 32110,
       "qualified": 272,
       "queued": 159
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4266,
-      "liquid_candidates": 42642,
-      "move_below_gate": 38923,
-      "volume_below_gate": 31598,
+      "bars": 4267,
+      "liquid_candidates": 42650,
+      "move_below_gate": 38931,
+      "volume_below_gate": 31605,
       "qualified": 1375,
       "queued": 709
     }
@@ -10179,14 +10179,6 @@
       "entry_ts": 1795069500,
       "entry_mid": 5.2016,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1795069800,
-      "entry_ts": 1795070100,
-      "entry_mid": 0.98009,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -13937,6 +13929,18 @@
       "gross_return": -0.0005190711,
       "net_return": -0.0212896639,
       "stress_net_return": -0.0261710731
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795069800,
+      "entry_ts": 1795070100,
+      "exit_ts": 1795084500,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.0007244233,
+      "net_return": -0.0200720111,
+      "stress_net_return": -0.0249594935
     }
   ],
   "horizon_censored": 603
