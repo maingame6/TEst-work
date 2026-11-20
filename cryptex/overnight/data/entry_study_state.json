@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795134900,
+  "last_ts": 1795135200,
   "first_ts": 1793488500,
-  "observed_candles": 4547,
+  "observed_candles": 4548,
   "signals": [],
   "open": [],
   "trades": [
@@ -10490,55 +10490,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4435,
-      "liquid_candidates": 44618,
-      "move_below_gate": 44559,
-      "volume_below_gate": 34008,
+      "bars": 4436,
+      "liquid_candidates": 44624,
+      "move_below_gate": 44565,
+      "volume_below_gate": 34013,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4435,
-      "liquid_candidates": 44618,
-      "move_below_gate": 44541,
-      "volume_below_gate": 33530,
+      "bars": 4436,
+      "liquid_candidates": 44624,
+      "move_below_gate": 44547,
+      "volume_below_gate": 33535,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4435,
-      "liquid_candidates": 44618,
-      "move_below_gate": 44091,
-      "volume_below_gate": 33530,
+      "bars": 4436,
+      "liquid_candidates": 44624,
+      "move_below_gate": 44097,
+      "volume_below_gate": 33535,
       "qualified": 281,
       "queued": 166
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4435,
-      "liquid_candidates": 44618,
-      "move_below_gate": 40728,
-      "volume_below_gate": 32992,
+      "bars": 4436,
+      "liquid_candidates": 44624,
+      "move_below_gate": 40734,
+      "volume_below_gate": 32997,
       "qualified": 1428,
       "queued": 737
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795048500,
-      "entry_ts": 1795048800,
-      "entry_mid": 63103.3,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1795048500,
-      "entry_ts": 1795048800,
-      "entry_mid": 0.96789,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ADA",
@@ -14860,6 +14844,30 @@
       "gross_return": -0.0366669667,
       "net_return": -0.0566863564,
       "stress_net_return": -0.0613912213
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795048500,
+      "entry_ts": 1795048800,
+      "exit_ts": 1795135200,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0166457222,
+      "net_return": -0.037081181,
+      "stress_net_return": -0.0418838285
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795048500,
+      "entry_ts": 1795048800,
+      "exit_ts": 1795135200,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0071702363,
+      "net_return": -0.0278026088,
+      "stress_net_return": -0.032651534
     }
   ],
   "horizon_censored": 603
