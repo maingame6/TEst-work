@@ -2,15 +2,15 @@
 
 **PAPER ONLY. All balances, profits and orders are simulated; no exchange execution.**
 
-Recorded: 2026-11-20T19:35:45.754890+00:00 | Dublin overnight session: 2026-11-19
+Recorded: 2026-11-20T19:40:41.990525+00:00 | Dublin overnight session: 2026-11-19
 Morning checkpoint: **MORNING_RECORDED**. A fresh after-08:00 snapshot has been captured.
 
 ## 1. The money
 
-Initial fake competition capital **$210.00**; current estimated liquidation **$195.3960**, total after-cost P&L **$-14.6040**.
-Realised $-14.3204; unrealised after estimated selling costs $-0.2836.
+Initial fake competition capital **$210.00**; current estimated liquidation **$195.4497**, total after-cost P&L **$-14.5503**.
+Realised $-14.3204; unrealised after estimated selling costs $-0.2299.
 From the first REAL recorded overnight balance at 2026-11-19T21:00:44.631446+00:00: **$-0.0273**.
-Main ten: $85.7749 ($-14.2251); eleven maths/OSS agents: $109.6211 ($-0.3789).
+Main ten: $85.8286 ($-14.1714); eleven maths/OSS agents: $109.6211 ($-0.3789).
 
 ## 2. What the 21 traders actually did
 
@@ -40,7 +40,7 @@ An order fill is not a completed round trip. Pending BUY/SELL is not an executed
 | HOUSE | main | $9.6213 | $-0.3787 | 1 | $-0.1075 | Cash |
 | BREAKOUT | main | $9.3491 | $-0.6509 | 0 | $+0.0000 | Cash |
 | CONTRARIAN | main | $9.2677 | $-0.7323 | 1 | $-0.2004 | Cash |
-| ROTATOR | main | $6.9225 | $-3.0775 | 1 | $-0.6365 | BTC |
+| ROTATOR | main | $6.9762 | $-3.0238 | 1 | $-0.6365 | BTC |
 | FRACTAL | main | $6.4792 | $-3.5208 | 0 | $+0.0000 | Cash |
 | VORTEX | main | $4.9699 | $-5.0301 | 0 | $+0.0000 | Cash |
 
@@ -72,42 +72,42 @@ Positive gross trades 1 versus after-cost winners 0. Trading frequently is NOT p
 
 | Asset | Actual baseline time | First price | Latest price | Observed change |
 |---|---|---:|---:|---:|
-| TRX | 2026-11-19T21:00:44.631446+00:00 | 0.310016 | 0.300758 | -2.99% |
-| TON | 2026-11-19T21:00:44.631446+00:00 | 1.02 | 0.973 | -4.61% |
-| XLM | 2026-11-19T21:00:44.631446+00:00 | 0.132795 | 0.125406 | -5.56% |
-| LTC | 2026-11-19T21:00:44.631446+00:00 | 42.2 | 39.76 | -5.78% |
-| BTC | 2026-11-19T21:00:44.631446+00:00 | 62055 | 58083.4 | -6.40% |
-| AVAX | 2026-11-19T21:00:44.631446+00:00 | 6.948 | 6.454 | -7.11% |
-| SOL | 2026-11-19T21:00:44.631446+00:00 | 73.02 | 67.82 | -7.12% |
-| XRP | 2026-11-19T21:00:44.631446+00:00 | 0.96173 | 0.89249 | -7.20% |
-| LINK | 2026-11-19T21:00:44.631446+00:00 | 8.96683 | 8.30514 | -7.38% |
-| SHIB | 2026-11-19T21:00:44.631446+00:00 | 3.792e-06 | 3.51e-06 | -7.44% |
-| DOT | 2026-11-19T21:00:44.631446+00:00 | 0.7099 | 0.6567 | -7.49% |
-| BCH | 2026-11-19T21:00:44.631446+00:00 | 206.46 | 190.17 | -7.89% |
-| ADA | 2026-11-19T21:00:44.631446+00:00 | 0.15155 | 0.139062 | -8.24% |
-| BNB | 2026-11-19T21:00:44.631446+00:00 | 580.62 | 531.62 | -8.44% |
-| WIF | 2026-11-19T21:00:44.631446+00:00 | 0.131 | 0.1196 | -8.70% |
-| PEPE | 2026-11-19T21:00:44.631446+00:00 | 3.73e-06 | 3.405e-06 | -8.71% |
-| DOGE | 2026-11-19T21:00:44.631446+00:00 | 0.0581386 | 0.053069 | -8.72% |
-| FLOKI | 2026-11-19T21:00:44.631446+00:00 | 1.732e-05 | 1.579e-05 | -8.83% |
-| ETH | 2026-11-19T21:00:44.631446+00:00 | 1759.2 | 1596.86 | -9.23% |
-| AAVE | 2026-11-19T21:00:44.631446+00:00 | 104.5 | 94.67 | -9.41% |
-| SUI | 2026-11-19T21:00:44.631446+00:00 | 0.7078 | 0.6409 | -9.45% |
-| BONK | 2026-11-19T21:00:44.631446+00:00 | 2.302e-06 | 2.055e-06 | -10.73% |
-| UNI | 2026-11-19T21:00:44.631446+00:00 | 4.9642 | 4.3562 | -12.25% |
-| NEAR | 2026-11-19T21:00:44.631446+00:00 | 3.2362 | 2.8222 | -12.79% |
+| TRX | 2026-11-19T21:00:44.631446+00:00 | 0.310016 | 0.301899 | -2.62% |
+| TON | 2026-11-19T21:00:44.631446+00:00 | 1.02 | 0.978 | -4.12% |
+| XLM | 2026-11-19T21:00:44.631446+00:00 | 0.132795 | 0.126374 | -4.84% |
+| LTC | 2026-11-19T21:00:44.631446+00:00 | 42.2 | 40.09 | -5.00% |
+| BTC | 2026-11-19T21:00:44.631446+00:00 | 62055 | 58555 | -5.64% |
+| AVAX | 2026-11-19T21:00:44.631446+00:00 | 6.948 | 6.511 | -6.29% |
+| SOL | 2026-11-19T21:00:44.631446+00:00 | 73.02 | 68.3 | -6.46% |
+| LINK | 2026-11-19T21:00:44.631446+00:00 | 8.96683 | 8.38456 | -6.49% |
+| XRP | 2026-11-19T21:00:44.631446+00:00 | 0.96173 | 0.8976 | -6.67% |
+| DOT | 2026-11-19T21:00:44.631446+00:00 | 0.7099 | 0.6612 | -6.86% |
+| SHIB | 2026-11-19T21:00:44.631446+00:00 | 3.792e-06 | 3.53e-06 | -6.91% |
+| BCH | 2026-11-19T21:00:44.631446+00:00 | 206.46 | 191.52 | -7.24% |
+| ADA | 2026-11-19T21:00:44.631446+00:00 | 0.15155 | 0.140017 | -7.61% |
+| BNB | 2026-11-19T21:00:44.631446+00:00 | 580.62 | 535.38 | -7.79% |
+| WIF | 2026-11-19T21:00:44.631446+00:00 | 0.131 | 0.1204 | -8.09% |
+| DOGE | 2026-11-19T21:00:44.631446+00:00 | 0.0581386 | 0.0534223 | -8.11% |
+| FLOKI | 2026-11-19T21:00:44.631446+00:00 | 1.732e-05 | 1.591e-05 | -8.14% |
+| PEPE | 2026-11-19T21:00:44.631446+00:00 | 3.73e-06 | 3.424e-06 | -8.20% |
+| AAVE | 2026-11-19T21:00:44.631446+00:00 | 104.5 | 95.44 | -8.67% |
+| ETH | 2026-11-19T21:00:44.631446+00:00 | 1759.2 | 1606.17 | -8.70% |
+| SUI | 2026-11-19T21:00:44.631446+00:00 | 0.7078 | 0.6446 | -8.93% |
+| BONK | 2026-11-19T21:00:44.631446+00:00 | 2.302e-06 | 2.069e-06 | -10.12% |
+| UNI | 2026-11-19T21:00:44.631446+00:00 | 4.9642 | 4.3799 | -11.77% |
+| NEAR | 2026-11-19T21:00:44.631446+00:00 | 3.2362 | 2.8466 | -12.04% |
 
-Observed paper equity samples: 272. Observed range $195.346916–$196.221601, sampled maximum drawdown -0.4458%, largest recorded gap 6.0 minutes.
+Observed paper equity samples: 273. Observed range $195.346916–$196.221601, sampled maximum drawdown -0.4458%, largest recorded gap 6.0 minutes.
 
 Benchmarks are comparison-only and excluded from the $210 bankroll.
-- BTC: $10 fake reference now $7.4747; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- ETH: $10 fake reference now $7.0561; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
-- SOL: $10 fake reference now $7.0138; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- BTC: $10 fake reference now $7.5354; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- ETH: $10 fake reference now $7.0973; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
+- SOL: $10 fake reference now $7.0635; since 2026-10-30T22:21:37.361980+00:00, including estimated buy and sale costs.
 
 ## 5. Broad market radar — monitoring only, NOT new trades
 
 Kraken USD spot market discovery covers majors, L1, DeFi, AI/data, L2/gaming, memes, stablecoin pairs, tokenised-gold proxies and FX references.
-Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-20T19:35:45.754890+00:00; age 0.0 minutes.
+Status FRESH; requested 72, confirmed 71, observed 71; source polled 2026-11-20T19:35:45.754890+00:00; age 4.94 minutes.
 **This does not expand the bounded 24-asset simulated execution universe.**
 Mover percentages compare with Kraken's **UTC opening price**, not a rolling 24-hour change. 24h turnover is an approximation of last price multiplied by 24h base volume.
 
@@ -248,19 +248,19 @@ Unavailable feeds: PUBLIC_FORUM
 The 640 specialists are correlated, transparent rule reviews across the ten parent traders, not separately trained language models.
 | Parent | Action | Support | Opposition | Vetoes |
 |---|---|---:|---:|---:|
-| GAMBLER | HOLD | 14 | 26 | 0 |
-| HOUSE | HOLD | 32 | 8 | 0 |
-| SPY | HOLD | 13 | 33 | 0 |
-| MEME HUNTER | HOLD | 11 | 34 | 0 |
-| BREAKOUT | HOLD | 14 | 26 | 0 |
-| CONTRARIAN | HOLD | 32 | 8 | 0 |
-| ROTATOR | HOLD | 14 | 26 | 0 |
-| VORTEX | HOLD | 14 | 26 | 0 |
-| FRACTAL | HOLD | 14 | 26 | 0 |
-| SHOCKWAVE | HOLD | 11 | 34 | 0 |
+| GAMBLER | HOLD | 23 | 17 | 0 |
+| HOUSE | HOLD | 20 | 20 | 0 |
+| SPY | HOLD | 23 | 29 | 0 |
+| MEME HUNTER | HOLD | 23 | 27 | 0 |
+| BREAKOUT | HOLD | 23 | 17 | 0 |
+| CONTRARIAN | HOLD | 20 | 20 | 0 |
+| ROTATOR | HOLD | 23 | 17 | 0 |
+| VORTEX | HOLD | 23 | 17 | 0 |
+| FRACTAL | HOLD | 23 | 17 | 0 |
+| SHOCKWAVE | HOLD | 23 | 27 | 0 |
 
 Main paper risk limit: not triggered. Shadow risk limit: not triggered.
-Last trigger workflow_dispatch; run 44803518277. Native 5-minute cron independently verified: YES.
+Last trigger workflow_dispatch; run 44804290490. Native 5-minute cron independently verified: YES.
 Market-data flags: {'main_stale': False, 'research_stale': False, 'missing_quotes': False, 'time_misaligned': False, 'main_status': 'HEALTHY: paper trading on completed Kraken candles', 'research_status': 'OK'}. Missing 5-minute candles cannot be manufactured. GitHub jobs can be late or skipped.
 
 ## 8. Research distillation gate — do not deploy a winner yet
