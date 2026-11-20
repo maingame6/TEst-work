@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-20T09:55:42.600966+00:00
+Generated: 2026-11-20T10:00:40.280733+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD BTC |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD LINK |
 | FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD BNB |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD ADA |
-| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD ADA |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD ADA |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD DOGE |
+| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD DOGE |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD DOGE |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD ADA |
-| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD ADA |
+| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD BNB |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD DOGE |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD ADA |
-| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD BNB |
+| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD XRP |
+| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD DOGE |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
