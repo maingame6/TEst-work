@@ -1,49 +1,18 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795217400,
+  "last_ts": 1795217700,
   "first_ts": 1793488500,
-  "observed_candles": 4822,
-  "signals": [
+  "observed_candles": 4823,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "NEAR",
       "signal_ts": 1795217400,
-      "observed_move": 0.00518643
-    }
-  ],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "DOGE",
-      "signal_ts": 1795215600,
-      "entry_ts": 1795215900,
-      "entry_mid": 0.0544476,
-      "exit_ts": 1795217700
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1795215600,
-      "entry_ts": 1795215900,
-      "entry_mid": 69.21,
-      "exit_ts": 1795217700
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1795215600,
-      "entry_ts": 1795215900,
-      "entry_mid": 1620.59,
-      "exit_ts": 1795217700
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1795215600,
-      "entry_ts": 1795215900,
-      "entry_mid": 0.91077,
-      "exit_ts": 1795217700
+      "entry_ts": 1795217700,
+      "entry_mid": 2.8695,
+      "exit_ts": 1795219500
     }
   ],
   "trades": [
@@ -11408,40 +11377,92 @@
       "slippage_drag": 0.0050260509,
       "stress_net_return": -0.0181403421,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1795215600,
+      "entry_ts": 1795215900,
+      "exit_ts": 1795217700,
+      "gross_return": -0.0011754421,
+      "net_return": -0.0219323947,
+      "fee_drag": 0.015775284,
+      "slippage_drag": 0.0049816686,
+      "stress_net_return": -0.0268105981,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795215600,
+      "entry_ts": 1795215900,
+      "exit_ts": 1795217700,
+      "gross_return": -0.0011559023,
+      "net_return": -0.021913261,
+      "fee_drag": 0.0157755926,
+      "slippage_drag": 0.0049817661,
+      "stress_net_return": -0.0267915599,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795215600,
+      "entry_ts": 1795215900,
+      "exit_ts": 1795217700,
+      "gross_return": 0.0003393826,
+      "net_return": -0.0204490502,
+      "fee_drag": 0.0157992089,
+      "slippage_drag": 0.0049892239,
+      "stress_net_return": -0.025334652,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795215600,
+      "entry_ts": 1795215900,
+      "exit_ts": 1795217700,
+      "gross_return": -0.0001537161,
+      "net_return": -0.0209319015,
+      "fee_drag": 0.0157914209,
+      "slippage_drag": 0.0049867645,
+      "stress_net_return": -0.0258150951,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4710,
-      "liquid_candidates": 47885,
-      "move_below_gate": 47826,
-      "volume_below_gate": 36420,
+      "bars": 4711,
+      "liquid_candidates": 47897,
+      "move_below_gate": 47838,
+      "volume_below_gate": 36427,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4710,
-      "liquid_candidates": 47885,
-      "move_below_gate": 47808,
-      "volume_below_gate": 35896,
+      "bars": 4711,
+      "liquid_candidates": 47897,
+      "move_below_gate": 47820,
+      "volume_below_gate": 35903,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4710,
-      "liquid_candidates": 47885,
-      "move_below_gate": 47308,
-      "volume_below_gate": 35896,
+      "bars": 4711,
+      "liquid_candidates": 47897,
+      "move_below_gate": 47320,
+      "volume_below_gate": 35903,
       "qualified": 301,
       "queued": 175
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4710,
-      "liquid_candidates": 47885,
-      "move_below_gate": 43553,
-      "volume_below_gate": 35326,
+      "bars": 4711,
+      "liquid_candidates": 47897,
+      "move_below_gate": 43565,
+      "volume_below_gate": 35333,
       "qualified": 1566,
       "queued": 801
     }
@@ -11774,6 +11795,14 @@
       "entry_ts": 1795215900,
       "entry_mid": 0.91077,
       "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795217400,
+      "entry_ts": 1795217700,
+      "entry_mid": 2.8695,
+      "hold_bars": 288
     }
   ],
   "horizon_trades": [
