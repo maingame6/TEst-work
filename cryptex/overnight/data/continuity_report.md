@@ -3,11 +3,11 @@
 **Status:** COLLECTING_WITH_GAPS (not an earnings claim)
 **Policy:** COST_GATE_V4_KRAKEN_TAKER / paper only
 **Start:** 2026-10-31T23:24:36.636109+00:00
-**Coverage:** 4656 / 5598 actual closed-candle decisions = 83.173%
+**Coverage:** 4657 / 5599 actual closed-candle decisions = 83.176%
 **Missing five-minute decisions:** 942
 **Largest observed interval:** 550.0 minutes
-**Evidence duration:** 19.434 days (require 7)
-**V4 policy-window paper balance delta:** $-12.744682 (legacy holdings may affect it)
+**Evidence duration:** 19.438 days (require 7)
+**V4 policy-window paper balance delta:** $-12.740511 (legacy holdings may affect it)
 **Review prerequisites:** >=99% coverage and >=30 post-policy exits PER strategy; held-out after-cost superiority still unproven.
 
 ## New completed trades since this policy started
