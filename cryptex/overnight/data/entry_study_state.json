@@ -1,30 +1,36 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795207500,
+  "last_ts": 1795207800,
   "first_ts": 1793488500,
-  "observed_candles": 4789,
-  "signals": [
+  "observed_candles": 4790,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ETH",
       "signal_ts": 1795207500,
-      "observed_move": 0.01151859
+      "entry_ts": 1795207800,
+      "entry_mid": 1598.13,
+      "exit_ts": 1795209600
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "AVAX",
       "signal_ts": 1795207500,
-      "observed_move": 0.01077788
+      "entry_ts": 1795207800,
+      "entry_mid": 6.436,
+      "exit_ts": 1795209600
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "BTC",
       "signal_ts": 1795207500,
-      "observed_move": 0.00602472
+      "entry_ts": 1795207800,
+      "entry_mid": 58270.7,
+      "exit_ts": 1795209600
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -11172,34 +11178,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4677,
-      "liquid_candidates": 47411,
-      "move_below_gate": 47352,
-      "volume_below_gate": 36064,
+      "bars": 4678,
+      "liquid_candidates": 47424,
+      "move_below_gate": 47365,
+      "volume_below_gate": 36071,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4677,
-      "liquid_candidates": 47411,
-      "move_below_gate": 47334,
-      "volume_below_gate": 35547,
+      "bars": 4678,
+      "liquid_candidates": 47424,
+      "move_below_gate": 47347,
+      "volume_below_gate": 35553,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4677,
-      "liquid_candidates": 47411,
-      "move_below_gate": 46863,
-      "volume_below_gate": 35547,
+      "bars": 4678,
+      "liquid_candidates": 47424,
+      "move_below_gate": 46876,
+      "volume_below_gate": 35553,
       "qualified": 285,
       "queued": 170
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4677,
-      "liquid_candidates": 47411,
-      "move_below_gate": 43191,
-      "volume_below_gate": 34982,
+      "bars": 4678,
+      "liquid_candidates": 47424,
+      "move_below_gate": 43204,
+      "volume_below_gate": 34988,
       "qualified": 1514,
       "queued": 787
     }
@@ -11435,6 +11441,22 @@
       "signal_ts": 1795203900,
       "entry_ts": 1795204200,
       "entry_mid": 6.498,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795207500,
+      "entry_ts": 1795207800,
+      "entry_mid": 1598.13,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795207500,
+      "entry_ts": 1795207800,
+      "entry_mid": 58270.7,
       "hold_bars": 48
     }
   ],
