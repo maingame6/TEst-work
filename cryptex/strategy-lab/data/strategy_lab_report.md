@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1416 symbol-hours, 3708 missing.
+Recorded 1428 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 761 hypothetical outcomes; censored 7473.
+Closed 767 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -13,7 +13,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_32 | 0 | 0 | — | — | 0 |
 | adx_uptrend_8 | 14 | 0 | -3.8533 | -4.3328 | 14 |
 | aroon_uptrend_16 | 14 | 0 | -5.4552 | -5.9267 | 14 |
-| aroon_uptrend_32 | 2 | 0 | -2.4806 | -2.9670 | 2 |
+| aroon_uptrend_32 | 3 | 0 | -4.6640 | -5.1395 | 3 |
 | aroon_uptrend_8 | 12 | 0 | -4.6872 | -5.1626 | 12 |
 | atr_pullback_16 | 12 | 0 | -2.2275 | -2.7152 | 12 |
 | atr_pullback_32 | 12 | 0 | -2.4350 | -2.9216 | 12 |
@@ -36,7 +36,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | donchian_breakout_16 | 3 | 0 | -7.1885 | -7.6514 | 3 |
 | donchian_breakout_32 | 1 | 0 | -7.0711 | -7.5346 | 1 |
 | donchian_breakout_8 | 8 | 0 | -5.9798 | -6.4487 | 8 |
-| efficiency_trend_16 | 4 | 0 | -4.7732 | -5.2482 | 4 |
+| efficiency_trend_16 | 5 | 0 | -5.6247 | -6.0954 | 5 |
 | efficiency_trend_32 | 0 | 0 | — | — | 0 |
 | efficiency_trend_8 | 12 | 0 | -5.2818 | -5.7542 | 12 |
 | ema_trend_16 | 11 | 0 | -4.8967 | -5.3710 | 11 |
@@ -60,7 +60,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | momentum_16 | 12 | 0 | -5.6234 | -6.0941 | 12 |
 | momentum_32 | 3 | 0 | -2.6145 | -3.1002 | 3 |
 | momentum_8 | 12 | 0 | -5.2690 | -5.7415 | 12 |
-| obv_confirmation_16 | 20 | 0 | -4.1009 | -4.5792 | 20 |
+| obv_confirmation_16 | 21 | 0 | -4.3862 | -4.8631 | 21 |
 | obv_confirmation_32 | 7 | 0 | -2.6865 | -3.1719 | 7 |
 | obv_confirmation_8 | 12 | 0 | -4.2578 | -4.7353 | 12 |
 | roc_acceleration_16 | 13 | 0 | -4.9325 | -5.4067 | 13 |
@@ -72,7 +72,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_trend_16 | 16 | 0 | -4.9222 | -5.3964 | 16 |
 | rsi_trend_32 | 5 | 0 | -2.3303 | -2.8175 | 5 |
 | rsi_trend_8 | 13 | 0 | -3.9209 | -4.4002 | 13 |
-| sma_trend_16 | 8 | 0 | -4.2975 | -4.7748 | 8 |
+| sma_trend_16 | 11 | 0 | -5.6574 | -6.1279 | 11 |
 | sma_trend_32 | 8 | 0 | -4.0870 | -4.5653 | 8 |
 | sma_trend_8 | 14 | 0 | -5.2484 | -5.7210 | 14 |
 | squeeze_breakout_16 | 9 | 0 | -6.1264 | -6.5946 | 9 |
