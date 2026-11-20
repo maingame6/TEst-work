@@ -1,17 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795143600,
+  "last_ts": 1795143900,
   "first_ts": 1793488500,
-  "observed_candles": 4576,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1795143600,
-      "observed_move": 0.00930814
-    }
-  ],
+  "observed_candles": 4577,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -36,6 +29,14 @@
       "entry_ts": 1795143600,
       "entry_mid": 0.6999,
       "exit_ts": 1795145400
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795143600,
+      "entry_ts": 1795143900,
+      "entry_mid": 72.29,
+      "exit_ts": 1795145700
     }
   ],
   "trades": [
@@ -10587,34 +10588,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4464,
-      "liquid_candidates": 44928,
-      "move_below_gate": 44869,
-      "volume_below_gate": 34227,
+      "bars": 4465,
+      "liquid_candidates": 44941,
+      "move_below_gate": 44882,
+      "volume_below_gate": 34239,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4464,
-      "liquid_candidates": 44928,
-      "move_below_gate": 44851,
-      "volume_below_gate": 33746,
+      "bars": 4465,
+      "liquid_candidates": 44941,
+      "move_below_gate": 44864,
+      "volume_below_gate": 33758,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4464,
-      "liquid_candidates": 44928,
-      "move_below_gate": 44398,
-      "volume_below_gate": 33746,
+      "bars": 4465,
+      "liquid_candidates": 44941,
+      "move_below_gate": 44411,
+      "volume_below_gate": 33758,
       "qualified": 281,
       "queued": 166
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4464,
-      "liquid_candidates": 44928,
-      "move_below_gate": 41002,
-      "volume_below_gate": 33206,
+      "bars": 4465,
+      "liquid_candidates": 44941,
+      "move_below_gate": 41015,
+      "volume_below_gate": 33218,
       "qualified": 1440,
       "queued": 746
     }
@@ -10795,6 +10796,14 @@
       "entry_ts": 1795143600,
       "entry_mid": 0.6999,
       "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795143600,
+      "entry_ts": 1795143900,
+      "entry_mid": 72.29,
+      "hold_bars": 288
     }
   ],
   "horizon_trades": [
