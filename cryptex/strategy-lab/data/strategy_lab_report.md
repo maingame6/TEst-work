@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1260 symbol-hours, 3708 missing.
+Recorded 1272 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 410 hypothetical outcomes; censored 7473.
+Closed 414 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -14,7 +14,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_8 | 12 | 0 | -3.4032 | -3.8850 | 12 |
 | aroon_uptrend_16 | 2 | 0 | -2.6044 | -3.0901 | 2 |
 | aroon_uptrend_32 | 2 | 0 | -2.4806 | -2.9670 | 2 |
-| aroon_uptrend_8 | 2 | 0 | -5.1315 | -5.6047 | 2 |
+| aroon_uptrend_8 | 3 | 0 | -4.4989 | -4.9752 | 3 |
 | atr_pullback_16 | 12 | 0 | -2.2275 | -2.7152 | 12 |
 | atr_pullback_32 | 12 | 0 | -2.4350 | -2.9216 | 12 |
 | atr_pullback_8 | 12 | 0 | -2.1650 | -2.6530 | 12 |
@@ -48,9 +48,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | low_vol_trend_16 | 4 | 0 | -2.0972 | -2.5855 | 4 |
 | low_vol_trend_32 | 5 | 0 | -2.4296 | -2.9162 | 5 |
 | low_vol_trend_8 | 12 | 0 | -3.9134 | -4.3927 | 12 |
-| macd_acceleration_16 | 4 | 0 | -4.6636 | -5.1391 | 4 |
-| macd_acceleration_32 | 4 | 0 | -4.6636 | -5.1391 | 4 |
-| macd_acceleration_8 | 4 | 0 | -4.6636 | -5.1391 | 4 |
+| macd_acceleration_16 | 5 | 0 | -4.3605 | -4.8375 | 5 |
+| macd_acceleration_32 | 5 | 0 | -4.3605 | -4.8375 | 5 |
+| macd_acceleration_8 | 5 | 0 | -4.3605 | -4.8375 | 5 |
 | macd_trend_16 | 5 | 0 | -2.1634 | -2.6513 | 5 |
 | macd_trend_32 | 5 | 0 | -2.1634 | -2.6513 | 5 |
 | macd_trend_8 | 5 | 0 | -2.1634 | -2.6513 | 5 |
