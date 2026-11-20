@@ -1,35 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795145100,
+  "last_ts": 1795145400,
   "first_ts": 1793488500,
-  "observed_candles": 4581,
+  "observed_candles": 4582,
   "signals": [],
   "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795143300,
-      "entry_ts": 1795143600,
-      "entry_mid": 62019.0,
-      "exit_ts": 1795145400
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1795143300,
-      "entry_ts": 1795143600,
-      "entry_mid": 6.906,
-      "exit_ts": 1795145400
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SUI",
-      "signal_ts": 1795143300,
-      "entry_ts": 1795143600,
-      "entry_mid": 0.6999,
-      "exit_ts": 1795145400
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
@@ -10590,40 +10566,79 @@
       "slippage_drag": 0.004957904,
       "stress_net_return": -0.0314531147,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795143300,
+      "entry_ts": 1795143600,
+      "exit_ts": 1795145400,
+      "gross_return": -0.0013463616,
+      "net_return": -0.0220997622,
+      "fee_drag": 0.0157725845,
+      "slippage_drag": 0.0049808162,
+      "stress_net_return": -0.026977131,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795143300,
+      "entry_ts": 1795143600,
+      "exit_ts": 1795145400,
+      "gross_return": -0.0007240081,
+      "net_return": -0.0214903421,
+      "fee_drag": 0.0157824138,
+      "slippage_drag": 0.0049839202,
+      "stress_net_return": -0.0263707504,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SUI",
+      "signal_ts": 1795143300,
+      "entry_ts": 1795143600,
+      "exit_ts": 1795145400,
+      "gross_return": -0.0024289184,
+      "net_return": -0.023159822,
+      "fee_drag": 0.0157554867,
+      "slippage_drag": 0.0049754169,
+      "stress_net_return": -0.0280319036,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4469,
-      "liquid_candidates": 44987,
-      "move_below_gate": 44928,
-      "volume_below_gate": 34278,
+      "bars": 4470,
+      "liquid_candidates": 44998,
+      "move_below_gate": 44939,
+      "volume_below_gate": 34286,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4469,
-      "liquid_candidates": 44987,
-      "move_below_gate": 44910,
-      "volume_below_gate": 33797,
+      "bars": 4470,
+      "liquid_candidates": 44998,
+      "move_below_gate": 44921,
+      "volume_below_gate": 33804,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4469,
-      "liquid_candidates": 44987,
-      "move_below_gate": 44457,
-      "volume_below_gate": 33797,
+      "bars": 4470,
+      "liquid_candidates": 44998,
+      "move_below_gate": 44468,
+      "volume_below_gate": 33804,
       "qualified": 281,
       "queued": 166
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4469,
-      "liquid_candidates": 44987,
-      "move_below_gate": 41056,
-      "volume_below_gate": 33255,
+      "bars": 4470,
+      "liquid_candidates": 44998,
+      "move_below_gate": 41067,
+      "volume_below_gate": 33262,
       "qualified": 1441,
       "queued": 747
     }
