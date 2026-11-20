@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-20T03:15:39.432150+00:00
+Generated: 2026-11-20T03:20:41.198734+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD UNI |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD NEAR |
 | FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD TRX |
 | GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD PEPE |
-| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD TRX |
+| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD SOL |
 | GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD PEPE |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XLM |
-| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD SOL |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
+| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD PEPE |
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD PEPE |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD TRX |
-| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD SOL |
+| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD NEAR |
+| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD XRP |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
