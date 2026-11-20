@@ -1,10 +1,29 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795207200,
+  "last_ts": 1795207500,
   "first_ts": 1793488500,
-  "observed_candles": 4788,
-  "signals": [],
+  "observed_candles": 4789,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795207500,
+      "observed_move": 0.01151859
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795207500,
+      "observed_move": 0.01077788
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795207500,
+      "observed_move": 0.00602472
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -11153,36 +11172,36 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4676,
-      "liquid_candidates": 47397,
-      "move_below_gate": 47338,
-      "volume_below_gate": 36053,
+      "bars": 4677,
+      "liquid_candidates": 47411,
+      "move_below_gate": 47352,
+      "volume_below_gate": 36064,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4676,
-      "liquid_candidates": 47397,
-      "move_below_gate": 47320,
-      "volume_below_gate": 35536,
+      "bars": 4677,
+      "liquid_candidates": 47411,
+      "move_below_gate": 47334,
+      "volume_below_gate": 35547,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4676,
-      "liquid_candidates": 47397,
-      "move_below_gate": 46851,
-      "volume_below_gate": 35536,
+      "bars": 4677,
+      "liquid_candidates": 47411,
+      "move_below_gate": 46863,
+      "volume_below_gate": 35547,
       "qualified": 285,
       "queued": 170
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4676,
-      "liquid_candidates": 47397,
-      "move_below_gate": 43189,
-      "volume_below_gate": 34971,
-      "qualified": 1511,
-      "queued": 784
+      "bars": 4677,
+      "liquid_candidates": 47411,
+      "move_below_gate": 43191,
+      "volume_below_gate": 34982,
+      "qualified": 1514,
+      "queued": 787
     }
   },
   "horizon_open": [
