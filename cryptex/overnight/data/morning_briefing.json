@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T17:50:45.543627+00:00",
+  "generated_at": "2026-11-20T17:56:47.898837+00:00",
   "session": "2026-11-19",
   "session_start": "2026-11-19T21:00:44.631446+00:00",
   "status": "MORNING_RECORDED",
@@ -7,20 +7,20 @@
   "paper_only": true,
   "money": {
     "starting": 210,
-    "equity": 195.425813,
-    "net_pnl": -14.574187,
+    "equity": 195.46878,
+    "net_pnl": -14.53122,
     "realised": -14.012416,
-    "unrealised": -0.561771,
+    "unrealised": -0.518804,
     "main": {
       "starting": 100.0,
-      "equity": 85.804714,
-      "gross_equity": 86.018136,
-      "pnl": -14.195286,
+      "equity": 85.847681,
+      "gross_equity": 86.061558,
+      "pnl": -14.152319,
       "realised": -13.633515,
       "closed": 126,
       "wins": 7,
       "open": 3,
-      "queued": 0
+      "queued": 1
     },
     "research": {
       "starting": 110.0,
@@ -42,7 +42,7 @@
     "losses_or_breakevens": 1,
     "session_realised": -0.6364808,
     "open_positions": 3,
-    "queued_orders": 0,
+    "queued_orders": 1,
     "all_time_closed": 170,
     "all_time_fills_in_json": 343
   },
@@ -58,7 +58,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD XRP"
     },
     {
       "name": "HUMMINGBOT_FRICTION",
@@ -84,7 +84,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD SHIB"
+      "decision": "HOLD PEPE"
     },
     {
       "name": "SHOCKWAVE",
@@ -110,7 +110,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD LTC"
     },
     {
       "name": "QLIB_STYLE",
@@ -123,7 +123,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD LTC"
     },
     {
       "name": "LEAN_EVENT",
@@ -136,7 +136,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD LTC"
     },
     {
       "name": "GEOMETRIC_DIVERSITY",
@@ -149,7 +149,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD LTC"
     },
     {
       "name": "NAUTILUS_REGIME",
@@ -162,7 +162,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD LTC"
+      "decision": "HOLD UNI"
     },
     {
       "name": "FLUID_VISCOSITY",
@@ -175,7 +175,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD TRX"
+      "decision": "HOLD LTC"
     },
     {
       "name": "FREQTRADE_STYLE",
@@ -245,15 +245,19 @@
     {
       "name": "HOUSE",
       "portfolio": "main",
-      "equity": 9.58037039,
-      "all_time_pnl": -0.41962961,
+      "equity": 9.60434779,
+      "all_time_pnl": -0.39565221,
       "all_time_closed": 8,
       "session_closed": 0,
       "session_wins": 0,
       "session_net": 0,
       "holding": "XLM",
-      "pending": null,
-      "decision": "HOLD: XLM position still within strategy rules"
+      "pending": {
+        "side": "SELL",
+        "symbol": "XLM",
+        "reason": "Range normalized"
+      },
+      "decision": "SELL QUEUED: XLM — Range normalized"
     },
     {
       "name": "BREAKOUT",
@@ -271,8 +275,8 @@
     {
       "name": "CONTRARIAN",
       "portfolio": "main",
-      "equity": 9.24569866,
-      "all_time_pnl": -0.75430134,
+      "equity": 9.25653705,
+      "all_time_pnl": -0.74346295,
       "all_time_closed": 9,
       "session_closed": 0,
       "session_wins": 0,
@@ -284,8 +288,8 @@
     {
       "name": "ROTATOR",
       "portfolio": "main",
-      "equity": 7.01515511,
-      "all_time_pnl": -2.98484489,
+      "equity": 7.02330598,
+      "all_time_pnl": -2.97669402,
       "all_time_closed": 8,
       "session_closed": 1,
       "session_wins": 0,
@@ -389,95 +393,109 @@
   },
   "observed_market_moves": [
     {
-      "symbol": "TRX",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.310016,
-      "latest": 0.301674,
-      "change_pct": -2.6908
-    },
-    {
       "symbol": "TON",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 1.02,
-      "latest": 0.99,
-      "change_pct": -2.9412
+      "latest": 0.994,
+      "change_pct": -2.549
+    },
+    {
+      "symbol": "TRX",
+      "since": "2026-11-19T21:00:44.631446+00:00",
+      "start": 0.310016,
+      "latest": 0.301733,
+      "change_pct": -2.6718
     },
     {
       "symbol": "XLM",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 0.132795,
-      "latest": 0.127042,
-      "change_pct": -4.3322
+      "latest": 0.127493,
+      "change_pct": -3.9926
     },
     {
       "symbol": "LTC",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 42.2,
-      "latest": 40.12,
-      "change_pct": -4.9289
+      "latest": 40.25,
+      "change_pct": -4.6209
     },
     {
       "symbol": "BTC",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 62055.0,
-      "latest": 58897.2,
-      "change_pct": -5.0887
+      "latest": 58968.8,
+      "change_pct": -4.9733
     },
     {
       "symbol": "SOL",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 73.02,
-      "latest": 68.79,
-      "change_pct": -5.7929
+      "latest": 68.9,
+      "change_pct": -5.6423
     },
     {
       "symbol": "XRP",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 0.96173,
-      "latest": 0.90296,
-      "change_pct": -6.1109
+      "latest": 0.90374,
+      "change_pct": -6.0298
     },
     {
       "symbol": "AVAX",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 6.948,
-      "latest": 6.483,
-      "change_pct": -6.6926
-    },
-    {
-      "symbol": "BNB",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 580.62,
-      "latest": 541.2,
-      "change_pct": -6.7893
-    },
-    {
-      "symbol": "LINK",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 8.96683,
-      "latest": 8.34935,
-      "change_pct": -6.8863
+      "latest": 6.494,
+      "change_pct": -6.5343
     },
     {
       "symbol": "DOT",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 0.7099,
-      "latest": 0.6608,
-      "change_pct": -6.9165
+      "latest": 0.6634,
+      "change_pct": -6.5502
+    },
+    {
+      "symbol": "LINK",
+      "since": "2026-11-19T21:00:44.631446+00:00",
+      "start": 8.96683,
+      "latest": 8.36612,
+      "change_pct": -6.6992
+    },
+    {
+      "symbol": "BNB",
+      "since": "2026-11-19T21:00:44.631446+00:00",
+      "start": 580.62,
+      "latest": 541.4,
+      "change_pct": -6.7548
     },
     {
       "symbol": "SHIB",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 3.792e-06,
-      "latest": 3.521e-06,
-      "change_pct": -7.1466
+      "latest": 3.535e-06,
+      "change_pct": -6.7774
     },
     {
       "symbol": "BCH",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 206.46,
-      "latest": 191.03,
-      "change_pct": -7.4736
+      "latest": 191.15,
+      "change_pct": -7.4155
+    },
+    {
+      "symbol": "ADA",
+      "since": "2026-11-19T21:00:44.631446+00:00",
+      "start": 0.15155,
+      "latest": 0.140095,
+      "change_pct": -7.5586
+    },
+    {
+      "symbol": "ETH",
+      "since": "2026-11-19T21:00:44.631446+00:00",
+      "start": 1759.2,
+      "latest": 1625.81,
+      "change_pct": -7.5824
     },
     {
       "symbol": "FLOKI",
@@ -487,82 +505,68 @@
       "change_pct": -7.6212
     },
     {
-      "symbol": "ETH",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 1759.2,
-      "latest": 1624.63,
-      "change_pct": -7.6495
-    },
-    {
-      "symbol": "ADA",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.15155,
-      "latest": 0.139886,
-      "change_pct": -7.6965
-    },
-    {
       "symbol": "DOGE",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 0.0581386,
-      "latest": 0.053651,
-      "change_pct": -7.7188
-    },
-    {
-      "symbol": "AAVE",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 104.5,
-      "latest": 96.07,
-      "change_pct": -8.067
+      "latest": 0.0536695,
+      "change_pct": -7.687
     },
     {
       "symbol": "SUI",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 0.7078,
-      "latest": 0.6494,
-      "change_pct": -8.2509
+      "latest": 0.6511,
+      "change_pct": -8.0107
+    },
+    {
+      "symbol": "AAVE",
+      "since": "2026-11-19T21:00:44.631446+00:00",
+      "start": 104.5,
+      "latest": 96.12,
+      "change_pct": -8.0191
     },
     {
       "symbol": "WIF",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 0.131,
-      "latest": 0.1193,
-      "change_pct": -8.9313
+      "latest": 0.1198,
+      "change_pct": -8.5496
     },
     {
       "symbol": "PEPE",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 3.73e-06,
-      "latest": 3.373e-06,
-      "change_pct": -9.571
+      "latest": 3.387e-06,
+      "change_pct": -9.1957
     },
     {
       "symbol": "UNI",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 4.9642,
-      "latest": 4.4457,
-      "change_pct": -10.4448
+      "latest": 4.4529,
+      "change_pct": -10.2997
     },
     {
       "symbol": "BONK",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 2.302e-06,
-      "latest": 2.056e-06,
-      "change_pct": -10.6864
+      "latest": 2.063e-06,
+      "change_pct": -10.3823
     },
     {
       "symbol": "NEAR",
       "since": "2026-11-19T21:00:44.631446+00:00",
       "start": 3.2362,
-      "latest": 2.7956,
-      "change_pct": -13.6147
+      "latest": 2.7954,
+      "change_pct": -13.6209
     }
   ],
   "equity_curve": {
-    "samples": 251,
+    "samples": 252,
     "low": 195.346916,
     "high": 196.221601,
     "observed_drawdown_pct": -0.4458,
-    "largest_observed_gap_minutes": 5.5,
+    "largest_observed_gap_minutes": 6.0,
     "notice": "Sampled balance only; unknown peaks/volatility between recorded cycles."
   },
   "reference_benchmarks": {
@@ -570,33 +574,33 @@
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 76586.0,
-      "current_mid": 58897.2,
+      "current_mid": 58968.8,
       "start": 10.0,
-      "equity": 7.579394,
-      "pnl": -2.420606,
-      "return_pct": -24.2061,
+      "equity": 7.588608,
+      "pnl": -2.411392,
+      "return_pct": -24.1139,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "ETH": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 2230.44,
-      "current_mid": 1624.63,
+      "current_mid": 1625.81,
       "start": 10.0,
-      "equity": 7.178822,
-      "pnl": -2.821178,
-      "return_pct": -28.2118,
+      "equity": 7.184036,
+      "pnl": -2.815964,
+      "return_pct": -28.1596,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "SOL": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 95.3,
-      "current_mid": 68.79,
+      "current_mid": 68.9,
       "start": 10.0,
-      "equity": 7.114128,
-      "pnl": -2.885872,
-      "return_pct": -28.8587,
+      "equity": 7.125504,
+      "pnl": -2.874496,
+      "return_pct": -28.745,
       "holding": "buy-and-hold; hypothetical sale costs included"
     }
   },
@@ -944,7 +948,7 @@
     "observed": 71,
     "confirmed": 71,
     "polled_at": "2026-11-20T17:25:51.699252+00:00",
-    "age_minutes": 24.9,
+    "age_minutes": 30.94,
     "sectors": {
       "Majors": {
         "requested": 14,
@@ -1392,16 +1396,58 @@
     "newly_tradable_pairs": 0
   },
   "news": {
-    "last_polled": "2026-11-20T16:55:48.740840+00:00",
+    "last_polled": "2026-11-20T17:56:44.950928+00:00",
     "sources_up": 7,
     "total_sources": 8,
-    "new_items": 101,
+    "new_items": 107,
     "weak_sentiment": {
-      "NEUTRAL": 91,
+      "NEUTRAL": 97,
       "NEGATIVE": 6,
       "POSITIVE": 4
     },
     "top_items": [
+      {
+        "title": "Bitcoin falls below $60K for first time since July amid broader market selloff",
+        "url": "https://cointelegraph.com/markets/bitcoin-falls-below-60k-for-first-time-since-july-amid-broader-market-selloff?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "COINTELEGRAPH",
+        "at": "2026-11-20T17:56:44.950928+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin sell-off: Crypto is failing the 'digital gold' test again as it sinks with stocks - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE02OVNPeVBBRWFNM0RxSndNZ2NPQnE3amxmMEpmenlKMm9COUdneHlXbUNTaXFwdjVsQnFQbGg1dTctVXZ0cDd4VTZTY1ZWYThiMFZrTGtuY0hSSWlNS1B2b1FlUFJENkZkQzkzTzZGdzFMUXlxTmhr0gF8QVVfeXFMTkVKRDJKTmVUSkU3SW1TejV5aUFtVzA1N0JKSkY0NWNDZmprbnBycGJJOXg0SzV1UjBoNWM4RWwxUDZ6OHV1X0tfY0VMbzlIMmZlVnZLcjdYeUNTWjg1UWxZOW0xTTNHZ25GejJ0SmRIQ1pGREtjbDVKUUJ3Ng?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-20T17:56:44.950928+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin Price Crashes to $59,000 as Market Selloff Deepens - Bitcoin Magazine",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1QdWtrYk45LWxHandBd1R1LXVYb1VfT19jZlF6ZFFReVhxOFZlb0VfRVJJUTFNRlltbkFIaVB4ZmRVblBWbEJDNHZmejl5MlNCc1VFT3JHeDNlbjNZNWk0SURTOWpqQmdaSzNqNlJHWmpzNnRRZWVVTA?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-20T17:56:44.950928+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Current price of Ethereum for November 20, 2026 - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9PWFE5SVRQOWdndU5sODFoUGNHeXM3emRZeGdOQUE5WGVsVDBSNDFuMTNhR3FkcE5zR3F0THNfTlJZNzJuRlE4NE9RVFFpbTVycUpEMlFkelFkV1daNEVIbUpVdlc4R3E3?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-20T17:56:44.950928+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin Fell More Than 20% in November. History Says This Happens Next. - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZmVNNXFIZUh6WGpuMHhDbHlKWXlYN0dJREM0Qk1RQmVtOFhreTZIaUhuMDNBSUxRLXRQSHBycWhDN3NPTjNDa1g1RnpWb3RUWkZmNmFXT21kdDlTZ25qYU9tUjktOE5IWmstcWV1YzRyWVhRZk1UaXlRNGwzZmRwVVFQWlljckxQYmhoTW41N19kMjZDZ0otYzNtbktyTEtOd0V3V2NsZWw5Vi1iWTZYQg?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-20T17:56:44.950928+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Current price of Bitcoin for November 20, 2026 - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5XLVJPckowN01hZzNsTnpXNEx0LTJsSklMX2lCNEstUlVWaXhtM0VGQXowTzBoODZTV244cjFuVE5VSGpLalFMOGhsRVVZQldzOEc0QVJLTll1SjUyMHNhOVBrT1dzMVk?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-20T17:56:44.950928+00:00",
+        "weak_label": "NEUTRAL"
+      },
       {
         "title": "Live news: Bitcoin slips to fresh lows below $60,000 as Anthropic slides after Nasdaq debut",
         "url": "https://www.coindesk.com/tech/2026/11/20/live-news-bitcoin-hovers-just-above-usd61-000-as-anthropic-slides-13-after-nasdaq-debut",
@@ -1443,48 +1489,6 @@
         "source": "SEARCH_RADAR",
         "at": "2026-11-20T16:55:48.740840+00:00",
         "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "BlackRock Bitcoin ETF Outflow Sets $541M Single-Day Record - Bitcoin Foundation",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYzJmWVVBMFhibzI0bWpuekEyYmtvMDNnOGQwRE15MXU5VmVBSGdsMmhrWnN1OHZoX3dfdFNzLW1FZEhsb1JiT3BuTUVURDB5QVc1RHdnQXZsZUVya1lxZ3RuaUMxaGNmMW5ud0ZDTF80SzVESmhOMC1zUktmekxLWlhBdlpTNDU5aU1MX2dqUzM2QW1PazhBRXFnOU5ydGMtZklV?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T16:55:48.740840+00:00",
-        "weak_label": "NEGATIVE"
-      },
-      {
-        "title": "Bitcoin Crashes to $59,000 as Ethereum, XRP DUmp 8%: What Is Going On? - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPU3ItdEN1Nk9XbkU3WVFpZXhUZXFjM0R0cnJVUWIwU0hKSkF2Sy1ZUmJRSHlhalk0WjdCN3NyWjdUWTk2RFBKQjRwbjVlYzJCZnloOXhYeXFLb08xSWh0YW1FVVdPTUstaGJuSUJVMzhFRXhzWW1pd2dSMlFyanBrNTJuYmthRHJ5YVkwdVV2UjlnZlhyTFFaaFFMN29qQmFMMEstaC1Ma0p4S19SNUFzdVZGRlFCQW9tZzhMeEN3amxMOWtH?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T16:55:48.740840+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin Price Crashes Below $62K: What Should You Do? - Cryptonews",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9yWkZxUk5MZkNxM3lqV3NJdWowSU9zNnoteWJKNS0yOFZ6X1AzWFBBVmJqV0VDamtWTnR1NVNuMGQxbVkxb09Sa0F2YUdEY1l5UkhNdzRUMmktNWhHYTMtc1ZNbUJJYy1ycVoyWGQtYnBWaDhO?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T16:55:48.740840+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin plunges below $60,000, on pace for its worst month since June 2022 - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGdzcHNQMmZDeW5FZ1hwZ29NblFwbFN4d0t5LW5Tc29abE80Y3lYdGs5SGZrckVVa1lRdlcyZTZjM0hxa202Y25hR1dCMS1GeTFnRi1EZWZnTmNJOFcwcFdBUzU1ZVBoUmpTSjgwd1M1dklveGx5d2RJVFEwd09XUFp1OHo3M05RT0x3RGNwd0pkal9FbXI5N3VQWHdGeGpYTGR0TkxwUmgyMklOMnVoZzVuQV9oc1g5bHZFZHJBMFpGcFUwUmtN?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T16:55:48.740840+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Live news: Bitcoin slips to fresh lows near $60,000 as Anthropic slides after Nasdaq debut",
-        "url": "https://www.coindesk.com/tech/2026/11/20/live-news-bitcoin-hovers-just-above-usd61-000-as-anthropic-slides-13-after-nasdaq-debut",
-        "source": "CRYPTODESK",
-        "at": "2026-11-20T15:55:37.846820+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "SEC charges 8 firms over fake crypto platforms tied to $37M fraud",
-        "url": "https://cointelegraph.com/news/sec-charges-eight-fake-crypto-platforms-37m-fraud?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "COINTELEGRAPH",
-        "at": "2026-11-20T15:55:37.846820+00:00",
-        "weak_label": "NEGATIVE"
       }
     ],
     "feed_errors": [
@@ -1495,62 +1499,62 @@
     "rule_based_review_capacity": 640,
     "latest": {
       "GAMBLER": {
-        "support": 4,
-        "opposition": 31,
+        "support": 7,
+        "opposition": 25,
         "vetoes": 0,
         "action": "HOLD"
       },
       "HOUSE": {
-        "support": 21,
-        "opposition": 9,
+        "support": 17,
+        "opposition": 22,
         "vetoes": 0,
-        "action": "HOLD"
+        "action": "SELL"
       },
       "SPY": {
-        "support": 6,
-        "opposition": 28,
+        "support": 8,
+        "opposition": 17,
         "vetoes": 0,
         "action": "HOLD"
       },
       "MEME HUNTER": {
-        "support": 8,
-        "opposition": 24,
+        "support": 16,
+        "opposition": 18,
         "vetoes": 0,
         "action": "HOLD"
       },
       "BREAKOUT": {
-        "support": 4,
-        "opposition": 31,
+        "support": 7,
+        "opposition": 25,
         "vetoes": 0,
         "action": "HOLD"
       },
       "CONTRARIAN": {
-        "support": 21,
-        "opposition": 15,
-        "vetoes": 1,
+        "support": 17,
+        "opposition": 19,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "ROTATOR": {
-        "support": 4,
-        "opposition": 31,
+        "support": 7,
+        "opposition": 25,
         "vetoes": 0,
         "action": "HOLD"
       },
       "VORTEX": {
-        "support": 4,
-        "opposition": 31,
+        "support": 7,
+        "opposition": 25,
         "vetoes": 0,
         "action": "HOLD"
       },
       "FRACTAL": {
-        "support": 4,
-        "opposition": 31,
+        "support": 7,
+        "opposition": 25,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SHOCKWAVE": {
-        "support": 8,
-        "opposition": 24,
+        "support": 16,
+        "opposition": 18,
         "vetoes": 0,
         "action": "HOLD"
       }
@@ -1564,7 +1568,7 @@
   "health": {
     "trigger": "workflow_dispatch",
     "cron_verified": true,
-    "run_id": "44787077246",
+    "run_id": "44787851637",
     "data": {
       "main_stale": false,
       "research_stale": false,
