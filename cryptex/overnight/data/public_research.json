@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-20T15:55:37.846820+00:00",
+  "checked_at": "2026-11-20T16:55:48.740840+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -11,13 +11,13 @@
       "source": "COINTELEGRAPH",
       "purpose": "independent crypto reporting",
       "status": "OK",
-      "items": 17
+      "items": 16
     },
     {
       "source": "THE_BLOCK",
       "purpose": "crypto sector reporting",
       "status": "OK",
-      "items": 11
+      "items": 10
     },
     {
       "source": "EXCHANGE_BLOG",
@@ -48,10 +48,120 @@
       "purpose": "public forum RSS where permitted",
       "status": "UNAVAILABLE",
       "items": 0,
-      "error": "HTTPError:HTTP Error 404: Not Found"
+      "error": "HTTPError:HTTP Error 429: Too Many Requests"
     }
   ],
   "articles": [
+    {
+      "id": "32427168ef33ef6e",
+      "source": "CRYPTODESK",
+      "title": "Live news: Bitcoin slips to fresh lows below $60,000 as Anthropic slides after Nasdaq debut",
+      "url": "https://www.coindesk.com/tech/2026/11/20/live-news-bitcoin-hovers-just-above-usd61-000-as-anthropic-slides-13-after-nasdaq-debut",
+      "published_at": "2026-11-20T13:35:33+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "678d1af8b8914b4a",
+      "source": "COINTELEGRAPH",
+      "title": "Bitcoin price drops to $60K as Anthropic drops to $87 in tech sell-off",
+      "url": "https://cointelegraph.com/markets/bitcoin-hits-new-20-week-low-anthropic-drops-87-tech-sell-off?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "published_at": "2026-11-20T15:52:06+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "53ccb02f97c4dead",
+      "source": "FED_MACRO",
+      "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+      "published_at": "2026-11-18T19:00:00+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "beae24dcef57e074",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Charges Indianapolis-Based Backward Hat Capital and Its Co-Founders With $560 Million Dollar Offering Fraud and Obtains Emergency Relief",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-116-sec-charges-indianapolis-based-backward-hat-capital-its-co-founders-560-million-dollar-offering",
+      "published_at": "2026-11-20T14:28:28+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "b9cada3609db1cb4",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin falls below $60,000 level - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNVEJfUmdFQ0ZvVC1TbUh4dXZxdzlrTVZYenFybjM0RnpESDZ2aFRsMmRsWHpjbEF4cjlCWWJtQnZiWXhINVZhUng3YW9ILWZXejhNY3BJelJKRWw1TDRzaDRtdU92ZlhRUXRMdVpzYXlWaUQ3MUx2aWtEU2VaVlhLOHlqV2Q?oc=5",
+      "published_at": "2026-11-20T16:26:27+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "7e6a97e018ad4d18",
+      "source": "SEARCH_RADAR",
+      "title": "Wells Fargo doubles bitcoin ETF exposure as institutions pile in - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNemI2VmtoUWQya184Ny1LOUtJQWhlTy16Nk9sUUc1VlhGb21ad1JDMW9rSFBOaGFDdTZpdGhCZGl3VTZRNmFGXy0yMDF2LWJGZ0JubHJTSUdld0N3d1N4Wjd0dXhaMUxKQVc4VjM0a0tNNXRUMlBsQU5ZQ3VSWnlHRnVpNVRJb240S3RMaGFzYmQydUtYc1ZUSlh1NlU0NEtQTGVYaVZJUGRla0FGdEhNZw?oc=5",
+      "published_at": "2026-11-20T16:06:25+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "e17c5d19fe83f059",
+      "source": "SEARCH_RADAR",
+      "title": "BlackRock Bitcoin ETF Outflow Sets $541M Single-Day Record - Bitcoin Foundation",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYzJmWVVBMFhibzI0bWpuekEyYmtvMDNnOGQwRE15MXU5VmVBSGdsMmhrWnN1OHZoX3dfdFNzLW1FZEhsb1JiT3BuTUVURDB5QVc1RHdnQXZsZUVya1lxZ3RuaUMxaGNmMW5ud0ZDTF80SzVESmhOMC1zUktmekxLWlhBdlpTNDU5aU1MX2dqUzM2QW1PazhBRXFnOU5ydGMtZklV?oc=5",
+      "published_at": "2026-11-20T16:42:37+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "f4f6a65b86187efb",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Crashes to $59,000 as Ethereum, XRP DUmp 8%: What Is Going On? - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPU3ItdEN1Nk9XbkU3WVFpZXhUZXFjM0R0cnJVUWIwU0hKSkF2Sy1ZUmJRSHlhalk0WjdCN3NyWjdUWTk2RFBKQjRwbjVlYzJCZnloOXhYeXFLb08xSWh0YW1FVVdPTUstaGJuSUJVMzhFRXhzWW1pd2dSMlFyanBrNTJuYmthRHJ5YVkwdVV2UjlnZlhyTFFaaFFMN29qQmFMMEstaC1Ma0p4S19SNUFzdVZGRlFCQW9tZzhMeEN3amxMOWtH?oc=5",
+      "published_at": "2026-11-20T16:44:01+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "bbd8f41bc1923375",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin Price Crashes Below $62K: What Should You Do? - Cryptonews",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9yWkZxUk5MZkNxM3lqV3NJdWowSU9zNnoteWJKNS0yOFZ6X1AzWFBBVmJqV0VDamtWTnR1NVNuMGQxbVkxb09Sa0F2YUdEY1l5UkhNdzRUMmktNWhHYTMtc1ZNbUJJYy1ycVoyWGQtYnBWaDhO?oc=5",
+      "published_at": "2026-11-20T13:38:01+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "139e6356ba88fbf0",
+      "source": "SEARCH_RADAR",
+      "title": "Bitcoin plunges below $60,000, on pace for its worst month since June 2022 - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGdzcHNQMmZDeW5FZ1hwZ29NblFwbFN4d0t5LW5Tc29abE80Y3lYdGs5SGZrckVVa1lRdlcyZTZjM0hxa202Y25hR1dCMS1GeTFnRi1EZWZnTmNJOFcwcFdBUzU1ZVBoUmpTSjgwd1M1dklveGx5d2RJVFEwd09XUFp1OHo3M05RT0x3RGNwd0pkal9FbXI5N3VQWHdGeGpYTGR0TkxwUmgyMklOMnVoZzVuQV9oc1g5bHZFZHJBMFpGcFUwUmtN?oc=5",
+      "published_at": "2026-11-20T16:29:08+00:00",
+      "first_observed_at": "2026-11-20T16:55:48.740840+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "a9564fb205be54c8",
       "source": "CRYPTODESK",
@@ -2690,116 +2800,6 @@
       "first_observed_at": "2026-11-18T23:00:48.555334+00:00",
       "sentiment": "NEUTRAL",
       "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "861a9d0bd10f7c69",
-      "source": "CRYPTODESK",
-      "title": "Bitcoin falls below $63,000 as Anthropic prices IPO at $83, raising nearly $100 billion",
-      "url": "https://www.coindesk.com/business/2026/11/18/live-updates-bitcoin-stuck-near-usd65-000-as-popular-basis-trade-returns-dry-up",
-      "published_at": "2026-11-18T07:27:48+00:00",
-      "first_observed_at": "2026-11-18T23:00:48.555334+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "b6e6e9673b0d1d66",
-      "source": "THE_BLOCK",
-      "title": "Senators: Treasury must ensure ‘equal footing’ for stablecoin issuers in GENIUS Act implementation",
-      "url": "https://www.theblock.co/news/regulation/2026-11-18-senators-treasury-must-ensure-equal-footing-for-stablecoin-issuers-in-genius-act-implementation-443501",
-      "published_at": "2026-11-18T22:09:17+00:00",
-      "first_observed_at": "2026-11-18T23:00:48.555334+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "19b759548b66f5e1",
-      "source": "SEARCH_RADAR",
-      "title": "Why is Bitcoin Price Falling Continuously and Is $58K Next? - Coinpedia",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWXlkUk00NEhTYWtHODZUTEhaZ01FRmg2dk9NX2l6M3RzRHN1cnJBQUE3eHpGVE8yMWJDRGNJV0x4Um9kZTRJSmtfZ0VTLWo2bnMtN19XSDN4RXhMU2hzc2dERmZfVE5IckYydmFWY3NoUjI2bGhDb1BsRGdVaUl6S3UyMGNjTnFkWk41aWlB0gGTAUFVX3lxTE5CM2prOU1hVzBpelBkR1RLWWdXb3kzMFprUEhubkhBc3FaWHlCZVRfbW1ZLUJrcVNKODZFRXo0bmllTkZ1QXJnMjlqeFZuUVZ2bkNMX1lMV3lJcUZFYkFjWW1JWkx4S3UxdkRuM0Y1UGJzZ0dfOFpqVXcxUG1SMmczTGd1WWFXc2VBaUlIUHdyVnZXNA?oc=5",
-      "published_at": "2026-11-18T21:58:09+00:00",
-      "first_observed_at": "2026-11-18T23:00:48.555334+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "9ce5c889439c2dec",
-      "source": "SEARCH_RADAR",
-      "title": "Crypto Market Today, Nov. 18: Bitcoin's 12% Weekly Plunge Has Triggered a Rare Signal With a Surprising History - The Motley Fool",
-      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQNm0wSG9oR01TLXJDZXVjTkp3d0w4dXdxY0lBRUtPeW5sRlZOVnI2NU1RWHhkNXlyZVRrTHY5SURyQkhlVkZDOGlDeEdBVzZZeTRIRjdjOE8wYTBsQjRoN0lhYm1iNHdVYlhIQkl3R1VVZDlySHlrUW16ZW9NYVEzZFdGVmFVaF8zdmtFNW03Ymwwb3hIWjVBMUt1NXctcUJ4TWZLczdtcFlQUzYzV1FSaGZsTTY4c0VPeGhsMWR3WFlhbTEzRGlKb1pYTXhfWmQ3Y1JkSzN1RGpRcTRSNUhwMXZBVTFrREhiaEQ3WnhfSS1zZzN2RVJJLUdNbzU?oc=5",
-      "published_at": "2026-11-18T22:25:02+00:00",
-      "first_observed_at": "2026-11-18T23:00:48.555334+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "febc44b74aa7a040",
-      "source": "CRYPTODESK",
-      "title": "Live updates: Bitcoin falls below $63,000 as Anthropic prices IPO at $83, raising nearly $100 billion",
-      "url": "https://www.coindesk.com/business/2026/11/18/live-updates-bitcoin-stuck-near-usd65-000-as-popular-basis-trade-returns-dry-up",
-      "published_at": "2026-11-18T07:27:48+00:00",
-      "first_observed_at": "2026-11-18T22:00:38.319950+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "be901f18d3c953e0",
-      "source": "SEARCH_RADAR",
-      "title": "3 Reasons to Buy Bitcoin Before 2027 and 2 Reasons to Wait - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTGFrSW5sSnNiem5MNzQ2U2h1dEw4c3FmMkRkcVhlMjA0SmZla0haTnZwTVdHQVZnZDlKX1JIYTZ4N3I5UTEtaWNBeDBNMk8tRGtZeWhuNnpiSEU5ekozSUd3WnVMUTJJWGNFOHQ0cnNyR2VCd0V1cVo5UGR2OGdZWGR2Vk4tckVTZk5KV05VZXczZWkxaHc?oc=5",
-      "published_at": "2026-11-18T21:43:06+00:00",
-      "first_observed_at": "2026-11-18T22:00:38.319950+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "a842b658d949e0c0",
-      "source": "SEARCH_RADAR",
-      "title": "3 Reasons to Buy Bitcoin Before 2027 and 2 Reasons to Wait - 24/7 Wall St.",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQTRqdGNWQVBwN3hHamtRUGZTN2hMY1FnT2FCdkE3SnpKZTRqYi1tUy1OQ2M4dUVYZXprTFZaR0pLZU1weG9XSHNBanlBdUtoQk5ieVJNZS1yMzRHaURVTDhaSTNIS09rVjVHVDFmUHE4TThpNjFsNnFVcFdsU0daN3lHX3U0eG5Id0RwM2d1Y2NZLUF4czZIRENvV3c4VDlrOHlLYVREMEtySWxfOUVMTm9pd0NUZ1VX?oc=5",
-      "published_at": "2026-11-18T21:43:00+00:00",
-      "first_observed_at": "2026-11-18T22:00:38.319950+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "97c841f94d50c145",
-      "source": "SEARCH_RADAR",
-      "title": "Strategy Stock Drops as Bitcoin Falls Below $63,000 - Benzinga",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNEVoVzF5MVBCUDdvVlNkLUtHSGFlWWlYdWt2eV96Q2VhbERFMl9NSnZxd0Vua1VHd3o2RW9xU3VZTG92cF84U0dKbGNZMzRtV3pWZWVfbmxpVjRHMjBBbW81OWYzZjZfU3dkQUVZTjBaWk5kMkxHcFcxeEdjWFdpSDBYd2pwLVJuS05JbjZZaVplSmJoNzVoWXIyRU5aeVloX1ZRSkZ1OFo1MXJzM0Nn?oc=5",
-      "published_at": "2026-11-18T18:25:08+00:00",
-      "first_observed_at": "2026-11-18T22:00:38.319950+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "3eb3135bcd266e11",
-      "source": "SEARCH_RADAR",
-      "title": "Tom Lee: Bitcoin, Ethereum, Solana Are ‘Still at the Beginning’ - Benzinga",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZFp2VDdkTlhIc1I1eE9udDZiZUpNR3lGdHFXTmtONXc0RjJfc3JxODR5U2VvSWlHcjdJdWFxbjhkNW8yZVpwQ205dWtaUTNQc1VvNjc2b3JXTURjU0E2VGsxVnh3WXFoVE4wLVpJNnZKUjMtWHV3MGJpbmNTY0E1dzNyd0NaSDROZ2JEYTFGZ25feWNfekFUZ1pCaEx1YWt3QjN4dlVMNDg2ZmVvMElaRkl1ZWRzeEZBRHg2dg?oc=5",
-      "published_at": "2026-11-18T21:30:08+00:00",
-      "first_observed_at": "2026-11-18T22:00:38.319950+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "94bc3b885dc46229",
-      "source": "SEARCH_RADAR",
-      "title": "What $100 a Month in Bitcoin Since 2020 Is Worth After This Crash - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNSUs2cC1lZFNUNXJZZU01UjdwRUh0TWszQ0l0ZW1jOHVZNFIzQjE4VkJoMEl3QWRDWmxwVFR1M3VhNUhMQW82Q2hjREFHUGo5dy1Bcl9xd0tYRkdveTR5clY2Uzd0MEVYeTlqUXR2THd6WEt4azRicU9LTlpEZlhMdktUV0lneVJyMURTWnhkVk9UUjhUeG42aQ?oc=5",
-      "published_at": "2026-11-18T19:06:10+00:00",
-      "first_observed_at": "2026-11-18T22:00:38.319950+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
       "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
