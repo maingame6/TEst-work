@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-20T11:40:37.988977+00:00
+Generated: 2026-11-20T11:45:36.454291+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,14 +10,14 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD ETH |
-| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD ETH |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD ETH |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XRP |
+| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD BTC |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD BTC |
 | ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD ETH |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD ETH |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD BTC |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD ETH |
-| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD ETH |
+| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD BTC |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD BTC |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD XRP |
 | NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD ETH |
