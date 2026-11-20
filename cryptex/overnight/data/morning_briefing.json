@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-20T20:55:43.331839+00:00",
-  "session": "2026-11-19",
-  "session_start": "2026-11-19T21:00:44.631446+00:00",
-  "status": "MORNING_RECORDED",
-  "session_change": -0.027292,
+  "generated_at": "2026-11-20T21:00:42.867812+00:00",
+  "session": "2026-11-20",
+  "session_start": "2026-11-20T21:00:42.867812+00:00",
+  "status": "IN_PROGRESS",
+  "session_change": 0.0,
   "paper_only": true,
   "money": {
     "starting": 210,
-    "equity": 195.417355,
-    "net_pnl": -14.582645,
+    "equity": 195.426564,
+    "net_pnl": -14.573436,
     "realised": -14.320369,
-    "unrealised": -0.262276,
+    "unrealised": -0.253067,
     "main": {
       "starting": 100.0,
-      "equity": 85.796256,
-      "gross_equity": 85.866511,
-      "pnl": -14.203744,
+      "equity": 85.805465,
+      "gross_equity": 85.875818,
+      "pnl": -14.194535,
       "realised": -13.941468,
       "closed": 128,
       "wins": 7,
@@ -35,12 +35,12 @@
     }
   },
   "activity": {
-    "buy_fills": 3,
-    "sell_fills": 3,
-    "closed_with_outcomes": 3,
+    "buy_fills": 0,
+    "sell_fills": 0,
+    "closed_with_outcomes": 0,
     "wins": 0,
-    "losses_or_breakevens": 3,
-    "session_realised": -0.9444338,
+    "losses_or_breakevens": 0,
+    "session_realised": 0,
     "open_positions": 1,
     "queued_orders": 0,
     "all_time_closed": 172,
@@ -84,7 +84,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD ADA"
+      "decision": "HOLD SOL"
     },
     {
       "name": "SHOCKWAVE",
@@ -136,7 +136,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XRP"
+      "decision": "HOLD UNI"
     },
     {
       "name": "GEOMETRIC_DIVERSITY",
@@ -162,7 +162,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD BTC"
     },
     {
       "name": "FLUID_VISCOSITY",
@@ -248,9 +248,9 @@
       "equity": 9.62125426,
       "all_time_pnl": -0.37874574,
       "all_time_closed": 9,
-      "session_closed": 1,
+      "session_closed": 0,
       "session_wins": 0,
-      "session_net": -0.1075055,
+      "session_net": 0,
       "holding": null,
       "pending": null,
       "decision": "HOLD: no qualified setup"
@@ -274,9 +274,9 @@
       "equity": 9.2676765,
       "all_time_pnl": -0.7323235,
       "all_time_closed": 10,
-      "session_closed": 1,
+      "session_closed": 0,
       "session_wins": 0,
-      "session_net": -0.2004475,
+      "session_net": 0,
       "holding": null,
       "pending": null,
       "decision": "HOLD: no qualified setup"
@@ -284,12 +284,12 @@
     {
       "name": "ROTATOR",
       "portfolio": "main",
-      "equity": 6.94383496,
-      "all_time_pnl": -3.05616504,
+      "equity": 6.95304454,
+      "all_time_pnl": -3.04695546,
       "all_time_closed": 8,
-      "session_closed": 1,
+      "session_closed": 0,
       "session_wins": 0,
-      "session_net": -0.6364808,
+      "session_net": 0,
       "holding": "BTC",
       "pending": null,
       "decision": "HOLD: BTC position still within strategy rules"
@@ -321,296 +321,196 @@
       "decision": "PAUSED: PILOT V1: repeated after-cost losses; future PAPER buys paused"
     }
   ],
-  "exit_reasons": {
-    "PILOT V1 observed 6% stop; next-candle simulated exit": {
-      "count": 1,
-      "net": -0.636481
-    },
-    "RSI normalized": {
-      "count": 1,
-      "net": -0.200448
-    },
-    "Range normalized": {
-      "count": 1,
-      "net": -0.107505
-    }
-  },
-  "best_exits": [
-    {
-      "agent": "HOUSE",
-      "asset": "XLM",
-      "when": "2026-11-20T17:55:00+00:00",
-      "net": -0.1075054936030373
-    },
-    {
-      "agent": "CONTRARIAN",
-      "asset": "UNI",
-      "when": "2026-11-20T18:10:00+00:00",
-      "net": -0.20044751664144655
-    },
-    {
-      "agent": "ROTATOR",
-      "asset": "BTC",
-      "when": "2026-11-20T15:15:00+00:00",
-      "net": -0.6364807917285304
-    }
-  ],
-  "worst_exits": [
-    {
-      "agent": "ROTATOR",
-      "asset": "BTC",
-      "when": "2026-11-20T15:15:00+00:00",
-      "net": -0.6364807917285304
-    },
-    {
-      "agent": "CONTRARIAN",
-      "asset": "UNI",
-      "when": "2026-11-20T18:10:00+00:00",
-      "net": -0.20044751664144655
-    },
-    {
-      "agent": "HOUSE",
-      "asset": "XLM",
-      "when": "2026-11-20T17:55:00+00:00",
-      "net": -0.1075054936030373
-    }
-  ],
-  "recent_fills": [
-    {
-      "agent": "CONTRARIAN",
-      "group": "main",
-      "side": "SELL",
-      "asset": "UNI",
-      "when": "2026-11-20T18:10:00+00:00",
-      "net": -0.20044751664144655
-    },
-    {
-      "agent": "HOUSE",
-      "group": "main",
-      "side": "SELL",
-      "asset": "XLM",
-      "when": "2026-11-20T17:55:00+00:00",
-      "net": -0.1075054936030373
-    },
-    {
-      "agent": "ROTATOR",
-      "group": "main",
-      "side": "BUY",
-      "asset": "BTC",
-      "when": "2026-11-20T16:20:00+00:00",
-      "net": null
-    },
-    {
-      "agent": "HOUSE",
-      "group": "main",
-      "side": "BUY",
-      "asset": "XLM",
-      "when": "2026-11-20T15:20:00+00:00",
-      "net": null
-    },
-    {
-      "agent": "CONTRARIAN",
-      "group": "main",
-      "side": "BUY",
-      "asset": "UNI",
-      "when": "2026-11-20T15:15:00+00:00",
-      "net": null
-    },
-    {
-      "agent": "ROTATOR",
-      "group": "main",
-      "side": "SELL",
-      "asset": "BTC",
-      "when": "2026-11-20T15:15:00+00:00",
-      "net": -0.6364807917285304
-    }
-  ],
+  "exit_reasons": {},
+  "best_exits": [],
+  "worst_exits": [],
+  "recent_fills": [],
   "costs": {
-    "attributed_session_exits": 3,
+    "attributed_session_exits": 0,
     "not_attributed": 0,
-    "gross_mid_pnl": -0.5180784,
-    "fee_slippage_drag": 0.4263554,
-    "attributed_net": -0.9444338,
-    "gross_winners": 1,
+    "gross_mid_pnl": 0,
+    "fee_slippage_drag": 0,
+    "attributed_net": 0,
+    "gross_winners": 0,
     "net_winners": 0,
     "break_even_pct": 2.1222
   },
   "observed_market_moves": [
     {
-      "symbol": "TRX",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.310016,
-      "latest": 0.300815,
-      "change_pct": -2.9679
-    },
-    {
-      "symbol": "TON",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 1.02,
-      "latest": 0.974,
-      "change_pct": -4.5098
-    },
-    {
-      "symbol": "XLM",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.132795,
-      "latest": 0.125105,
-      "change_pct": -5.7909
-    },
-    {
-      "symbol": "LTC",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 42.2,
-      "latest": 39.71,
-      "change_pct": -5.9005
-    },
-    {
       "symbol": "BTC",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 62055.0,
-      "latest": 58270.7,
-      "change_pct": -6.0983
-    },
-    {
-      "symbol": "AVAX",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 6.948,
-      "latest": 6.436,
-      "change_pct": -7.369
-    },
-    {
-      "symbol": "LINK",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 8.96683,
-      "latest": 8.30247,
-      "change_pct": -7.4091
-    },
-    {
-      "symbol": "DOT",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.7099,
-      "latest": 0.6553,
-      "change_pct": -7.6912
-    },
-    {
-      "symbol": "XRP",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.96173,
-      "latest": 0.88571,
-      "change_pct": -7.9045
-    },
-    {
-      "symbol": "SOL",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 73.02,
-      "latest": 67.22,
-      "change_pct": -7.943
-    },
-    {
-      "symbol": "SHIB",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 3.792e-06,
-      "latest": 3.49e-06,
-      "change_pct": -7.9641
-    },
-    {
-      "symbol": "ADA",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.15155,
-      "latest": 0.139171,
-      "change_pct": -8.1683
-    },
-    {
-      "symbol": "BNB",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 580.62,
-      "latest": 532.64,
-      "change_pct": -8.2636
-    },
-    {
-      "symbol": "BCH",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 206.46,
-      "latest": 188.68,
-      "change_pct": -8.6118
-    },
-    {
-      "symbol": "FLOKI",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 1.732e-05,
-      "latest": 1.581e-05,
-      "change_pct": -8.7182
-    },
-    {
-      "symbol": "AAVE",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 104.5,
-      "latest": 95.15,
-      "change_pct": -8.9474
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 58351.6,
+      "latest": 58351.6,
+      "change_pct": 0.0
     },
     {
       "symbol": "ETH",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 1759.2,
-      "latest": 1598.13,
-      "change_pct": -9.1559
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 1599.36,
+      "latest": 1599.36,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "SOL",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 67.39,
+      "latest": 67.39,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "BNB",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 532.97,
+      "latest": 532.97,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "XRP",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.88652,
+      "latest": 0.88652,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "ADA",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.138993,
+      "latest": 0.138993,
+      "change_pct": 0.0
     },
     {
       "symbol": "DOGE",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.0581386,
-      "latest": 0.0527783,
-      "change_pct": -9.2199
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.0527026,
+      "latest": 0.0527026,
+      "change_pct": 0.0
     },
     {
-      "symbol": "WIF",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.131,
-      "latest": 0.1184,
-      "change_pct": -9.6183
+      "symbol": "SHIB",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 3.496e-06,
+      "latest": 3.496e-06,
+      "change_pct": 0.0
     },
     {
       "symbol": "PEPE",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 3.73e-06,
-      "latest": 3.368e-06,
-      "change_pct": -9.7051
-    },
-    {
-      "symbol": "SUI",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 0.7078,
-      "latest": 0.6339,
-      "change_pct": -10.4408
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 3.369e-06,
+      "latest": 3.369e-06,
+      "change_pct": 0.0
     },
     {
       "symbol": "BONK",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 2.302e-06,
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 2.046e-06,
       "latest": 2.046e-06,
-      "change_pct": -11.1208
+      "change_pct": 0.0
     },
     {
-      "symbol": "UNI",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 4.9642,
-      "latest": 4.3421,
-      "change_pct": -12.5317
+      "symbol": "WIF",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.1182,
+      "latest": 0.1182,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "FLOKI",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 1.584e-05,
+      "latest": 1.584e-05,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "LTC",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 39.7,
+      "latest": 39.7,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "BCH",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 188.72,
+      "latest": 188.72,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "LINK",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 8.312,
+      "latest": 8.312,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "DOT",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.6555,
+      "latest": 0.6555,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "AVAX",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 6.441,
+      "latest": 6.441,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "XLM",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.125194,
+      "latest": 0.125194,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "TRX",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.300783,
+      "latest": 0.300783,
+      "change_pct": 0.0
     },
     {
       "symbol": "NEAR",
-      "since": "2026-11-19T21:00:44.631446+00:00",
-      "start": 3.2362,
-      "latest": 2.7727,
-      "change_pct": -14.3224
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 2.7692,
+      "latest": 2.7692,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "AAVE",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 94.93,
+      "latest": 94.93,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "UNI",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 4.3572,
+      "latest": 4.3572,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "TON",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.974,
+      "latest": 0.974,
+      "change_pct": 0.0
+    },
+    {
+      "symbol": "SUI",
+      "since": "2026-11-20T21:00:42.867812+00:00",
+      "start": 0.6331,
+      "latest": 0.6331,
+      "change_pct": 0.0
     }
   ],
   "equity_curve": {
-    "samples": 288,
-    "low": 195.346916,
-    "high": 196.221601,
-    "observed_drawdown_pct": -0.4458,
-    "largest_observed_gap_minutes": 6.0,
+    "samples": 1,
+    "low": 195.426564,
+    "high": 195.426564,
+    "observed_drawdown_pct": 0.0,
+    "largest_observed_gap_minutes": 0,
     "notice": "Sampled balance only; unknown peaks/volatility between recorded cycles."
   },
   "reference_benchmarks": {
@@ -618,33 +518,33 @@
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 76586.0,
-      "current_mid": 58270.7,
+      "current_mid": 58351.6,
       "start": 10.0,
-      "equity": 7.498771,
-      "pnl": -2.501229,
-      "return_pct": -25.0123,
+      "equity": 7.509182,
+      "pnl": -2.490818,
+      "return_pct": -24.9082,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "ETH": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 2230.44,
-      "current_mid": 1598.13,
+      "current_mid": 1599.36,
       "start": 10.0,
-      "equity": 7.061725,
-      "pnl": -2.938275,
-      "return_pct": -29.3828,
+      "equity": 7.06716,
+      "pnl": -2.93284,
+      "return_pct": -29.3284,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "SOL": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 95.3,
-      "current_mid": 67.22,
+      "current_mid": 67.39,
       "start": 10.0,
-      "equity": 6.951761,
-      "pnl": -3.048239,
-      "return_pct": -30.4824,
+      "equity": 6.969342,
+      "pnl": -3.030658,
+      "return_pct": -30.3066,
       "holding": "buy-and-hold; hypothetical sale costs included"
     }
   },
@@ -992,7 +892,7 @@
     "observed": 71,
     "confirmed": 71,
     "polled_at": "2026-11-20T20:40:42.111765+00:00",
-    "age_minutes": 15.02,
+    "age_minutes": 20.01,
     "sectors": {
       "Majors": {
         "requested": 14,
@@ -1443,98 +1343,9 @@
     "last_polled": "2026-11-20T20:05:36.156131+00:00",
     "sources_up": 7,
     "total_sources": 8,
-    "new_items": 122,
-    "weak_sentiment": {
-      "NEGATIVE": 8,
-      "NEUTRAL": 110,
-      "POSITIVE": 4
-    },
-    "top_items": [
-      {
-        "title": "Wrapped Monero token crashes 99.8% amid suspected $13.5M exploit",
-        "url": "https://cointelegraph.com/news/wrapped-monero-token-crashes-998-amid-suspected-135m-exploit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "COINTELEGRAPH",
-        "at": "2026-11-20T20:05:36.156131+00:00",
-        "weak_label": "NEGATIVE"
-      },
-      {
-        "title": "SEC Issues Proposal to Restructure the Consolidated Audit Trail",
-        "url": "https://www.sec.gov/newsroom/press-releases/2026-117-sec-issues-proposal-restructure-consolidated-audit-trail",
-        "source": "SEC_REGULATORY",
-        "at": "2026-11-20T20:05:36.156131+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "JPMorgan says bitcoin price correction widens gap to estimated $86,000 production cost - The Block",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQemlPdVVuNGdobDZSaU9MTHRMTU9ZT0pQNVh6cEI4dFZMaXFWc0lxbnRqUG5PWlh3a1plN0l4OXJQR2ZJbEl0VVh4WExiRFFybC0tb1QzZUZVd2ZBUW9ORzQ0akxzS25kVHB0X2ktdUR1QW0zdUJlelU2amluWDgzZUl4aGNHSGF5S3RsS1pRbkRianJIenZLMlM0dUkzemdIQzByZUgyVW9LQzdZTktKMEJPenc?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T20:05:36.156131+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin Fell More Than 20% in November. History Says This Happens Next. - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZG4tLTFGNkZhY1V4am9Qa2U3M3dsd3VuUUlDMkpoYWpzMV9iNlZRQWloTjQ3TUQyZHNiU2JvXzFfcXNpSWM0TmxRZ3p6ZnpaU1V0dnZOdExQMG5pZXpibFBsT1hVVlhnbVBseDFKd1g4NzNUaEZiRTRDM1RpXzVZb0JDTi01WGUtSUwwdndCVnpVVzhvcHlVRkl3?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T20:05:36.156131+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Experts weigh in on what will drive bitcoin's price higher - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZmhRMmNuclFMVTQyc0VTYlliMTdaaEphbmpYeWFMTnM1TWhOT1cwXzhGY1NYaHl2cU1Db0F6T3RwcHFKVWxaVVpyRVNHZk1OUkxhOExwZkV2dDY1MTZPSl9SSEx2UTR2TlBZX3dBOU90di05X3NEVG8xWlhyVmk2TkxwbzZrMXI0anhXc1FUVFZFQ3VtTzhuLTRQd0F6Yjl5LUhaQWNZUHZUdUlMSU84b3pNajFoTXRGMTdUUTZqMXZrZw?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T20:05:36.156131+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin crashes below key level as extreme fear grips market - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWE9YdVhKSlBRSDl4T2FKbG9xdkV1dXU2YWFuUGdsTFJ0UmoxekFXbU9PcUFOUks5cktsR2g3bXBnUU1HeGlBbVVCRGRpSGFsaW9WeWhzc1g4RHlZal9oRElJekxiUGt0c3pReERSZF9uTlVaX2FJTHhxSEx6TDNraV82Y3Q3ODhsa1kwTkV1QlpDUVdZLXhXeUs3RS0?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T20:05:36.156131+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play",
-        "url": "https://www.coindesk.com/markets/2026/11/20/bitcoin-plunges-below-usd59-000-as-rush-to-cash-puts-new-bear-market-lows-back-in-play",
-        "source": "CRYPTODESK",
-        "at": "2026-11-20T19:00:54.964533+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Sky Protocol sees $2 billion in stablecoin withdrawals, disputes illicit fund claims",
-        "url": "https://cointelegraph.com/news/sky-protocol-sees-2b-in-stablecoin-withdrawals-disputes-illicit-fund-claims?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "COINTELEGRAPH",
-        "at": "2026-11-20T19:00:54.964533+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Binance hack laundering ramps up as $149 million in bitcoin mixed through coinjoins: Elliptic",
-        "url": "https://www.theblock.co/news/markets/2026-11-20-binance-hack-laundering-ramps-up-149-million-bitcoin-mixed-coinjoins-elliptic-444758",
-        "source": "THE_BLOCK",
-        "at": "2026-11-20T19:00:54.964533+00:00",
-        "weak_label": "NEGATIVE"
-      },
-      {
-        "title": "JPMorgan says bitcoin price correction widens gap to estimated $86,000 production cost",
-        "url": "https://www.theblock.co/news/markets/2026-11-20-jpmorgan-bitcoin-price-correction-gap-86000-production-cost-444763",
-        "source": "THE_BLOCK",
-        "at": "2026-11-20T19:00:54.964533+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin Tanks 7% To 2026 Low—Now Below $59,000 - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPLVNqeHRuZFNnVU13SUFEbmdRZ19nYjl4X2p4SHIwaVpYNUF5VGMzNGhET2ZhNW9vS1V3MmFPZEphMkQ1Zl92YndiLVBtMXROaHZWVl8wSmtHd2xEcHVLSlY1b2M4VlVBdll0T2k0VDJ0dDFWb1FNeFNRTWprdGpRNjlyTTJIeFY0Qno4V1I3R01JWGxQZXVJQVF3Vjh3cGFVRVYxeWZzUkYtUlRDWEMwYXdxdmxsbkN3LWVfa252RVFEVmhYV2lpVHpNZzI?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T19:00:54.964533+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Why Crypto Is Crashing: Bitcoin (BTC) nears new 2026 low as strategists say cash Is king amid Fed fears - CoinDesk",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPejRKV3BfU3ZHQ2s5SUFweDJXRXdvdHdiaHA5R2ZjQXZzS3JpTG1ieXYwbXR1NGl0bWw0cTY5c1RMUmpseFZaTHlfVnFyWEYxd2RBY3NwNldRdDg5RU5mZWUxWl9xellrX1NUamN3MzF4dkwzYkNXcFdDdkhob3BoaFZITjM2eThQSzVvNlBXWndWREVpT0NWb2FJLU9WZzFJTnNPSUhUWGVuTW1nVmd2Z2tiWmZYVEhnX3VnYzY5ZXh2UWRoYXAweWR3?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-20T19:00:54.964533+00:00",
-        "weak_label": "NEUTRAL"
-      }
-    ],
+    "new_items": 0,
+    "weak_sentiment": {},
+    "top_items": [],
     "feed_errors": [
       "PUBLIC_FORUM"
     ]
@@ -1543,61 +1354,61 @@
     "rule_based_review_capacity": 640,
     "latest": {
       "GAMBLER": {
-        "support": 9,
-        "opposition": 20,
+        "support": 10,
+        "opposition": 11,
         "vetoes": 0,
         "action": "HOLD"
       },
       "HOUSE": {
-        "support": 24,
-        "opposition": 5,
+        "support": 12,
+        "opposition": 9,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SPY": {
-        "support": 6,
-        "opposition": 39,
+        "support": 10,
+        "opposition": 31,
         "vetoes": 0,
         "action": "HOLD"
       },
       "MEME HUNTER": {
-        "support": 4,
+        "support": 8,
         "opposition": 32,
         "vetoes": 0,
         "action": "HOLD"
       },
       "BREAKOUT": {
-        "support": 9,
-        "opposition": 20,
+        "support": 10,
+        "opposition": 11,
         "vetoes": 0,
         "action": "HOLD"
       },
       "CONTRARIAN": {
-        "support": 24,
-        "opposition": 5,
+        "support": 12,
+        "opposition": 9,
         "vetoes": 0,
         "action": "HOLD"
       },
       "ROTATOR": {
-        "support": 9,
-        "opposition": 20,
+        "support": 10,
+        "opposition": 11,
         "vetoes": 0,
         "action": "HOLD"
       },
       "VORTEX": {
-        "support": 9,
-        "opposition": 20,
+        "support": 10,
+        "opposition": 11,
         "vetoes": 0,
         "action": "HOLD"
       },
       "FRACTAL": {
-        "support": 9,
-        "opposition": 20,
+        "support": 10,
+        "opposition": 11,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SHOCKWAVE": {
-        "support": 4,
+        "support": 8,
         "opposition": 32,
         "vetoes": 0,
         "action": "HOLD"
@@ -1612,7 +1423,7 @@
   "health": {
     "trigger": "workflow_dispatch",
     "cron_verified": true,
-    "run_id": "44815657253",
+    "run_id": "44816379567",
     "data": {
       "main_stale": false,
       "research_stale": false,
