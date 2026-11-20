@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795165200,
+  "last_ts": 1795165500,
   "first_ts": 1793488500,
-  "observed_candles": 4648,
+  "observed_candles": 4649,
   "signals": [],
   "open": [],
   "trades": [
@@ -10711,55 +10711,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4536,
-      "liquid_candidates": 45550,
-      "move_below_gate": 45491,
-      "volume_below_gate": 34713,
+      "bars": 4537,
+      "liquid_candidates": 45559,
+      "move_below_gate": 45500,
+      "volume_below_gate": 34718,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4536,
-      "liquid_candidates": 45550,
-      "move_below_gate": 45473,
-      "volume_below_gate": 34223,
+      "bars": 4537,
+      "liquid_candidates": 45559,
+      "move_below_gate": 45482,
+      "volume_below_gate": 34227,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4536,
-      "liquid_candidates": 45550,
-      "move_below_gate": 45020,
-      "volume_below_gate": 34223,
+      "bars": 4537,
+      "liquid_candidates": 45559,
+      "move_below_gate": 45029,
+      "volume_below_gate": 34227,
       "qualified": 281,
       "queued": 166
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4536,
-      "liquid_candidates": 45550,
-      "move_below_gate": 41569,
-      "volume_below_gate": 33677,
+      "bars": 4537,
+      "liquid_candidates": 45559,
+      "move_below_gate": 41578,
+      "volume_below_gate": 33681,
       "qualified": 1454,
       "queued": 754
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "LINK",
-      "signal_ts": 1795078800,
-      "entry_ts": 1795079100,
-      "entry_mid": 9.22031,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1795078800,
-      "entry_ts": 1795079100,
-      "entry_mid": 1806.87,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XLM",
@@ -15289,6 +15273,30 @@
       "gross_return": 0.0024175132,
       "net_return": -0.0184141059,
       "stress_net_return": -0.0233098572
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LINK",
+      "signal_ts": 1795078800,
+      "entry_ts": 1795079100,
+      "exit_ts": 1795165500,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0392741676,
+      "net_return": -0.0592393761,
+      "stress_net_return": -0.0639315075
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795078800,
+      "entry_ts": 1795079100,
+      "exit_ts": 1795165500,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0313359567,
+      "net_return": -0.0514661321,
+      "stress_net_return": -0.0561970333
     }
   ],
   "horizon_censored": 603
