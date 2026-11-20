@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-20T05:40:37.388822+00:00
+Generated: 2026-11-20T05:45:37.701457+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,14 +10,14 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD NEAR |
-| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD LINK |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD NEAR |
-| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD XLM |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD NEAR |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XLM |
-| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD NEAR |
-| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD NEAR |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD ETH |
+| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD SUI |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD SUI |
+| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD XRP |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD SUI |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
+| FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD SUI |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD SUI |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD NEAR |
 | NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD NEAR |
