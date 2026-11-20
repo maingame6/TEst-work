@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-20T08:35:34.189773+00:00
+Generated: 2026-11-20T08:40:39.646140+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD NEAR |
-| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD LTC |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD AVAX |
+| FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD XLM |
+| FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD TRX |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD LTC |
 | ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD SUI |
-| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD AVAX |
-| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XLM |
+| GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD LTC |
+| LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
 | FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD LTC |
-| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD AVAX |
+| QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD LTC |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD AVAX |
-| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD AVAX |
+| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD ETH |
+| NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD LTC |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
