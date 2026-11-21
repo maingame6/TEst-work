@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-21T07:15:36.347739+00:00",
+  "generated_at": "2026-11-21T07:20:41.620646+00:00",
   "paper_only": true,
-  "candle_ts": 1795245000,
-  "cycles": 4962,
+  "candle_ts": 1795245300,
+  "cycles": 4963,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,13 +11,17 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.957451,
+      "equity": 9.956851,
       "closed": 4,
       "wins": 0,
       "realized": -0.030568,
-      "paper_return": -0.042549,
-      "latest_decision": "HOLD UNI",
-      "queued": null,
+      "paper_return": -0.043149,
+      "latest_decision": "SELL_QUEUED UNI",
+      "queued": {
+        "side": "SELL",
+        "symbol": "UNI",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "UNI",
         "quantity": 0.22251997592812334,
@@ -31,13 +35,17 @@
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
-      "equity": 9.939648,
+      "equity": 9.940334,
       "closed": 3,
       "wins": 0,
       "realized": -0.047227,
-      "paper_return": -0.060352,
-      "latest_decision": "HOLD ETH",
-      "queued": null,
+      "paper_return": -0.059666,
+      "latest_decision": "SELL_QUEUED ETH",
+      "queued": {
+        "side": "SELL",
+        "symbol": "ETH",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "ETH",
         "quantity": 0.0006020379079704189,
@@ -56,19 +64,23 @@
       "wins": 0,
       "realized": -0.043809,
       "paper_return": -0.043809,
-      "latest_decision": "HOLD UNI",
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.93741,
+      "equity": 9.93686,
       "closed": 6,
       "wins": 0,
       "realized": -0.052652,
-      "paper_return": -0.06259,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.06314,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.0986987089530624,
@@ -82,13 +94,17 @@
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.951782,
+      "equity": 9.952469,
       "closed": 5,
       "wins": 0,
       "realized": -0.035077,
-      "paper_return": -0.048218,
-      "latest_decision": "HOLD ETH",
-      "queued": null,
+      "paper_return": -0.047531,
+      "latest_decision": "SELL_QUEUED ETH",
+      "queued": {
+        "side": "SELL",
+        "symbol": "ETH",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "ETH",
         "quantity": 0.00060277284851084,
@@ -113,13 +129,17 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.939661,
+      "equity": 9.939111,
       "closed": 6,
       "wins": 0,
       "realized": -0.050399,
-      "paper_return": -0.060339,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.060889,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.09894761185736,
@@ -133,13 +153,17 @@
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.951782,
+      "equity": 9.952469,
       "closed": 5,
       "wins": 0,
       "realized": -0.035077,
-      "paper_return": -0.048218,
-      "latest_decision": "HOLD ETH",
-      "queued": null,
+      "paper_return": -0.047531,
+      "latest_decision": "SELL_QUEUED ETH",
+      "queued": {
+        "side": "SELL",
+        "symbol": "ETH",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "ETH",
         "quantity": 0.00060277284851084,
@@ -164,13 +188,17 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.951123,
+      "equity": 9.950573,
       "closed": 5,
       "wins": 0,
       "realized": -0.038925,
-      "paper_return": -0.048877,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.049427,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.1002148786704125,
@@ -184,13 +212,17 @@
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.944888,
+      "equity": 9.944339,
       "closed": 6,
       "wins": 0,
       "realized": -0.045166,
-      "paper_return": -0.055112,
-      "latest_decision": "HOLD XRP",
-      "queued": null,
+      "paper_return": -0.055661,
+      "latest_decision": "SELL_QUEUED XRP",
+      "queued": {
+        "side": "SELL",
+        "symbol": "XRP",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "XRP",
         "quantity": 1.0995255731122788,
