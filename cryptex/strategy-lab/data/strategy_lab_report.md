@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1740 symbol-hours, 3708 missing.
+Recorded 1752 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1083 hypothetical outcomes; censored 7473.
+Closed 1085 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -21,7 +21,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | bollinger_breakout_16 | 0 | 0 | — | — | 0 |
 | bollinger_breakout_32 | 0 | 0 | — | — | 0 |
 | bollinger_breakout_8 | 3 | 0 | -4.8506 | -5.3252 | 3 |
-| bollinger_rebound_16 | 17 | 1 | -4.1367 | -4.6149 | 17 |
+| bollinger_rebound_16 | 18 | 2 | -3.8247 | -4.3044 | 18 |
 | bollinger_rebound_32 | 17 | 2 | -3.9827 | -4.4615 | 17 |
 | bollinger_rebound_8 | 8 | 4 | -0.6924 | -1.1877 | 8 |
 | cci_rebound_16 | 24 | 0 | -5.6103 | -6.0811 | 24 |
@@ -54,7 +54,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | macd_trend_16 | 15 | 0 | -4.9670 | -5.4410 | 15 |
 | macd_trend_32 | 15 | 0 | -4.9670 | -5.4410 | 15 |
 | macd_trend_8 | 15 | 0 | -4.9670 | -5.4410 | 15 |
-| mfi_recovery_16 | 23 | 0 | -5.1157 | -5.5890 | 23 |
+| mfi_recovery_16 | 24 | 1 | -4.8409 | -5.3155 | 24 |
 | mfi_recovery_32 | 19 | 2 | -5.2175 | -5.6902 | 19 |
 | mfi_recovery_8 | 24 | 0 | -5.8318 | -6.3015 | 24 |
 | momentum_16 | 13 | 0 | -5.9547 | -6.4238 | 13 |
