@@ -1,43 +1,55 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795266300,
+  "last_ts": 1795266600,
   "first_ts": 1793488500,
-  "observed_candles": 4985,
+  "observed_candles": 4986,
   "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795266600,
+      "observed_move": 0.01241325
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1795266600,
+      "observed_move": 0.0109927
+    }
+  ],
+  "open": [
     {
       "gate": "BALANCED_TEST",
       "symbol": "NEAR",
       "signal_ts": 1795266300,
-      "observed_move": 0.01306418
+      "entry_ts": 1795266600,
+      "entry_mid": 2.8301,
+      "exit_ts": 1795268400
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SUI",
       "signal_ts": 1795266300,
-      "observed_move": 0.00835962
+      "entry_ts": 1795266600,
+      "entry_mid": 0.6396,
+      "exit_ts": 1795268400
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "BTC",
       "signal_ts": 1795266300,
-      "observed_move": 0.00787852
+      "entry_ts": 1795266600,
+      "entry_mid": 59197.8,
+      "exit_ts": 1795268400
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "PEPE",
       "signal_ts": 1795266300,
-      "observed_move": 0.00529879
-    }
-  ],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795264500,
-      "entry_ts": 1795264800,
-      "entry_mid": 2.8084,
-      "exit_ts": 1795266600
+      "entry_ts": 1795266600,
+      "entry_mid": 3.409e-06,
+      "exit_ts": 1795268400
     }
   ],
   "trades": [
@@ -12273,42 +12285,55 @@
       "slippage_drag": 0.0050026821,
       "stress_net_return": -0.0227055376,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795264500,
+      "entry_ts": 1795264800,
+      "exit_ts": 1795266600,
+      "gross_return": 0.0077268195,
+      "net_return": -0.0132151343,
+      "fee_drag": 0.0159158849,
+      "slippage_drag": 0.0050260689,
+      "stress_net_return": -0.018136816,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4873,
-      "liquid_candidates": 49814,
-      "move_below_gate": 49718,
-      "volume_below_gate": 37884,
+      "bars": 4874,
+      "liquid_candidates": 49825,
+      "move_below_gate": 49729,
+      "volume_below_gate": 37892,
       "qualified": 62,
       "queued": 26
     },
     "COST_AWARE": {
-      "bars": 4873,
-      "liquid_candidates": 49814,
-      "move_below_gate": 49699,
-      "volume_below_gate": 37340,
+      "bars": 4874,
+      "liquid_candidates": 49825,
+      "move_below_gate": 49710,
+      "volume_below_gate": 37348,
       "qualified": 74,
       "queued": 35
     },
     "BALANCED_TEST": {
-      "bars": 4873,
-      "liquid_candidates": 49814,
-      "move_below_gate": 49153,
-      "volume_below_gate": 37340,
-      "qualified": 346,
+      "bars": 4874,
+      "liquid_candidates": 49825,
+      "move_below_gate": 49163,
+      "volume_below_gate": 37348,
+      "qualified": 347,
       "queued": 189
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4873,
-      "liquid_candidates": 49814,
-      "move_below_gate": 45186,
-      "volume_below_gate": 36749,
-      "qualified": 1676,
-      "queued": 844
+      "bars": 4874,
+      "liquid_candidates": 49825,
+      "move_below_gate": 45190,
+      "volume_below_gate": 36757,
+      "qualified": 1678,
+      "queued": 846
     }
   },
   "horizon_open": [
@@ -12679,6 +12704,22 @@
       "entry_ts": 1795263900,
       "entry_mid": 1655.83,
       "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795266300,
+      "entry_ts": 1795266600,
+      "entry_mid": 59197.8,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1795266300,
+      "entry_ts": 1795266600,
+      "entry_mid": 3.409e-06,
+      "hold_bars": 48
     }
   ],
   "horizon_trades": [
