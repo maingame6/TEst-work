@@ -2,10 +2,10 @@
 
 **SIMULATED TRADING ONLY: no actual orders, earnings or exchange balances.**
 
-Generated: 2026-11-21T07:05:40.630977+00:00
+Generated: 2026-11-21T07:11:01.061874+00:00
 Data status: HEALTHY: paper trading on completed Kraken candles
-Paper equity: USD 84.99; initial USD 100.00; change USD -15.01.
-Closed trades: 131; wins 7; losses/breakevens 124.
+Paper equity: USD 85.04; initial USD 100.00; change USD -14.96.
+Closed trades: 133; wins 7; losses/breakevens 126.
 
 ## Specialist research teams
 
@@ -15,16 +15,16 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 
 | Parent | Decision | Symbol | Favourable votes | Cautious votes | Vetoes |
 | --- | --- | --- | ---: | ---: | ---: |
-| GAMBLER | HOLD | NEAR | 32 | 17 | 0 |
-| HOUSE | HOLD | BTC | 12 | 35 | 0 |
-| SPY | SELL | NEAR | 32 | 17 | 0 |
-| MEME HUNTER | HOLD | SUI | 34 | 16 | 1 |
-| BREAKOUT | HOLD | NEAR | 32 | 17 | 0 |
-| CONTRARIAN | HOLD | BTC | 12 | 35 | 0 |
-| ROTATOR | HOLD | BTC | 37 | 10 | 0 |
-| VORTEX | HOLD | BTC | 37 | 10 | 0 |
-| FRACTAL | HOLD | BTC | 37 | 10 | 0 |
-| SHOCKWAVE | SELL | SUI | 34 | 16 | 1 |
+| GAMBLER | HOLD | NEAR | 36 | 13 | 0 |
+| HOUSE | HOLD | BTC | 11 | 43 | 0 |
+| SPY | SELL | NEAR | 36 | 13 | 0 |
+| MEME HUNTER | HOLD | SUI | 37 | 7 | 0 |
+| BREAKOUT | HOLD | NEAR | 36 | 13 | 0 |
+| CONTRARIAN | HOLD | BTC | 11 | 43 | 0 |
+| ROTATOR | HOLD | BTC | 51 | 3 | 0 |
+| VORTEX | HOLD | BTC | 51 | 3 | 0 |
+| FRACTAL | HOLD | BTC | 51 | 3 | 0 |
+| SHOCKWAVE | SELL | SUI | 37 | 7 | 0 |
 
 ## Bot performance
 
@@ -32,28 +32,28 @@ Votes may disagree; all votes are archived at `data/subagent_decisions.csv`. Par
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | GAMBLER | 4 | 0 | 4 | 0.0% | -0.2883 | 1.00x |
 | HOUSE | 10 | 0 | 10 | 0.0% | -0.5537 | 1.00x |
-| SPY | 6 | 1 | 5 | 16.7% | -0.3561 | 1.00x |
+| SPY | 7 | 1 | 6 | 14.3% | -0.5041 | 1.00x |
 | MEME HUNTER | 5 | 2 | 3 | 40.0% | -0.1567 | 1.00x |
 | BREAKOUT | 6 | 0 | 6 | 0.0% | -0.6509 | 1.00x |
 | CONTRARIAN | 11 | 0 | 11 | 0.0% | -0.8912 | 1.00x |
 | ROTATOR | 9 | 0 | 9 | 0.0% | -3.3339 | 1.00x |
 | VORTEX | 48 | 1 | 47 | 2.1% | -5.0301 | 0.50x |
 | FRACTAL | 25 | 1 | 24 | 4.0% | -3.5208 | 0.50x |
-| SHOCKWAVE | 7 | 2 | 5 | 28.6% | -0.0335 | 1.00x |
+| SHOCKWAVE | 8 | 2 | 6 | 25.0% | -0.0490 | 1.00x |
 
 ## Where paper trades lost money
 
 - **PILOT V1 trend turned down; next-candle simulated exit**: 45 exits; net USD -5.2664
 - **PILOT V1 fixed holding window reached; next-candle simulated exit**: 22 exits; net USD -3.7552
-- **Exploratory 15-minute observation complete (next-bar fill)**: 20 exits; net USD -0.1969
+- **Exploratory 15-minute observation complete (next-bar fill)**: 21 exits; net USD -0.2123
 - **RSI normalized**: 9 exits; net USD -0.8805
 - **Range normalized**: 6 exits; net USD -0.5201
 - **Breakout failed**: 5 exits; net USD -0.6342
 - **Time-based exit**: 5 exits; net USD -0.5343
 - **PILOT V1 observed 6% stop; next-candle simulated exit**: 5 exits; net USD -2.9019
+- **Volume faded**: 3 exits; net USD -0.4650
 - **Trend failure**: 2 exits; net USD -0.1934
 - **Timescales disagree**: 2 exits; net USD -0.0146
-- **Volume faded**: 2 exits; net USD -0.3170
 - **Shockwave ended**: 1 exits; net USD -0.0095
 
 ## Where paper trades made money
