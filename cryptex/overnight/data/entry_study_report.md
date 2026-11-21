@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795230000; captured candles: 4864.
+Last observed closed candle: 1795230300; captured candles: 4865.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 39 | 48155 | 36649 | 21 | 16 | -2.2115% | 31.975% |
-| COST_AWARE | 51 | 48137 | 36119 | 30 | 22 | -2.4845% | 44.089% |
-| BALANCED_TEST | 301 | 47637 | 36119 | 175 | 120 | -2.3288% | 96.621% |
-| LOW_HURDLE_CONTROL | 1566 | 43879 | 35544 | 801 | 608 | -2.1692% | 100.000% |
+| V4_TAKER_STRICT | 39 | 48165 | 36650 | 21 | 16 | -2.2115% | 31.975% |
+| COST_AWARE | 51 | 48147 | 36120 | 30 | 22 | -2.4845% | 44.089% |
+| BALANCED_TEST | 301 | 47647 | 36120 | 175 | 120 | -2.3288% | 96.621% |
+| LOW_HURDLE_CONTROL | 1566 | 43889 | 35545 | 801 | 608 | -2.1692% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -35,8 +35,8 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | COST_AWARE | 24h | 1 | 1 | -2.441% | -0.027% |
 | BALANCED_TEST | 4h | 75 | 22 | -1.865% | +0.283% |
 | BALANCED_TEST | 24h | 19 | 3 | -2.551% | -0.287% |
-| LOW_HURDLE_CONTROL | 4h | 262 | 42 | -2.244% | -0.005% |
-| LOW_HURDLE_CONTROL | 24h | 48 | 5 | -4.723% | -2.458% |
+| LOW_HURDLE_CONTROL | 4h | 264 | 42 | -2.244% | -0.005% |
+| LOW_HURDLE_CONTROL | 24h | 49 | 5 | -4.723% | -2.458% |
 
 A gate only places a *research candidate*, entered on a later observed candle.
 No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.
