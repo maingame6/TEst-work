@@ -1,15 +1,45 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795267800,
+  "last_ts": 1795268100,
   "first_ts": 1793488500,
-  "observed_candles": 4990,
+  "observed_candles": 4991,
   "signals": [
     {
       "gate": "V4_TAKER_STRICT",
-      "symbol": "UNI",
-      "signal_ts": 1795267800,
-      "observed_move": 0.03293539
+      "symbol": "NEAR",
+      "signal_ts": 1795268100,
+      "observed_move": 0.02377761
+    },
+    {
+      "gate": "COST_AWARE",
+      "symbol": "NEAR",
+      "signal_ts": 1795268100,
+      "observed_move": 0.02377761
+    },
+    {
+      "gate": "COST_AWARE",
+      "symbol": "AVAX",
+      "signal_ts": 1795268100,
+      "observed_move": 0.02204194
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "AVAX",
+      "signal_ts": 1795268100,
+      "observed_move": 0.02204194
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "ETH",
+      "signal_ts": 1795268100,
+      "observed_move": 0.02149424
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "BTC",
+      "signal_ts": 1795268100,
+      "observed_move": 0.02112293
     }
   ],
   "open": [
@@ -76,6 +106,14 @@
       "entry_ts": 1795267800,
       "entry_mid": 4.6636,
       "exit_ts": 1795269600
+    },
+    {
+      "gate": "V4_TAKER_STRICT",
+      "symbol": "UNI",
+      "signal_ts": 1795267800,
+      "entry_ts": 1795268100,
+      "entry_mid": 4.7469,
+      "exit_ts": 1795269900
     }
   ],
   "trades": [
@@ -12330,35 +12368,35 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4878,
-      "liquid_candidates": 49876,
-      "move_below_gate": 49779,
-      "volume_below_gate": 37921,
-      "qualified": 63,
-      "queued": 27
+      "bars": 4879,
+      "liquid_candidates": 49890,
+      "move_below_gate": 49791,
+      "volume_below_gate": 37922,
+      "qualified": 64,
+      "queued": 28
     },
     "COST_AWARE": {
-      "bars": 4878,
-      "liquid_candidates": 49876,
-      "move_below_gate": 49759,
-      "volume_below_gate": 37376,
-      "qualified": 76,
-      "queued": 36
+      "bars": 4879,
+      "liquid_candidates": 49890,
+      "move_below_gate": 49770,
+      "volume_below_gate": 37377,
+      "qualified": 78,
+      "queued": 38
     },
     "BALANCED_TEST": {
-      "bars": 4878,
-      "liquid_candidates": 49876,
+      "bars": 4879,
+      "liquid_candidates": 49890,
       "move_below_gate": 49212,
-      "volume_below_gate": 37376,
-      "qualified": 349,
-      "queued": 190
+      "volume_below_gate": 37377,
+      "qualified": 362,
+      "queued": 193
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4878,
-      "liquid_candidates": 49876,
+      "bars": 4879,
+      "liquid_candidates": 49890,
       "move_below_gate": 45220,
-      "volume_below_gate": 36785,
-      "qualified": 1686,
+      "volume_below_gate": 36786,
+      "qualified": 1699,
       "queued": 846
     }
   },
@@ -12769,6 +12807,14 @@
       "signal_ts": 1795267500,
       "entry_ts": 1795267800,
       "entry_mid": 4.6636,
+      "hold_bars": 48
+    },
+    {
+      "gate": "V4_TAKER_STRICT",
+      "symbol": "UNI",
+      "signal_ts": 1795267800,
+      "entry_ts": 1795268100,
+      "entry_mid": 4.7469,
       "hold_bars": 48
     }
   ],
