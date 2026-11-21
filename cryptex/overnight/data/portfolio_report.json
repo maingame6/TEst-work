@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-11-21T06:40:38.191861+00:00",
-  "local_time": "2026-11-21T06:40:38.191861+00:00",
+  "generated_at": "2026-11-21T06:45:41.695158+00:00",
+  "local_time": "2026-11-21T06:45:41.695158+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
-  "balance": 194.724017,
-  "gross_mark_to_market": 194.793399,
-  "estimated_future_exit_costs": 0.069382,
-  "pnl": -15.275983,
-  "pnl_pct": -7.27428,
+  "balance": 194.786528,
+  "gross_mark_to_market": 194.856572,
+  "estimated_future_exit_costs": 0.070044,
+  "pnl": -15.213472,
+  "pnl_pct": -7.24451,
   "realised": -15.194231,
-  "unrealised_estimate": -0.081752,
+  "unrealised_estimate": -0.019241,
   "groups": {
     "main": {
       "starting": 100.0,
-      "equity": 85.102918,
-      "gross_equity": 85.1723,
-      "pnl": -14.897082,
+      "equity": 85.165429,
+      "gross_equity": 85.235473,
+      "pnl": -14.834571,
       "realised": -14.81533,
       "closed": 131,
       "wins": 7,
       "open": 1,
-      "queued": 0
+      "queued": 5
     },
     "research": {
       "starting": 110.0,
@@ -32,7 +32,7 @@
       "closed": 44,
       "wins": 0,
       "open": 0,
-      "queued": 0
+      "queued": 9
     }
   },
   "agents": [
@@ -50,8 +50,18 @@
       "closed": 4,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD: no qualified setup",
+      "pending": {
+        "side": "BUY",
+        "symbol": "NEAR",
+        "reason": "Trend",
+        "exploratory": false,
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200,
+        "pilot_policy": null,
+        "pilot_version": null,
+        "pilot_hold_bars": null
+      },
+      "last_decision": "BUY QUEUED: NEAR \u2014 Trend",
       "missing_quote": false
     },
     {
@@ -86,8 +96,18 @@
       "closed": 6,
       "wins": 1,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD: no qualified setup",
+      "pending": {
+        "side": "BUY",
+        "symbol": "ETH",
+        "reason": "Volume jump proxy \u2014 NOT wallet following",
+        "exploratory": false,
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200,
+        "pilot_policy": null,
+        "pilot_version": null,
+        "pilot_hold_bars": null
+      },
+      "last_decision": "BUY QUEUED: ETH \u2014 Volume jump proxy \u2014 NOT wallet following",
       "missing_quote": false
     },
     {
@@ -104,8 +124,18 @@
       "closed": 5,
       "wins": 2,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD: no qualified setup",
+      "pending": {
+        "side": "BUY",
+        "symbol": "SUI",
+        "reason": "Listed meme momentum",
+        "exploratory": false,
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200,
+        "pilot_policy": null,
+        "pilot_version": null,
+        "pilot_hold_bars": null
+      },
+      "last_decision": "BUY QUEUED: SUI \u2014 Listed meme momentum",
       "missing_quote": false
     },
     {
@@ -122,8 +152,18 @@
       "closed": 6,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD: no qualified setup",
+      "pending": {
+        "side": "BUY",
+        "symbol": "ETH",
+        "reason": "Donchian breakout",
+        "exploratory": false,
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200,
+        "pilot_policy": null,
+        "pilot_version": null,
+        "pilot_hold_bars": null
+      },
+      "last_decision": "BUY QUEUED: ETH \u2014 Donchian breakout",
       "missing_quote": false
     },
     {
@@ -149,12 +189,12 @@
       "name": "ROTATOR",
       "initial": 10.0,
       "cash": 0.03333051,
-      "equity": 6.58435026,
-      "gross_equity": 6.65373207,
-      "pnl": -3.41564974,
-      "pnl_pct": -34.1565,
+      "equity": 6.64686153,
+      "gross_equity": 6.7169054,
+      "pnl": -3.35313847,
+      "pnl_pct": -33.53138,
       "realised": -3.33389811,
-      "unrealised_estimate": -0.08175164,
+      "unrealised_estimate": -0.01924036,
       "closed": 9,
       "wins": 0,
       "position": "BTC",
@@ -212,8 +252,18 @@
       "closed": 7,
       "wins": 2,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD: no qualified setup",
+      "pending": {
+        "side": "BUY",
+        "symbol": "SUI",
+        "reason": "EXPLORATORY PAPER PROBE [COST_SCREEN_V4] (directional momentum; 3-bar +2.78%; RSI 70; volume 2.92x)",
+        "exploratory": true,
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200,
+        "pilot_policy": null,
+        "pilot_version": null,
+        "pilot_hold_bars": null
+      },
+      "last_decision": "BUY QUEUED: SUI \u2014 EXPLORATORY PAPER PROBE [COST_SCREEN_V4] (directional momentum; 3-bar +2.78%; RSI 70; volume 2.92x)",
       "missing_quote": false
     },
     {
@@ -230,8 +280,14 @@
       "closed": 4,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD AAVE",
+      "pending": {
+        "side": "BUY",
+        "symbol": "UNI",
+        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED UNI",
       "missing_quote": false
     },
     {
@@ -248,8 +304,14 @@
       "closed": 3,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD BTC",
+      "pending": {
+        "side": "BUY",
+        "symbol": "ETH",
+        "reason": "Momentum less empirical log-return diffusion/noise; score=+0.481, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED ETH",
       "missing_quote": false
     },
     {
@@ -266,8 +328,14 @@
       "closed": 4,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD SOL",
+      "pending": {
+        "side": "BUY",
+        "symbol": "UNI",
+        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED UNI",
       "missing_quote": false
     },
     {
@@ -284,8 +352,14 @@
       "closed": 6,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD XLM",
+      "pending": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED XRP",
       "missing_quote": false
     },
     {
@@ -302,8 +376,14 @@
       "closed": 5,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD SOL",
+      "pending": {
+        "side": "BUY",
+        "symbol": "ETH",
+        "reason": "Relative-strength shock in asset co-movement graph; score=+0.707, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED ETH",
       "missing_quote": false
     },
     {
@@ -338,8 +418,14 @@
       "closed": 6,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD SOL",
+      "pending": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED XRP",
       "missing_quote": false
     },
     {
@@ -356,8 +442,14 @@
       "closed": 5,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD SOL",
+      "pending": {
+        "side": "BUY",
+        "symbol": "ETH",
+        "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED ETH",
       "missing_quote": false
     },
     {
@@ -392,8 +484,14 @@
       "closed": 5,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD UNI",
+      "pending": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED XRP",
       "missing_quote": false
     },
     {
@@ -410,8 +508,14 @@
       "closed": 6,
       "wins": 0,
       "position": null,
-      "pending": null,
-      "last_decision": "HOLD SUI",
+      "pending": {
+        "side": "BUY",
+        "symbol": "XRP",
+        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
+        "cost_gate_version": 4,
+        "signal_ts": 1795243200
+      },
+      "last_decision": "BUY_QUEUED XRP",
       "missing_quote": false
     }
   ],
@@ -423,10 +527,10 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1795242900,
-  "last_candle_research": 1795242900,
+  "last_candle_main": 1795243200,
+  "last_candle_research": 1795243200,
   "total_open": 1,
-  "total_queued": 0,
+  "total_queued": 14,
   "total_completed": 175,
   "saved_fills": 351,
   "specialist_reviews": 640,
@@ -464,7 +568,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-11-17T18:01:51.403833+00:00",
-  "github_run_id": "44876635947",
+  "github_run_id": "44877035439",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-20",
@@ -475,8 +579,8 @@
       "fills": 345
     },
     "morning": null,
-    "comparison_at": "2026-11-21T06:40:38.191861+00:00",
-    "change": -0.702547,
+    "comparison_at": "2026-11-21T06:45:41.695158+00:00",
+    "change": -0.640036,
     "fills_since_start": 6
   },
   "benchmarks": {
@@ -488,33 +592,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 56590.6,
+        "current_mid": 57130.6,
         "start": 10.0,
-        "equity": 7.282561,
-        "pnl": -2.717439,
-        "return_pct": -27.1744,
+        "equity": 7.352053,
+        "pnl": -2.647947,
+        "return_pct": -26.4795,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 1582.34,
+        "current_mid": 1611.72,
         "start": 10.0,
-        "equity": 6.991953,
-        "pnl": -3.008047,
-        "return_pct": -30.0805,
+        "equity": 7.121776,
+        "pnl": -2.878224,
+        "return_pct": -28.7822,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 66.58,
+        "current_mid": 67.42,
         "start": 10.0,
-        "equity": 6.885574,
-        "pnl": -3.114426,
-        "return_pct": -31.1443,
+        "equity": 6.972445,
+        "pnl": -3.027555,
+        "return_pct": -30.2756,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
@@ -534,22 +638,22 @@
       "ETH",
       "SOL"
     ],
-    "candle_utc": 1795242900,
-    "at": "2026-11-21T06:40:38.191861+00:00",
-    "balance": 21.160088,
-    "pnl": -8.839912,
+    "candle_utc": 1795243200,
+    "at": "2026-11-21T06:45:41.695158+00:00",
+    "balance": 21.446274,
+    "pnl": -8.553726,
     "coins": {
-      "BTC": 7.282561,
-      "ETH": 6.991953,
-      "SOL": 6.885574
+      "BTC": 7.352053,
+      "ETH": 7.121776,
+      "SOL": 6.972445
     },
     "entries": {
       "BTC": "2026-10-30T22:21:37.361980+00:00",
       "ETH": "2026-10-30T22:21:37.361980+00:00",
       "SOL": "2026-10-30T22:21:37.361980+00:00"
     },
-    "observations": 4417,
-    "last_move_usd": 0.095502
+    "observations": 4418,
+    "last_move_usd": 0.286186
   },
   "pilot_evidence": {
     "mode": "PAPER_ONLY",
@@ -561,8 +665,8 @@
     "status": "OBSERVING",
     "start": "2026-11-02T17:27:33.767629+00:00",
     "start_candle_utc": 1793640000,
-    "portfolio_equity": 194.724017,
-    "portfolio_since_pilot_start": -14.175224,
+    "portfolio_equity": 194.786528,
+    "portfolio_since_pilot_start": -14.112713,
     "research_holdout_start_utc": 1793899200,
     "minimum_for_review": "72h prospective calibration then 7 days + 30 after-cost independent closes per rule; compare BTC/ETH/SOL buy-hold, fees, drawdown",
     "auto_promote": false,
@@ -572,8 +676,8 @@
         "policy": "BTC_PASSIVE_CONTROL",
         "market": "BTC",
         "max_hold_bars": 864,
-        "wallet_equity": 6.58435026,
-        "wallet_since_pilot_start": -3.268905,
+        "wallet_equity": 6.64686153,
+        "wallet_since_pilot_start": -3.206393,
         "active": true,
         "queued": false,
         "buys": 9,
