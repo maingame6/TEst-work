@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-21T02:25:37.934561+00:00",
+  "checked_at": "2026-11-21T03:25:41.311198+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -22,8 +22,9 @@
     {
       "source": "EXCHANGE_BLOG",
       "purpose": "public exchange announcements",
-      "status": "OK",
-      "items": 2
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "HTTPError:HTTP Error 403: Forbidden"
     },
     {
       "source": "FED_MACRO",
@@ -52,6 +53,17 @@
     }
   ],
   "articles": [
+    {
+      "id": "597b3c714560358f",
+      "source": "SEARCH_RADAR",
+      "title": "Symbiosis Bridged BTC (Ethereum) Price, symbtc to USD, Research, News & Fundraising | Blockworks Intel - Blockworks",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1PX1hLN1ZpN2VFdG9QRGtuanFYcHVwUkl6WHM4alpJcHhJcWVVQ1dBdmNHejhIdDA0QnA1dHF6bHY0Yk5BY05NcjV3bDRta3BTUUxYRHRHNE5pV0tFTnQ2dXhRdXdZMFVpd19HSjMwaUo0bmpl?oc=5",
+      "published_at": "2026-11-21T03:01:45+00:00",
+      "first_observed_at": "2026-11-21T03:25:41.311198+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "511c38834ead2d26",
       "source": "CRYPTODESK",
@@ -2790,23 +2802,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "3cdccfd1ba2a67df",
-      "source": "CRYPTODESK",
-      "title": "Ethereum block builders received the most in a $3.4 million vault hack, data shows",
-      "url": "https://www.coindesk.com/tech/2026/11/19/ethereum-block-builders-received-the-most-in-a-usd3-4-million-vault-hack-data-shows",
-      "published_at": "2026-11-19T05:39:06+00:00",
-      "first_observed_at": "2026-11-19T06:20:38.880830+00:00",
-      "sentiment": "NEGATIVE",
-      "score": -1,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 6,
   "sources_total": 8
 }
