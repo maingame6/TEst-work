@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795229700,
+  "last_ts": 1795230000,
   "first_ts": 1793488500,
-  "observed_candles": 4863,
+  "observed_candles": 4864,
   "signals": [],
   "open": [],
   "trades": [
@@ -11439,47 +11439,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4751,
-      "liquid_candidates": 48204,
-      "move_below_gate": 48145,
-      "volume_below_gate": 36647,
+      "bars": 4752,
+      "liquid_candidates": 48214,
+      "move_below_gate": 48155,
+      "volume_below_gate": 36649,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4751,
-      "liquid_candidates": 48204,
-      "move_below_gate": 48127,
-      "volume_below_gate": 36118,
+      "bars": 4752,
+      "liquid_candidates": 48214,
+      "move_below_gate": 48137,
+      "volume_below_gate": 36119,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4751,
-      "liquid_candidates": 48204,
-      "move_below_gate": 47627,
-      "volume_below_gate": 36118,
+      "bars": 4752,
+      "liquid_candidates": 48214,
+      "move_below_gate": 47637,
+      "volume_below_gate": 36119,
       "qualified": 301,
       "queued": 175
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4751,
-      "liquid_candidates": 48204,
-      "move_below_gate": 43869,
+      "bars": 4752,
+      "liquid_candidates": 48214,
+      "move_below_gate": 43879,
       "volume_below_gate": 35544,
       "qualified": 1566,
       "queued": 801
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1795143300,
-      "entry_ts": 1795143600,
-      "entry_mid": 6.906,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
@@ -16665,6 +16657,18 @@
       "gross_return": 0.0017505921,
       "net_return": -0.0190671675,
       "stress_net_return": -0.0239596616
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795143300,
+      "entry_ts": 1795143600,
+      "exit_ts": 1795230000,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0715320012,
+      "net_return": -0.0908268474,
+      "stress_net_return": -0.0953614333
     }
   ],
   "horizon_censored": 603
