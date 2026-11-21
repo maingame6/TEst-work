@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-21T15:35:38.140386+00:00",
+  "generated_at": "2026-11-21T15:40:43.794053+00:00",
   "paper_only": true,
   "sample_status": "REVIEW_ONLY",
   "execution": "next observed completed candle only; six-bar exits",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1795275000,
-  "observed_candles": 5014,
+  "last_candle_ts": 1795275300,
+  "observed_candles": 5015,
   "missed_fills": 114,
   "censored_exits": 50,
   "fees_slippage_per_side_pct": 1.05,
@@ -43,10 +43,10 @@
       "queued": 0,
       "threshold_move_pct": 2.322,
       "diagnostics_since_instrumentation": {
-        "bars": 4902,
-        "liquid_candidates": 50249,
-        "move_below_gate": 50150,
-        "volume_below_gate": 38196,
+        "bars": 4903,
+        "liquid_candidates": 50262,
+        "move_below_gate": 50163,
+        "volume_below_gate": 38207,
         "qualified": 64,
         "queued": 28
       },
@@ -72,10 +72,10 @@
       "queued": 0,
       "threshold_move_pct": 2.172,
       "diagnostics_since_instrumentation": {
-        "bars": 4902,
-        "liquid_candidates": 50249,
-        "move_below_gate": 50129,
-        "volume_below_gate": 37647,
+        "bars": 4903,
+        "liquid_candidates": 50262,
+        "move_below_gate": 50142,
+        "volume_below_gate": 37658,
         "qualified": 78,
         "queued": 38
       },
@@ -101,10 +101,10 @@
       "queued": 0,
       "threshold_move_pct": 1.2,
       "diagnostics_since_instrumentation": {
-        "bars": 4902,
-        "liquid_candidates": 50249,
-        "move_below_gate": 49553,
-        "volume_below_gate": 37647,
+        "bars": 4903,
+        "liquid_candidates": 50262,
+        "move_below_gate": 49566,
+        "volume_below_gate": 37658,
         "qualified": 373,
         "queued": 194
       },
@@ -130,10 +130,10 @@
       "queued": 0,
       "threshold_move_pct": 0.5,
       "diagnostics_since_instrumentation": {
-        "bars": 4902,
-        "liquid_candidates": 50249,
-        "move_below_gate": 45533,
-        "volume_below_gate": 37054,
+        "bars": 4903,
+        "liquid_candidates": 50262,
+        "move_below_gate": 45546,
+        "volume_below_gate": 37065,
         "qualified": 1719,
         "queued": 852
       },
@@ -211,14 +211,14 @@
       "BALANCED_TEST": {
         "48": {
           "duration_hours": 4.0,
-          "paired_observations": 80,
-          "heldout_pairs": 71,
-          "heldout_nonoverlap_pairs": 23,
+          "paired_observations": 85,
+          "heldout_pairs": 76,
+          "heldout_nonoverlap_pairs": 24,
           "heldout_distinct_utc_days": 12,
-          "mean_heldout_net_pct": -1.80651,
-          "mean_heldout_stress_net_pct": -2.29626,
-          "mean_heldout_advantage_over_30m_pct": 0.28628,
-          "heldout_after_cost_winners": 3,
+          "mean_heldout_net_pct": -1.71161,
+          "mean_heldout_stress_net_pct": -2.20183,
+          "mean_heldout_advantage_over_30m_pct": 0.38029,
+          "heldout_after_cost_winners": 4,
           "assessment": "INSUFFICIENT_EVIDENCE",
           "paper_only": true
         },
@@ -239,8 +239,8 @@
       "LOW_HURDLE_CONTROL": {
         "48": {
           "duration_hours": 4.0,
-          "paired_observations": 282,
-          "heldout_pairs": 259,
+          "paired_observations": 284,
+          "heldout_pairs": 261,
           "heldout_nonoverlap_pairs": 44,
           "heldout_distinct_utc_days": 14,
           "mean_heldout_net_pct": -2.13833,
