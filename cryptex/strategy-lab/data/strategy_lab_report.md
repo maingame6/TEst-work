@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1620 symbol-hours, 3708 missing.
+Recorded 1632 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1011 hypothetical outcomes; censored 7473.
+Closed 1014 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -32,7 +32,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_trend_8 | 13 | 0 | -4.8566 | -5.3311 | 13 |
 | cmf_accumulation_16 | 10 | 0 | -5.2703 | -5.7428 | 10 |
 | cmf_accumulation_32 | 3 | 0 | -5.8076 | -6.2774 | 3 |
-| cmf_accumulation_8 | 17 | 0 | -6.2748 | -6.7423 | 17 |
+| cmf_accumulation_8 | 18 | 0 | -6.4613 | -6.9279 | 18 |
 | donchian_breakout_16 | 3 | 0 | -7.1885 | -7.6514 | 3 |
 | donchian_breakout_32 | 1 | 0 | -7.0711 | -7.5346 | 1 |
 | donchian_breakout_8 | 8 | 0 | -5.9798 | -6.4487 | 8 |
@@ -62,10 +62,10 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | momentum_8 | 12 | 0 | -5.2690 | -5.7415 | 12 |
 | obv_confirmation_16 | 21 | 0 | -4.3862 | -4.8631 | 21 |
 | obv_confirmation_32 | 9 | 0 | -4.0274 | -4.5060 | 9 |
-| obv_confirmation_8 | 14 | 0 | -5.0029 | -5.4767 | 14 |
+| obv_confirmation_8 | 15 | 0 | -5.3115 | -5.7838 | 15 |
 | roc_acceleration_16 | 13 | 0 | -4.9325 | -5.4067 | 13 |
 | roc_acceleration_32 | 16 | 0 | -4.4930 | -4.9693 | 16 |
-| roc_acceleration_8 | 19 | 0 | -5.4155 | -5.8872 | 19 |
+| roc_acceleration_8 | 20 | 0 | -5.6263 | -6.0970 | 20 |
 | rsi_rebound_16 | 23 | 0 | -5.6987 | -6.1690 | 23 |
 | rsi_rebound_32 | 16 | 0 | -6.3346 | -6.8018 | 16 |
 | rsi_rebound_8 | 23 | 0 | -5.1932 | -5.6660 | 23 |
