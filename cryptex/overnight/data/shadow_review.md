@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-21T02:20:37.554795+00:00
+Generated: 2026-11-21T02:25:37.934561+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -13,13 +13,13 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 | FLUID_ADVECTION | 9.9694 | 4 | 0 | -0.0306 | HOLD UNI |
 | FLUID_VISCOSITY | 9.9528 | 3 | 0 | -0.0472 | HOLD DOGE |
 | GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD DOGE |
-| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD DOGE |
+| ERROR_CODE_CONSENSUS | 9.9473 | 6 | 0 | -0.0527 | HOLD XRP |
 | GRAPH_COHERENCE | 9.9649 | 5 | 0 | -0.0351 | HOLD DOGE |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
 | FREQTRADE_STYLE | 9.9496 | 6 | 0 | -0.0504 | HOLD DOGE |
 | QLIB_STYLE | 9.9649 | 5 | 0 | -0.0351 | HOLD DOGE |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD DOGE |
+| LEAN_EVENT | 9.9611 | 5 | 0 | -0.0389 | HOLD XRP |
 | NAUTILUS_REGIME | 9.9548 | 6 | 0 | -0.0452 | HOLD DOGE |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
