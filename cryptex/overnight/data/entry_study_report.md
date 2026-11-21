@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795282500; captured candles: 5039.
+Last observed closed candle: 1795282800; captured candles: 5040.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 64 | 50367 | 38376 | 28 | 23 | -2.2871% | 42.865% |
-| COST_AWARE | 78 | 50346 | 37826 | 38 | 30 | -2.3885% | 52.920% |
-| BALANCED_TEST | 373 | 49770 | 37826 | 194 | 139 | -2.2422% | 97.560% |
-| LOW_HURDLE_CONTROL | 1721 | 45746 | 37231 | 853 | 659 | -2.1184% | 100.000% |
+| V4_TAKER_STRICT | 64 | 50375 | 38383 | 28 | 23 | -2.2871% | 42.865% |
+| COST_AWARE | 78 | 50354 | 37833 | 38 | 30 | -2.3885% | 52.920% |
+| BALANCED_TEST | 373 | 49778 | 37833 | 194 | 139 | -2.2422% | 97.560% |
+| LOW_HURDLE_CONTROL | 1721 | 45754 | 37237 | 853 | 659 | -2.1184% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -29,11 +29,11 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 
 | Gate | Hold | Matched (all) | Independent heldout | Heldout avg net | Versus paired 30m |
 |---|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 4h | 11 | 6 | -1.673% | +0.917% |
+| V4_TAKER_STRICT | 4h | 12 | 6 | -1.673% | +0.917% |
 | V4_TAKER_STRICT | 24h | 1 | 1 | -2.441% | -0.027% |
-| COST_AWARE | 4h | 12 | 6 | -1.125% | +1.030% |
+| COST_AWARE | 4h | 14 | 6 | -1.125% | +1.030% |
 | COST_AWARE | 24h | 1 | 1 | -2.441% | -0.027% |
-| BALANCED_TEST | 4h | 85 | 24 | -1.712% | +0.380% |
+| BALANCED_TEST | 4h | 88 | 24 | -1.712% | +0.380% |
 | BALANCED_TEST | 24h | 20 | 4 | -2.543% | -0.351% |
 | LOW_HURDLE_CONTROL | 4h | 289 | 45 | -2.088% | +0.144% |
 | LOW_HURDLE_CONTROL | 24h | 57 | 5 | -4.723% | -2.458% |
