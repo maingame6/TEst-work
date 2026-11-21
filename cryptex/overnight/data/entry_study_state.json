@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795221900,
+  "last_ts": 1795222200,
   "first_ts": 1793488500,
-  "observed_candles": 4837,
+  "observed_candles": 4838,
   "signals": [],
   "open": [],
   "trades": [
@@ -11439,34 +11439,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4725,
-      "liquid_candidates": 48008,
-      "move_below_gate": 47949,
-      "volume_below_gate": 36511,
+      "bars": 4726,
+      "liquid_candidates": 48015,
+      "move_below_gate": 47956,
+      "volume_below_gate": 36515,
       "qualified": 39,
       "queued": 21
     },
     "COST_AWARE": {
-      "bars": 4725,
-      "liquid_candidates": 48008,
-      "move_below_gate": 47931,
-      "volume_below_gate": 35985,
+      "bars": 4726,
+      "liquid_candidates": 48015,
+      "move_below_gate": 47938,
+      "volume_below_gate": 35989,
       "qualified": 51,
       "queued": 30
     },
     "BALANCED_TEST": {
-      "bars": 4725,
-      "liquid_candidates": 48008,
-      "move_below_gate": 47431,
-      "volume_below_gate": 35985,
+      "bars": 4726,
+      "liquid_candidates": 48015,
+      "move_below_gate": 47438,
+      "volume_below_gate": 35989,
       "qualified": 301,
       "queued": 175
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4725,
-      "liquid_candidates": 48008,
-      "move_below_gate": 43675,
-      "volume_below_gate": 35413,
+      "bars": 4726,
+      "liquid_candidates": 48015,
+      "move_below_gate": 43682,
+      "volume_below_gate": 35417,
       "qualified": 1566,
       "queued": 801
     }
@@ -11615,22 +11615,6 @@
       "entry_ts": 1795203900,
       "entry_mid": 8.38939,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1795207500,
-      "entry_ts": 1795207800,
-      "entry_mid": 1598.13,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795207500,
-      "entry_ts": 1795207800,
-      "entry_mid": 58270.7,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -16613,6 +16597,30 @@
       "gross_return": 0.0010772545,
       "net_return": -0.0197265122,
       "stress_net_return": -0.0246157177
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795207500,
+      "entry_ts": 1795207800,
+      "exit_ts": 1795222200,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.014642113,
+      "net_return": -0.0064435502,
+      "stress_net_return": -0.0113990058
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795207500,
+      "entry_ts": 1795207800,
+      "exit_ts": 1795222200,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.0127748594,
+      "net_return": -0.0082719997,
+      "stress_net_return": -0.0132183357
     }
   ],
   "horizon_censored": 603
