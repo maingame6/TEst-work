@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-21T06:50:39.862078+00:00",
+  "generated_at": "2026-11-21T06:55:39.132255+00:00",
   "paper_only": true,
-  "candle_ts": 1795243500,
-  "cycles": 4957,
+  "candle_ts": 1795243800,
+  "cycles": 4958,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -11,12 +11,12 @@
   "news_not_used_for_trading": true,
   "models": {
     "FLUID_ADVECTION": {
-      "equity": 9.959054,
+      "equity": 9.962325,
       "closed": 4,
       "wins": 0,
       "realized": -0.030568,
-      "paper_return": -0.040946,
-      "latest_decision": "FILLED_BUY UNI",
+      "paper_return": -0.037675,
+      "latest_decision": "HOLD UNI",
       "queued": null,
       "position": {
         "symbol": "UNI",
@@ -25,18 +25,18 @@
         "entry_market": 4.4336,
         "entry_time": 1795243500,
         "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
-        "peak": 4.4336,
+        "peak": 4.4483,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "FLUID_VISCOSITY": {
-      "equity": 9.942411,
+      "equity": 9.944717,
       "closed": 3,
       "wins": 0,
       "realized": -0.047227,
-      "paper_return": -0.057589,
-      "latest_decision": "FILLED_BUY ETH",
+      "paper_return": -0.055283,
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": {
         "symbol": "ETH",
@@ -45,7 +45,7 @@
         "entry_market": 1635.97,
         "entry_time": 1795243500,
         "reason": "Momentum less empirical log-return diffusion/noise; score=+0.481, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1635.97,
+        "peak": 1639.8,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
@@ -56,24 +56,24 @@
       "wins": 0,
       "realized": -0.043809,
       "paper_return": -0.043809,
-      "latest_decision": "BUY_QUEUED XRP",
+      "latest_decision": "BUY_QUEUED UNI",
       "queued": {
         "side": "BUY",
-        "symbol": "XRP",
+        "symbol": "UNI",
         "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
         "cost_gate_version": 4,
-        "signal_ts": 1795243500
+        "signal_ts": 1795243800
       },
       "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.936992,
+      "equity": 9.940167,
       "closed": 6,
       "wins": 0,
       "realized": -0.052652,
-      "paper_return": -0.063008,
-      "latest_decision": "FILLED_BUY XRP",
+      "paper_return": -0.059833,
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": {
         "symbol": "XRP",
@@ -82,18 +82,18 @@
         "entry_market": 0.89595,
         "entry_time": 1795243500,
         "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.89595,
+        "peak": 0.89884,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.954549,
+      "equity": 9.956857,
       "closed": 5,
       "wins": 0,
       "realized": -0.035077,
-      "paper_return": -0.045451,
-      "latest_decision": "FILLED_BUY ETH",
+      "paper_return": -0.043143,
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": {
         "symbol": "ETH",
@@ -102,7 +102,7 @@
         "entry_market": 1635.97,
         "entry_time": 1795243500,
         "reason": "Relative-strength shock in asset co-movement graph; score=+0.707, gate=0.09; after-cost candidate screen (not a forecast)",
-        "peak": 1635.97,
+        "peak": 1639.8,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
@@ -119,12 +119,12 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.939243,
+      "equity": 9.942419,
       "closed": 6,
       "wins": 0,
       "realized": -0.050399,
-      "paper_return": -0.060757,
-      "latest_decision": "FILLED_BUY XRP",
+      "paper_return": -0.057581,
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": {
         "symbol": "XRP",
@@ -133,18 +133,18 @@
         "entry_market": 0.89595,
         "entry_time": 1795243500,
         "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.89595,
+        "peak": 0.89884,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.954549,
+      "equity": 9.956857,
       "closed": 5,
       "wins": 0,
       "realized": -0.035077,
-      "paper_return": -0.045451,
-      "latest_decision": "FILLED_BUY ETH",
+      "paper_return": -0.043143,
+      "latest_decision": "HOLD ETH",
       "queued": null,
       "position": {
         "symbol": "ETH",
@@ -153,7 +153,7 @@
         "entry_market": 1635.97,
         "entry_time": 1795243500,
         "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
-        "peak": 1635.97,
+        "peak": 1639.8,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
@@ -170,12 +170,12 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.950705,
+      "equity": 9.953884,
       "closed": 5,
       "wins": 0,
       "realized": -0.038925,
-      "paper_return": -0.049295,
-      "latest_decision": "FILLED_BUY XRP",
+      "paper_return": -0.046116,
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": {
         "symbol": "XRP",
@@ -184,18 +184,18 @@
         "entry_market": 0.89595,
         "entry_time": 1795243500,
         "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.89595,
+        "peak": 0.89884,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.944471,
+      "equity": 9.947648,
       "closed": 6,
       "wins": 0,
       "realized": -0.045166,
-      "paper_return": -0.055529,
-      "latest_decision": "FILLED_BUY XRP",
+      "paper_return": -0.052352,
+      "latest_decision": "HOLD XRP",
       "queued": null,
       "position": {
         "symbol": "XRP",
@@ -204,7 +204,7 @@
         "entry_market": 0.89595,
         "entry_time": 1795243500,
         "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 0.89595,
+        "peak": 0.89884,
         "cost_gate_version": 4
       },
       "sample_sufficient": false
