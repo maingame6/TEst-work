@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795257000; captured candles: 4954.
+Last observed closed candle: 1795257300; captured candles: 4955.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 62 | 49362 | 37615 | 26 | 21 | -2.2503% | 39.679% |
-| COST_AWARE | 74 | 49343 | 37072 | 35 | 27 | -2.4642% | 50.422% |
-| BALANCED_TEST | 336 | 48808 | 37072 | 183 | 128 | -2.2710% | 96.983% |
-| LOW_HURDLE_CONTROL | 1641 | 44901 | 36484 | 831 | 635 | -2.1385% | 100.000% |
+| V4_TAKER_STRICT | 62 | 49373 | 37624 | 26 | 21 | -2.2503% | 39.679% |
+| COST_AWARE | 74 | 49354 | 37081 | 35 | 27 | -2.4642% | 50.422% |
+| BALANCED_TEST | 336 | 48819 | 37081 | 183 | 128 | -2.2710% | 96.983% |
+| LOW_HURDLE_CONTROL | 1641 | 44912 | 36493 | 831 | 635 | -2.1385% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -36,7 +36,7 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | BALANCED_TEST | 4h | 75 | 22 | -1.865% | +0.283% |
 | BALANCED_TEST | 24h | 19 | 3 | -2.551% | -0.287% |
 | LOW_HURDLE_CONTROL | 4h | 274 | 43 | -2.211% | +0.039% |
-| LOW_HURDLE_CONTROL | 24h | 52 | 5 | -4.723% | -2.458% |
+| LOW_HURDLE_CONTROL | 24h | 53 | 5 | -4.723% | -2.458% |
 
 A gate only places a *research candidate*, entered on a later observed candle.
 No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.
