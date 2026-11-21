@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795282200,
+  "last_ts": 1795282500,
   "first_ts": 1793488500,
-  "observed_candles": 5038,
+  "observed_candles": 5039,
   "signals": [],
   "open": [
     {
@@ -12553,34 +12553,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 4926,
-      "liquid_candidates": 50458,
-      "move_below_gate": 50359,
-      "volume_below_gate": 38370,
+      "bars": 4927,
+      "liquid_candidates": 50466,
+      "move_below_gate": 50367,
+      "volume_below_gate": 38376,
       "qualified": 64,
       "queued": 28
     },
     "COST_AWARE": {
-      "bars": 4926,
-      "liquid_candidates": 50458,
-      "move_below_gate": 50338,
-      "volume_below_gate": 37820,
+      "bars": 4927,
+      "liquid_candidates": 50466,
+      "move_below_gate": 50346,
+      "volume_below_gate": 37826,
       "qualified": 78,
       "queued": 38
     },
     "BALANCED_TEST": {
-      "bars": 4926,
-      "liquid_candidates": 50458,
-      "move_below_gate": 49762,
-      "volume_below_gate": 37820,
+      "bars": 4927,
+      "liquid_candidates": 50466,
+      "move_below_gate": 49770,
+      "volume_below_gate": 37826,
       "qualified": 373,
       "queued": 194
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 4926,
-      "liquid_candidates": 50458,
-      "move_below_gate": 45738,
-      "volume_below_gate": 37225,
+      "bars": 4927,
+      "liquid_candidates": 50466,
+      "move_below_gate": 45746,
+      "volume_below_gate": 37231,
       "qualified": 1721,
       "queued": 853
     }
@@ -12841,14 +12841,6 @@
       "entry_ts": 1795263900,
       "entry_mid": 1655.83,
       "hold_bars": 288
-    },
-    {
-      "gate": "V4_TAKER_STRICT",
-      "symbol": "UNI",
-      "signal_ts": 1795267800,
-      "entry_ts": 1795268100,
-      "entry_mid": 4.7469,
-      "hold_bars": 48
     },
     {
       "gate": "V4_TAKER_STRICT",
@@ -18655,6 +18647,18 @@
       "gross_return": 0.0140663865,
       "net_return": -0.0070073123,
       "stress_net_return": -0.0119599561
+    },
+    {
+      "gate": "V4_TAKER_STRICT",
+      "symbol": "UNI",
+      "signal_ts": 1795267800,
+      "entry_ts": 1795268100,
+      "exit_ts": 1795282500,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.007036171,
+      "net_return": -0.0276713295,
+      "stress_net_return": -0.0325209095
     }
   ],
   "horizon_censored": 603
