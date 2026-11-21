@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-21T20:15:43.115698+00:00
+Generated: 2026-11-21T20:20:41.632335+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,7 +10,7 @@ Public research feeds reachable: 6 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD NEAR |
+| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD DOGE |
 | FLUID_VISCOSITY | 9.9312 | 4 | 0 | -0.0688 | HOLD NEAR |
 | GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD NEAR |
 | ERROR_CODE_CONSENSUS | 9.9297 | 7 | 0 | -0.0703 | HOLD NEAR |
@@ -20,7 +20,7 @@ Public research feeds reachable: 6 / 8 (failed feeds are not replaced with guess
 | QLIB_STYLE | 9.9433 | 6 | 0 | -0.0567 | HOLD NEAR |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
 | LEAN_EVENT | 9.9434 | 6 | 0 | -0.0566 | HOLD NEAR |
-| NAUTILUS_REGIME | 9.9371 | 7 | 0 | -0.0629 | HOLD ETH |
+| NAUTILUS_REGIME | 9.9371 | 7 | 0 | -0.0629 | HOLD XLM |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
