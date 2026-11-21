@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795269300; captured candles: 4995.
+Last observed closed candle: 1795269600; captured candles: 4996.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -10,17 +10,17 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 | Gate | Signal threshold | Closed | Net wins | Mean net | Stress mean net | Gross winners that became net losers | Active |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | V4_TAKER_STRICT | 2.322% | 22 | 0 | -2.2675% | -2.7549% | 8 | 2 |
-| COST_AWARE | 2.172% | 28 | 0 | -2.4700% | -2.9564% | 8 | 3 |
-| BALANCED_TEST | 1.200% | 156 | 2 | -2.2817% | -2.7691% | 52 | 5 |
+| COST_AWARE | 2.172% | 29 | 0 | -2.4219% | -2.9086% | 9 | 2 |
+| BALANCED_TEST | 1.200% | 157 | 2 | -2.2740% | -2.7614% | 53 | 4 |
 | LOW_HURDLE_CONTROL | 0.500% | 742 | 9 | -2.1328% | -2.6209% | 297 | 5 |
 
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 64 | 49858 | 37969 | 28 | 21 | -2.2503% | 39.679% |
-| COST_AWARE | 78 | 49837 | 37422 | 38 | 27 | -2.4642% | 50.422% |
-| BALANCED_TEST | 373 | 49261 | 37422 | 194 | 134 | -2.2478% | 97.299% |
-| LOW_HURDLE_CONTROL | 1717 | 45253 | 36830 | 851 | 653 | -2.1144% | 100.000% |
+| V4_TAKER_STRICT | 64 | 49875 | 37979 | 28 | 21 | -2.2503% | 39.679% |
+| COST_AWARE | 78 | 49854 | 37432 | 38 | 28 | -2.4146% | 50.955% |
+| BALANCED_TEST | 373 | 49278 | 37432 | 194 | 135 | -2.2391% | 97.317% |
+| LOW_HURDLE_CONTROL | 1717 | 45270 | 36840 | 851 | 653 | -2.1144% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
