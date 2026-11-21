@@ -6,15 +6,15 @@ Frozen at 2026-11-01T19:30:00+00:00
 
 | Candidate | Move threshold | Completed hypotheses | Mean base-cost net | Stress-cost net | Promotable |
 |---|---:|---:|---:|---:|---|
-| STRICT_232BPS | 2.322% | 1 | -3.52014% | -4.00135% | No |
-| COST_AWARE_217BPS | 2.172% | 13 | -1.78879% | -2.27863% | No |
-| BALANCED_120BPS | 1.2% | 78 | -2.12392% | -2.61209% | No |
-| CONTROL_50BPS | 0.5% | 714 | -1.93997% | -2.42905% | No |
+| STRICT_232BPS | 2.322% | 15 | -2.88682% | -3.37119% | No |
+| COST_AWARE_217BPS | 2.172% | 27 | -2.33469% | -2.8218% | No |
+| BALANCED_120BPS | 1.2% | 92 | -2.23313% | -2.72075% | No |
+| CONTROL_50BPS | 0.5% | 715 | -1.94267% | -2.43174% | No |
 
 Censored entries: 17
 Censored exits: 31
 Gaps: 390
-Consecutive observed market-pair intervals: 21645 of 22035 observed transitions. These are NOT missing five-minute Kraken candles.
+Consecutive observed market-pair intervals: 21660 of 22050 observed transitions. These are NOT missing five-minute Kraken candles.
 
 Cash benchmark: zero assumed. Matched buy/hold and statistically robust comparison NOT YET verified.
 Fees are published-spot-tier or labeled assumptions; actual fills unverified.
