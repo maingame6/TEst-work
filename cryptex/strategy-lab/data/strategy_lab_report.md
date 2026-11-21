@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1608 symbol-hours, 3708 missing.
+Recorded 1620 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1005 hypothetical outcomes; censored 7473.
+Closed 1011 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -32,7 +32,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_trend_8 | 13 | 0 | -4.8566 | -5.3311 | 13 |
 | cmf_accumulation_16 | 10 | 0 | -5.2703 | -5.7428 | 10 |
 | cmf_accumulation_32 | 3 | 0 | -5.8076 | -6.2774 | 3 |
-| cmf_accumulation_8 | 13 | 0 | -5.4366 | -5.9082 | 13 |
+| cmf_accumulation_8 | 17 | 0 | -6.2748 | -6.7423 | 17 |
 | donchian_breakout_16 | 3 | 0 | -7.1885 | -7.6514 | 3 |
 | donchian_breakout_32 | 1 | 0 | -7.0711 | -7.5346 | 1 |
 | donchian_breakout_8 | 8 | 0 | -5.9798 | -6.4487 | 8 |
@@ -70,7 +70,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_rebound_32 | 16 | 0 | -6.3346 | -6.8018 | 16 |
 | rsi_rebound_8 | 23 | 0 | -5.1932 | -5.6660 | 23 |
 | rsi_trend_16 | 16 | 0 | -4.9222 | -5.3964 | 16 |
-| rsi_trend_32 | 5 | 0 | -2.3303 | -2.8175 | 5 |
+| rsi_trend_32 | 6 | 0 | -3.5566 | -4.0377 | 6 |
 | rsi_trend_8 | 14 | 0 | -4.3087 | -4.7859 | 14 |
 | sma_trend_16 | 11 | 0 | -5.6574 | -6.1279 | 11 |
 | sma_trend_32 | 8 | 0 | -4.0870 | -4.5653 | 8 |
@@ -82,7 +82,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | stochastic_rebound_32 | 21 | 0 | -5.7766 | -6.2466 | 21 |
 | stochastic_rebound_8 | 12 | 0 | -6.9673 | -7.4313 | 12 |
 | vol_target_momentum_16 | 15 | 0 | -5.1222 | -5.5954 | 15 |
-| vol_target_momentum_32 | 5 | 0 | -2.3303 | -2.8175 | 5 |
+| vol_target_momentum_32 | 6 | 0 | -3.5566 | -4.0377 | 6 |
 | vol_target_momentum_8 | 13 | 0 | -4.6249 | -5.1005 | 13 |
 | volume_breakout_16 | 6 | 0 | -3.7828 | -4.2627 | 6 |
 | volume_breakout_32 | 4 | 0 | -4.3887 | -4.8656 | 4 |
