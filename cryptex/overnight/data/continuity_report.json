@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-21T07:20:42.751333+00:00",
+  "generated_at": "2026-11-21T07:25:37.132614+00:00",
   "mode": "PAPER_ONLY",
   "live_orders": false,
   "policy": "COST_GATE_V4_KRAKEN_TAKER",
   "first_observed_at": "2026-10-31T23:24:36.636109+00:00",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1795245300,
-  "expected_candles": 5857,
-  "observed_candles": 4915,
+  "last_candle_ts": 1795245600,
+  "expected_candles": 5858,
+  "observed_candles": 4916,
   "missing_intervals": 942,
-  "coverage_pct": 83.917,
+  "coverage_pct": 83.919,
   "max_gap_minutes": 550.0,
   "latest_gaps": [
     {
@@ -63,7 +63,7 @@
       "missing_intervals": 1
     }
   ],
-  "days_observed": 20.333,
+  "days_observed": 20.337,
   "main_new_closed_trades": {
     "GAMBLER": 1,
     "HOUSE": 4,
@@ -77,17 +77,17 @@
     "SHOCKWAVE": 3
   },
   "research_new_closed_trades": {
-    "FLUID_ADVECTION": 0,
-    "FLUID_VISCOSITY": 2,
+    "FLUID_ADVECTION": 1,
+    "FLUID_VISCOSITY": 3,
     "GEOMETRIC_DIVERSITY": 2,
-    "ERROR_CODE_CONSENSUS": 2,
-    "GRAPH_COHERENCE": 1,
+    "ERROR_CODE_CONSENSUS": 3,
+    "GRAPH_COHERENCE": 2,
     "LATTICE_ANALOG": 0,
-    "FREQTRADE_STYLE": 2,
-    "QLIB_STYLE": 1,
+    "FREQTRADE_STYLE": 3,
+    "QLIB_STYLE": 2,
     "HUMMINGBOT_FRICTION": 0,
-    "LEAN_EVENT": 2,
-    "NAUTILUS_REGIME": 2
+    "LEAN_EVENT": 3,
+    "NAUTILUS_REGIME": 3
   },
   "minimum_days": 7,
   "minimum_coverage_pct": 99.0,
@@ -115,9 +115,9 @@
     "LEAN_EVENT": false,
     "NAUTILUS_REGIME": false
   },
-  "net_paper_pnl_total": -15.922821,
+  "net_paper_pnl_total": -15.845523,
   "first_policy_equity": 208.880584,
-  "change_since_first_policy_observation": -14.803405,
+  "change_since_first_policy_observation": -14.726107,
   "historical_data_note": "V3 closed trades retain older lower cost assumption; this V4 prospective sample counts only V4-qualified closes. Balance deltas may reflect V3-era holdings.",
   "status": "COLLECTING_WITH_GAPS",
   "caveat": "A ready sample is not a demonstrated edge. Held-out after-cost comparison, uncertainty and regimes still required. Never backfill missing five-minute decisions."

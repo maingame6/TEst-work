@@ -3,11 +3,11 @@
 **Status:** COLLECTING_WITH_GAPS (not an earnings claim)
 **Policy:** COST_GATE_V4_KRAKEN_TAKER / paper only
 **Start:** 2026-10-31T23:24:36.636109+00:00
-**Coverage:** 4915 / 5857 actual closed-candle decisions = 83.917%
+**Coverage:** 4916 / 5858 actual closed-candle decisions = 83.919%
 **Missing five-minute decisions:** 942
 **Largest observed interval:** 550.0 minutes
-**Evidence duration:** 20.333 days (require 7)
-**V4 policy-window paper balance delta:** $-14.803405 (legacy holdings may affect it)
+**Evidence duration:** 20.337 days (require 7)
+**V4 policy-window paper balance delta:** $-14.726107 (legacy holdings may affect it)
 **Review prerequisites:** >=99% coverage and >=30 post-policy exits PER strategy; held-out after-cost superiority still unproven.
 
 ## New completed trades since this policy started
@@ -22,16 +22,16 @@
 - VORTEX: 0 (sample NOT ready)
 - FRACTAL: 0 (sample NOT ready)
 - SHOCKWAVE: 3 (sample NOT ready)
-- FLUID_ADVECTION: 0 (sample NOT ready)
-- FLUID_VISCOSITY: 2 (sample NOT ready)
+- FLUID_ADVECTION: 1 (sample NOT ready)
+- FLUID_VISCOSITY: 3 (sample NOT ready)
 - GEOMETRIC_DIVERSITY: 2 (sample NOT ready)
-- ERROR_CODE_CONSENSUS: 2 (sample NOT ready)
-- GRAPH_COHERENCE: 1 (sample NOT ready)
+- ERROR_CODE_CONSENSUS: 3 (sample NOT ready)
+- GRAPH_COHERENCE: 2 (sample NOT ready)
 - LATTICE_ANALOG: 0 (sample NOT ready)
-- FREQTRADE_STYLE: 2 (sample NOT ready)
-- QLIB_STYLE: 1 (sample NOT ready)
+- FREQTRADE_STYLE: 3 (sample NOT ready)
+- QLIB_STYLE: 2 (sample NOT ready)
 - HUMMINGBOT_FRICTION: 0 (sample NOT ready)
-- LEAN_EVENT: 2 (sample NOT ready)
-- NAUTILUS_REGIME: 2 (sample NOT ready)
+- LEAN_EVENT: 3 (sample NOT ready)
+- NAUTILUS_REGIME: 3 (sample NOT ready)
 
 No gaps or profits have been fabricated. No real orders are placed.
