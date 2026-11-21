@@ -4,8 +4,8 @@
 
 This is NOT every-five-minute cross-exchange execution.
 
-Markets with genuine post-deployment observations: 525
-Distinct forward observations: 2327
+Markets with genuine post-deployment observations: 527
+Distinct forward observations: 2329
 Completed hypothetical round trips: 2
 Censored entries: 34; censored exits: 0
 
@@ -14,11 +14,11 @@ Buy/hold holding periods differ and cannot establish strategy superiority.
 
 | Exchange | Markets observed | Forward observations | Completed simulations |
 |---|---:|---:|---:|
-| kraken | 27 | 543 | 2 |
+| kraken | 28 | 544 | 2 |
 | coinbase | 298 | 638 | 0 |
 | bitstamp | 10 | 440 | 0 |
 | okx | 44 | 302 | 0 |
-| kucoin | 146 | 404 | 0 |
+| kucoin | 147 | 405 | 0 |
 
 | Prespecified gate | Completed | After-cost wins | Mean after costs | Stress mean | Max unit-stake DD |
 |---|---:|---:|---:|---:|---:|
