@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1752 symbol-hours, 3708 missing.
+Recorded 1764 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1085 hypothetical outcomes; censored 7473.
+Closed 1122 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -15,18 +15,18 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | aroon_uptrend_16 | 14 | 0 | -5.4552 | -5.9267 | 14 |
 | aroon_uptrend_32 | 4 | 0 | -5.2841 | -5.7565 | 4 |
 | aroon_uptrend_8 | 13 | 0 | -4.9874 | -5.4613 | 13 |
-| atr_pullback_16 | 24 | 0 | -5.7821 | -6.2520 | 24 |
-| atr_pullback_32 | 24 | 0 | -5.7585 | -6.2286 | 24 |
-| atr_pullback_8 | 24 | 0 | -5.7508 | -6.2209 | 24 |
+| atr_pullback_16 | 29 | 4 | -4.7100 | -5.1853 | 29 |
+| atr_pullback_32 | 29 | 4 | -4.6905 | -5.1659 | 29 |
+| atr_pullback_8 | 29 | 4 | -4.6841 | -5.1595 | 29 |
 | bollinger_breakout_16 | 0 | 0 | — | — | 0 |
 | bollinger_breakout_32 | 0 | 0 | — | — | 0 |
 | bollinger_breakout_8 | 3 | 0 | -4.8506 | -5.3252 | 3 |
-| bollinger_rebound_16 | 18 | 2 | -3.8247 | -4.3044 | 18 |
+| bollinger_rebound_16 | 20 | 4 | -3.3006 | -3.7829 | 20 |
 | bollinger_rebound_32 | 17 | 2 | -3.9827 | -4.4615 | 17 |
 | bollinger_rebound_8 | 8 | 4 | -0.6924 | -1.1877 | 8 |
-| cci_rebound_16 | 24 | 0 | -5.6103 | -6.0811 | 24 |
+| cci_rebound_16 | 28 | 3 | -4.7968 | -5.2716 | 28 |
 | cci_rebound_32 | 23 | 0 | -5.4538 | -5.9253 | 23 |
-| cci_rebound_8 | 24 | 0 | -5.5613 | -6.0324 | 24 |
+| cci_rebound_8 | 26 | 2 | -5.0661 | -5.5396 | 26 |
 | cci_trend_16 | 13 | 0 | -5.2728 | -5.7452 | 13 |
 | cci_trend_32 | 5 | 0 | -6.1230 | -6.5912 | 5 |
 | cci_trend_8 | 14 | 0 | -5.0454 | -5.5190 | 14 |
@@ -56,7 +56,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | macd_trend_8 | 15 | 0 | -4.9670 | -5.4410 | 15 |
 | mfi_recovery_16 | 24 | 1 | -4.8409 | -5.3155 | 24 |
 | mfi_recovery_32 | 19 | 2 | -5.2175 | -5.6902 | 19 |
-| mfi_recovery_8 | 24 | 0 | -5.8318 | -6.3015 | 24 |
+| mfi_recovery_8 | 25 | 0 | -5.7174 | -6.1876 | 25 |
 | momentum_16 | 13 | 0 | -5.9547 | -6.4238 | 13 |
 | momentum_32 | 3 | 0 | -2.6145 | -3.1002 | 3 |
 | momentum_8 | 12 | 0 | -5.2690 | -5.7415 | 12 |
@@ -67,7 +67,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | roc_acceleration_32 | 16 | 0 | -4.4930 | -4.9693 | 16 |
 | roc_acceleration_8 | 21 | 0 | -5.4585 | -5.9301 | 21 |
 | rsi_rebound_16 | 23 | 0 | -5.6987 | -6.1690 | 23 |
-| rsi_rebound_32 | 20 | 1 | -5.3955 | -5.8674 | 20 |
+| rsi_rebound_32 | 21 | 1 | -5.2801 | -5.7525 | 21 |
 | rsi_rebound_8 | 23 | 0 | -5.1932 | -5.6660 | 23 |
 | rsi_trend_16 | 17 | 0 | -4.9318 | -5.4060 | 17 |
 | rsi_trend_32 | 6 | 0 | -3.5566 | -4.0377 | 6 |
@@ -78,9 +78,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | squeeze_breakout_16 | 9 | 0 | -6.1264 | -6.5946 | 9 |
 | squeeze_breakout_32 | 2 | 0 | -7.6196 | -8.0804 | 2 |
 | squeeze_breakout_8 | 13 | 0 | -5.1998 | -5.6727 | 13 |
-| stochastic_rebound_16 | 20 | 0 | -6.1555 | -6.6235 | 20 |
+| stochastic_rebound_16 | 21 | 1 | -5.8093 | -6.2791 | 21 |
 | stochastic_rebound_32 | 22 | 0 | -5.9376 | -6.4067 | 22 |
-| stochastic_rebound_8 | 15 | 0 | -6.1612 | -6.6292 | 15 |
+| stochastic_rebound_8 | 16 | 1 | -5.7065 | -6.1768 | 16 |
 | vol_target_momentum_16 | 15 | 0 | -5.1222 | -5.5954 | 15 |
 | vol_target_momentum_32 | 6 | 0 | -3.5566 | -4.0377 | 6 |
 | vol_target_momentum_8 | 13 | 0 | -4.6249 | -5.1005 | 13 |
@@ -90,9 +90,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | vwap_reclaim_16 | 14 | 0 | -4.7795 | -5.2544 | 14 |
 | vwap_reclaim_32 | 9 | 0 | -4.1492 | -4.6273 | 9 |
 | vwap_reclaim_8 | 21 | 0 | -5.1938 | -5.6666 | 21 |
-| williams_rebound_16 | 24 | 0 | -5.7288 | -6.1990 | 24 |
-| williams_rebound_32 | 24 | 0 | -5.7729 | -6.2429 | 24 |
-| williams_rebound_8 | 24 | 0 | -5.6487 | -6.1193 | 24 |
+| williams_rebound_16 | 28 | 3 | -4.8940 | -5.3683 | 28 |
+| williams_rebound_32 | 25 | 1 | -5.4798 | -5.9512 | 25 |
+| williams_rebound_8 | 29 | 4 | -4.5996 | -5.0755 | 29 |
 
 No winner is approved. OHLCV closes are NOT executable fills.
 A sweep of correlated indicators inflates false positives; require purged walk-forward, block-bootstrap/multiplicity checks, cost stress and independent validation.
