@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1944 symbol-hours, 3708 missing.
+Recorded 1956 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1351 hypothetical outcomes; censored 7473.
+Closed 1353 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -27,12 +27,12 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_rebound_16 | 36 | 5 | -3.8810 | -4.3604 | 36 |
 | cci_rebound_32 | 35 | 4 | -3.8689 | -4.3484 | 35 |
 | cci_rebound_8 | 31 | 5 | -4.1716 | -4.6495 | 31 |
-| cci_trend_16 | 13 | 0 | -5.2728 | -5.7452 | 13 |
+| cci_trend_16 | 14 | 1 | -4.8081 | -5.2828 | 14 |
 | cci_trend_32 | 5 | 0 | -6.1230 | -6.5912 | 5 |
 | cci_trend_8 | 19 | 1 | -4.0895 | -4.5678 | 19 |
 | cmf_accumulation_16 | 11 | 0 | -5.2535 | -5.7260 | 11 |
 | cmf_accumulation_32 | 3 | 0 | -5.8076 | -6.2774 | 3 |
-| cmf_accumulation_8 | 22 | 0 | -5.5840 | -6.0549 | 22 |
+| cmf_accumulation_8 | 23 | 1 | -5.3136 | -5.7859 | 23 |
 | donchian_breakout_16 | 3 | 0 | -7.1885 | -7.6514 | 3 |
 | donchian_breakout_32 | 1 | 0 | -7.0711 | -7.5346 | 1 |
 | donchian_breakout_8 | 9 | 1 | -5.3082 | -5.7805 | 9 |
