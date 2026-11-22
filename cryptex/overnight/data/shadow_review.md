@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-22T01:10:35.886284+00:00
+Generated: 2026-11-22T01:15:34.146556+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -11,7 +11,7 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
 | FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD NEAR |
-| FLUID_VISCOSITY | 9.9312 | 4 | 0 | -0.0688 | HOLD BNB |
+| FLUID_VISCOSITY | 9.9312 | 4 | 0 | -0.0688 | HOLD ETH |
 | GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD NEAR |
 | ERROR_CODE_CONSENSUS | 9.9297 | 7 | 0 | -0.0703 | HOLD NEAR |
 | GRAPH_COHERENCE | 9.9433 | 6 | 0 | -0.0567 | HOLD NEAR |
