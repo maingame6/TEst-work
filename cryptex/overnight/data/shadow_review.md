@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-22T00:20:38.574606+00:00
+Generated: 2026-11-22T00:25:39.130558+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -19,7 +19,7 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 | FREQTRADE_STYLE | 9.9319 | 7 | 0 | -0.0681 | HOLD BTC |
 | QLIB_STYLE | 9.9433 | 6 | 0 | -0.0567 | HOLD BTC |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9434 | 6 | 0 | -0.0566 | HOLD BTC |
+| LEAN_EVENT | 9.9434 | 6 | 0 | -0.0566 | HOLD SOL |
 | NAUTILUS_REGIME | 9.9371 | 7 | 0 | -0.0629 | HOLD SOL |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
