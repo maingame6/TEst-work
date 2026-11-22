@@ -9,12 +9,12 @@ Frozen at 2026-11-01T19:30:00+00:00
 | STRICT_232BPS | 2.322% | 15 | -2.88682% | -3.37119% | No |
 | COST_AWARE_217BPS | 2.172% | 27 | -2.33469% | -2.8218% | No |
 | BALANCED_120BPS | 1.2% | 107 | -2.22819% | -2.71584% | No |
-| CONTROL_50BPS | 0.5% | 794 | -1.92561% | -2.41477% | No |
+| CONTROL_50BPS | 0.5% | 795 | -1.92535% | -2.4145% | No |
 
 Censored entries: 19
 Censored exits: 31
 Gaps: 390
-Consecutive observed market-pair intervals: 23550 of 23940 observed transitions. These are NOT missing five-minute Kraken candles.
+Consecutive observed market-pair intervals: 23565 of 23955 observed transitions. These are NOT missing five-minute Kraken candles.
 
 Cash benchmark: zero assumed. Matched buy/hold and statistically robust comparison NOT YET verified.
 Fees are published-spot-tier or labeled assumptions; actual fills unverified.
