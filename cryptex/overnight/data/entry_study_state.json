@@ -1,44 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795337400,
+  "last_ts": 1795337700,
   "first_ts": 1793488500,
-  "observed_candles": 5222,
+  "observed_candles": 5223,
   "signals": [],
-  "open": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "NEAR",
-      "signal_ts": 1795335600,
-      "entry_ts": 1795335900,
-      "entry_mid": 2.8963,
-      "exit_ts": 1795337700
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "SUI",
-      "signal_ts": 1795335600,
-      "entry_ts": 1795335900,
-      "entry_mid": 0.6482,
-      "exit_ts": 1795337700
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795335600,
-      "entry_ts": 1795335900,
-      "entry_mid": 2.8963,
-      "exit_ts": 1795337700
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795335600,
-      "entry_ts": 1795335900,
-      "entry_mid": 59660.7,
-      "exit_ts": 1795337700
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -12766,40 +12733,92 @@
       "slippage_drag": 0.0050066633,
       "stress_net_return": -0.02192778,
       "paper": true
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "NEAR",
+      "signal_ts": 1795335600,
+      "entry_ts": 1795335900,
+      "exit_ts": 1795337700,
+      "gross_return": 0.0066636743,
+      "net_return": -0.0142561859,
+      "fee_drag": 0.0158990938,
+      "slippage_drag": 0.0050207665,
+      "stress_net_return": -0.0191726752,
+      "paper": true
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "SUI",
+      "signal_ts": 1795335600,
+      "entry_ts": 1795335900,
+      "exit_ts": 1795337700,
+      "gross_return": 0.0001542734,
+      "net_return": -0.0206303125,
+      "fee_drag": 0.0157962853,
+      "slippage_drag": 0.0049883006,
+      "stress_net_return": -0.0255150103,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795335600,
+      "entry_ts": 1795335900,
+      "exit_ts": 1795337700,
+      "gross_return": 0.0066636743,
+      "net_return": -0.0142561859,
+      "fee_drag": 0.0158990938,
+      "slippage_drag": 0.0050207665,
+      "stress_net_return": -0.0191726752,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795335600,
+      "entry_ts": 1795335900,
+      "exit_ts": 1795337700,
+      "gross_return": 0.0006888957,
+      "net_return": -0.0201068004,
+      "fee_drag": 0.015804729,
+      "slippage_drag": 0.0049909671,
+      "stress_net_return": -0.0249941092,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5110,
-      "liquid_candidates": 51719,
-      "move_below_gate": 51620,
-      "volume_below_gate": 39308,
+      "bars": 5111,
+      "liquid_candidates": 51730,
+      "move_below_gate": 51631,
+      "volume_below_gate": 39318,
       "qualified": 64,
       "queued": 28
     },
     "COST_AWARE": {
-      "bars": 5110,
-      "liquid_candidates": 51719,
-      "move_below_gate": 51599,
-      "volume_below_gate": 38744,
+      "bars": 5111,
+      "liquid_candidates": 51730,
+      "move_below_gate": 51610,
+      "volume_below_gate": 38754,
       "qualified": 78,
       "queued": 38
     },
     "BALANCED_TEST": {
-      "bars": 5110,
-      "liquid_candidates": 51719,
-      "move_below_gate": 51021,
-      "volume_below_gate": 38744,
+      "bars": 5111,
+      "liquid_candidates": 51730,
+      "move_below_gate": 51032,
+      "volume_below_gate": 38754,
       "qualified": 375,
       "queued": 196
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5110,
-      "liquid_candidates": 51719,
-      "move_below_gate": 46943,
-      "volume_below_gate": 38130,
+      "bars": 5111,
+      "liquid_candidates": 51730,
+      "move_below_gate": 46954,
+      "volume_below_gate": 38140,
       "qualified": 1749,
       "queued": 869
     }
