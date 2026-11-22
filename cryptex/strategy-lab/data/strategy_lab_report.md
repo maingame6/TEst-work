@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 1800 symbol-hours, 3708 missing.
+Recorded 1812 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1202 hypothetical outcomes; censored 7473.
+Closed 1205 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -32,7 +32,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_trend_8 | 14 | 0 | -5.0454 | -5.5190 | 14 |
 | cmf_accumulation_16 | 11 | 0 | -5.2535 | -5.7260 | 11 |
 | cmf_accumulation_32 | 3 | 0 | -5.8076 | -6.2774 | 3 |
-| cmf_accumulation_8 | 19 | 0 | -6.1361 | -6.6043 | 19 |
+| cmf_accumulation_8 | 20 | 0 | -6.0334 | -6.5020 | 20 |
 | donchian_breakout_16 | 3 | 0 | -7.1885 | -7.6514 | 3 |
 | donchian_breakout_32 | 1 | 0 | -7.0711 | -7.5346 | 1 |
 | donchian_breakout_8 | 8 | 0 | -5.9798 | -6.4487 | 8 |
@@ -67,8 +67,8 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | roc_acceleration_32 | 16 | 0 | -4.4930 | -4.9693 | 16 |
 | roc_acceleration_8 | 21 | 0 | -5.4585 | -5.9301 | 21 |
 | rsi_rebound_16 | 24 | 0 | -5.6542 | -6.1248 | 24 |
-| rsi_rebound_32 | 26 | 1 | -4.5663 | -5.0423 | 26 |
-| rsi_rebound_8 | 25 | 0 | -4.8965 | -5.3709 | 25 |
+| rsi_rebound_32 | 27 | 2 | -4.3331 | -4.8103 | 27 |
+| rsi_rebound_8 | 26 | 0 | -4.7239 | -5.1991 | 26 |
 | rsi_trend_16 | 17 | 0 | -4.9318 | -5.4060 | 17 |
 | rsi_trend_32 | 6 | 0 | -3.5566 | -4.0377 | 6 |
 | rsi_trend_8 | 15 | 0 | -4.5214 | -4.9977 | 15 |
