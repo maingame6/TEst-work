@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2016 symbol-hours, 3708 missing.
+Recorded 2028 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1594 hypothetical outcomes; censored 7473.
+Closed 1614 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -12,7 +12,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_16 | 26 | 3 | -3.0493 | -3.5329 | 26 |
 | adx_uptrend_32 | 0 | 0 | — | — | 0 |
 | adx_uptrend_8 | 31 | 4 | -2.9205 | -3.4047 | 31 |
-| aroon_uptrend_16 | 16 | 0 | -4.9592 | -5.4332 | 16 |
+| aroon_uptrend_16 | 24 | 1 | -3.8586 | -4.3381 | 24 |
 | aroon_uptrend_32 | 4 | 0 | -5.2841 | -5.7565 | 4 |
 | aroon_uptrend_8 | 25 | 4 | -2.7935 | -3.2783 | 25 |
 | atr_pullback_16 | 36 | 6 | -4.0183 | -4.4970 | 36 |
@@ -51,9 +51,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | macd_acceleration_16 | 25 | 3 | -3.5987 | -4.0795 | 25 |
 | macd_acceleration_32 | 25 | 3 | -3.5987 | -4.0795 | 25 |
 | macd_acceleration_8 | 25 | 3 | -3.5987 | -4.0795 | 25 |
-| macd_trend_16 | 15 | 0 | -4.9670 | -5.4410 | 15 |
-| macd_trend_32 | 15 | 0 | -4.9670 | -5.4410 | 15 |
-| macd_trend_8 | 15 | 0 | -4.9670 | -5.4410 | 15 |
+| macd_trend_16 | 18 | 0 | -4.4166 | -4.8933 | 18 |
+| macd_trend_32 | 18 | 0 | -4.4166 | -4.8933 | 18 |
+| macd_trend_8 | 18 | 0 | -4.4166 | -4.8933 | 18 |
 | mfi_recovery_16 | 34 | 6 | -3.5179 | -3.9991 | 34 |
 | mfi_recovery_32 | 26 | 7 | -3.6516 | -4.1321 | 26 |
 | mfi_recovery_8 | 36 | 8 | -3.8827 | -4.3621 | 36 |
@@ -67,9 +67,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | roc_acceleration_32 | 16 | 0 | -4.4930 | -4.9693 | 16 |
 | roc_acceleration_8 | 33 | 3 | -3.7556 | -4.2356 | 33 |
 | rsi_rebound_16 | 35 | 4 | -4.0854 | -4.5638 | 35 |
-| rsi_rebound_32 | 28 | 3 | -4.1521 | -4.6302 | 28 |
+| rsi_rebound_32 | 30 | 3 | -3.9921 | -4.4710 | 30 |
 | rsi_rebound_8 | 35 | 6 | -3.4324 | -3.9140 | 35 |
-| rsi_trend_16 | 24 | 0 | -4.0560 | -4.5345 | 24 |
+| rsi_trend_16 | 25 | 0 | -3.9401 | -4.4192 | 25 |
 | rsi_trend_32 | 6 | 0 | -3.5566 | -4.0377 | 6 |
 | rsi_trend_8 | 26 | 3 | -2.9285 | -3.4127 | 26 |
 | sma_trend_16 | 11 | 0 | -5.6574 | -6.1279 | 11 |
