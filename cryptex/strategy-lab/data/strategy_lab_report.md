@@ -2,16 +2,16 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2004 symbol-hours, 3708 missing.
+Recorded 2016 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1586 hypothetical outcomes; censored 7473.
+Closed 1594 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
 |---|---:|---:|---:|---:|---:|
 | adx_uptrend_16 | 26 | 3 | -3.0493 | -3.5329 | 26 |
 | adx_uptrend_32 | 0 | 0 | — | — | 0 |
-| adx_uptrend_8 | 30 | 4 | -2.9740 | -3.4579 | 30 |
+| adx_uptrend_8 | 31 | 4 | -2.9205 | -3.4047 | 31 |
 | aroon_uptrend_16 | 16 | 0 | -4.9592 | -5.4332 | 16 |
 | aroon_uptrend_32 | 4 | 0 | -5.2841 | -5.7565 | 4 |
 | aroon_uptrend_8 | 25 | 4 | -2.7935 | -3.2783 | 25 |
@@ -41,7 +41,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | efficiency_trend_8 | 24 | 1 | -3.6664 | -4.1469 | 24 |
 | ema_trend_16 | 11 | 0 | -4.8967 | -5.3710 | 11 |
 | ema_trend_32 | 3 | 0 | -4.1846 | -4.6624 | 3 |
-| ema_trend_8 | 17 | 1 | -3.8865 | -4.3659 | 17 |
+| ema_trend_8 | 22 | 1 | -3.3766 | -3.8585 | 22 |
 | keltner_breakout_16 | 1 | 0 | -1.0940 | -1.5873 | 1 |
 | keltner_breakout_32 | 1 | 0 | -1.9114 | -2.4006 | 1 |
 | keltner_breakout_8 | 0 | 0 | — | — | 0 |
@@ -65,7 +65,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | obv_confirmation_8 | 28 | 0 | -3.9673 | -4.4463 | 28 |
 | roc_acceleration_16 | 24 | 3 | -3.0990 | -3.5823 | 24 |
 | roc_acceleration_32 | 16 | 0 | -4.4930 | -4.9693 | 16 |
-| roc_acceleration_8 | 32 | 3 | -3.8319 | -4.3115 | 32 |
+| roc_acceleration_8 | 33 | 3 | -3.7556 | -4.2356 | 33 |
 | rsi_rebound_16 | 35 | 4 | -4.0854 | -4.5638 | 35 |
 | rsi_rebound_32 | 28 | 3 | -4.1521 | -4.6302 | 28 |
 | rsi_rebound_8 | 35 | 6 | -3.4324 | -3.9140 | 35 |
@@ -74,7 +74,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_trend_8 | 26 | 3 | -2.9285 | -3.4127 | 26 |
 | sma_trend_16 | 11 | 0 | -5.6574 | -6.1279 | 11 |
 | sma_trend_32 | 8 | 0 | -4.0870 | -4.5653 | 8 |
-| sma_trend_8 | 23 | 0 | -3.7525 | -4.2325 | 23 |
+| sma_trend_8 | 24 | 0 | -3.6896 | -4.1699 | 24 |
 | squeeze_breakout_16 | 15 | 0 | -4.4732 | -4.9496 | 15 |
 | squeeze_breakout_32 | 2 | 0 | -7.6196 | -8.0804 | 2 |
 | squeeze_breakout_8 | 25 | 1 | -3.5625 | -4.0435 | 25 |

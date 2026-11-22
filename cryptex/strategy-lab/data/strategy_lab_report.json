@@ -4,7 +4,7 @@
   "real_orders": false,
   "independent_of_210_paper_wallets": true,
   "writer_access": false,
-  "generated_at": "2026-11-22T16:11:05.898343+00:00",
+  "generated_at": "2026-11-22T17:11:07.335529+00:00",
   "config_hash": "43936e93e138e0b1db1c2c09da43d7aa28bf38f33625589802fbccb6a9a65f5e",
   "family_count": 28,
   "candidate_count": 84,
@@ -23,29 +23,29 @@
     "XLM"
   ],
   "latest_observed_hour_ts_by_symbol": {
-    "BTC": 1795359600,
-    "ETH": 1795359600,
-    "SOL": 1795359600,
-    "XRP": 1795359600,
-    "ADA": 1795359600,
-    "DOGE": 1795359600,
-    "LTC": 1795359600,
-    "LINK": 1795359600,
-    "BCH": 1795359600,
-    "DOT": 1795359600,
-    "AVAX": 1795359600,
-    "XLM": 1795359600
+    "BTC": 1795363200,
+    "ETH": 1795363200,
+    "SOL": 1795363200,
+    "XRP": 1795363200,
+    "ADA": 1795363200,
+    "DOGE": 1795363200,
+    "LTC": 1795363200,
+    "LINK": 1795363200,
+    "BCH": 1795363200,
+    "DOT": 1795363200,
+    "AVAX": 1795363200,
+    "XLM": 1795363200
   },
   "indicator_count": 47,
-  "observed_symbol_hours": 2004,
+  "observed_symbol_hours": 2016,
   "missing_symbol_hours": 3708,
-  "observation_coverage_pct": 35.084,
-  "closed_hypotheses": 1586,
+  "observation_coverage_pct": 35.2201,
+  "closed_hypotheses": 1594,
   "censored_hypotheses": 7473,
-  "open_hypotheses": 590,
-  "queued_hypotheses": 18,
-  "signals": 9667,
-  "days_observed": 19.775,
+  "open_hypotheses": 600,
+  "queued_hypotheses": 30,
+  "signals": 9697,
+  "days_observed": 19.816,
   "heldout_starts_at": "2026-11-10T00:00:00+00:00",
   "review_minimum_closes_per_candidate": 60,
   "review_minimum_days": 30,
@@ -60,12 +60,12 @@
   },
   "candidates": {
     "sma_trend_8": {
-      "closed": 23,
-      "holdout_closed": 23,
+      "closed": 24,
+      "holdout_closed": 24,
       "wins_after_cost": 0,
-      "mean_after_cost_pct": -3.75251,
-      "mean_stress_pct": -4.23255,
-      "mean_heldout_pct": -3.75251,
+      "mean_after_cost_pct": -3.68956,
+      "mean_stress_pct": -4.16991,
+      "mean_heldout_pct": -3.68956,
       "eligible_to_promote": false
     },
     "sma_trend_16": {
@@ -87,12 +87,12 @@
       "eligible_to_promote": false
     },
     "ema_trend_8": {
-      "closed": 17,
-      "holdout_closed": 17,
+      "closed": 22,
+      "holdout_closed": 22,
       "wins_after_cost": 1,
-      "mean_after_cost_pct": -3.88654,
-      "mean_stress_pct": -4.36592,
-      "mean_heldout_pct": -3.88654,
+      "mean_after_cost_pct": -3.3766,
+      "mean_stress_pct": -3.85852,
+      "mean_heldout_pct": -3.3766,
       "eligible_to_promote": false
     },
     "ema_trend_16": {
@@ -573,12 +573,12 @@
       "eligible_to_promote": false
     },
     "adx_uptrend_8": {
-      "closed": 30,
-      "holdout_closed": 30,
+      "closed": 31,
+      "holdout_closed": 31,
       "wins_after_cost": 4,
-      "mean_after_cost_pct": -2.974,
-      "mean_stress_pct": -3.45792,
-      "mean_heldout_pct": -2.974,
+      "mean_after_cost_pct": -2.92048,
+      "mean_stress_pct": -3.40468,
+      "mean_heldout_pct": -2.92048,
       "eligible_to_promote": false
     },
     "adx_uptrend_16": {
@@ -762,12 +762,12 @@
       "eligible_to_promote": false
     },
     "roc_acceleration_8": {
-      "closed": 32,
-      "holdout_closed": 32,
+      "closed": 33,
+      "holdout_closed": 33,
       "wins_after_cost": 3,
-      "mean_after_cost_pct": -3.83189,
-      "mean_stress_pct": -4.31154,
-      "mean_heldout_pct": -3.83189,
+      "mean_after_cost_pct": -3.75563,
+      "mean_stress_pct": -4.23565,
+      "mean_heldout_pct": -3.75563,
       "eligible_to_promote": false
     },
     "roc_acceleration_16": {
@@ -832,7 +832,7 @@
   ],
   "failed_symbols": {},
   "source": "Kraken public OHLC 60; no private APIs",
-  "archived_hourly_records": 1992,
-  "archive_hash_chain_head": "fdf4b42a738087674e319788ff4715bbc7a297686f2a9045682ab7ad1da23967",
+  "archived_hourly_records": 2004,
+  "archive_hash_chain_head": "45efc7afe36246b5535ff0b511b7959d7a05475a07f3a2cde083bb4372d85248",
   "archive_begins_after_first_initial_run": true
 }
