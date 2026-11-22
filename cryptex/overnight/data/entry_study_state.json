@@ -1,36 +1,44 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795320000,
+  "last_ts": 1795320300,
   "first_ts": 1793488500,
-  "observed_candles": 5164,
-  "signals": [
+  "observed_candles": 5165,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ETH",
       "signal_ts": 1795320000,
-      "observed_move": 0.00737049
+      "entry_ts": 1795320300,
+      "entry_mid": 1661.64,
+      "exit_ts": 1795322100
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "BTC",
       "signal_ts": 1795320000,
-      "observed_move": 0.00726787
+      "entry_ts": 1795320300,
+      "entry_mid": 59357.8,
+      "exit_ts": 1795322100
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
       "signal_ts": 1795320000,
-      "observed_move": 0.00695048
+      "entry_ts": 1795320300,
+      "entry_mid": 69.46,
+      "exit_ts": 1795322100
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XRP",
       "signal_ts": 1795320000,
-      "observed_move": 0.00596371
+      "entry_ts": 1795320300,
+      "entry_mid": 0.91937,
+      "exit_ts": 1795322100
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -12621,34 +12629,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5052,
-      "liquid_candidates": 51318,
-      "move_below_gate": 51219,
-      "volume_below_gate": 39019,
+      "bars": 5053,
+      "liquid_candidates": 51325,
+      "move_below_gate": 51226,
+      "volume_below_gate": 39025,
       "qualified": 64,
       "queued": 28
     },
     "COST_AWARE": {
-      "bars": 5052,
-      "liquid_candidates": 51318,
-      "move_below_gate": 51198,
-      "volume_below_gate": 38458,
+      "bars": 5053,
+      "liquid_candidates": 51325,
+      "move_below_gate": 51205,
+      "volume_below_gate": 38464,
       "qualified": 78,
       "queued": 38
     },
     "BALANCED_TEST": {
-      "bars": 5052,
-      "liquid_candidates": 51318,
-      "move_below_gate": 50622,
-      "volume_below_gate": 38458,
+      "bars": 5053,
+      "liquid_candidates": 51325,
+      "move_below_gate": 50629,
+      "volume_below_gate": 38464,
       "qualified": 373,
       "queued": 194
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5052,
-      "liquid_candidates": 51318,
-      "move_below_gate": 46582,
-      "volume_below_gate": 37851,
+      "bars": 5053,
+      "liquid_candidates": 51325,
+      "move_below_gate": 46587,
+      "volume_below_gate": 37857,
       "qualified": 1729,
       "queued": 860
     }
@@ -12829,6 +12837,38 @@
       "entry_ts": 1795272300,
       "entry_mid": 0.144545,
       "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795320000,
+      "entry_ts": 1795320300,
+      "entry_mid": 1661.64,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795320000,
+      "entry_ts": 1795320300,
+      "entry_mid": 59357.8,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795320000,
+      "entry_ts": 1795320300,
+      "entry_mid": 69.46,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795320000,
+      "entry_ts": 1795320300,
+      "entry_mid": 0.91937,
+      "hold_bars": 48
     }
   ],
   "horizon_trades": [
