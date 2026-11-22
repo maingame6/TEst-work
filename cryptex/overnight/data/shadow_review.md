@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-22T23:15:41.077020+00:00
+Generated: 2026-11-22T23:20:38.400988+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,16 +10,16 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD BTC |
+| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD ADA |
 | FLUID_VISCOSITY | 9.9312 | 4 | 0 | -0.0688 | HOLD SOL |
 | GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD SOL |
-| ERROR_CODE_CONSENSUS | 9.9297 | 7 | 0 | -0.0703 | HOLD XLM |
+| ERROR_CODE_CONSENSUS | 9.9297 | 7 | 0 | -0.0703 | HOLD SOL |
 | GRAPH_COHERENCE | 9.9433 | 6 | 0 | -0.0567 | HOLD SOL |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XLM |
 | FREQTRADE_STYLE | 9.9319 | 7 | 0 | -0.0681 | HOLD SOL |
 | QLIB_STYLE | 9.9433 | 6 | 0 | -0.0567 | HOLD SOL |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9434 | 6 | 0 | -0.0566 | HOLD LTC |
+| LEAN_EVENT | 9.9434 | 6 | 0 | -0.0566 | HOLD UNI |
 | NAUTILUS_REGIME | 9.9371 | 7 | 0 | -0.0629 | HOLD LTC |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
