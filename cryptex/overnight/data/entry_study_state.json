@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795330200,
+  "last_ts": 1795330500,
   "first_ts": 1793488500,
-  "observed_candles": 5198,
+  "observed_candles": 5199,
   "signals": [],
   "open": [
     {
@@ -12696,55 +12696,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5086,
-      "liquid_candidates": 51581,
-      "move_below_gate": 51482,
-      "volume_below_gate": 39218,
+      "bars": 5087,
+      "liquid_candidates": 51586,
+      "move_below_gate": 51487,
+      "volume_below_gate": 39223,
       "qualified": 64,
       "queued": 28
     },
     "COST_AWARE": {
-      "bars": 5086,
-      "liquid_candidates": 51581,
-      "move_below_gate": 51461,
-      "volume_below_gate": 38655,
+      "bars": 5087,
+      "liquid_candidates": 51586,
+      "move_below_gate": 51466,
+      "volume_below_gate": 38660,
       "qualified": 78,
       "queued": 38
     },
     "BALANCED_TEST": {
-      "bars": 5086,
-      "liquid_candidates": 51581,
-      "move_below_gate": 50885,
-      "volume_below_gate": 38655,
+      "bars": 5087,
+      "liquid_candidates": 51586,
+      "move_below_gate": 50890,
+      "volume_below_gate": 38660,
       "qualified": 373,
       "queued": 194
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5086,
-      "liquid_candidates": 51581,
-      "move_below_gate": 46834,
-      "volume_below_gate": 38043,
+      "bars": 5087,
+      "liquid_candidates": 51586,
+      "move_below_gate": 46839,
+      "volume_below_gate": 38048,
       "qualified": 1733,
       "queued": 864
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "UNI",
-      "signal_ts": 1795243800,
-      "entry_ts": 1795244100,
-      "entry_mid": 4.4418,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "AVAX",
-      "signal_ts": 1795243800,
-      "entry_ts": 1795244100,
-      "entry_mid": 6.337,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "BTC",
@@ -19006,6 +18990,30 @@
       "gross_return": 0.0093242752,
       "net_return": -0.011650876,
       "stress_net_return": -0.0165803595
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1795243800,
+      "entry_ts": 1795244100,
+      "exit_ts": 1795330500,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0370795623,
+      "net_return": 0.015527618,
+      "stress_net_return": 0.0104625792
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795243800,
+      "entry_ts": 1795244100,
+      "exit_ts": 1795330500,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.026353164,
+      "net_return": 0.005024129,
+      "stress_net_return": 1.14773e-05
     }
   ],
   "horizon_censored": 603
