@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795422600,
+  "last_ts": 1795422900,
   "first_ts": 1793488500,
-  "observed_candles": 5506,
-  "signals": [
+  "observed_candles": 5507,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
       "signal_ts": 1795422600,
-      "observed_move": 0.00514604
+      "entry_ts": 1795422900,
+      "entry_mid": 72.24,
+      "exit_ts": 1795424700
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -13357,34 +13359,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5394,
-      "liquid_candidates": 54023,
-      "move_below_gate": 53923,
-      "volume_below_gate": 41078,
+      "bars": 5395,
+      "liquid_candidates": 54031,
+      "move_below_gate": 53931,
+      "volume_below_gate": 41085,
       "qualified": 65,
       "queued": 29
     },
     "COST_AWARE": {
-      "bars": 5394,
-      "liquid_candidates": 54023,
-      "move_below_gate": 53902,
-      "volume_below_gate": 40494,
+      "bars": 5395,
+      "liquid_candidates": 54031,
+      "move_below_gate": 53910,
+      "volume_below_gate": 40501,
       "qualified": 79,
       "queued": 39
     },
     "BALANCED_TEST": {
-      "bars": 5394,
-      "liquid_candidates": 54023,
-      "move_below_gate": 53301,
-      "volume_below_gate": 40494,
+      "bars": 5395,
+      "liquid_candidates": 54031,
+      "move_below_gate": 53309,
+      "volume_below_gate": 40501,
       "qualified": 397,
       "queued": 207
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5394,
-      "liquid_candidates": 54023,
-      "move_below_gate": 49080,
-      "volume_below_gate": 39856,
+      "bars": 5395,
+      "liquid_candidates": 54031,
+      "move_below_gate": 49088,
+      "volume_below_gate": 39863,
       "qualified": 1833,
       "queued": 900
     }
@@ -13516,6 +13518,22 @@
       "signal_ts": 1795412400,
       "entry_ts": 1795412700,
       "entry_mid": 200.16,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795422600,
+      "entry_ts": 1795422900,
+      "entry_mid": 72.24,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795422600,
+      "entry_ts": 1795422900,
+      "entry_mid": 72.24,
       "hold_bars": 288
     }
   ],
