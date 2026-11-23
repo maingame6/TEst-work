@@ -1,30 +1,49 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795402800,
+  "last_ts": 1795403100,
   "first_ts": 1793488500,
-  "observed_candles": 5440,
+  "observed_candles": 5441,
   "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795403100,
+      "observed_move": 0.00764186
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795403100,
+      "observed_move": 0.00634178
+    }
+  ],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ETH",
       "signal_ts": 1795402800,
-      "observed_move": 0.00931591
+      "entry_ts": 1795403100,
+      "entry_mid": 1712.54,
+      "exit_ts": 1795404900
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "BTC",
       "signal_ts": 1795402800,
-      "observed_move": 0.00804647
+      "entry_ts": 1795403100,
+      "entry_mid": 60829.9,
+      "exit_ts": 1795404900
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "ADA",
       "signal_ts": 1795402800,
-      "observed_move": 0.00788228
+      "entry_ts": 1795403100,
+      "entry_mid": 0.142983,
+      "exit_ts": 1795404900
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -13135,36 +13154,36 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5328,
-      "liquid_candidates": 53453,
-      "move_below_gate": 53354,
-      "volume_below_gate": 40643,
+      "bars": 5329,
+      "liquid_candidates": 53462,
+      "move_below_gate": 53363,
+      "volume_below_gate": 40649,
       "qualified": 64,
       "queued": 28
     },
     "COST_AWARE": {
-      "bars": 5328,
-      "liquid_candidates": 53453,
-      "move_below_gate": 53333,
-      "volume_below_gate": 40067,
+      "bars": 5329,
+      "liquid_candidates": 53462,
+      "move_below_gate": 53342,
+      "volume_below_gate": 40073,
       "qualified": 78,
       "queued": 38
     },
     "BALANCED_TEST": {
-      "bars": 5328,
-      "liquid_candidates": 53453,
-      "move_below_gate": 52743,
-      "volume_below_gate": 40067,
+      "bars": 5329,
+      "liquid_candidates": 53462,
+      "move_below_gate": 52752,
+      "volume_below_gate": 40073,
       "qualified": 386,
       "queued": 202
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5328,
-      "liquid_candidates": 53453,
-      "move_below_gate": 48588,
-      "volume_below_gate": 39435,
-      "qualified": 1794,
-      "queued": 891
+      "bars": 5329,
+      "liquid_candidates": 53462,
+      "move_below_gate": 48589,
+      "volume_below_gate": 39440,
+      "qualified": 1797,
+      "queued": 893
     }
   },
   "horizon_open": [
@@ -13266,11 +13285,35 @@
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795388400,
-      "entry_ts": 1795388700,
-      "entry_mid": 60786.2,
+      "symbol": "ETH",
+      "signal_ts": 1795402800,
+      "entry_ts": 1795403100,
+      "entry_mid": 1712.54,
       "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795402800,
+      "entry_ts": 1795403100,
+      "entry_mid": 60829.9,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1795402800,
+      "entry_ts": 1795403100,
+      "entry_mid": 0.142983,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1795402800,
+      "entry_ts": 1795403100,
+      "entry_mid": 0.142983,
+      "hold_bars": 288
     }
   ],
   "horizon_trades": [
@@ -19825,6 +19868,18 @@
       "gross_return": -0.0041947716,
       "net_return": -0.0248889784,
       "stress_net_return": -0.0297524356
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795388400,
+      "entry_ts": 1795388700,
+      "exit_ts": 1795403100,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": 0.0007189132,
+      "net_return": -0.0200774067,
+      "stress_net_return": -0.0249648621
     }
   ],
   "horizon_censored": 603
