@@ -1,17 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795469400,
+  "last_ts": 1795469700,
   "first_ts": 1793488500,
-  "observed_candles": 5662,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XLM",
-      "signal_ts": 1795469400,
-      "observed_move": 0.00873073
-    }
-  ],
+  "observed_candles": 5663,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -44,6 +37,14 @@
       "entry_ts": 1795469400,
       "entry_mid": 2.9926,
       "exit_ts": 1795471200
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1795469400,
+      "entry_ts": 1795469700,
+      "entry_mid": 0.130901,
+      "exit_ts": 1795471500
     }
   ],
   "trades": [
@@ -13845,35 +13846,35 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5550,
-      "liquid_candidates": 55876,
-      "move_below_gate": 55707,
-      "volume_below_gate": 42482,
+      "bars": 5551,
+      "liquid_candidates": 55887,
+      "move_below_gate": 55718,
+      "volume_below_gate": 42492,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5550,
-      "liquid_candidates": 55876,
-      "move_below_gate": 55680,
-      "volume_below_gate": 41872,
+      "bars": 5551,
+      "liquid_candidates": 55887,
+      "move_below_gate": 55691,
+      "volume_below_gate": 41881,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5550,
-      "liquid_candidates": 55876,
-      "move_below_gate": 55045,
-      "volume_below_gate": 41872,
+      "bars": 5551,
+      "liquid_candidates": 55887,
+      "move_below_gate": 55056,
+      "volume_below_gate": 41881,
       "qualified": 470,
       "queued": 212
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5550,
-      "liquid_candidates": 55876,
-      "move_below_gate": 50719,
-      "volume_below_gate": 41211,
-      "qualified": 1937,
+      "bars": 5551,
+      "liquid_candidates": 55887,
+      "move_below_gate": 50728,
+      "volume_below_gate": 41220,
+      "qualified": 1938,
       "queued": 924
     }
   },
@@ -14180,6 +14181,14 @@
       "signal_ts": 1795469100,
       "entry_ts": 1795469400,
       "entry_mid": 2.9926,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1795469400,
+      "entry_ts": 1795469700,
+      "entry_mid": 0.130901,
       "hold_bars": 48
     }
   ],
