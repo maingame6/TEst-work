@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795427700,
+  "last_ts": 1795428000,
   "first_ts": 1793488500,
-  "observed_candles": 5523,
+  "observed_candles": 5524,
   "signals": [],
   "open": [],
   "trades": [
@@ -13389,55 +13389,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5411,
-      "liquid_candidates": 54162,
-      "move_below_gate": 54062,
-      "volume_below_gate": 41178,
+      "bars": 5412,
+      "liquid_candidates": 54171,
+      "move_below_gate": 54071,
+      "volume_below_gate": 41184,
       "qualified": 65,
       "queued": 29
     },
     "COST_AWARE": {
-      "bars": 5411,
-      "liquid_candidates": 54162,
-      "move_below_gate": 54041,
-      "volume_below_gate": 40593,
+      "bars": 5412,
+      "liquid_candidates": 54171,
+      "move_below_gate": 54050,
+      "volume_below_gate": 40599,
       "qualified": 79,
       "queued": 39
     },
     "BALANCED_TEST": {
-      "bars": 5411,
-      "liquid_candidates": 54162,
-      "move_below_gate": 53440,
-      "volume_below_gate": 40593,
+      "bars": 5412,
+      "liquid_candidates": 54171,
+      "move_below_gate": 53449,
+      "volume_below_gate": 40599,
       "qualified": 397,
       "queued": 207
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5411,
-      "liquid_candidates": 54162,
-      "move_below_gate": 49216,
-      "volume_below_gate": 39953,
+      "bars": 5412,
+      "liquid_candidates": 54171,
+      "move_below_gate": 49225,
+      "volume_below_gate": 39959,
       "qualified": 1835,
       "queued": 902
     }
   },
   "horizon_open": [
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "UNI",
-      "signal_ts": 1795341300,
-      "entry_ts": 1795341600,
-      "entry_mid": 4.7081,
-      "hold_bars": 288
-    },
-    {
-      "gate": "BALANCED_TEST",
-      "symbol": "ETH",
-      "signal_ts": 1795341300,
-      "entry_ts": 1795341600,
-      "entry_mid": 1709.83,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XLM",
@@ -20367,6 +20351,30 @@
       "gross_return": 0.0054837838,
       "net_return": -0.0154115567,
       "stress_net_return": -0.0203222835
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "UNI",
+      "signal_ts": 1795341300,
+      "entry_ts": 1795341600,
+      "exit_ts": 1795428000,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.006818037,
+      "net_return": -0.0141050311,
+      "stress_net_return": -0.0190222743
+    },
+    {
+      "gate": "BALANCED_TEST",
+      "symbol": "ETH",
+      "signal_ts": 1795341300,
+      "entry_ts": 1795341600,
+      "exit_ts": 1795428000,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0068427855,
+      "net_return": -0.0140807969,
+      "stress_net_return": -0.0189981609
     }
   ],
   "horizon_censored": 603
