@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T19:32:07.928320+00:00",
+  "generated_at": "2026-11-23T00:49:02.535874+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
@@ -8,10 +8,10 @@
   "unique_tested_venue_pairs": 4257,
   "unique_exchange_market_metadata_checked": 4257,
   "unique_ohlcv_requested": 4257,
-  "unique_ohlcv_validated_pairs": 4054,
-  "markets_with_any_historical_signal": 241,
+  "unique_ohlcv_validated_pairs": 4058,
+  "markets_with_any_historical_signal": 240,
   "coverage_pct": 100.0,
-  "batches": 130,
+  "batches": 131,
   "venues": {
     "kraken": {
       "discovered": 1210,
@@ -21,17 +21,17 @@
       "validated_ohlcv_distinct": 1210,
       "last_attempt_valid": 1210,
       "latest_failed": 0,
-      "next_cursor": 786
+      "next_cursor": 792
     },
     "coinbase": {
       "discovered": 857,
       "attempted_distinct": 857,
       "metadata_checked_distinct": 857,
       "ohlcv_requested_distinct": 857,
-      "validated_ohlcv_distinct": 654,
-      "last_attempt_valid": 653,
-      "latest_failed": 204,
-      "next_cursor": 304
+      "validated_ohlcv_distinct": 658,
+      "last_attempt_valid": 657,
+      "latest_failed": 200,
+      "next_cursor": 389
     },
     "bitstamp": {
       "discovered": 237,
@@ -41,7 +41,7 @@
       "validated_ohlcv_distinct": 237,
       "last_attempt_valid": 237,
       "latest_failed": 0,
-      "next_cursor": 196
+      "next_cursor": 201
     },
     "okx": {
       "discovered": 1078,
@@ -51,7 +51,7 @@
       "validated_ohlcv_distinct": 1078,
       "last_attempt_valid": 1078,
       "latest_failed": 0,
-      "next_cursor": 327
+      "next_cursor": 330
     },
     "kucoin": {
       "discovered": 875,
@@ -61,30 +61,30 @@
       "validated_ohlcv_distinct": 875,
       "last_attempt_valid": 875,
       "latest_failed": 0,
-      "next_cursor": 728
+      "next_cursor": 731
     }
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 448,
+      "historical_samples": 420,
       "net_winners": 32,
-      "gross_up_net_down": 143,
-      "weighted_mean_net_pct": -2.590403,
-      "markets_with_samples": 196
+      "gross_up_net_down": 135,
+      "weighted_mean_net_pct": -2.625497,
+      "markets_with_samples": 193
     },
     "cost_aware_momentum": {
-      "historical_samples": 109,
+      "historical_samples": 105,
       "net_winners": 19,
       "gross_up_net_down": 16,
-      "weighted_mean_net_pct": -2.697557,
-      "markets_with_samples": 66
+      "weighted_mean_net_pct": -2.751353,
+      "markets_with_samples": 62
     },
     "breakout": {
-      "historical_samples": 481,
+      "historical_samples": 468,
       "net_winners": 31,
-      "gross_up_net_down": 180,
-      "weighted_mean_net_pct": -2.333046,
-      "markets_with_samples": 214
+      "gross_up_net_down": 181,
+      "weighted_mean_net_pct": -2.332687,
+      "markets_with_samples": 213
     },
     "dip_recovery": {
       "historical_samples": 104,
@@ -127,15 +127,15 @@
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
     "attempted": 102,
-    "validated": 22,
-    "unavailable": 80
+    "validated": 26,
+    "unavailable": 76
   },
-  "latest_unavailable_pairs": 204,
-  "current_spread_snapshots": 108,
+  "latest_unavailable_pairs": 200,
+  "current_spread_snapshots": 109,
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {
-    "markets_observed": 536,
-    "forward_observations": 2470,
+    "markets_observed": 540,
+    "forward_observations": 2496,
     "completed": 2,
     "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution."
   }
