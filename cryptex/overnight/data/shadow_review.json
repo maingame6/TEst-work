@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-23T14:00:37.421131+00:00",
+  "generated_at": "2026-11-23T14:05:37.828650+00:00",
   "paper_only": true,
-  "candle_ts": 1795442100,
-  "cycles": 5619,
+  "candle_ts": 1795442400,
+  "cycles": 5620,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,14 +16,8 @@
       "wins": 0,
       "realized": -0.049744,
       "paper_return": -0.049744,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
-        "symbol": "XRP",
-        "reason": "Volume-weighted 5m momentum acceleration (fluid-flow analogy); score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
-      },
+      "latest_decision": "HOLD TRX",
+      "queued": null,
       "position": null,
       "sample_sufficient": false
     },
@@ -33,66 +27,75 @@
       "wins": 0,
       "realized": -0.068828,
       "paper_return": -0.068828,
-      "latest_decision": "BUY_QUEUED SOL",
+      "latest_decision": "BUY_QUEUED AAVE",
       "queued": {
         "side": "BUY",
-        "symbol": "SOL",
-        "reason": "Momentum less empirical log-return diffusion/noise; score=+0.312, gate=0.14; after-cost candidate screen (not a forecast)",
+        "symbol": "AAVE",
+        "reason": "Momentum less empirical log-return diffusion/noise; score=+0.183, gate=0.14; after-cost candidate screen (not a forecast)",
         "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "signal_ts": 1795442400
       },
       "position": null,
       "sample_sufficient": false
     },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 9.956191,
+      "equity": 9.945826,
       "closed": 4,
       "wins": 0,
       "realized": -0.043809,
-      "paper_return": -0.043809,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.054174,
+      "latest_decision": "FILLED_BUY XRP",
+      "queued": null,
+      "position": {
         "symbol": "XRP",
+        "quantity": 1.0070569881617544,
+        "entry_cost": 0.9956190785980044,
+        "entry_market": 0.97835,
+        "entry_time": 1795442400,
         "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "peak": 0.97835,
+        "cost_gate_version": 4
       },
-      "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.929666,
+      "equity": 9.919328,
       "closed": 7,
       "wins": 0,
       "realized": -0.070334,
-      "paper_return": -0.070334,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.080672,
+      "latest_decision": "FILLED_BUY XRP",
+      "queued": null,
+      "position": {
         "symbol": "XRP",
+        "quantity": 1.004373992825558,
+        "entry_cost": 0.9929665560735516,
+        "entry_market": 0.97835,
+        "entry_time": 1795442400,
         "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "peak": 0.97835,
+        "cost_gate_version": 4
       },
-      "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.943296,
+      "equity": 9.932944,
       "closed": 6,
       "wins": 0,
       "realized": -0.056704,
-      "paper_return": -0.056704,
-      "latest_decision": "BUY_QUEUED SUI",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.067056,
+      "latest_decision": "FILLED_BUY SUI",
+      "queued": null,
+      "position": {
         "symbol": "SUI",
+        "quantity": 1.3988884121967258,
+        "entry_cost": 0.9943295588473211,
+        "entry_market": 0.7034,
+        "entry_time": 1795442400,
         "reason": "Relative-strength shock in asset co-movement graph; score=+1.000, gate=0.09; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "peak": 0.7034,
+        "cost_gate_version": 4
       },
-      "position": null,
       "sample_sufficient": false
     },
     "LATTICE_ANALOG": {
@@ -107,37 +110,43 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.931915,
+      "equity": 9.921575,
       "closed": 7,
       "wins": 0,
       "realized": -0.068085,
-      "paper_return": -0.068085,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.078425,
+      "latest_decision": "FILLED_BUY XRP",
+      "queued": null,
+      "position": {
         "symbol": "XRP",
+        "quantity": 1.0046015270911197,
+        "entry_cost": 0.9931915060599883,
+        "entry_market": 0.97835,
+        "entry_time": 1795442400,
         "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "peak": 0.97835,
+        "cost_gate_version": 4
       },
-      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.943296,
+      "equity": 9.932944,
       "closed": 6,
       "wins": 0,
       "realized": -0.056704,
-      "paper_return": -0.056704,
-      "latest_decision": "BUY_QUEUED SUI",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.067056,
+      "latest_decision": "FILLED_BUY SUI",
+      "queued": null,
+      "position": {
         "symbol": "SUI",
+        "quantity": 1.3988884121967258,
+        "entry_cost": 0.9943295588473211,
+        "entry_market": 0.7034,
+        "entry_time": 1795442400,
         "reason": "Cross-sectional factor rank concept inspired by Microsoft Qlib; score=+0.900, gate=0.09; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "peak": 0.7034,
+        "cost_gate_version": 4
       },
-      "position": null,
       "sample_sufficient": false
     },
     "HUMMINGBOT_FRICTION": {
@@ -152,37 +161,43 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.943368,
+      "equity": 9.933017,
       "closed": 6,
       "wins": 0,
       "realized": -0.056632,
-      "paper_return": -0.056632,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.066983,
+      "latest_decision": "FILLED_BUY XRP",
+      "queued": null,
+      "position": {
         "symbol": "XRP",
+        "quantity": 1.005759997396608,
+        "entry_cost": 0.9943368187400967,
+        "entry_market": 0.97835,
+        "entry_time": 1795442400,
         "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "peak": 0.97835,
+        "cost_gate_version": 4
       },
-      "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.937138,
+      "equity": 9.926793,
       "closed": 7,
       "wins": 0,
       "realized": -0.062862,
-      "paper_return": -0.062862,
-      "latest_decision": "BUY_QUEUED XRP",
-      "queued": {
-        "side": "BUY",
+      "paper_return": -0.073207,
+      "latest_decision": "FILLED_BUY XRP",
+      "queued": null,
+      "position": {
         "symbol": "XRP",
+        "quantity": 1.005129869619031,
+        "entry_cost": 0.9937138478013264,
+        "entry_market": 0.97835,
+        "entry_time": 1795442400,
         "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "cost_gate_version": 4,
-        "signal_ts": 1795442100
+        "peak": 0.97835,
+        "cost_gate_version": 4
       },
-      "position": null,
       "sample_sufficient": false
     }
   },
