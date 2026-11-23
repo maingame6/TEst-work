@@ -1,10 +1,29 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795402500,
+  "last_ts": 1795402800,
   "first_ts": 1793488500,
-  "observed_candles": 5439,
-  "signals": [],
+  "observed_candles": 5440,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795402800,
+      "observed_move": 0.00931591
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795402800,
+      "observed_move": 0.00804647
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1795402800,
+      "observed_move": 0.00788228
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -13116,36 +13135,36 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5327,
-      "liquid_candidates": 53445,
-      "move_below_gate": 53346,
-      "volume_below_gate": 40638,
+      "bars": 5328,
+      "liquid_candidates": 53453,
+      "move_below_gate": 53354,
+      "volume_below_gate": 40643,
       "qualified": 64,
       "queued": 28
     },
     "COST_AWARE": {
-      "bars": 5327,
-      "liquid_candidates": 53445,
-      "move_below_gate": 53325,
-      "volume_below_gate": 40062,
+      "bars": 5328,
+      "liquid_candidates": 53453,
+      "move_below_gate": 53333,
+      "volume_below_gate": 40067,
       "qualified": 78,
       "queued": 38
     },
     "BALANCED_TEST": {
-      "bars": 5327,
-      "liquid_candidates": 53445,
-      "move_below_gate": 52735,
-      "volume_below_gate": 40062,
+      "bars": 5328,
+      "liquid_candidates": 53453,
+      "move_below_gate": 52743,
+      "volume_below_gate": 40067,
       "qualified": 386,
       "queued": 202
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5327,
-      "liquid_candidates": 53445,
+      "bars": 5328,
+      "liquid_candidates": 53453,
       "move_below_gate": 48588,
-      "volume_below_gate": 39430,
-      "qualified": 1791,
-      "queued": 888
+      "volume_below_gate": 39435,
+      "qualified": 1794,
+      "queued": 891
     }
   },
   "horizon_open": [
