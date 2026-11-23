@@ -2,25 +2,25 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795404000; captured candles: 5444.
+Last observed closed candle: 1795404300; captured candles: 5445.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
 
 | Gate | Signal threshold | Closed | Net wins | Mean net | Stress mean net | Gross winners that became net losers | Active |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 2.322% | 24 | 0 | -2.3012% | -2.7885% | 9 | 0 |
-| COST_AWARE | 2.172% | 31 | 0 | -2.3962% | -2.8830% | 10 | 0 |
-| BALANCED_TEST | 1.200% | 169 | 2 | -2.2653% | -2.7528% | 58 | 0 |
+| V4_TAKER_STRICT | 2.322% | 24 | 0 | -2.3012% | -2.7885% | 9 | 1 |
+| COST_AWARE | 2.172% | 31 | 0 | -2.3962% | -2.8830% | 10 | 1 |
+| BALANCED_TEST | 1.200% | 169 | 2 | -2.2653% | -2.7528% | 58 | 5 |
 | LOW_HURDLE_CONTROL | 0.500% | 784 | 9 | -2.1275% | -2.6157% | 320 | 5 |
 
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 65 | 53390 | 40659 | 29 | 23 | -2.2871% | 42.865% |
-| COST_AWARE | 79 | 53369 | 40083 | 39 | 30 | -2.3885% | 52.920% |
-| BALANCED_TEST | 397 | 52769 | 40083 | 207 | 147 | -2.2320% | 97.934% |
-| LOW_HURDLE_CONTROL | 1815 | 48589 | 39450 | 893 | 695 | -2.1096% | 100.000% |
+| V4_TAKER_STRICT | 65 | 53402 | 40667 | 29 | 23 | -2.2871% | 42.865% |
+| COST_AWARE | 79 | 53381 | 40091 | 39 | 30 | -2.3885% | 52.920% |
+| BALANCED_TEST | 397 | 52781 | 40091 | 207 | 147 | -2.2320% | 97.934% |
+| LOW_HURDLE_CONTROL | 1817 | 48593 | 39458 | 893 | 695 | -2.1096% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
