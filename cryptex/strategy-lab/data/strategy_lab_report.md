@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2340 symbol-hours, 3708 missing.
+Recorded 2352 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2243 hypothetical outcomes; censored 7473.
+Closed 2259 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -12,7 +12,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_16 | 36 | 11 | -1.6276 | -2.1182 | 36 |
 | adx_uptrend_32 | 11 | 3 | -1.3041 | -1.7964 | 11 |
 | adx_uptrend_8 | 43 | 12 | -1.5574 | -2.0484 | 43 |
-| aroon_uptrend_16 | 27 | 3 | -3.3253 | -3.8074 | 27 |
+| aroon_uptrend_16 | 28 | 4 | -3.1704 | -3.6534 | 28 |
 | aroon_uptrend_32 | 14 | 1 | -1.9516 | -2.4407 | 14 |
 | aroon_uptrend_8 | 35 | 11 | -1.3623 | -1.8543 | 35 |
 | atr_pullback_16 | 48 | 15 | -2.8185 | -3.3032 | 48 |
@@ -30,9 +30,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_trend_16 | 26 | 1 | -3.4412 | -3.9228 | 26 |
 | cci_trend_32 | 10 | 1 | -3.4991 | -3.9804 | 10 |
 | cci_trend_8 | 34 | 5 | -2.6414 | -3.1270 | 34 |
-| cmf_accumulation_16 | 22 | 3 | -3.1749 | -3.6578 | 22 |
+| cmf_accumulation_16 | 23 | 3 | -3.1143 | -3.5975 | 23 |
 | cmf_accumulation_32 | 9 | 1 | -3.0917 | -3.5751 | 9 |
-| cmf_accumulation_8 | 37 | 8 | -3.1591 | -3.6421 | 37 |
+| cmf_accumulation_8 | 38 | 8 | -3.1017 | -3.5850 | 38 |
 | donchian_breakout_16 | 10 | 0 | -3.2538 | -3.7364 | 10 |
 | donchian_breakout_32 | 2 | 0 | -4.1145 | -4.5927 | 2 |
 | donchian_breakout_8 | 21 | 1 | -3.3544 | -3.8364 | 21 |
@@ -51,9 +51,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | macd_acceleration_16 | 34 | 4 | -2.9997 | -3.4835 | 34 |
 | macd_acceleration_32 | 34 | 4 | -2.9997 | -3.4835 | 34 |
 | macd_acceleration_8 | 34 | 4 | -2.9997 | -3.4835 | 34 |
-| macd_trend_16 | 30 | 3 | -2.8671 | -3.3516 | 30 |
-| macd_trend_32 | 30 | 3 | -2.8671 | -3.3516 | 30 |
-| macd_trend_8 | 30 | 3 | -2.8671 | -3.3516 | 30 |
+| macd_trend_16 | 33 | 4 | -2.6434 | -3.1290 | 33 |
+| macd_trend_32 | 33 | 4 | -2.6434 | -3.1290 | 33 |
+| macd_trend_8 | 33 | 4 | -2.6434 | -3.1290 | 33 |
 | mfi_recovery_16 | 41 | 12 | -2.7042 | -3.1895 | 41 |
 | mfi_recovery_32 | 31 | 9 | -3.2513 | -3.7338 | 31 |
 | mfi_recovery_8 | 45 | 13 | -3.0759 | -3.5593 | 45 |
@@ -64,12 +64,12 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | obv_confirmation_32 | 19 | 8 | -0.8604 | -1.3548 | 19 |
 | obv_confirmation_8 | 36 | 5 | -2.8061 | -3.2909 | 36 |
 | roc_acceleration_16 | 35 | 12 | -1.5016 | -1.9929 | 35 |
-| roc_acceleration_32 | 27 | 3 | -3.1923 | -3.6751 | 27 |
+| roc_acceleration_32 | 28 | 4 | -3.0422 | -3.5258 | 28 |
 | roc_acceleration_8 | 40 | 6 | -3.1735 | -3.6564 | 40 |
 | rsi_rebound_16 | 46 | 14 | -2.8900 | -3.3743 | 46 |
 | rsi_rebound_32 | 33 | 4 | -3.7088 | -4.1891 | 33 |
 | rsi_rebound_8 | 45 | 10 | -2.7345 | -3.2196 | 45 |
-| rsi_trend_16 | 36 | 6 | -2.7367 | -3.2218 | 36 |
+| rsi_trend_16 | 37 | 6 | -2.6647 | -3.1502 | 37 |
 | rsi_trend_32 | 18 | 3 | -2.0423 | -2.5309 | 18 |
 | rsi_trend_8 | 38 | 11 | -1.5881 | -2.0790 | 38 |
 | sma_trend_16 | 22 | 2 | -3.4385 | -3.9201 | 22 |
@@ -81,13 +81,13 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | stochastic_rebound_16 | 38 | 11 | -3.1181 | -3.6014 | 38 |
 | stochastic_rebound_32 | 32 | 5 | -4.0729 | -4.5513 | 32 |
 | stochastic_rebound_8 | 30 | 10 | -2.8362 | -3.3208 | 30 |
-| vol_target_momentum_16 | 28 | 1 | -3.5204 | -4.0016 | 28 |
+| vol_target_momentum_16 | 29 | 2 | -3.3420 | -3.8241 | 29 |
 | vol_target_momentum_32 | 18 | 2 | -2.0191 | -2.5077 | 18 |
 | vol_target_momentum_8 | 35 | 10 | -1.3772 | -1.8691 | 35 |
 | volume_breakout_16 | 16 | 3 | -1.8767 | -2.3661 | 16 |
 | volume_breakout_32 | 11 | 2 | -1.9989 | -2.4877 | 11 |
 | volume_breakout_8 | 10 | 3 | -1.2275 | -1.7202 | 10 |
-| vwap_reclaim_16 | 34 | 9 | -1.6462 | -2.1367 | 34 |
+| vwap_reclaim_16 | 35 | 9 | -1.6500 | -2.1405 | 35 |
 | vwap_reclaim_32 | 21 | 4 | -2.4256 | -2.9123 | 21 |
 | vwap_reclaim_8 | 43 | 11 | -2.2882 | -2.7755 | 43 |
 | williams_rebound_16 | 48 | 14 | -2.8264 | -3.3111 | 48 |
