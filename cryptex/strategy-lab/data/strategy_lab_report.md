@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2316 symbol-hours, 3708 missing.
+Recorded 2328 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2224 hypothetical outcomes; censored 7473.
+Closed 2233 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -51,9 +51,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | macd_acceleration_16 | 34 | 4 | -2.9997 | -3.4835 | 34 |
 | macd_acceleration_32 | 34 | 4 | -2.9997 | -3.4835 | 34 |
 | macd_acceleration_8 | 34 | 4 | -2.9997 | -3.4835 | 34 |
-| macd_trend_16 | 27 | 2 | -3.2175 | -3.7002 | 27 |
-| macd_trend_32 | 27 | 2 | -3.2175 | -3.7002 | 27 |
-| macd_trend_8 | 27 | 2 | -3.2175 | -3.7002 | 27 |
+| macd_trend_16 | 29 | 3 | -2.9499 | -3.4339 | 29 |
+| macd_trend_32 | 29 | 3 | -2.9499 | -3.4339 | 29 |
+| macd_trend_8 | 29 | 3 | -2.9499 | -3.4339 | 29 |
 | mfi_recovery_16 | 41 | 12 | -2.7042 | -3.1895 | 41 |
 | mfi_recovery_32 | 31 | 9 | -3.2513 | -3.7338 | 31 |
 | mfi_recovery_8 | 45 | 13 | -3.0759 | -3.5593 | 45 |
@@ -65,11 +65,11 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | obv_confirmation_8 | 36 | 5 | -2.8061 | -3.2909 | 36 |
 | roc_acceleration_16 | 35 | 12 | -1.5016 | -1.9929 | 35 |
 | roc_acceleration_32 | 27 | 3 | -3.1923 | -3.6751 | 27 |
-| roc_acceleration_8 | 38 | 4 | -3.4222 | -3.9039 | 38 |
+| roc_acceleration_8 | 40 | 6 | -3.1735 | -3.6564 | 40 |
 | rsi_rebound_16 | 46 | 14 | -2.8900 | -3.3743 | 46 |
 | rsi_rebound_32 | 33 | 4 | -3.7088 | -4.1891 | 33 |
 | rsi_rebound_8 | 44 | 10 | -2.7860 | -3.2709 | 44 |
-| rsi_trend_16 | 33 | 4 | -3.0166 | -3.5003 | 33 |
+| rsi_trend_16 | 34 | 5 | -2.9144 | -3.3987 | 34 |
 | rsi_trend_32 | 18 | 3 | -2.0423 | -2.5309 | 18 |
 | rsi_trend_8 | 38 | 11 | -1.5881 | -2.0790 | 38 |
 | sma_trend_16 | 22 | 2 | -3.4385 | -3.9201 | 22 |
