@@ -2,15 +2,15 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-23T14:35:46.678997+00:00 (Europe/Dublin)
+Checked: 2026-11-23T14:40:46.567727+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-17T18:01:51.403833+00:00
 
-**Starting paper money $210.00 · Current estimated liquidation $194.6218 · P&L $-15.3782 (-7.32%)**
+**Starting paper money $210.00 · Current estimated liquidation $194.6086 · P&L $-15.3914 (-7.33%)**
 
-Realised $-16.0934; unrealised after estimated future sale costs $+0.7153.
-Open: 3; queued: 2; closed: 193; paper fills in current JSON: 389.
+Realised $-16.0866; unrealised after estimated future sale costs $+0.6952.
+Open: 1; queued: 0; closed: 195; paper fills in current JSON: 391.
 
 Overnight status: MORNING_RECORDED
 
@@ -26,11 +26,11 @@ New paper fills since session started: 0.
 ## Price prediction versus trading costs
 
 Estimated price move needed just to break even on a round trip: **2.122%** (0.80% Kraken Tier 1 taker fee + 0.25% estimated slippage **on each side**).
-Gross-versus-net attribution available on 179 of 193 cached closed trades; earlier records are honestly marked unavailable.
-Attributed gross market movement P&L: $-2.726869;
-Attributed fees + slippage drag: $13.253340;
-Attributed net profit/loss: $-15.980209.
-Gross winners: 97; after-cost winners: 12; gross winners turned into losses by execution friction: 85.
+Gross-versus-net attribution available on 181 of 195 cached closed trades; earlier records are honestly marked unavailable.
+Attributed gross market movement P&L: $-2.678188;
+Attributed fees + slippage drag: $13.295177;
+Attributed net profit/loss: $-15.973365.
+Gross winners: 99; after-cost winners: 14; gross winners turned into losses by execution friction: 85.
 Historical older fills were at lower assumed fees; aggregate lifetime return is mixed-policy. V4-only prospective sample is the primary evidence.
 Stress scenario: 0.80% taker fee + 0.50% slippage EACH WAY; break even 2.634%.
 The independent [cost-aware entry experiments](entry_study_report.md) compare four thresholds and NEVER execute real money.
@@ -40,8 +40,8 @@ Do not claim profitability until fresh after-cost trades demonstrate out-of-samp
 
 | Portfolio | Start USD | Current USD | P&L USD | Realised USD | Closed | Open |
 |---|---:|---:|---:|---:|---:|---:|
-| Original ten traders | 100.00 | 85.1112 | -14.8888 | -15.5889 | 136 | 1 |
-| Eleven maths/OSS traders | 110.00 | 109.5106 | -0.4894 | -0.5045 | 57 | 2 |
+| Original ten traders | 100.00 | 85.1063 | -14.8937 | -15.5889 | 136 | 1 |
+| Eleven maths/OSS traders | 110.00 | 109.5023 | -0.4977 | -0.4977 | 59 | 0 |
 
 ## Buy-and-hold benchmarks (not part of $210)
 
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.1517 | $-1.8483 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $8.0087 | $-1.9913 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.9880 | $-2.0120 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $8.1463 | $-1.8537 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.9804 | $-2.0196 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.9849 | $-2.0151 |
 
 ## 21-agent leaderboard
 
@@ -61,10 +61,10 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 2 | HUMMINGBOT_FRICTION | research | 10.0000 | +0.0000 | +0.0000 | 0 | cash |
 | 3 | GEOMETRIC_DIVERSITY | research | 9.9620 | -0.0380 | -0.0380 | 5 | cash |
 | 4 | SHOCKWAVE | main | 9.9510 | -0.0490 | -0.0490 | 8 | cash |
-| 5 | GRAPH_COHERENCE | research | 9.9509 | -0.0491 | -0.0567 | 6 | SUI |
-| 6 | QLIB_STYLE | research | 9.9509 | -0.0491 | -0.0567 | 6 | SUI |
-| 7 | FLUID_ADVECTION | research | 9.9503 | -0.0497 | -0.0497 | 5 | cash |
-| 8 | LEAN_EVENT | research | 9.9492 | -0.0508 | -0.0508 | 7 | cash |
+| 5 | FLUID_ADVECTION | research | 9.9503 | -0.0497 | -0.0497 | 5 | cash |
+| 6 | LEAN_EVENT | research | 9.9492 | -0.0508 | -0.0508 | 7 | cash |
+| 7 | GRAPH_COHERENCE | research | 9.9467 | -0.0533 | -0.0533 | 7 | cash |
+| 8 | QLIB_STYLE | research | 9.9467 | -0.0533 | -0.0533 | 7 | cash |
 | 9 | NAUTILUS_REGIME | research | 9.9430 | -0.0570 | -0.0570 | 8 | cash |
 | 10 | FREQTRADE_STYLE | research | 9.9377 | -0.0623 | -0.0623 | 8 | cash |
 | 11 | ERROR_CODE_CONSENSUS | research | 9.9355 | -0.0645 | -0.0645 | 8 | cash |
@@ -75,13 +75,13 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 | 16 | HOUSE | main | 9.4463 | -0.5537 | -0.5537 | 10 | cash |
 | 17 | BREAKOUT | main | 9.1568 | -0.8432 | -0.8432 | 7 | cash |
 | 18 | CONTRARIAN | main | 9.1088 | -0.8912 | -0.8912 | 11 | cash |
-| 19 | ROTATOR | main | 7.3662 | -2.6338 | -3.3339 | 9 | BTC |
+| 19 | ROTATOR | main | 7.3613 | -2.6387 | -3.3339 | 9 | BTC |
 | 20 | FRACTAL | main | 6.4792 | -3.5208 | -3.5208 | 25 | cash |
 | 21 | VORTEX | main | 4.9699 | -5.0301 | -5.0301 | 48 | cash |
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1795444200 / 1795444200
+Latest main/shadow candle timestamps: 1795444500 / 1795444500
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.

@@ -1,42 +1,52 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795444200,
+  "last_ts": 1795444500,
   "first_ts": 1793488500,
-  "observed_candles": 5578,
-  "signals": [
+  "observed_candles": 5579,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XRP",
       "signal_ts": 1795444200,
-      "observed_move": 0.00800401
+      "entry_ts": 1795444500,
+      "entry_mid": 0.99866,
+      "exit_ts": 1795446300
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "UNI",
       "signal_ts": 1795444200,
-      "observed_move": 0.0079379
+      "entry_ts": 1795444500,
+      "entry_mid": 5.1801,
+      "exit_ts": 1795446300
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
       "signal_ts": 1795444200,
-      "observed_move": 0.00638436
+      "entry_ts": 1795444500,
+      "entry_mid": 77.21,
+      "exit_ts": 1795446300
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "BCH",
       "signal_ts": 1795444200,
-      "observed_move": 0.00635087
+      "entry_ts": 1795444500,
+      "entry_mid": 210.21,
+      "exit_ts": 1795446300
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "AVAX",
       "signal_ts": 1795444200,
-      "observed_move": 0.00535211
+      "entry_ts": 1795444500,
+      "entry_mid": 7.118,
+      "exit_ts": 1795446300
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -13680,34 +13690,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5466,
-      "liquid_candidates": 54735,
-      "move_below_gate": 54566,
-      "volume_below_gate": 41555,
+      "bars": 5467,
+      "liquid_candidates": 54754,
+      "move_below_gate": 54585,
+      "volume_below_gate": 41572,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5466,
-      "liquid_candidates": 54735,
-      "move_below_gate": 54539,
-      "volume_below_gate": 40959,
+      "bars": 5467,
+      "liquid_candidates": 54754,
+      "move_below_gate": 54558,
+      "volume_below_gate": 40976,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5466,
-      "liquid_candidates": 54735,
-      "move_below_gate": 53907,
-      "volume_below_gate": 40959,
+      "bars": 5467,
+      "liquid_candidates": 54754,
+      "move_below_gate": 53926,
+      "volume_below_gate": 40976,
       "qualified": 470,
       "queued": 212
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5466,
-      "liquid_candidates": 54735,
-      "move_below_gate": 49657,
-      "volume_below_gate": 40314,
+      "bars": 5467,
+      "liquid_candidates": 54754,
+      "move_below_gate": 49676,
+      "volume_below_gate": 40331,
       "qualified": 1923,
       "queued": 912
     }
@@ -14088,6 +14098,46 @@
       "entry_ts": 1795442400,
       "entry_mid": 0.97835,
       "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1795444200,
+      "entry_ts": 1795444500,
+      "entry_mid": 5.1801,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "UNI",
+      "signal_ts": 1795444200,
+      "entry_ts": 1795444500,
+      "entry_mid": 5.1801,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BCH",
+      "signal_ts": 1795444200,
+      "entry_ts": 1795444500,
+      "entry_mid": 210.21,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795444200,
+      "entry_ts": 1795444500,
+      "entry_mid": 7.118,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "AVAX",
+      "signal_ts": 1795444200,
+      "entry_ts": 1795444500,
+      "entry_mid": 7.118,
+      "hold_bars": 288
     }
   ],
   "horizon_trades": [
