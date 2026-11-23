@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-23T07:35:41.968014+00:00",
+  "generated_at": "2026-11-23T07:40:43.302754+00:00",
   "session": "2026-11-22",
   "session_start": "2026-11-22T21:00:40.337858+00:00",
   "status": "IN_PROGRESS",
-  "session_change": 0.066817,
+  "session_change": 0.06654,
   "paper_only": true,
   "money": {
     "starting": 210,
-    "equity": 194.353011,
-    "net_pnl": -15.646989,
+    "equity": 194.352734,
+    "net_pnl": -15.647266,
     "realised": -16.122606,
-    "unrealised": 0.475617,
+    "unrealised": 0.47534,
     "main": {
       "starting": 100.0,
-      "equity": 84.886714,
-      "gross_equity": 84.961999,
-      "pnl": -15.113286,
+      "equity": 84.886437,
+      "gross_equity": 84.961719,
+      "pnl": -15.113563,
       "realised": -15.588903,
       "closed": 136,
       "wins": 7,
@@ -84,7 +84,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "SHOCKWAVE",
@@ -110,7 +110,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD LTC"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "LEAN_EVENT",
@@ -123,7 +123,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XRP"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "GRAPH_COHERENCE",
@@ -136,7 +136,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "QLIB_STYLE",
@@ -162,7 +162,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "FREQTRADE_STYLE",
@@ -284,8 +284,8 @@
     {
       "name": "ROTATOR",
       "portfolio": "main",
-      "equity": 7.14171932,
-      "all_time_pnl": -2.85828068,
+      "equity": 7.1414415,
+      "all_time_pnl": -2.8585585,
       "all_time_closed": 9,
       "session_closed": 0,
       "session_wins": 0,
@@ -340,8 +340,15 @@
       "symbol": "BONK",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 2.066e-06,
-      "latest": 2.13e-06,
-      "change_pct": 3.0978
+      "latest": 2.139e-06,
+      "change_pct": 3.5334
+    },
+    {
+      "symbol": "SOL",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 70.06,
+      "latest": 72.04,
+      "change_pct": 2.8261
     },
     {
       "symbol": "WIF",
@@ -351,11 +358,11 @@
       "change_pct": 2.7454
     },
     {
-      "symbol": "SOL",
+      "symbol": "TON",
       "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 70.06,
-      "latest": 71.98,
-      "change_pct": 2.7405
+      "start": 0.985,
+      "latest": 1.006,
+      "change_pct": 2.132
     },
     {
       "symbol": "DOT",
@@ -365,13 +372,6 @@
       "change_pct": 1.8808
     },
     {
-      "symbol": "TON",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.985,
-      "latest": 1.003,
-      "change_pct": 1.8274
-    },
-    {
       "symbol": "FLOKI",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 1.621e-05,
@@ -379,74 +379,67 @@
       "change_pct": 1.7273
     },
     {
-      "symbol": "UNI",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 4.6876,
-      "latest": 4.7609,
-      "change_pct": 1.5637
-    },
-    {
       "symbol": "SUI",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.6552,
-      "latest": 0.6647,
-      "change_pct": 1.4499
+      "latest": 0.6658,
+      "change_pct": 1.6178
     },
     {
       "symbol": "LTC",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 39.94,
-      "latest": 40.5,
-      "change_pct": 1.4021
+      "latest": 40.55,
+      "change_pct": 1.5273
     },
     {
-      "symbol": "XRP",
+      "symbol": "UNI",
       "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.92536,
-      "latest": 0.93766,
-      "change_pct": 1.3292
+      "start": 4.6876,
+      "latest": 4.7558,
+      "change_pct": 1.4549
     },
     {
       "symbol": "ADA",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.14449,
-      "latest": 0.146274,
-      "change_pct": 1.2347
+      "latest": 0.146524,
+      "change_pct": 1.4077
     },
     {
-      "symbol": "LINK",
+      "symbol": "XRP",
       "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 8.79616,
-      "latest": 8.9016,
-      "change_pct": 1.1987
-    },
-    {
-      "symbol": "XLM",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.12745,
-      "latest": 0.128728,
-      "change_pct": 1.0027
-    },
-    {
-      "symbol": "BCH",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 198.29,
-      "latest": 200.19,
-      "change_pct": 0.9582
-    },
-    {
-      "symbol": "BTC",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 60828.2,
-      "latest": 61405.4,
-      "change_pct": 0.9489
+      "start": 0.92536,
+      "latest": 0.93795,
+      "change_pct": 1.3606
     },
     {
       "symbol": "NEAR",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 2.9717,
-      "latest": 2.9989,
-      "change_pct": 0.9153
+      "latest": 3.0118,
+      "change_pct": 1.3494
+    },
+    {
+      "symbol": "LINK",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 8.79616,
+      "latest": 8.91307,
+      "change_pct": 1.3291
+    },
+    {
+      "symbol": "XLM",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 0.12745,
+      "latest": 0.128906,
+      "change_pct": 1.1424
+    },
+    {
+      "symbol": "BTC",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 60828.2,
+      "latest": 61403.0,
+      "change_pct": 0.945
     },
     {
       "symbol": "SHIB",
@@ -456,57 +449,64 @@
       "change_pct": 0.8662
     },
     {
+      "symbol": "BCH",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 198.29,
+      "latest": 199.78,
+      "change_pct": 0.7514
+    },
+    {
       "symbol": "AVAX",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 6.671,
-      "latest": 6.711,
-      "change_pct": 0.5996
+      "latest": 6.718,
+      "change_pct": 0.7045
     },
     {
       "symbol": "DOGE",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.0551706,
-      "latest": 0.0554879,
-      "change_pct": 0.5751
+      "latest": 0.0554684,
+      "change_pct": 0.5398
     },
     {
       "symbol": "PEPE",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 3.406e-06,
-      "latest": 3.42e-06,
-      "change_pct": 0.411
+      "latest": 3.423e-06,
+      "change_pct": 0.4991
     },
     {
       "symbol": "ETH",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 1718.35,
-      "latest": 1721.78,
-      "change_pct": 0.1996
+      "latest": 1721.43,
+      "change_pct": 0.1792
     },
     {
       "symbol": "BNB",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 556.4,
-      "latest": 556.31,
-      "change_pct": -0.0162
+      "latest": 556.47,
+      "change_pct": 0.0126
     },
     {
       "symbol": "TRX",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.305295,
-      "latest": 0.30504,
-      "change_pct": -0.0835
+      "latest": 0.304956,
+      "change_pct": -0.111
     },
     {
       "symbol": "AAVE",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 98.05,
-      "latest": 97.79,
-      "change_pct": -0.2652
+      "latest": 97.71,
+      "change_pct": -0.3468
     }
   ],
   "equity_curve": {
-    "samples": 128,
+    "samples": 129,
     "low": 194.23365,
     "high": 194.38671,
     "observed_drawdown_pct": -0.0523,
@@ -518,33 +518,33 @@
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 76586.0,
-      "current_mid": 61405.4,
+      "current_mid": 61403.0,
       "start": 10.0,
-      "equity": 7.902171,
-      "pnl": -2.097829,
-      "return_pct": -20.9783,
+      "equity": 7.901862,
+      "pnl": -2.098138,
+      "return_pct": -20.9814,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "ETH": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 2230.44,
-      "current_mid": 1721.78,
+      "current_mid": 1721.43,
       "start": 10.0,
-      "equity": 7.608103,
-      "pnl": -2.391897,
-      "return_pct": -23.919,
+      "equity": 7.606556,
+      "pnl": -2.393444,
+      "return_pct": -23.9344,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "SOL": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 95.3,
-      "current_mid": 71.98,
+      "current_mid": 72.04,
       "start": 10.0,
-      "equity": 7.444031,
-      "pnl": -2.555969,
-      "return_pct": -25.5597,
+      "equity": 7.450236,
+      "pnl": -2.549764,
+      "return_pct": -25.4976,
       "holding": "buy-and-hold; hypothetical sale costs included"
     }
   },
@@ -892,7 +892,7 @@
     "observed": 71,
     "confirmed": 71,
     "polled_at": "2026-11-23T07:10:42.673426+00:00",
-    "age_minutes": 24.99,
+    "age_minutes": 30.01,
     "sectors": {
       "Majors": {
         "requested": 14,
@@ -1340,98 +1340,98 @@
     "newly_tradable_pairs": 0
   },
   "news": {
-    "last_polled": "2026-11-23T06:40:39.829526+00:00",
+    "last_polled": "2026-11-23T07:40:40.052439+00:00",
     "sources_up": 7,
     "total_sources": 8,
-    "new_items": 53,
+    "new_items": 65,
     "weak_sentiment": {
-      "NEUTRAL": 46,
-      "NEGATIVE": 6,
+      "NEUTRAL": 55,
+      "NEGATIVE": 9,
       "POSITIVE": 1
     },
     "top_items": [
       {
-        "title": "Bitcoin sold for $17,000 on Kraken's Canadian dollar market, and the trades stand",
-        "url": "https://www.coindesk.com/markets/2026/11/23/bitcoin-sold-for-usd17-000-on-kraken-s-canadian-dollar-market-and-the-trades-stand",
+        "title": "This Swedish bitcoin treasury firm lost 30 BTC trading part of its own stack",
+        "url": "https://www.coindesk.com/markets/2026/11/23/this-swedish-bitcoin-treasury-firm-lost-30-btc-trading-part-of-its-own-stack",
         "source": "CRYPTODESK",
-        "at": "2026-11-23T06:40:39.829526+00:00",
+        "at": "2026-11-23T07:40:40.052439+00:00",
         "weak_label": "NEUTRAL"
       },
       {
-        "title": "SEC charges 8 firms over fake crypto platforms tied to $37M fraud",
-        "url": "https://cointelegraph.com/news/sec-charges-eight-fake-crypto-platforms-37m-fraud?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "Bitcoin price drops to $60K as Anthropic drops to $87 in tech sell-off",
+        "url": "https://cointelegraph.com/markets/bitcoin-hits-new-20-week-low-anthropic-drops-87-tech-sell-off?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "COINTELEGRAPH",
-        "at": "2026-11-23T06:40:39.829526+00:00",
+        "at": "2026-11-23T07:40:40.052439+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Ark buys $146 million in Anthropic shares last week, trims Ethereum and Solana Staking ETF holdings",
+        "url": "https://www.theblock.co/news/business/2026-11-23-ark-buys-146-million-worth-anthropic-since-debut-444866",
+        "source": "THE_BLOCK",
+        "at": "2026-11-23T07:40:40.052439+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+        "source": "FED_MACRO",
+        "at": "2026-11-23T07:40:40.052439+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "SEC Charges Indianapolis-Based Backward Hat Capital and Its Co-Founders With $560 Million Dollar Offering Fraud and Obtains Emergency Relief",
+        "url": "https://www.sec.gov/newsroom/press-releases/2026-116-sec-charges-indianapolis-based-backward-hat-capital-its-co-founders-560-million-dollar-offering",
+        "source": "SEC_REGULATORY",
+        "at": "2026-11-23T07:40:40.052439+00:00",
         "weak_label": "NEGATIVE"
       },
       {
-        "title": "Spot bitcoin ETFs shed $1.8 billion in past week as outflows become ‘structural’: analysts",
-        "url": "https://www.theblock.co/news/markets/2026-11-23-spot-bitcoin-etfs-shed-1-79-billion-in-past-week-444857",
-        "source": "THE_BLOCK",
-        "at": "2026-11-23T06:40:39.829526+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Rep. Horsford sees opening for House vote on crypto tax bill before Congress ends",
-        "url": "https://www.theblock.co/news/regulation/2026-11-20-rep-horsford-sees-opening-house-vote-crypto-tax-bill-before-congress-ends-444720",
-        "source": "THE_BLOCK",
-        "at": "2026-11-23T06:40:39.829526+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin ETF Exodus Gathers Pace, Removing Key Source of Support - Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbFRHSHp2V2lIcEtIMlBTNVVIM0JyVzNCZmMyV21NdzNVZlBOU3lRRm10TXVEeHZJZ1VzZHdPYlRQTWhwUkZBRTFObmlURmlFT2lFREJxXzVkZE1SWjZjMmpmWUtyRXdqOWs2ZWRBeUJJdkRKcU1UQnQwd3RxY1RKSXd2TDdvN0lJdzB5LUlndFVOSzNlRzgtTDN2cm1ObE96eU5GMXJrOXA0dGhheEI0VVdUZw?oc=5",
+        "title": "This Swedish bitcoin treasury firm lost 30 BTC trading part of its own stack - CoinDesk",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOcC1ZNHRwU0JlallHUmI0TWd4eWlfOHBfSHdsVTZTeTNUenZacFRBNlY3bXczdTJ4VlBpdlpHOUdVbzhLaEtIcjQ0QTBYRGVYdmdqZmNSTUtoMUttN2xjc2JOdHF4aGF2aGZGRkpSN0ctbzBxS0lnSEM4azktUnVzX2had3NsT2szQmVWaFhzQ3I4c1dmLUcxMWRhRHlwYUY2eEZqSkFJeFNHbjJYTEh6a0h0NHpHNUdsQ2tVag?oc=5",
         "source": "SEARCH_RADAR",
-        "at": "2026-11-23T06:40:39.829526+00:00",
+        "at": "2026-11-23T07:40:40.052439+00:00",
         "weak_label": "NEUTRAL"
       },
       {
-        "title": "Bitcoin, XRP plunged more than 70% on Kraken, and buyers get to keep cheap coins - CoinDesk",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONFlvOWxMWFAzZVZJVGNYazEyUlVWdzJ3V21hd1lpdnkxSXB5YkN1NXViSlJSNWwyM1BhWUg2bjc0WGRPUHhJWUw2dHh0XzJER1U4amtTS0RyVGNkdmJ6am5NWlp0QlRWdldtSGUzdWVVVDIxMDRXdnlTSmZlaTd1VW9wOFBVaFRCVXNqa0hOSXd0S2pyVUlaZGtUR3FjQ2xRd094VFF1QjlCRjE1NDhwVllydGpUd0FtWmg3ZEpLcFdpNHNj?oc=5",
+        "title": "Crypto News: Pepeto Clears $11.311M While Whales Buy the Bitcoin Price Crash and a $250,000 Bitcoin Price Prediction Holds - markets.businessinsider.com",
+        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQc2ZHbzhoOHhlZDZ6TVhEWm5RMmlZUzJpdVR4NlV0VTNfX29hd3J6cDc0V1NWQkgwdER4Rl9acEM5blZaRGVBbHo0X1liLUNMLWs4bTk0VkxkVDNYT0NGRWtjYmJnVEwyMlZLMERsT2k4eTVRdERlZl92RDBVS0tJOHhBREpucXRoazBxcDlXMGhpREg2QVdxell5QURjTE5ETkVyZkY0Z3RwY1RPYmJuQlVEZFhyQ2dObWNQRXVpbzFWbG9lSFh1M0F2ZnpRMTg3ci1hQWIxaWNReHNUMHYzMmJpenZjR0hRZVpFb3BYd1I0bGRYOGJweHFUYXN2SFlhNy11eUczU0ZfQQ?oc=5",
         "source": "SEARCH_RADAR",
-        "at": "2026-11-23T06:40:39.829526+00:00",
-        "weak_label": "NEUTRAL"
+        "at": "2026-11-23T07:40:40.052439+00:00",
+        "weak_label": "NEGATIVE"
       },
       {
-        "title": "iShares: Next Bitcoin Halving Will Cut Daily Issuance to 225 BTC - Bitbo",
-        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9nbUhHTlV0SzVtRlVKZ2FORXZBMDBpZ0dzY2NhNlVleUp5NERhOXBMa1NuUjNMSWl4ODJockdyb2hWUC1ZMTBwcUx0MEFqNGtHUW9tUUZNT21sMlRSdEppM0ZDa2hsZw?oc=5",
+        "title": "Bitcoin Climbs Above $61,000 as Wall Street Hopes for a Rebound - www.trendingtopics.eu",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5hVEdPZTNkVGhhR240NVROUURvU0Q2aGpzUXRVNnBqS0RhYzJzcGNlM19SZjMwaU1UbDB5Ny1ZYl9jVFo0d3BvZWlueTBKMGJWQ0pSdS04NEt2Rm1VRVRZZFR0TlZKN2UwbXpBdVRpeTNxUmtCYjBmS3FjbDhBcDA?oc=5",
         "source": "SEARCH_RADAR",
-        "at": "2026-11-23T06:40:39.829526+00:00",
+        "at": "2026-11-23T07:40:40.052439+00:00",
         "weak_label": "NEUTRAL"
       },
       {
-        "title": "Spot bitcoin ETFs shed $1.8 billion in past week as outflows become 'structural': analysts - The Block",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOX3EtT0Z0WEljXy1BLWpiOGlXN3VYZjBIN0FFcDcyUFdpSVl3ZzVKNE9lRVBJOUR4R1JhV2diZWxfdmlKc29VU2xFUTBCMWJMNVIzZm5uV3djVUlRSnlLSjY4a2RCWUh2ay15YW5DclV2RVoxWHQxd0xyS1BQS1BIbHIyVzFqeEZuNG5WdHhGSjctY0F2YTU0eE9hYnd1VlVwaEV6UVJB?oc=5",
+        "title": "Crypto News Today: Bitcoin and Ethereum Bounce Back - Cryptonews",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE52U3liY1dCSnlhSG1tVEsydGJjNnFOS1ZfV0lLODlkSTF3U0JUSTl2Yi03bkdhbVZOc2dfMXVKVnF6Y1N1ZjhQWmJ1M3RtTU5UZUJ3QS1iWkZldlZMbExweEtNQXhyUVBaMzZFNmxVRlJzWWdW?oc=5",
         "source": "SEARCH_RADAR",
-        "at": "2026-11-23T06:40:39.829526+00:00",
+        "at": "2026-11-23T07:40:40.052439+00:00",
         "weak_label": "NEUTRAL"
       },
       {
-        "title": "Strategy's Bitcoin Stack Is 22% Underwater. Peter Schiff Says It's ‘About to Blow Up' - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5pYXlXS29LWTJTbEZEb0U4MzlleWsyamY5cmVieU9aOHVKRHp3OGxETDBIVTVudTE0bF84T1lGVkVvZ3pXaUM3SW00WHMyTURLQXpTRGFoaTlMT1ZJV1UyY05YRU0zX05uUXZ5OUM1NWM?oc=5",
+        "title": "Bitcoin rebounds above $61,000 after liquidation-driven selloff - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOU3NYeFo3SHFPSGY4UTh5d0JtTjlYTnZhSU5RblNXc1Q1Rk00WTZEdVpJNGdEX2pPMXM4a09uWXU1eXRnNUZDOW0yRTJGZnZQQ0pwS28wSTZjN29nOUNJNUlzNG9zSWpSMUthei1nSHlRaGpOd1lnSXVfWjZZZmNKYWFyVllBeS1tT0x4dUVQaUptdFlLQ2RtQ1ZsNVVXTUJNVXdSaHktdFJzVGxPNThxU0k3SXNRcU9oOGxv?oc=5",
         "source": "SEARCH_RADAR",
-        "at": "2026-11-23T06:40:39.829526+00:00",
-        "weak_label": "NEUTRAL"
+        "at": "2026-11-23T07:40:40.052439+00:00",
+        "weak_label": "NEGATIVE"
       },
       {
-        "title": "BITCOIN: HISTORY SAYS THIS HAPPENS NEXT... - Howl.Link",
-        "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE8zYkRZMkRBcl9QemZxeVlyZzFBOFMwQ1RVY0VJTDhEOE5fSUdhQlhUVzNHek9VdGRpU1lj?oc=5",
+        "title": "5 key events that could move Bitcoin price this week - Crypto News",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBpa2k4SmFDRHZxTVh2QmYtOFVBQmQxVWVhUTg1OGgwWWZzb2lCX0ZtNmpmVlR5N0pDeU9CSDB2Yk9aWnRTUDAyMHNEYVpzTmNyR2cxUERuZlpWX1lhSXJzMDZkY19lZkZyX1V5WFNhVTBWTEZxSGc?oc=5",
         "source": "SEARCH_RADAR",
-        "at": "2026-11-23T06:40:39.829526+00:00",
+        "at": "2026-11-23T07:40:40.052439+00:00",
         "weak_label": "NEUTRAL"
       },
       {
-        "title": "Bitcoin's $60K Reclaim Is a Leverage Story, Not a Demand Story - Blockhead",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOV3dvcERNbldSb01UbGJ0eEVLSjlVZ0xfbkVMNXpsTGtjWlJJSUQyNUxfWUtlcV9wNG5hV1QyRWxGam5hbllWLTJITGRIdUtjbXpKOC1MTWhkaVpBTE5ieWx0VGJha2RsZjJpd2hTNWZnR2JBZFliS2pkRFpYTnhjYlhJS2tzZlU3bTlMc3lNMlY5QVE1dG96SFZIcVY?oc=5",
+        "title": "Ark buys $146 million in Anthropic shares last week, trims Ethereum and Solana Staking ETF holdings - The Block",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPR2FFc2tTNVUzSzg2R19hOXVxOUo2VnQ2c3UzZWw1U2JpelZNdkxPa3dOY1NtRER3ejVJcS1LUG0yR1RxYTg4U1o5RmdvNU4zNDNyUW9udDljcnlkN1hGVGN2ZUJBcEJTa2IwWWxlSXZCR1Q2N29yNVNnWDUyaHVsc051N3o3YnBUMWZMcTlsYklUM1VjZHptUGYzU2tSb3Z1RGM1UmQ5bw?oc=5",
         "source": "SEARCH_RADAR",
-        "at": "2026-11-23T06:40:39.829526+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Market rout kills 50 basis points December Fed rate hike bets",
-        "url": "https://www.coindesk.com/markets/2026/11/23/market-rout-kills-50-basis-points-december-fed-rate-hike-bets",
-        "source": "CRYPTODESK",
-        "at": "2026-11-23T05:35:41.436018+00:00",
+        "at": "2026-11-23T07:40:40.052439+00:00",
         "weak_label": "NEUTRAL"
       }
     ],
@@ -1443,62 +1443,62 @@
     "rule_based_review_capacity": 640,
     "latest": {
       "GAMBLER": {
-        "support": 5,
-        "opposition": 18,
+        "support": 4,
+        "opposition": 19,
         "vetoes": 0,
         "action": "HOLD"
       },
       "HOUSE": {
-        "support": 17,
-        "opposition": 6,
+        "support": 18,
+        "opposition": 5,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SPY": {
-        "support": 19,
-        "opposition": 9,
+        "support": 20,
+        "opposition": 7,
         "vetoes": 0,
         "action": "HOLD"
       },
       "MEME HUNTER": {
-        "support": 6,
-        "opposition": 20,
+        "support": 5,
+        "opposition": 23,
         "vetoes": 1,
         "action": "HOLD"
       },
       "BREAKOUT": {
-        "support": 5,
-        "opposition": 18,
+        "support": 4,
+        "opposition": 19,
         "vetoes": 0,
         "action": "HOLD"
       },
       "CONTRARIAN": {
-        "support": 17,
-        "opposition": 6,
+        "support": 18,
+        "opposition": 5,
         "vetoes": 0,
         "action": "HOLD"
       },
       "ROTATOR": {
-        "support": 5,
-        "opposition": 18,
+        "support": 4,
+        "opposition": 19,
         "vetoes": 0,
         "action": "HOLD"
       },
       "VORTEX": {
-        "support": 5,
-        "opposition": 18,
+        "support": 4,
+        "opposition": 19,
         "vetoes": 0,
         "action": "HOLD"
       },
       "FRACTAL": {
-        "support": 5,
-        "opposition": 18,
+        "support": 4,
+        "opposition": 19,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SHOCKWAVE": {
-        "support": 6,
-        "opposition": 20,
+        "support": 5,
+        "opposition": 23,
         "vetoes": 1,
         "action": "HOLD"
       }
@@ -1512,7 +1512,7 @@
   "health": {
     "trigger": "workflow_dispatch",
     "cron_verified": true,
-    "run_id": "45132185251",
+    "run_id": "45132785576",
     "data": {
       "main_stale": false,
       "research_stale": false,
