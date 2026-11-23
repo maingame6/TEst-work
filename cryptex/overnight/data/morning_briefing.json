@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-23T07:05:44.908016+00:00",
+  "generated_at": "2026-11-23T07:10:42.673426+00:00",
   "session": "2026-11-22",
   "session_start": "2026-11-22T21:00:40.337858+00:00",
   "status": "IN_PROGRESS",
-  "session_change": 0.071552,
+  "session_change": 0.069214,
   "paper_only": true,
   "money": {
     "starting": 210,
-    "equity": 194.357746,
-    "net_pnl": -15.642254,
+    "equity": 194.355408,
+    "net_pnl": -15.644592,
     "realised": -16.122606,
-    "unrealised": 0.480352,
+    "unrealised": 0.478014,
     "main": {
       "starting": 100.0,
-      "equity": 84.891449,
-      "gross_equity": 84.966784,
-      "pnl": -15.108551,
+      "equity": 84.889111,
+      "gross_equity": 84.964421,
+      "pnl": -15.110889,
       "realised": -15.588903,
       "closed": 136,
       "wins": 7,
@@ -58,7 +58,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XRP"
+      "decision": "HOLD XLM"
     },
     {
       "name": "HUMMINGBOT_FRICTION",
@@ -84,7 +84,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD SOL"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "SHOCKWAVE",
@@ -110,7 +110,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD BTC"
+      "decision": "HOLD SUI"
     },
     {
       "name": "LEAN_EVENT",
@@ -136,7 +136,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD SOL"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "QLIB_STYLE",
@@ -149,7 +149,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD SOL"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "NAUTILUS_REGIME",
@@ -162,7 +162,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "FREQTRADE_STYLE",
@@ -175,7 +175,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD NEAR"
     },
     {
       "name": "FLUID_VISCOSITY",
@@ -188,7 +188,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD SOL"
     },
     {
       "name": "ERROR_CODE_CONSENSUS",
@@ -284,8 +284,8 @@
     {
       "name": "ROTATOR",
       "portfolio": "main",
-      "equity": 7.14645397,
-      "all_time_pnl": -2.85354603,
+      "equity": 7.14411559,
+      "all_time_pnl": -2.85588441,
       "all_time_closed": 9,
       "session_closed": 0,
       "session_wins": 0,
@@ -337,39 +337,39 @@
   },
   "observed_market_moves": [
     {
-      "symbol": "WIF",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.1202,
-      "latest": 0.1237,
-      "change_pct": 2.9118
-    },
-    {
       "symbol": "SOL",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 70.06,
-      "latest": 72.02,
-      "change_pct": 2.7976
+      "latest": 72.08,
+      "change_pct": 2.8832
     },
     {
       "symbol": "BONK",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 2.066e-06,
-      "latest": 2.12e-06,
-      "change_pct": 2.6137
+      "latest": 2.124e-06,
+      "change_pct": 2.8074
+    },
+    {
+      "symbol": "WIF",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 0.1202,
+      "latest": 0.1235,
+      "change_pct": 2.7454
     },
     {
       "symbol": "DOT",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.6593,
-      "latest": 0.6733,
-      "change_pct": 2.1235
+      "latest": 0.6736,
+      "change_pct": 2.169
     },
     {
       "symbol": "UNI",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 4.6876,
-      "latest": 4.773,
-      "change_pct": 1.8218
+      "latest": 4.7727,
+      "change_pct": 1.8154
     },
     {
       "symbol": "FLOKI",
@@ -379,88 +379,95 @@
       "change_pct": 1.7273
     },
     {
-      "symbol": "LTC",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 39.94,
-      "latest": 40.58,
-      "change_pct": 1.6024
-    },
-    {
       "symbol": "XRP",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.92536,
-      "latest": 0.93994,
-      "change_pct": 1.5756
-    },
-    {
-      "symbol": "SHIB",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 3.579e-06,
-      "latest": 3.624e-06,
-      "change_pct": 1.2573
-    },
-    {
-      "symbol": "SUI",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.6552,
-      "latest": 0.6631,
-      "change_pct": 1.2057
-    },
-    {
-      "symbol": "NEAR",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 2.9717,
-      "latest": 3.0064,
-      "change_pct": 1.1677
+      "latest": 0.93966,
+      "change_pct": 1.5453
     },
     {
       "symbol": "TON",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.985,
-      "latest": 0.996,
-      "change_pct": 1.1168
+      "latest": 1.0,
+      "change_pct": 1.5228
+    },
+    {
+      "symbol": "LTC",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 39.94,
+      "latest": 40.54,
+      "change_pct": 1.5023
+    },
+    {
+      "symbol": "SUI",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 0.6552,
+      "latest": 0.6648,
+      "change_pct": 1.4652
+    },
+    {
+      "symbol": "NEAR",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 2.9717,
+      "latest": 3.0087,
+      "change_pct": 1.2451
+    },
+    {
+      "symbol": "SHIB",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 3.579e-06,
+      "latest": 3.62e-06,
+      "change_pct": 1.1456
     },
     {
       "symbol": "ADA",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.14449,
-      "latest": 0.146035,
-      "change_pct": 1.0693
+      "latest": 0.145987,
+      "change_pct": 1.0361
     },
     {
       "symbol": "LINK",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 8.79616,
-      "latest": 8.88727,
-      "change_pct": 1.0358
+      "latest": 8.88596,
+      "change_pct": 1.0209
     },
     {
       "symbol": "BTC",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 60828.2,
-      "latest": 61446.3,
-      "change_pct": 1.0161
+      "latest": 61426.1,
+      "change_pct": 0.9829
     },
     {
       "symbol": "XLM",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.12745,
-      "latest": 0.12845,
-      "change_pct": 0.7846
+      "latest": 0.128497,
+      "change_pct": 0.8215
     },
     {
       "symbol": "DOGE",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.0551706,
-      "latest": 0.0555868,
-      "change_pct": 0.7544
+      "latest": 0.0555952,
+      "change_pct": 0.7696
     },
     {
       "symbol": "BCH",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 198.29,
-      "latest": 199.55,
-      "change_pct": 0.6354
+      "latest": 199.67,
+      "change_pct": 0.696
+    },
+    {
+      "symbol": "AVAX",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 6.671,
+      "latest": 6.711,
+      "change_pct": 0.5996
     },
     {
       "symbol": "PEPE",
@@ -470,18 +477,18 @@
       "change_pct": 0.5872
     },
     {
-      "symbol": "AVAX",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 6.671,
-      "latest": 6.705,
-      "change_pct": 0.5097
-    },
-    {
       "symbol": "ETH",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 1718.35,
-      "latest": 1723.56,
-      "change_pct": 0.3032
+      "latest": 1723.98,
+      "change_pct": 0.3276
+    },
+    {
+      "symbol": "BNB",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 556.4,
+      "latest": 557.42,
+      "change_pct": 0.1833
     },
     {
       "symbol": "AAVE",
@@ -491,22 +498,15 @@
       "change_pct": 0.1632
     },
     {
-      "symbol": "BNB",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 556.4,
-      "latest": 557.04,
-      "change_pct": 0.115
-    },
-    {
       "symbol": "TRX",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.305295,
-      "latest": 0.304952,
-      "change_pct": -0.1124
+      "latest": 0.304766,
+      "change_pct": -0.1733
     }
   ],
   "equity_curve": {
-    "samples": 122,
+    "samples": 123,
     "low": 194.23365,
     "high": 194.38671,
     "observed_drawdown_pct": -0.0523,
@@ -518,33 +518,33 @@
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 76586.0,
-      "current_mid": 61446.3,
+      "current_mid": 61426.1,
       "start": 10.0,
-      "equity": 7.907434,
-      "pnl": -2.092566,
-      "return_pct": -20.9257,
+      "equity": 7.904835,
+      "pnl": -2.095165,
+      "return_pct": -20.9517,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "ETH": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 2230.44,
-      "current_mid": 1723.56,
+      "current_mid": 1723.98,
       "start": 10.0,
-      "equity": 7.615968,
-      "pnl": -2.384032,
-      "return_pct": -23.8403,
+      "equity": 7.617824,
+      "pnl": -2.382176,
+      "return_pct": -23.8218,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "SOL": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 95.3,
-      "current_mid": 72.02,
+      "current_mid": 72.08,
       "start": 10.0,
-      "equity": 7.448168,
-      "pnl": -2.551832,
-      "return_pct": -25.5183,
+      "equity": 7.454373,
+      "pnl": -2.545627,
+      "return_pct": -25.4563,
       "holding": "buy-and-hold; hypothetical sale costs included"
     }
   },
@@ -891,317 +891,317 @@
     "requested": 72,
     "observed": 71,
     "confirmed": 71,
-    "polled_at": "2026-11-23T06:10:40.934042+00:00",
-    "age_minutes": 55.07,
+    "polled_at": "2026-11-23T07:10:42.673426+00:00",
+    "age_minutes": 0.0,
     "sectors": {
       "Majors": {
         "requested": 14,
         "available": 14,
         "rising": 12,
         "falling": 2,
-        "median_move_from_utc_open_pct": 0.7873
+        "median_move_from_utc_open_pct": 0.7462
       },
       "Layer1 & infrastructure": {
         "requested": 15,
         "available": 15,
         "rising": 15,
         "falling": 0,
-        "median_move_from_utc_open_pct": 1.3854
+        "median_move_from_utc_open_pct": 1.3878
       },
       "DeFi & exchanges": {
         "requested": 13,
         "available": 12,
-        "rising": 9,
-        "falling": 2,
-        "median_move_from_utc_open_pct": 1.2993
+        "rising": 11,
+        "falling": 1,
+        "median_move_from_utc_open_pct": 1.4927
       },
       "AI & data": {
         "requested": 6,
         "available": 6,
-        "rising": 5,
-        "falling": 1,
-        "median_move_from_utc_open_pct": 0.4452
+        "rising": 6,
+        "falling": 0,
+        "median_move_from_utc_open_pct": 0.8061
       },
       "Layer2 & gaming": {
         "requested": 11,
         "available": 11,
         "rising": 11,
         "falling": 0,
-        "median_move_from_utc_open_pct": 1.2629
+        "median_move_from_utc_open_pct": 1.6073
       },
       "Meme & speculative": {
         "requested": 5,
         "available": 5,
         "rising": 5,
         "falling": 0,
-        "median_move_from_utc_open_pct": 1.6
+        "median_move_from_utc_open_pct": 1.4769
       },
       "Stablecoins": {
         "requested": 3,
         "available": 3,
         "rising": 2,
-        "falling": 1,
-        "median_move_from_utc_open_pct": 0.01
+        "falling": 0,
+        "median_move_from_utc_open_pct": 0.017
       },
       "Tokenised gold proxies": {
         "requested": 2,
         "available": 2,
         "rising": 2,
         "falling": 0,
-        "median_move_from_utc_open_pct": 1.0572
+        "median_move_from_utc_open_pct": 1.1902
       },
       "Fiat references": {
         "requested": 3,
         "available": 3,
         "rising": 3,
         "falling": 0,
-        "median_move_from_utc_open_pct": 0.2517
+        "median_move_from_utc_open_pct": 0.2864
       }
     },
-    "breadth_pct": 90.48,
-    "up": 57,
-    "down": 5,
+    "breadth_pct": 95.24,
+    "up": 60,
+    "down": 3,
     "gainers": [
       {
         "symbol": "ALGO",
         "sector": "Layer1 & infrastructure",
         "kraken_pair": "ALGO/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.07874,
-        "bid": 0.07863,
-        "ask": 0.07869,
-        "bid_ask_spread_bps": 7.63,
-        "move_from_utc_open_pct": 4.3882,
-        "base_volume_last_24h": 5686412.335644,
-        "approx_turnover_24h_usd": 447748.11,
-        "trades_last_24h": 2071,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.07783,
+        "bid": 0.07783,
+        "ask": 0.07789,
+        "bid_ask_spread_bps": 7.71,
+        "move_from_utc_open_pct": 3.1818,
+        "base_volume_last_24h": 7504602.647485,
+        "approx_turnover_24h_usd": 584083.22,
+        "trades_last_24h": 2261,
         "watch_only": true
       },
       {
         "symbol": "GALA",
         "sector": "Layer2 & gaming",
         "kraken_pair": "GALA/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.001324,
-        "bid": 0.001311,
-        "ask": 0.001314,
-        "bid_ask_spread_bps": 22.86,
-        "move_from_utc_open_pct": 4.0881,
-        "base_volume_last_24h": 44042420.286194,
-        "approx_turnover_24h_usd": 58312.16,
-        "trades_last_24h": 222,
-        "watch_only": true
-      },
-      {
-        "symbol": "ICP",
-        "sector": "Layer1 & infrastructure",
-        "kraken_pair": "ICP/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 2.026,
-        "bid": 2.023,
-        "ask": 2.026,
-        "bid_ask_spread_bps": 14.82,
-        "move_from_utc_open_pct": 3.0519,
-        "base_volume_last_24h": 256439.646552,
-        "approx_turnover_24h_usd": 519546.72,
-        "trades_last_24h": 1372,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.00131,
+        "bid": 0.00131,
+        "ask": 0.001312,
+        "bid_ask_spread_bps": 15.26,
+        "move_from_utc_open_pct": 2.9874,
+        "base_volume_last_24h": 44157049.433436,
+        "approx_turnover_24h_usd": 57845.73,
+        "trades_last_24h": 230,
         "watch_only": true
       },
       {
         "symbol": "POL",
         "sector": "Layer2 & gaming",
         "kraken_pair": "POL/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.07815,
-        "bid": 0.07807,
-        "ask": 0.07814,
-        "bid_ask_spread_bps": 8.96,
-        "move_from_utc_open_pct": 2.9373,
-        "base_volume_last_24h": 2000771.3994,
-        "approx_turnover_24h_usd": 156360.28,
-        "trades_last_24h": 1258,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.07811,
+        "bid": 0.07802,
+        "ask": 0.07808,
+        "bid_ask_spread_bps": 7.69,
+        "move_from_utc_open_pct": 2.8846,
+        "base_volume_last_24h": 2023877.46866,
+        "approx_turnover_24h_usd": 158085.07,
+        "trades_last_24h": 1272,
         "watch_only": true
       },
       {
         "symbol": "DYDX",
         "sector": "DeFi & exchanges",
         "kraken_pair": "DYDX/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.07114,
-        "bid": 0.07091,
-        "ask": 0.07098,
-        "bid_ask_spread_bps": 9.87,
-        "move_from_utc_open_pct": 2.7144,
-        "base_volume_last_24h": 270120.381375,
-        "approx_turnover_24h_usd": 19216.36,
-        "trades_last_24h": 179,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.07115,
+        "bid": 0.07116,
+        "ask": 0.07122,
+        "bid_ask_spread_bps": 8.43,
+        "move_from_utc_open_pct": 2.7288,
+        "base_volume_last_24h": 287461.325862,
+        "approx_turnover_24h_usd": 20452.87,
+        "trades_last_24h": 186,
         "watch_only": true
       },
       {
-        "symbol": "SAND",
-        "sector": "Layer2 & gaming",
-        "kraken_pair": "SAND/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.0341,
-        "bid": 0.034,
-        "ask": 0.0341,
-        "bid_ask_spread_bps": 29.37,
-        "move_from_utc_open_pct": 2.4024,
-        "base_volume_last_24h": 869121.316988,
-        "approx_turnover_24h_usd": 29637.04,
-        "trades_last_24h": 136,
+        "symbol": "WIF",
+        "sector": "Meme & speculative",
+        "kraken_pair": "WIF/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.1235,
+        "bid": 0.1236,
+        "ask": 0.1237,
+        "bid_ask_spread_bps": 8.09,
+        "move_from_utc_open_pct": 2.66,
+        "base_volume_last_24h": 731513.01458,
+        "approx_turnover_24h_usd": 90341.86,
+        "trades_last_24h": 725,
         "watch_only": true
       },
       {
         "symbol": "BONK",
         "sector": "Meme & speculative",
         "kraken_pair": "BONK/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 2.118e-06,
-        "bid": 2.109e-06,
-        "ask": 2.112e-06,
-        "bid_ask_spread_bps": 14.21,
-        "move_from_utc_open_pct": 2.3188,
-        "base_volume_last_24h": 87833173703.68166,
-        "approx_turnover_24h_usd": 186030.66,
-        "trades_last_24h": 781,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 2.124e-06,
+        "bid": 2.123e-06,
+        "ask": 2.125e-06,
+        "bid_ask_spread_bps": 9.42,
+        "move_from_utc_open_pct": 2.6087,
+        "base_volume_last_24h": 89204479095.71515,
+        "approx_turnover_24h_usd": 189470.31,
+        "trades_last_24h": 790,
         "watch_only": true
       },
       {
-        "symbol": "ENA",
+        "symbol": "PENDLE",
         "sector": "DeFi & exchanges",
-        "kraken_pair": "ENA/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.1034,
-        "bid": 0.103,
-        "ask": 0.1031,
-        "bid_ask_spread_bps": 9.7,
-        "move_from_utc_open_pct": 2.275,
-        "base_volume_last_24h": 12908765.4301,
-        "approx_turnover_24h_usd": 1334766.35,
-        "trades_last_24h": 2573,
+        "kraken_pair": "PENDLE/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 1.322,
+        "bid": 1.324,
+        "ask": 1.326,
+        "bid_ask_spread_bps": 15.09,
+        "move_from_utc_open_pct": 2.4806,
+        "base_volume_last_24h": 65533.66948,
+        "approx_turnover_24h_usd": 86635.51,
+        "trades_last_24h": 373,
+        "watch_only": true
+      },
+      {
+        "symbol": "SAND",
+        "sector": "Layer2 & gaming",
+        "kraken_pair": "SAND/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.0341,
+        "bid": 0.034,
+        "ask": 0.0341,
+        "bid_ask_spread_bps": 29.37,
+        "move_from_utc_open_pct": 2.4024,
+        "base_volume_last_24h": 926061.287316,
+        "approx_turnover_24h_usd": 31578.69,
+        "trades_last_24h": 138,
         "watch_only": true
       }
     ],
     "losers": [
       {
-        "symbol": "AAVE",
-        "sector": "DeFi & exchanges",
-        "kraken_pair": "AAVE/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 97.25,
-        "bid": 97.18,
-        "ask": 97.23,
-        "bid_ask_spread_bps": 5.14,
-        "move_from_utc_open_pct": -0.6233,
-        "base_volume_last_24h": 9731.194825,
-        "approx_turnover_24h_usd": 946358.7,
-        "trades_last_24h": 2933,
-        "watch_only": true
-      },
-      {
-        "symbol": "BCH",
+        "symbol": "BNB",
         "sector": "Majors",
-        "kraken_pair": "BCH/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 198.92,
-        "bid": 198.75,
-        "ask": 198.83,
-        "bid_ask_spread_bps": 4.02,
-        "move_from_utc_open_pct": -0.1205,
-        "base_volume_last_24h": 2782.492009,
-        "approx_turnover_24h_usd": 553493.31,
-        "trades_last_24h": 1501,
-        "watch_only": true
-      },
-      {
-        "symbol": "TAO",
-        "sector": "AI & data",
-        "kraken_pair": "TAO/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 190.641,
-        "bid": 190.6296,
-        "ask": 190.6919,
-        "bid_ask_spread_bps": 3.27,
-        "move_from_utc_open_pct": -0.1041,
-        "base_volume_last_24h": 13885.85417,
-        "approx_turnover_24h_usd": 2647213.12,
-        "trades_last_24h": 4927,
-        "watch_only": true
-      },
-      {
-        "symbol": "INJ",
-        "sector": "DeFi & exchanges",
-        "kraken_pair": "INJ/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 6.222,
-        "bid": 6.217,
-        "ask": 6.221,
-        "bid_ask_spread_bps": 6.43,
-        "move_from_utc_open_pct": -0.0963,
-        "base_volume_last_24h": 229886.9515,
-        "approx_turnover_24h_usd": 1430356.61,
-        "trades_last_24h": 4605,
+        "kraken_pair": "BNB/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 557.4,
+        "bid": 557.43,
+        "ask": 557.49,
+        "bid_ask_spread_bps": 1.08,
+        "move_from_utc_open_pct": -0.2809,
+        "base_volume_last_24h": 2275.89801,
+        "approx_turnover_24h_usd": 1268585.55,
+        "trades_last_24h": 3586,
         "watch_only": true
       },
       {
         "symbol": "TRX",
         "sector": "Majors",
         "kraken_pair": "TRX/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.305016,
-        "bid": 0.304906,
-        "ask": 0.304935,
-        "bid_ask_spread_bps": 0.95,
-        "move_from_utc_open_pct": -0.0524,
-        "base_volume_last_24h": 3442994.063873,
-        "approx_turnover_24h_usd": 1050168.28,
-        "trades_last_24h": 2715,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.304759,
+        "bid": 0.304759,
+        "ask": 0.30476,
+        "bid_ask_spread_bps": 0.03,
+        "move_from_utc_open_pct": -0.1366,
+        "base_volume_last_24h": 3434452.219179,
+        "approx_turnover_24h_usd": 1046680.22,
+        "trades_last_24h": 2723,
         "watch_only": true
       },
       {
-        "symbol": "RUNE",
+        "symbol": "INJ",
         "sector": "DeFi & exchanges",
-        "kraken_pair": "RUNE/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.51,
-        "bid": 0.513,
-        "ask": 0.516,
-        "bid_ask_spread_bps": 58.31,
-        "move_from_utc_open_pct": 0.0,
-        "base_volume_last_24h": 320142.937255,
-        "approx_turnover_24h_usd": 163272.9,
-        "trades_last_24h": 422,
+        "kraken_pair": "INJ/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 6.222,
+        "bid": 6.223,
+        "ask": 6.226,
+        "bid_ask_spread_bps": 4.82,
+        "move_from_utc_open_pct": -0.0963,
+        "base_volume_last_24h": 233130.480013,
+        "approx_turnover_24h_usd": 1450537.85,
+        "trades_last_24h": 4673,
         "watch_only": true
       },
       {
-        "symbol": "ZRO",
-        "sector": "Layer2 & gaming",
-        "kraken_pair": "ZRO/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 1.193,
-        "bid": 1.189,
-        "ask": 1.19,
-        "bid_ask_spread_bps": 8.41,
-        "move_from_utc_open_pct": 0.0839,
-        "base_volume_last_24h": 677945.24709,
-        "approx_turnover_24h_usd": 808788.68,
-        "trades_last_24h": 2269,
+        "symbol": "RENDER",
+        "sector": "AI & data",
+        "kraken_pair": "RENDER/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 1.339,
+        "bid": 1.337,
+        "ask": 1.339,
+        "bid_ask_spread_bps": 14.95,
+        "move_from_utc_open_pct": 0.0747,
+        "base_volume_last_24h": 220912.9562,
+        "approx_turnover_24h_usd": 295802.45,
+        "trades_last_24h": 1402,
         "watch_only": true
       },
       {
-        "symbol": "BNB",
+        "symbol": "ETH",
         "sector": "Majors",
-        "kraken_pair": "BNB/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 559.44,
-        "bid": 559.27,
-        "ask": 559.38,
-        "bid_ask_spread_bps": 1.97,
-        "move_from_utc_open_pct": 0.0841,
-        "base_volume_last_24h": 2238.729,
-        "approx_turnover_24h_usd": 1252434.55,
-        "trades_last_24h": 3553,
+        "kraken_pair": "ETH/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 1723.98,
+        "bid": 1723.97,
+        "ask": 1723.98,
+        "bid_ask_spread_bps": 0.06,
+        "move_from_utc_open_pct": 0.1377,
+        "base_volume_last_24h": 27583.383456,
+        "approx_turnover_24h_usd": 47553201.41,
+        "trades_last_24h": 43466,
+        "watch_only": true
+      },
+      {
+        "symbol": "BCH",
+        "sector": "Majors",
+        "kraken_pair": "BCH/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 199.67,
+        "bid": 199.87,
+        "ask": 199.97,
+        "bid_ask_spread_bps": 5.0,
+        "move_from_utc_open_pct": 0.2561,
+        "base_volume_last_24h": 2760.453619,
+        "approx_turnover_24h_usd": 551179.77,
+        "trades_last_24h": 1477,
+        "watch_only": true
+      },
+      {
+        "symbol": "STX",
+        "sector": "Layer1 & infrastructure",
+        "kraken_pair": "STX/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.2567,
+        "bid": 0.2569,
+        "ask": 0.2572,
+        "bid_ask_spread_bps": 11.67,
+        "move_from_utc_open_pct": 0.2734,
+        "base_volume_last_24h": 861110.945139,
+        "approx_turnover_24h_usd": 221047.18,
+        "trades_last_24h": 1165,
+        "watch_only": true
+      },
+      {
+        "symbol": "SEI",
+        "sector": "Layer1 & infrastructure",
+        "kraken_pair": "SEI/USD",
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.03456,
+        "bid": 0.03451,
+        "ask": 0.03455,
+        "bid_ask_spread_bps": 11.58,
+        "move_from_utc_open_pct": 0.2902,
+        "base_volume_last_24h": 5180955.23014,
+        "approx_turnover_24h_usd": 179053.81,
+        "trades_last_24h": 803,
         "watch_only": true
       }
     ],
@@ -1210,131 +1210,131 @@
         "symbol": "BTC",
         "sector": "Majors",
         "kraken_pair": "XBT/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 61648.8,
-        "bid": 61647.5,
-        "ask": 61647.6,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 61431.6,
+        "bid": 61426.4,
+        "ask": 61426.5,
         "bid_ask_spread_bps": 0.02,
-        "move_from_utc_open_pct": 0.7826,
-        "base_volume_last_24h": 3252.491519,
-        "approx_turnover_24h_usd": 200512199.15,
-        "trades_last_24h": 134775,
+        "move_from_utc_open_pct": 0.4275,
+        "base_volume_last_24h": 3255.010859,
+        "approx_turnover_24h_usd": 199960525.11,
+        "trades_last_24h": 134902,
         "watch_only": true
       },
       {
         "symbol": "ETH",
         "sector": "Majors",
         "kraken_pair": "ETH/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 1726.16,
-        "bid": 1726.24,
-        "ask": 1726.25,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 1723.98,
+        "bid": 1723.97,
+        "ask": 1723.98,
         "bid_ask_spread_bps": 0.06,
-        "move_from_utc_open_pct": 0.2643,
-        "base_volume_last_24h": 27545.569158,
-        "approx_turnover_24h_usd": 47548059.66,
-        "trades_last_24h": 43192,
+        "move_from_utc_open_pct": 0.1377,
+        "base_volume_last_24h": 27583.383456,
+        "approx_turnover_24h_usd": 47553201.41,
+        "trades_last_24h": 43466,
         "watch_only": true
       },
       {
         "symbol": "XRP",
         "sector": "Majors",
         "kraken_pair": "XRP/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.94139,
-        "bid": 0.9415,
-        "ask": 0.94155,
-        "bid_ask_spread_bps": 0.53,
-        "move_from_utc_open_pct": 1.4932,
-        "base_volume_last_24h": 17713037.888803,
-        "approx_turnover_24h_usd": 16674876.74,
-        "trades_last_24h": 20255,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.94009,
+        "bid": 0.93998,
+        "ask": 0.94005,
+        "bid_ask_spread_bps": 0.74,
+        "move_from_utc_open_pct": 1.353,
+        "base_volume_last_24h": 20444987.515955,
+        "approx_turnover_24h_usd": 19220128.31,
+        "trades_last_24h": 21106,
         "watch_only": true
       },
       {
         "symbol": "SOL",
         "sector": "Majors",
         "kraken_pair": "SOL/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 71.8,
-        "bid": 71.8,
-        "ask": 71.81,
-        "bid_ask_spread_bps": 1.39,
-        "move_from_utc_open_pct": 1.6565,
-        "base_volume_last_24h": 181750.782949,
-        "approx_turnover_24h_usd": 13049706.22,
-        "trades_last_24h": 29989,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 72.11,
+        "bid": 72.1,
+        "ask": 72.12,
+        "bid_ask_spread_bps": 2.77,
+        "move_from_utc_open_pct": 2.0954,
+        "base_volume_last_24h": 185508.937133,
+        "approx_turnover_24h_usd": 13377049.46,
+        "trades_last_24h": 30074,
         "watch_only": true
       },
       {
         "symbol": "NEAR",
         "sector": "Layer1 & infrastructure",
         "kraken_pair": "NEAR/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 3.0079,
-        "bid": 3.0065,
-        "ask": 3.0073,
-        "bid_ask_spread_bps": 2.66,
-        "move_from_utc_open_pct": 0.8787,
-        "base_volume_last_24h": 2166276.759765,
-        "approx_turnover_24h_usd": 6515943.87,
-        "trades_last_24h": 13659,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 3.0168,
+        "bid": 3.015,
+        "ask": 3.0162,
+        "bid_ask_spread_bps": 3.98,
+        "move_from_utc_open_pct": 1.1772,
+        "base_volume_last_24h": 2185749.260886,
+        "approx_turnover_24h_usd": 6593968.37,
+        "trades_last_24h": 13782,
         "watch_only": true
       },
       {
         "symbol": "SUI",
         "sector": "Layer1 & infrastructure",
         "kraken_pair": "SUI/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.6661,
-        "bid": 0.6642,
-        "ask": 0.6643,
-        "bid_ask_spread_bps": 1.51,
-        "move_from_utc_open_pct": 1.5861,
-        "base_volume_last_24h": 6263259.90982,
-        "approx_turnover_24h_usd": 4171957.43,
-        "trades_last_24h": 6440,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.6648,
+        "bid": 0.6655,
+        "ask": 0.6656,
+        "bid_ask_spread_bps": 1.5,
+        "move_from_utc_open_pct": 1.3878,
+        "base_volume_last_24h": 6338237.97846,
+        "approx_turnover_24h_usd": 4213660.61,
+        "trades_last_24h": 6526,
         "watch_only": true
       },
       {
         "symbol": "XMR",
         "sector": "Layer1 & infrastructure",
         "kraken_pair": "XMR/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 500.55,
-        "bid": 500.08,
-        "ask": 500.24,
-        "bid_ask_spread_bps": 3.2,
-        "move_from_utc_open_pct": 1.3854,
-        "base_volume_last_24h": 7868.005628,
-        "approx_turnover_24h_usd": 3938330.22,
-        "trades_last_24h": 8428,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 497.28,
+        "bid": 497.3,
+        "ask": 497.61,
+        "bid_ask_spread_bps": 6.23,
+        "move_from_utc_open_pct": 0.7231,
+        "base_volume_last_24h": 7767.06881,
+        "approx_turnover_24h_usd": 3862407.98,
+        "trades_last_24h": 8394,
         "watch_only": true
       },
       {
         "symbol": "XLM",
         "sector": "Majors",
         "kraken_pair": "XLM/USD",
-        "observed_at": "2026-11-23T06:10:40.934042+00:00",
-        "last_trade_price": 0.128093,
-        "bid": 0.128018,
-        "ask": 0.12804,
-        "bid_ask_spread_bps": 1.72,
-        "move_from_utc_open_pct": 0.443,
-        "base_volume_last_24h": 28264006.160538,
-        "approx_turnover_24h_usd": 3620421.34,
-        "trades_last_24h": 8752,
+        "observed_at": "2026-11-23T07:10:42.673426+00:00",
+        "last_trade_price": 0.128593,
+        "bid": 0.128619,
+        "ask": 0.12862,
+        "bid_ask_spread_bps": 0.08,
+        "move_from_utc_open_pct": 0.8351,
+        "base_volume_last_24h": 28624449.128432,
+        "approx_turnover_24h_usd": 3680903.79,
+        "trades_last_24h": 8711,
         "watch_only": true
       }
     ],
     "global_market": {
       "status": "OK",
       "source": "CoinGecko /api/v3/global",
-      "observed_at": "2026-11-23T06:10:40.934042+00:00",
-      "total_crypto_market_cap_usd": 2098272343739.8123,
-      "total_crypto_24h_volume_usd": 59918372469.85976,
-      "bitcoin_market_cap_dominance_pct": 58.944837353589584,
-      "global_market_cap_change_24h_pct": -0.3607299813532243
+      "observed_at": "2026-11-23T07:10:42.673426+00:00",
+      "total_crypto_market_cap_usd": 2093454586307.9878,
+      "total_crypto_24h_volume_usd": 60217567379.015755,
+      "bitcoin_market_cap_dominance_pct": 58.91627611656717,
+      "global_market_cap_change_24h_pct": -0.8702188191142298
     },
     "monitor_only": true,
     "newly_tradable_pairs": 0
@@ -1443,62 +1443,62 @@
     "rule_based_review_capacity": 640,
     "latest": {
       "GAMBLER": {
-        "support": 7,
-        "opposition": 17,
+        "support": 5,
+        "opposition": 20,
         "vetoes": 0,
         "action": "HOLD"
       },
       "HOUSE": {
-        "support": 16,
-        "opposition": 8,
+        "support": 19,
+        "opposition": 6,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SPY": {
-        "support": 26,
-        "opposition": 4,
+        "support": 25,
+        "opposition": 2,
         "vetoes": 0,
         "action": "HOLD"
       },
       "MEME HUNTER": {
-        "support": 7,
-        "opposition": 15,
+        "support": 5,
+        "opposition": 18,
         "vetoes": 1,
         "action": "HOLD"
       },
       "BREAKOUT": {
-        "support": 7,
-        "opposition": 17,
+        "support": 5,
+        "opposition": 20,
         "vetoes": 0,
         "action": "HOLD"
       },
       "CONTRARIAN": {
-        "support": 16,
-        "opposition": 8,
+        "support": 19,
+        "opposition": 6,
         "vetoes": 0,
         "action": "HOLD"
       },
       "ROTATOR": {
-        "support": 7,
-        "opposition": 17,
+        "support": 5,
+        "opposition": 20,
         "vetoes": 0,
         "action": "HOLD"
       },
       "VORTEX": {
-        "support": 7,
-        "opposition": 17,
+        "support": 5,
+        "opposition": 20,
         "vetoes": 0,
         "action": "HOLD"
       },
       "FRACTAL": {
-        "support": 7,
-        "opposition": 17,
+        "support": 5,
+        "opposition": 20,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SHOCKWAVE": {
-        "support": 7,
-        "opposition": 15,
+        "support": 5,
+        "opposition": 18,
         "vetoes": 1,
         "action": "HOLD"
       }
@@ -1512,7 +1512,7 @@
   "health": {
     "trigger": "workflow_dispatch",
     "cron_verified": true,
-    "run_id": "45128562522",
+    "run_id": "45129148390",
     "data": {
       "main_stale": false,
       "research_stale": false,
