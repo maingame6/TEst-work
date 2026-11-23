@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2136 symbol-hours, 3708 missing.
+Recorded 2148 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 1811 hypothetical outcomes; censored 7473.
+Closed 1816 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -13,7 +13,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_32 | 10 | 2 | -1.5055 | -1.9968 | 10 |
 | adx_uptrend_8 | 33 | 4 | -2.9362 | -3.4203 | 33 |
 | aroon_uptrend_16 | 25 | 1 | -3.8098 | -4.2896 | 25 |
-| aroon_uptrend_32 | 5 | 0 | -4.9358 | -5.4099 | 5 |
+| aroon_uptrend_32 | 6 | 0 | -4.2110 | -4.6887 | 6 |
 | aroon_uptrend_8 | 26 | 4 | -2.8248 | -3.3094 | 26 |
 | atr_pullback_16 | 38 | 6 | -3.8637 | -4.3432 | 38 |
 | atr_pullback_32 | 38 | 6 | -3.8015 | -4.2813 | 38 |
@@ -57,8 +57,8 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | mfi_recovery_16 | 35 | 6 | -3.4844 | -3.9657 | 35 |
 | mfi_recovery_32 | 29 | 8 | -3.4499 | -3.9314 | 29 |
 | mfi_recovery_8 | 38 | 8 | -3.7352 | -4.2153 | 38 |
-| momentum_16 | 23 | 0 | -4.1810 | -4.6589 | 23 |
-| momentum_32 | 3 | 0 | -2.6145 | -3.1002 | 3 |
+| momentum_16 | 25 | 1 | -3.7890 | -4.2689 | 25 |
+| momentum_32 | 5 | 2 | -0.7653 | -1.2602 | 5 |
 | momentum_8 | 24 | 2 | -3.4975 | -3.9788 | 24 |
 | obv_confirmation_16 | 33 | 1 | -3.4371 | -3.9188 | 33 |
 | obv_confirmation_32 | 11 | 0 | -3.6454 | -4.1259 | 11 |
