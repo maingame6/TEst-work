@@ -4,7 +4,7 @@
   "real_orders": false,
   "independent_of_210_paper_wallets": true,
   "writer_access": false,
-  "generated_at": "2026-11-23T02:11:08.142786+00:00",
+  "generated_at": "2026-11-23T03:11:06.393512+00:00",
   "config_hash": "43936e93e138e0b1db1c2c09da43d7aa28bf38f33625589802fbccb6a9a65f5e",
   "family_count": 28,
   "candidate_count": 84,
@@ -23,29 +23,29 @@
     "XLM"
   ],
   "latest_observed_hour_ts_by_symbol": {
-    "BTC": 1795395600,
-    "ETH": 1795395600,
-    "SOL": 1795395600,
-    "XRP": 1795395600,
-    "ADA": 1795395600,
-    "DOGE": 1795395600,
-    "LTC": 1795395600,
-    "LINK": 1795395600,
-    "BCH": 1795395600,
-    "DOT": 1795395600,
-    "AVAX": 1795395600,
-    "XLM": 1795395600
+    "BTC": 1795399200,
+    "ETH": 1795399200,
+    "SOL": 1795399200,
+    "XRP": 1795399200,
+    "ADA": 1795399200,
+    "DOGE": 1795399200,
+    "LTC": 1795399200,
+    "LINK": 1795399200,
+    "BCH": 1795399200,
+    "DOT": 1795399200,
+    "AVAX": 1795399200,
+    "XLM": 1795399200
   },
   "indicator_count": 47,
-  "observed_symbol_hours": 2124,
+  "observed_symbol_hours": 2136,
   "missing_symbol_hours": 3708,
-  "observation_coverage_pct": 36.4198,
-  "closed_hypotheses": 1804,
+  "observation_coverage_pct": 36.5503,
+  "closed_hypotheses": 1811,
   "censored_hypotheses": 7473,
-  "open_hypotheses": 547,
+  "open_hypotheses": 541,
   "queued_hypotheses": 1,
-  "signals": 9825,
-  "days_observed": 20.191,
+  "signals": 9826,
+  "days_observed": 20.233,
   "heldout_starts_at": "2026-11-10T00:00:00+00:00",
   "review_minimum_closes_per_candidate": 60,
   "review_minimum_days": 30,
@@ -69,12 +69,12 @@
       "eligible_to_promote": false
     },
     "sma_trend_16": {
-      "closed": 14,
-      "holdout_closed": 14,
-      "wins_after_cost": 0,
-      "mean_after_cost_pct": -4.80124,
-      "mean_stress_pct": -5.27605,
-      "mean_heldout_pct": -4.80124,
+      "closed": 18,
+      "holdout_closed": 18,
+      "wins_after_cost": 1,
+      "mean_after_cost_pct": -3.99657,
+      "mean_stress_pct": -4.47539,
+      "mean_heldout_pct": -3.99657,
       "eligible_to_promote": false
     },
     "sma_trend_32": {
@@ -96,12 +96,12 @@
       "eligible_to_promote": false
     },
     "ema_trend_16": {
-      "closed": 11,
-      "holdout_closed": 11,
+      "closed": 12,
+      "holdout_closed": 12,
       "wins_after_cost": 0,
-      "mean_after_cost_pct": -4.89669,
-      "mean_stress_pct": -5.37103,
-      "mean_heldout_pct": -4.89669,
+      "mean_after_cost_pct": -4.76758,
+      "mean_stress_pct": -5.24256,
+      "mean_heldout_pct": -4.76758,
       "eligible_to_promote": false
     },
     "ema_trend_32": {
@@ -159,12 +159,12 @@
       "eligible_to_promote": false
     },
     "vol_target_momentum_32": {
-      "closed": 12,
-      "holdout_closed": 12,
+      "closed": 13,
+      "holdout_closed": 13,
       "wins_after_cost": 1,
-      "mean_after_cost_pct": -2.64863,
-      "mean_stress_pct": -3.13418,
-      "mean_heldout_pct": -2.64863,
+      "mean_after_cost_pct": -2.44732,
+      "mean_stress_pct": -2.93388,
+      "mean_heldout_pct": -2.44732,
       "eligible_to_promote": false
     },
     "rsi_rebound_8": {
@@ -411,12 +411,12 @@
       "eligible_to_promote": false
     },
     "williams_rebound_8": {
-      "closed": 45,
-      "holdout_closed": 45,
+      "closed": 46,
+      "holdout_closed": 46,
       "wins_after_cost": 7,
-      "mean_after_cost_pct": -3.40681,
-      "mean_stress_pct": -3.88858,
-      "mean_heldout_pct": -3.40681,
+      "mean_after_cost_pct": -3.38947,
+      "mean_stress_pct": -3.87132,
+      "mean_heldout_pct": -3.38947,
       "eligible_to_promote": false
     },
     "williams_rebound_16": {
@@ -832,7 +832,7 @@
   ],
   "failed_symbols": {},
   "source": "Kraken public OHLC 60; no private APIs",
-  "archived_hourly_records": 2112,
-  "archive_hash_chain_head": "d8f0f4fc3d97eb6e66176c94d6f8a92e9f420cdabb94810a9cb83e9bd8605cdf",
+  "archived_hourly_records": 2124,
+  "archive_hash_chain_head": "41fb44c80c7b0480be81f0d98715fe5a9b35c019a4fd87d05bc4f4cbe614dda2",
   "archive_begins_after_first_initial_run": true
 }
