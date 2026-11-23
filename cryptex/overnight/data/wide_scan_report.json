@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T00:49:02.535874+00:00",
+  "generated_at": "2026-11-23T08:58:19.610687+00:00",
   "mode": "PAPER_ONLY",
   "scanner": "CCXT FIVE VENUE CLOSED-CANDLE HISTORY",
   "not_real_orders": true,
@@ -8,10 +8,10 @@
   "unique_tested_venue_pairs": 4257,
   "unique_exchange_market_metadata_checked": 4257,
   "unique_ohlcv_requested": 4257,
-  "unique_ohlcv_validated_pairs": 4058,
-  "markets_with_any_historical_signal": 240,
+  "unique_ohlcv_validated_pairs": 4059,
+  "markets_with_any_historical_signal": 242,
   "coverage_pct": 100.0,
-  "batches": 131,
+  "batches": 132,
   "venues": {
     "kraken": {
       "discovered": 1210,
@@ -21,17 +21,17 @@
       "validated_ohlcv_distinct": 1210,
       "last_attempt_valid": 1210,
       "latest_failed": 0,
-      "next_cursor": 792
+      "next_cursor": 798
     },
     "coinbase": {
       "discovered": 857,
       "attempted_distinct": 857,
       "metadata_checked_distinct": 857,
       "ohlcv_requested_distinct": 857,
-      "validated_ohlcv_distinct": 658,
-      "last_attempt_valid": 657,
-      "latest_failed": 200,
-      "next_cursor": 389
+      "validated_ohlcv_distinct": 659,
+      "last_attempt_valid": 658,
+      "latest_failed": 199,
+      "next_cursor": 474
     },
     "bitstamp": {
       "discovered": 237,
@@ -41,7 +41,7 @@
       "validated_ohlcv_distinct": 237,
       "last_attempt_valid": 237,
       "latest_failed": 0,
-      "next_cursor": 201
+      "next_cursor": 206
     },
     "okx": {
       "discovered": 1078,
@@ -51,7 +51,7 @@
       "validated_ohlcv_distinct": 1078,
       "last_attempt_valid": 1078,
       "latest_failed": 0,
-      "next_cursor": 330
+      "next_cursor": 333
     },
     "kucoin": {
       "discovered": 875,
@@ -61,30 +61,30 @@
       "validated_ohlcv_distinct": 875,
       "last_attempt_valid": 875,
       "latest_failed": 0,
-      "next_cursor": 731
+      "next_cursor": 734
     }
   },
   "strategies": {
     "momentum_05": {
-      "historical_samples": 420,
-      "net_winners": 32,
-      "gross_up_net_down": 135,
-      "weighted_mean_net_pct": -2.625497,
-      "markets_with_samples": 193
+      "historical_samples": 425,
+      "net_winners": 35,
+      "gross_up_net_down": 143,
+      "weighted_mean_net_pct": -2.586439,
+      "markets_with_samples": 197
     },
     "cost_aware_momentum": {
-      "historical_samples": 105,
+      "historical_samples": 111,
       "net_winners": 19,
-      "gross_up_net_down": 16,
-      "weighted_mean_net_pct": -2.751353,
-      "markets_with_samples": 62
+      "gross_up_net_down": 19,
+      "weighted_mean_net_pct": -2.65983,
+      "markets_with_samples": 68
     },
     "breakout": {
-      "historical_samples": 468,
+      "historical_samples": 460,
       "net_winners": 31,
-      "gross_up_net_down": 181,
-      "weighted_mean_net_pct": -2.332687,
-      "markets_with_samples": 213
+      "gross_up_net_down": 176,
+      "weighted_mean_net_pct": -2.339955,
+      "markets_with_samples": 215
     },
     "dip_recovery": {
       "historical_samples": 104,
@@ -127,15 +127,15 @@
   "simulation_limitations": "Signals use historical closed 5m bars, next completed-bar simulated entries, six-bar holds, no missing candles. Overlapping venues/correlated assets and historical-only evaluation do not prove profitability. No funding, FX-conversion, withdrawal, price-impact or exchange outage guarantee. This is not real-time execution.",
   "last_batch": {
     "attempted": 102,
-    "validated": 26,
-    "unavailable": 76
+    "validated": 23,
+    "unavailable": 79
   },
-  "latest_unavailable_pairs": 200,
+  "latest_unavailable_pairs": 199,
   "current_spread_snapshots": 109,
   "spread_usage": "Spread snapshots are contemporary diagnostics only; never retroactively applied to historical candles.",
   "forward_observation_lab": {
-    "markets_observed": 540,
-    "forward_observations": 2496,
+    "markets_observed": 541,
+    "forward_observations": 2519,
     "completed": 2,
     "sample_frequency_note": "This is NOT every-five-minute cross-exchange execution."
   }
