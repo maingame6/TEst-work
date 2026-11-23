@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-23T07:15:44.403281+00:00",
+  "generated_at": "2026-11-23T07:20:40.218984+00:00",
   "session": "2026-11-22",
   "session_start": "2026-11-22T21:00:40.337858+00:00",
   "status": "IN_PROGRESS",
-  "session_change": 0.071089,
+  "session_change": 0.062152,
   "paper_only": true,
   "money": {
     "starting": 210,
-    "equity": 194.357283,
-    "net_pnl": -15.642717,
+    "equity": 194.348346,
+    "net_pnl": -15.651654,
     "realised": -16.122606,
-    "unrealised": 0.479889,
+    "unrealised": 0.470952,
     "main": {
       "starting": 100.0,
-      "equity": 84.890986,
-      "gross_equity": 84.966316,
-      "pnl": -15.109014,
+      "equity": 84.882049,
+      "gross_equity": 84.957285,
+      "pnl": -15.117951,
       "realised": -15.588903,
       "closed": 136,
       "wins": 7,
@@ -110,7 +110,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD ADA"
+      "decision": "HOLD XLM"
     },
     {
       "name": "LEAN_EVENT",
@@ -123,7 +123,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD SUI"
+      "decision": "HOLD XLM"
     },
     {
       "name": "GRAPH_COHERENCE",
@@ -188,7 +188,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD SOL"
+      "decision": "HOLD XLM"
     },
     {
       "name": "ERROR_CODE_CONSENSUS",
@@ -284,8 +284,8 @@
     {
       "name": "ROTATOR",
       "portfolio": "main",
-      "equity": 7.14599093,
-      "all_time_pnl": -2.85400907,
+      "equity": 7.13705413,
+      "all_time_pnl": -2.86294587,
       "all_time_closed": 9,
       "session_closed": 0,
       "session_wins": 0,
@@ -344,88 +344,81 @@
       "change_pct": 3.0978
     },
     {
-      "symbol": "SOL",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 70.06,
-      "latest": 72.15,
-      "change_pct": 2.9832
-    },
-    {
       "symbol": "WIF",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.1202,
-      "latest": 0.1237,
-      "change_pct": 2.9118
+      "latest": 0.1236,
+      "change_pct": 2.8286
     },
     {
-      "symbol": "DOT",
+      "symbol": "SOL",
       "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.6593,
-      "latest": 0.6743,
-      "change_pct": 2.2751
-    },
-    {
-      "symbol": "UNI",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 4.6876,
-      "latest": 4.7725,
-      "change_pct": 1.8112
-    },
-    {
-      "symbol": "SUI",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.6552,
-      "latest": 0.6667,
-      "change_pct": 1.7552
+      "start": 70.06,
+      "latest": 72.02,
+      "change_pct": 2.7976
     },
     {
       "symbol": "FLOKI",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 1.621e-05,
-      "latest": 1.649e-05,
-      "change_pct": 1.7273
+      "latest": 1.652e-05,
+      "change_pct": 1.9124
     },
     {
-      "symbol": "LTC",
+      "symbol": "DOT",
       "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 39.94,
-      "latest": 40.62,
-      "change_pct": 1.7026
-    },
-    {
-      "symbol": "XRP",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 0.92536,
-      "latest": 0.9408,
-      "change_pct": 1.6685
+      "start": 0.6593,
+      "latest": 0.6719,
+      "change_pct": 1.9111
     },
     {
       "symbol": "TON",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.985,
-      "latest": 1.001,
-      "change_pct": 1.6244
+      "latest": 1.003,
+      "change_pct": 1.8274
     },
     {
-      "symbol": "NEAR",
+      "symbol": "XRP",
       "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 2.9717,
-      "latest": 3.0149,
-      "change_pct": 1.4537
+      "start": 0.92536,
+      "latest": 0.94177,
+      "change_pct": 1.7734
+    },
+    {
+      "symbol": "UNI",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 4.6876,
+      "latest": 4.7686,
+      "change_pct": 1.728
+    },
+    {
+      "symbol": "SUI",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 0.6552,
+      "latest": 0.6662,
+      "change_pct": 1.6789
+    },
+    {
+      "symbol": "LTC",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 39.94,
+      "latest": 40.58,
+      "change_pct": 1.6024
     },
     {
       "symbol": "ADA",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.14449,
-      "latest": 0.146344,
-      "change_pct": 1.2831
+      "latest": 0.146339,
+      "change_pct": 1.2797
     },
     {
       "symbol": "LINK",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 8.79616,
-      "latest": 8.90661,
-      "change_pct": 1.2557
+      "latest": 8.90858,
+      "change_pct": 1.2781
     },
     {
       "symbol": "SHIB",
@@ -435,32 +428,39 @@
       "change_pct": 1.2294
     },
     {
+      "symbol": "NEAR",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 2.9717,
+      "latest": 3.0068,
+      "change_pct": 1.1811
+    },
+    {
       "symbol": "XLM",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.12745,
-      "latest": 0.128764,
-      "change_pct": 1.031
-    },
-    {
-      "symbol": "BTC",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 60828.2,
-      "latest": 61442.3,
-      "change_pct": 1.0096
+      "latest": 0.128869,
+      "change_pct": 1.1134
     },
     {
       "symbol": "AVAX",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 6.671,
-      "latest": 6.733,
-      "change_pct": 0.9294
+      "latest": 6.732,
+      "change_pct": 0.9144
+    },
+    {
+      "symbol": "BTC",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 60828.2,
+      "latest": 61365.1,
+      "change_pct": 0.8826
     },
     {
       "symbol": "DOGE",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.0551706,
-      "latest": 0.0556471,
-      "change_pct": 0.8637
+      "latest": 0.0556117,
+      "change_pct": 0.7995
     },
     {
       "symbol": "BCH",
@@ -473,40 +473,40 @@
       "symbol": "PEPE",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 3.406e-06,
-      "latest": 3.424e-06,
-      "change_pct": 0.5285
+      "latest": 3.425e-06,
+      "change_pct": 0.5578
     },
     {
       "symbol": "ETH",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 1718.35,
-      "latest": 1724.65,
-      "change_pct": 0.3666
-    },
-    {
-      "symbol": "BNB",
-      "since": "2026-11-22T21:00:40.337858+00:00",
-      "start": 556.4,
-      "latest": 557.35,
-      "change_pct": 0.1707
+      "latest": 1721.34,
+      "change_pct": 0.174
     },
     {
       "symbol": "AAVE",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 98.05,
-      "latest": 98.2,
-      "change_pct": 0.153
+      "latest": 98.16,
+      "change_pct": 0.1122
+    },
+    {
+      "symbol": "BNB",
+      "since": "2026-11-22T21:00:40.337858+00:00",
+      "start": 556.4,
+      "latest": 556.9,
+      "change_pct": 0.0899
     },
     {
       "symbol": "TRX",
       "since": "2026-11-22T21:00:40.337858+00:00",
       "start": 0.305295,
-      "latest": 0.30474,
-      "change_pct": -0.1818
+      "latest": 0.304725,
+      "change_pct": -0.1867
     }
   ],
   "equity_curve": {
-    "samples": 124,
+    "samples": 125,
     "low": 194.23365,
     "high": 194.38671,
     "observed_drawdown_pct": -0.0523,
@@ -518,33 +518,33 @@
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 76586.0,
-      "current_mid": 61442.3,
+      "current_mid": 61365.1,
       "start": 10.0,
-      "equity": 7.90692,
-      "pnl": -2.09308,
-      "return_pct": -20.9308,
+      "equity": 7.896985,
+      "pnl": -2.103015,
+      "return_pct": -21.0302,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "ETH": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 2230.44,
-      "current_mid": 1724.65,
+      "current_mid": 1721.34,
       "start": 10.0,
-      "equity": 7.620784,
-      "pnl": -2.379216,
-      "return_pct": -23.7922,
+      "equity": 7.606158,
+      "pnl": -2.393842,
+      "return_pct": -23.9384,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "SOL": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 95.3,
-      "current_mid": 72.15,
+      "current_mid": 72.02,
       "start": 10.0,
-      "equity": 7.461612,
-      "pnl": -2.538388,
-      "return_pct": -25.3839,
+      "equity": 7.448168,
+      "pnl": -2.551832,
+      "return_pct": -25.5183,
       "holding": "buy-and-hold; hypothetical sale costs included"
     }
   },
@@ -892,7 +892,7 @@
     "observed": 71,
     "confirmed": 71,
     "polled_at": "2026-11-23T07:10:42.673426+00:00",
-    "age_minutes": 5.03,
+    "age_minutes": 9.96,
     "sectors": {
       "Majors": {
         "requested": 14,
@@ -1443,61 +1443,61 @@
     "rule_based_review_capacity": 640,
     "latest": {
       "GAMBLER": {
-        "support": 5,
-        "opposition": 19,
-        "vetoes": 1,
+        "support": 4,
+        "opposition": 24,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "HOUSE": {
-        "support": 17,
-        "opposition": 7,
-        "vetoes": 1,
+        "support": 24,
+        "opposition": 4,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "SPY": {
-        "support": 29,
-        "opposition": 0,
+        "support": 19,
+        "opposition": 11,
         "vetoes": 0,
         "action": "HOLD"
       },
       "MEME HUNTER": {
-        "support": 12,
+        "support": 9,
         "opposition": 13,
         "vetoes": 1,
         "action": "HOLD"
       },
       "BREAKOUT": {
-        "support": 5,
-        "opposition": 19,
-        "vetoes": 1,
+        "support": 4,
+        "opposition": 24,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "CONTRARIAN": {
-        "support": 17,
-        "opposition": 7,
-        "vetoes": 1,
+        "support": 24,
+        "opposition": 4,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "ROTATOR": {
-        "support": 5,
-        "opposition": 19,
-        "vetoes": 1,
+        "support": 4,
+        "opposition": 24,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "VORTEX": {
-        "support": 5,
-        "opposition": 19,
-        "vetoes": 1,
+        "support": 4,
+        "opposition": 24,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "FRACTAL": {
-        "support": 5,
-        "opposition": 19,
-        "vetoes": 1,
+        "support": 4,
+        "opposition": 24,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "SHOCKWAVE": {
-        "support": 12,
+        "support": 9,
         "opposition": 13,
         "vetoes": 1,
         "action": "HOLD"
@@ -1512,7 +1512,7 @@
   "health": {
     "trigger": "workflow_dispatch",
     "cron_verified": true,
-    "run_id": "45129738678",
+    "run_id": "45130337155",
     "data": {
       "main_stale": false,
       "research_stale": false,
