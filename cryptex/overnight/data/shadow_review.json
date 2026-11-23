@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-23T14:30:39.351025+00:00",
+  "generated_at": "2026-11-23T14:35:44.892677+00:00",
   "paper_only": true,
-  "candle_ts": 1795443900,
-  "cycles": 5625,
+  "candle_ts": 1795444200,
+  "cycles": 5626,
   "shadow_models": 11,
   "initial_shadow_paper_cash": 110,
   "primary_100_dollar_portfolio_is_separate": true,
@@ -16,7 +16,7 @@
       "wins": 0,
       "realized": -0.049744,
       "paper_return": -0.049744,
-      "latest_decision": "HOLD UNI",
+      "latest_decision": "HOLD TRX",
       "queued": null,
       "position": null,
       "sample_sufficient": false
@@ -27,67 +27,45 @@
       "wins": 0,
       "realized": -0.068828,
       "paper_return": -0.068828,
-      "latest_decision": "HOLD XRP",
+      "latest_decision": "HOLD UNI",
       "queued": null,
       "position": null,
       "sample_sufficient": false
     },
     "GEOMETRIC_DIVERSITY": {
-      "equity": 9.985393,
-      "closed": 4,
-      "wins": 0,
-      "realized": -0.043809,
-      "paper_return": -0.014607,
-      "latest_decision": "SELL_QUEUED XRP",
-      "queued": {
-        "side": "SELL",
-        "symbol": "XRP",
-        "reason": "Shadow 4 percent take profit"
-      },
-      "position": {
-        "symbol": "XRP",
-        "quantity": 1.0070569881617544,
-        "entry_cost": 0.9956190785980044,
-        "entry_market": 0.97835,
-        "entry_time": 1795442400,
-        "reason": "Cross-asset decorrelation penalty (sphere-packing analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.01764,
-        "cost_gate_version": 4
-      },
+      "equity": 9.962037,
+      "closed": 5,
+      "wins": 1,
+      "realized": -0.037963,
+      "paper_return": -0.037963,
+      "latest_decision": "FILLED_SELL XRP",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "ERROR_CODE_CONSENSUS": {
-      "equity": 9.95879,
-      "closed": 7,
-      "wins": 0,
-      "realized": -0.070334,
-      "paper_return": -0.04121,
-      "latest_decision": "SELL_QUEUED XRP",
-      "queued": {
-        "side": "SELL",
-        "symbol": "XRP",
-        "reason": "Shadow 4 percent take profit"
-      },
-      "position": {
-        "symbol": "XRP",
-        "quantity": 1.004373992825558,
-        "entry_cost": 0.9929665560735516,
-        "entry_market": 0.97835,
-        "entry_time": 1795442400,
-        "reason": "Agreement across three return horizons (code redundancy analogy); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.01764,
-        "cost_gate_version": 4
-      },
+      "equity": 9.935497,
+      "closed": 8,
+      "wins": 1,
+      "realized": -0.064503,
+      "paper_return": -0.064503,
+      "latest_decision": "FILLED_SELL XRP",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "GRAPH_COHERENCE": {
-      "equity": 9.968056,
+      "equity": 9.961481,
       "closed": 6,
       "wins": 0,
       "realized": -0.056704,
-      "paper_return": -0.031944,
-      "latest_decision": "HOLD SUI",
-      "queued": null,
+      "paper_return": -0.038519,
+      "latest_decision": "SELL_QUEUED SUI",
+      "queued": {
+        "side": "SELL",
+        "symbol": "SUI",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "SUI",
         "quantity": 1.3988884121967258,
@@ -112,37 +90,28 @@
       "sample_sufficient": false
     },
     "FREQTRADE_STYLE": {
-      "equity": 9.961046,
-      "closed": 7,
-      "wins": 0,
-      "realized": -0.068085,
-      "paper_return": -0.038954,
-      "latest_decision": "SELL_QUEUED XRP",
-      "queued": {
-        "side": "SELL",
-        "symbol": "XRP",
-        "reason": "Shadow 4 percent take profit"
-      },
-      "position": {
-        "symbol": "XRP",
-        "quantity": 1.0046015270911197,
-        "entry_cost": 0.9931915060599883,
-        "entry_market": 0.97835,
-        "entry_time": 1795442400,
-        "reason": "Own EMA/momentum trend score inspired by Freqtrade strategy testing; score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.01764,
-        "cost_gate_version": 4
-      },
+      "equity": 9.937747,
+      "closed": 8,
+      "wins": 1,
+      "realized": -0.062253,
+      "paper_return": -0.062253,
+      "latest_decision": "FILLED_SELL XRP",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "QLIB_STYLE": {
-      "equity": 9.968056,
+      "equity": 9.961481,
       "closed": 6,
       "wins": 0,
       "realized": -0.056704,
-      "paper_return": -0.031944,
-      "latest_decision": "HOLD SUI",
-      "queued": null,
+      "paper_return": -0.038519,
+      "latest_decision": "SELL_QUEUED SUI",
+      "queued": {
+        "side": "SELL",
+        "symbol": "SUI",
+        "reason": "Shadow thirty minute hold completed"
+      },
       "position": {
         "symbol": "SUI",
         "quantity": 1.3988884121967258,
@@ -167,51 +136,25 @@
       "sample_sufficient": false
     },
     "LEAN_EVENT": {
-      "equity": 9.972533,
-      "closed": 6,
-      "wins": 0,
-      "realized": -0.056632,
-      "paper_return": -0.027467,
-      "latest_decision": "SELL_QUEUED XRP",
-      "queued": {
-        "side": "SELL",
-        "symbol": "XRP",
-        "reason": "Shadow 4 percent take profit"
-      },
-      "position": {
-        "symbol": "XRP",
-        "quantity": 1.005759997396608,
-        "entry_cost": 0.9943368187400967,
-        "entry_market": 0.97835,
-        "entry_time": 1795442400,
-        "reason": "Event-driven completed-candle confirmation (LEAN-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.01764,
-        "cost_gate_version": 4
-      },
+      "equity": 9.949207,
+      "closed": 7,
+      "wins": 1,
+      "realized": -0.050793,
+      "paper_return": -0.050793,
+      "latest_decision": "FILLED_SELL XRP",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     },
     "NAUTILUS_REGIME": {
-      "equity": 9.966285,
-      "closed": 7,
-      "wins": 0,
-      "realized": -0.062862,
-      "paper_return": -0.033715,
-      "latest_decision": "SELL_QUEUED XRP",
-      "queued": {
-        "side": "SELL",
-        "symbol": "XRP",
-        "reason": "Shadow 4 percent take profit"
-      },
-      "position": {
-        "symbol": "XRP",
-        "quantity": 1.005129869619031,
-        "entry_cost": 0.9937138478013264,
-        "entry_market": 0.97835,
-        "entry_time": 1795442400,
-        "reason": "Deterministic volatility regime guard (NautilusTrader-inspired); score=+1.000, gate=0.14; after-cost candidate screen (not a forecast)",
-        "peak": 1.01764,
-        "cost_gate_version": 4
-      },
+      "equity": 9.942974,
+      "closed": 8,
+      "wins": 1,
+      "realized": -0.057026,
+      "paper_return": -0.057026,
+      "latest_decision": "FILLED_SELL XRP",
+      "queued": null,
+      "position": null,
       "sample_sufficient": false
     }
   },
