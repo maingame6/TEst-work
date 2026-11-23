@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-23T11:20:40.394641+00:00
+Generated: 2026-11-23T11:25:49.358922+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,17 +10,17 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD LTC |
-| FLUID_VISCOSITY | 9.9312 | 4 | 0 | -0.0688 | HOLD TRX |
-| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD TRX |
-| ERROR_CODE_CONSENSUS | 9.9297 | 7 | 0 | -0.0703 | HOLD XLM |
-| GRAPH_COHERENCE | 9.9433 | 6 | 0 | -0.0567 | HOLD TRX |
+| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD SOL |
+| FLUID_VISCOSITY | 9.9312 | 4 | 0 | -0.0688 | HOLD DOGE |
+| GEOMETRIC_DIVERSITY | 9.9562 | 4 | 0 | -0.0438 | HOLD DOGE |
+| ERROR_CODE_CONSENSUS | 9.9297 | 7 | 0 | -0.0703 | HOLD NEAR |
+| GRAPH_COHERENCE | 9.9433 | 6 | 0 | -0.0567 | HOLD DOGE |
 | LATTICE_ANALOG | 10.0000 | 0 | 0 | +0.0000 | HOLD XRP |
-| FREQTRADE_STYLE | 9.9319 | 7 | 0 | -0.0681 | HOLD TRX |
-| QLIB_STYLE | 9.9433 | 6 | 0 | -0.0567 | HOLD TRX |
+| FREQTRADE_STYLE | 9.9319 | 7 | 0 | -0.0681 | HOLD XLM |
+| QLIB_STYLE | 9.9433 | 6 | 0 | -0.0567 | HOLD DOGE |
 | HUMMINGBOT_FRICTION | 10.0000 | 0 | 0 | +0.0000 | HOLD |
-| LEAN_EVENT | 9.9434 | 6 | 0 | -0.0566 | HOLD TRX |
-| NAUTILUS_REGIME | 9.9371 | 7 | 0 | -0.0629 | HOLD TRX |
+| LEAN_EVENT | 9.9434 | 6 | 0 | -0.0566 | HOLD DOGE |
+| NAUTILUS_REGIME | 9.9371 | 7 | 0 | -0.0629 | HOLD DOGE |
 
 Full orders: shadow_trades.csv; every decision: shadow_decisions.csv.
 Public RSS headline archive with timestamps: public_research.json.
