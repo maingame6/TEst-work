@@ -6,9 +6,9 @@
   "strategy": "ROTATE3_30",
   "selection_from_inspected_history": true,
   "first_eligible_date": "2026-11-18",
-  "last_observed_date": "2026-11-23",
-  "observed_forward_days": 6,
-  "expected_forward_days": 6,
+  "last_observed_date": "2026-11-24",
+  "observed_forward_days": 7,
+  "expected_forward_days": 7,
   "missing_forward_days": 0,
   "forward_day_coverage_pct": 100.0,
   "base": {
@@ -26,8 +26,8 @@
     "after_cost_profitable_exits": 0
   },
   "btc_hodl_comparator": {
-    "nav": 92.919085,
-    "net_return_pct": -7.08092,
+    "nav": 90.77346,
+    "net_return_pct": -9.22654,
     "max_drawdown_pct": -12.74058,
     "completed_exits": 0,
     "after_cost_profitable_exits": 0
@@ -38,5 +38,5 @@
   "review_requirements": "At least 365 prospective days, 99% genuine days, 30 completed exits and superiority over cash and BTC under stress; independently review before any policy change.",
   "limitations": "Forward quote observations, not executable fills. Slippage simulated. No independent/live proof.",
   "run_status": "OBSERVED_NO_ACTION",
-  "generated_at": "2026-11-23T07:32:13.117219+00:00"
+  "generated_at": "2026-11-24T09:51:15.925880+00:00"
 }
