@@ -2,15 +2,15 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2412 symbol-hours, 3708 missing.
+Recorded 2424 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2351 hypothetical outcomes; censored 7473.
+Closed 2352 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
 |---|---:|---:|---:|---:|---:|
 | adx_uptrend_16 | 37 | 12 | -1.5405 | -2.0316 | 37 |
-| adx_uptrend_32 | 12 | 3 | -1.3907 | -1.8826 | 12 |
+| adx_uptrend_32 | 13 | 3 | -1.5078 | -1.9991 | 13 |
 | adx_uptrend_8 | 43 | 12 | -1.5574 | -2.0484 | 43 |
 | aroon_uptrend_16 | 28 | 4 | -3.1704 | -3.6534 | 28 |
 | aroon_uptrend_32 | 14 | 1 | -1.9516 | -2.4407 | 14 |
