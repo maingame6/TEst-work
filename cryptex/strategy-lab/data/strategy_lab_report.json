@@ -4,7 +4,7 @@
   "real_orders": false,
   "independent_of_210_paper_wallets": true,
   "writer_access": false,
-  "generated_at": "2026-11-24T08:11:06.503137+00:00",
+  "generated_at": "2026-11-24T09:11:12.743366+00:00",
   "config_hash": "43936e93e138e0b1db1c2c09da43d7aa28bf38f33625589802fbccb6a9a65f5e",
   "family_count": 28,
   "candidate_count": 84,
@@ -23,29 +23,29 @@
     "XLM"
   ],
   "latest_observed_hour_ts_by_symbol": {
-    "BTC": 1795503600,
-    "ETH": 1795503600,
-    "SOL": 1795503600,
-    "XRP": 1795503600,
-    "ADA": 1795503600,
-    "DOGE": 1795503600,
-    "LTC": 1795503600,
-    "LINK": 1795503600,
-    "BCH": 1795503600,
-    "DOT": 1795503600,
-    "AVAX": 1795503600,
-    "XLM": 1795503600
+    "BTC": 1795507200,
+    "ETH": 1795507200,
+    "SOL": 1795507200,
+    "XRP": 1795507200,
+    "ADA": 1795507200,
+    "DOGE": 1795507200,
+    "LTC": 1795507200,
+    "LINK": 1795507200,
+    "BCH": 1795507200,
+    "DOT": 1795507200,
+    "AVAX": 1795507200,
+    "XLM": 1795507200
   },
   "indicator_count": 47,
-  "observed_symbol_hours": 2484,
+  "observed_symbol_hours": 2496,
   "missing_symbol_hours": 3708,
-  "observation_coverage_pct": 40.1163,
-  "closed_hypotheses": 2522,
+  "observation_coverage_pct": 40.2321,
+  "closed_hypotheses": 2537,
   "censored_hypotheses": 7473,
-  "open_hypotheses": 638,
+  "open_hypotheses": 624,
   "queued_hypotheses": 1,
-  "signals": 10634,
-  "days_observed": 21.441,
+  "signals": 10635,
+  "days_observed": 21.483,
   "heldout_starts_at": "2026-11-10T00:00:00+00:00",
   "review_minimum_closes_per_candidate": 60,
   "review_minimum_days": 30,
@@ -78,21 +78,21 @@
       "eligible_to_promote": false
     },
     "sma_trend_32": {
-      "closed": 9,
-      "holdout_closed": 9,
+      "closed": 10,
+      "holdout_closed": 10,
       "wins_after_cost": 1,
-      "mean_after_cost_pct": -3.61228,
-      "mean_stress_pct": -4.09303,
-      "mean_heldout_pct": -3.61228,
+      "mean_after_cost_pct": -3.6425,
+      "mean_stress_pct": -4.12309,
+      "mean_heldout_pct": -3.6425,
       "eligible_to_promote": false
     },
     "ema_trend_8": {
-      "closed": 34,
-      "holdout_closed": 34,
+      "closed": 35,
+      "holdout_closed": 35,
       "wins_after_cost": 11,
-      "mean_after_cost_pct": -1.80671,
-      "mean_stress_pct": -2.29646,
-      "mean_heldout_pct": -1.80671,
+      "mean_after_cost_pct": -1.80747,
+      "mean_stress_pct": -2.29721,
+      "mean_heldout_pct": -1.80747,
       "eligible_to_promote": false
     },
     "ema_trend_16": {
@@ -150,12 +150,12 @@
       "eligible_to_promote": false
     },
     "vol_target_momentum_16": {
-      "closed": 38,
-      "holdout_closed": 38,
+      "closed": 39,
+      "holdout_closed": 39,
       "wins_after_cost": 7,
-      "mean_after_cost_pct": -2.56436,
-      "mean_stress_pct": -3.05033,
-      "mean_heldout_pct": -2.56436,
+      "mean_after_cost_pct": -2.54561,
+      "mean_stress_pct": -3.03168,
+      "mean_heldout_pct": -2.54561,
       "eligible_to_promote": false
     },
     "vol_target_momentum_32": {
@@ -330,57 +330,57 @@
       "eligible_to_promote": false
     },
     "macd_trend_8": {
-      "closed": 36,
-      "holdout_closed": 36,
+      "closed": 37,
+      "holdout_closed": 37,
       "wins_after_cost": 4,
-      "mean_after_cost_pct": -2.46315,
-      "mean_stress_pct": -2.94962,
-      "mean_heldout_pct": -2.46315,
+      "mean_after_cost_pct": -2.44612,
+      "mean_stress_pct": -2.93268,
+      "mean_heldout_pct": -2.44612,
       "eligible_to_promote": false
     },
     "macd_trend_16": {
-      "closed": 36,
-      "holdout_closed": 36,
+      "closed": 37,
+      "holdout_closed": 37,
       "wins_after_cost": 4,
-      "mean_after_cost_pct": -2.46315,
-      "mean_stress_pct": -2.94962,
-      "mean_heldout_pct": -2.46315,
+      "mean_after_cost_pct": -2.44612,
+      "mean_stress_pct": -2.93268,
+      "mean_heldout_pct": -2.44612,
       "eligible_to_promote": false
     },
     "macd_trend_32": {
-      "closed": 36,
-      "holdout_closed": 36,
+      "closed": 37,
+      "holdout_closed": 37,
       "wins_after_cost": 4,
-      "mean_after_cost_pct": -2.46315,
-      "mean_stress_pct": -2.94962,
-      "mean_heldout_pct": -2.46315,
+      "mean_after_cost_pct": -2.44612,
+      "mean_stress_pct": -2.93268,
+      "mean_heldout_pct": -2.44612,
       "eligible_to_promote": false
     },
     "macd_acceleration_8": {
-      "closed": 36,
-      "holdout_closed": 36,
+      "closed": 37,
+      "holdout_closed": 37,
       "wins_after_cost": 5,
-      "mean_after_cost_pct": -2.826,
-      "mean_stress_pct": -3.31066,
-      "mean_heldout_pct": -2.826,
+      "mean_after_cost_pct": -2.80421,
+      "mean_stress_pct": -3.28898,
+      "mean_heldout_pct": -2.80421,
       "eligible_to_promote": false
     },
     "macd_acceleration_16": {
-      "closed": 36,
-      "holdout_closed": 36,
+      "closed": 37,
+      "holdout_closed": 37,
       "wins_after_cost": 5,
-      "mean_after_cost_pct": -2.826,
-      "mean_stress_pct": -3.31066,
-      "mean_heldout_pct": -2.826,
+      "mean_after_cost_pct": -2.80421,
+      "mean_stress_pct": -3.28898,
+      "mean_heldout_pct": -2.80421,
       "eligible_to_promote": false
     },
     "macd_acceleration_32": {
-      "closed": 36,
-      "holdout_closed": 36,
+      "closed": 37,
+      "holdout_closed": 37,
       "wins_after_cost": 5,
-      "mean_after_cost_pct": -2.826,
-      "mean_stress_pct": -3.31066,
-      "mean_heldout_pct": -2.826,
+      "mean_after_cost_pct": -2.80421,
+      "mean_stress_pct": -3.28898,
+      "mean_heldout_pct": -2.80421,
       "eligible_to_promote": false
     },
     "stochastic_rebound_8": {
@@ -483,12 +483,12 @@
       "eligible_to_promote": false
     },
     "cci_trend_32": {
-      "closed": 16,
-      "holdout_closed": 16,
+      "closed": 17,
+      "holdout_closed": 17,
       "wins_after_cost": 2,
-      "mean_after_cost_pct": -2.40426,
-      "mean_stress_pct": -2.89102,
-      "mean_heldout_pct": -2.40426,
+      "mean_after_cost_pct": -2.37066,
+      "mean_stress_pct": -2.85759,
+      "mean_heldout_pct": -2.37066,
       "eligible_to_promote": false
     },
     "obv_confirmation_8": {
@@ -501,12 +501,12 @@
       "eligible_to_promote": false
     },
     "obv_confirmation_16": {
-      "closed": 42,
-      "holdout_closed": 42,
+      "closed": 43,
+      "holdout_closed": 43,
       "wins_after_cost": 3,
-      "mean_after_cost_pct": -2.7695,
-      "mean_stress_pct": -3.25445,
-      "mean_heldout_pct": -2.7695,
+      "mean_after_cost_pct": -2.74772,
+      "mean_stress_pct": -3.23278,
+      "mean_heldout_pct": -2.74772,
       "eligible_to_promote": false
     },
     "obv_confirmation_32": {
@@ -573,12 +573,12 @@
       "eligible_to_promote": false
     },
     "adx_uptrend_8": {
-      "closed": 43,
-      "holdout_closed": 43,
+      "closed": 44,
+      "holdout_closed": 44,
       "wins_after_cost": 12,
-      "mean_after_cost_pct": -1.5574,
-      "mean_stress_pct": -2.0484,
-      "mean_heldout_pct": -1.5574,
+      "mean_after_cost_pct": -1.55662,
+      "mean_stress_pct": -2.04762,
+      "mean_heldout_pct": -1.55662,
       "eligible_to_promote": false
     },
     "adx_uptrend_16": {
@@ -609,12 +609,12 @@
       "eligible_to_promote": false
     },
     "squeeze_breakout_16": {
-      "closed": 25,
-      "holdout_closed": 25,
+      "closed": 26,
+      "holdout_closed": 26,
       "wins_after_cost": 2,
-      "mean_after_cost_pct": -2.99137,
-      "mean_stress_pct": -3.47521,
-      "mean_heldout_pct": -2.99137,
+      "mean_after_cost_pct": -2.94682,
+      "mean_stress_pct": -3.43089,
+      "mean_heldout_pct": -2.94682,
       "eligible_to_promote": false
     },
     "squeeze_breakout_32": {
@@ -681,12 +681,12 @@
       "eligible_to_promote": false
     },
     "aroon_uptrend_8": {
-      "closed": 35,
-      "holdout_closed": 35,
+      "closed": 37,
+      "holdout_closed": 37,
       "wins_after_cost": 11,
-      "mean_after_cost_pct": -1.36229,
-      "mean_stress_pct": -1.85426,
-      "mean_heldout_pct": -1.36229,
+      "mean_after_cost_pct": -1.398,
+      "mean_stress_pct": -1.88979,
+      "mean_heldout_pct": -1.398,
       "eligible_to_promote": false
     },
     "aroon_uptrend_16": {
@@ -832,7 +832,7 @@
   ],
   "failed_symbols": {},
   "source": "Kraken public OHLC 60; no private APIs",
-  "archived_hourly_records": 2472,
-  "archive_hash_chain_head": "08999fcfcd28f5968f58e2b9f7d5d6e77b048b3b77f862595987ae0b3deb7b65",
+  "archived_hourly_records": 2484,
+  "archive_hash_chain_head": "6e302a2d0231b9b67d175ac1261d789bb7309eaa0616dd9bfa2ed9d50f2441ac",
   "archive_begins_after_first_initial_run": true
 }
