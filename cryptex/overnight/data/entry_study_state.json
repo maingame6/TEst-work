@@ -1,35 +1,10 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795540200,
+  "last_ts": 1795540500,
   "first_ts": 1793488500,
-  "observed_candles": 5898,
-  "signals": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795540200,
-      "observed_move": 0.01152728
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "LTC",
-      "signal_ts": 1795540200,
-      "observed_move": 0.01096437
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795540200,
-      "observed_move": 0.00780892
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BNB",
-      "signal_ts": 1795540200,
-      "observed_move": 0.0069276
-    }
-  ],
+  "observed_candles": 5899,
+  "signals": [],
   "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -38,6 +13,38 @@
       "entry_ts": 1795539300,
       "entry_mid": 0.641,
       "exit_ts": 1795541100
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 2.8389,
+      "exit_ts": 1795542300
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LTC",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 40.47,
+      "exit_ts": 1795542300
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 59673.0,
+      "exit_ts": 1795542300
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BNB",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 546.98,
+      "exit_ts": 1795542300
     }
   ],
   "trades": [
@@ -14320,35 +14327,35 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5786,
-      "liquid_candidates": 58234,
-      "move_below_gate": 58065,
-      "volume_below_gate": 44258,
+      "bars": 5787,
+      "liquid_candidates": 58244,
+      "move_below_gate": 58075,
+      "volume_below_gate": 44267,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5786,
-      "liquid_candidates": 58234,
-      "move_below_gate": 58038,
-      "volume_below_gate": 43623,
+      "bars": 5787,
+      "liquid_candidates": 58244,
+      "move_below_gate": 58048,
+      "volume_below_gate": 43632,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5786,
-      "liquid_candidates": 58234,
-      "move_below_gate": 57399,
-      "volume_below_gate": 43623,
+      "bars": 5787,
+      "liquid_candidates": 58244,
+      "move_below_gate": 57409,
+      "volume_below_gate": 43632,
       "qualified": 471,
       "queued": 213
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5786,
-      "liquid_candidates": 58234,
-      "move_below_gate": 52883,
-      "volume_below_gate": 42942,
-      "qualified": 1988,
+      "bars": 5787,
+      "liquid_candidates": 58244,
+      "move_below_gate": 52886,
+      "volume_below_gate": 42951,
+      "qualified": 1989,
       "queued": 960
     }
   },
@@ -14463,6 +14470,62 @@
       "signal_ts": 1795537500,
       "entry_ts": 1795537800,
       "entry_mid": 8.77899,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 2.8389,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 2.8389,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LTC",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 40.47,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 59673.0,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 59673.0,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BNB",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 546.98,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BNB",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "entry_mid": 546.98,
       "hold_bars": 288
     }
   ],
