@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2496 symbol-hours, 3708 missing.
+Recorded 2508 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2537 hypothetical outcomes; censored 7473.
+Closed 2543 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -32,7 +32,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_trend_8 | 39 | 5 | -2.3979 | -2.8847 | 39 |
 | cmf_accumulation_16 | 32 | 6 | -2.3418 | -2.8289 | 32 |
 | cmf_accumulation_32 | 11 | 3 | -2.4199 | -2.9066 | 11 |
-| cmf_accumulation_8 | 42 | 11 | -2.7955 | -3.2803 | 42 |
+| cmf_accumulation_8 | 43 | 11 | -2.7601 | -3.2451 | 43 |
 | donchian_breakout_16 | 16 | 1 | -2.4638 | -2.9503 | 16 |
 | donchian_breakout_32 | 7 | 2 | -1.9468 | -2.4359 | 7 |
 | donchian_breakout_8 | 27 | 2 | -2.7008 | -3.1861 | 27 |
@@ -60,7 +60,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | momentum_16 | 34 | 5 | -2.7950 | -3.2798 | 34 |
 | momentum_32 | 17 | 7 | 0.4502 | -0.0508 | 17 |
 | momentum_8 | 35 | 11 | -1.4668 | -1.9582 | 35 |
-| obv_confirmation_16 | 43 | 3 | -2.7477 | -3.2328 | 43 |
+| obv_confirmation_16 | 44 | 3 | -2.7318 | -3.2170 | 44 |
 | obv_confirmation_32 | 20 | 8 | -0.9017 | -1.3960 | 20 |
 | obv_confirmation_8 | 39 | 5 | -2.6553 | -3.1409 | 39 |
 | roc_acceleration_16 | 37 | 13 | -1.4269 | -1.9185 | 37 |
@@ -73,8 +73,8 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_trend_32 | 24 | 4 | -1.7925 | -2.2823 | 24 |
 | rsi_trend_8 | 42 | 11 | -1.5221 | -2.0133 | 42 |
 | sma_trend_16 | 30 | 3 | -2.8265 | -3.3112 | 30 |
-| sma_trend_32 | 10 | 1 | -3.6425 | -4.1231 | 10 |
-| sma_trend_8 | 36 | 9 | -2.0622 | -2.5507 | 36 |
+| sma_trend_32 | 11 | 1 | -3.7107 | -4.1909 | 11 |
+| sma_trend_8 | 37 | 9 | -2.0681 | -2.5566 | 37 |
 | squeeze_breakout_16 | 26 | 2 | -2.9468 | -3.4309 | 26 |
 | squeeze_breakout_32 | 8 | 1 | -2.8334 | -3.3180 | 8 |
 | squeeze_breakout_8 | 35 | 3 | -2.6124 | -3.0982 | 35 |
@@ -90,9 +90,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | vwap_reclaim_16 | 38 | 11 | -1.4899 | -1.9812 | 38 |
 | vwap_reclaim_32 | 31 | 6 | -1.8873 | -2.3767 | 31 |
 | vwap_reclaim_8 | 45 | 13 | -2.1391 | -2.6272 | 45 |
-| williams_rebound_16 | 48 | 14 | -2.8264 | -3.3111 | 48 |
+| williams_rebound_16 | 49 | 14 | -2.8569 | -3.3415 | 49 |
 | williams_rebound_32 | 40 | 5 | -3.8607 | -4.3402 | 40 |
-| williams_rebound_8 | 47 | 8 | -3.2655 | -3.7479 | 47 |
+| williams_rebound_8 | 48 | 8 | -3.2875 | -3.7699 | 48 |
 
 No winner is approved. OHLCV closes are NOT executable fills.
 A sweep of correlated indicators inflates false positives; require purged walk-forward, block-bootstrap/multiplicity checks, cost stress and independent validation.
