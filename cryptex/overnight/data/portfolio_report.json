@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24T18:20:39.919189+00:00",
-  "local_time": "2026-11-24T18:20:39.919189+00:00",
+  "generated_at": "2026-11-24T18:25:51.258019+00:00",
+  "local_time": "2026-11-24T18:25:51.258019+00:00",
   "mode": "PAPER_ONLY",
   "real_money": false,
   "initial": 210.0,
@@ -231,7 +231,7 @@
       "wins": 0,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD LTC",
+      "last_decision": "HOLD SOL",
       "missing_quote": false
     },
     {
@@ -285,7 +285,7 @@
       "wins": 1,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD XLM",
+      "last_decision": "HOLD SOL",
       "missing_quote": false
     },
     {
@@ -393,7 +393,7 @@
       "wins": 1,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD ADA",
+      "last_decision": "HOLD SOL",
       "missing_quote": false
     },
     {
@@ -411,7 +411,7 @@
       "wins": 1,
       "position": null,
       "pending": null,
-      "last_decision": "HOLD BNB",
+      "last_decision": "HOLD AAVE",
       "missing_quote": false
     }
   ],
@@ -423,8 +423,8 @@
     "main_status": "HEALTHY: paper trading on completed Kraken candles",
     "research_status": "OK"
   },
-  "last_candle_main": 1795544100,
-  "last_candle_research": 1795544100,
+  "last_candle_main": 1795544400,
+  "last_candle_research": 1795544400,
   "total_open": 0,
   "total_queued": 0,
   "total_completed": 196,
@@ -464,7 +464,7 @@
   "actual_trigger_event": "workflow_dispatch",
   "schedule_confirmed": true,
   "last_schedule_run": "2026-11-17T18:01:51.403833+00:00",
-  "github_run_id": "45458407447",
+  "github_run_id": "45459336708",
   "valuation_note": "Simulated paper equity at closed-candle prices including hypothetical future sell fee and slippage, NOT an executable quote.",
   "overnight": {
     "date": "2026-11-23",
@@ -492,33 +492,33 @@
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 76586.0,
-        "current_mid": 59982.2,
+        "current_mid": 59990.0,
         "start": 10.0,
-        "equity": 7.719021,
-        "pnl": -2.280979,
-        "return_pct": -22.8098,
+        "equity": 7.720025,
+        "pnl": -2.279975,
+        "return_pct": -22.7997,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "ETH": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 2230.44,
-        "current_mid": 1682.26,
+        "current_mid": 1682.31,
         "start": 10.0,
-        "equity": 7.433474,
-        "pnl": -2.566526,
-        "return_pct": -25.6653,
+        "equity": 7.433695,
+        "pnl": -2.566305,
+        "return_pct": -25.6631,
         "holding": "buy-and-hold; hypothetical sale costs included"
       },
       "SOL": {
         "status": "PAPER_ONLY",
         "started_at": "2026-10-30T22:21:37.361980+00:00",
         "entry_mid": 95.3,
-        "current_mid": 69.57,
+        "current_mid": 69.56,
         "start": 10.0,
-        "equity": 7.194794,
-        "pnl": -2.805206,
-        "return_pct": -28.0521,
+        "equity": 7.193759,
+        "pnl": -2.806241,
+        "return_pct": -28.0624,
         "holding": "buy-and-hold; hypothetical sale costs included"
       }
     },
@@ -538,22 +538,22 @@
       "ETH",
       "SOL"
     ],
-    "candle_utc": 1795544100,
-    "at": "2026-11-24T18:20:39.919189+00:00",
-    "balance": 22.347289,
-    "pnl": -7.652711,
+    "candle_utc": 1795544400,
+    "at": "2026-11-24T18:25:51.258019+00:00",
+    "balance": 22.347479,
+    "pnl": -7.652521,
     "coins": {
-      "BTC": 7.719021,
-      "ETH": 7.433474,
-      "SOL": 7.194794
+      "BTC": 7.720025,
+      "ETH": 7.433695,
+      "SOL": 7.193759
     },
     "entries": {
       "BTC": "2026-10-30T22:21:37.361980+00:00",
       "ETH": "2026-10-30T22:21:37.361980+00:00",
       "SOL": "2026-10-30T22:21:37.361980+00:00"
     },
-    "observations": 5421,
-    "last_move_usd": -0.021216
+    "observations": 5422,
+    "last_move_usd": 0.00019
   },
   "pilot_evidence": {
     "mode": "PAPER_ONLY",
