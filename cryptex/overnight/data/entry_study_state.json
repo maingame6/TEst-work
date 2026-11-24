@@ -1,20 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795485000,
+  "last_ts": 1795485300,
   "first_ts": 1793488500,
-  "observed_candles": 5714,
+  "observed_candles": 5715,
   "signals": [],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XLM",
-      "signal_ts": 1795483200,
-      "entry_ts": 1795483500,
-      "entry_mid": 0.132085,
-      "exit_ts": 1795485300
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -13964,40 +13955,53 @@
       "slippage_drag": 0.0049860585,
       "stress_net_return": -0.0259530113,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XLM",
+      "signal_ts": 1795483200,
+      "entry_ts": 1795483500,
+      "exit_ts": 1795485300,
+      "gross_return": -0.0085399553,
+      "net_return": -0.0291438632,
+      "fee_drag": 0.0156589699,
+      "slippage_drag": 0.0049449379,
+      "stress_net_return": -0.0339860988,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5602,
-      "liquid_candidates": 56337,
-      "move_below_gate": 56168,
-      "volume_below_gate": 42840,
+      "bars": 5603,
+      "liquid_candidates": 56347,
+      "move_below_gate": 56178,
+      "volume_below_gate": 42849,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5602,
-      "liquid_candidates": 56337,
-      "move_below_gate": 56141,
-      "volume_below_gate": 42223,
+      "bars": 5603,
+      "liquid_candidates": 56347,
+      "move_below_gate": 56151,
+      "volume_below_gate": 42232,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5602,
-      "liquid_candidates": 56337,
-      "move_below_gate": 55506,
-      "volume_below_gate": 42223,
+      "bars": 5603,
+      "liquid_candidates": 56347,
+      "move_below_gate": 55516,
+      "volume_below_gate": 42232,
       "qualified": 470,
       "queued": 212
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5602,
-      "liquid_candidates": 56337,
-      "move_below_gate": 51139,
-      "volume_below_gate": 41558,
+      "bars": 5603,
+      "liquid_candidates": 56347,
+      "move_below_gate": 51149,
+      "volume_below_gate": 41567,
       "qualified": 1947,
       "queued": 932
     }
