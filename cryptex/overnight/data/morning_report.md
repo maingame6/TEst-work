@@ -2,7 +2,7 @@
 
 **Paper accounts only. No real balance, profit or exchange execution.**
 
-Checked: 2026-11-24T20:05:43.340910+00:00 (Europe/Dublin)
+Checked: 2026-11-24T20:10:45.226859+00:00 (Europe/Dublin)
 
 GitHub trigger: workflow_dispatch; independently scheduled trading CONFIRMED
 Last genuine scheduled execution: 2026-11-17T18:01:51.403833+00:00
@@ -49,9 +49,9 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 | Asset | First observed UTC | Paper benchmark value | Benchmark after-cost P&L |
 |---|---|---:|---:|
-| BTC | 2026-10-30T22:21:37.361980+00:00 | $7.6666 | $-2.3334 |
-| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.3808 | $-2.6192 |
-| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.1338 | $-2.8662 |
+| BTC | 2026-10-30T22:21:37.361980+00:00 | $7.6688 | $-2.3312 |
+| ETH | 2026-10-30T22:21:37.361980+00:00 | $7.3857 | $-2.6143 |
+| SOL | 2026-10-30T22:21:37.361980+00:00 | $7.1348 | $-2.8652 |
 
 ## 21-agent leaderboard
 
@@ -81,7 +81,7 @@ Three additional $10 paper references start at their FIRST verified mid-price an
 
 ## Reliability
 
-Latest main/shadow candle timestamps: 1795550400 / 1795550400
+Latest main/shadow candle timestamps: 1795550700 / 1795550700
 Warnings: none
 CURRENT COST MODEL: 0.80% taker fee and 0.25% assumed slippage EACH WAY; includes estimated liquidation on positions. Historical earlier fills retain V3 assumptions; overall P&L is MIXED-COST, not a V4-only backtest.
 Source of truth: portfolio_report.json, combined_equity.csv, overnight_sessions.json, trades.csv, shadow_trades.csv.
