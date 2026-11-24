@@ -2,16 +2,16 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2508 symbol-hours, 3708 missing.
+Recorded 2520 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2543 hypothetical outcomes; censored 7473.
+Closed 2555 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
 |---|---:|---:|---:|---:|---:|
 | adx_uptrend_16 | 38 | 12 | -1.5224 | -2.0136 | 38 |
 | adx_uptrend_32 | 14 | 3 | -1.4233 | -1.9150 | 14 |
-| adx_uptrend_8 | 44 | 12 | -1.5566 | -2.0476 | 44 |
+| adx_uptrend_8 | 45 | 12 | -1.5619 | -2.0528 | 45 |
 | aroon_uptrend_16 | 29 | 4 | -3.1237 | -3.6069 | 29 |
 | aroon_uptrend_32 | 17 | 2 | -1.6893 | -2.1797 | 17 |
 | aroon_uptrend_8 | 37 | 11 | -1.3980 | -1.8898 | 37 |
@@ -32,22 +32,22 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_trend_8 | 39 | 5 | -2.3979 | -2.8847 | 39 |
 | cmf_accumulation_16 | 32 | 6 | -2.3418 | -2.8289 | 32 |
 | cmf_accumulation_32 | 11 | 3 | -2.4199 | -2.9066 | 11 |
-| cmf_accumulation_8 | 43 | 11 | -2.7601 | -3.2451 | 43 |
+| cmf_accumulation_8 | 44 | 11 | -2.7605 | -3.2455 | 44 |
 | donchian_breakout_16 | 16 | 1 | -2.4638 | -2.9503 | 16 |
 | donchian_breakout_32 | 7 | 2 | -1.9468 | -2.4359 | 7 |
 | donchian_breakout_8 | 27 | 2 | -2.7008 | -3.1861 | 27 |
-| efficiency_trend_16 | 20 | 3 | -2.4294 | -2.9160 | 20 |
+| efficiency_trend_16 | 21 | 3 | -2.5334 | -3.0195 | 21 |
 | efficiency_trend_32 | 2 | 2 | 3.9439 | 3.4255 | 2 |
-| efficiency_trend_8 | 32 | 9 | -1.7702 | -2.2601 | 32 |
+| efficiency_trend_8 | 34 | 9 | -1.8654 | -2.3548 | 34 |
 | ema_trend_16 | 23 | 6 | -2.0626 | -2.5511 | 23 |
-| ema_trend_32 | 3 | 0 | -4.1846 | -4.6624 | 3 |
+| ema_trend_32 | 4 | 0 | -3.5866 | -4.0675 | 4 |
 | ema_trend_8 | 35 | 11 | -1.8075 | -2.2972 | 35 |
 | keltner_breakout_16 | 9 | 1 | -1.2159 | -1.7086 | 9 |
 | keltner_breakout_32 | 6 | 1 | -0.7964 | -1.2912 | 6 |
 | keltner_breakout_8 | 0 | 0 | — | — | 0 |
 | low_vol_trend_16 | 41 | 10 | -2.0740 | -2.5624 | 41 |
 | low_vol_trend_32 | 29 | 5 | -1.7737 | -2.2636 | 29 |
-| low_vol_trend_8 | 40 | 11 | -1.4091 | -1.9008 | 40 |
+| low_vol_trend_8 | 41 | 11 | -1.4184 | -1.9101 | 41 |
 | macd_acceleration_16 | 37 | 5 | -2.8042 | -3.2890 | 37 |
 | macd_acceleration_32 | 37 | 5 | -2.8042 | -3.2890 | 37 |
 | macd_acceleration_8 | 37 | 5 | -2.8042 | -3.2890 | 37 |
@@ -57,12 +57,12 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | mfi_recovery_16 | 42 | 12 | -2.6418 | -3.1273 | 42 |
 | mfi_recovery_32 | 34 | 9 | -2.9739 | -3.4578 | 34 |
 | mfi_recovery_8 | 49 | 16 | -2.7822 | -3.2671 | 49 |
-| momentum_16 | 34 | 5 | -2.7950 | -3.2798 | 34 |
+| momentum_16 | 35 | 5 | -2.7707 | -3.2556 | 35 |
 | momentum_32 | 17 | 7 | 0.4502 | -0.0508 | 17 |
-| momentum_8 | 35 | 11 | -1.4668 | -1.9582 | 35 |
+| momentum_8 | 36 | 11 | -1.5194 | -2.0106 | 36 |
 | obv_confirmation_16 | 44 | 3 | -2.7318 | -3.2170 | 44 |
-| obv_confirmation_32 | 20 | 8 | -0.9017 | -1.3960 | 20 |
-| obv_confirmation_8 | 39 | 5 | -2.6553 | -3.1409 | 39 |
+| obv_confirmation_32 | 21 | 8 | -1.0784 | -1.5718 | 21 |
+| obv_confirmation_8 | 41 | 5 | -2.6373 | -3.1229 | 41 |
 | roc_acceleration_16 | 37 | 13 | -1.4269 | -1.9185 | 37 |
 | roc_acceleration_32 | 38 | 7 | -2.3426 | -2.8297 | 38 |
 | roc_acceleration_8 | 45 | 7 | -2.8948 | -3.3791 | 45 |
