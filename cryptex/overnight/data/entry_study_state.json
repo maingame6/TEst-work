@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795489200,
+  "last_ts": 1795489500,
   "first_ts": 1793488500,
-  "observed_candles": 5728,
+  "observed_candles": 5729,
   "signals": [],
   "open": [],
   "trades": [
@@ -13974,47 +13974,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5616,
-      "liquid_candidates": 56487,
-      "move_below_gate": 56318,
-      "volume_below_gate": 42941,
+      "bars": 5617,
+      "liquid_candidates": 56500,
+      "move_below_gate": 56331,
+      "volume_below_gate": 42942,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5616,
-      "liquid_candidates": 56487,
-      "move_below_gate": 56291,
-      "volume_below_gate": 42323,
+      "bars": 5617,
+      "liquid_candidates": 56500,
+      "move_below_gate": 56304,
+      "volume_below_gate": 42324,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5616,
-      "liquid_candidates": 56487,
-      "move_below_gate": 55656,
-      "volume_below_gate": 42323,
+      "bars": 5617,
+      "liquid_candidates": 56500,
+      "move_below_gate": 55669,
+      "volume_below_gate": 42324,
       "qualified": 470,
       "queued": 212
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5616,
-      "liquid_candidates": 56487,
-      "move_below_gate": 51289,
-      "volume_below_gate": 41657,
+      "bars": 5617,
+      "liquid_candidates": 56500,
+      "move_below_gate": 51302,
+      "volume_below_gate": 41658,
       "qualified": 1947,
       "queued": 932
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ADA",
-      "signal_ts": 1795402800,
-      "entry_ts": 1795403100,
-      "entry_mid": 0.142983,
-      "hold_bars": 288
-    },
     {
       "gate": "V4_TAKER_STRICT",
       "symbol": "NEAR",
@@ -21612,6 +21604,18 @@
       "gross_return": 0.0072879504,
       "net_return": -0.0136448831,
       "stress_net_return": -0.0185644213
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1795402800,
+      "entry_ts": 1795403100,
+      "exit_ts": 1795489500,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0212752565,
+      "net_return": 5.17474e-05,
+      "stress_net_return": -0.004936104
     }
   ],
   "horizon_censored": 603
