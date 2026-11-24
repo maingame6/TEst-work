@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2628 symbol-hours, 3708 missing.
+Recorded 2640 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2940 hypothetical outcomes; censored 7473.
+Closed 2942 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -45,7 +45,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | keltner_breakout_16 | 18 | 1 | -4.3226 | -4.7998 | 18 |
 | keltner_breakout_32 | 14 | 1 | -4.2899 | -4.7672 | 14 |
 | keltner_breakout_8 | 12 | 0 | -7.7574 | -8.2175 | 12 |
-| low_vol_trend_16 | 47 | 10 | -2.6738 | -3.1592 | 47 |
+| low_vol_trend_16 | 48 | 10 | -2.7114 | -3.1967 | 48 |
 | low_vol_trend_32 | 32 | 5 | -2.1862 | -2.6740 | 32 |
 | low_vol_trend_8 | 51 | 11 | -2.3575 | -2.8445 | 51 |
 | macd_acceleration_16 | 40 | 5 | -3.0676 | -3.5510 | 40 |
@@ -69,7 +69,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_rebound_16 | 46 | 14 | -2.8900 | -3.3743 | 46 |
 | rsi_rebound_32 | 34 | 5 | -3.5988 | -4.0796 | 34 |
 | rsi_rebound_8 | 47 | 11 | -2.6778 | -3.1632 | 47 |
-| rsi_trend_16 | 46 | 8 | -2.8815 | -3.3658 | 46 |
+| rsi_trend_16 | 47 | 8 | -2.9155 | -3.3997 | 47 |
 | rsi_trend_32 | 30 | 4 | -2.3188 | -2.8060 | 30 |
 | rsi_trend_8 | 48 | 11 | -1.9701 | -2.4591 | 48 |
 | sma_trend_16 | 34 | 3 | -3.0821 | -3.5655 | 34 |
