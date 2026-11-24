@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795510200; captured candles: 5798.
+Last observed closed candle: 1795510500; captured candles: 5799.
 Missed fills: 114; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 119 | 56881 | 43368 | 34 | 29 | -1.9026% | 45.080% |
-| COST_AWARE | 139 | 56854 | 42743 | 44 | 36 | -2.0619% | 54.746% |
-| BALANCED_TEST | 471 | 56215 | 42743 | 213 | 158 | -2.1498% | 98.166% |
-| LOW_HURDLE_CONTROL | 1962 | 51782 | 42072 | 944 | 749 | -2.1010% | 100.000% |
+| V4_TAKER_STRICT | 119 | 56890 | 43374 | 34 | 29 | -1.9026% | 45.080% |
+| COST_AWARE | 139 | 56863 | 42748 | 44 | 36 | -2.0619% | 54.746% |
+| BALANCED_TEST | 471 | 56224 | 42748 | 213 | 158 | -2.1498% | 98.166% |
+| LOW_HURDLE_CONTROL | 1962 | 51791 | 42077 | 944 | 749 | -2.1010% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -36,7 +36,7 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | BALANCED_TEST | 4h | 105 | 29 | -1.821% | +0.220% |
 | BALANCED_TEST | 24h | 34 | 5 | -1.740% | +0.299% |
 | LOW_HURDLE_CONTROL | 4h | 348 | 55 | -2.096% | +0.078% |
-| LOW_HURDLE_CONTROL | 24h | 85 | 8 | -3.142% | -0.892% |
+| LOW_HURDLE_CONTROL | 24h | 86 | 8 | -3.142% | -0.892% |
 
 A gate only places a *research candidate*, entered on a later observed candle.
 No trade or price is backfilled. No automatic rollout to real or $210 paper strategies.
