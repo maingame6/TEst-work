@@ -1,44 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795522500,
+  "last_ts": 1795522800,
   "first_ts": 1793488500,
-  "observed_candles": 5839,
+  "observed_candles": 5840,
   "signals": [],
-  "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 60313.8,
-      "exit_ts": 1795522800
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 70.88,
-      "exit_ts": 1795522800
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 2.9324,
-      "exit_ts": 1795522800
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 0.93404,
-      "exit_ts": 1795522800
-    }
-  ],
+  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -14196,40 +14163,92 @@
       "slippage_drag": 0.0049795413,
       "stress_net_return": -0.0272261694,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795522800,
+      "gross_return": -0.0018851407,
+      "net_return": -0.0226273448,
+      "fee_drag": 0.0157640751,
+      "slippage_drag": 0.004978129,
+      "stress_net_return": -0.0275020821,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795522800,
+      "gross_return": -0.0062076749,
+      "net_return": -0.0268600508,
+      "fee_drag": 0.0156958056,
+      "slippage_drag": 0.0049565702,
+      "stress_net_return": -0.0317136771,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795522800,
+      "gross_return": -0.0085595417,
+      "net_return": -0.0291630425,
+      "fee_drag": 0.0156586606,
+      "slippage_drag": 0.0049448402,
+      "stress_net_return": -0.0340051824,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795522800,
+      "gross_return": -0.0061881718,
+      "net_return": -0.0268409529,
+      "fee_drag": 0.0156961137,
+      "slippage_drag": 0.0049566675,
+      "stress_net_return": -0.0316946745,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5727,
-      "liquid_candidates": 57440,
-      "move_below_gate": 57271,
-      "volume_below_gate": 43660,
+      "bars": 5728,
+      "liquid_candidates": 57448,
+      "move_below_gate": 57279,
+      "volume_below_gate": 43665,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5727,
-      "liquid_candidates": 57440,
-      "move_below_gate": 57244,
-      "volume_below_gate": 43031,
+      "bars": 5728,
+      "liquid_candidates": 57448,
+      "move_below_gate": 57252,
+      "volume_below_gate": 43036,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5727,
-      "liquid_candidates": 57440,
-      "move_below_gate": 56605,
-      "volume_below_gate": 43031,
+      "bars": 5728,
+      "liquid_candidates": 57448,
+      "move_below_gate": 56613,
+      "volume_below_gate": 43036,
       "qualified": 471,
       "queued": 213
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5727,
-      "liquid_candidates": 57440,
-      "move_below_gate": 52144,
-      "volume_below_gate": 42359,
+      "bars": 5728,
+      "liquid_candidates": 57448,
+      "move_below_gate": 52152,
+      "volume_below_gate": 42364,
       "qualified": 1974,
       "queued": 950
     }
