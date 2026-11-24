@@ -1,43 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795542000,
+  "last_ts": 1795542300,
   "first_ts": 1793488500,
-  "observed_candles": 5904,
+  "observed_candles": 5905,
   "signals": [],
   "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795540200,
-      "entry_ts": 1795540500,
-      "entry_mid": 2.8389,
-      "exit_ts": 1795542300
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "LTC",
-      "signal_ts": 1795540200,
-      "entry_ts": 1795540500,
-      "entry_mid": 40.47,
-      "exit_ts": 1795542300
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795540200,
-      "entry_ts": 1795540500,
-      "entry_mid": 59673.0,
-      "exit_ts": 1795542300
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BNB",
-      "signal_ts": 1795540200,
-      "entry_ts": 1795540500,
-      "entry_mid": 546.98,
-      "exit_ts": 1795542300
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XRP",
@@ -14334,40 +14302,92 @@
       "slippage_drag": 0.0050474438,
       "stress_net_return": -0.0139611479,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "exit_ts": 1795542300,
+      "gross_return": 0.0084187537,
+      "net_return": -0.0125375795,
+      "fee_drag": 0.0159268132,
+      "slippage_drag": 0.00502952,
+      "stress_net_return": -0.0174626405,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "LTC",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "exit_ts": 1795542300,
+      "gross_return": 0.0101309612,
+      "net_return": -0.010860954,
+      "fee_drag": 0.0159538556,
+      "slippage_drag": 0.0050380597,
+      "stress_net_return": -0.0157943774,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "exit_ts": 1795542300,
+      "gross_return": 0.0044844402,
+      "net_return": -0.0163901325,
+      "fee_drag": 0.0158646753,
+      "slippage_drag": 0.0050098975,
+      "stress_net_return": -0.0212959786,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BNB",
+      "signal_ts": 1795540200,
+      "entry_ts": 1795540500,
+      "exit_ts": 1795542300,
+      "gross_return": 0.0036564408,
+      "net_return": -0.0172009249,
+      "fee_drag": 0.015851598,
+      "slippage_drag": 0.0050057678,
+      "stress_net_return": -0.0221027271,
+      "paper": true
     }
   ],
   "missed_fills": 114,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5792,
-      "liquid_candidates": 58290,
-      "move_below_gate": 58121,
-      "volume_below_gate": 44303,
+      "bars": 5793,
+      "liquid_candidates": 58300,
+      "move_below_gate": 58131,
+      "volume_below_gate": 44310,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5792,
-      "liquid_candidates": 58290,
-      "move_below_gate": 58094,
-      "volume_below_gate": 43668,
+      "bars": 5793,
+      "liquid_candidates": 58300,
+      "move_below_gate": 58104,
+      "volume_below_gate": 43675,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5792,
-      "liquid_candidates": 58290,
-      "move_below_gate": 57455,
-      "volume_below_gate": 43668,
+      "bars": 5793,
+      "liquid_candidates": 58300,
+      "move_below_gate": 57465,
+      "volume_below_gate": 43675,
       "qualified": 471,
       "queued": 213
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5792,
-      "liquid_candidates": 58290,
-      "move_below_gate": 52919,
-      "volume_below_gate": 42986,
+      "bars": 5793,
+      "liquid_candidates": 58300,
+      "move_below_gate": 52929,
+      "volume_below_gate": 42993,
       "qualified": 1994,
       "queued": 961
     }
