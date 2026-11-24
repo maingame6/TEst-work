@@ -4,7 +4,7 @@
   "real_orders": false,
   "independent_of_210_paper_wallets": true,
   "writer_access": false,
-  "generated_at": "2026-11-23T23:11:09.039679+00:00",
+  "generated_at": "2026-11-24T00:11:07.242452+00:00",
   "config_hash": "43936e93e138e0b1db1c2c09da43d7aa28bf38f33625589802fbccb6a9a65f5e",
   "family_count": 28,
   "candidate_count": 84,
@@ -23,29 +23,29 @@
     "XLM"
   ],
   "latest_observed_hour_ts_by_symbol": {
-    "BTC": 1795471200,
-    "ETH": 1795471200,
-    "SOL": 1795471200,
-    "XRP": 1795471200,
-    "ADA": 1795471200,
-    "DOGE": 1795471200,
-    "LTC": 1795471200,
-    "LINK": 1795471200,
-    "BCH": 1795471200,
-    "DOT": 1795471200,
-    "AVAX": 1795471200,
-    "XLM": 1795471200
+    "BTC": 1795474800,
+    "ETH": 1795474800,
+    "SOL": 1795474800,
+    "XRP": 1795474800,
+    "ADA": 1795474800,
+    "DOGE": 1795474800,
+    "LTC": 1795474800,
+    "LINK": 1795474800,
+    "BCH": 1795474800,
+    "DOT": 1795474800,
+    "AVAX": 1795474800,
+    "XLM": 1795474800
   },
   "indicator_count": 47,
-  "observed_symbol_hours": 2376,
+  "observed_symbol_hours": 2388,
   "missing_symbol_hours": 3708,
-  "observation_coverage_pct": 39.0533,
-  "closed_hypotheses": 2302,
+  "observation_coverage_pct": 39.1732,
+  "closed_hypotheses": 2306,
   "censored_hypotheses": 7473,
-  "open_hypotheses": 698,
-  "queued_hypotheses": 1,
-  "signals": 10474,
-  "days_observed": 21.066,
+  "open_hypotheses": 695,
+  "queued_hypotheses": 50,
+  "signals": 10524,
+  "days_observed": 21.108,
   "heldout_starts_at": "2026-11-10T00:00:00+00:00",
   "review_minimum_closes_per_candidate": 60,
   "review_minimum_days": 30,
@@ -123,12 +123,12 @@
       "eligible_to_promote": false
     },
     "momentum_16": {
-      "closed": 29,
-      "holdout_closed": 29,
-      "wins_after_cost": 3,
-      "mean_after_cost_pct": -3.25935,
-      "mean_stress_pct": -3.74185,
-      "mean_heldout_pct": -3.25935,
+      "closed": 30,
+      "holdout_closed": 30,
+      "wins_after_cost": 4,
+      "mean_after_cost_pct": -3.1151,
+      "mean_stress_pct": -3.59832,
+      "mean_heldout_pct": -3.1151,
       "eligible_to_promote": false
     },
     "momentum_32": {
@@ -501,12 +501,12 @@
       "eligible_to_promote": false
     },
     "obv_confirmation_16": {
-      "closed": 38,
-      "holdout_closed": 38,
+      "closed": 39,
+      "holdout_closed": 39,
       "wins_after_cost": 3,
-      "mean_after_cost_pct": -3.01701,
-      "mean_stress_pct": -3.50072,
-      "mean_heldout_pct": -3.01701,
+      "mean_after_cost_pct": -2.95155,
+      "mean_stress_pct": -3.43559,
+      "mean_heldout_pct": -2.95155,
       "eligible_to_promote": false
     },
     "obv_confirmation_32": {
@@ -663,12 +663,12 @@
       "eligible_to_promote": false
     },
     "efficiency_trend_16": {
-      "closed": 19,
-      "holdout_closed": 19,
-      "wins_after_cost": 2,
-      "mean_after_cost_pct": -2.56344,
-      "mean_stress_pct": -3.04941,
-      "mean_heldout_pct": -2.56344,
+      "closed": 20,
+      "holdout_closed": 20,
+      "wins_after_cost": 3,
+      "mean_after_cost_pct": -2.42938,
+      "mean_stress_pct": -2.91602,
+      "mean_heldout_pct": -2.42938,
       "eligible_to_promote": false
     },
     "efficiency_trend_32": {
@@ -762,12 +762,12 @@
       "eligible_to_promote": false
     },
     "roc_acceleration_8": {
-      "closed": 40,
-      "holdout_closed": 40,
+      "closed": 41,
+      "holdout_closed": 41,
       "wins_after_cost": 6,
-      "mean_after_cost_pct": -3.17347,
-      "mean_stress_pct": -3.6564,
-      "mean_heldout_pct": -3.17347,
+      "mean_after_cost_pct": -3.14503,
+      "mean_stress_pct": -3.6281,
+      "mean_heldout_pct": -3.14503,
       "eligible_to_promote": false
     },
     "roc_acceleration_16": {
@@ -832,7 +832,7 @@
   ],
   "failed_symbols": {},
   "source": "Kraken public OHLC 60; no private APIs",
-  "archived_hourly_records": 2364,
-  "archive_hash_chain_head": "1359d28362c7a23c378bcb807198f933fc2b2044b6ae94c37ad87d3a23b0de7a",
+  "archived_hourly_records": 2376,
+  "archive_hash_chain_head": "b9ca7c88f9a38c387b9a5016604ac16307a1cab29231188b800cb081e9b97c13",
   "archive_begins_after_first_initial_run": true
 }

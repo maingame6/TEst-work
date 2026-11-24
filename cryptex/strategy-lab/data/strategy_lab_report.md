@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2376 symbol-hours, 3708 missing.
+Recorded 2388 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2302 hypothetical outcomes; censored 7473.
+Closed 2306 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -36,7 +36,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | donchian_breakout_16 | 10 | 0 | -3.2538 | -3.7364 | 10 |
 | donchian_breakout_32 | 2 | 0 | -4.1145 | -4.5927 | 2 |
 | donchian_breakout_8 | 21 | 1 | -3.3544 | -3.8364 | 21 |
-| efficiency_trend_16 | 19 | 2 | -2.5634 | -3.0494 | 19 |
+| efficiency_trend_16 | 20 | 3 | -2.4294 | -2.9160 | 20 |
 | efficiency_trend_32 | 2 | 2 | 3.9439 | 3.4255 | 2 |
 | efficiency_trend_8 | 32 | 9 | -1.7702 | -2.2601 | 32 |
 | ema_trend_16 | 18 | 4 | -2.6132 | -3.0989 | 18 |
@@ -57,15 +57,15 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | mfi_recovery_16 | 42 | 12 | -2.6418 | -3.1273 | 42 |
 | mfi_recovery_32 | 32 | 9 | -3.1521 | -3.6352 | 32 |
 | mfi_recovery_8 | 45 | 13 | -3.0759 | -3.5593 | 45 |
-| momentum_16 | 29 | 3 | -3.2593 | -3.7418 | 29 |
+| momentum_16 | 30 | 4 | -3.1151 | -3.5983 | 30 |
 | momentum_32 | 15 | 7 | 0.7707 | 0.2681 | 15 |
 | momentum_8 | 34 | 11 | -1.4823 | -1.9737 | 34 |
-| obv_confirmation_16 | 38 | 3 | -3.0170 | -3.5007 | 38 |
+| obv_confirmation_16 | 39 | 3 | -2.9516 | -3.4356 | 39 |
 | obv_confirmation_32 | 19 | 8 | -0.8604 | -1.3548 | 19 |
 | obv_confirmation_8 | 36 | 5 | -2.8061 | -3.2909 | 36 |
 | roc_acceleration_16 | 35 | 12 | -1.5016 | -1.9929 | 35 |
 | roc_acceleration_32 | 28 | 4 | -3.0422 | -3.5258 | 28 |
-| roc_acceleration_8 | 40 | 6 | -3.1735 | -3.6564 | 40 |
+| roc_acceleration_8 | 41 | 6 | -3.1450 | -3.6281 | 41 |
 | rsi_rebound_16 | 46 | 14 | -2.8900 | -3.3743 | 46 |
 | rsi_rebound_32 | 34 | 5 | -3.5988 | -4.0796 | 34 |
 | rsi_rebound_8 | 46 | 11 | -2.6674 | -3.1529 | 46 |
