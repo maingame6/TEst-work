@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795533600,
+  "last_ts": 1795533900,
   "first_ts": 1793488500,
-  "observed_candles": 5876,
+  "observed_candles": 5877,
   "signals": [],
   "open": [],
   "trades": [
@@ -14247,55 +14247,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5764,
-      "liquid_candidates": 57897,
-      "move_below_gate": 57728,
-      "volume_below_gate": 43991,
+      "bars": 5765,
+      "liquid_candidates": 57913,
+      "move_below_gate": 57744,
+      "volume_below_gate": 43999,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5764,
-      "liquid_candidates": 57897,
-      "move_below_gate": 57701,
-      "volume_below_gate": 43358,
+      "bars": 5765,
+      "liquid_candidates": 57913,
+      "move_below_gate": 57717,
+      "volume_below_gate": 43365,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5764,
-      "liquid_candidates": 57897,
-      "move_below_gate": 57062,
-      "volume_below_gate": 43358,
+      "bars": 5765,
+      "liquid_candidates": 57913,
+      "move_below_gate": 57078,
+      "volume_below_gate": 43365,
       "qualified": 471,
       "queued": 213
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5764,
-      "liquid_candidates": 57897,
-      "move_below_gate": 52587,
-      "volume_below_gate": 42682,
+      "bars": 5765,
+      "liquid_candidates": 57913,
+      "move_below_gate": 52603,
+      "volume_below_gate": 42689,
       "qualified": 1976,
       "queued": 952
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795447200,
-      "entry_ts": 1795447500,
-      "entry_mid": 3.1572,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795447200,
-      "entry_ts": 1795447500,
-      "entry_mid": 63320.0,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "XLM",
@@ -22181,6 +22165,30 @@
       "gross_return": -0.0296915538,
       "net_return": -0.0498559022,
       "stress_net_return": -0.0545948346
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795447200,
+      "entry_ts": 1795447500,
+      "exit_ts": 1795533900,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.1125364247,
+      "net_return": -0.1309791424,
+      "stress_net_return": -0.135313465
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795447200,
+      "entry_ts": 1795447500,
+      "exit_ts": 1795533900,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": -0.0552811118,
+      "net_return": -0.0749136739,
+      "stress_net_return": -0.0795276283
     }
   ],
   "horizon_censored": 603
