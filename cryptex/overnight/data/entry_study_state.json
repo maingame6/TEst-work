@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795535100,
+  "last_ts": 1795535400,
   "first_ts": 1793488500,
-  "observed_candles": 5881,
+  "observed_candles": 5882,
   "signals": [],
   "open": [
     {
@@ -14256,34 +14256,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 5769,
-      "liquid_candidates": 57977,
-      "move_below_gate": 57808,
-      "volume_below_gate": 44041,
+      "bars": 5770,
+      "liquid_candidates": 57995,
+      "move_below_gate": 57826,
+      "volume_below_gate": 44058,
       "qualified": 119,
       "queued": 34
     },
     "COST_AWARE": {
-      "bars": 5769,
-      "liquid_candidates": 57977,
-      "move_below_gate": 57781,
-      "volume_below_gate": 43407,
+      "bars": 5770,
+      "liquid_candidates": 57995,
+      "move_below_gate": 57799,
+      "volume_below_gate": 43424,
       "qualified": 139,
       "queued": 44
     },
     "BALANCED_TEST": {
-      "bars": 5769,
-      "liquid_candidates": 57977,
-      "move_below_gate": 57142,
-      "volume_below_gate": 43407,
+      "bars": 5770,
+      "liquid_candidates": 57995,
+      "move_below_gate": 57160,
+      "volume_below_gate": 43424,
       "qualified": 471,
       "queued": 213
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 5769,
-      "liquid_candidates": 57977,
-      "move_below_gate": 52654,
-      "volume_below_gate": 42729,
+      "bars": 5770,
+      "liquid_candidates": 57995,
+      "move_below_gate": 52671,
+      "volume_below_gate": 42746,
       "qualified": 1977,
       "queued": 953
     }
@@ -14347,43 +14347,11 @@
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 60313.8,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 70.88,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
       "symbol": "SOL",
       "signal_ts": 1795520700,
       "entry_ts": 1795521000,
       "entry_mid": 70.88,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 2.9324,
-      "hold_bars": 48
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1795520700,
-      "entry_ts": 1795521000,
-      "entry_mid": 0.93404,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -22218,6 +22186,54 @@
       "gross_return": -0.0120205899,
       "net_return": -0.0325521653,
       "stress_net_return": -0.0373774017
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795535400,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0088918291,
+      "net_return": -0.0294884245,
+      "stress_net_return": -0.0343289416
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795535400,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0259593679,
+      "net_return": -0.0462012763,
+      "stress_net_return": -0.0509584365
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795535400,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0404446869,
+      "net_return": -0.0603855704,
+      "stress_net_return": -0.0650719851
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795520700,
+      "entry_ts": 1795521000,
+      "exit_ts": 1795535400,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0226971008,
+      "net_return": -0.0430068036,
+      "stress_net_return": -0.0477798965
     }
   ],
   "horizon_censored": 603
