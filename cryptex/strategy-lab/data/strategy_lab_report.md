@@ -2,23 +2,23 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 2460 symbol-hours, 3708 missing.
+Recorded 2472 symbol-hours, 3708 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 2429 hypothetical outcomes; censored 7473.
+Closed 2503 hypothetical outcomes; censored 7473.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
 |---|---:|---:|---:|---:|---:|
-| adx_uptrend_16 | 37 | 12 | -1.5405 | -2.0316 | 37 |
+| adx_uptrend_16 | 38 | 12 | -1.5224 | -2.0136 | 38 |
 | adx_uptrend_32 | 14 | 3 | -1.4233 | -1.9150 | 14 |
 | adx_uptrend_8 | 43 | 12 | -1.5574 | -2.0484 | 43 |
 | aroon_uptrend_16 | 29 | 4 | -3.1237 | -3.6069 | 29 |
-| aroon_uptrend_32 | 15 | 2 | -1.7805 | -2.2704 | 15 |
+| aroon_uptrend_32 | 17 | 2 | -1.6893 | -2.1797 | 17 |
 | aroon_uptrend_8 | 35 | 11 | -1.3623 | -1.8543 | 35 |
 | atr_pullback_16 | 48 | 15 | -2.8185 | -3.3032 | 48 |
 | atr_pullback_32 | 48 | 15 | -2.7692 | -3.2542 | 48 |
 | atr_pullback_8 | 47 | 14 | -2.8569 | -3.3414 | 47 |
-| bollinger_breakout_16 | 7 | 1 | -1.4520 | -1.9435 | 7 |
+| bollinger_breakout_16 | 8 | 1 | -1.3155 | -1.8077 | 8 |
 | bollinger_breakout_32 | 1 | 0 | -1.8170 | -2.3067 | 1 |
 | bollinger_breakout_8 | 14 | 0 | -2.4024 | -2.8892 | 14 |
 | bollinger_rebound_16 | 30 | 13 | -1.8741 | -2.3636 | 30 |
@@ -27,67 +27,67 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_rebound_16 | 48 | 13 | -2.7577 | -3.2427 | 48 |
 | cci_rebound_32 | 37 | 5 | -3.6818 | -4.1622 | 37 |
 | cci_rebound_8 | 42 | 11 | -3.1134 | -3.5966 | 42 |
-| cci_trend_16 | 32 | 3 | -2.8065 | -3.2913 | 32 |
-| cci_trend_32 | 13 | 2 | -2.8192 | -3.3039 | 13 |
-| cci_trend_8 | 36 | 5 | -2.5101 | -2.9963 | 36 |
-| cmf_accumulation_16 | 30 | 6 | -2.4288 | -2.9154 | 30 |
+| cci_trend_16 | 34 | 3 | -2.6796 | -3.1650 | 34 |
+| cci_trend_32 | 16 | 2 | -2.4043 | -2.8910 | 16 |
+| cci_trend_8 | 39 | 5 | -2.3979 | -2.8847 | 39 |
+| cmf_accumulation_16 | 31 | 6 | -2.3578 | -2.8448 | 31 |
 | cmf_accumulation_32 | 11 | 3 | -2.4199 | -2.9066 | 11 |
-| cmf_accumulation_8 | 41 | 11 | -2.8375 | -3.3221 | 41 |
-| donchian_breakout_16 | 12 | 1 | -2.9589 | -3.4429 | 12 |
-| donchian_breakout_32 | 4 | 1 | -2.7994 | -3.2842 | 4 |
-| donchian_breakout_8 | 25 | 2 | -2.8934 | -3.3778 | 25 |
+| cmf_accumulation_8 | 42 | 11 | -2.7955 | -3.2803 | 42 |
+| donchian_breakout_16 | 16 | 1 | -2.4638 | -2.9503 | 16 |
+| donchian_breakout_32 | 7 | 2 | -1.9468 | -2.4359 | 7 |
+| donchian_breakout_8 | 27 | 2 | -2.7008 | -3.1861 | 27 |
 | efficiency_trend_16 | 20 | 3 | -2.4294 | -2.9160 | 20 |
 | efficiency_trend_32 | 2 | 2 | 3.9439 | 3.4255 | 2 |
 | efficiency_trend_8 | 32 | 9 | -1.7702 | -2.2601 | 32 |
-| ema_trend_16 | 21 | 5 | -2.2657 | -2.7532 | 21 |
+| ema_trend_16 | 22 | 6 | -2.1222 | -2.6104 | 22 |
 | ema_trend_32 | 3 | 0 | -4.1846 | -4.6624 | 3 |
 | ema_trend_8 | 34 | 11 | -1.8067 | -2.2965 | 34 |
-| keltner_breakout_16 | 6 | 0 | -1.4715 | -1.9629 | 6 |
-| keltner_breakout_32 | 3 | 0 | -0.8881 | -1.3824 | 3 |
+| keltner_breakout_16 | 8 | 1 | -1.2740 | -1.7664 | 8 |
+| keltner_breakout_32 | 5 | 1 | -0.8054 | -1.3002 | 5 |
 | keltner_breakout_8 | 0 | 0 | — | — | 0 |
 | low_vol_trend_16 | 40 | 10 | -2.0796 | -2.5680 | 40 |
-| low_vol_trend_32 | 26 | 5 | -1.9136 | -2.4028 | 26 |
-| low_vol_trend_8 | 39 | 11 | -1.4177 | -1.9094 | 39 |
-| macd_acceleration_16 | 35 | 5 | -2.8965 | -3.3808 | 35 |
-| macd_acceleration_32 | 35 | 5 | -2.8965 | -3.3808 | 35 |
-| macd_acceleration_8 | 35 | 5 | -2.8965 | -3.3808 | 35 |
-| macd_trend_16 | 34 | 4 | -2.5698 | -3.0558 | 34 |
-| macd_trend_32 | 34 | 4 | -2.5698 | -3.0558 | 34 |
-| macd_trend_8 | 34 | 4 | -2.5698 | -3.0558 | 34 |
+| low_vol_trend_32 | 29 | 5 | -1.7737 | -2.2636 | 29 |
+| low_vol_trend_8 | 40 | 11 | -1.4091 | -1.9008 | 40 |
+| macd_acceleration_16 | 36 | 5 | -2.8260 | -3.3107 | 36 |
+| macd_acceleration_32 | 36 | 5 | -2.8260 | -3.3107 | 36 |
+| macd_acceleration_8 | 36 | 5 | -2.8260 | -3.3107 | 36 |
+| macd_trend_16 | 36 | 4 | -2.4632 | -2.9496 | 36 |
+| macd_trend_32 | 36 | 4 | -2.4632 | -2.9496 | 36 |
+| macd_trend_8 | 36 | 4 | -2.4632 | -2.9496 | 36 |
 | mfi_recovery_16 | 42 | 12 | -2.6418 | -3.1273 | 42 |
 | mfi_recovery_32 | 34 | 9 | -2.9739 | -3.4578 | 34 |
 | mfi_recovery_8 | 49 | 16 | -2.7822 | -3.2671 | 49 |
-| momentum_16 | 31 | 4 | -3.0295 | -3.5132 | 31 |
+| momentum_16 | 34 | 5 | -2.7950 | -3.2798 | 34 |
 | momentum_32 | 17 | 7 | 0.4502 | -0.0508 | 17 |
-| momentum_8 | 34 | 11 | -1.4823 | -1.9737 | 34 |
-| obv_confirmation_16 | 40 | 3 | -2.8893 | -3.3737 | 40 |
+| momentum_8 | 35 | 11 | -1.4668 | -1.9582 | 35 |
+| obv_confirmation_16 | 42 | 3 | -2.7695 | -3.2544 | 42 |
 | obv_confirmation_32 | 20 | 8 | -0.9017 | -1.3960 | 20 |
-| obv_confirmation_8 | 37 | 5 | -2.7428 | -3.2279 | 37 |
-| roc_acceleration_16 | 36 | 13 | -1.4429 | -1.9344 | 36 |
-| roc_acceleration_32 | 36 | 7 | -2.4151 | -2.9019 | 36 |
-| roc_acceleration_8 | 43 | 7 | -2.9810 | -3.4649 | 43 |
+| obv_confirmation_8 | 38 | 5 | -2.6766 | -3.1620 | 38 |
+| roc_acceleration_16 | 37 | 13 | -1.4269 | -1.9185 | 37 |
+| roc_acceleration_32 | 37 | 7 | -2.3560 | -2.8430 | 37 |
+| roc_acceleration_8 | 45 | 7 | -2.8948 | -3.3791 | 45 |
 | rsi_rebound_16 | 46 | 14 | -2.8900 | -3.3743 | 46 |
 | rsi_rebound_32 | 34 | 5 | -3.5988 | -4.0796 | 34 |
 | rsi_rebound_8 | 46 | 11 | -2.6674 | -3.1529 | 46 |
 | rsi_trend_16 | 40 | 8 | -2.4417 | -2.9283 | 40 |
-| rsi_trend_32 | 21 | 4 | -1.9052 | -2.3944 | 21 |
-| rsi_trend_8 | 41 | 11 | -1.5331 | -2.0242 | 41 |
-| sma_trend_16 | 29 | 3 | -2.9162 | -3.4004 | 29 |
-| sma_trend_32 | 8 | 0 | -4.0870 | -4.5653 | 8 |
+| rsi_trend_32 | 22 | 4 | -1.8612 | -2.3507 | 22 |
+| rsi_trend_8 | 42 | 11 | -1.5221 | -2.0133 | 42 |
+| sma_trend_16 | 30 | 3 | -2.8265 | -3.3112 | 30 |
+| sma_trend_32 | 9 | 1 | -3.6123 | -4.0930 | 9 |
 | sma_trend_8 | 36 | 9 | -2.0622 | -2.5507 | 36 |
-| squeeze_breakout_16 | 19 | 1 | -3.6820 | -4.1624 | 19 |
-| squeeze_breakout_32 | 5 | 1 | -3.8227 | -4.3024 | 5 |
-| squeeze_breakout_8 | 32 | 3 | -2.8074 | -3.2921 | 32 |
+| squeeze_breakout_16 | 25 | 2 | -2.9914 | -3.4752 | 25 |
+| squeeze_breakout_32 | 8 | 1 | -2.8334 | -3.3180 | 8 |
+| squeeze_breakout_8 | 35 | 3 | -2.6124 | -3.0982 | 35 |
 | stochastic_rebound_16 | 38 | 11 | -3.1181 | -3.6014 | 38 |
 | stochastic_rebound_32 | 33 | 6 | -3.9190 | -4.3982 | 33 |
 | stochastic_rebound_8 | 30 | 10 | -2.8362 | -3.3208 | 30 |
 | vol_target_momentum_16 | 38 | 7 | -2.5644 | -3.0503 | 38 |
-| vol_target_momentum_32 | 20 | 3 | -1.9771 | -2.4660 | 20 |
-| vol_target_momentum_8 | 35 | 10 | -1.3772 | -1.8691 | 35 |
-| volume_breakout_16 | 20 | 3 | -1.7238 | -2.2139 | 20 |
-| volume_breakout_32 | 16 | 2 | -1.8665 | -2.3560 | 16 |
-| volume_breakout_8 | 15 | 3 | -1.2360 | -1.7286 | 15 |
-| vwap_reclaim_16 | 37 | 11 | -1.5071 | -1.9984 | 37 |
+| vol_target_momentum_32 | 21 | 3 | -1.9903 | -2.4792 | 21 |
+| vol_target_momentum_8 | 36 | 10 | -1.3650 | -1.8569 | 36 |
+| volume_breakout_16 | 21 | 3 | -1.6588 | -2.1493 | 21 |
+| volume_breakout_32 | 17 | 2 | -1.7779 | -2.2678 | 17 |
+| volume_breakout_8 | 16 | 3 | -1.1813 | -1.6742 | 16 |
+| vwap_reclaim_16 | 38 | 11 | -1.4899 | -1.9812 | 38 |
 | vwap_reclaim_32 | 30 | 6 | -1.8886 | -2.3780 | 30 |
 | vwap_reclaim_8 | 45 | 13 | -2.1391 | -2.6272 | 45 |
 | williams_rebound_16 | 48 | 14 | -2.8264 | -3.3111 | 48 |
