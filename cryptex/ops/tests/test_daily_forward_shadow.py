@@ -50,6 +50,7 @@ class ForwardShadowTests(unittest.TestCase):
         self.assertEqual(state["wallets"]["base"]["owned"],"SOL")
         self.assertLess(F.report(state)["base"]["nav"],100)
         self.assertLess(F.report(state)["stress"]["nav"],F.report(state)["base"]["nav"])
+        self.assertEqual(F.report(state)["execution_eligible_rebalance_days"],1)
         self.assertFalse(F.report(state)["validated_positive_repeatable_edge"])
 
     def test_idempotent_same_day_even_with_bad_inputs(self):
@@ -83,6 +84,18 @@ class ForwardShadowTests(unittest.TestCase):
         self.assertEqual(status,"OBSERVED_NO_ACTION")
         self.assertFalse(state["days"][0]["trade_allowed"])
         self.assertEqual(state["wallets"]["base"]["owned"],None)
+        result=F.report(state)
+        self.assertEqual(result["forward_day_coverage_pct"],100)
+        self.assertEqual(result["expected_rebalance_days"],1)
+        self.assertEqual(result["execution_eligible_rebalance_days"],0)
+
+    def test_missing_rebalance_day_remains_in_denominator(self):
+        state,_=F.process(F.new_state(),history(FIRST),quotes(FIRST),FIRST)
+        later=FIRST+dt.timedelta(days=8)
+        updated,_=F.process(state,history(later),quotes(later),later)
+        result=F.report(updated)
+        self.assertEqual(result["expected_rebalance_days"],2)
+        self.assertEqual(result["execution_eligible_rebalance_days"],1)
 
     def test_tampered_money_or_source_fails_closed(self):
         s=F.new_state()

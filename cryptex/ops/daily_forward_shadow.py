@@ -209,6 +209,9 @@ def report(state):
     expected=(dt.date.fromisoformat(state["last_day"])-START).days+1 if state["last_day"] else 0
     if expected != n+state["missed_days"]:
         raise ValueError("Forward-day coverage counter inconsistency")
+    expected_rebalances = (expected + 6) // 7
+    eligible_rebalances = sum(day["is_rebalance_day"] and day["trade_allowed"]
+                              for day in state["days"])
     def side(w):
         last=state["days"][-1] if n else None
         if last is None:
@@ -231,6 +234,8 @@ def report(state):
             "observed_forward_days":n,"expected_forward_days":expected,
             "missing_forward_days":state["missed_days"],
             "forward_day_coverage_pct":round(100*n/expected,5) if expected else None,
+            "expected_rebalance_days":expected_rebalances,
+            "execution_eligible_rebalance_days":eligible_rebalances,
             "base":side(state["wallets"]["base"]),
             "stress":side(state["wallets"]["stress"]),
             "btc_hodl_comparator":side(state["benchmarks"]["btc"]),
@@ -275,17 +280,27 @@ def main():
         state,status=process(state,histories,quotes,now)
     else:
         state,status=process(state,{}, {},now)
+    report_json=folder/"daily_forward_report.json"
+    report_md=folder/"daily_forward_report.md"
+    if status == "ALREADY_OBSERVED_NO_REPLAY" and report_json.exists() and report_md.exists():
+        saved=json.loads(report_json.read_text())
+        if (saved.get("last_observed_date") == state["last_day"] and
+                "execution_eligible_rebalance_days" in saved):
+            print(status)
+            return
     output=report(state)
     output["run_status"]=status
     output["generated_at"]=now.isoformat()
     filename.write_text(json.dumps(state,indent=2,allow_nan=False)+"\n")
-    (folder/"daily_forward_report.json").write_text(json.dumps(output,indent=2,allow_nan=False)+"\n")
+    report_json.write_text(json.dumps(output,indent=2,allow_nan=False)+"\n")
     lines=["# CRYPTEX ROTATE3_30 frozen forward paper experiment","",
            "**No real orders. No validated repeatable edge. Historical selection bias disclosed.**","",
            "Activated 18 November 2026 UTC; no historical paper trades inserted.","",
            "Actual observed days: "+str(output["observed_forward_days"])+
            " / "+str(output["expected_forward_days"]),
            "Missed days: "+str(output["missing_forward_days"]),
+           f'Execution-eligible rebalance days: {output["execution_eligible_rebalance_days"]}'
+           f' / {output["expected_rebalance_days"]}',
            "Status: "+status,"",
            "| Measure | Base | Stress | BTC hold |",
            "|---|---:|---:|---:|",
@@ -293,7 +308,7 @@ def main():
            f'| After-cost return | {output["base"]["net_return_pct"]:+.2f}% | {output["stress"]["net_return_pct"]:+.2f}% | {output["btc_hodl_comparator"]["net_return_pct"]:+.2f}% |',
            "", "Original 21 wallets and $210 portfolio never read or written.",
            "Do not promote from historical or incomplete prospective returns.",""]
-    (folder/"daily_forward_report.md").write_text("\n".join(lines))
+    report_md.write_text("\n".join(lines))
     print(json.dumps({"run_status":status,"mode":"PAPER_ONLY",
                       "observed_forward_days":output["observed_forward_days"],
                       "missing_forward_days":output["missing_forward_days"],

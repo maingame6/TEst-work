@@ -18,12 +18,12 @@ on:
   workflow_dispatch:
     inputs:
       autopilot:
-        description: 'Bounded forward paper-only evidence window through 25 Nov UTC'
+        description: 'Enable the bounded forward paper-only fallback'
         type: boolean
         required: false
         default: false
       hop:
-        description: 'Internal bounded fallback counter, max 5000'
+        description: 'Internal bounded fallback counter, max 10000'
         type: number
         required: false
         default: 0
@@ -70,6 +70,7 @@ jobs:
             cryptex/ops/writer_authority.json
             cryptex/ops/writer_control.py
             cryptex/ops/paper_dispatch_clock.py
+            cryptex/ops/research_window.py
             cryptex/ops/depth_dispatch_guard.py
             cryptex/ops/rotate_specialists.py
             cryptex/ops/tests/test_rotate_specialists.py
@@ -299,16 +300,16 @@ jobs:
           import json,os,pathlib,subprocess,time,sys
           sys.path.insert(0,"authority-snapshot/cryptex/ops")
           from paper_dispatch_clock import next_dispatch_delay
+          from research_window import PILOT_END
           event=os.environ.get("CRYPTEX_EVENT","")
           requested=os.environ.get("CRYPTEX_AUTOPILOT","false").lower()=="true"
           hop=int(os.environ.get("CRYPTEX_HOP") or "0")
           state=json.loads(pathlib.Path("cryptex/overnight/data/state.json").read_text())
           if state.get("mode")!="PAPER_ONLY":
               raise SystemExit("No real-money fallback permitted")
-          MAX_HOPS=5000
-          DEADLINE=dt.datetime(2026,11,25,0,0,tzinfo=dt.timezone.utc)
+          MAX_HOPS=10000
           now=dt.datetime.now(dt.timezone.utc)
-          if now>=DEADLINE or hop>=MAX_HOPS:
+          if now>=PILOT_END or not 0<=hop<MAX_HOPS:
               print("Bounded evidence run ended; no self-dispatch")
               raise SystemExit(0)
           def age_seconds(timestamp):
@@ -364,12 +365,12 @@ jobs:
           # dispatch to the actual last completed 5m candle timestamp.
           delay,target=next_dispatch_delay(state.get("last_ts"),now)
           print(f"Next actual candle-aligned dispatch: {target}, delay {delay}s",flush=True)
-          if now+dt.timedelta(seconds=delay+60)>=DEADLINE:
+          if now+dt.timedelta(seconds=delay+60)>=PILOT_END:
               print("Near deadline; not dispatching another run")
               raise SystemExit(0)
           print(f"24h PAPER_ONLY hop {hop}/{MAX_HOPS}; aligned target {target}, next in {delay}s",flush=True)
           time.sleep(delay)
-          if dt.datetime.now(dt.timezone.utc)>=DEADLINE:
+          if dt.datetime.now(dt.timezone.utc)>=PILOT_END:
               raise SystemExit("Evidence deadline reached during wait")
           # Authority may change during the 275-second delay: do not schedule
           # a new GitHub writer when the host handover has entered DRAIN.

@@ -12,8 +12,9 @@ import os
 import subprocess
 import urllib.request
 
+from research_window import PILOT_END as END
+
 UTC = dt.timezone.utc
-END = dt.datetime(2026, 12, 21, tzinfo=UTC)
 MIN_REPORT_AGE = 75 * 60
 MIN_RUN_SPACING = 65 * 60  # legacy reports without actual candle markers
 MIN_MARKER_RUN_SPACING = 35 * 60
