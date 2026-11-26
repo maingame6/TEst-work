@@ -1,22 +1,17 @@
 {
-  "generated_at": "2026-11-25T19:08:44.675043+00:00",
+  "generated_at": "2026-11-26T00:11:31.355298+00:00",
   "mode": "PAPER_ONLY",
   "live_orders": false,
   "policy": "COST_GATE_V4_KRAKEN_TAKER",
   "first_observed_at": "2026-10-31T23:24:36.636109+00:00",
   "first_candle_ts": 1793488500,
-  "last_candle_ts": 1795633200,
-  "expected_candles": 7150,
-  "observed_candles": 5983,
-  "missing_intervals": 1167,
-  "coverage_pct": 83.678,
+  "last_candle_ts": 1795651500,
+  "expected_candles": 7211,
+  "observed_candles": 5984,
+  "missing_intervals": 1227,
+  "coverage_pct": 82.984,
   "max_gap_minutes": 550.0,
   "latest_gaps": [
-    {
-      "previous_candle_ts": 1794905100,
-      "next_candle_ts": 1794938100,
-      "missing_intervals": 109
-    },
     {
       "previous_candle_ts": 1794938100,
       "next_candle_ts": 1794938700,
@@ -61,9 +56,14 @@
       "previous_candle_ts": 1795622100,
       "next_candle_ts": 1795633200,
       "missing_intervals": 36
+    },
+    {
+      "previous_candle_ts": 1795633200,
+      "next_candle_ts": 1795651500,
+      "missing_intervals": 60
     }
   ],
-  "days_observed": 24.823,
+  "days_observed": 25.035,
   "main_new_closed_trades": {
     "GAMBLER": 2,
     "HOUSE": 4,
