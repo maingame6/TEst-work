@@ -10,6 +10,8 @@ import json
 import pathlib
 import subprocess
 
+from research_window import PILOT_END
+
 UTC = dt.timezone.utc
 WARNING_SECONDS = 8 * 60
 RECOVERY_SECONDS = 11 * 60
@@ -19,8 +21,6 @@ WIDE_RECOVERY_SECONDS = 120 * 60
 WIDE_DISPATCH_COOLDOWN_SECONDS = 75 * 60
 DEPTH_RECOVERY_SECONDS = 45 * 60
 DEPTH_DISPATCH_COOLDOWN_SECONDS = 20 * 60
-DEPTH_PILOT_END = dt.datetime(2026, 11, 16, tzinfo=UTC)
-PILOT_END = dt.datetime(2026, 11, 18, tzinfo=UTC)
 
 
 
@@ -101,7 +101,7 @@ def depth_recovery_due(depth, now, runs):
             or depth.get("no_paper_portfolio_mutation") is not True
             or depth.get("markets_targeted")!=15):
         raise ValueError("Unsafe or incomplete depth collector report")
-    if now>=DEPTH_PILOT_END:
+    if now>=PILOT_END:
         return False
     age=(now-parse_utc(depth.get("generated_at"))).total_seconds()
     if age<DEPTH_RECOVERY_SECONDS or age < -60:
@@ -208,7 +208,7 @@ def main():
             data["depth_age_minutes"]=round(max(depth_age,0)/60,1)
             data["depth_stale"]=depth_age>=DEPTH_RECOVERY_SECONDS
             data["depth_recovery_attempted"]=False
-            if args.recover_depth and data["depth_stale"] and now<DEPTH_PILOT_END:
+            if args.recover_depth and data["depth_stale"] and now<PILOT_END:
                 check=subprocess.run(
                     ["gh","api",f"repos/{args.repo}/actions/workflows/cryptex-depth-pilot.yml/runs",
                      "-f","per_page=8","-X","GET"],check=True,text=True,

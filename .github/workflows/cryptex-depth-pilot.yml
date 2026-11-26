@@ -1,7 +1,7 @@
 name: CRYPTEX - five-venue depth and spread evidence (PAPER ONLY)
 
 # Existing GitHub-hosted public repository. No new VPS, trades, keys or money.
-# Bounded paper-only depth observation through 24 November 2026 inclusive; no self-dispatch loops.
+# Bounded paper-only depth observation; no self-dispatch loops.
 on:
   push:
     branches: [main]
@@ -13,6 +13,7 @@ on:
       - 'cryptex/ops/tests/test_forward_threshold_pilot.py'
       - 'cryptex/ops/sampling_clock.py'
       - 'cryptex/ops/tests/test_sampling_clock.py'
+      - 'cryptex/ops/research_window.py'
   schedule:
     - cron: '8,23,38,53 * * * *'
   workflow_dispatch:
@@ -31,20 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Restrict collection to bounded no-extra-cost paper pilot
-        id: time_gate
-        run: |
-          python3 - <<'PY'
-          import datetime as dt,os
-          now=dt.datetime.now(dt.timezone.utc)
-          enabled=now < dt.datetime(2026,11,25,tzinfo=dt.timezone.utc)
-          with open(os.environ["GITHUB_OUTPUT"],"a") as out:
-              out.write("enabled="+str(enabled).lower()+"\n")
-          print("PUBLIC PAPER_ONLY data pilot enabled",enabled,
-                "Ends 2026-11-25 UTC. No trading or real-money orders.")
-          PY
       - name: Checkout source only (default branch)
-        if: steps.time_gate.outputs.enabled == 'true'
         uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -55,6 +43,21 @@ jobs:
             cryptex/ops/tests/test_forward_threshold_pilot.py
             cryptex/ops/sampling_clock.py
             cryptex/ops/tests/test_sampling_clock.py
+            cryptex/ops/research_window.py
+      - name: Restrict collection to bounded no-extra-cost paper pilot
+        id: time_gate
+        env:
+          PYTHONPATH: cryptex/ops
+        run: |
+          python3 - <<'PY'
+          import datetime as dt,os
+          from research_window import PILOT_END
+          enabled=dt.datetime.now(dt.timezone.utc) < PILOT_END
+          with open(os.environ["GITHUB_OUTPUT"],"a") as out:
+              out.write("enabled="+str(enabled).lower()+"\n")
+          print("PUBLIC PAPER_ONLY data pilot enabled",enabled,
+                "Ends",PILOT_END.isoformat())
+          PY
       - name: Checkout independent five-exchange research outputs
         if: steps.time_gate.outputs.enabled == 'true'
         uses: actions/checkout@v4

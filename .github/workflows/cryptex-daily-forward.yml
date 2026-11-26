@@ -9,6 +9,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 0 * * *'
+    - cron: '43 1 * * *'
+    - cron: '29 3 * * *'
 
 permissions:
   contents: write
@@ -88,6 +90,9 @@ jobs:
           assert not r["live_or_original_paper_promotion"]
           assert a["start_date"]=="2026-11-18"
           assert r["observed_forward_days"]+r["missing_forward_days"]==r["expected_forward_days"]
+          assert r["expected_rebalance_days"]==(r["expected_forward_days"]+6)//7
+          assert r["execution_eligible_rebalance_days"]==sum(
+            x["is_rebalance_day"] and x["trade_allowed"] for x in a["days"])
           assert len(a["days"])==r["observed_forward_days"]
           assert all(x["date"]>="2026-11-18" for x in a["days"])
           print("Prospective-only, no promotion. Real observed days:",len(a["days"]))

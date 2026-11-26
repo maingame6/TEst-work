@@ -59,10 +59,11 @@ class WideRecoveryTests(unittest.TestCase):
                                "generated_at":NOW.isoformat()},NOW,[])
 
     def test_pilot_deadline_blocks(self):
-        late=dt.datetime(2026,11,18,1,tzinfo=UTC)
+        late=dt.datetime(2026,12,21,tzinfo=UTC)
         old={"mode":"PAPER_ONLY","not_real_orders":True,
              "generated_at":(late-dt.timedelta(hours=3)).isoformat()}
         self.assertFalse(wide_recovery_due(old,late,[]))
+        self.assertTrue(wide_recovery_due(old,late-dt.timedelta(minutes=1),[]))
 
 class DepthRecoveryTests(unittest.TestCase):
     def report(self, minutes):
@@ -84,8 +85,10 @@ class DepthRecoveryTests(unittest.TestCase):
         bad=self.report(100);bad["real_orders"]=True
         with self.assertRaises(ValueError):depth_recovery_due(bad,NOW,[])
     def test_pilot_deadline(self):
-        now=dt.datetime(2026,11,16,tzinfo=UTC)
-        self.assertFalse(depth_recovery_due(self.report(100000),now,[]))
+        now=dt.datetime(2026,12,21,tzinfo=UTC)
+        old=self.report(90)
+        self.assertFalse(depth_recovery_due(old,now,[]))
+        self.assertTrue(depth_recovery_due(old,now-dt.timedelta(minutes=1),[]))
 
 class WriterWatchdogTests(unittest.TestCase):
     def authority(self,writer):

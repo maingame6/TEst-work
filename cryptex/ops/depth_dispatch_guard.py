@@ -13,8 +13,9 @@ import subprocess
 import sys
 import urllib.request
 
+from research_window import PILOT_END
+
 UTC=dt.timezone.utc
-PILOT_END=dt.datetime(2026,12,21,tzinfo=UTC)
 TARGET_SECONDS=13*60
 MIN_RUN_SPACING_SECONDS=11*60
 MAX_REPORT_FUTURE_SECONDS=90
