@@ -6,7 +6,8 @@ Activated 18 November 2026 UTC; no historical paper trades inserted.
 
 Actual observed days: 9 / 9
 Missed days: 0
-Status: OBSERVED_NO_ACTION
+Execution-eligible rebalance days: 0 / 2
+Status: ALREADY_OBSERVED_NO_REPLAY
 
 | Measure | Base | Stress | BTC hold |
 |---|---:|---:|---:|

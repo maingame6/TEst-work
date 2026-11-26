@@ -11,6 +11,8 @@
   "expected_forward_days": 9,
   "missing_forward_days": 0,
   "forward_day_coverage_pct": 100.0,
+  "expected_rebalance_days": 2,
+  "execution_eligible_rebalance_days": 0,
   "base": {
     "nav": 100.0,
     "net_return_pct": 0.0,
@@ -37,6 +39,6 @@
   "live_or_original_paper_promotion": false,
   "review_requirements": "At least 365 prospective days, 99% genuine days, 30 completed exits and superiority over cash and BTC under stress; independently review before any policy change.",
   "limitations": "Forward quote observations, not executable fills. Slippage simulated. No independent/live proof.",
-  "run_status": "OBSERVED_NO_ACTION",
-  "generated_at": "2026-11-26T08:12:33.593000+00:00"
+  "run_status": "ALREADY_OBSERVED_NO_REPLAY",
+  "generated_at": "2026-11-26T12:08:16.633788+00:00"
 }
