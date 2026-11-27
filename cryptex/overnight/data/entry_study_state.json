@@ -1,10 +1,17 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795748400,
+  "last_ts": 1795748700,
   "first_ts": 1793488500,
-  "observed_candles": 6168,
-  "signals": [],
+  "observed_candles": 6169,
+  "signals": [
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795748700,
+      "observed_move": 0.00690989
+    }
+  ],
   "open": [],
   "trades": [
     {
@@ -14858,36 +14865,36 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 6056,
-      "liquid_candidates": 60569,
-      "move_below_gate": 60398,
-      "volume_below_gate": 46033,
+      "bars": 6057,
+      "liquid_candidates": 60582,
+      "move_below_gate": 60411,
+      "volume_below_gate": 46045,
       "qualified": 121,
       "queued": 35
     },
     "COST_AWARE": {
-      "bars": 6056,
-      "liquid_candidates": 60569,
-      "move_below_gate": 60371,
-      "volume_below_gate": 45376,
+      "bars": 6057,
+      "liquid_candidates": 60582,
+      "move_below_gate": 60384,
+      "volume_below_gate": 45388,
       "qualified": 141,
       "queued": 45
     },
     "BALANCED_TEST": {
-      "bars": 6056,
-      "liquid_candidates": 60569,
-      "move_below_gate": 59718,
-      "volume_below_gate": 45376,
+      "bars": 6057,
+      "liquid_candidates": 60582,
+      "move_below_gate": 59731,
+      "volume_below_gate": 45388,
       "qualified": 485,
       "queued": 220
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 6056,
-      "liquid_candidates": 60569,
-      "move_below_gate": 55049,
-      "volume_below_gate": 44672,
-      "qualified": 2068,
-      "queued": 996
+      "bars": 6057,
+      "liquid_candidates": 60582,
+      "move_below_gate": 55057,
+      "volume_below_gate": 44684,
+      "qualified": 2069,
+      "queued": 997
     }
   },
   "horizon_open": [
