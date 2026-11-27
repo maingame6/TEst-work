@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795751400; captured candles: 6178.
+Last observed closed candle: 1795751700; captured candles: 6179.
 Missed fills: 120; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 121 | 60528 | 46141 | 35 | 30 | -1.9349% | 45.935% |
-| COST_AWARE | 141 | 60501 | 45484 | 45 | 37 | -2.0838% | 55.450% |
-| BALANCED_TEST | 485 | 59848 | 45484 | 220 | 165 | -2.1173% | 98.333% |
-| LOW_HURDLE_CONTROL | 2073 | 55167 | 44779 | 1000 | 801 | -2.0939% | 100.000% |
+| V4_TAKER_STRICT | 121 | 60539 | 46151 | 35 | 30 | -1.9349% | 45.935% |
+| COST_AWARE | 141 | 60512 | 45494 | 45 | 37 | -2.0838% | 55.450% |
+| BALANCED_TEST | 485 | 59859 | 45494 | 220 | 165 | -2.1173% | 98.333% |
+| LOW_HURDLE_CONTROL | 2073 | 55178 | 44789 | 1000 | 801 | -2.0939% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
