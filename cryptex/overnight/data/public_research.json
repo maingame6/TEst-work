@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-27T15:20:45.401655+00:00",
+  "checked_at": "2026-11-27T16:25:38.672903+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "TimeoutError:The read operation timed out"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -52,6 +53,39 @@
     }
   ],
   "articles": [
+    {
+      "id": "427e42639094ccee",
+      "source": "CRYPTODESK",
+      "title": "Live updates: Bitcoin's Thanksgiving gains prove fleeting",
+      "url": "https://www.coindesk.com/tech/2026/11/27/live-news-bitcoin-rebounds-above-usd61-000-as-ai-stocks-lead-premarket-gains",
+      "published_at": "2026-11-27T11:34:37+00:00",
+      "first_observed_at": "2026-11-27T16:25:38.672903+00:00",
+      "sentiment": "POSITIVE",
+      "score": 1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "f56bf6999a71ba25",
+      "source": "SEC_REGULATORY",
+      "title": "SEC to Host Virtual National Compliance Outreach Seminar for Investment Companies and Investment Advisers",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-102-sec-host-virtual-national-compliance-outreach-seminar-investment-companies-investment-advisers",
+      "published_at": "2026-10-06T14:37:55+00:00",
+      "first_observed_at": "2026-11-27T16:25:38.672903+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "09609bdb4a10dca6",
+      "source": "SEC_REGULATORY",
+      "title": "SEC Coordinates with Global Financial Regulators to Raise Fraud Awareness During World Investor Week",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-101-sec-coordinates-global-financial-regulators-raise-fraud-awareness-during-world-investor-week",
+      "published_at": "2026-10-05T12:47:36+00:00",
+      "first_observed_at": "2026-11-27T16:25:38.672903+00:00",
+      "sentiment": "NEGATIVE",
+      "score": -1,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "e26684c81e78debc",
       "source": "CRYPTODESK",
@@ -2768,45 +2802,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "c3f1358e2a6b2e90",
-      "source": "SEC_REGULATORY",
-      "title": "SEC Small Business Advisory Committee to Discuss IPO Modernization and Regulation Crowdfunding",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
-      "published_at": "2026-10-14T14:30:47+00:00",
-      "first_observed_at": "2026-11-25T19:08:41.743522+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "678f801690f14dae",
-      "source": "SEC_REGULATORY",
-      "title": "SEC Proposes Expanding Securities Eligible for Cross Trading by Registered Funds",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds",
-      "published_at": "2026-10-09T14:59:00+00:00",
-      "first_observed_at": "2026-11-25T19:08:41.743522+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "9351afe2ecc4e047",
-      "source": "SEC_REGULATORY",
-      "title": "SEC Seeks Final Judgment Against Former Western Asset Co-CIO Ken Leech in Cherry Picking Case",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-103-sec-seeks-final-judgment-against-former-western-asset-co-cio-ken-leech-cherry-picking-case",
-      "published_at": "2026-10-06T20:30:24+00:00",
-      "first_observed_at": "2026-11-25T19:08:41.743522+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 6,
   "sources_total": 8
 }
