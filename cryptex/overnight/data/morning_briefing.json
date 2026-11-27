@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-27T07:55:44.181149+00:00",
+  "generated_at": "2026-11-27T08:00:42.658095+00:00",
   "session": "2026-11-26",
   "session_start": "2026-11-26T21:00:39.329737+00:00",
-  "status": "IN_PROGRESS",
+  "status": "MORNING_RECORDED",
   "session_change": 0.0,
   "paper_only": true,
   "money": {
@@ -110,7 +110,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XLM"
+      "decision": "HOLD AVAX"
     },
     {
       "name": "LEAN_EVENT",
@@ -123,7 +123,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD LTC"
+      "decision": "HOLD SOL"
     },
     {
       "name": "GRAPH_COHERENCE",
@@ -162,7 +162,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD SOL"
     },
     {
       "name": "FREQTRADE_STYLE",
@@ -175,7 +175,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD UNI"
+      "decision": "HOLD LTC"
     },
     {
       "name": "ERROR_CODE_CONSENSUS",
@@ -188,7 +188,7 @@
       "session_net": 0,
       "holding": null,
       "pending": null,
-      "decision": "HOLD XRP"
+      "decision": "HOLD XLM"
     },
     {
       "name": "FLUID_VISCOSITY",
@@ -340,22 +340,15 @@
       "symbol": "UNI",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 4.7072,
-      "latest": 4.9051,
-      "change_pct": 4.2042
+      "latest": 4.879,
+      "change_pct": 3.6497
     },
     {
       "symbol": "LINK",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 9.29808,
-      "latest": 9.61099,
-      "change_pct": 3.3653
-    },
-    {
-      "symbol": "XRP",
-      "since": "2026-11-26T21:00:39.329737+00:00",
-      "start": 0.95165,
-      "latest": 0.9791,
-      "change_pct": 2.8845
+      "latest": 9.59023,
+      "change_pct": 3.142
     },
     {
       "symbol": "SOL",
@@ -365,18 +358,18 @@
       "change_pct": 2.8652
     },
     {
+      "symbol": "XRP",
+      "since": "2026-11-26T21:00:39.329737+00:00",
+      "start": 0.95165,
+      "latest": 0.97741,
+      "change_pct": 2.7069
+    },
+    {
       "symbol": "PEPE",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 3.512e-06,
-      "latest": 3.596e-06,
-      "change_pct": 2.3918
-    },
-    {
-      "symbol": "DOGE",
-      "since": "2026-11-26T21:00:39.329737+00:00",
-      "start": 0.056882,
-      "latest": 0.0581576,
-      "change_pct": 2.2425
+      "latest": 3.599e-06,
+      "change_pct": 2.4772
     },
     {
       "symbol": "TON",
@@ -386,127 +379,134 @@
       "change_pct": 2.1875
     },
     {
+      "symbol": "DOGE",
+      "since": "2026-11-26T21:00:39.329737+00:00",
+      "start": 0.056882,
+      "latest": 0.0581104,
+      "change_pct": 2.1596
+    },
+    {
       "symbol": "XLM",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 0.127551,
-      "latest": 0.130205,
-      "change_pct": 2.0807
-    },
-    {
-      "symbol": "DOT",
-      "since": "2026-11-26T21:00:39.329737+00:00",
-      "start": 0.6728,
-      "latest": 0.6853,
-      "change_pct": 1.8579
-    },
-    {
-      "symbol": "BNB",
-      "since": "2026-11-26T21:00:39.329737+00:00",
-      "start": 555.04,
-      "latest": 565.14,
-      "change_pct": 1.8197
+      "latest": 0.12998,
+      "change_pct": 1.9043
     },
     {
       "symbol": "ETH",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 1702.64,
-      "latest": 1733.43,
-      "change_pct": 1.8084
+      "latest": 1732.86,
+      "change_pct": 1.7749
+    },
+    {
+      "symbol": "DOT",
+      "since": "2026-11-26T21:00:39.329737+00:00",
+      "start": 0.6728,
+      "latest": 0.6844,
+      "change_pct": 1.7241
     },
     {
       "symbol": "BCH",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 209.73,
-      "latest": 213.31,
-      "change_pct": 1.707
+      "latest": 213.32,
+      "change_pct": 1.7117
+    },
+    {
+      "symbol": "BNB",
+      "since": "2026-11-26T21:00:39.329737+00:00",
+      "start": 555.04,
+      "latest": 564.41,
+      "change_pct": 1.6882
     },
     {
       "symbol": "AVAX",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 6.644,
-      "latest": 6.753,
-      "change_pct": 1.6406
-    },
-    {
-      "symbol": "BTC",
-      "since": "2026-11-26T21:00:39.329737+00:00",
-      "start": 60682.4,
-      "latest": 61670.4,
-      "change_pct": 1.6281
+      "latest": 6.749,
+      "change_pct": 1.5804
     },
     {
       "symbol": "ADA",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 0.150632,
-      "latest": 0.153073,
-      "change_pct": 1.6205
+      "latest": 0.152928,
+      "change_pct": 1.5242
     },
     {
       "symbol": "LTC",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 43.86,
-      "latest": 44.54,
-      "change_pct": 1.5504
+      "latest": 44.52,
+      "change_pct": 1.5048
     },
     {
-      "symbol": "SHIB",
+      "symbol": "BTC",
       "since": "2026-11-26T21:00:39.329737+00:00",
-      "start": 3.646e-06,
-      "latest": 3.7e-06,
-      "change_pct": 1.4811
+      "start": 60682.4,
+      "latest": 61577.7,
+      "change_pct": 1.4754
     },
     {
       "symbol": "SUI",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 0.6746,
-      "latest": 0.6838,
-      "change_pct": 1.3638
+      "latest": 0.684,
+      "change_pct": 1.3934
     },
     {
-      "symbol": "AAVE",
+      "symbol": "SHIB",
       "since": "2026-11-26T21:00:39.329737+00:00",
-      "start": 95.41,
-      "latest": 96.26,
-      "change_pct": 0.8909
+      "start": 3.646e-06,
+      "latest": 3.695e-06,
+      "change_pct": 1.3439
     },
     {
       "symbol": "FLOKI",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 1.67e-05,
-      "latest": 1.684e-05,
-      "change_pct": 0.8383
+      "latest": 1.686e-05,
+      "change_pct": 0.9581
+    },
+    {
+      "symbol": "AAVE",
+      "since": "2026-11-26T21:00:39.329737+00:00",
+      "start": 95.41,
+      "latest": 96.27,
+      "change_pct": 0.9014
     },
     {
       "symbol": "TRX",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 0.304001,
-      "latest": 0.305233,
-      "change_pct": 0.4053
+      "latest": 0.305217,
+      "change_pct": 0.4
     },
     {
       "symbol": "BONK",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 2.196e-06,
-      "latest": 2.192e-06,
-      "change_pct": -0.1821
+      "latest": 2.193e-06,
+      "change_pct": -0.1366
     },
     {
       "symbol": "NEAR",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 3.0956,
-      "latest": 3.088,
-      "change_pct": -0.2455
+      "latest": 3.0814,
+      "change_pct": -0.4587
     },
     {
       "symbol": "WIF",
       "since": "2026-11-26T21:00:39.329737+00:00",
       "start": 0.1379,
-      "latest": 0.1374,
-      "change_pct": -0.3626
+      "latest": 0.137,
+      "change_pct": -0.6526
     }
   ],
   "equity_curve": {
-    "samples": 132,
+    "samples": 133,
     "low": 194.294439,
     "high": 194.294439,
     "observed_drawdown_pct": 0.0,
@@ -518,22 +518,22 @@
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 76586.0,
-      "current_mid": 61670.4,
+      "current_mid": 61577.7,
       "start": 10.0,
-      "equity": 7.936273,
-      "pnl": -2.063727,
-      "return_pct": -20.6373,
+      "equity": 7.924344,
+      "pnl": -2.075656,
+      "return_pct": -20.7566,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "ETH": {
       "status": "PAPER_ONLY",
       "started_at": "2026-10-30T22:21:37.361980+00:00",
       "entry_mid": 2230.44,
-      "current_mid": 1733.43,
+      "current_mid": 1732.86,
       "start": 10.0,
-      "equity": 7.659581,
-      "pnl": -2.340419,
-      "return_pct": -23.4042,
+      "equity": 7.657062,
+      "pnl": -2.342938,
+      "return_pct": -23.4294,
       "holding": "buy-and-hold; hypothetical sale costs included"
     },
     "SOL": {
@@ -892,7 +892,7 @@
     "observed": 71,
     "confirmed": 71,
     "polled_at": "2026-11-27T07:00:43.232800+00:00",
-    "age_minutes": 55.02,
+    "age_minutes": 59.99,
     "sectors": {
       "Majors": {
         "requested": 14,
@@ -1340,15 +1340,71 @@
     "newly_tradable_pairs": 0
   },
   "news": {
-    "last_polled": "2026-11-27T07:00:39.592864+00:00",
+    "last_polled": "2026-11-27T08:00:40.025107+00:00",
     "sources_up": 7,
     "total_sources": 8,
-    "new_items": 31,
+    "new_items": 39,
     "weak_sentiment": {
-      "NEUTRAL": 29,
-      "NEGATIVE": 2
+      "NEUTRAL": 36,
+      "NEGATIVE": 3
     },
     "top_items": [
+      {
+        "title": "Ethereum devs schedule Glamsterdam upgrade for Hoodi testnet on Dec. 15",
+        "url": "https://www.theblock.co/news/ecosystems/2026-11-27-ethereum-devs-schedule-glamsterdam-upgrade-hoodi-447051",
+        "source": "THE_BLOCK",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "BIT AM Lists Switzerland’s First Spot Bitcoin ETF - Markets Media",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUHFpTlVWTVFyQVpLOUVoSHFmZVVJci1RNFRvQkRsQ1dDZDdjc1NnaFlKdFZFNVBNclRvUWxnRzJWRTYzYmdET3VmTDNYRVpvdUVIM0RUVS1YRWhkSUp4ZEE1ZkdKdFJ3LWhtMy1YREk4RXRqRi1kV2hpTk04R19TZVpYTXA?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Ethereum devs schedule Glamsterdam upgrade for Hoodi testnet on Dec. 15 - The Block",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxONXAyVzlGczQydm1aZlZ0UEFrZndNeEdCYjA0aDRLUGVvck84T3hndmMwNGFVMnREZ2dZOU16NG5wdTczem0tVllaa1ZVdVFEbEJkMGJxdndSQWV5TlpTMmM3aE1DVGdQal92VHoyanlDS0w1LXBmMmxQWTlaaWZpclEwYVlpSDVnUW5vdk9IYXJ1Y2ZQXy1xRUZIREtDM0JrMDlCaVhPbTlnUQ?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Ethereum's Treasury Companies Are Copying a Playbook That Hasn't Been Fully Tested - FinancialContent",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQMHV4QnBaTVQtdzNZVkhud0FCYUkzX2xuTzNCSnY1c0dQNEtPNGNiNXljdWVMcm9wUTVDUDZ5b2JYRXNpdmlfeFlHZ3NiT2FEV0FfT1FKY00zYklRZzlDOG5fZHhHN3ZmajUzb0prVkkxYS1ya1VhTjVxOEdoWG40dmN2NDZvNWNyVTEyaExzMkhQQ3V5Rnh3U0F4aXJhYk1VMlFRVkVwSFBiTkdNVjlPR0RBTVI5UUMyd2R1d0huQUM3VXNQUm1ZbTBJQjU4NEg2T1ZZcjBhQVQyb3R5MU5wOGNLUnc4M0tiVHlMaUZWb0g?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin recovers to $61.5k; set for first positive week in 8 - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNaXZBRU5tVzhRQjBjVjh4ZjNMWnVHR25oS0VIclNsOUhqcGZQWXRkXzV5Rk1PVHRkbG5Fc3d5cURkd0hvaC14MFZRUG5uX3pCRm45MDlqMWYySHRzSWtIQ3ozeU96VGZ2dUtTNk1wenBYSXlYb09YS0xKYmZvemtqQllwN0plc0g2aDlyalhuR2w5UDROREdqSWp5d2ZMYnJrbWt4bWtNNUdXSHZwTG9yV2VqV2tVRFE?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "Bitcoin Girds for $58,000 Battle as U.S. Jobs Report, Nvidia Hearing Take Center Stage - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBUV21FaElDeENTZUVVdVprdjNNVVRYaGp4SW1Xa0FFLXJWWDlfRUZHanFfWmYtSUdZcFVlamtUTElKa2prRGE3a1hBRUV6d3VoRVhzOVBIQkktTG1EQmJDd2RJQ2RlMEd4aFpURDVZTDJXYVl0eEE?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEUTRAL"
+      },
+      {
+        "title": "A 30% Bitcoin crash hasn't shaken this asset manager's $1.6 million call - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN1U2N1UyVThuaGlwbFI2VnZVZjdzOExSbjBsaXNERk1GUDlBa0FXSlA0aHBlWkNwaGt0cExDQmNoU2Z5RFlHU2FUMHZMWUR4b1VaT0MyQjJDUXFQZDJDdHppYl9TZGFQZmZXOVVtS2Z6ekxYRTcyQzFVQ0NFbnM5SzFjNFJpbVJSbEYzR3FITzBzZ0Z6NFhGbm5R?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEGATIVE"
+      },
+      {
+        "title": "BTC News Today: US Bitcoin Strategic Reserve Bill Moves Closer as BTC Reclaims $60K - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNUnFMSE5TNzVCUEJtcTVJcDMzTXRJclM0TFlhWVFydWt6V25URThjQ1BUYWJpc2xqeGIweEZnOVoxOVI3aGhTSGR5MzFLd3JaMWdKM2lmM08wYTJ3TW1QV2dybVRkNG9GRUFSUmhDcno2WWpXT3JtN1h5VXNhWnh1NzdsUWlfZmhfNU01emdSd1RDc2Rf?oc=5",
+        "source": "SEARCH_RADAR",
+        "at": "2026-11-27T08:00:40.025107+00:00",
+        "weak_label": "NEUTRAL"
+      },
       {
         "title": "S&P 500 Quietly Shrugs Off the Bitcoin and Silver Selloff - StoneX",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQR1NjRWV2QmdlcHA3YmlPNzgyUGd2RTBXalNHbFE5dkJjZFVEZlczdk45MW9IeUlhY3VOOXNYOU1TU1ZDS2JwS2swb1R4bVVQenM2OUZ0cF91M05TXzJIUkowdXhqSjNHUEIzbmxaSVFpaWFfX2pPQ0Jyc3FwZHVMX1JNeDZJaVpMZkZFSWhlRmVoY1RrWEl0V0h2WlhfUUt6R1U5N2gyN1VJXzQ?oc=5",
@@ -1376,62 +1432,6 @@
         "source": "SEARCH_RADAR",
         "at": "2026-11-27T07:00:39.592864+00:00",
         "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Japan’s crypto security group taps SEAL to speed up hack response",
-        "url": "https://cointelegraph.com/news/japans-crypto-security-group-taps-seal-to-speed-up-hack-response?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "COINTELEGRAPH",
-        "at": "2026-11-27T06:00:39.099704+00:00",
-        "weak_label": "NEGATIVE"
-      },
-      {
-        "title": "How a 35-Cent Attack Could Expose Bitcoin Wallet IP Addresses - Yahoo Finance UK",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPSGZCY2pPQm5RQ2NucFY5VmdWNnZtcGE3M2NTSmF3eGpYNE1OdE1zM3Jmano2WW5MTUk3LWZWR1FIQVBJSFRMMzdoQ1dVTzJBd3MyTE1abXFPRHlGdmVmc3FHOWFWTVdRUE9MdWdMZVBzbGJkcDByQkJudm1Tdno5eURHcw?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-27T06:00:39.099704+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Bitcoin's Record Highs Share One Condition, and It Is Missing Right Now - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5TeGN3RWRET0JYTVpER3ROLUlZRDZMV0xmNHg2c3VCSDFjc2Rza3BnWDREVjdfdkowMjI0WEZBQXcxRlV5NGxMUTdycjM1RzdGdjNvek1LUFF6TXo1allWbk5YNDdxQmE1bWF3U1d2UmlIaDZkZzR6SW1R?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-27T06:00:39.099704+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Ethereum's much-awaited Glamsterdam upgrade cleared for December test. Here's what to know",
-        "url": "https://www.coindesk.com/tech/2026/11/27/ethereum-s-much-awaited-glamsterdam-upgrade-cleared-for-december-test-here-s-what-to-know",
-        "source": "CRYPTODESK",
-        "at": "2026-11-27T05:00:37.470622+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Ethereum devs set Glamsterdam’s Hoodi rollout for mid-December after delays",
-        "url": "https://cointelegraph.com/news/ethereum-devs-set-glamsterdams-hoodi-rollout-for-mid-december-after-delays?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "COINTELEGRAPH",
-        "at": "2026-11-27T05:00:37.470622+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "China, Japan, South Korea and ASEAN to form working group on digital payments, crypto regulation",
-        "url": "https://www.theblock.co/news/regulation/2026-11-26-china-japan-south-korea-asean-digital-payments-447029",
-        "source": "THE_BLOCK",
-        "at": "2026-11-27T05:00:37.470622+00:00",
-        "weak_label": "NEUTRAL"
-      },
-      {
-        "title": "Top 3 Price Prediction: Bitcoin, Ethereum, Ripple – BTC extends tentative rebound, ETH and XRP climb on easing bearish momentum - FXStreet",
-        "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOUDR6MXpyZ2lHUTkzbFhIVVRhWklxOG1za1Q1VXJQcTFTQUhQc1dENy1kc0JuekhXakh6Z1pGSVozMnVTOE94YXFQeUI4TU4wQ19taVVubkk1d1cwSzVKaXlZRGVSZW1GZzVMZzZ5dzBQZUdiNjVkY2tUaDlPOWRDT3ZnMXViX21IT3NxWmRTV2ZJY1p0bnZmelE4NnhMclBqZ19BN0pIYnh2UG9jOF9GRmVSbVJyV1BiZEpyZF82Tnl4RktDdnpod2YtLWJhQ0pFMU5xUVMzekRBSS00S3c5alEzTTNJek13YmJ4UEZXM3JGN3FPZjc2R0dDMTltcmtmOTI2OEUzQVFBeDB1QUE?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-27T05:00:37.470622+00:00",
-        "weak_label": "NEGATIVE"
-      },
-      {
-        "title": "Ethereum's much-awaited Glamsterdam upgrade cleared for December test. Here's what to know - CoinDesk",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNZUZ1eWg1OWUyaVpRRjQ3ZDBuTkNRQ3R0Ty0yc3R3WkJNZ0x4cmw2eW5WX1daX0l3Nk92aVZsUFpkMHI0YlI3OWJmTmU3c1JsYU40UGdsVzhVT3J0cjNlRVpBQmw4MHNLS0R1NnNKYkhLRE9fVDdLRWQ1YkpycXFBZXdESUhyS3plcmNrUGZDVE1QRk5vV3YwVUNaTmdxT2ZsNTNFTGJKM0ZBaFctdGgtTXFPYnVtd1p6Zk5OcDMtVDNWU0dxNndIV1dn?oc=5",
-        "source": "SEARCH_RADAR",
-        "at": "2026-11-27T05:00:37.470622+00:00",
-        "weak_label": "NEUTRAL"
       }
     ],
     "feed_errors": [
@@ -1442,63 +1442,63 @@
     "rule_based_review_capacity": 640,
     "latest": {
       "GAMBLER": {
-        "support": 20,
-        "opposition": 8,
+        "support": 8,
+        "opposition": 21,
         "vetoes": 0,
         "action": "HOLD"
       },
       "HOUSE": {
-        "support": 14,
-        "opposition": 14,
+        "support": 20,
+        "opposition": 9,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SPY": {
-        "support": 35,
+        "support": 30,
         "opposition": 2,
         "vetoes": 0,
         "action": "HOLD"
       },
       "MEME HUNTER": {
-        "support": 22,
-        "opposition": 10,
-        "vetoes": 1,
+        "support": 16,
+        "opposition": 11,
+        "vetoes": 0,
         "action": "HOLD"
       },
       "BREAKOUT": {
-        "support": 20,
-        "opposition": 8,
+        "support": 8,
+        "opposition": 21,
         "vetoes": 0,
         "action": "HOLD"
       },
       "CONTRARIAN": {
-        "support": 14,
-        "opposition": 14,
+        "support": 20,
+        "opposition": 9,
         "vetoes": 0,
         "action": "HOLD"
       },
       "ROTATOR": {
-        "support": 20,
-        "opposition": 8,
+        "support": 8,
+        "opposition": 21,
         "vetoes": 0,
         "action": "HOLD"
       },
       "VORTEX": {
-        "support": 20,
-        "opposition": 8,
+        "support": 8,
+        "opposition": 21,
         "vetoes": 0,
         "action": "HOLD"
       },
       "FRACTAL": {
-        "support": 20,
-        "opposition": 8,
+        "support": 8,
+        "opposition": 21,
         "vetoes": 0,
         "action": "HOLD"
       },
       "SHOCKWAVE": {
-        "support": 22,
-        "opposition": 10,
-        "vetoes": 1,
+        "support": 16,
+        "opposition": 11,
+        "vetoes": 0,
         "action": "HOLD"
       }
     }
@@ -1511,7 +1511,7 @@
   "health": {
     "trigger": "workflow_dispatch",
     "cron_verified": true,
-    "run_id": "45961784676",
+    "run_id": "45962351904",
     "data": {
       "main_stale": false,
       "research_stale": false,
