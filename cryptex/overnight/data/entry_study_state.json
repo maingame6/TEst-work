@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795780800,
+  "last_ts": 1795781100,
   "first_ts": 1793488500,
-  "observed_candles": 6276,
+  "observed_candles": 6277,
   "signals": [],
   "open": [],
   "trades": [
@@ -15079,55 +15079,39 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 6164,
-      "liquid_candidates": 61620,
-      "move_below_gate": 61449,
-      "volume_below_gate": 46851,
+      "bars": 6165,
+      "liquid_candidates": 61627,
+      "move_below_gate": 61456,
+      "volume_below_gate": 46858,
       "qualified": 121,
       "queued": 35
     },
     "COST_AWARE": {
-      "bars": 6164,
-      "liquid_candidates": 61620,
-      "move_below_gate": 61422,
-      "volume_below_gate": 46185,
+      "bars": 6165,
+      "liquid_candidates": 61627,
+      "move_below_gate": 61429,
+      "volume_below_gate": 46192,
       "qualified": 141,
       "queued": 45
     },
     "BALANCED_TEST": {
-      "bars": 6164,
-      "liquid_candidates": 61620,
-      "move_below_gate": 60769,
-      "volume_below_gate": 46185,
+      "bars": 6165,
+      "liquid_candidates": 61627,
+      "move_below_gate": 60776,
+      "volume_below_gate": 46192,
       "qualified": 485,
       "queued": 220
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 6164,
-      "liquid_candidates": 61620,
-      "move_below_gate": 56049,
-      "volume_below_gate": 45471,
+      "bars": 6165,
+      "liquid_candidates": 61627,
+      "move_below_gate": 56056,
+      "volume_below_gate": 45478,
       "qualified": 2089,
       "queued": 1013
     }
   },
   "horizon_open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "NEAR",
-      "signal_ts": 1795694400,
-      "entry_ts": 1795694700,
-      "entry_mid": 3.0815,
-      "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ADA",
-      "signal_ts": 1795694400,
-      "entry_ts": 1795694700,
-      "entry_mid": 0.14918,
-      "hold_bars": 288
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "BCH",
@@ -23661,6 +23645,30 @@
       "gross_return": -0.0025619326,
       "net_return": -0.023290072,
       "stress_net_return": -0.0281615039
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "NEAR",
+      "signal_ts": 1795694400,
+      "entry_ts": 1795694700,
+      "exit_ts": 1795781100,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0092162908,
+      "net_return": -0.0117566164,
+      "stress_net_return": -0.0166855725
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ADA",
+      "signal_ts": 1795694400,
+      "entry_ts": 1795694700,
+      "exit_ts": 1795781100,
+      "hold_bars": 288,
+      "paper": true,
+      "gross_return": 0.0259217053,
+      "net_return": 0.0046016366,
+      "stress_net_return": -0.0004089078
     }
   ],
   "horizon_censored": 620
