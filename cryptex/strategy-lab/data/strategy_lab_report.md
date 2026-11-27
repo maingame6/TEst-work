@@ -2,16 +2,16 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3084 symbol-hours, 4068 missing.
+Recorded 3096 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3322 hypothetical outcomes; censored 8705.
+Closed 3332 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
 |---|---:|---:|---:|---:|---:|
 | adx_uptrend_16 | 58 | 18 | -2.0053 | -2.4941 | 58 |
 | adx_uptrend_32 | 30 | 8 | -2.0809 | -2.5693 | 30 |
-| adx_uptrend_8 | 63 | 15 | -2.2946 | -2.7819 | 63 |
+| adx_uptrend_8 | 64 | 15 | -2.3138 | -2.8010 | 64 |
 | aroon_uptrend_16 | 42 | 5 | -3.9591 | -4.4382 | 42 |
 | aroon_uptrend_32 | 31 | 6 | -2.5325 | -3.0186 | 31 |
 | aroon_uptrend_8 | 49 | 11 | -2.1546 | -2.6426 | 49 |
@@ -24,15 +24,15 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | bollinger_rebound_16 | 30 | 13 | -1.8741 | -2.3636 | 30 |
 | bollinger_rebound_32 | 20 | 4 | -3.2681 | -3.7506 | 20 |
 | bollinger_rebound_8 | 9 | 5 | -0.3157 | -0.8129 | 9 |
-| cci_rebound_16 | 51 | 13 | -2.7475 | -3.2325 | 51 |
+| cci_rebound_16 | 52 | 13 | -2.7064 | -3.1917 | 52 |
 | cci_rebound_32 | 37 | 5 | -3.6818 | -4.1622 | 37 |
 | cci_rebound_8 | 57 | 13 | -2.9511 | -3.4351 | 57 |
 | cci_trend_16 | 40 | 3 | -2.6509 | -3.1364 | 40 |
 | cci_trend_32 | 23 | 2 | -2.8678 | -3.3522 | 23 |
 | cci_trend_8 | 48 | 5 | -2.3193 | -2.8065 | 48 |
 | cmf_accumulation_16 | 34 | 6 | -2.5972 | -3.0830 | 34 |
-| cmf_accumulation_32 | 25 | 5 | -3.8687 | -4.3481 | 25 |
-| cmf_accumulation_8 | 48 | 11 | -2.7852 | -3.2700 | 48 |
+| cmf_accumulation_32 | 26 | 5 | -3.7987 | -4.2785 | 26 |
+| cmf_accumulation_8 | 49 | 11 | -2.7409 | -3.2260 | 49 |
 | donchian_breakout_16 | 22 | 1 | -3.8795 | -4.3589 | 22 |
 | donchian_breakout_32 | 14 | 2 | -4.8207 | -5.2954 | 14 |
 | donchian_breakout_8 | 33 | 2 | -3.5381 | -4.0192 | 33 |
@@ -41,7 +41,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | efficiency_trend_8 | 43 | 9 | -2.9744 | -3.4583 | 43 |
 | ema_trend_16 | 41 | 12 | -2.4019 | -2.8887 | 41 |
 | ema_trend_32 | 18 | 5 | -3.9278 | -4.4069 | 18 |
-| ema_trend_8 | 48 | 14 | -2.0785 | -2.5669 | 48 |
+| ema_trend_8 | 49 | 14 | -2.1080 | -2.5962 | 49 |
 | keltner_breakout_16 | 18 | 1 | -4.3226 | -4.7998 | 18 |
 | keltner_breakout_32 | 15 | 2 | -3.9715 | -4.4504 | 15 |
 | keltner_breakout_8 | 12 | 0 | -7.7574 | -8.2175 | 12 |
@@ -58,7 +58,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | mfi_recovery_32 | 34 | 9 | -2.9739 | -3.4578 | 34 |
 | mfi_recovery_8 | 54 | 16 | -2.7236 | -3.2087 | 54 |
 | momentum_16 | 42 | 6 | -2.9324 | -3.4165 | 42 |
-| momentum_32 | 36 | 11 | -1.5761 | -2.0670 | 36 |
+| momentum_32 | 39 | 11 | -1.6599 | -2.1503 | 39 |
 | momentum_8 | 44 | 11 | -2.6812 | -3.1666 | 44 |
 | obv_confirmation_16 | 56 | 7 | -2.4411 | -2.9276 | 56 |
 | obv_confirmation_32 | 43 | 14 | -2.2613 | -2.7487 | 43 |
@@ -74,7 +74,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_trend_8 | 54 | 12 | -1.9603 | -2.4493 | 54 |
 | sma_trend_16 | 45 | 9 | -2.3113 | -2.7985 | 45 |
 | sma_trend_32 | 24 | 3 | -4.4578 | -4.9343 | 24 |
-| sma_trend_8 | 52 | 12 | -2.4817 | -2.9680 | 52 |
+| sma_trend_8 | 53 | 12 | -2.5013 | -2.9876 | 53 |
 | squeeze_breakout_16 | 30 | 2 | -3.3456 | -3.8277 | 30 |
 | squeeze_breakout_32 | 15 | 1 | -4.9235 | -5.3977 | 15 |
 | squeeze_breakout_8 | 38 | 3 | -2.9466 | -3.4307 | 38 |
@@ -89,7 +89,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | volume_breakout_8 | 22 | 3 | -2.9173 | -3.4015 | 22 |
 | vwap_reclaim_16 | 52 | 17 | -1.4263 | -1.9179 | 52 |
 | vwap_reclaim_32 | 45 | 12 | -1.5163 | -2.0075 | 45 |
-| vwap_reclaim_8 | 57 | 16 | -2.2651 | -2.7525 | 57 |
+| vwap_reclaim_8 | 58 | 16 | -2.2867 | -2.7741 | 58 |
 | williams_rebound_16 | 61 | 15 | -2.7785 | -3.2634 | 61 |
 | williams_rebound_32 | 47 | 5 | -3.8203 | -4.2999 | 47 |
 | williams_rebound_8 | 59 | 12 | -2.9333 | -3.4174 | 59 |
