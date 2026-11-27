@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795760100; captured candles: 6207.
+Last observed closed candle: 1795760400; captured candles: 6208.
 Missed fills: 120; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 121 | 60828 | 46360 | 35 | 30 | -1.9349% | 45.935% |
-| COST_AWARE | 141 | 60801 | 45701 | 45 | 37 | -2.0838% | 55.450% |
-| BALANCED_TEST | 485 | 60148 | 45701 | 220 | 165 | -2.1173% | 98.333% |
-| LOW_HURDLE_CONTROL | 2080 | 55450 | 44994 | 1006 | 806 | -2.0917% | 100.000% |
+| V4_TAKER_STRICT | 121 | 60839 | 46367 | 35 | 30 | -1.9349% | 45.935% |
+| COST_AWARE | 141 | 60812 | 45708 | 45 | 37 | -2.0838% | 55.450% |
+| BALANCED_TEST | 485 | 60159 | 45708 | 220 | 165 | -2.1173% | 98.333% |
+| LOW_HURDLE_CONTROL | 2080 | 55461 | 45001 | 1006 | 806 | -2.0917% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -29,9 +29,9 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 
 | Gate | Hold | Matched (all) | Independent heldout | Heldout avg net | Versus paired 30m |
 |---|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 4h | 18 | 8 | -2.227% | +0.157% |
+| V4_TAKER_STRICT | 4h | 19 | 9 | -2.248% | +0.191% |
 | V4_TAKER_STRICT | 24h | 12 | 3 | -2.861% | -0.377% |
-| COST_AWARE | 4h | 20 | 8 | -1.817% | +0.242% |
+| COST_AWARE | 4h | 21 | 9 | -1.883% | +0.266% |
 | COST_AWARE | 24h | 13 | 3 | -2.861% | -0.377% |
 | BALANCED_TEST | 4h | 111 | 31 | -1.735% | +0.253% |
 | BALANCED_TEST | 24h | 39 | 6 | -2.724% | -0.804% |
