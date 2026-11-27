@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3072 symbol-hours, 4068 missing.
+Recorded 3084 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3304 hypothetical outcomes; censored 8705.
+Closed 3322 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -12,9 +12,9 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_16 | 58 | 18 | -2.0053 | -2.4941 | 58 |
 | adx_uptrend_32 | 30 | 8 | -2.0809 | -2.5693 | 30 |
 | adx_uptrend_8 | 63 | 15 | -2.2946 | -2.7819 | 63 |
-| aroon_uptrend_16 | 41 | 5 | -4.0518 | -4.5304 | 41 |
-| aroon_uptrend_32 | 30 | 6 | -2.6117 | -3.0974 | 30 |
-| aroon_uptrend_8 | 47 | 11 | -2.2051 | -2.6929 | 47 |
+| aroon_uptrend_16 | 42 | 5 | -3.9591 | -4.4382 | 42 |
+| aroon_uptrend_32 | 31 | 6 | -2.5325 | -3.0186 | 31 |
+| aroon_uptrend_8 | 49 | 11 | -2.1546 | -2.6426 | 49 |
 | atr_pullback_16 | 57 | 15 | -2.8809 | -3.3653 | 57 |
 | atr_pullback_32 | 51 | 15 | -2.8089 | -3.2936 | 51 |
 | atr_pullback_8 | 57 | 14 | -2.9482 | -3.4322 | 57 |
@@ -29,7 +29,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_rebound_8 | 57 | 13 | -2.9511 | -3.4351 | 57 |
 | cci_trend_16 | 40 | 3 | -2.6509 | -3.1364 | 40 |
 | cci_trend_32 | 23 | 2 | -2.8678 | -3.3522 | 23 |
-| cci_trend_8 | 46 | 5 | -2.4048 | -2.8916 | 46 |
+| cci_trend_8 | 48 | 5 | -2.3193 | -2.8065 | 48 |
 | cmf_accumulation_16 | 34 | 6 | -2.5972 | -3.0830 | 34 |
 | cmf_accumulation_32 | 25 | 5 | -3.8687 | -4.3481 | 25 |
 | cmf_accumulation_8 | 48 | 11 | -2.7852 | -3.2700 | 48 |
@@ -47,7 +47,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | keltner_breakout_8 | 12 | 0 | -7.7574 | -8.2175 | 12 |
 | low_vol_trend_16 | 59 | 16 | -2.1926 | -2.6804 | 59 |
 | low_vol_trend_32 | 44 | 11 | -1.5769 | -2.0678 | 44 |
-| low_vol_trend_8 | 54 | 11 | -2.3653 | -2.8522 | 54 |
+| low_vol_trend_8 | 56 | 11 | -2.2934 | -2.7807 | 56 |
 | macd_acceleration_16 | 40 | 5 | -3.0676 | -3.5510 | 40 |
 | macd_acceleration_32 | 40 | 5 | -3.0676 | -3.5510 | 40 |
 | macd_acceleration_8 | 40 | 5 | -3.0676 | -3.5510 | 40 |
@@ -57,15 +57,15 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | mfi_recovery_16 | 42 | 12 | -2.6418 | -3.1273 | 42 |
 | mfi_recovery_32 | 34 | 9 | -2.9739 | -3.4578 | 34 |
 | mfi_recovery_8 | 54 | 16 | -2.7236 | -3.2087 | 54 |
-| momentum_16 | 41 | 6 | -2.9898 | -3.4737 | 41 |
-| momentum_32 | 35 | 11 | -1.6047 | -2.0954 | 35 |
+| momentum_16 | 42 | 6 | -2.9324 | -3.4165 | 42 |
+| momentum_32 | 36 | 11 | -1.5761 | -2.0670 | 36 |
 | momentum_8 | 44 | 11 | -2.6812 | -3.1666 | 44 |
 | obv_confirmation_16 | 56 | 7 | -2.4411 | -2.9276 | 56 |
 | obv_confirmation_32 | 43 | 14 | -2.2613 | -2.7487 | 43 |
-| obv_confirmation_8 | 47 | 5 | -3.0295 | -3.5131 | 47 |
-| roc_acceleration_16 | 46 | 13 | -2.5128 | -2.9990 | 46 |
-| roc_acceleration_32 | 42 | 7 | -2.4395 | -2.9261 | 42 |
-| roc_acceleration_8 | 54 | 10 | -2.9388 | -3.4229 | 54 |
+| obv_confirmation_8 | 50 | 5 | -2.8944 | -3.3787 | 50 |
+| roc_acceleration_16 | 47 | 13 | -2.5280 | -3.0141 | 47 |
+| roc_acceleration_32 | 43 | 7 | -2.4207 | -2.9074 | 43 |
+| roc_acceleration_8 | 56 | 10 | -2.8949 | -3.3792 | 56 |
 | rsi_rebound_16 | 46 | 14 | -2.8900 | -3.3743 | 46 |
 | rsi_rebound_32 | 34 | 5 | -3.5988 | -4.0796 | 34 |
 | rsi_rebound_8 | 54 | 14 | -2.5418 | -3.0279 | 54 |
@@ -73,7 +73,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_trend_32 | 42 | 10 | -1.6426 | -2.1332 | 42 |
 | rsi_trend_8 | 54 | 12 | -1.9603 | -2.4493 | 54 |
 | sma_trend_16 | 45 | 9 | -2.3113 | -2.7985 | 45 |
-| sma_trend_32 | 23 | 3 | -4.5847 | -5.0606 | 23 |
+| sma_trend_32 | 24 | 3 | -4.4578 | -4.9343 | 24 |
 | sma_trend_8 | 52 | 12 | -2.4817 | -2.9680 | 52 |
 | squeeze_breakout_16 | 30 | 2 | -3.3456 | -3.8277 | 30 |
 | squeeze_breakout_32 | 15 | 1 | -4.9235 | -5.3977 | 15 |
