@@ -2,7 +2,7 @@
 
 **PAPER ONLY. 11 separate 10-USD shadow accounts; the main 100-USD portfolio is unchanged.**
 
-Generated: 2026-11-27T14:55:37.861328+00:00
+Generated: 2026-11-27T15:00:37.107766+00:00
 
 Portfolio risk: ACTIVE; 5% daily / 15% peak shadow loss guard
 
@@ -10,7 +10,7 @@ Public research feeds reachable: 7 / 8 (failed feeds are not replaced with guess
 
 | Shadow hypothesis | Equity USD | Closed | Wins | Realized USD | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
-| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD DOGE |
+| FLUID_ADVECTION | 9.9503 | 5 | 0 | -0.0497 | HOLD NEAR |
 | FLUID_VISCOSITY | 9.9312 | 4 | 0 | -0.0688 | HOLD TRX |
 | GEOMETRIC_DIVERSITY | 9.9620 | 5 | 1 | -0.0380 | HOLD TRX |
 | ERROR_CODE_CONSENSUS | 9.9355 | 8 | 1 | -0.0645 | HOLD XRP |
