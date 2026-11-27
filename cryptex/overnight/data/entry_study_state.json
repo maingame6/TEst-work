@@ -1,43 +1,11 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795794000,
+  "last_ts": 1795794300,
   "first_ts": 1793488500,
-  "observed_candles": 6320,
+  "observed_candles": 6321,
   "signals": [],
   "open": [
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "DOGE",
-      "signal_ts": 1795792200,
-      "entry_ts": 1795792500,
-      "entry_mid": 0.0572328,
-      "exit_ts": 1795794300
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "BTC",
-      "signal_ts": 1795792200,
-      "entry_ts": 1795792500,
-      "entry_mid": 59555.6,
-      "exit_ts": 1795794300
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "SOL",
-      "signal_ts": 1795792200,
-      "entry_ts": 1795792500,
-      "entry_mid": 71.31,
-      "exit_ts": 1795794300
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "XRP",
-      "signal_ts": 1795792200,
-      "entry_ts": 1795792500,
-      "entry_mid": 0.94319,
-      "exit_ts": 1795794300
-    },
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "LTC",
@@ -15127,40 +15095,92 @@
       "slippage_drag": 0.0049723654,
       "stress_net_return": -0.0286280284,
       "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1795792200,
+      "entry_ts": 1795792500,
+      "exit_ts": 1795794300,
+      "gross_return": 0.0076948882,
+      "net_return": -0.013246402,
+      "fee_drag": 0.0159153806,
+      "slippage_drag": 0.0050259097,
+      "stress_net_return": -0.0181679277,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "BTC",
+      "signal_ts": 1795792200,
+      "entry_ts": 1795792500,
+      "exit_ts": 1795794300,
+      "gross_return": 0.0062345103,
+      "net_return": -0.0146764313,
+      "fee_drag": 0.0158923156,
+      "slippage_drag": 0.005018626,
+      "stress_net_return": -0.0195908246,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "SOL",
+      "signal_ts": 1795792200,
+      "entry_ts": 1795792500,
+      "exit_ts": 1795794300,
+      "gross_return": 0.0088346655,
+      "net_return": -0.0121303109,
+      "fee_drag": 0.0159333821,
+      "slippage_drag": 0.0050315943,
+      "stress_net_return": -0.0170574032,
+      "paper": true
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "XRP",
+      "signal_ts": 1795792200,
+      "entry_ts": 1795792500,
+      "exit_ts": 1795794300,
+      "gross_return": 0.0059266956,
+      "net_return": -0.0149778492,
+      "fee_drag": 0.015887454,
+      "slippage_drag": 0.0050170908,
+      "stress_net_return": -0.0198907392,
+      "paper": true
     }
   ],
   "missed_fills": 120,
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 6208,
-      "liquid_candidates": 62089,
-      "move_below_gate": 61918,
-      "volume_below_gate": 47151,
+      "bars": 6209,
+      "liquid_candidates": 62108,
+      "move_below_gate": 61937,
+      "volume_below_gate": 47168,
       "qualified": 121,
       "queued": 35
     },
     "COST_AWARE": {
-      "bars": 6208,
-      "liquid_candidates": 62089,
-      "move_below_gate": 61891,
-      "volume_below_gate": 46481,
+      "bars": 6209,
+      "liquid_candidates": 62108,
+      "move_below_gate": 61910,
+      "volume_below_gate": 46497,
       "qualified": 141,
       "queued": 45
     },
     "BALANCED_TEST": {
-      "bars": 6208,
-      "liquid_candidates": 62089,
-      "move_below_gate": 61224,
-      "volume_below_gate": 46481,
+      "bars": 6209,
+      "liquid_candidates": 62108,
+      "move_below_gate": 61243,
+      "volume_below_gate": 46497,
       "qualified": 485,
       "queued": 220
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 6208,
-      "liquid_candidates": 62089,
-      "move_below_gate": 56434,
-      "volume_below_gate": 45759,
+      "bars": 6209,
+      "liquid_candidates": 62108,
+      "move_below_gate": 56452,
+      "volume_below_gate": 45775,
       "qualified": 2108,
       "queued": 1019
     }
