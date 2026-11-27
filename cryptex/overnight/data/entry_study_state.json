@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795801500,
+  "last_ts": 1795801800,
   "first_ts": 1793488500,
-  "observed_candles": 6345,
+  "observed_candles": 6346,
   "signals": [],
   "open": [],
   "trades": [
@@ -15222,34 +15222,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 6233,
-      "liquid_candidates": 62436,
-      "move_below_gate": 62265,
-      "volume_below_gate": 47447,
+      "bars": 6234,
+      "liquid_candidates": 62445,
+      "move_below_gate": 62274,
+      "volume_below_gate": 47455,
       "qualified": 121,
       "queued": 35
     },
     "COST_AWARE": {
-      "bars": 6233,
-      "liquid_candidates": 62436,
-      "move_below_gate": 62238,
-      "volume_below_gate": 46768,
+      "bars": 6234,
+      "liquid_candidates": 62445,
+      "move_below_gate": 62247,
+      "volume_below_gate": 46776,
       "qualified": 141,
       "queued": 45
     },
     "BALANCED_TEST": {
-      "bars": 6233,
-      "liquid_candidates": 62436,
-      "move_below_gate": 61571,
-      "volume_below_gate": 46768,
+      "bars": 6234,
+      "liquid_candidates": 62445,
+      "move_below_gate": 61580,
+      "volume_below_gate": 46776,
       "qualified": 485,
       "queued": 220
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 6233,
-      "liquid_candidates": 62436,
-      "move_below_gate": 56767,
-      "volume_below_gate": 46040,
+      "bars": 6234,
+      "liquid_candidates": 62445,
+      "move_below_gate": 56775,
+      "volume_below_gate": 46048,
       "qualified": 2115,
       "queued": 1024
     }
@@ -15350,14 +15350,6 @@
       "entry_ts": 1795766100,
       "entry_mid": 0.12998,
       "hold_bars": 288
-    },
-    {
-      "gate": "LOW_HURDLE_CONTROL",
-      "symbol": "ETH",
-      "signal_ts": 1795787100,
-      "entry_ts": 1795787400,
-      "entry_mid": 1726.55,
-      "hold_bars": 48
     },
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -23952,6 +23944,18 @@
       "gross_return": -0.0070535143,
       "net_return": -0.0276883124,
       "stress_net_return": -0.0325378078
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "ETH",
+      "signal_ts": 1795787100,
+      "entry_ts": 1795787400,
+      "exit_ts": 1795801800,
+      "hold_bars": 48,
+      "paper": true,
+      "gross_return": -0.0357591729,
+      "net_return": -0.0557974278,
+      "stress_net_return": -0.0605067263
     }
   ],
   "horizon_censored": 620
