@@ -4,15 +4,15 @@
 
 Activated 18 November 2026 UTC; no historical paper trades inserted.
 
-Actual observed days: 10 / 10
+Actual observed days: 11 / 11
 Missed days: 0
 Execution-eligible rebalance days: 0 / 2
 Status: OBSERVED_NO_ACTION
 
 | Measure | Base | Stress | BTC hold |
 |---|---:|---:|---:|
-| Hypothetical NAV | $100.00 | $100.00 | $93.67 |
-| After-cost return | +0.00% | +0.00% | -6.33% |
+| Hypothetical NAV | $100.00 | $100.00 | $90.38 |
+| After-cost return | +0.00% | +0.00% | -9.62% |
 
 Original 21 wallets and $210 portfolio never read or written.
 Do not promote from historical or incomplete prospective returns.
