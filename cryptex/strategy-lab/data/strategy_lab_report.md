@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3264 symbol-hours, 4068 missing.
+Recorded 3276 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3760 hypothetical outcomes; censored 8705.
+Closed 3774 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -19,7 +19,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | atr_pullback_32 | 53 | 15 | -2.7821 | -3.2669 | 53 |
 | atr_pullback_8 | 62 | 14 | -2.8651 | -3.3496 | 62 |
 | bollinger_breakout_16 | 27 | 1 | -3.9401 | -4.4192 | 27 |
-| bollinger_breakout_32 | 19 | 0 | -5.1529 | -5.6260 | 19 |
+| bollinger_breakout_32 | 21 | 0 | -5.2664 | -5.7389 | 21 |
 | bollinger_breakout_8 | 32 | 0 | -4.3826 | -4.8595 | 32 |
 | bollinger_rebound_16 | 31 | 13 | -1.8650 | -2.3544 | 31 |
 | bollinger_rebound_32 | 20 | 4 | -3.2681 | -3.7506 | 20 |
@@ -30,20 +30,20 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cci_trend_16 | 50 | 3 | -2.6266 | -3.1123 | 50 |
 | cci_trend_32 | 34 | 2 | -3.0469 | -3.5305 | 34 |
 | cci_trend_8 | 55 | 5 | -2.4041 | -2.8908 | 55 |
-| cmf_accumulation_16 | 44 | 6 | -2.5659 | -3.0518 | 44 |
+| cmf_accumulation_16 | 45 | 6 | -2.6234 | -3.1091 | 45 |
 | cmf_accumulation_32 | 30 | 5 | -3.6147 | -4.0954 | 30 |
 | cmf_accumulation_8 | 57 | 11 | -2.6686 | -3.1540 | 57 |
 | donchian_breakout_16 | 33 | 1 | -3.6099 | -4.0906 | 33 |
 | donchian_breakout_32 | 20 | 2 | -4.3516 | -4.8287 | 20 |
 | donchian_breakout_8 | 45 | 2 | -3.5098 | -3.9910 | 45 |
-| efficiency_trend_16 | 31 | 3 | -4.0614 | -4.5399 | 31 |
+| efficiency_trend_16 | 33 | 3 | -4.1677 | -4.6456 | 33 |
 | efficiency_trend_32 | 21 | 2 | -4.3902 | -4.8671 | 21 |
-| efficiency_trend_8 | 53 | 9 | -3.0982 | -3.5815 | 53 |
+| efficiency_trend_8 | 55 | 9 | -3.1999 | -3.6827 | 55 |
 | ema_trend_16 | 42 | 12 | -2.4316 | -2.9183 | 42 |
 | ema_trend_32 | 24 | 5 | -3.9889 | -4.4677 | 24 |
 | ema_trend_8 | 52 | 14 | -2.1199 | -2.6080 | 52 |
 | keltner_breakout_16 | 28 | 1 | -4.4512 | -4.9278 | 28 |
-| keltner_breakout_32 | 25 | 2 | -4.0868 | -4.5652 | 25 |
+| keltner_breakout_32 | 26 | 2 | -4.1767 | -4.6547 | 26 |
 | keltner_breakout_8 | 13 | 0 | -7.5454 | -8.0066 | 13 |
 | low_vol_trend_16 | 60 | 16 | -2.2169 | -2.7046 | 60 |
 | low_vol_trend_32 | 44 | 11 | -1.5769 | -2.0678 | 44 |
@@ -57,14 +57,14 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | mfi_recovery_16 | 44 | 12 | -2.6093 | -3.0951 | 44 |
 | mfi_recovery_32 | 35 | 9 | -2.9344 | -3.4185 | 35 |
 | mfi_recovery_8 | 58 | 16 | -2.6800 | -3.1654 | 58 |
-| momentum_16 | 47 | 6 | -3.0792 | -3.5626 | 47 |
+| momentum_16 | 49 | 6 | -3.1854 | -3.6683 | 49 |
 | momentum_32 | 39 | 11 | -1.6599 | -2.1503 | 39 |
-| momentum_8 | 53 | 11 | -2.9630 | -3.4470 | 53 |
+| momentum_8 | 55 | 11 | -3.0860 | -3.5693 | 55 |
 | obv_confirmation_16 | 58 | 7 | -2.4521 | -2.9386 | 58 |
 | obv_confirmation_32 | 43 | 14 | -2.2613 | -2.7487 | 43 |
 | obv_confirmation_8 | 57 | 5 | -2.9659 | -3.4499 | 57 |
 | roc_acceleration_16 | 58 | 13 | -2.5825 | -3.0684 | 58 |
-| roc_acceleration_32 | 50 | 7 | -2.7868 | -3.2717 | 50 |
+| roc_acceleration_32 | 51 | 7 | -2.8117 | -3.2965 | 51 |
 | roc_acceleration_8 | 61 | 10 | -2.8650 | -3.3495 | 61 |
 | rsi_rebound_16 | 51 | 14 | -2.8639 | -3.3484 | 51 |
 | rsi_rebound_32 | 34 | 5 | -3.5988 | -4.0796 | 34 |
@@ -83,7 +83,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | stochastic_rebound_8 | 34 | 11 | -2.7228 | -3.2080 | 34 |
 | vol_target_momentum_16 | 52 | 12 | -2.4012 | -2.8880 | 52 |
 | vol_target_momentum_32 | 42 | 9 | -1.7023 | -2.1926 | 42 |
-| vol_target_momentum_8 | 57 | 11 | -2.7962 | -3.2810 | 57 |
+| vol_target_momentum_8 | 58 | 11 | -2.8588 | -3.3433 | 58 |
 | volume_breakout_16 | 36 | 3 | -3.3208 | -3.8030 | 36 |
 | volume_breakout_32 | 31 | 2 | -3.5159 | -3.9972 | 31 |
 | volume_breakout_8 | 31 | 3 | -3.1261 | -3.6092 | 31 |
