@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3180 symbol-hours, 4068 missing.
+Recorded 3192 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3502 hypothetical outcomes; censored 8705.
+Closed 3508 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -15,18 +15,18 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | aroon_uptrend_16 | 42 | 5 | -3.9591 | -4.4382 | 42 |
 | aroon_uptrend_32 | 32 | 6 | -2.5855 | -3.0714 | 32 |
 | aroon_uptrend_8 | 52 | 11 | -2.2026 | -2.6903 | 52 |
-| atr_pullback_16 | 59 | 15 | -2.8731 | -3.3576 | 59 |
+| atr_pullback_16 | 60 | 15 | -2.8808 | -3.3652 | 60 |
 | atr_pullback_32 | 53 | 15 | -2.7821 | -3.2669 | 53 |
-| atr_pullback_8 | 61 | 14 | -2.8575 | -3.3420 | 61 |
+| atr_pullback_8 | 62 | 14 | -2.8651 | -3.3496 | 62 |
 | bollinger_breakout_16 | 20 | 1 | -4.0264 | -4.5051 | 20 |
 | bollinger_breakout_32 | 12 | 0 | -5.7560 | -6.2260 | 12 |
 | bollinger_breakout_8 | 28 | 0 | -4.3569 | -4.8339 | 28 |
 | bollinger_rebound_16 | 31 | 13 | -1.8650 | -2.3544 | 31 |
 | bollinger_rebound_32 | 20 | 4 | -3.2681 | -3.7506 | 20 |
 | bollinger_rebound_8 | 9 | 5 | -0.3157 | -0.8129 | 9 |
-| cci_rebound_16 | 56 | 13 | -2.6686 | -3.1541 | 56 |
+| cci_rebound_16 | 57 | 13 | -2.6803 | -3.1657 | 57 |
 | cci_rebound_32 | 37 | 5 | -3.6818 | -4.1622 | 37 |
-| cci_rebound_8 | 60 | 13 | -2.9224 | -3.4066 | 60 |
+| cci_rebound_8 | 61 | 13 | -2.9292 | -3.4133 | 61 |
 | cci_trend_16 | 46 | 3 | -2.5344 | -3.0205 | 46 |
 | cci_trend_32 | 26 | 2 | -2.8726 | -3.3571 | 26 |
 | cci_trend_8 | 52 | 5 | -2.3194 | -2.8066 | 52 |
@@ -73,7 +73,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_trend_32 | 42 | 10 | -1.6426 | -2.1332 | 42 |
 | rsi_trend_8 | 59 | 12 | -2.0316 | -2.5202 | 59 |
 | sma_trend_16 | 45 | 9 | -2.3113 | -2.7985 | 45 |
-| sma_trend_32 | 28 | 3 | -4.1438 | -4.6219 | 28 |
+| sma_trend_32 | 30 | 3 | -4.0268 | -4.5055 | 30 |
 | sma_trend_8 | 54 | 12 | -2.4970 | -2.9833 | 54 |
 | squeeze_breakout_16 | 35 | 2 | -3.1640 | -3.6470 | 35 |
 | squeeze_breakout_32 | 17 | 1 | -4.6740 | -5.1495 | 17 |
