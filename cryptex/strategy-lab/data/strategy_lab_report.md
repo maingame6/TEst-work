@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3312 symbol-hours, 4068 missing.
+Recorded 3324 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3790 hypothetical outcomes; censored 8705.
+Closed 3794 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -80,7 +80,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | squeeze_breakout_8 | 50 | 3 | -3.0039 | -3.4877 | 50 |
 | stochastic_rebound_16 | 42 | 11 | -3.1988 | -3.6816 | 42 |
 | stochastic_rebound_32 | 36 | 6 | -3.8792 | -4.3587 | 36 |
-| stochastic_rebound_8 | 34 | 11 | -2.7228 | -3.2080 | 34 |
+| stochastic_rebound_8 | 35 | 11 | -2.7656 | -3.2505 | 35 |
 | vol_target_momentum_16 | 52 | 12 | -2.4012 | -2.8880 | 52 |
 | vol_target_momentum_32 | 42 | 9 | -1.7023 | -2.1926 | 42 |
 | vol_target_momentum_8 | 58 | 11 | -2.8588 | -3.3433 | 58 |
@@ -91,8 +91,8 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | vwap_reclaim_32 | 45 | 12 | -1.5163 | -2.0075 | 45 |
 | vwap_reclaim_8 | 61 | 16 | -2.2880 | -2.7754 | 61 |
 | williams_rebound_16 | 65 | 16 | -2.7254 | -3.2106 | 65 |
-| williams_rebound_32 | 49 | 5 | -3.8151 | -4.2948 | 49 |
-| williams_rebound_8 | 60 | 13 | -2.8829 | -3.3673 | 60 |
+| williams_rebound_32 | 50 | 5 | -3.8232 | -4.3029 | 50 |
+| williams_rebound_8 | 62 | 13 | -2.9895 | -3.4734 | 62 |
 
 No winner is approved. OHLCV closes are NOT executable fills.
 A sweep of correlated indicators inflates false positives; require purged walk-forward, block-bootstrap/multiplicity checks, cost stress and independent validation.
