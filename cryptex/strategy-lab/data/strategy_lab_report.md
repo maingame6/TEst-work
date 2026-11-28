@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3324 symbol-hours, 4068 missing.
+Recorded 3336 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3794 hypothetical outcomes; censored 8705.
+Closed 3799 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -13,7 +13,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_32 | 31 | 8 | -2.2139 | -2.7016 | 31 |
 | adx_uptrend_8 | 67 | 15 | -2.3138 | -2.8010 | 67 |
 | aroon_uptrend_16 | 51 | 5 | -3.9583 | -4.4373 | 51 |
-| aroon_uptrend_32 | 34 | 6 | -2.6582 | -3.1437 | 34 |
+| aroon_uptrend_32 | 37 | 6 | -2.9665 | -3.4505 | 37 |
 | aroon_uptrend_8 | 56 | 11 | -2.4313 | -2.9179 | 56 |
 | atr_pullback_16 | 62 | 16 | -2.8115 | -3.2963 | 62 |
 | atr_pullback_32 | 53 | 15 | -2.7821 | -3.2669 | 53 |
@@ -80,7 +80,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | squeeze_breakout_8 | 50 | 3 | -3.0039 | -3.4877 | 50 |
 | stochastic_rebound_16 | 42 | 11 | -3.1988 | -3.6816 | 42 |
 | stochastic_rebound_32 | 36 | 6 | -3.8792 | -4.3587 | 36 |
-| stochastic_rebound_8 | 35 | 11 | -2.7656 | -3.2505 | 35 |
+| stochastic_rebound_8 | 36 | 11 | -2.8917 | -3.3760 | 36 |
 | vol_target_momentum_16 | 52 | 12 | -2.4012 | -2.8880 | 52 |
 | vol_target_momentum_32 | 42 | 9 | -1.7023 | -2.1926 | 42 |
 | vol_target_momentum_8 | 58 | 11 | -2.8588 | -3.3433 | 58 |
@@ -92,7 +92,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | vwap_reclaim_8 | 61 | 16 | -2.2880 | -2.7754 | 61 |
 | williams_rebound_16 | 65 | 16 | -2.7254 | -3.2106 | 65 |
 | williams_rebound_32 | 50 | 5 | -3.8232 | -4.3029 | 50 |
-| williams_rebound_8 | 62 | 13 | -2.9895 | -3.4734 | 62 |
+| williams_rebound_8 | 63 | 13 | -3.0580 | -3.5415 | 63 |
 
 No winner is approved. OHLCV closes are NOT executable fills.
 A sweep of correlated indicators inflates false positives; require purged walk-forward, block-bootstrap/multiplicity checks, cost stress and independent validation.
