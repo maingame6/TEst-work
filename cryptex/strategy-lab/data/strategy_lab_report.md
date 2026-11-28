@@ -2,15 +2,15 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3288 symbol-hours, 4068 missing.
+Recorded 3300 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3787 hypothetical outcomes; censored 8705.
+Closed 3789 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
 |---|---:|---:|---:|---:|---:|
 | adx_uptrend_16 | 59 | 18 | -2.0794 | -2.5678 | 59 |
-| adx_uptrend_32 | 30 | 8 | -2.0809 | -2.5693 | 30 |
+| adx_uptrend_32 | 31 | 8 | -2.2139 | -2.7016 | 31 |
 | adx_uptrend_8 | 67 | 15 | -2.3138 | -2.8010 | 67 |
 | aroon_uptrend_16 | 51 | 5 | -3.9583 | -4.4373 | 51 |
 | aroon_uptrend_32 | 34 | 6 | -2.6582 | -3.1437 | 34 |
@@ -36,7 +36,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | donchian_breakout_16 | 33 | 1 | -3.6099 | -4.0906 | 33 |
 | donchian_breakout_32 | 21 | 2 | -4.4160 | -4.8927 | 21 |
 | donchian_breakout_8 | 45 | 2 | -3.5098 | -3.9910 | 45 |
-| efficiency_trend_16 | 37 | 3 | -4.3308 | -4.8079 | 37 |
+| efficiency_trend_16 | 38 | 3 | -4.3765 | -4.8534 | 38 |
 | efficiency_trend_32 | 21 | 2 | -4.3902 | -4.8671 | 21 |
 | efficiency_trend_8 | 55 | 9 | -3.1999 | -3.6827 | 55 |
 | ema_trend_16 | 42 | 12 | -2.4316 | -2.9183 | 42 |
