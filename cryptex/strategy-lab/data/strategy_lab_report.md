@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3408 symbol-hours, 4068 missing.
+Recorded 3420 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 4103 hypothetical outcomes; censored 8705.
+Closed 4109 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -56,7 +56,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | macd_trend_8 | 58 | 8 | -2.8796 | -3.3640 | 58 |
 | mfi_recovery_16 | 48 | 12 | -2.6955 | -3.1808 | 48 |
 | mfi_recovery_32 | 38 | 9 | -2.9803 | -3.4642 | 38 |
-| mfi_recovery_8 | 67 | 16 | -2.8639 | -3.3484 | 67 |
+| mfi_recovery_8 | 68 | 16 | -2.9043 | -3.3886 | 68 |
 | momentum_16 | 51 | 6 | -3.2200 | -3.7027 | 51 |
 | momentum_32 | 43 | 11 | -1.8020 | -2.2918 | 43 |
 | momentum_8 | 56 | 11 | -3.1513 | -3.6344 | 56 |
@@ -68,18 +68,18 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | roc_acceleration_8 | 61 | 10 | -2.8650 | -3.3495 | 61 |
 | rsi_rebound_16 | 53 | 14 | -2.8948 | -3.3792 | 53 |
 | rsi_rebound_32 | 35 | 5 | -3.5927 | -4.0736 | 35 |
-| rsi_rebound_8 | 66 | 14 | -2.7346 | -3.2197 | 66 |
+| rsi_rebound_8 | 67 | 14 | -2.7775 | -3.2624 | 67 |
 | rsi_trend_16 | 69 | 14 | -2.8899 | -3.3742 | 69 |
 | rsi_trend_32 | 54 | 10 | -2.5692 | -3.0551 | 54 |
 | rsi_trend_8 | 60 | 12 | -2.0461 | -2.5347 | 60 |
 | sma_trend_16 | 56 | 9 | -3.0239 | -3.5076 | 56 |
-| sma_trend_32 | 35 | 3 | -4.1886 | -4.6665 | 35 |
+| sma_trend_32 | 36 | 3 | -4.1958 | -4.6736 | 36 |
 | sma_trend_8 | 57 | 12 | -2.6624 | -3.1479 | 57 |
 | squeeze_breakout_16 | 42 | 2 | -3.3084 | -3.7907 | 42 |
 | squeeze_breakout_32 | 25 | 1 | -4.6043 | -5.0800 | 25 |
 | squeeze_breakout_8 | 50 | 3 | -3.0039 | -3.4877 | 50 |
-| stochastic_rebound_16 | 46 | 11 | -3.2378 | -3.7204 | 46 |
-| stochastic_rebound_32 | 39 | 6 | -3.8062 | -4.2860 | 39 |
+| stochastic_rebound_16 | 47 | 11 | -3.2410 | -3.7236 | 47 |
+| stochastic_rebound_32 | 40 | 6 | -3.7958 | -4.2756 | 40 |
 | stochastic_rebound_8 | 37 | 11 | -2.9310 | -3.4151 | 37 |
 | vol_target_momentum_16 | 59 | 12 | -2.7501 | -3.2351 | 59 |
 | vol_target_momentum_32 | 52 | 9 | -2.4745 | -2.9610 | 52 |
@@ -88,7 +88,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | volume_breakout_32 | 35 | 2 | -3.5808 | -4.0617 | 35 |
 | volume_breakout_8 | 33 | 3 | -3.1073 | -3.5906 | 33 |
 | vwap_reclaim_16 | 58 | 17 | -1.7079 | -2.1981 | 58 |
-| vwap_reclaim_32 | 52 | 12 | -1.8757 | -2.3651 | 52 |
+| vwap_reclaim_32 | 53 | 12 | -1.9461 | -2.4352 | 53 |
 | vwap_reclaim_8 | 62 | 16 | -2.2876 | -2.7749 | 62 |
 | williams_rebound_16 | 73 | 16 | -2.8798 | -3.3642 | 73 |
 | williams_rebound_32 | 58 | 5 | -3.8074 | -4.2872 | 58 |
