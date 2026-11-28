@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-28T09:10:36.992447+00:00",
+  "checked_at": "2026-11-28T10:10:42.473633+00:00",
   "scouts": [
     {
       "source": "CRYPTODESK",
@@ -40,8 +40,9 @@
     {
       "source": "SEARCH_RADAR",
       "purpose": "public indexed crypto headlines",
-      "status": "OK",
-      "items": 18
+      "status": "UNAVAILABLE",
+      "items": 0,
+      "error": "TimeoutError:The read operation timed out"
     },
     {
       "source": "PUBLIC_FORUM",
@@ -52,6 +53,28 @@
     }
   ],
   "articles": [
+    {
+      "id": "e1ec5c422534d790",
+      "source": "CRYPTODESK",
+      "title": "Trump-linked crypto token WLFI plunges 50% to record lows",
+      "url": "https://www.coindesk.com/markets/2026/11/28/trump-linked-crypto-token-wlfi-plunges-over-50",
+      "published_at": "2026-11-28T09:32:51+00:00",
+      "first_observed_at": "2026-11-28T10:10:42.473633+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
+    {
+      "id": "92c749580e96381c",
+      "source": "CRYPTODESK",
+      "title": "New York Attorney General wins $1.4 billion ruling against founders of crypto trading firm NovaTech",
+      "url": "https://www.coindesk.com/policy/2026/11/26/new-york-attorney-general-wins-usd1-4-billion-ruling-against-founders-of-crypto-trading-firm-novatech",
+      "published_at": "2026-11-26T10:40:33+00:00",
+      "first_observed_at": "2026-11-28T10:10:42.473633+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 0,
+      "classifier": "transparent keyword baseline; uncalibrated"
+    },
     {
       "id": "59fc32da8f76b885",
       "source": "THE_BLOCK",
@@ -2779,34 +2802,12 @@
       "sentiment": "NEUTRAL",
       "score": 0,
       "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "1f4f1ea04a9286d3",
-      "source": "SEARCH_RADAR",
-      "title": "Man dies after suffering burns in fire at Bitcoin mining data center in Georgia - Data Center Dynamics",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVWdUT05BN29qLVBwZG9EeWJnV0NueG4yMXVneEUwNmlPSERVVFJ0MVFZRmhuNms1akF1Rl9EbEhla202Nk02NFlZNVFQVEt0RWxVR19kSkxiR0d3LUc1U3VOMkNtR3oyeDNqeDRMd2hZZDhYYVJPVnhoVmpXYzg1dmtURG9CdTVNWVFvNlpYMXlWakljNDJFNjdBbTVtSlJadEdYdU5XNE9CMnpQcnZfWl9xd25pUW1meHJGNkY3NFk?oc=5",
-      "published_at": "2026-11-26T10:49:05+00:00",
-      "first_observed_at": "2026-11-26T12:08:28.921295+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
-    },
-    {
-      "id": "4206dfab313343c1",
-      "source": "SEARCH_RADAR",
-      "title": "$7B Bitcoin Options Expire Friday on Deribit - shattered.io",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPV3VnZmV2a2xjTUtyZUkzeTdjMmhTR3pPd29GTFM3dDd6eG85VkpkYl9yVHppeUxMRUxCZkJsaG1BY051QXJqSFdPX1o5Y3VsalEyUVFReWpzRGNKbm0zdzRzaVp3MmJZbGpON1Uxdk9BbmdydGNrMl9CMHBfR1dxZ0M2Sms?oc=5",
-      "published_at": "2026-11-26T10:53:50+00:00",
-      "first_observed_at": "2026-11-26T12:08:28.921295+00:00",
-      "sentiment": "NEUTRAL",
-      "score": 0,
-      "classifier": "transparent keyword baseline; uncalibrated"
     }
   ],
   "paper_only": true,
   "access": "public sources only; legal disclosures only",
   "policy": "News is research-only; no news-triggered real-money or paper trades",
   "classifier": "transparent untrained keyword baseline, NOT an AI model",
-  "sources_up": 7,
+  "sources_up": 6,
   "sources_total": 8
 }
