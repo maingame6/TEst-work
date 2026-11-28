@@ -2,7 +2,7 @@
 
 **PAPER ONLY; isolated shadow measurement, not the $210 portfolio.**
 
-Last observed closed candle: 1795898700; captured candles: 6669.
+Last observed closed candle: 1795899000; captured candles: 6670.
 Missed fills: 120; censored exits: 50.
 
 Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**; stress: 0.80% fee + 0.50% slippage per side.
@@ -17,10 +17,10 @@ Base cost: **0.80% Kraken Tier-1 taker fee + 0.25% estimated slippage per side**
 ## V4 gate diagnostics (from instrumentation onward; never reconstructed)
 | Gate | Qualified candidates | Below move threshold | Below volume threshold | Queued signals | Heldout closes | Heldout avg net | Max drawdown (unit-stake) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| V4_TAKER_STRICT | 121 | 64534 | 49228 | 35 | 30 | -1.9349% | 45.935% |
-| COST_AWARE | 141 | 64507 | 48523 | 45 | 37 | -2.0838% | 55.450% |
-| BALANCED_TEST | 486 | 63838 | 48523 | 221 | 166 | -2.1180% | 98.370% |
-| LOW_HURDLE_CONTROL | 2130 | 58993 | 47770 | 1036 | 837 | -2.0946% | 100.000% |
+| V4_TAKER_STRICT | 121 | 64539 | 49232 | 35 | 30 | -1.9349% | 45.935% |
+| COST_AWARE | 141 | 64512 | 48527 | 45 | 37 | -2.0838% | 55.450% |
+| BALANCED_TEST | 486 | 63843 | 48527 | 221 | 166 | -2.1180% | 98.370% |
+| LOW_HURDLE_CONTROL | 2130 | 58998 | 47774 | 1036 | 837 | -2.0946% | 100.000% |
 
 ## Fixed-duration counterfactual research (30m versus 4h and 24h)
 Only exact same-signal pairs are eligible; heldout begins at the frozen +72h timestamp.
@@ -35,7 +35,7 @@ Gaps censor long holds. Figures below are not independent across correlated symb
 | COST_AWARE | 24h | 14 | 4 | -3.038% | -0.457% |
 | BALANCED_TEST | 4h | 112 | 32 | -1.751% | +0.244% |
 | BALANCED_TEST | 24h | 44 | 7 | -2.794% | -1.037% |
-| LOW_HURDLE_CONTROL | 4h | 405 | 67 | -2.224% | -0.057% |
+| LOW_HURDLE_CONTROL | 4h | 406 | 68 | -2.228% | -0.062% |
 | LOW_HURDLE_CONTROL | 24h | 112 | 10 | -2.554% | -0.332% |
 
 A gate only places a *research candidate*, entered on a later observed candle.
