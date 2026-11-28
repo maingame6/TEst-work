@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795863600,
+  "last_ts": 1795863900,
   "first_ts": 1793488500,
-  "observed_candles": 6552,
-  "signals": [
+  "observed_candles": 6553,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "DOGE",
       "signal_ts": 1795863600,
-      "observed_move": 0.00542507
+      "entry_ts": 1795863900,
+      "entry_mid": 0.0566244,
+      "exit_ts": 1795865700
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -15372,34 +15374,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 6440,
-      "liquid_candidates": 63964,
-      "move_below_gate": 63793,
-      "volume_below_gate": 48645,
+      "bars": 6441,
+      "liquid_candidates": 63971,
+      "move_below_gate": 63800,
+      "volume_below_gate": 48651,
       "qualified": 121,
       "queued": 35
     },
     "COST_AWARE": {
-      "bars": 6440,
-      "liquid_candidates": 63964,
-      "move_below_gate": 63766,
-      "volume_below_gate": 47946,
+      "bars": 6441,
+      "liquid_candidates": 63971,
+      "move_below_gate": 63773,
+      "volume_below_gate": 47952,
       "qualified": 141,
       "queued": 45
     },
     "BALANCED_TEST": {
-      "bars": 6440,
-      "liquid_candidates": 63964,
-      "move_below_gate": 63097,
-      "volume_below_gate": 47946,
+      "bars": 6441,
+      "liquid_candidates": 63971,
+      "move_below_gate": 63104,
+      "volume_below_gate": 47952,
       "qualified": 486,
       "queued": 221
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 6440,
-      "liquid_candidates": 63964,
-      "move_below_gate": 58258,
-      "volume_below_gate": 47201,
+      "bars": 6441,
+      "liquid_candidates": 63971,
+      "move_below_gate": 58265,
+      "volume_below_gate": 47207,
       "qualified": 2129,
       "queued": 1035
     }
@@ -15443,6 +15445,22 @@
       "signal_ts": 1795846800,
       "entry_ts": 1795847100,
       "entry_mid": 3.49e-06,
+      "hold_bars": 288
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1795863600,
+      "entry_ts": 1795863900,
+      "entry_mid": 0.0566244,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "DOGE",
+      "signal_ts": 1795863600,
+      "entry_ts": 1795863900,
+      "entry_mid": 0.0566244,
       "hold_bars": 288
     }
   ],
