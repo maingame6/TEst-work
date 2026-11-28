@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795838100,
+  "last_ts": 1795838400,
   "first_ts": 1793488500,
-  "observed_candles": 6467,
-  "signals": [
+  "observed_candles": 6468,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "PEPE",
       "signal_ts": 1795838100,
-      "observed_move": 0.00541311
+      "entry_ts": 1795838400,
+      "entry_mid": 3.537e-06,
+      "exit_ts": 1795840200
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -15346,34 +15348,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 6355,
-      "liquid_candidates": 63360,
-      "move_below_gate": 63189,
-      "volume_below_gate": 48175,
+      "bars": 6356,
+      "liquid_candidates": 63366,
+      "move_below_gate": 63195,
+      "volume_below_gate": 48180,
       "qualified": 121,
       "queued": 35
     },
     "COST_AWARE": {
-      "bars": 6355,
-      "liquid_candidates": 63360,
-      "move_below_gate": 63162,
-      "volume_below_gate": 47483,
+      "bars": 6356,
+      "liquid_candidates": 63366,
+      "move_below_gate": 63168,
+      "volume_below_gate": 47488,
       "qualified": 141,
       "queued": 45
     },
     "BALANCED_TEST": {
-      "bars": 6355,
-      "liquid_candidates": 63360,
-      "move_below_gate": 62493,
-      "volume_below_gate": 47483,
+      "bars": 6356,
+      "liquid_candidates": 63366,
+      "move_below_gate": 62499,
+      "volume_below_gate": 47488,
       "qualified": 486,
       "queued": 221
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 6355,
-      "liquid_candidates": 63360,
-      "move_below_gate": 57662,
-      "volume_below_gate": 46744,
+      "bars": 6356,
+      "liquid_candidates": 63366,
+      "move_below_gate": 57668,
+      "volume_below_gate": 46749,
       "qualified": 2127,
       "queued": 1033
     }
@@ -15441,6 +15443,14 @@
       "signal_ts": 1795828500,
       "entry_ts": 1795828800,
       "entry_mid": 3.0485,
+      "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1795838100,
+      "entry_ts": 1795838400,
+      "entry_mid": 3.537e-06,
       "hold_bars": 48
     }
   ],
