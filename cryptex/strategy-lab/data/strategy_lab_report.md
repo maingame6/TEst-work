@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3168 symbol-hours, 4068 missing.
+Recorded 3180 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3500 hypothetical outcomes; censored 8705.
+Closed 3502 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -73,7 +73,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | rsi_trend_32 | 42 | 10 | -1.6426 | -2.1332 | 42 |
 | rsi_trend_8 | 59 | 12 | -2.0316 | -2.5202 | 59 |
 | sma_trend_16 | 45 | 9 | -2.3113 | -2.7985 | 45 |
-| sma_trend_32 | 27 | 3 | -4.2009 | -4.6787 | 27 |
+| sma_trend_32 | 28 | 3 | -4.1438 | -4.6219 | 28 |
 | sma_trend_8 | 54 | 12 | -2.4970 | -2.9833 | 54 |
 | squeeze_breakout_16 | 35 | 2 | -3.1640 | -3.6470 | 35 |
 | squeeze_breakout_32 | 17 | 1 | -4.6740 | -5.1495 | 17 |
@@ -83,7 +83,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | stochastic_rebound_8 | 34 | 11 | -2.7228 | -3.2080 | 34 |
 | vol_target_momentum_16 | 48 | 12 | -2.2094 | -2.6971 | 48 |
 | vol_target_momentum_32 | 42 | 9 | -1.7023 | -2.1926 | 42 |
-| vol_target_momentum_8 | 49 | 10 | -2.5927 | -3.0785 | 49 |
+| vol_target_momentum_8 | 50 | 11 | -2.5202 | -3.0064 | 50 |
 | volume_breakout_16 | 29 | 3 | -3.1869 | -3.6697 | 29 |
 | volume_breakout_32 | 24 | 2 | -3.4110 | -3.8927 | 24 |
 | volume_breakout_8 | 23 | 3 | -2.8718 | -3.3562 | 23 |
