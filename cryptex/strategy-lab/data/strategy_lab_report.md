@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3300 symbol-hours, 4068 missing.
+Recorded 3312 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3789 hypothetical outcomes; censored 8705.
+Closed 3790 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -34,7 +34,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | cmf_accumulation_32 | 30 | 5 | -3.6147 | -4.0954 | 30 |
 | cmf_accumulation_8 | 57 | 11 | -2.6686 | -3.1540 | 57 |
 | donchian_breakout_16 | 33 | 1 | -3.6099 | -4.0906 | 33 |
-| donchian_breakout_32 | 21 | 2 | -4.4160 | -4.8927 | 21 |
+| donchian_breakout_32 | 22 | 2 | -4.5141 | -4.9904 | 22 |
 | donchian_breakout_8 | 45 | 2 | -3.5098 | -3.9910 | 45 |
 | efficiency_trend_16 | 38 | 3 | -4.3765 | -4.8534 | 38 |
 | efficiency_trend_32 | 21 | 2 | -4.3902 | -4.8671 | 21 |
