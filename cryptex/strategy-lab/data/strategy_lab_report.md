@@ -2,9 +2,9 @@
 
 **PAPER RESEARCH ONLY. No orders and no changes to the $210 experiment.**
 
-Recorded 3240 symbol-hours, 4068 missing.
+Recorded 3252 symbol-hours, 4068 missing.
 Research-only: 28 signal families x 3 windows = 84 fixed candidates across 12 symbols.
-Closed 3705 hypothetical outcomes; censored 8705.
+Closed 3729 hypothetical outcomes; censored 8705.
 Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 
 | Candidate | Closed | Wins after fees | Mean net % | Stress net % | Holdout |
@@ -14,7 +14,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | adx_uptrend_8 | 67 | 15 | -2.3138 | -2.8010 | 67 |
 | aroon_uptrend_16 | 51 | 5 | -3.9583 | -4.4373 | 51 |
 | aroon_uptrend_32 | 34 | 6 | -2.6582 | -3.1437 | 34 |
-| aroon_uptrend_8 | 52 | 11 | -2.2026 | -2.6903 | 52 |
+| aroon_uptrend_8 | 54 | 11 | -2.3132 | -2.8004 | 54 |
 | atr_pullback_16 | 62 | 16 | -2.8115 | -3.2963 | 62 |
 | atr_pullback_32 | 53 | 15 | -2.7821 | -3.2669 | 53 |
 | atr_pullback_8 | 62 | 14 | -2.8651 | -3.3496 | 62 |
@@ -38,33 +38,33 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | donchian_breakout_8 | 45 | 2 | -3.5098 | -3.9910 | 45 |
 | efficiency_trend_16 | 29 | 3 | -3.8751 | -4.3545 | 29 |
 | efficiency_trend_32 | 21 | 2 | -4.3902 | -4.8671 | 21 |
-| efficiency_trend_8 | 50 | 9 | -2.9591 | -3.4431 | 50 |
+| efficiency_trend_8 | 51 | 9 | -3.0355 | -3.5191 | 51 |
 | ema_trend_16 | 42 | 12 | -2.4316 | -2.9183 | 42 |
 | ema_trend_32 | 22 | 5 | -3.8258 | -4.3054 | 22 |
 | ema_trend_8 | 52 | 14 | -2.1199 | -2.6080 | 52 |
 | keltner_breakout_16 | 23 | 1 | -4.2023 | -4.6801 | 23 |
-| keltner_breakout_32 | 22 | 2 | -3.9293 | -4.4084 | 22 |
+| keltner_breakout_32 | 23 | 2 | -4.0134 | -4.4921 | 23 |
 | keltner_breakout_8 | 13 | 0 | -7.5454 | -8.0066 | 13 |
 | low_vol_trend_16 | 60 | 16 | -2.2169 | -2.7046 | 60 |
 | low_vol_trend_32 | 44 | 11 | -1.5769 | -2.0678 | 44 |
 | low_vol_trend_8 | 63 | 11 | -2.3846 | -2.8714 | 63 |
-| macd_acceleration_16 | 49 | 5 | -3.2549 | -3.7375 | 49 |
-| macd_acceleration_32 | 49 | 5 | -3.2549 | -3.7375 | 49 |
-| macd_acceleration_8 | 49 | 5 | -3.2549 | -3.7375 | 49 |
-| macd_trend_16 | 51 | 8 | -2.4741 | -2.9605 | 51 |
-| macd_trend_32 | 51 | 8 | -2.4741 | -2.9605 | 51 |
-| macd_trend_8 | 51 | 8 | -2.4741 | -2.9605 | 51 |
+| macd_acceleration_16 | 52 | 5 | -3.3309 | -3.8131 | 52 |
+| macd_acceleration_32 | 52 | 5 | -3.3309 | -3.8131 | 52 |
+| macd_acceleration_8 | 52 | 5 | -3.3309 | -3.8131 | 52 |
+| macd_trend_16 | 53 | 8 | -2.5544 | -3.0404 | 53 |
+| macd_trend_32 | 53 | 8 | -2.5544 | -3.0404 | 53 |
+| macd_trend_8 | 53 | 8 | -2.5544 | -3.0404 | 53 |
 | mfi_recovery_16 | 44 | 12 | -2.6093 | -3.0951 | 44 |
 | mfi_recovery_32 | 35 | 9 | -2.9344 | -3.4185 | 35 |
 | mfi_recovery_8 | 58 | 16 | -2.6800 | -3.1654 | 58 |
 | momentum_16 | 46 | 6 | -3.0439 | -3.5275 | 46 |
 | momentum_32 | 39 | 11 | -1.6599 | -2.1503 | 39 |
-| momentum_8 | 48 | 11 | -2.7277 | -3.2128 | 48 |
+| momentum_8 | 49 | 11 | -2.8120 | -3.2967 | 49 |
 | obv_confirmation_16 | 58 | 7 | -2.4521 | -2.9386 | 58 |
 | obv_confirmation_32 | 43 | 14 | -2.2613 | -2.7487 | 43 |
 | obv_confirmation_8 | 57 | 5 | -2.9659 | -3.4499 | 57 |
 | roc_acceleration_16 | 58 | 13 | -2.5825 | -3.0684 | 58 |
-| roc_acceleration_32 | 47 | 7 | -2.6139 | -3.0997 | 47 |
+| roc_acceleration_32 | 49 | 7 | -2.7477 | -3.2328 | 49 |
 | roc_acceleration_8 | 61 | 10 | -2.8650 | -3.3495 | 61 |
 | rsi_rebound_16 | 51 | 14 | -2.8639 | -3.3484 | 51 |
 | rsi_rebound_32 | 34 | 5 | -3.5988 | -4.0796 | 34 |
@@ -83,7 +83,7 @@ Frozen holdout starts 2026-11-10T00:00:00+00:00. No strategy can auto-promote.
 | stochastic_rebound_8 | 34 | 11 | -2.7228 | -3.2080 | 34 |
 | vol_target_momentum_16 | 51 | 12 | -2.3290 | -2.8162 | 51 |
 | vol_target_momentum_32 | 42 | 9 | -1.7023 | -2.1926 | 42 |
-| vol_target_momentum_8 | 54 | 11 | -2.6788 | -3.1642 | 54 |
+| vol_target_momentum_8 | 56 | 11 | -2.7622 | -3.2471 | 56 |
 | volume_breakout_16 | 36 | 3 | -3.3208 | -3.8030 | 36 |
 | volume_breakout_32 | 31 | 2 | -3.5159 | -3.9972 | 31 |
 | volume_breakout_8 | 31 | 3 | -3.1261 | -3.6092 | 31 |
