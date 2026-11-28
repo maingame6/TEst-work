@@ -1,18 +1,20 @@
 {
   "schema": 2,
   "mode": "PAPER_ONLY",
-  "last_ts": 1795846800,
+  "last_ts": 1795847100,
   "first_ts": 1793488500,
-  "observed_candles": 6496,
-  "signals": [
+  "observed_candles": 6497,
+  "signals": [],
+  "open": [
     {
       "gate": "LOW_HURDLE_CONTROL",
       "symbol": "PEPE",
       "signal_ts": 1795846800,
-      "observed_move": 0.00813008
+      "entry_ts": 1795847100,
+      "entry_mid": 3.49e-06,
+      "exit_ts": 1795848900
     }
   ],
-  "open": [],
   "trades": [
     {
       "gate": "LOW_HURDLE_CONTROL",
@@ -15359,34 +15361,34 @@
   "censored_exits": 50,
   "diagnostics": {
     "V4_TAKER_STRICT": {
-      "bars": 6384,
-      "liquid_candidates": 63564,
-      "move_below_gate": 63393,
-      "volume_below_gate": 48333,
+      "bars": 6385,
+      "liquid_candidates": 63573,
+      "move_below_gate": 63402,
+      "volume_below_gate": 48340,
       "qualified": 121,
       "queued": 35
     },
     "COST_AWARE": {
-      "bars": 6384,
-      "liquid_candidates": 63564,
-      "move_below_gate": 63366,
-      "volume_below_gate": 47640,
+      "bars": 6385,
+      "liquid_candidates": 63573,
+      "move_below_gate": 63375,
+      "volume_below_gate": 47647,
       "qualified": 141,
       "queued": 45
     },
     "BALANCED_TEST": {
-      "bars": 6384,
-      "liquid_candidates": 63564,
-      "move_below_gate": 62697,
-      "volume_below_gate": 47640,
+      "bars": 6385,
+      "liquid_candidates": 63573,
+      "move_below_gate": 62706,
+      "volume_below_gate": 47647,
       "qualified": 486,
       "queued": 221
     },
     "LOW_HURDLE_CONTROL": {
-      "bars": 6384,
-      "liquid_candidates": 63564,
-      "move_below_gate": 57863,
-      "volume_below_gate": 46899,
+      "bars": 6385,
+      "liquid_candidates": 63573,
+      "move_below_gate": 57870,
+      "volume_below_gate": 46906,
       "qualified": 2128,
       "queued": 1034
     }
@@ -15439,6 +15441,14 @@
       "entry_ts": 1795838400,
       "entry_mid": 3.537e-06,
       "hold_bars": 48
+    },
+    {
+      "gate": "LOW_HURDLE_CONTROL",
+      "symbol": "PEPE",
+      "signal_ts": 1795846800,
+      "entry_ts": 1795847100,
+      "entry_mid": 3.49e-06,
+      "hold_bars": 288
     }
   ],
   "horizon_trades": [
